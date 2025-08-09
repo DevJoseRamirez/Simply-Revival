@@ -1,0 +1,752 @@
+{
+  "sections": {
+    "main": {
+      "type": "product-template-1",
+      "blocks": {
+        "10baeeb8-3d3b-4115-8375-8a90ab8f58e9": {
+          "type": "text",
+          "disabled": true,
+          "settings": {
+            "text": "{{ product.vendor }}",
+            "text_style": "subtitle"
+          }
+        },
+        "989bce2f-7961-4267-8e6c-40ff4bb0ed64": {
+          "type": "title",
+          "settings": {
+            "e_label": true
+          }
+        },
+        "31b79d7e-a35a-4a94-8cb5-8e518bf8fef6": {
+          "type": "review",
+          "settings": {}
+        },
+        "c5c11045-e3b5-47e4-80d1-25e86ec844cc": {
+          "type": "price",
+          "settings": {}
+        },
+        "1affb493-1e14-4893-9876-be8d348ee475": {
+          "type": "shortdesc",
+          "settings": {}
+        },
+        "ff32ea77-bcea-43d3-8e38-55894c9d938a": {
+          "type": "separator",
+          "settings": {}
+        },
+        "8288910a-1ad6-47df-b127-118bc1d2ce24": {
+          "type": "buttons",
+          "settings": {
+            "enable_local_pickup": true,
+            "enable_hurrify": true,
+            "enable_payment_button": true,
+            "waitlist": true,
+            "product_selector": "radio",
+            "sw_color_product": true,
+            "size_color": "small-38"
+          }
+        },
+        "ab3c624e-4b26-4bb4-b6bc-f283badc9347": {
+          "type": "separator",
+          "settings": {}
+        },
+        "bf089f50-667c-4417-a84a-9478625741a1": {
+          "type": "list-info",
+          "settings": {
+            "block_style": "hoz",
+            "product_vendor_enable": true,
+            "product_type_enable": true,
+            "variant_sku_enable": true
+          }
+        },
+        "be13b3d2-2e01-4728-a83f-6488d1b7d4fa": {
+          "type": "block_banner",
+          "settings": {
+            "banner_text": "Rewards",
+            "banner_des": "Join to earn 84 points from this item",
+            "banner_icon_svg": "<svg width=\"24\" height=\"24\" viewbox=\"0 0 24 24\" fill=\"none\" xmlns=\"http:\/\/www.w3.org\/2000\/svg\">     <path d=\"M21.7727 18.8659H2.22729C2.14549 18.8659 2.06992 18.8218 2.02956 18.7506C1.98921 18.6794 1.9903 18.5918 2.03237 18.5217L2.62727 17.5301L2.03237 16.5386C1.98921 16.4666 1.98921 16.3767 2.03237 16.3047L2.62727 15.3131L2.03237 14.3215C1.98921 14.2495 1.98921 14.1596 2.03237 14.0876L2.62727 13.096L2.03237 12.1044C1.98921 12.0324 1.98921 11.9425 2.03237 11.8706L2.62727 10.879L2.03237 9.88737C1.98921 9.81538 1.98921 9.72548 2.03237 9.65349L2.62727 8.6619L2.03237 7.67123C1.9903 7.60095 1.98921 7.51354 2.02956 7.44233C2.06992 7.37112 2.14549 7.32703 2.22729 7.32703H21.7727C21.8547 7.32703 21.9301 7.37113 21.9704 7.44233C22.0108 7.51354 22.0097 7.60095 21.9676 7.67123L21.3727 8.66282L21.9676 9.65441C22.0108 9.72639 22.0108 9.8163 21.9676 9.88829L21.3727 10.8799L21.9676 11.8715C22.0108 11.9435 22.0108 12.0334 21.9676 12.1053L21.3727 13.0969L21.9676 14.0885C22.0108 14.1605 22.0108 14.2504 21.9676 14.3224L21.3727 15.314L21.9676 16.3056C22.0108 16.3776 22.0108 16.4675 21.9676 16.5395L21.3727 17.5311L21.9676 18.5227C22.0097 18.5929 22.0108 18.6803 21.9704 18.7515C21.9301 18.822 21.8547 18.8659 21.7727 18.8659ZM2.62857 18.4116H21.3714L20.9129 17.6473C20.8697 17.5753 20.8697 17.4854 20.9129 17.4134L21.5078 16.4218L20.9129 15.4302C20.8697 15.3582 20.8697 15.2683 20.9129 15.1964L21.5078 14.2048L20.9129 13.2132C20.8697 13.1412 20.8697 13.0513 20.9129 12.9793L21.5078 11.9877L20.9129 10.9961C20.8697 10.9241 20.8697 10.8342 20.9129 10.7622L21.5078 9.77064L20.9129 8.77905C20.8697 8.70706 20.8697 8.61716 20.9129 8.54517L21.3714 7.7809L2.62857 7.78137L3.08713 8.54564C3.13029 8.61762 3.13029 8.70753 3.08713 8.77952L2.49223 9.77111L3.08713 10.7627C3.13029 10.8347 3.13029 10.9246 3.08713 10.9966L2.49223 11.988L3.08713 12.9796C3.13029 13.0516 3.13029 13.1415 3.08713 13.2135L2.49223 14.2051L3.08713 15.1967C3.13029 15.2686 3.13029 15.3586 3.08713 15.4305L2.49223 16.4221L3.08713 17.4137C3.13029 17.4857 3.13029 17.5756 3.08713 17.6476L2.62857 18.4116Z\" fill=\"currentColor\"><\/path>     <path d=\"M5.86194 10.2532C5.8194 10.2532 5.77624 10.2412 5.73791 10.2163C5.63289 10.1477 5.60328 10.007 5.67169 9.90182C5.67901 9.8906 6.40775 8.76124 6.62295 7.51552C6.6443 7.3918 6.76163 7.30891 6.8855 7.33026C7.00921 7.35161 7.09211 7.46925 7.07076 7.59281C6.83906 8.93342 6.08431 10.1011 6.05236 10.15C6.00889 10.217 5.9361 10.2532 5.86194 10.2532Z\" fill=\"currentColor\"><\/path>     <path d=\"M7.99639 10.2532C7.92222 10.2532 7.84961 10.2169 7.80598 10.1502C7.77388 10.1011 7.01866 8.93342 6.78743 7.59281C6.76608 7.46909 6.84913 7.35161 6.97269 7.33026C7.09625 7.30876 7.21389 7.39196 7.23524 7.51552C7.4501 8.76124 8.17916 9.89045 8.1865 9.90182C8.25506 10.007 8.22545 10.1477 8.12028 10.2163C8.0821 10.2413 8.03892 10.2532 7.99639 10.2532Z\" fill=\"currentColor\"><\/path>     <path d=\"M14.8656 15.0462C14.8271 15.0462 14.788 15.0364 14.7522 15.0157C14.6434 14.9529 14.6062 14.814 14.669 14.7053L16.6579 11.2604C16.7206 11.1518 16.8595 11.1144 16.9683 11.1772C17.0771 11.24 17.1143 11.3788 17.0515 11.4876L15.0625 14.9325C15.0206 15.0055 14.9443 15.0462 14.8656 15.0462Z\" fill=\"currentColor\"><\/path>     <path d=\"M14.8233 12.7745C14.3746 12.7745 14.0095 12.4095 14.0095 11.9607C14.0095 11.512 14.3746 11.1469 14.8233 11.1469C15.2721 11.1469 15.6371 11.512 15.6371 11.9607C15.6373 12.4095 15.2722 12.7745 14.8233 12.7745ZM14.8233 11.6013C14.6251 11.6013 14.4639 11.7625 14.4639 11.9607C14.4639 12.1589 14.6251 12.3202 14.8233 12.3202C15.0215 12.3202 15.1828 12.1589 15.1828 11.9607C15.1828 11.7625 15.0215 11.6013 14.8233 11.6013Z\" fill=\"currentColor\"><\/path>     <path d=\"M16.8975 15.0462C16.4488 15.0462 16.0837 14.6811 16.0837 14.2324C16.0837 13.7837 16.4488 13.4186 16.8975 13.4186C17.3463 13.4186 17.7113 13.7837 17.7113 14.2324C17.7115 14.6811 17.3463 15.0462 16.8975 15.0462ZM16.8975 13.8729C16.6993 13.8729 16.5381 14.0342 16.5381 14.2324C16.5381 14.4306 16.6993 14.5918 16.8975 14.5918C17.0957 14.5918 17.257 14.4306 17.257 14.2324C17.257 14.0342 17.0957 13.8729 16.8975 13.8729Z\" fill=\"currentColor\"><\/path>     <path d=\"M15.8608 16.9756C13.7216 16.9756 11.9813 15.2353 11.9813 13.0961C11.9813 10.9569 13.7216 9.21663 15.8608 9.21663C18 9.21663 19.7403 10.9569 19.7403 13.0961C19.7403 15.2353 17.9998 16.9756 15.8608 16.9756ZM15.8608 9.6712C13.9722 9.6712 12.4357 11.2077 12.4357 13.0963C12.4357 14.9849 13.9722 16.5214 15.8608 16.5214C17.7493 16.5214 19.2858 14.9849 19.2858 13.0963C19.2858 11.2078 17.7493 9.6712 15.8608 9.6712Z\" fill=\"currentColor\"><\/path>     <path d=\"M10.5385 11.333H4.43074C4.30531 11.333 4.20356 11.2312 4.20356 11.1058C4.20356 10.9804 4.30531 10.8786 4.43074 10.8786H10.5385C10.6639 10.8786 10.7657 10.9804 10.7657 11.1058C10.7657 11.2312 10.6639 11.333 10.5385 11.333Z\" fill=\"currentColor\"><\/path>     <path d=\"M10.5385 13.3234H4.43074C4.30531 13.3234 4.20356 13.2217 4.20356 13.0962C4.20356 12.9706 4.30531 12.869 4.43074 12.869H10.5385C10.6639 12.869 10.7657 12.9708 10.7657 13.0962C10.7657 13.2218 10.6639 13.3234 10.5385 13.3234Z\" fill=\"currentColor\"><\/path>     <path d=\"M10.5385 15.3138H4.43074C4.30531 15.3138 4.20356 15.2121 4.20356 15.0867C4.20356 14.9611 4.30531 14.8595 4.43074 14.8595H10.5385C10.6639 14.8595 10.7657 14.9612 10.7657 15.0867C10.7657 15.2123 10.6639 15.3138 10.5385 15.3138Z\" fill=\"currentColor\"><\/path>     <path d=\"M9.25687 7.78128C9.15325 7.78128 9.05961 7.70992 9.03561 7.60459C9.00772 7.48227 9.08422 7.36043 9.20654 7.33238C9.35067 7.2995 9.47438 7.25775 9.57395 7.20851C10.0306 6.98211 10.2181 6.42601 9.99154 5.96933C9.88185 5.74807 9.69253 5.5826 9.45851 5.50375C9.22448 5.4249 8.97363 5.44173 8.75252 5.55158C8.31048 5.77066 7.7017 6.47432 7.12395 7.43385C7.0395 7.57408 6.99182 7.6604 6.98979 7.66398C6.92903 7.77383 6.79082 7.81356 6.68097 7.75295C6.57112 7.69234 6.53123 7.55398 6.592 7.44413C6.59418 7.44023 6.64591 7.34675 6.73457 7.19934C7.10478 6.5845 7.83306 5.50001 8.55073 5.14428C8.88075 4.98052 9.25469 4.95528 9.60387 5.07307C9.9529 5.19071 10.2352 5.43737 10.3989 5.76738C10.7367 6.44875 10.4571 7.27784 9.77575 7.61565C9.64409 7.68094 9.48672 7.73454 9.30786 7.77552C9.29056 7.77941 9.27354 7.78128 9.25687 7.78128Z\" fill=\"currentColor\"><\/path>     <path d=\"M4.60146 7.78128C4.58463 7.78128 4.56765 7.77941 4.55067 7.77552C4.37179 7.7347 4.21442 7.68094 4.08289 7.61581C3.75272 7.45205 3.50606 7.16969 3.38843 6.82067C3.2708 6.47164 3.29603 6.09753 3.4598 5.76753C3.6234 5.43752 3.90575 5.19086 4.25478 5.07323C4.60396 4.95559 4.97792 4.98083 5.30792 5.14444C6.02543 5.50001 6.75372 6.58462 7.12393 7.19934C7.21274 7.3469 7.26447 7.44023 7.26649 7.44412C7.32711 7.55397 7.28737 7.69218 7.17752 7.75295C7.06767 7.81356 6.92946 7.77383 6.8687 7.66398C6.86667 7.66039 6.81899 7.57407 6.73454 7.43384C6.15663 6.47432 5.54785 5.77069 5.10597 5.55158C4.88471 5.44188 4.63385 5.4249 4.39982 5.50374C4.16579 5.58259 3.97648 5.74806 3.86679 5.96932C3.75694 6.19074 3.74011 6.44144 3.81895 6.67547C3.8978 6.9095 4.06327 7.09881 4.28453 7.20866C4.38394 7.2579 4.50766 7.29966 4.65179 7.33254C4.7741 7.36043 4.85061 7.48227 4.82272 7.60474C4.79872 7.70992 4.70508 7.78128 4.60146 7.78128Z\" fill=\"currentColor\"><\/path>     <\/svg>",
+            "banner_txt_color": "#000000",
+            "banner_bg_color": "linear-gradient(233deg, rgba(199, 255, 244, 1), rgba(248, 255, 174, 1) 100%)",
+            "banner_radius": 6
+          }
+        },
+        "842b653e-7ccb-4f45-ad7c-8619b58f56ee": {
+          "type": "separator",
+          "settings": {}
+        },
+        "73a647c7-afc5-4d87-aaea-1438dd5ecb92": {
+          "type": "icon_with_text",
+          "settings": {
+            "block_style": "ver",
+            "icon_1": "truck",
+            "icon_text_1": "Free shipping",
+            "icon_2": "lock",
+            "icon_text_2": "Secure payment",
+            "icon_3": "shield",
+            "icon_text_3": "2 Year Warranty",
+            "icon_4": "none"
+          }
+        },
+        "7120c076-9673-4f15-a579-5efa29fefb6f": {
+          "type": "separator",
+          "settings": {}
+        },
+        "11f6643a-6bb6-4db9-a512-9c0eefc8c3b8": {
+          "type": "countdown",
+          "settings": {
+            "title_heading": "🔥 Sale ends in !"
+          }
+        },
+        "1431e891-e819-4fa1-8416-0cb3956f0e39": {
+          "type": "description",
+          "disabled": true,
+          "settings": {
+            "enable_tab": true,
+            "title_tab": "Description"
+          }
+        },
+        "2830007b-b9f5-4f33-86cf-680e0a91ca8d": {
+          "type": "tabcustom",
+          "settings": {
+            "title_tab": "Shipping information",
+            "icon": "truck",
+            "answer_content": "<p>- No EU import duties.<br\/>- Ships within 1-2 business days.<br\/>- Ships in our fully recyclable and biodegradable signature boxes.<\/p>"
+          }
+        },
+        "0a71f30d-dba2-4bca-a64d-c3cc2ed17e7d": {
+          "type": "tabcustom",
+          "settings": {
+            "title_tab": "Care Guide",
+            "icon": "leaf",
+            "answer_content": "<p>Hand-wash warm. Tumble dry low. This product has been washed at the factory after sewing to minimize fabric shrinkage.<\/p>"
+          }
+        },
+        "8d4704f6-d81d-4390-9ec5-af58698bef51": {
+          "type": "salepoint",
+          "disabled": true,
+          "settings": {
+            "icon": "globe",
+            "free_word": "55% Linen, 45% Rayon"
+          }
+        },
+        "b7034bf2-48fd-492f-a089-3169873730db": {
+          "type": "salepoint",
+          "disabled": true,
+          "settings": {
+            "icon": "lock",
+            "free_word": "Secure payment"
+          }
+        },
+        "13c388e5-8dd3-4462-9284-ec3f2c9aabc6": {
+          "type": "salepoint",
+          "disabled": true,
+          "settings": {
+            "icon": "shield",
+            "free_word": "2 Year Warranty"
+          }
+        },
+        "9cd2d8a0-a8b4-46d7-b3a7-b1609af99285": {
+          "type": "fakeviewer",
+          "settings": {
+            "fake_view_min": 12,
+            "fake_view_max": 30,
+            "fake_view_duration": 3,
+            "fake_view_text_prefix": "👀",
+            "fake_view_text_suffix": "customers are viewing this product"
+          }
+        },
+        "2cf20ef7-ba29-4dd5-8c98-df0b96ba3c5b": {
+          "type": "text",
+          "settings": {
+            "text": "🔥  30 sold in last 18 hours",
+            "text_style": "body"
+          }
+        },
+        "1be7473b-00b2-4ad9-a7c0-356b86de67a7": {
+          "type": "shipping",
+          "settings": {}
+        },
+        "83a6f5b6-88e4-4eb3-9899-a085ea9c58bd": {
+          "type": "shippingtime",
+          "settings": {
+            "shipping_button": "Delivery information",
+            "page_shipping": "delivery-service"
+          }
+        },
+        "883720d7-3346-4495-85a0-add8b3d7a51f": {
+          "type": "trust-badge",
+          "settings": {
+            "trust-heading": "Guarantee safe checkout",
+            "image": "shopify:\/\/shop_images\/checkout_1.png",
+            "width_image": 66
+          }
+        },
+        "2d534ed0-517d-48ca-8370-8659965f32c4": {
+          "type": "share",
+          "settings": {}
+        },
+        "a405ef88-bdbe-486d-9fb3-6c91aa4e1509": {
+          "type": "tabfix",
+          "disabled": true,
+          "settings": {
+            "gtab_des": "Description",
+            "gtab_review_enable": true,
+            "gtab_review": "Review",
+            "stab_title1": "Tab 1",
+            "stab_content1": "<p>111<\/p>"
+          }
+        },
+        "51f9d856-95f4-4741-bf4d-afe15438ff29": {
+          "type": "related-product",
+          "disabled": true,
+          "settings": {
+            "title_heading": "Related products"
+          }
+        }
+      },
+      "block_order": [
+        "10baeeb8-3d3b-4115-8375-8a90ab8f58e9",
+        "989bce2f-7961-4267-8e6c-40ff4bb0ed64",
+        "31b79d7e-a35a-4a94-8cb5-8e518bf8fef6",
+        "c5c11045-e3b5-47e4-80d1-25e86ec844cc",
+        "1affb493-1e14-4893-9876-be8d348ee475",
+        "ff32ea77-bcea-43d3-8e38-55894c9d938a",
+        "8288910a-1ad6-47df-b127-118bc1d2ce24",
+        "ab3c624e-4b26-4bb4-b6bc-f283badc9347",
+        "bf089f50-667c-4417-a84a-9478625741a1",
+        "be13b3d2-2e01-4728-a83f-6488d1b7d4fa",
+        "842b653e-7ccb-4f45-ad7c-8619b58f56ee",
+        "73a647c7-afc5-4d87-aaea-1438dd5ecb92",
+        "7120c076-9673-4f15-a579-5efa29fefb6f",
+        "11f6643a-6bb6-4db9-a512-9c0eefc8c3b8",
+        "1431e891-e819-4fa1-8416-0cb3956f0e39",
+        "2830007b-b9f5-4f33-86cf-680e0a91ca8d",
+        "0a71f30d-dba2-4bca-a64d-c3cc2ed17e7d",
+        "8d4704f6-d81d-4390-9ec5-af58698bef51",
+        "b7034bf2-48fd-492f-a089-3169873730db",
+        "13c388e5-8dd3-4462-9284-ec3f2c9aabc6",
+        "9cd2d8a0-a8b4-46d7-b3a7-b1609af99285",
+        "2cf20ef7-ba29-4dd5-8c98-df0b96ba3c5b",
+        "1be7473b-00b2-4ad9-a7c0-356b86de67a7",
+        "83a6f5b6-88e4-4eb3-9899-a085ea9c58bd",
+        "883720d7-3346-4495-85a0-add8b3d7a51f",
+        "2d534ed0-517d-48ca-8370-8659965f32c4",
+        "a405ef88-bdbe-486d-9fb3-6c91aa4e1509",
+        "51f9d856-95f4-4741-bf4d-afe15438ff29"
+      ],
+      "settings": {
+        "setwidth": "container",
+        "media_style": "media-grid",
+        "media_size": "large",
+        "image_size": "portrait",
+        "enable_video_looping": true,
+        "stock_enable": true,
+        "sizeguide_title": "Size Guide",
+        "sizeguide_page": "size-guide",
+        "crosssell_title": "Cross selling",
+        "upsell_accept": "Add to cart",
+        "upsell_decline": "No, thanks",
+        "upsell_time": 3,
+        "enable": true,
+        "mix_1": "#262626",
+        "mix_2": "#ffffff",
+        "text_cl": "#ffffff",
+        "cart_bg": "#ffffff",
+        "cart_cl": "#000000",
+        "cart_cl_hover": "#ffffff"
+      }
+    },
+    "product-requently": {
+      "type": "product-bundle",
+      "settings": {
+        "animation": "fade-up",
+        "bgsection": "#ffffff",
+        "bundle_title": "Frequently Bought Together",
+        "size_text": "h4",
+        "limit_bundle": 3,
+        "enable_border": true,
+        "btn_add": "Add selected items",
+        "paddingsection": "40px 0px 40px 0px",
+        "paddingmobile": "40px 0px 40px 0px",
+        "marginsection": "0px 0px 0px 0px",
+        "marginmobile": "0px 0px 0px 0px"
+      }
+    },
+    "product-content": {
+      "type": "product-content",
+      "blocks": {
+        "6889c9ba-caef-4edd-9757-6711505cb095": {
+          "type": "description",
+          "settings": {
+            "title_tab": "Description"
+          }
+        },
+        "b69a53cf-5bc1-4b18-add3-92af436f966c": {
+          "type": "content",
+          "settings": {
+            "title_tab": "Material",
+            "page": "material"
+          }
+        },
+        "147e9960-c5fe-44f4-8469-9583a9752a0a": {
+          "type": "review",
+          "settings": {
+            "title_tab": "Reviews"
+          }
+        },
+        "2e69c5c0-ab83-4cda-9c38-1aaab6fdf1cc": {
+          "type": "related-product",
+          "settings": {
+            "title_heading": "buy with",
+            "size_text": "h6",
+            "product_limit": 3
+          }
+        }
+      },
+      "block_order": [
+        "6889c9ba-caef-4edd-9757-6711505cb095",
+        "b69a53cf-5bc1-4b18-add3-92af436f966c",
+        "147e9960-c5fe-44f4-8469-9583a9752a0a",
+        "2e69c5c0-ab83-4cda-9c38-1aaab6fdf1cc"
+      ],
+      "settings": {
+        "animation": "fade-up",
+        "setwidth": "container",
+        "tab_size": "large",
+        "enable_left": true,
+        "paddingsection": "48px 0px 40px 0px",
+        "paddingmobile": "32px 0px 32px 0px",
+        "marginsection": "0px 0px 0px 0px",
+        "marginmobile": "0px 0px 0px 0px"
+      }
+    },
+    "b01596d8-87db-4853-92d9-23e7da360734": {
+      "type": "image-text-product",
+      "blocks": {
+        "template--19541120287040__b01596d8-87db-4853-92d9-23e7da360734-text_icon-1": {
+          "type": "text_icon",
+          "settings": {
+            "icon_image": "shopify:\/\/shop_images\/Recycle_Material.svg",
+            "block_title": "RECYCLED",
+            "block_des": "<p>Environmentally conscious pieces sustainably crafted from recycled fabrics<\/p>"
+          }
+        },
+        "template--19541120287040__b01596d8-87db-4853-92d9-23e7da360734-text_icon-2": {
+          "type": "text_icon",
+          "settings": {
+            "icon_image": "shopify:\/\/shop_images\/Iconscloud.svg",
+            "block_title": "LIGHTWEIGHT",
+            "block_des": "<p>Woven to feel light as air on your skin so that you never overheat<\/p>"
+          }
+        },
+        "template--19541120287040__b01596d8-87db-4853-92d9-23e7da360734-text_icon-3": {
+          "type": "text_icon",
+          "settings": {
+            "icon_image": "shopify:\/\/shop_images\/breathabel.svg",
+            "block_title": "BREATHABLE",
+            "block_des": "<p>Made of fibers with a loose natural structure that allows for airflow<\/p>"
+          }
+        },
+        "template--19541120287040__b01596d8-87db-4853-92d9-23e7da360734-text_icon-4": {
+          "type": "text_icon",
+          "settings": {
+            "icon_image": "shopify:\/\/shop_images\/factory.svg",
+            "block_title": "RELAXED",
+            "block_des": "<p>A lived-in look with softness that only gets better over time<\/p>"
+          }
+        }
+      },
+      "block_order": [
+        "template--19541120287040__b01596d8-87db-4853-92d9-23e7da360734-text_icon-1",
+        "template--19541120287040__b01596d8-87db-4853-92d9-23e7da360734-text_icon-2",
+        "template--19541120287040__b01596d8-87db-4853-92d9-23e7da360734-text_icon-3",
+        "template--19541120287040__b01596d8-87db-4853-92d9-23e7da360734-text_icon-4"
+      ],
+      "settings": {
+        "animation": "fade-up",
+        "setwidth": "container-fluid",
+        "section_image": "shopify:\/\/shop_images\/56770832_264629704416314_5810502777385604896_n.jpg",
+        "block_text_color": "#000000",
+        "block_text_bg": "#EDF2EB",
+        "paddingsection": "0px 0px 100px 0px",
+        "paddingmobile": "0px 0px 40px 0px",
+        "marginsection": "0px 0px 0px 0px",
+        "marginmobile": "0px 0px 0px 0px"
+      }
+    },
+    "93495e3d-f562-4706-aa2e-14cf6b83c216": {
+      "type": "rich-text",
+      "blocks": {
+        "e313bb24-b47f-4f70-82d8-21e78d481ad8": {
+          "type": "image",
+          "settings": {
+            "img-in-hero": 44,
+            "image": "shopify:\/\/shop_images\/timeless_design.svg"
+          }
+        },
+        "b103ea62-6bf1-49fd-ab23-3d4bb5dc1243": {
+          "type": "spacer",
+          "settings": {
+            "hero-spacer": 8
+          }
+        },
+        "84ad5551-3059-4091-a4ca-408e36eaeff9": {
+          "type": "sub_title",
+          "settings": {
+            "subtitle": "Sustainability"
+          }
+        },
+        "4c0967d6-9bfa-4693-98ce-decc57dda257": {
+          "type": "heading",
+          "settings": {
+            "title": "Our fabrics are developed specifically for us and we only produce quality apparel that lasts.",
+            "size_text": "h4"
+          }
+        }
+      },
+      "block_order": [
+        "e313bb24-b47f-4f70-82d8-21e78d481ad8",
+        "b103ea62-6bf1-49fd-ab23-3d4bb5dc1243",
+        "84ad5551-3059-4091-a4ca-408e36eaeff9",
+        "4c0967d6-9bfa-4693-98ce-decc57dda257"
+      ],
+      "settings": {
+        "animation": "fade-up",
+        "setwidth": "container",
+        "bgsection": "#faf9e6",
+        "title_color": "#282828",
+        "align-heading": "center",
+        "paddingsection": "80px 0px 80px 0px",
+        "paddingmobile": "40px 0px 40px 0px",
+        "marginsection": "0px 0px 0px 0px",
+        "marginmobile": "0px 0px 0px 0px"
+      }
+    },
+    "30d4e0bd-da81-4442-b71d-c0fd1f5b3906": {
+      "type": "image-content-6",
+      "blocks": {
+        "template--14654207721557__30d4e0bd-da81-4442-b71d-c0fd1f5b3906-16658225273f87a081-0": {
+          "type": "image_block",
+          "settings": {
+            "style_content": "default",
+            "w_image": 40,
+            "pos_image": 81,
+            "e_image": "right",
+            "image": "shopify:\/\/shop_images\/Artifact-Mer-Mer-Monoi-Beauty-Flower-Close-Up.jpg",
+            "image2": "shopify:\/\/shop_images\/Artifact-Soleil-Travel-Paper-Pouch.jpg",
+            "text_circle": "Fashion2 style store"
+          }
+        },
+        "template--14654207721557__30d4e0bd-da81-4442-b71d-c0fd1f5b3906-16658225273f87a081-1": {
+          "type": "text_block",
+          "settings": {
+            "bgtext": "#ffffff",
+            "subtitle": "MATCH COLORS",
+            "title": "Hyper Wearable  Fashion",
+            "size_text": "h2",
+            "answer_content": "<p>Pair large text with an image to give focus to your chosen product, collection, or blog post. Add details on availability, style, or even provide a review.<\/p>",
+            "button": "discover now",
+            "style_btn": "btn-outline",
+            "align": "left"
+          }
+        }
+      },
+      "block_order": [
+        "template--14654207721557__30d4e0bd-da81-4442-b71d-c0fd1f5b3906-16658225273f87a081-0",
+        "template--14654207721557__30d4e0bd-da81-4442-b71d-c0fd1f5b3906-16658225273f87a081-1"
+      ],
+      "settings": {
+        "animation": "fade-up",
+        "setwidth": "container",
+        "bgsection": "#ffffff",
+        "size": "50-50",
+        "enable_padding": true,
+        "align_center": true,
+        "paddingsection": "100px 0px 100px 0px",
+        "paddingmobile": "48px 0px 48x 0px",
+        "marginsection": "0px 0px 0px 0px",
+        "marginmobile": "0px 0px 0px 0px"
+      }
+    },
+    "1e04ea1d-fcaa-48a4-9b36-62344d508849": {
+      "type": "parallax-banner",
+      "blocks": {
+        "83897ed0-76f5-408a-bfaf-429b0c45b4c5": {
+          "type": "sub_title",
+          "settings": {
+            "subtitle": "THE MATERIALS"
+          }
+        },
+        "30314b3c-e1a1-468e-b2d5-399f32e2bbda": {
+          "type": "heading",
+          "settings": {
+            "title": "Made in Italy and Spain",
+            "size_text": "h1"
+          }
+        },
+        "dd148053-296c-4c9b-99a6-63c2328328fe": {
+          "type": "paragraph",
+          "settings": {
+            "subtext": "We work exclusively with tanneries in Italy, France and Spain. For each supplier we look for specific characteristics that will ensure that the material selected corresponds in every respect to the products we wish to manufacture."
+          }
+        }
+      },
+      "block_order": [
+        "83897ed0-76f5-408a-bfaf-429b0c45b4c5",
+        "30314b3c-e1a1-468e-b2d5-399f32e2bbda",
+        "dd148053-296c-4c9b-99a6-63c2328328fe"
+      ],
+      "settings": {
+        "animation": "fade",
+        "setwidth": "full",
+        "bgsection": "#ffffff",
+        "image": "shopify:\/\/shop_images\/Artifact-Parcel-1-Masque-Duo-Kit-open.jpg",
+        "height_section": "550",
+        "height_section_mobile": "450",
+        "align": "center",
+        "position_text": "mid-center",
+        "bg_box": "#ffffff",
+        "title_color": "#ffffff",
+        "bg_overlay": "#000000",
+        "opacity_bg_overlay": 0.4,
+        "paddingsection": "0px 0px 0px 0px",
+        "marginsection": "0px 0px 0px 0px"
+      }
+    },
+    "70b7f2d2-4c12-4305-88bd-da89e2d18d5b": {
+      "type": "quotes-special",
+      "blocks": {
+        "template--14684877652053__70b7f2d2-4c12-4305-88bd-da89e2d18d5b-1665853262e19e6bf8-0": {
+          "type": "quote",
+          "settings": {
+            "title": "Wonderful !",
+            "quote": "<h4>“Absolutely loved it. The fit, the quality and the color. This is a slim fit jean like none other and the only one I will buy.”<\/h4>",
+            "rate": 5,
+            "author": "— Susan P.",
+            "avatar": "shopify:\/\/shop_images\/280385646_1915125505358368_1742113574796324864_n.jpg"
+          }
+        },
+        "template--14684877652053__70b7f2d2-4c12-4305-88bd-da89e2d18d5b-1665853262e19e6bf8-1": {
+          "type": "quote",
+          "settings": {
+            "title": "perfect !",
+            "quote": "<h4>“ The most comfortable shoes ever!! I have them in 3 colors. And I am not done. \"<\/h4>",
+            "rate": 5,
+            "author": "—  Jaycie Glove",
+            "avatar": "shopify:\/\/shop_images\/346861523_623644909656006_3530097502547374068_n.jpg"
+          }
+        },
+        "template--14684877652053__70b7f2d2-4c12-4305-88bd-da89e2d18d5b-1665853262e19e6bf8-2": {
+          "type": "quote",
+          "settings": {
+            "title": "Awesome",
+            "quote": "<h4>\" I love Lola! They're one of my favorite brands. Customer service is excellent. I have only returned items once and it was so easy. \" <\/h4>",
+            "rate": 5,
+            "author": "—  Kai Felix",
+            "avatar": "shopify:\/\/shop_images\/56770832_264629704416314_5810502777385604896_n.jpg"
+          }
+        }
+      },
+      "block_order": [
+        "template--14684877652053__70b7f2d2-4c12-4305-88bd-da89e2d18d5b-1665853262e19e6bf8-0",
+        "template--14684877652053__70b7f2d2-4c12-4305-88bd-da89e2d18d5b-1665853262e19e6bf8-1",
+        "template--14684877652053__70b7f2d2-4c12-4305-88bd-da89e2d18d5b-1665853262e19e6bf8-2"
+      ],
+      "settings": {
+        "animation": "fade-up",
+        "setwidth": "container",
+        "bgsection": "#ffffff",
+        "align-heading": "center",
+        "color_rate": "#f1f1f1",
+        "color_rated": "#000000",
+        "image_size": "landscape",
+        "arrows": true,
+        "draggable": true,
+        "infinite": true,
+        "paddingsection": "100px 0px 100px 0px",
+        "paddingmobile": "40px 0px 40px 0px",
+        "marginsection": "0px 0px 0px 0px",
+        "marginmobile": "0px 0px 0px 0px"
+      }
+    },
+    "c5690cdb-c04d-45fd-9c6c-cfee011363ca": {
+      "type": "service",
+      "blocks": {
+        "template--14684877652053__c5690cdb-c04d-45fd-9c6c-cfee011363ca-166585292003960893-0": {
+          "type": "service",
+          "settings": {
+            "bgblock": "rgba(0,0,0,0)",
+            "title": "Free Shipping",
+            "description": "From all orders over $100",
+            "icon": "<svg aria-hidden=\"true\" focusable=\"false\" role=\"presentation\" class=\"icon icon-truck\" viewbox=\"0 0 82 82\"><path d=\"M7.238 68.717H1.867V2.12H58.4v16.736h3.886c9.755 0 17.663 7.908 17.663 17.663v32.199h-5.917M55.781 68.717H25.487\"><\/path><path d=\"M58.334 42.124h15.068v-4.27c0-6.82-5.53-12.35-12.351-12.35h-2.718v16.62M73.909 70.236a9.125 9.125 0 1 0-18.013-2.931 9.125 9.125 0 0 0 18.013 2.93ZM25.367 70.235a9.125 9.125 0 1 0-18.012-2.931 9.125 9.125 0 0 0 7.54 10.471 9.125 9.125 0 0 0 10.472-7.54Z\"><\/path><path d=\"M13.723 77.507c-3.966.658-7.937 1.51-11.857 2.593M60.373 76.736c-10.512-1.212-24.298-1.969-38.645-.451M79.768 80.121s-4.96-1.222-12.975-2.395\"><\/path><\/svg>"
+          }
+        },
+        "template--14684877652053__c5690cdb-c04d-45fd-9c6c-cfee011363ca-166585292003960893-1": {
+          "type": "service",
+          "settings": {
+            "bgblock": "rgba(0,0,0,0)",
+            "title": "The Beach Club",
+            "description": "Be rewarded every time",
+            "icon": "<svg aria-hidden=\"true\" focusable=\"false\" role=\"presentation\" class=\"icon icon-plant-based\" viewbox=\"0 0 82 82\"><path d=\"M41 20.701V80M56.735 26.294c0 8.703-7.045 15.758-15.735 15.758s-15.735-7.055-15.735-15.758C25.265 14.719 41 2 41 2s15.735 12.719 15.735 24.294ZM30.479 46.972c6.145 6.154 6.145 16.132 0 22.285-6.145 6.154-16.107 6.154-22.252 0C.054 61.072 2.2 40.936 2.2 40.936s20.106-2.149 28.279 6.036Z\"><\/path><path d=\"M41 77.861S27.525 60.403 10.092 50.177M51.412 46.972c-6.145 6.154-6.145 16.132 0 22.285 6.145 6.153 16.107 6.154 22.252 0 8.173-8.185 6.027-28.321 6.027-28.321s-20.106-2.149-28.279 6.036Z\"><\/path><path d=\"M40.891 77.861s13.475-17.458 30.908-27.684\"><\/path><\/svg>"
+          }
+        },
+        "template--14684877652053__c5690cdb-c04d-45fd-9c6c-cfee011363ca-166585292003960893-2": {
+          "type": "service",
+          "settings": {
+            "bgblock": "rgba(0,0,0,0)",
+            "title": "Instant Refunds",
+            "description": "Return money within 30 days",
+            "icon": "<svg aria-hidden=\"true\" focusable=\"false\" role=\"presentation\" class=\"icon icon-package\" viewbox=\"0 0 82 82\"><path d=\"M80 21v39L41 80 2 60V21L41 2l39 19Z\"><\/path><path d=\"m2 21 39 20 38.571-19.807M41 41.478v38.338\"><\/path><path d=\"m27.715 8.643 38.409 19.473v17.543l-11.617 6.067V33.83L16.098 14.355\"><\/path><\/svg>"
+          }
+        },
+        "4273663e-a3ea-49a8-a7c1-c872309fc99c": {
+          "type": "service",
+          "settings": {
+            "bgblock": "rgba(0,0,0,0)",
+            "title": "Wear Now",
+            "description": "Pay in easy instalments.",
+            "icon": "<svg aria-hidden=\"true\" focusable=\"false\" role=\"presentation\" class=\"icon icon-shield\" viewbox=\"0 0 64 64\"><defs><style>.a{fill:none;stroke:#000;stroke-width:2px}<\/style><\/defs><path class=\"a\" d=\"M21.18 31.69L28.54 39l15.91-15.88\"><\/path><path class=\"a\" d=\"M53 12.54v15.24a31.41 31.41 0 0 1-3.7 14.95A25.46 25.46 0 0 1 32 56a25.46 25.46 0 0 1-17.3-13.27A31.41 31.41 0 0 1 11 27.78V12.54C24.88 13.67 32 8 32 8s7.12 5.67 21 4.54z\"><\/path><\/svg>"
+          }
+        }
+      },
+      "block_order": [
+        "template--14684877652053__c5690cdb-c04d-45fd-9c6c-cfee011363ca-166585292003960893-0",
+        "template--14684877652053__c5690cdb-c04d-45fd-9c6c-cfee011363ca-166585292003960893-1",
+        "template--14684877652053__c5690cdb-c04d-45fd-9c6c-cfee011363ca-166585292003960893-2",
+        "4273663e-a3ea-49a8-a7c1-c872309fc99c"
+      ],
+      "settings": {
+        "animation": "fade-up",
+        "setwidth": "container",
+        "bgsection": "#f9f7f2",
+        "align-heading": "center",
+        "paddingbox": "0px 0px 0px 0px",
+        "iconcolor": "#222222",
+        "titlecolor": "#222222",
+        "subcolor": "#999999",
+        "size": 44,
+        "service_heading": "h6",
+        "layout": "style-2",
+        "draggable": true,
+        "dots": true,
+        "infinite": true,
+        "paddingsection": "32px 0px 32px 0px",
+        "paddingmobile": "32px 0px 16px 0px",
+        "marginsection": "0px 0px 0px 0px",
+        "marginmobile": "0px 0px 0px 0px"
+      }
+    },
+    "bcb1cba3-80fc-49a2-a033-40cf0618e9c8": {
+      "type": "faq-accordion",
+      "blocks": {
+        "template--14684877652053__bcb1cba3-80fc-49a2-a033-40cf0618e9c8-16659371170e440ef7-0": {
+          "type": "faq",
+          "settings": {
+            "faq_title": "Is the shipping free?",
+            "faq_des": "<p>Yes. Worldwide shipping is already included in the price. We use DHL express with 3 days delivery time.<\/p>"
+          }
+        },
+        "template--14684877652053__bcb1cba3-80fc-49a2-a033-40cf0618e9c8-16659371170e440ef7-1": {
+          "type": "faq",
+          "settings": {
+            "faq_title": "When will I receive my item?",
+            "faq_des": "<p>When we have received your order, you will automatically receive an e-mail confirming your order. Orders made before 2 PM (CET) will be picked, packed and shipped the same day. Delivery time is usually 2-4 working days with DHL Express.<\/p>"
+          }
+        },
+        "template--14684877652053__bcb1cba3-80fc-49a2-a033-40cf0618e9c8-16659371170e440ef7-2": {
+          "type": "faq",
+          "settings": {
+            "faq_title": "Can I change or return my item?",
+            "faq_des": "<p>If you want to change a product into another model, strap color etc., please contact us so we are able to reserve the new item in our stock immediately. You are always entitled to an exchange or refund within 30 days after you have received your package, as long as the item has not been used.<\/p>"
+          }
+        }
+      },
+      "block_order": [
+        "template--14684877652053__bcb1cba3-80fc-49a2-a033-40cf0618e9c8-16659371170e440ef7-0",
+        "template--14684877652053__bcb1cba3-80fc-49a2-a033-40cf0618e9c8-16659371170e440ef7-1",
+        "template--14684877652053__bcb1cba3-80fc-49a2-a033-40cf0618e9c8-16659371170e440ef7-2"
+      ],
+      "settings": {
+        "setwidth": "container",
+        "bgsection": "#ffffff",
+        "e_size": "auto",
+        "e_repeat": "no-repeat",
+        "e_pos": "center center",
+        "title": "FAQs",
+        "des": "Have a question ? We are here to help.",
+        "align-heading": "center",
+        "title_size": "h6",
+        "e_reverse": true,
+        "e_small": true,
+        "paddingsection": "80px 0px 0px 0px",
+        "paddingmobile": "60px 0px 60px 0px",
+        "marginsection": "0px 0px 0px 0px",
+        "marginmobile": "0px 0px 0px 0px"
+      }
+    },
+    "product-recommendations": {
+      "type": "product-recommendations",
+      "settings": {
+        "animation": "fade-up",
+        "setwidth": "container-fluid",
+        "heading": "You may also like",
+        "heading_size": "h2",
+        "heading_align": "center",
+        "products_to_show": 10,
+        "spaceBetween": 30,
+        "perviewDesktop": 4,
+        "nowrap": true,
+        "arrows": true,
+        "scrollbar": true,
+        "padding_top": 80,
+        "padding_bottom": 32
+      }
+    },
+    "be561305-5bee-4018-a668-c8770086ba5b": {
+      "type": "line",
+      "disabled": true,
+      "settings": {
+        "paddingsection": "0px 0px 0px 0px",
+        "marginsection": "0px 0px 0px 0px",
+        "bgsection": "#ffffff",
+        "setwidth": "container",
+        "bgborder": "#dddddd",
+        "wborder": "1px"
+      }
+    },
+    "product-recent": {
+      "type": "recently-viewed",
+      "settings": {
+        "enable": true,
+        "animation": "fade-up",
+        "setwidth": "container",
+        "title": "Recently viewed",
+        "align-heading": "center",
+        "limit": 6,
+        "paddingsection": "0px 0px 60px 0px",
+        "paddingmobile": "40px 0px 40px 0px",
+        "marginsection": "0px 0px 0px 0px",
+        "marginmobile": "0px 0px 0px 0px"
+      }
+    },
+    "1629746450643786911": {
+      "type": "areviews-section",
+      "settings": {}
+    }
+  },
+  "order": [
+    "main",
+    "product-requently",
+    "product-content",
+    "b01596d8-87db-4853-92d9-23e7da360734",
+    "93495e3d-f562-4706-aa2e-14cf6b83c216",
+    "30d4e0bd-da81-4442-b71d-c0fd1f5b3906",
+    "1e04ea1d-fcaa-48a4-9b36-62344d508849",
+    "70b7f2d2-4c12-4305-88bd-da89e2d18d5b",
+    "c5690cdb-c04d-45fd-9c6c-cfee011363ca",
+    "bcb1cba3-80fc-49a2-a033-40cf0618e9c8",
+    "product-recommendations",
+    "be561305-5bee-4018-a668-c8770086ba5b",
+    "product-recent",
+    "1629746450643786911"
+  ]
+}

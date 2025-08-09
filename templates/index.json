@@ -1,0 +1,560 @@
+{
+  "sections": {
+    "advanced_content_gXD9KM": {
+      "type": "advanced-content",
+      "blocks": {
+        "html_nXLQtR": {
+          "type": "html",
+          "settings": {
+            "code": "<style>\n    .banner-image {\n        width: 100%;\n        height: auto;\n        display: block; \/* Prevents extra space below the image *\/\n    }\n\n    \/* Hide mobile banner on desktop *\/\n    .mobile-banner {\n        display: none;\n    }\n\n    \/* Show desktop banner by default *\/\n    .desktop-banner {\n        display: block;\n    }\n\n    @media (max-width: 767px) {\n        \/* Show mobile banner on mobile *\/\n        .mobile-banner {\n            display: block;\n            margin-bottom: -25px; \/* Fix for removing extra space on mobile *\/\n        }\n        \/* Hide desktop banner on mobile *\/\n        .desktop-banner {\n            display: none;\n        }\n    }\n\n    \/* Remove any extra spacing *\/\n    .banner-container {\n        margin: 0;\n        padding: 0;\n    }\n<\/style>\n\n<div class=\"banner-container\">\n    <!-- Desktop Banner -->\n    <a href=\"https:\/\/simplyrevival.com\/products\/simply%C2%AE-dht-blocker\" class=\"desktop-banner\">\n        <img src=\"https:\/\/cdn.shopify.com\/s\/files\/1\/0880\/6173\/9289\/files\/b.jpg?v=1731960066\" alt=\"Desktop Banner\" class=\"banner-image\">\n    <\/a>\n\n    <!-- Mobile Banner -->\n    <a href=\"https:\/\/simplyrevival.com\/products\/simply%C2%AE-dht-blocker\" class=\"mobile-banner\">\n        <img src=\"https:\/\/cdn.shopify.com\/s\/files\/1\/0880\/6173\/9289\/files\/c.jpg?v=1731959155\" alt=\"Mobile Banner\" class=\"banner-image\">\n    <\/a>\n<\/div>",
+            "width": "100%",
+            "align": "center"
+          }
+        }
+      },
+      "block_order": [
+        "html_nXLQtR"
+      ],
+      "settings": {
+        "animation": "",
+        "setwidth": "full",
+        "text_color": "rgba(0,0,0,0)",
+        "bgsection": "#ffffff",
+        "rangebg": 0,
+        "bgbefore": "rgba(0,0,0,0)",
+        "e_size": "auto",
+        "e_repeat": "no-repeat",
+        "e_position": "center center",
+        "zindex": "1",
+        "title_top": "",
+        "title": "",
+        "des": "",
+        "align-heading": "center",
+        "padding": false,
+        "col_center": false,
+        "paddingsection": "0px 0px 0px 0px",
+        "paddingmobile": "0px 0px 0px 0px",
+        "marginsection": "0px 0px 0px 0px",
+        "marginmobile": "0px 0px 0px 0px"
+      }
+    },
+    "scrolling_text_DMz6aQ": {
+      "type": "scrolling-text",
+      "blocks": {
+        "item_LjaWpR": {
+          "type": "item",
+          "settings": {
+            "code": "<b>No Preservatives<\/b>",
+            "image": "shopify:\/\/shop_images\/no_p.svg"
+          }
+        },
+        "item_NaqPcU": {
+          "type": "item",
+          "settings": {
+            "code": "<b>Beauty Backed by Science<\/b>",
+            "image": "shopify:\/\/shop_images\/Test_Tube.svg"
+          }
+        },
+        "item_K8nhqQ": {
+          "type": "item",
+          "settings": {
+            "code": "<b>Proudly 3rd Party Quality Tested<\/b>",
+            "image": "shopify:\/\/shop_images\/Checked_14352391-7e04-448c-8145-02125ac808b4.svg"
+          }
+        },
+        "item_mwMKjV": {
+          "type": "item",
+          "settings": {
+            "code": "<b>ZERO Nasty Additives<\/b>",
+            "image": "shopify:\/\/shop_images\/Unavailable.svg"
+          }
+        },
+        "item_Vd9kpL": {
+          "type": "item",
+          "settings": {
+            "code": "<b>Blocks DHT Naturally\n<\/b>",
+            "image": "shopify:\/\/shop_images\/Psychiatry--Streamline-Rounded----Material-Symbols.svg"
+          }
+        }
+      },
+      "block_order": [
+        "item_LjaWpR",
+        "item_NaqPcU",
+        "item_K8nhqQ",
+        "item_mwMKjV",
+        "item_Vd9kpL"
+      ],
+      "custom_css": [
+        ".textscroll-item span.px-5 {padding-left: 10px !important; padding-right: 10px !important; margin-right: 10px !important;}",
+        ".image-content__image {margin-right: 7px !important;}",
+        ".d-flex.align-items-center {margin-bottom: 0px !important; margin-right: 10px !important;}"
+      ],
+      "settings": {
+        "animation": "",
+        "size_text": "p",
+        "text_style": "solid",
+        "size_icon": 20,
+        "speed": 10,
+        "scroll_type": "from-right",
+        "background": "#035057",
+        "gradient_bg": "",
+        "text": "#ffffff",
+        "paddingsection": "10px 0px 10px 0px",
+        "paddingmobile": "20px 0px 20px 0px",
+        "marginsection": "0px 0px 0px 0px",
+        "marginmobile": "0px 0px 0px 0px"
+      }
+    },
+    "advanced_content_WeBLtk": {
+      "type": "advanced-content",
+      "blocks": {
+        "html_yCi4wP": {
+          "type": "html",
+          "settings": {
+            "code": "<style>\n    .image-container {\n        margin-bottom: 0;\n    }\n\n    .image-block {\n        text-align: left; \/* Default alignment for larger screens *\/\n    }\n\n    @media (min-width: 768px) {\n        .image-block {\n            text-align: right;\n        }\n    }\n\n    @media (max-width: 767px) {\n        .image-container {\n            margin-bottom: -20px; \/* Set bottom margin to -20px on mobile for the whole block *\/\n        }\n        \n        \/* Center text and images on mobile *\/\n        .image-block {\n            text-align: center;\n        }\n    }\n<\/style>\n\n<div class=\"image-container\">\n    <div class=\"image-block\">\n        <a href=\"#\" class=\"image-link\">\n            <img src=\"https:\/\/cdn.shopify.com\/s\/files\/1\/0880\/6173\/9289\/files\/hair.svg?v=1729474839\" alt=\"Image description\" class=\"block-image\" style=\"width: 40px; height: 40px;\">\n        <\/a>\n        <p style=\"font-size: 18px; font-weight: bold; margin-top: 10px;\">Better Hair Health<\/p>\n        <p>Promotes Healthy Hair Growth & Prevents Hair Loss.<\/p>\n    <\/div>\n    <br>\n    <div class=\"image-block\">\n        <a href=\"#\" class=\"image-link\">\n            <img src=\"https:\/\/cdn.shopify.com\/s\/files\/1\/0880\/6173\/9289\/files\/skin.svg?v=1729475384\" alt=\"Image description\" class=\"block-image\" style=\"width: 40px; height: 40px;\">\n        <\/a>\n        <p style=\"font-size: 18px; font-weight: bold; margin-top: 10px;\">Clear & Healthy Skin<\/p>\n        <p>Supports Clear, Acne-Free Skin & Reduces Inflammation<\/p>\n    <\/div>\n<\/div>",
+            "width": "33%",
+            "align": "auto"
+          }
+        },
+        "image_AFzNpT": {
+          "type": "image",
+          "settings": {
+            "width": "33%",
+            "align": "auto",
+            "image": "shopify:\/\/shop_images\/Simply_DHT_Blocker_Product_Images2.png",
+            "width_image": 100,
+            "image_link": "",
+            "enable_top": false,
+            "code": "",
+            "padding-left": false,
+            "padding-right": false
+          }
+        },
+        "html_m4kKDC": {
+          "type": "html",
+          "settings": {
+            "code": "<style>\n    .unique-image-block {\n        text-align: left; \/* Default alignment for larger screens *\/\n    }\n\n    @media (max-width: 767px) {\n        .unique-image-block {\n            text-align: center; \/* Center alignment on mobile screens *\/\n        }\n    }\n<\/style>\n\n<div class=\"unique-image-block\">\n    <a href=\"#\" class=\"image-link\">\n        <img src=\"https:\/\/cdn.shopify.com\/s\/files\/1\/0880\/6173\/9289\/files\/clear.svg?v=1729475647\" alt=\"Image description\" class=\"block-image\" style=\"width: 40px; height: 40px;\">\n    <\/a>\n    <p style=\"font-size: 18px; font-weight: bold; margin-top: 10px;\">Glow Naturally,<\/p>\n    <p>Enhances Natural Glow with a Blend of Botanicals<\/p>\n<\/div>\n<br>\n<div class=\"unique-image-block\">\n    <a href=\"#\" class=\"image-link\">\n        <img src=\"https:\/\/cdn.shopify.com\/s\/files\/1\/0880\/6173\/9289\/files\/vitamin.svg?v=1729475801\" alt=\"Image description\" class=\"block-image\" style=\"width: 40px; height: 40px;\">\n    <\/a>\n    <p style=\"font-size: 18px; font-weight: bold; margin-top: 10px;\">Beauty from Within<\/p>\n    <p>Rich in Vitamins & Minerals to Boost Beauty from Within<\/p>\n<\/div>",
+            "width": "33%",
+            "align": "auto"
+          }
+        }
+      },
+      "block_order": [
+        "html_yCi4wP",
+        "image_AFzNpT",
+        "html_m4kKDC"
+      ],
+      "custom_css": [
+        "@media (max-width: 768px) {.grid__item-inner--image {display: none; }}"
+      ],
+      "settings": {
+        "animation": "",
+        "setwidth": "container",
+        "text_color": "rgba(0,0,0,0)",
+        "bgsection": "#ffffff",
+        "rangebg": 0,
+        "bgbefore": "rgba(0,0,0,0)",
+        "e_size": "auto",
+        "e_repeat": "no-repeat",
+        "e_position": "center center",
+        "zindex": "0",
+        "title_top": "",
+        "title": "",
+        "des": "<h2 style=\"text-align: center; color: black; font-weight: bold;\">\n    <span style=\"color: #FF9500;\">1,000+ Years<\/span> Of Healing Wisdom In Every Capsule\n<\/h2>",
+        "align-heading": "center",
+        "padding": true,
+        "col_center": false,
+        "paddingsection": "20px 0px 0px 0px",
+        "paddingmobile": "20px 0px 10px 0px",
+        "marginsection": "0px 0px 0px 0px",
+        "marginmobile": "0px 0px 0px 0px"
+      }
+    },
+    "rich_text_BYexe6": {
+      "type": "rich-text",
+      "blocks": {
+        "button_Wy7Rr7": {
+          "type": "button",
+          "settings": {
+            "button": "BUY NOW & SAVE 40%",
+            "link": "shopify:\/\/products\/skin-hair-nails-complex",
+            "style_btn": "btn-theme"
+          }
+        }
+      },
+      "block_order": [
+        "button_Wy7Rr7"
+      ],
+      "custom_css": [
+        ".btn.btn-theme {font-weight: 800;}"
+      ],
+      "settings": {
+        "animation": "",
+        "setwidth": "container",
+        "bgsection": "#ffffff",
+        "gradient_bg": "",
+        "title_color": "rgba(0,0,0,0)",
+        "title_top": "",
+        "title": "",
+        "text": "",
+        "align-heading": "center",
+        "paddingsection": "0px 0px 20px 0px",
+        "paddingmobile": "0px 0px 20px 0px",
+        "marginsection": "0px 0px 0px 0px",
+        "marginmobile": "0px 0px 0px 0px"
+      }
+    },
+    "70b7f2d2-4c12-4305-88bd-da89e2d18d5b": {
+      "type": "quotes-special",
+      "blocks": {
+        "template--14684877652053__70b7f2d2-4c12-4305-88bd-da89e2d18d5b-1665853262e19e6bf8-0": {
+          "type": "quote",
+          "settings": {
+            "title": "Hair Growth Results in Just Weeks!",
+            "quote": "<h5>“I’ve been using Simply for about a month, and I can already see a noticeable difference in my hair growth. My hair feels thicker, and the bald spots around my hairline are filling in. I was skeptical at first, but this supplement really delivers on its promises. The fact that it’s all-natural with no nasty additives is a huge bonus. Definitely a must-try if you’re struggling with thinning hair!”<\/h5>",
+            "rate": 5,
+            "author": "",
+            "info": "",
+            "avatar": "shopify:\/\/shop_images\/review_1.png"
+          }
+        },
+        "template--14684877652053__70b7f2d2-4c12-4305-88bd-da89e2d18d5b-1665853262e19e6bf8-1": {
+          "type": "quote",
+          "settings": {
+            "title": "My Skin Has Never Looked Better",
+            "quote": "<h5>“ Simply Revival's supplement has become a game-changer for my skincare routine. Three weeks in, my skin is clearer and glowing like never before! The ingredients like Bamboo and Horsetail extract seem to really help with post-blemish marks and overall complexion. Plus, I love that it's gluten-free and preservative-free. Highly recommend it! \"<\/h5>",
+            "rate": 5,
+            "author": "",
+            "info": "",
+            "avatar": "shopify:\/\/shop_images\/skin.png"
+          }
+        }
+      },
+      "block_order": [
+        "template--14684877652053__70b7f2d2-4c12-4305-88bd-da89e2d18d5b-1665853262e19e6bf8-0",
+        "template--14684877652053__70b7f2d2-4c12-4305-88bd-da89e2d18d5b-1665853262e19e6bf8-1"
+      ],
+      "settings": {
+        "animation": "fade-up",
+        "setwidth": "container",
+        "bgsection": "#ffffff",
+        "title_top": "",
+        "title": "",
+        "des": "",
+        "align-heading": "center",
+        "color_rate": "#ffffff",
+        "color_rated": "#ff9500",
+        "image_size": "square",
+        "arrows": false,
+        "draggable": true,
+        "dots": true,
+        "infinite": true,
+        "paddingsection": "40px 0px 40px 0px",
+        "paddingmobile": "30px 0px 30px 0px",
+        "marginsection": "0px 0px 0px 0px",
+        "marginmobile": "0px 0px 0px 0px"
+      }
+    },
+    "rich_text_PHcFyM": {
+      "type": "rich-text",
+      "blocks": {
+        "button_FePxJy": {
+          "type": "button",
+          "settings": {
+            "button": "BUY NOW & SAVE 40% →",
+            "link": "shopify:\/\/products\/skin-hair-nails-complex",
+            "style_btn": "btn-theme"
+          }
+        }
+      },
+      "block_order": [
+        "button_FePxJy"
+      ],
+      "custom_css": [
+        ".btn.btn-theme {font-weight: 800;}"
+      ],
+      "settings": {
+        "animation": "",
+        "setwidth": "container",
+        "bgsection": "#ffffff",
+        "gradient_bg": "",
+        "title_color": "rgba(0,0,0,0)",
+        "title_top": "",
+        "title": "",
+        "text": "",
+        "align-heading": "center",
+        "paddingsection": "0px 0px 20px 0px",
+        "paddingmobile": "0px 0px 20px 0px",
+        "marginsection": "0px 0px 0px 0px",
+        "marginmobile": "0px 0px 0px 0px"
+      }
+    },
+    "advanced_content_MEK8Cr": {
+      "type": "advanced-content",
+      "blocks": {
+        "image_fE9kpy": {
+          "type": "image",
+          "settings": {
+            "width": "50%",
+            "align": "center",
+            "image": "shopify:\/\/shop_images\/Simply.png",
+            "width_image": 100,
+            "image_link": "",
+            "enable_top": false,
+            "code": "",
+            "padding-left": false,
+            "padding-right": false
+          }
+        },
+        "image_CjD8RV": {
+          "type": "image",
+          "settings": {
+            "width": "50%",
+            "align": "center",
+            "image": "shopify:\/\/shop_images\/old__solutions.png",
+            "width_image": 100,
+            "image_link": "",
+            "enable_top": false,
+            "code": "",
+            "padding-left": false,
+            "padding-right": false
+          }
+        }
+      },
+      "block_order": [
+        "image_fE9kpy",
+        "image_CjD8RV"
+      ],
+      "settings": {
+        "animation": "",
+        "setwidth": "container",
+        "text_color": "#ffffff",
+        "bgsection": "#035057",
+        "rangebg": 0,
+        "bgbefore": "rgba(0,0,0,0)",
+        "e_size": "auto",
+        "e_repeat": "no-repeat",
+        "e_position": "center center",
+        "zindex": "0",
+        "title_top": "",
+        "title": "",
+        "des": "<h2 style=\"text-align: center; color: white; font-weight: bold;\">\n     Nature's Simple <span style=\"color: #FF9500;\">Wellness Solution<\/span>\n<\/h2>",
+        "align-heading": "center",
+        "padding": true,
+        "col_center": false,
+        "paddingsection": "30px 0px 0px 0px",
+        "paddingmobile": "40px 0px 0px 0px",
+        "marginsection": "0px 0px 0px 0px",
+        "marginmobile": "0px 0px 0px 0px"
+      }
+    },
+    "rich_text_3UMrzJ": {
+      "type": "rich-text",
+      "blocks": {
+        "button_qHTCHp": {
+          "type": "button",
+          "settings": {
+            "button": "BUY NOW & SAVE 40% →",
+            "link": "shopify:\/\/products\/skin-hair-nails-complex",
+            "style_btn": "btn-theme"
+          }
+        }
+      },
+      "block_order": [
+        "button_qHTCHp"
+      ],
+      "custom_css": [
+        ".btn.btn-theme {font-weight: 800;}"
+      ],
+      "settings": {
+        "animation": "",
+        "setwidth": "container",
+        "bgsection": "#035057",
+        "gradient_bg": "",
+        "title_color": "rgba(0,0,0,0)",
+        "title_top": "",
+        "title": "",
+        "text": "",
+        "align-heading": "center",
+        "paddingsection": "0px 0px 20px 0px",
+        "paddingmobile": "0px 0px 20px 0px",
+        "marginsection": "0px 0px 0px 0px",
+        "marginmobile": "0px 0px 0px 0px"
+      }
+    },
+    "advanced_content_GDCdVh": {
+      "type": "advanced-content",
+      "blocks": {
+        "image_MMza3c": {
+          "type": "image",
+          "settings": {
+            "width": "50%",
+            "align": "center",
+            "image": "shopify:\/\/shop_images\/Bad_PRice.png",
+            "width_image": 60,
+            "image_link": "shopify:\/\/products\/skin-hair-nails-complex",
+            "enable_top": true,
+            "code": "<p style=\"color: white; text-align: center; font-weight: bold; margin-bottom: 10px;\">\n    Your average supplement receipt:\n<\/p>",
+            "padding-left": false,
+            "padding-right": false
+          }
+        },
+        "image_JJwpdb": {
+          "type": "image",
+          "disabled": true,
+          "settings": {
+            "width": "50%",
+            "align": "center",
+            "image": "shopify:\/\/shop_images\/Simply_Price.png",
+            "width_image": 60,
+            "image_link": "shopify:\/\/products\/skin-hair-nails-complex",
+            "enable_top": true,
+            "code": "<p style=\"color: white; text-align: center; font-weight: bold; margin-bottom: 10px;\">\n    Your supplement receipt with Simply:\n<br>\n<\/p>",
+            "padding-left": false,
+            "padding-right": false
+          }
+        }
+      },
+      "block_order": [
+        "image_MMza3c",
+        "image_JJwpdb"
+      ],
+      "disabled": true,
+      "settings": {
+        "animation": "",
+        "setwidth": "container",
+        "text_color": "#ffffff",
+        "bgsection": "#035057",
+        "rangebg": 0,
+        "bgbefore": "rgba(0,0,0,0)",
+        "e_size": "auto",
+        "e_repeat": "no-repeat",
+        "e_position": "center center",
+        "zindex": "0",
+        "title_top": "",
+        "title": "",
+        "des": "<h2 style=\"text-align: center; color: white; font-weight: bold;\">\n    Condense Your Wellness Routine & <span style=\"color: #FF9500;\">Save Thousands<\/span>\n<\/h2>",
+        "align-heading": "center",
+        "padding": true,
+        "col_center": false,
+        "paddingsection": "30px 0px 0px 0px",
+        "paddingmobile": "40px 0px 40px 0px",
+        "marginsection": "0px 0px 0px 0px",
+        "marginmobile": "0px 0px 0px 0px"
+      }
+    },
+    "image_content_WVURGR": {
+      "type": "image-content",
+      "blocks": {
+        "image_block_HfMmea": {
+          "type": "image_block",
+          "settings": {
+            "image": "shopify:\/\/shop_images\/dht_sitting_in_sand.png"
+          }
+        },
+        "text_block_eJjUHz": {
+          "type": "text_block",
+          "settings": {
+            "width": "100%",
+            "bgtext": "#ffffff",
+            "title_color": "#282828",
+            "subtitle": "",
+            "title": "",
+            "size_text": "h2",
+            "text": "<h2 style=\"color: #282828;\">Try Us <span style=\"color: #FF9500;\"><b>Risk Free<\/b><\/span>\n<\/h2><b>\n<\/b>",
+            "answer_content": "<p><strong>We believe in Simply and can’t wait for you to see REAL results!<\/strong><\/p><p><strong>If you don’t notice a difference in your hair, skin, or nail health after 30 days of consistent use, reach out to us for a full refund.<\/strong><\/p><p><strong>If you don’t see the glow, it’s on us!<\/strong><\/p>",
+            "style_btn": "btn-theme",
+            "button": "BUY NOW & SAVE 40% →",
+            "link": "shopify:\/\/products\/skin-hair-nails-complex",
+            "enable_padding": true,
+            "align": "left"
+          }
+        }
+      },
+      "block_order": [
+        "image_block_HfMmea",
+        "text_block_eJjUHz"
+      ],
+      "custom_css": [
+        ".btn.btn-theme {font-weight: 800;}"
+      ],
+      "settings": {
+        "animation": "",
+        "setwidth": "container",
+        "bgsection": "#ffffff",
+        "rangebg": 0,
+        "bgbefore": "rgba(0,0,0,0)",
+        "bg_pos": "left",
+        "enable_padding": true,
+        "align_center": true,
+        "paddingsection": "20px 0px 20px 0px",
+        "paddingmobile": "40px 0px 40px 0px",
+        "marginsection": "0px 0px 0px 0px",
+        "marginmobile": "0px 0px 0px 0px"
+      }
+    },
+    "areviews_one_product_AJxgzy": {
+      "type": "areviews_one_product",
+      "settings": {
+        "areviews_one_product": "simply®-dht-blocker"
+      }
+    },
+    "rich_text_dDQ7TH": {
+      "type": "rich-text",
+      "blocks": {
+        "button_DP797i": {
+          "type": "button",
+          "settings": {
+            "button": "BUY NOW & SAVE 40% →",
+            "link": "shopify:\/\/products\/skin-hair-nails-complex",
+            "style_btn": "btn-theme"
+          }
+        }
+      },
+      "block_order": [
+        "button_DP797i"
+      ],
+      "disabled": true,
+      "settings": {
+        "animation": "",
+        "setwidth": "container",
+        "bgsection": "#ffffff",
+        "gradient_bg": "",
+        "title_color": "rgba(0,0,0,0)",
+        "title_top": "",
+        "title": "",
+        "text": "",
+        "align-heading": "center",
+        "paddingsection": "0px 0px 20px 0px",
+        "paddingmobile": "0px 0px 20px 0px",
+        "marginsection": "0px 0px 0px 0px",
+        "marginmobile": "0px 0px 0px 0px"
+      }
+    },
+    "areviews_section_AwgBKq": {
+      "type": "areviews-section",
+      "name": "Areviews Product Section",
+      "settings": {
+        "hide_areviews_title_rating": false,
+        "areviews_theme_font": "inherit",
+        "areviews_stars_colors": "#f3c621",
+        "areviews_write_reviews_botton_color": "#373737"
+      }
+    }
+  },
+  "order": [
+    "advanced_content_gXD9KM",
+    "scrolling_text_DMz6aQ",
+    "advanced_content_WeBLtk",
+    "rich_text_BYexe6",
+    "70b7f2d2-4c12-4305-88bd-da89e2d18d5b",
+    "rich_text_PHcFyM",
+    "advanced_content_MEK8Cr",
+    "rich_text_3UMrzJ",
+    "advanced_content_GDCdVh",
+    "image_content_WVURGR",
+    "areviews_one_product_AJxgzy",
+    "rich_text_dDQ7TH",
+    "areviews_section_AwgBKq"
+  ]
+}

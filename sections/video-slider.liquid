@@ -1,0 +1,302 @@
+{% schema %}
+{
+  "name": "Video Slider",
+  "settings": [
+    {
+      "type": "inline_richtext",
+      "label": "Title",
+      "id": "title"
+    }
+  ],
+  "blocks": [
+    {
+      "type": "video_block",
+      "name": "Video Block",
+      "settings": [
+        {
+          "type": "url",
+          "label": "Video URL",
+          "id": "video_url",
+          "info": "Enter the URL for the video (MP4 format recommended)."
+        },
+        {
+          "type": "image_picker",
+          "label": "Overlay Image",
+          "id": "overlay_image",
+          "info": "Upload an image that will be displayed on top of the video for this block."
+        }
+      ]
+    }
+  ],
+  "presets": [
+    {
+      "name": "Video slider",
+      "category": "Custom"
+    }
+  ]
+}
+{% endschema %}
+<div class="video-slider-container container-fluid">
+  <h2>{{ section.settings.title }}</h2>
+  <div class="swiper-container">
+    <div class="swiper-wrapper">
+      {% for block in section.blocks %}
+        {% assign video_url = block.settings.video_url %}
+        {% assign overlay_image = block.settings.overlay_image %}
+        {% if video_url %}
+          <div class="swiper-slide">
+            <div class="video-wrapper">
+              <!-- Image overlay for this specific video block -->
+              {% if overlay_image %}
+                <img class="video-overlay" src="{{ overlay_image | img_url: 'original' }}" alt="Video Overlay" />
+              {% endif %}
+              
+              <!-- Video -->
+              <video class="slider-video" width="100%" height="auto" preload="auto" playsinline webkit-playsinline>
+                <source src="{{ video_url }}" type="video/mp4">
+                Your browser does not support the video tag.
+              </video>
+
+              <!-- Play button -->
+              <div class="play-button">
+                <button class="play-btn">▶</button>
+              </div>
+
+              <!-- Pause button -->
+              <div class="pause-button" style="display: none;">
+                <button class="pause-btn">❚❚</button>
+              </div>
+            </div>
+          </div>
+        {% else %}
+          <p>Video URL not provided for this slide.</p>
+        {% endif %}
+      {% endfor %}
+    </div>
+    <div class="swiper-button-next"></div>
+    <div class="swiper-button-prev"></div>
+  </div>
+</div>
+
+<!-- Swiper CSS -->
+<link rel="stylesheet" href="https://unpkg.com/swiper/swiper-bundle.min.css">
+
+<!-- jQuery -->
+<script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+
+<!-- Swiper JS -->
+<script src="https://unpkg.com/swiper/swiper-bundle.min.js"></script>
+
+<style>
+  .video-slider-container {
+    position: relative;
+    max-width: 100%;
+    overflow: hidden;
+    padding: 30px 32px;
+  }
+  
+  .video-slider-container h2 {
+    text-align: center;
+    margin-bottom: 3rem;
+  }
+  .video-slider-container h2 strong {
+    color: #ff9500;
+}
+  .swiper-container {
+    width: 100%;
+    padding-top: 10px;
+    padding-bottom: 10px;
+  }
+
+  .swiper-slide {
+    width: 100%;
+    margin-bottom: 10px;
+  }
+
+  .swiper-slide video {
+    display: block;
+    opacity: 1;
+    width: 100%;
+    height: auto;
+    border-radius: 20px;
+  }
+
+  /* Hide default video controls */
+  .swiper-slide video::-webkit-media-controls {
+    display: none !important;
+  }
+
+  .swiper-slide video::-moz-media-controls {
+    display: none !important;
+  }
+
+  .swiper-slide video::-ms-media-controls {
+    display: none !important;
+  }
+
+  /* Video wrapper container */
+  .video-wrapper {
+    position: relative;
+    padding-bottom: 0px !important;
+    overflow: hidden;
+  }
+
+  /* Video overlay image */
+.video-overlay {
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  z-index: 1;
+  border-radius:20px;
+  transition: opacity 0.3s ease;  /* Add transition for smooth fade-out */
+}
+button.play-btn, button.pause-btn {
+    border: unset !important;
+    background: transparent !important;
+    color: #fff;
+    font-size: 40px;
+}
+/* Hide the overlay image when video is playing */
+.video-wrapper.playing .video-overlay {
+  opacity: 0; /* Fade out the image */
+}
+
+
+  /* Play button styling */
+  .play-button {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    z-index: 2; /* Ensure it's above the image */
+    display: block;
+  }
+
+  /* Hide the play button when the video is played */
+  .video-wrapper.playing .play-button {
+    display: none;
+  }
+
+  .pause-button {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    z-index: 2; /* Ensure it's above the video */
+    display: none;
+  }
+
+  /* Swiper buttons */
+  .swiper-button-next, .swiper-button-prev {
+    background-color: rgba(0, 0, 0, 0.5);
+    color: white;
+    border: none;
+    padding: 10px;
+    cursor: pointer;
+  }
+
+  @media (max-width:767px) {
+    .swiper-button-next, .swiper-button-prev {
+      top: 45% !important;
+    }
+
+    .play-button, .pause-button {
+      top: 45% !important;
+    }
+
+    .swiper-slide video {
+      width: 100%;
+      height: auto;
+    }
+  }
+</style>
+
+<script>
+  // Initialize Swiper slider
+  var swiper = new Swiper('.swiper-container', {
+    slidesPerView: 4,  // Show 4 slides per row
+    spaceBetween: 20,  // 10px gap between slides
+    loop: true,        // Enable looping
+    autoplay: false,
+    navigation: {      // Enable next and prev buttons
+      nextEl: '.swiper-button-next',
+      prevEl: '.swiper-button-prev'
+    },
+    breakpoints: {
+      // For mobile devices
+      320: {
+        slidesPerView: 1
+      },
+      // For tablets
+      600: {
+        slidesPerView: 2
+      },
+      // For desktop
+      1000: {
+        slidesPerView: 4
+      }
+    }
+  });
+
+  let currentPlayingVideo = null;  // Track the currently playing video
+
+  // Play/pause button toggle
+  const videos = document.querySelectorAll('.slider-video');
+  videos.forEach((video) => {
+    const playButton = video.closest('.swiper-slide').querySelector('.play-btn');
+    const pauseButton = video.closest('.swiper-slide').querySelector('.pause-btn');
+    const videoWrapper = video.closest('.video-wrapper');
+    const overlayImage = videoWrapper.querySelector('.video-overlay');
+    
+    // Ensure video is visible with play button (do this by adding a class)
+    videoWrapper.classList.remove('playing');  // Initial state, video is visible with play button
+    
+    // Play the video when the play button is clicked
+    playButton.addEventListener('click', function() {
+      if (currentPlayingVideo && currentPlayingVideo !== video) {
+        currentPlayingVideo.pause();
+        currentPlayingVideo.closest('.swiper-slide').querySelector('.play-btn').style.display = 'inline-block';  // Show play button
+        currentPlayingVideo.closest('.swiper-slide').querySelector('.pause-button').style.display = 'none';  // Hide pause button
+      }
+
+      video.play();
+      playButton.style.display = 'none';  // Hide the play button
+      pauseButton.closest('.pause-button').style.display = 'inline-block'; // Show the pause button
+      videoWrapper.classList.add('playing'); // Add class to hide play button
+      overlayImage.style.display = 'none';  // Hide overlay image when video starts
+      currentPlayingVideo = video;  // Set the current video to be playing
+    });
+
+    // Pause video when pause button is clicked
+    pauseButton.addEventListener('click', function() {
+      video.pause();
+      pauseButton.closest('.pause-button').style.display = 'none';  // Hide pause button
+      playButton.style.display = 'inline-block';  // Show play button
+      videoWrapper.classList.remove('playing');  // Remove class to show play button again
+      overlayImage.style.display = 'block';  // Show overlay image when video is paused
+    });
+
+    // When the video ends, show the play button again
+    video.addEventListener('ended', function() {
+      playButton.style.display = 'inline-block';  // Show play button when video ends
+      pauseButton.closest('.pause-button').style.display = 'none';  // Hide pause button
+      videoWrapper.classList.remove('playing');  // Remove class to show play button again
+      overlayImage.style.display = 'block';  // Show overlay image when video ends
+    });
+
+    // When the video is paused, show the play button
+    video.addEventListener('pause', function() {
+      playButton.style.display = 'inline-block';  // Show play button
+      pauseButton.closest('.pause-button').style.display = 'none';  // Hide pause button
+      videoWrapper.classList.remove('playing');  // Remove class to show play button again
+      overlayImage.style.display = 'block';  // Show overlay image when video is paused
+    });
+  });
+</script>
+
+

@@ -1,0 +1,46 @@
+<div class="main-imge-section {{ section.settings.cstm-clas }}">
+{% if section.settings.img_main %}
+  <img src="{{ section.settings.img_main | img_url: 'master' }}" alt="Main Image" />
+{% endif %}
+</div>
+<style>
+  .main-imge-section.image-mobile-crop {
+    display: none;
+}
+
+  @media (max-width:767px){
+    .main-imge-section.image-mobile-crop {
+    display: block !important;
+}
+    .main-imge-section.image-desk-full{
+      display:none;
+    }
+  }
+</style>
+
+{% schema %}
+  {
+    "name": "image-box",
+    "settings": [
+      {
+        "type": "text",
+        "id": "cstm-clas",
+        "label": "Custom Class"
+      },
+      {
+  "type": "image_picker",
+  "id": "img_main",
+  "label": "Main Image"
+}
+      
+    ],
+    "presets": [
+    {
+      "name": "image-box",
+      "blocks": [
+       
+      ]
+    }
+  ]
+  }
+{% endschema %}

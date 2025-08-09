@@ -1,0 +1,43 @@
+{% assign areviews_product_id =  section.settings.areviews_one_product.id %}
+<div class='page-full'>{% include 'areviews_one_product_data' %}</div>
+
+				{% schema %}
+				{
+					"name": "Areviews - One Product",
+					"class": "layout-funnel",
+					 "settings":[
+                  	    {
+                            "type": "product",
+                            "id": "areviews_one_product",
+						  "label": {
+						        "cs": "Produkt",
+						        "da": "Produkt",
+						        "de": "Produkte",
+						        "en": "Product",
+						        "es": "Producto",
+						        "fi": "Tuote",
+						        "fr": "Produit",
+						        "hi": "उत्पाद",
+						        "it": "Prodotto",
+						        "ja": "商品",
+						        "ko": "제품",
+						        "nb": "Produkt",
+						        "nl": "Product",
+						        "pl": "Produkt",
+						        "pt-BR": "Produto",
+						        "pt-PT": "Produto",
+						        "sv": "Produkt",
+						        "th": "สินค้า",
+						        "tr": "Ürün",
+						        "vi": "Sản phẩm",
+						        "zh-CN": "产品",
+						        "zh-TW": "產品"
+						      }
+                          }
+					    ],
+					"presets": [{
+						"name": "Reviews - One Product Website",
+						"category": "Areviews"
+					}]
+				}
+				{% endschema %}

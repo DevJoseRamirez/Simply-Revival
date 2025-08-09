@@ -1,0 +1,181 @@
+{
+  "sections": {
+    "collection-banner": {
+      "type": "main-collection-banner",
+      "settings": {
+        "show_breadcrumb": true,
+        "width_breadcrumb": "container",
+        "show_collection_description": true,
+        "show_collection_image": true,
+        "save_allproducts": true,
+        "img_bannercollection": "shopify:\/\/shop_images\/waterdrop-club-main-image.webp",
+        "title_all": "All Products",
+        "des_all": "<p>Shop now, not later. Browse the best of our favorite sale styles and brands.<\/p>",
+        "style_banner": "split",
+        "heading_size": "h3",
+        "img_height": "350px",
+        "bg_color": "#eee9e3",
+        "image_text_color": "#000000",
+        "image_overlay_color": "#000000",
+        "image_overlay_opacity": 0,
+        "enable_collection": true,
+        "enable_count": true,
+        "link_list_head": ""
+      }
+    },
+    "ea7af2bd-7a4c-4129-ae32-bacb42814742": {
+      "type": "featured-collections-3",
+      "blocks": {
+        "template--17739035869502__ea7af2bd-7a4c-4129-ae32-bacb42814742-167584089359f62679-0": {
+          "type": "collection",
+          "settings": {
+            "collection": "all-skincare",
+            "image": "shopify:\/\/shop_images\/50327694_941036739435825_3922914927428737199_n.jpg"
+          }
+        },
+        "d77e71b7-2eec-4316-9f50-2e6ee670490d": {
+          "type": "collection",
+          "settings": {
+            "collection": "masque",
+            "image": "shopify:\/\/shop_images\/Frame12.jpg"
+          }
+        },
+        "2f3b8aad-10de-480a-a5d8-f03f00650840": {
+          "type": "collection",
+          "settings": {
+            "collection": "bath",
+            "image": "shopify:\/\/shop_images\/Mer-Mer-Monoi-Sea-Potion-IRL_1541x1800_904bb01d-481e-4cb1-bfd9-f8e2a86340b8.webp"
+          }
+        },
+        "template--17739035869502__ea7af2bd-7a4c-4129-ae32-bacb42814742-167584089359f62679-2": {
+          "type": "collection",
+          "settings": {
+            "collection": "face-oils",
+            "image": "shopify:\/\/shop_images\/274820947_1442639559539361_505560377710153752_n.jpg"
+          }
+        },
+        "template--17739035869502__ea7af2bd-7a4c-4129-ae32-bacb42814742-167584089359f62679-1": {
+          "type": "collection",
+          "settings": {
+            "collection": "cleansers",
+            "image": "shopify:\/\/shop_images\/Jeju-Island-Bamboo-Charcoal-Konjac-Facial-Sponge-Hand.jpg"
+          }
+        },
+        "1e3656fa-e08a-43ca-ab4a-ae2571025870": {
+          "type": "collection",
+          "settings": {
+            "collection": "lips",
+            "image": "shopify:\/\/shop_images\/149507593_3973106269374696_3672145668293217569_n.jpg"
+          }
+        }
+      },
+      "block_order": [
+        "template--17739035869502__ea7af2bd-7a4c-4129-ae32-bacb42814742-167584089359f62679-0",
+        "d77e71b7-2eec-4316-9f50-2e6ee670490d",
+        "2f3b8aad-10de-480a-a5d8-f03f00650840",
+        "template--17739035869502__ea7af2bd-7a4c-4129-ae32-bacb42814742-167584089359f62679-2",
+        "template--17739035869502__ea7af2bd-7a4c-4129-ae32-bacb42814742-167584089359f62679-1",
+        "1e3656fa-e08a-43ca-ab4a-ae2571025870"
+      ],
+      "settings": {
+        "animation": "fade-up",
+        "setwidth": "container",
+        "bgsection": "#ffffff",
+        "title_top": "",
+        "title": "",
+        "des": "",
+        "align-heading": "center",
+        "stylecollection": "button",
+        "size_image_col": "square",
+        "color": "#ffffff",
+        "bg_overlay": "#222222",
+        "enable_gradient": false,
+        "opacity_overlay": 0.2,
+        "size_title": "h5",
+        "button_link": "",
+        "button": "",
+        "perviewDesktop": 5,
+        "spaceBetween": 30,
+        "nowrap": false,
+        "arrows": true,
+        "scrollbar": false,
+        "paddingsection": "40px 0px 0px 0px",
+        "paddingmobile": "40px 0px 0px 0px",
+        "marginsection": "0px 0px 0px 0px",
+        "marginmobile": "0px 0px 0px 0px"
+      }
+    },
+    "3718e2cb-5821-407b-acec-0f519cf8d4b4": {
+      "type": "rich-text-hoz",
+      "blocks": {
+        "4aae42f0-8564-4ba9-bf69-e0db437bad2b": {
+          "type": "heading",
+          "settings": {
+            "title": "SUMMER SAVINGS",
+            "size_text": "h4"
+          }
+        },
+        "05fa68df-6d3c-4ed2-afd2-39d1c6945a8a": {
+          "type": "paragraph",
+          "settings": {
+            "subtext": "Save an additional 10% on all clearance items."
+          }
+        },
+        "71224ca7-db08-44d5-8f55-df529ccb46af": {
+          "type": "button",
+          "settings": {
+            "button": "Shop now",
+            "link": "#",
+            "style_btn": "btn-outline"
+          }
+        }
+      },
+      "block_order": [
+        "4aae42f0-8564-4ba9-bf69-e0db437bad2b",
+        "05fa68df-6d3c-4ed2-afd2-39d1c6945a8a",
+        "71224ca7-db08-44d5-8f55-df529ccb46af"
+      ],
+      "settings": {
+        "animation": "",
+        "setwidth": "container",
+        "bgsection": "#ffffff",
+        "gradient_bg": "linear-gradient(125deg, rgba(249, 247, 242, 1), rgba(255, 242, 238, 1) 99%)",
+        "paddingsection": "40px 0px 20px 0px",
+        "paddingmobile": "40px 0px 20px 0px",
+        "marginsection": "0px 0px 0px 0px",
+        "marginmobile": "0px 0px 0px 0px"
+      }
+    },
+    "product-grid": {
+      "type": "main-collection-template",
+      "settings": {
+        "collection_width": "container",
+        "products_per_page": 12,
+        "collection_perrow": "3",
+        "type_pagination": "pagi",
+        "enable_viewcolumn": true,
+        "enable_filtering": true,
+        "enable_sorting": true,
+        "filter_type": "vertical",
+        "first_group": false,
+        "open_group": true,
+        "enable_color": true,
+        "type_color": true,
+        "style_color": "color_grid",
+        "style_size": "grid",
+        "enable_edit_item": false,
+        "select_item": "product-7",
+        "enable_list_collection": false,
+        "link_list_head": "",
+        "padding_top": 48,
+        "padding_bottom": 48
+      }
+    }
+  },
+  "order": [
+    "collection-banner",
+    "ea7af2bd-7a4c-4129-ae32-bacb42814742",
+    "3718e2cb-5821-407b-acec-0f519cf8d4b4",
+    "product-grid"
+  ]
+}

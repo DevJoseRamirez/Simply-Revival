@@ -1,0 +1,133 @@
+<!-- productOption.liquid -->
+
+{%- if product_selector == 'radio' -%}
+  {%- liquid
+    assign isColor = false
+    assign optionName = option.name | handleize
+    assign option_index = loop
+  -%}
+{%- if optionName contains 'colo' -%}
+{%- assign isColor = true -%}
+{%- endif -%}
+
+  
+<fieldset class="single-option-radio {% if isColor %} single-color {{ size_color }} {% if color_circle %}round-color {% else %} square-color {% endif %} {% endif %} "
+          name="{{ option.name | handleize }}"
+          id="ProductSelect-option-{{ optionName }}-{{ forloop.index0 }}">
+  
+  {%- for value in option.values -%}
+    {%- liquid
+      assign variant_label_state = true 
+      if product.options.size == 1 
+        unless product.variants[forloop.index0].available 
+        assign variant_label_state = false 
+        endunless 
+      endif 
+      for variant in product.variants
+        assign vOption = 'option' | append: option_index 
+        if value == variant[vOption] 
+
+         if variant.image
+            assign variant_img = variant.image
+         endif
+        
+        assign currenVariant = variant 
+        break 
+        endif 
+      endfor 
+      assign hasImage = false 
+      if isColor and currenVariant.image 
+      assign hasImage = true 
+      endif 
+    -%}
+
+{% comment %}
+  {% if currenVariant.selling_plan_allocations != blank %}
+   <subtite class="subtitle-tile"> Subscribe & Save</subtite>
+  {% endif %}
+{% endcomment %}
+  <subtite class="subtitle-tile"> Subscribe & Save</subtite>
+  <input type="radio"
+        {% if option.selected_value == value -%} checked="checked"{%- endif %}
+        {% unless variant_label_state -%} disabled="disabled"{%- endunless %}
+         value="{{ value | escape }}"
+         data-index="option{{ option_index }}"
+         name="{{ option.name | handleize }}"
+         class="single-option-selector-{{ section.id }} single-option-selector__radio{% unless variant_label_state %} disabled{% endunless %}"
+         id="ProductSelect-option-{{ option.name | handleize }}-{{ value | escape }}">
+      
+    
+    <label {% if hasImage %} title="{{ value | escape }}" 
+    {%- if sw_color_product -%} 
+    class="st-color-{{ value | escape | handle }}"
+    style="background-color:{{ value | escape | handle }};"
+    {% else %} 
+    style="background-image:url({{ currenVariant.image.src | image_url: width: 100 }})" 
+    {% endif %}{% endif %}
+          for="ProductSelect-option-{{ option.name | handleize }}-{{ value | escape }}"{% unless variant_label_state %} class="disabled"{% endunless %}>
+      {% assign name_value = value | split: " - " %}
+         <imageplace>
+          <img src="{{ variant_img.src | image_url: width: 100 }}" class="vimage"> 
+          {% if currenVariant.title contains "2 Month" %}<bubbl>x2</bubbl>{% endif %}
+           {% if currenVariant.title contains "3 Month" %}<bubbl>x3</bubbl>{% endif %}
+         </imageplace>
+
+        <name> {{ name_value[0] }} </name>
+        <delivery>
+          <svg width="16" height="16" viewBox="0 0 16 16" fill="none" xmlns="http://www.w3.org/2000/svg">
+              <path d="M4.66667 0.666748C4.29867 0.666748 4 0.965415 4 1.33341V2.00008H3.33333C2.6 2.00008 2 2.60008 2 3.33341V12.6667C2 13.4001 2.6 14.0001 3.33333 14.0001H12.6667C13.4 14.0001 14 13.4001 14 12.6667V3.33341C14 2.60008 13.4 2.00008 12.6667 2.00008H12V1.33341C12 0.965415 11.7013 0.666748 11.3333 0.666748C10.9653 0.666748 10.6667 0.965415 10.6667 1.33341V2.00008H5.33333V1.33341C5.33333 0.965415 5.03467 0.666748 4.66667 0.666748ZM3.33333 5.33341H12.6667V12.0001C12.6667 12.3681 12.368 12.6667 12 12.6667H4C3.632 12.6667 3.33333 12.3681 3.33333 12.0001V5.33341Z" fill="#5D5D5D"></path>
+          </svg>
+          
+          {{ name_value[1] }}</delivery>
+      
+      {% if currenVariant.compare_at_price > currenVariant.price %}
+        <div class="pricesec">
+          <maxp> {{ currenVariant.compare_at_price | money }}</maxp>
+          
+         {% if currenVariant.selling_plan_allocations != blank %}
+
+            {% if currenVariant.price > currenVariant.selling_plan_allocations[0].price %}
+                 {{ currenVariant.selling_plan_allocations[0].price | money }}
+            {% else %}
+                {{ currenVariant.price | money }}
+            {% endif %}
+
+        {% else %}
+          {{ currenVariant.price | money }}
+        {% endif %} 
+
+        </div>
+      {% endif %}
+
+    <span class="discount">
+      {% if name_value[0] == "Trial Bottle" %}
+          Save {{ currenVariant.compare_at_price | minus: currenVariant.price | times: 100 | divided_by: currenVariant.compare_at_price  }}%
+      {% else %}
+        {% if currenVariant.selling_plan_allocations != blank %}
+          Extra {{ currenVariant.price | minus: currenVariant.selling_plan_allocations[0].price | times: 100 | divided_by: currenVariant.price  }}%
+        {% else %}
+           {% if currenVariant.title contains "2 Month" %}🔥 Most Popular{% endif %}
+           {% if currenVariant.title contains "3 Month" %}💰 Best Value  {% endif %}
+           Extra {{ currenVariant.compare_at_price | minus: currenVariant.price | times: 100 | divided_by: currenVariant.compare_at_price  }}%
+        {% endif %} 
+      {% endif %}
+    </span>
+    
+    </label>
+  {%- endfor -%}
+</fieldset>
+{%- else -%}
+<select class="single-option-selector single-option-selector-{{ section.id }} product-form__input"
+        id="SingleOptionSelector-{{ forloop.index0 }}"
+        data-name="{{ option.name }}"
+        data-index="option{{ loop }}">
+  {%- for value in option.values -%}
+  <option value="{{ value | escape }}"{% if option.selected_value == value %} selected="selected"{% endif %}>{{ value }}</option>
+  {%- endfor -%}
+</select>
+{%- endif -%}
+<script>
+  document.querySelectorAll('.subtitle-tile').forEach((el, index) => {
+    el.classList.add(`m${index + 1}`);
+  });
+</script>

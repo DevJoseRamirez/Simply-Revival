@@ -1,0 +1,14 @@
+{
+  "sections": {
+    "main": {
+      "type": "main-login",
+      "settings": {
+        "login_style": "default",
+        "image": "shopify:\/\/shop_images\/271400161_606839927098198_5193354382927585409_n.jpg"
+      }
+    }
+  },
+  "order": [
+    "main"
+  ]
+}

@@ -1,0 +1,94 @@
+{
+  "sections": {
+    "main": {
+      "type": "s_team_member",
+      "blocks": {
+        "template--16716887458110__abb14abe-2a33-4a6b-aaa1-d36d5422d78d-1666689151286d1fe7-2": {
+          "type": "member",
+          "settings": {
+            "image": "shopify:\/\/shop_images\/team-img7.jpg",
+            "name": "Michella Ore",
+            "position": "Developer",
+            "twitter": "https:\/\/twitter.com\/",
+            "google": "https:\/\/plus.google.com",
+            "facebook": "https:\/\/www.facebook.com\/",
+            "linkedin": "https:\/\/www.linkedin.com\/"
+          }
+        },
+        "template--16716887458110__abb14abe-2a33-4a6b-aaa1-d36d5422d78d-1666689151286d1fe7-1": {
+          "type": "member",
+          "settings": {
+            "image": "shopify:\/\/shop_images\/team-img6.jpg",
+            "name": "Vera Duncan",
+            "position": "Producer",
+            "twitter": "https:\/\/twitter.com\/",
+            "google": "https:\/\/plus.google.com",
+            "facebook": "https:\/\/www.facebook.com\/",
+            "linkedin": "https:\/\/www.linkedin.com\/"
+          }
+        },
+        "template--16716887458110__abb14abe-2a33-4a6b-aaa1-d36d5422d78d-1666689151286d1fe7-0": {
+          "type": "member",
+          "settings": {
+            "image": "shopify:\/\/shop_images\/team-img3.jpg",
+            "name": "Abdul Khalek",
+            "position": "CEO & Founder",
+            "twitter": "https:\/\/twitter.com\/",
+            "google": "https:\/\/plus.google.com",
+            "facebook": "https:\/\/www.facebook.com\/",
+            "linkedin": "https:\/\/www.linkedin.com\/"
+          }
+        },
+        "ef393f42-f5c0-45d5-a2a1-4b393bd9d289": {
+          "type": "member",
+          "settings": {
+            "image": "shopify:\/\/shop_images\/team-img9.jpg",
+            "name": "Jennifer C.",
+            "position": "Designer",
+            "twitter": "#",
+            "google": "#",
+            "facebook": "#",
+            "linkedin": "#"
+          }
+        },
+        "f919b4ce-0fea-4c28-abf7-e08700202918": {
+          "type": "member",
+          "settings": {
+            "image": "shopify:\/\/shop_images\/team-img4.jpg",
+            "name": "Slava Fedutik",
+            "position": "Designer",
+            "twitter": "#",
+            "google": "#",
+            "facebook": "#",
+            "linkedin": "#"
+          }
+        }
+      },
+      "block_order": [
+        "template--16716887458110__abb14abe-2a33-4a6b-aaa1-d36d5422d78d-1666689151286d1fe7-2",
+        "template--16716887458110__abb14abe-2a33-4a6b-aaa1-d36d5422d78d-1666689151286d1fe7-1",
+        "template--16716887458110__abb14abe-2a33-4a6b-aaa1-d36d5422d78d-1666689151286d1fe7-0",
+        "ef393f42-f5c0-45d5-a2a1-4b393bd9d289",
+        "f919b4ce-0fea-4c28-abf7-e08700202918"
+      ],
+      "settings": {
+        "animation": "fade",
+        "setwidth": "container",
+        "bgsection": "",
+        "title_top": "Top Team",
+        "title": "Team Of Highly",
+        "des": "",
+        "align-heading": "center",
+        "items": "3",
+        "layout": "1",
+        "paddingsection": "48px 0px 40px 0px",
+        "paddingmobile": "60px 0px 40px 0px",
+        "marginsection": "0px 0px 0px 0px",
+        "marginmobile": "0px 0px 0px 0px"
+      }
+    }
+  },
+  "order": [
+    "main"
+  ]
+}

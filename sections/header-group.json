@@ -1,0 +1,186 @@
+{
+  "type": "header",
+  "name": "Header Group",
+  "sections": {
+    "announcement-bar-slide": {
+      "type": "announcement-bar-slide",
+      "blocks": {
+        "item_CAgTzF": {
+          "type": "Item",
+          "settings": {
+            "code": "Up To 55% Off + Free Shipping",
+            "button_text": "",
+            "button_link": ""
+          }
+        }
+      },
+      "block_order": [
+        "item_CAgTzF"
+      ],
+      "settings": {
+        "enable": true,
+        "animation": "fade",
+        "size_text": "small",
+        "announ_type": "carousel",
+        "scroll_dot": "dot",
+        "size_icon": 24,
+        "speed": 20,
+        "scroll_type": "from-right",
+        "background": "#ff9500",
+        "gradient_bg": "linear-gradient(196deg, rgba(69, 181, 183, 1) 14%, rgba(30, 108, 122, 1) 83%)",
+        "text": "#ffffff"
+      }
+    },
+    "header": {
+      "type": "header",
+      "custom_css": [
+        ".site-header__search-wrap {display: none !important;}",
+        ".header__icon--search,.modal__toggle-search-mobile,.site-header__search-wrap {display: none !important;}"
+      ],
+      "settings": {
+        "logo": "shopify:\/\/shop_images\/Simply_Revival_Logo_Long_Black_Text.png",
+        "logo_max_width": 220,
+        "enable_transparent": false,
+        "hover_transparent": false,
+        "enable_white": false,
+        "setwidth": "container-fluid",
+        "layout_header": "logo-center-navigation-left",
+        "type_sticky": "sticky",
+        "height_header": "small",
+        "topbarbg": "#f5f5f5",
+        "topborderbg": "rgba(0,0,0,0)",
+        "textcolor-top": "#000000",
+        "background": "#ffffff",
+        "textcolor": "#282828",
+        "linkcolor": "#282828",
+        "linkhover": "#ff9500",
+        "menutext": "#282828",
+        "menutexthover": "#ff9500",
+        "menudroptexttitle": "#282828",
+        "menudroptext": "#282828",
+        "menudropbg": "#fcfcfc",
+        "menudropborder": "#fcfcfc",
+        "main_linklist": "new-menu",
+        "font_family_menu": "--g-font-2",
+        "font_sizemenu": "15px",
+        "font_weight": "600",
+        "menu_spacing": 0,
+        "menu_space": 1.5,
+        "type_menu": "capitalize",
+        "menu_active": "thin-line",
+        "menu_label_text": "#ffffff",
+        "menu_label_new": "#01bad4",
+        "menu_label_hot": "#d24418",
+        "menu_label_sale": "#ffa800",
+        "menu_label_other": "#848484",
+        "enable_menu_vertical": false,
+        "sl_menu_vertical": "click-menu",
+        "main_linklist_vertical": "",
+        "link_list_search": "",
+        "sidebar_search": true,
+        "e_hd_currency": true,
+        "enable_image": true,
+        "enable_name": false,
+        "enable_language_selector": true,
+        "icon_cart": "icon",
+        "svg_cart": "cart-5",
+        "icon_wishlist": "icon",
+        "icon_login": "text",
+        "e_link_login": "link",
+        "icon_search": "icon"
+      }
+    },
+    "store-messages": {
+      "type": "store-messages",
+      "blocks": {
+        "item_TiNHjr": {
+          "type": "Item",
+          "settings": {
+            "code": "egr",
+            "button_link": ""
+          }
+        }
+      },
+      "block_order": [
+        "item_TiNHjr"
+      ],
+      "disabled": true,
+      "settings": {
+        "enable": false,
+        "enable_homepage": false,
+        "background": "#000000",
+        "gradient_bg": "",
+        "text": "#ffffff",
+        "paddingsection": "8px 0px 8px 0px",
+        "paddingmobile": "8px 0px 8px 0px",
+        "marginsection": "0px 0px 0px 0px",
+        "marginmobile": "0px 0px 0px 0px"
+      }
+    },
+    "scrolling_text_peDjXi": {
+      "type": "scrolling-text",
+      "blocks": {
+        "item_E9GUcW": {
+          "type": "item",
+          "settings": {
+            "code": "<b> 2,140 5 STAR REVIEWS<\/b>",
+            "image": "shopify:\/\/shop_images\/Smile_Icon_73ade231-76b1-41a4-86e9-0903801080c3.svg"
+          }
+        },
+        "item_btxgJk": {
+          "type": "item",
+          "settings": {
+            "code": "<b>FAST & SECURE SHIPPING<\/b>",
+            "image": "shopify:\/\/shop_images\/Shipping_Icon_766fe921-842a-41c7-a372-063bd3d33334.svg"
+          }
+        },
+        "item_Utx3gR": {
+          "type": "item",
+          "settings": {
+            "code": "<b> TIKTOK VIRAL<\/b>",
+            "image": "shopify:\/\/shop_images\/tiktok-svgrepo-com.svg"
+          }
+        },
+        "item_Nd3wDc": {
+          "type": "item",
+          "settings": {
+            "code": "<b>30 DAY SATISFACTION GUARANTEE<\/b>",
+            "image": "shopify:\/\/shop_images\/Check_Icon_7f4f69d9-c1c6-47ee-832a-d53834752a12.svg"
+          }
+        }
+      },
+      "block_order": [
+        "item_E9GUcW",
+        "item_btxgJk",
+        "item_Utx3gR",
+        "item_Nd3wDc"
+      ],
+      "custom_css": [
+        ".textscroll-item span.px-5 {padding-left: 10px !important; padding-right: 10px !important; margin-right: 10px !important;}",
+        ".image-content__image {margin-right: 7px !important;}",
+        ".d-flex.align-items-center {margin-bottom: 0px !important; margin-right: 10px !important;}"
+      ],
+      "settings": {
+        "animation": "",
+        "size_text": "p",
+        "text_style": "solid",
+        "size_icon": 20,
+        "speed": 10,
+        "scroll_type": "from-right",
+        "background": "#ff9500",
+        "gradient_bg": "",
+        "text": "#282828",
+        "paddingsection": "10px 0px 10px 0px",
+        "paddingmobile": "10px 0px 10px 0px",
+        "marginsection": "0px 0px 0px 0px",
+        "marginmobile": "0px 0px 0px 0px"
+      }
+    }
+  },
+  "order": [
+    "announcement-bar-slide",
+    "header",
+    "store-messages",
+    "scrolling_text_peDjXi"
+  ]
+}
