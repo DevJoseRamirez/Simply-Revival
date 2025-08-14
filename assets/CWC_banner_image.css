@@ -1,0 +1,43 @@
+.CWC_banner_image {
+    background-color: var(--section-bg);
+    padding-top: var(--padding-top);
+    padding-bottom: var(--padding-bottom);
+}
+
+.CWC_banner-inner {
+    width: 100%;
+    height: auto;
+}
+
+.CWC_banner-image {
+    width: 100%;
+    height: auto;
+    display: block;
+}
+
+.CWC_banner_image .mobile-banner {
+    display: none;
+}
+
+.CWC_banner_image .desktop-banner {
+    display: block;
+}
+
+.CWC_banner_image a {
+    display: block;
+}
+
+@media screen and (max-width: 767px) {
+    .CWC_banner_image {
+        padding-top: var(--padding-top-mobile);
+        padding-bottom: var(--padding-bottom-mobile);
+    }
+
+    .CWC_banner_image .mobile-banner {
+        display: block;
+    }
+
+    .CWC_banner_image .desktop-banner {
+        display: none;
+    }
+}
