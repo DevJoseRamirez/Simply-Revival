@@ -1,0 +1,255 @@
+{% style %}
+#CWC_free_trial-{{ section.id }} {
+  --section-bg: {{ section.settings.background_color }};
+  --text-color: {{ section.settings.text_color }};
+  --padding-top: {{ section.settings.padding_top }}px;
+  --padding-bottom: {{ section.settings.padding_bottom }}px;
+  --padding-top-mobile: {{ section.settings.padding_top | times: 0.5 }}px;
+  --padding-bottom-mobile: {{ section.settings.padding_bottom | times: 0.5 }}px;
+}
+{% endstyle %}
+
+{{ 'CWC_free_trial.css' | asset_url | stylesheet_tag }}
+
+<section id="CWC_free_trial-{{ section.id }}" class="CWC_free_trial CWC_free_trial-{{ section.id }}">
+  <div class="CWC_free_trial-wrapper{% if section.settings.image_position == 'right' %} reverse{% endif %}">
+
+    {%- comment -%} Left Content {%- endcomment -%}
+    <div class="free-trial-content">
+      {% for block in section.blocks %}
+        {% case block.type %}
+
+          {% when 'badge' %}
+            {% if block.settings.badge_text != blank %}
+              <div class="free-trial-badge" {{ block.shopify_attributes }}>
+                {% if block.settings.badge_bg != blank %}
+                  <div class="badge-bg">
+                    <img src="{{ block.settings.badge_bg | image_url }}" alt="{{ block.settings.badge_text | escape }}">
+                  </div>
+                {% endif %}
+                <div class="badge-text">
+                  <span>{{ block.settings.badge_number }}</span> {{ block.settings.badge_text }}
+                </div>
+              </div>
+            {% endif %}
+
+          {% when 'subhead' %}
+            {% if block.settings.text != blank %}
+              <div class="free-trial-subhead" {{ block.shopify_attributes }}>
+                {{ block.settings.text }}
+              </div>
+            {% endif %}
+
+          {% when 'headline' %}
+            {% if block.settings.text != blank %}
+              <h2 class="free-trial-headline" {{ block.shopify_attributes }}>
+                {{ block.settings.text }}
+              </h2>
+            {% endif %}
+
+          {% when 'subtext' %}
+            {% if block.settings.text != blank %}
+              <div class="free-trial-subtext" {{ block.shopify_attributes }}>
+                {{ block.settings.text }}
+              </div>
+            {% endif %}
+
+          {% when 'button' %}
+            {% if block.settings.text != blank %}
+              <a href="{{ block.settings.link }}" class="free-trial-button" {{ block.shopify_attributes }}
+                 style="background-color: {{ block.settings.button_color }}; color: {{ block.settings.button_text_color }}">
+                {{ block.settings.text }}
+              </a>
+            {% endif %}
+
+        {% endcase %}
+      {% endfor %}
+    </div>
+
+    {%- comment -%} Right Image {%- endcomment -%}
+    <div class="free-trial-image">
+      {% if section.settings.image_mobile and section.settings.image_mobile != blank %}
+        <picture>
+          <source media="(max-width: 767px)" srcset="{{ section.settings.image_mobile | image_url }}">
+          <img src="{{ section.settings.image | image_url }}" alt="{{ section.settings.alt_text | escape }}" loading="lazy">
+        </picture>
+      {% elsif section.settings.image and section.settings.image != blank %}
+        <img src="{{ section.settings.image | image_url }}" alt="{{ section.settings.alt_text | escape }}" loading="lazy">
+      {% else %}
+        <img src="{{ 'placeholder.png' | asset_url }}" alt="Placeholder image" loading="lazy">
+      {% endif %}
+    </div>
+
+  </div>
+</section>
+      
+
+
+{% schema %}
+{
+  "name": "CWC Free Trial",
+  "tag": "section",
+  "settings": [
+    {
+      "type": "color",
+      "id": "background_color",
+      "label": "Background Color",
+      "default": "#F1F3EA"
+    },
+    {
+      "type": "color",
+      "id": "text_color",
+      "label": "Text Color",
+      "default": "#000000"
+    },
+    {
+      "type": "image_picker",
+      "id": "image",
+      "label": "Featured Image (Desktop)"
+    },
+    {
+      "type": "image_picker",
+      "id": "image_mobile",
+      "label": "Featured Image (Mobile - Optional)"
+    },
+    {
+      "type": "text",
+      "id": "alt_text",
+      "label": "Image Alt Text"
+    },
+    {
+      "type": "select",
+      "id": "image_position",
+      "label": "Image Position",
+      "options": [
+        { "value": "left", "label": "Left" },
+        { "value": "right", "label": "Right" }
+      ],
+      "default": "right"
+    },
+    {
+      "type": "range",
+      "id": "padding_top",
+      "label": "Padding Top",
+      "min": 0,
+      "max": 100,
+      "step": 4,
+      "unit": "px",
+      "default": 40
+    },
+    {
+      "type": "range",
+      "id": "padding_bottom",
+      "label": "Padding Bottom",
+      "min": 0,
+      "max": 100,
+      "step": 4,
+      "unit": "px",
+      "default": 40
+    }
+  ],
+  "blocks": [
+    {
+      "type": "badge",
+      "name": "Badge",
+      "settings": [
+        {
+          "type": "text",
+          "id": "badge_number",
+          "label": "Badge Number",
+          "default": "90"
+        },
+        {
+          "type": "text",
+          "id": "badge_text",
+          "label": "Badge Text",
+          "default": "DAYS"
+        },
+        {
+          "type": "image_picker",
+          "id": "badge_bg",
+          "label": "Badge Background Image"
+        }
+      ]
+    },
+    {
+      "type": "subhead",
+      "name": "Subhead",
+      "settings": [
+        {
+          "type": "text",
+          "id": "text",
+          "label": "Subhead Text",
+          "default": "FEEL THE DIFFERENCE"
+        }
+      ]
+    },
+    {
+      "type": "headline",
+      "name": "Headline",
+      "settings": [
+        {
+          "type": "text",
+          "id": "text",
+          "label": "Headline Text",
+          "default": "90-Day Risk-Free Trial"
+        }
+      ]
+    },
+    {
+      "type": "subtext",
+      "name": "Subtext",
+      "settings": [
+        {
+          "type": "richtext",
+          "id": "text",
+          "label": "Subtext Content",
+          "default": "<p>If you don’t experience noticeable improvements within 90 days, simply return your order for a full refund—no questions asked.</p>"
+        }
+      ]
+    },
+    {
+      "type": "button",
+      "name": "CTA Button",
+      "settings": [
+        {
+          "type": "text",
+          "id": "text",
+          "label": "Button Text",
+          "default": "Try Risk-Free Today"
+        },
+        {
+          "type": "url",
+          "id": "link",
+          "label": "Button Link"
+        },
+        {
+          "type": "color",
+          "id": "button_color",
+          "label": "Button Background Color",
+          "default": "#125657"
+        },
+        {
+          "type": "color",
+          "id": "button_text_color",
+          "label": "Button Text Color",
+          "default": "#ffffff"
+        }
+      ]
+    }
+  ],
+  "presets": [
+    {
+      "name": "Free Trial Section",
+      "category": "Custom",
+      "blocks": [
+        { "type": "badge" },
+        { "type": "subhead" },
+        { "type": "headline" },
+        { "type": "subtext" },
+        { "type": "button" }
+      ]
+    }
+  ]
+}
+{% endschema %}

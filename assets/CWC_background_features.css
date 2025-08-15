@@ -1,0 +1,105 @@
+.cwc-background-features {
+
+    padding-top: var(--section-padding-top);
+    padding-bottom: var(--section-padding-bottom);
+    color: var(--section-text-color);
+    padding-left: 2rem;
+    padding-right: 2rem;
+}
+
+.cwc-background-features__wrapper {
+    max-width: 1500px;
+    margin: 0 auto;
+    padding: 0 1rem;
+    background-color: var(--section-bg-color);
+    background-image: var(--section-bg-image);
+    background-size: cover;
+    background-position: center;
+    border-radius: 10px;
+    padding: 39px 20px 33px;
+    padding: 1.5rem 1.2rem;
+
+}
+
+.cwc-background-features__headline {
+    text-align: center;
+    font-size: 1.6rem;
+    font-weight: 600;
+    margin-bottom: 1.5rem;
+    color: var(--section-text-color);
+}
+
+.cwc-background-features__checkmarks {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 1rem 2rem;
+    margin-bottom: 2rem;
+}
+
+.cwc-background-features__checkmarks .checkmark-item {
+    display: flex;
+    align-items: center;
+    gap: 0.5rem;
+}
+
+.cwc-background-features__checkmarks .checkmark-icon {
+    font-size: 1rem;
+    line-height: 1;
+}
+
+.cwc-background-features__checkmarks .checkmark-text {
+    font-size: 1rem;
+    opacity: .8;
+}
+
+.cwc-background-features__icons {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(180px, 1fr));
+    gap: 1.5rem;
+
+
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 33px;
+}
+
+.cwc-background-features__icons .icon-block {
+    border: 2px solid var(--section-text-color);
+    border-radius: 8px;
+    padding: 1.5rem;
+    text-align: center;
+    height: auto;
+
+
+
+    border: 1.2px solid #fff;
+    padding: .5rem .4rem;
+    border-radius: 6.11px;
+    width: 75px;
+    width: 100px;
+    text-align: center;
+
+}
+
+.cwc-background-features__icons .icon-image img {
+    max-width: 60px;
+    height: auto;
+    margin-bottom: 0.75rem;
+}
+
+.cwc-background-features__icons .benefit_text {
+    font-size: 0.95rem;
+    margin: 0;
+}
+
+@media (max-width: 767px) {
+    .cwc-background-features__headline {
+        font-size: 1.5rem;
+    }
+
+    .cwc-background-features__icons .icon-block {
+        padding: 1rem;
+    }
+}

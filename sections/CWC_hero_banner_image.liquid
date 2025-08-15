@@ -1,0 +1,314 @@
+{% style %}
+#CWC_hero_banner_image-{{ section.id }} {
+--section-bg: {{ section.settings.background_color }};
+--text-color: {{ section.settings.text_color }};
+--padding-top: {{ section.settings.padding_top }}px;
+--padding-bottom: {{ section.settings.padding_bottom }}px;
+--padding-top-mobile: {{ section.settings.padding_top | times: 0.5 }}px;
+--padding-bottom-mobile: {{ section.settings.padding_bottom | times: 0.5 }}px;
+}
+{% endstyle %}
+
+{{ 'CWC_hero_banner_image.css' | asset_url | stylesheet_tag }}
+
+<section id="CWC_hero_banner_image-{{ section.id }}"
+    class="CWC_hero_banner_image CWC_hero_banner_image-{{ section.id }}">
+    <div class="CWC_hero_banner_image-wrapper{% if section.settings.image_position == 'right' %} reverse{% endif %}">
+
+        {%- comment -%} Featured Image Column {%- endcomment -%}
+        <div class="CWC_hero_banner_image-image">
+            {% if section.settings.image_mobile and section.settings.image_mobile != blank %}
+            <picture>
+                <source media="(max-width: 767px)" srcset="{{ section.settings.image_mobile | image_url }}">
+                <img src="{{ section.settings.image | image_url }}" alt="{{ section.settings.alt_text | escape }}"
+                    loading="lazy" fetchpriority="low">
+            </picture>
+            {% elsif section.settings.image and section.settings.image != blank %}
+            <img src="{{ section.settings.image | image_url }}" alt="{{ section.settings.alt_text | escape }}"
+                loading="lazy" fetchpriority="low">
+            {% else %}
+            <img src="{{ 'placeholder.png' | asset_url }}" alt="Placeholder image" loading="lazy" fetchpriority="low">
+            {% endif %}
+        </div>
+
+        {%- comment -%} Content Column {%- endcomment -%}
+        <div class="CWC_hero_banner_image-content">
+            {% for block in section.blocks %}
+            {% case block.type %}
+
+            {% when 'review' %}
+            {% if block.settings.text != blank %}
+            <div class="hero-review" {{ block.shopify_attributes }}>
+                <div class="hero-starts">
+                    {% render 'trust-starts' %}
+                </div>
+                <div class="hero-text">
+                    {{ block.settings.text }}
+                </div>
+            </div>
+            {% endif %}
+
+            {% when 'headline' %}
+            {% if block.settings.text != blank %}
+            <h2 class="hero-headline" {{ block.shopify_attributes }}>
+                {{ block.settings.text }}
+            </h2>
+            {% endif %}
+
+            {% when 'subtext' %}
+            {% if block.settings.text != blank %}
+            <div class="hero-subtext" {{ block.shopify_attributes }}>
+                {{ block.settings.text }}
+            </div>
+            {% endif %}
+
+            {% when 'bullets' %}
+                <h1>{{ block.settings.text_2 }}</h1>
+            <div class="hero-bullets" {{ block.shopify_attributes }}>
+                
+                {% if block.settings.text_1 != blank %}
+                <div class="bullet">
+                    {% if block.settings.icon_1 %}<img src="{{ block.settings.icon_1 | image_url }}" alt=""
+                        class="bullet-icon">{% endif %}
+                    {% if block.settings.text_1 != blank %}<div class="bullet-text">{{ block.settings.text_1 }}</div>{%
+                    endif %}
+                </div>
+                {% endif %}
+
+                {% if block.settings.text_2 != blank %}
+                <div class="bullet">
+                    {% if block.settings.icon_2 %}<img src="{{ block.settings.icon_2 | image_url }}" alt=""
+                        class="bullet-icon">{% endif %}
+                    {% if block.settings.text_2 != blank %}<div class="bullet-text">{{ block.settings.text_2 }}</div>{%
+                    endif %}
+                </div>
+                {% endif %}
+
+                {% if   block.settings.text_3 != blank %}
+                <div class="bullet">
+                    {% if block.settings.icon_3 %}<img src="{{ block.settings.icon_3 | image_url }}" alt=""
+                        class="bullet-icon">{% endif %}
+                    {% if block.settings.text_3 != blank %}<div class="bullet-text">{{ block.settings.text_3 }}</div>{%
+                    endif %}
+                </div>
+                {% endif %}
+
+            </div>
+
+
+            {% when 'button' %}
+            {% if block.settings.text != blank %}
+            <a href="{{ block.settings.link }}" class="hero-button" {{ block.shopify_attributes }}
+                style="background-color: {{ block.settings.button_color }}; color: {{ block.settings.button_text_color }}">
+                {{ block.settings.text }}
+            </a>
+            {% endif %}
+
+            {% when 'note' %}
+            {% if block.settings.text != blank %}
+            <div class="hero-note" {{ block.shopify_attributes }}>
+                {{ block.settings.text }}
+            </div>
+            {% endif %}
+
+            {% endcase %}
+            {% endfor %}
+        </div>
+
+    </div>
+</section>
+
+
+{% schema %}
+{
+  "name": "CWC Hero Banner Image",
+  "tag": "section",
+  "settings": [
+    {
+      "type": "color",
+      "id": "background_color",
+      "label": "Background Color",
+      "default": "#ffffff"
+    },
+    {
+      "type": "color",
+      "id": "text_color",
+      "label": "Text Color",
+      "default": "#202020"
+    },
+    {
+      "type": "image_picker",
+      "id": "image",
+      "label": "Featured Image (Desktop)"
+    },
+    {
+      "type": "image_picker",
+      "id": "image_mobile",
+      "label": "Featured Image (Mobile - Optional)"
+    },
+    {
+      "type": "text",
+      "id": "alt_text",
+      "label": "Image Alt Text"
+    },
+    {
+      "type": "select",
+      "id": "image_position",
+      "label": "Image Position",
+      "options": [
+        { "value": "left", "label": "Left" },
+        { "value": "right", "label": "Right" }
+      ],
+      "default": "left"
+    },
+    {
+      "type": "range",
+      "id": "padding_top",
+      "label": "Padding Top",
+      "min": 0,
+      "max": 100,
+      "step": 4,
+      "unit": "px",
+      "default": 40
+    },
+    {
+      "type": "range",
+      "id": "padding_bottom",
+      "label": "Padding Bottom",
+      "min": 0,
+      "max": 100,
+      "step": 4,
+      "unit": "px",
+      "default": 40
+    }
+  ],
+  "blocks": [
+    {
+      "type": "review",
+      "name": "Review Text",
+      "settings": [
+        {
+          "type": "richtext",
+          "id": "text",
+          "label": "Review Content",
+          "default": "<p><strong>Rated 4.8/5</strong> | Trusted by 20,000+</p>"
+        }
+      ]
+    },
+    {
+      "type": "headline",
+      "name": "Headline",
+      "settings": [
+        {
+          "type": "richtext",
+          "id": "text",
+          "label": "Headline Text",
+          "default": "<p>The #1 Natural DHT Blocker for Hair Loss</p>"
+        }
+      ]
+    },
+    {
+      "type": "subtext",
+      "name": "Subtext",
+      "settings": [
+        {
+          "type": "richtext",
+          "id": "text",
+          "label": "Subtext Content",
+          "default": "<p>Results within 30 days or less</p>"
+        }
+      ]
+    },
+    {
+      "type": "bullets",
+      "name": "Bullet Points (3)",
+      "settings": [
+        {
+          "type": "image_picker",
+          "id": "icon_1",
+          "label": "Bullet 1 Image"
+        },
+        {
+          "type": "text",
+          "id": "text_1",
+          "label": "Bullet 1 Text"
+        },
+        {
+          "type": "image_picker",
+          "id": "icon_2",
+          "label": "Bullet 2 Image"
+        },
+        {
+          "type": "text",
+          "id": "text_2",
+          "label": "Bullet 2 Text"
+        },
+        {
+          "type": "image_picker",
+          "id": "icon_3",
+          "label": "Bullet 3 Image"
+        },
+        {
+          "type": "text",
+          "id": "text_3",
+          "label": "Bullet 3 Text"
+        }
+      ]
+    },
+    {
+      "type": "button",
+      "name": "CTA Button",
+      "settings": [
+        {
+          "type": "text",
+          "id": "text",
+          "label": "Button Text",
+          "default": "Try Risk-Free Today"
+        },
+        {
+          "type": "url",
+          "id": "link",
+          "label": "Button Link"
+        },
+        {
+          "type": "color",
+          "id": "button_color",
+          "label": "Button Background Color",
+          "default": "#125657"
+        },
+        {
+          "type": "color",
+          "id": "button_text_color",
+          "label": "Button Text Color",
+          "default": "#ffffff"
+        }
+      ]
+    },
+    {
+      "type": "note",
+      "name": "Note Text",
+      "settings": [
+        {
+          "type": "richtext",
+          "id": "text",
+          "label": "Note Content",
+          "default": "<p>365-day money back guarantee</p>"
+        }
+      ]
+    }
+  ],
+  "presets": [
+    {
+      "name": "Hero Banner Image",
+      "category": "Custom",
+      "blocks": [
+        { "type": "review" },
+        { "type": "headline" },
+        { "type": "subtext" },
+        { "type": "button" },
+        { "type": "note" }
+      ]
+    }
+  ]
+}
+{% endschema %}

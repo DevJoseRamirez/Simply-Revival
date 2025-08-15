@@ -1,0 +1,151 @@
+{% style %}
+#CWC_background_features-{{ section.id }} {
+  --section-bg-color: {{ section.settings.bg_color }};
+  --section-text-color: {{ section.settings.text_color }};
+  --section-padding-top: {{ section.settings.padding_top }}px;
+  --section-padding-bottom: {{ section.settings.padding_bottom }}px;
+  --section-bg-image: {% if section.settings.bg_image != blank %}url({{ section.settings.bg_image | img_url: '2000x' }}){% else %}none{% endif %};
+}
+{% endstyle %}
+
+
+{{ 'CWC_background_features.css' | asset_url | stylesheet_tag }}
+
+
+<section id="CWC_background_features-{{ section.id }}" class="cwc-background-features">
+  <div class="cwc-background-features__wrapper">
+    {% if section.settings.headline != blank %}
+      <h2 class="cwc-background-features__headline">{{ section.settings.headline }}</h2>
+    {% endif %}
+
+    {% assign checkmark_blocks = section.blocks | where: 'type', 'checkmark' %}
+    {% if checkmark_blocks.size > 0 %}
+      <div class="cwc-background-features__checkmarks">
+        {% for block in checkmark_blocks %}
+          {% if block.settings.text != blank %}
+            <div class="checkmark-item" {{ block.shopify_attributes }}>
+              <span class="checkmark-icon">✔</span>
+              <span class="checkmark-text">{{ block.settings.text }}</span>
+            </div>
+          {% endif %}
+        {% endfor %}
+      </div>
+    {% endif %}
+
+    {% assign icon_blocks = section.blocks | where: 'type', 'icon_block' %}
+    {% if icon_blocks.size > 0 %}
+      <div class="cwc-background-features__icons">
+        {% for block in icon_blocks %}
+          <div class="icon-block" {{ block.shopify_attributes }}>
+            {% if block.settings.icon != blank %}
+              <div class="icon-image">
+                <img src="{{ block.settings.icon | img_url: '200x' }}" alt="{{ block.settings.text | escape }}">
+              </div>
+            {% endif %}
+            {% if block.settings.text != blank %}
+              <div class="benefit_text">{{ block.settings.text }}</div>
+            {% endif %}
+          </div>
+        {% endfor %}
+      </div>
+    {% endif %}
+  </div>
+</section>
+
+
+
+{% schema %}
+{
+  "name": "CWC Background Features",
+  "settings": [
+    {
+      "type": "text",
+      "id": "headline",
+      "label": "Headline",
+      "default": "Why Choose Our Product"
+    },
+    {
+      "type": "color",
+      "id": "bg_color",
+      "label": "Background color",
+      "default": "#ffffff"
+    },
+    {
+      "type": "image_picker",
+      "id": "bg_image",
+      "label": "Background image"
+    },
+    {
+      "type": "color",
+      "id": "text_color",
+      "label": "Text color",
+      "default": "#000000"
+    },
+    {
+      "type": "range",
+      "id": "padding_top",
+      "label": "Padding top",
+      "default": 60,
+      "min": 0,
+      "max": 200,
+      "step": 5,
+      "unit": "px"
+    },
+    {
+      "type": "range",
+      "id": "padding_bottom",
+      "label": "Padding bottom",
+      "default": 60,
+      "min": 0,
+      "max": 200,
+      "step": 5,
+      "unit": "px"
+    }
+  ],
+  "blocks": [
+    {
+      "type": "checkmark",
+      "name": "Checkmark item",
+      "settings": [
+        {
+          "type": "text",
+          "id": "text",
+          "label": "Text",
+          "default": "Feature highlight text"
+        }
+      ]
+    },
+    {
+      "type": "icon_block",
+      "name": "Outlined icon block",
+      "settings": [
+        {
+          "type": "image_picker",
+          "id": "icon",
+          "label": "Icon image"
+        },
+        {
+          "type": "text",
+          "id": "text",
+          "label": "Text",
+          "default": "Feature description"
+        }
+      ]
+    }
+  ],
+  "max_blocks": 12,
+  "presets": [
+    {
+      "name": "Background Features",
+      "category": "Custom",
+      "blocks": [
+        { "type": "checkmark" },
+        { "type": "checkmark" },
+        { "type": "checkmark" },
+        { "type": "icon_block" },
+        { "type": "icon_block" }
+      ]
+    }
+  ]
+}
+{% endschema %}
