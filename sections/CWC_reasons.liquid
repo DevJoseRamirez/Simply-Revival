@@ -1,0 +1,234 @@
+{% style %}
+#CWC_reasons-{{ section.id }} {
+--section-bg: {{ section.settings.section_bg }};
+--heading-color: {{ section.settings.heading_color }};
+--text-color: {{ section.settings.text_color }};
+--card-bg: {{ section.settings.card_bg }};
+--card-text: {{ section.settings.card_text }};
+--caption-bg: {{ section.settings.caption_bg }};
+--caption-color: {{ section.settings.caption_color }};
+--btn-bg: {{ section.settings.btn_bg }};
+--btn-color: {{ section.settings.btn_color }};
+}
+{% endstyle %}
+
+
+{{ 'CWC_reasons.css' | asset_url | stylesheet_tag }}
+
+<section id="CWC_reasons-{{ section.id }}" class="cwc-reasons">
+    <div class="cwc-reasons__wrapper">
+
+        {% if section.settings.caption != blank %}
+        <div class="cwc-reasons__caption">
+            {{ section.settings.caption }}
+        </div>
+        {% endif %}
+
+        {% if section.settings.heading != blank %}
+        <h2 class="cwc-reasons__heading">
+            {{ section.settings.heading }}
+        </h2>
+        {% endif %}
+
+        {% if section.settings.text != blank %}
+        <div class="cwc-reasons__text">
+            {{ section.settings.text }}
+        </div>
+        {% endif %}
+
+        <div class="cwc-reasons__grid">
+            {% for block in section.blocks %}
+            {% case block.type %}
+
+            {% when 'reason' %}
+            <div class="cwc-reasons__card">
+                {% if block.settings.img != blank %}
+                <div class="cwc-reasons__image">
+                    <img src="{{ block.settings.img | img_url: '400x' }}" alt="{{ block.settings.title | escape }}">
+                </div>
+                {% endif %}
+                {% if block.settings.badge != blank %}
+                <div class="cwc-reasons__badge">{{ block.settings.badge }}</div>
+                {% endif %}
+                {% if block.settings.title != blank %}
+                <h3 class="cwc-reasons__title">{{ block.settings.title }}</h3>
+                {% endif %}
+                {% if block.settings.text != blank %}
+                <div class="cwc-reasons__desc">{{ block.settings.text }}</div>
+                {% endif %}
+            </div>
+
+            {% when 'button' %}
+            <div class="cwc-reasons__cta">
+                {% if block.settings.text != blank %}
+                <a href="{{ block.settings.link }}" class="cwc-reasons__btn">
+                    {{ block.settings.text }}
+                </a>
+                {% endif %}
+                {% if block.settings.note != blank %}
+                <div class="cwc-reasons__note">{{ block.settings.note }}</div>
+                {% endif %}
+            </div>
+
+            {% endcase %}
+            {% endfor %}
+        </div>
+
+    </div>
+</section>
+
+
+{% schema %}
+{
+"name": "CWC Reasons",
+"settings": [
+{
+"type": "color",
+"id": "section_bg",
+"label": "Section background",
+"default": "#ffffff"
+},
+{
+"type": "text",
+"id": "caption",
+"label": "Caption",
+"default": "Why Choose Us?"
+},
+{
+"type": "color",
+"id": "caption_bg",
+"label": "Caption background",
+"default": "#111111"
+},
+{
+"type": "color",
+"id": "caption_color",
+"label": "Caption text color",
+"default": "#ffffff"
+},
+{
+"type": "text",
+"id": "heading",
+"label": "Heading",
+"default": "The Reasons Customers Love Us"
+},
+{
+"type": "color",
+"id": "heading_color",
+"label": "Heading color",
+"default": "#111111"
+},
+{
+"type": "color",
+"id": "text_color",
+"label": "Text color",
+"default": "#444444"
+},
+{
+"type": "color",
+"id": "card_bg",
+"label": "Card background",
+"default": "#f9f9f9"
+},
+{
+"type": "color",
+"id": "card_text",
+"label": "Card text color",
+"default": "#222222"
+},
+{
+"type": "color",
+"id": "btn_bg",
+"label": "Button background",
+"default": "#111111"
+},
+{
+"type": "color",
+"id": "btn_color",
+"label": "Button text color",
+"default": "#ffffff"
+},
+
+
+{
+"type": "richtext",
+"id": "text",
+"label": "Intro text",
+"default": "<p>Here’s what sets us apart from other brands.</p>"
+}
+],
+"blocks": [
+{
+"type": "reason",
+"name": "Reason card",
+"settings": [
+{
+"type": "image_picker",
+"id": "img",
+"label": "Image"
+},
+{
+"type": "text",
+"id": "badge",
+"label": "Badge"
+},
+{
+"type": "text",
+"id": "title",
+"label": "Title",
+"default": "Reason title"
+},
+{
+"type": "richtext",
+"id": "text",
+"label": "Description",
+"default": "<p>Explain this reason in 1–2 short sentences.</p>"
+}
+]
+},
+{
+"type": "button",
+"name": "Call to action",
+"settings": [
+{
+"type": "text",
+"id": "text",
+"label": "Button text",
+"default": "Shop Now"
+},
+{
+"type": "url",
+"id": "link",
+"label": "Button link"
+},
+{
+"type": "text",
+"id": "note",
+"label": "Small note",
+"default": "No risk — 30 day money back guarantee"
+}
+]
+}
+],
+"presets": [
+{
+"name": "Reasons",
+"category": "Custom",
+"blocks": [
+{
+"type": "reason"
+},
+{
+"type": "reason"
+},
+{
+"type": "reason"
+},
+{
+"type": "button"
+}
+]
+}
+]
+}
+{% endschema %}

@@ -1,0 +1,134 @@
+/* ================================
+   CWC Reasons Section
+   ================================ */
+
+.CWC_reasons {
+    background: var(--section-bg);
+    padding: var(--padding-top) 1rem var(--padding-bottom);
+}
+
+.CWC_reasons .cwc-reasons__inner {
+    max-width: 1200px;
+    margin: 0 auto;
+    text-align: center;
+}
+
+.CWC_reasons .cwc-reasons__caption {
+    display: inline-block;
+    background: var(--caption-bg);
+    color: var(--caption-color);
+    font-size: 0.875rem;
+    text-transform: uppercase;
+    font-weight: 600;
+    letter-spacing: 1px;
+    padding: 0.25rem 0.75rem;
+    border-radius: 999px;
+    margin-bottom: 1rem;
+}
+
+.CWC_reasons .cwc-reasons__heading {
+    font-size: 2rem;
+    font-weight: 700;
+    color: var(--heading-color);
+    margin-bottom: 1rem;
+}
+
+.CWC_reasons .cwc-reasons__text {
+    max-width: 700px;
+    margin: 0 auto 2rem;
+    color: var(--text-color);
+    font-size: 1.125rem;
+    line-height: 1.5;
+}
+
+/* Grid for cards */
+.CWC_reasons .cwc-reasons__grid {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 1.5rem;
+    margin-bottom: 2rem;
+}
+
+.CWC_reasons .cwc-reason {
+    background: var(--card-bg);
+    color: var(--card-text);
+    padding: 1.5rem;
+    border-radius: 1rem;
+    text-align: left;
+    transition: transform 0.25s ease, box-shadow 0.25s ease;
+}
+
+.CWC_reasons .cwc-reason:hover {
+    transform: translateY(-4px);
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.08);
+}
+
+.CWC_reasons .cwc-reason__img {
+    width: 64px;
+    height: 64px;
+    margin-bottom: 1rem;
+    object-fit: contain;
+}
+
+.CWC_reasons .cwc-reason__badge {
+    font-size: 0.75rem;
+    text-transform: uppercase;
+    font-weight: 600;
+    color: var(--heading-color);
+    margin-bottom: 0.5rem;
+}
+
+.CWC_reasons .cwc-reason__title {
+    font-size: 1.25rem;
+    font-weight: 600;
+    margin-bottom: 0.5rem;
+}
+
+.CWC_reasons .cwc-reason__text {
+    font-size: 1rem;
+    line-height: 1.5;
+}
+
+/* Button block */
+.CWC_reasons .cwc-reasons__btn-wrap {
+    margin-top: 2rem;
+}
+
+.CWC_reasons .cwc-reasons__btn {
+    background: var(--btn-bg);
+    color: var(--btn-color);
+    padding: 0.75rem 1.5rem;
+    border-radius: 999px;
+    font-weight: 600;
+    font-size: 1rem;
+    text-decoration: none;
+    display: inline-block;
+    transition: background 0.25s ease, color 0.25s ease;
+}
+
+.CWC_reasons .cwc-reasons__btn:hover {
+    opacity: 0.9;
+}
+
+.CWC_reasons .cwc-reasons__btn-note {
+    margin-top: 0.5rem;
+    font-size: 0.875rem;
+    color: var(--text-color);
+}
+
+/* Responsive */
+@media (max-width: 900px) {
+    .CWC_reasons .cwc-reasons__grid {
+        grid-template-columns: repeat(2, 1fr);
+    }
+}
+
+@media (max-width: 600px) {
+    .CWC_reasons .cwc-reasons__grid {
+        grid-template-columns: 1fr;
+    }
+
+    .CWC_reasons .cwc-reasons__heading {
+        font-size: 1.5rem;
+    }
+}
