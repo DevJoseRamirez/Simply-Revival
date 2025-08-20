@@ -1,0 +1,167 @@
+<div class="swiper">
+    <div class="swiper-wrapper">
+        <div class="swiper-slide">Slide 1</div>
+        <div class="swiper-slide">Slide 2</div>
+        <div class="swiper-slide">Slide 3</div>
+    </div>
+
+    <!-- optional controls -->
+    <div class="swiper-pagination"></div>
+    <div class="swiper-button-prev"></div>
+    <div class="swiper-button-next"></div>
+</div>
+
+<script>
+
+    document.addEventListener("DOMContentLoaded", function () {
+        const swiper = new Swiper('.swiper', {
+            loop: true,
+            slidesPerView: 1,
+            spaceBetween: 20,
+            pagination: {
+                el: '.swiper-pagination',
+                clickable: true
+            },
+            navigation: {
+                nextEl: '.swiper-button-next',
+                prevEl: '.swiper-button-prev'
+            },
+            autoplay: {
+                delay: 3000,
+                disableOnInteraction: false
+            }
+        });
+    });
+
+</script>
+
+
+{% schema %}
+{
+"name": "CWC Testimonials",
+"tag": "section",
+"settings": [
+{
+"type": "color",
+"id": "bg_color",
+"label": "Background color",
+"default": "#FAF9F6"
+},
+{
+"type": "color",
+"id": "text_color",
+"label": "Text color",
+"default": "#111111"
+},
+{
+"type": "color",
+"id": "card_bg",
+"label": "Card background color",
+"default": "#FFFFFF"
+},
+{
+"type": "color",
+"id": "highlight_color",
+"label": "Highlight color",
+"default": "#009370"
+}, {
+"type": "range",
+"id": "padding_top",
+"label": "Padding top",
+"min": 0,
+"max": 200,
+"step": 4,
+"unit": "px",
+"default": 60
+}, {
+"type": "range",
+"id": "padding_bottom",
+"label": "Padding bottom",
+"min": 0,
+"max": 200,
+"step": 4,
+"unit": "px",
+"default": 60
+}
+],
+"blocks": [
+{
+"type": "testimonial",
+"name": "Testimonial",
+"settings": [
+{
+"type": "range",
+"id": "rating",
+"label": "Star rating",
+"min": 1,
+"max": 5,
+"step": 1,
+"default": 5
+},
+{
+"type": "text",
+"id": "title",
+"label": "Headline",
+"default": "Amazing product!"
+},
+{
+"type": "textarea",
+"id": "text",
+"label": "Review text",
+"default": "This product completely exceeded my expectations..."
+},
+{
+"type": "text",
+"id": "author_name",
+"label": "Author name",
+"default": "Jane D."
+}, {
+"type": "image_picker",
+"id": "author_image",
+"label": "Author image"
+}, {
+"type": "text",
+"id": "feature_one",
+"label": "Tag / Feature #1",
+"default": "Eco-friendly"
+}, {
+"type": "text",
+"id": "feature_two",
+"label": "Tag / Feature #2",
+"default": "Durable"
+}
+]
+}
+],
+"presets": [
+{
+"name": "Testing Swiper",
+"category": "Custom",
+
+"blocks": [
+{
+"type": "testimonial"
+},
+{
+"type": "testimonial"
+},
+{
+"type": "testimonial"
+},
+{
+"type": "testimonial"
+},
+{
+"type": "testimonial"
+},
+{
+"type": "testimonial"
+},
+{
+"type": "testimonial"
+}
+]
+}
+]
+}
+{% endschema %}
