@@ -65,25 +65,6 @@
     will-change: transform;
 }
 
-/* Items */
-.cwc_carousel-item {
-    flex: 0 0 auto;
-    padding: 0 1rem;
-}
-
-.cwc_carousel-item img {
-    max-height: 60px;
-    display: block;
-    object-fit: contain;
-    filter: grayscale(100%);
-    opacity: 0.8;
-    transition: opacity 0.2s ease, filter 0.2s ease;
-}
-
-.cwc_carousel-item img:hover {
-    opacity: 1;
-    filter: grayscale(0%);
-}
 
 /* Continuous scroll keyframes */
 @keyframes scroll-left {

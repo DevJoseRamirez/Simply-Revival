@@ -1,0 +1,96 @@
+/* ================================
+   CWC FAQs Section Styles
+   ================================ */
+
+.cwc-faqs {
+    background-color: var(--section-bg);
+    padding-top: var(--padding-top);
+    padding-bottom: var(--padding-bottom);
+    background-color: var(--section-bg);
+}
+
+.cwc-faqs__wrapper {
+    max-width: 1500px;
+    margin: 0 auto;
+    padding: 0 1.5rem;
+}
+
+.cwc-faqs__heading {
+    margin-bottom: 1rem;
+    text-align: center;
+}
+
+.cwc-faqs__text {
+    margin-bottom: 2rem;
+    text-align: center;
+}
+
+.cwc-faqs__items {
+    display: flex;
+    flex-direction: column;
+    gap: 1rem;
+}
+
+/* FAQ item */
+.faq-item {
+    background-color: var(--faq-bg, #fff);
+    border-radius: 8px;
+    overflow: hidden;
+}
+
+/* Question button */
+.faq-question {
+    width: 100%;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 1rem 1.25rem;
+    font-weight: 600;
+    font-size: 1rem;
+    line-height: 1.4;
+    background: none;
+    border: none;
+    cursor: pointer;
+    text-align: left;
+}
+
+.faq-question p {
+    margin: 0rem;
+}
+
+.toggle-icon {
+    font-size: 1.25rem;
+    transition: transform 0.3s ease;
+}
+
+.faq-item.open .toggle-icon {
+    content: "-";
+    transform: rotate(180deg);
+}
+
+/* Answer */
+.faq-answer {
+    max-height: 0;
+    opacity: 0;
+    overflow: hidden;
+    padding: 0 1.25rem;
+    transition: max-height 0.4s ease, opacity 0.4s ease, padding 0.3s ease;
+}
+
+.faq-item.open .faq-answer {
+    max-height: 500px;
+    /* enough room for longer answers */
+    opacity: 1;
+    padding: 0 1.25rem 1rem;
+}
+
+/* Responsive */
+@media (max-width: 768px) {
+    .cwc-faqs__wrapper {
+        padding: 0 1rem;
+    }
+
+    .faq-question {
+        font-size: 0.95rem;
+    }
+}
