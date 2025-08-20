@@ -1,0 +1,97 @@
+/* ===========================
+   CWC Social Proof Section
+   =========================== */
+
+.cwc-social-proof {
+    background: var(--section-bg);
+    color: var(--text-color);
+    padding-top: var(--padding-top);
+    padding-bottom: var(--padding-bottom);
+    text-align: center;
+}
+
+@media (max-width: 768px) {
+    .cwc-social-proof {
+        padding-top: var(--padding-top-mobile);
+        padding-bottom: var(--padding-bottom-mobile);
+    }
+}
+
+/* Stars */
+.cwc-social-proof__stars {
+    margin-bottom: 1rem;
+}
+
+.cwc-social-proof__stars svg {
+    height: 1.5rem;
+    width: auto;
+    display: inline-block;
+}
+
+/* Heading */
+.cwc-social-proof__heading {
+    font-size: 1.8rem;
+    font-weight: 600;
+    margin-bottom: 0.5rem;
+    color: var(--text-color);
+}
+
+/* Subtext */
+.cwc-social-proof__text {
+    font-size: 1rem;
+    max-width: 700px;
+    margin: 0 auto 2rem;
+    color: var(--text-color);
+}
+
+/* Carousel wrapper */
+.cwc_social-proof-carousel {
+    overflow: hidden;
+    width: 100%;
+    position: relative;
+    display: block;
+    height: 5rem;
+    height: 100%;
+    height: max-content;
+    width: 100%;
+}
+
+/* Track */
+.cwc_carousel-track {
+    display: flex;
+    gap: 4px;
+    width: max-content;
+    animation: scroll-left 40s linear infinite;
+    will-change: transform;
+}
+
+/* Items */
+.cwc_carousel-item {
+    flex: 0 0 auto;
+    padding: 0 1rem;
+}
+
+.cwc_carousel-item img {
+    max-height: 60px;
+    display: block;
+    object-fit: contain;
+    filter: grayscale(100%);
+    opacity: 0.8;
+    transition: opacity 0.2s ease, filter 0.2s ease;
+}
+
+.cwc_carousel-item img:hover {
+    opacity: 1;
+    filter: grayscale(0%);
+}
+
+/* Continuous scroll keyframes */
+@keyframes scroll-left {
+    from {
+        transform: translateX(0);
+    }
+
+    to {
+        transform: translateX(-50%);
+    }
+}

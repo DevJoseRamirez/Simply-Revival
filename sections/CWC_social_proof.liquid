@@ -1,0 +1,173 @@
+{% style %}
+  #CWC_social_proof-{{ section.id }} {
+    --section-bg: {{ section.settings.bg_color }};
+    --text-color: {{ section.settings.text_color }};
+    --padding-top: {{ section.settings.padding_top }}px;
+    --padding-bottom: {{ section.settings.padding_bottom }}px;
+    --padding-top-mobile: {{ section.settings.padding_top | times: 0.5 }}px;
+    --padding-bottom-mobile: {{ section.settings.padding_bottom | times: 0.5 }}px;
+  }
+{% endstyle %}
+
+
+{{ 'CWC_social_proof.css' | asset_url | stylesheet_tag }}
+
+<section id="CWC_social_proof-{{ section.id }}" class="cwc-social-proof">
+  <div class="cwc-social-proof__wrapper">
+
+    {% if section.settings.show_stars %}
+      <div class="cwc-social-proof__stars">
+        {% render 'trust-starts' %}
+      </div>
+    {% endif %}
+
+    {% if section.settings.heading != blank %}
+      <h2 class="cwc-social-proof__heading">{{ section.settings.heading }}</h2>
+    {% endif %}
+
+    {% if section.settings.text != blank %}
+      <div class="cwc-social-proof__text">{{ section.settings.text }}</div>
+    {% endif %}
+
+
+    <div class="cwc_social-proof-carousel">
+      <div class="cwc_carousel-track">
+        {% for block in section.blocks %}
+          <div class="cwc)carousel-item">
+            <img src="{{ block.settings.image | img_url: '100x' }}" alt="Social Proof">
+          </div>
+        {% endfor %}
+        {% comment %} duplication for infinite motion {% endcomment %}
+        {% for block in section.blocks %}
+          <div class="cwc)carousel-item">
+            <img src="{{ block.settings.image | img_url: '100x' }}" alt="Social Proof">
+          </div>
+        {% endfor %}
+        {% for block in section.blocks %}
+          <div class="cwc)carousel-item">
+            <img src="{{ block.settings.image | img_url: '100x' }}" alt="Social Proof">
+          </div>
+        {% endfor %}
+        {% for block in section.blocks %}
+          <div class="cwc)carousel-item">
+            <img src="{{ block.settings.image | img_url: '100x' }}" alt="Social Proof">
+          </div>
+        {% endfor %}
+      </div>
+    </div>
+
+
+  </div>
+</section>
+
+
+<script>
+  document.addEventListener("DOMContentLoaded", function() {
+  const track = document.querySelector(".carousel-track");
+  if (track) {
+    track.addEventListener("mouseenter", () => {
+      track.style.animationPlayState = "paused";
+    });
+    track.addEventListener("mouseleave", () => {
+      track.style.animationPlayState = "running";
+    });
+  }
+  });
+</script>
+
+
+{% schema %}
+  {
+    "name": "CWC Social Proof",
+    "settings": [
+      {
+        "type": "checkbox",
+        "id": "show_stars",
+        "label": "Show star rating",
+        "default": true
+      },
+      {
+        "type": "richtext",
+        "id": "heading",
+        "label": "Heading",
+        "default": "<p>Real Stories, Real Results</p>"
+      },
+      {
+        "type": "richtext",
+        "id": "text",
+        "label": "Subtext",
+        "default": "<p>See What customer Are Saying About Simply Revival</p>"
+      },
+      {
+        "type": "color",
+        "id": "bg_color",
+        "label": "Background color",
+        "default": "#FAF9F6"
+      }, {
+        "type": "color",
+        "id": "text_color",
+        "label": "Text color",
+        "default": "#111111"
+      }, {
+        "type": "range",
+        "id": "padding_top",
+        "label": "Padding top",
+        "default": 60,
+        "min": 0,
+        "max": 160,
+        "step": 4,
+        "unit": "px"
+      }, {
+        "type": "range",
+        "id": "padding_bottom",
+        "label": "Padding bottom",
+        "default": 60,
+        "min": 0,
+        "max": 160,
+        "step": 4,
+        "unit": "px"
+      }
+    ],
+    "blocks": [
+      {
+        "type": "image",
+        "name": "Carousel Image",
+        "settings": [
+          {
+            "type": "image_picker",
+            "id": "image",
+            "label": "Upload image"
+          }
+        ]
+      }
+    ],
+    "presets": [
+      {
+        "name": "Social Proof",
+        "category": "Custom",
+        "settings": {
+          "show_stars": true,
+          "heading": "<p>Real Stories, Real Results</p>",
+          "text": "<p>See What customer Are Saying About Simply Revival</p>",
+          "bg_color": "#FAF9F6",
+          "text_color": "#111111",
+          "padding_top": 60,
+          "padding_bottom": 60
+        },
+        "blocks": [
+          {
+            "type": "image",
+            "settings": {
+              "image": "shopify:\/\/shop_images\/example-logo1.png"
+            }
+          }, {
+            "type": "image",
+            "settings": {
+              "image": "shopify:\/\/shop_images\/example-logo2.png"
+            }
+          }
+        ]
+      }
+    ]
+  }
+{% endschema %}
