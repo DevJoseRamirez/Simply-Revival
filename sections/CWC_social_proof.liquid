@@ -33,7 +33,7 @@
     <div class="cwc_social-proof-carousel">
       <div class="cwc_carousel-track">
         {% for block in section.blocks %}
-        <div class="cwc_carousel-item">
+        <div class="cwc_carousel-item" {{ block.shopify_attributes }}>
           <img src="{{ block.settings.image | img_url: '100x' }}" alt="Social Proof">
         </div>
         {% endfor %}

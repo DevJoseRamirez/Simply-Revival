@@ -1,5 +1,7 @@
 {% style %}
 #CWC_reasons-{{ section.id }} {
+--padding-top: {{ section.settings.padding_top | default: 60 }}px;
+--padding-bottom: {{ section.settings.padding_bottom | default: 60 }}px;
 --section-bg: {{ section.settings.section_bg }};
 --heading-color: {{ section.settings.heading_color }};
 --text-color: {{ section.settings.text_color }};
@@ -7,123 +9,159 @@
 --card-text: {{ section.settings.card_text }};
 --caption-bg: {{ section.settings.caption_bg }};
 --caption-color: {{ section.settings.caption_color }};
---btn-bg: {{ section.settings.btn_bg }};
---btn-color: {{ section.settings.btn_color }};
 }
 {% endstyle %}
-
 
 {{ 'CWC_reasons.css' | asset_url | stylesheet_tag }}
 
 <section id="CWC_reasons-{{ section.id }}" class="cwc-reasons">
     <div class="cwc-reasons__wrapper">
 
-        {% if section.settings.caption != blank %}
-        <div class="cwc-reasons__caption">
-            {{ section.settings.caption }}
+        {% for block in section.blocks %}
+        {% case block.type %}
+
+        {% when 'caption' %}
+        {% if block.settings.text != blank %}
+        <div class="cwc-reasons__caption" {{ block.shopify_attributes }}
+            style="background-color: {{ block.settings.caption_bg }}; color: {{ block.settings.caption_color }}">
+            {{ block.settings.text }}
         </div>
         {% endif %}
 
-        {% if section.settings.heading != blank %}
-        <h2 class="cwc-reasons__heading">
-            {{ section.settings.heading }}
-        </h2>
-        {% endif %}
-
-        {% if section.settings.text != blank %}
-        <div class="cwc-reasons__text">
-            {{ section.settings.text }}
+        {% when 'heading' %}
+        {% if block.settings.text != blank %}
+        <div class="cwc-reasons__heading" {{ block.shopify_attributes }}
+            style="color: {{ block.settings.heading_color }}">
+            {{ block.settings.text }}
         </div>
         {% endif %}
 
+        {% when 'text' %}
+        {% if block.settings.text != blank %}
+        <div class="cwc-reasons__text" {{ block.shopify_attributes }} style="color: {{ block.settings.text_color }}">
+            {{ block.settings.text }}
+        </div>
+        {% endif %}
+
+        {% endcase %}
+        {% endfor %}
+
+
+
+
+
+
+
+
+
+
+        <!-- Grid of reason cards -->
         <div class="cwc-reasons__grid">
             {% for block in section.blocks %}
-            {% case block.type %}
+            {% if block.type == 'reason' %}
+            <div class="cwc-reasons__card" {{ block.shopify_attributes }}>
+                <div class="cwc-reasons__content">
 
-            {% when 'reason' %}
-            <div class="cwc-reasons__card">
-                {% if block.settings.img != blank %}
-                <div class="cwc-reasons__image">
-                    <img src="{{ block.settings.img | img_url: '400x' }}" alt="{{ block.settings.title | escape }}">
+                    <!-- FRONT -->
+                    <div class="cwc-reasons__front">
+                        {% if block.settings.img != blank %}
+                        <div class="cwc-reasons__image">
+                            <img src="{{ block.settings.img | img_url: '400x' }}"
+                                alt="{{ block.settings.title | escape }}">
+                        </div>
+                        {% else %}
+                        <div class="cwc-reasons__image">
+                            <img src="{{ 'round-placeholder.png' | asset_url }}"
+                                alt="{{ block.settings.title | escape }}" loading="lazy">
+                        </div>
+                        {% endif %}
+
+                        {% if block.settings.badge != blank or block.settings.title != blank%}
+                        <div class="cwc-reasons-content">
+
+                            {% if block.settings.badge != blank %}
+                            <div class="cwc-reasons__badge"
+                                style="background-color: {{ block.settings.badge_bg }}; color: {{ block.settings.badge_color }}">
+                                {{ block.settings.badge }}
+                            </div>
+                            {% endif %}
+
+                            {% if block.settings.title != blank %}
+                            <h3 class="cwc-reasons__title">{{ block.settings.title }}</h3>
+                            {% endif %}
+
+                        </div>
+                        {% endif %}
+
+
+                    </div>
+
+                    <!-- BACK -->
+                    <div class="cwc-reasons__back">
+                        {% if block.settings.text != blank %}
+                        <div class="cwc-reasons__desc">{{ block.settings.text }}</div>
+                        {% endif %}
+                    </div>
+
                 </div>
-                {% endif %}
-                {% if block.settings.badge != blank %}
-                <div class="cwc-reasons__badge">{{ block.settings.badge }}</div>
-                {% endif %}
-                {% if block.settings.title != blank %}
-                <h3 class="cwc-reasons__title">{{ block.settings.title }}</h3>
-                {% endif %}
-                {% if block.settings.text != blank %}
-                <div class="cwc-reasons__desc">{{ block.settings.text }}</div>
-                {% endif %}
+
+                <!-- Toggle button always at bottom -->
+                <button class="toggle-button" aria-expanded="false">
+                    <span class="cwc-icon-plus">
+                        <svg width="12" height="12" viewBox="0 0 12 12" fill="none" xmlns="http://www.w3.org/2000/svg">
+                            <path
+                                d="M5.72069 11.033V5.96898H0.656637V5.38515H5.72069V0.321103H6.30451V5.38515H11.3686V5.96898H6.30451V11.033H5.72069Z"
+                                fill="black"></path>
+                        </svg>
+
+                    </span>
+                    <span class="cwc-icon-minus" style="display:none;">
+                        <svg width="8" height="1" viewBox="0 0 8 1" fill="none" xmlns="http://www.w3.org/2000/svg">
+                            <path d="M7.97719 0.0678547V0.65168H0.920525V0.0678547H7.97719Z" fill="black"></path>
+                        </svg>
+
+                    </span>
+                </button>
             </div>
 
-            {% when 'button' %}
-            <div class="cwc-reasons__cta">
-                {% if block.settings.text != blank %}
-                <a href="{{ block.settings.link }}" class="cwc-reasons__btn">
-                    {{ block.settings.text }}
-                </a>
-                {% endif %}
-                {% if block.settings.note != blank %}
-                <div class="cwc-reasons__note">{{ block.settings.note }}</div>
-                {% endif %}
-            </div>
 
-            {% endcase %}
+
+            {% endif %}
             {% endfor %}
         </div>
 
+
+        <!-- CTA block(s) below grid -->
+        {% for block in section.blocks %}
+        {% if block.type == 'button' %}
+        <div class="cwc-reasons__cta" {{ block.shopify_attributes }}>
+            {% if block.settings.text != blank %}
+            <a href="{{ block.settings.link }}" class="cwc-reasons__btn"
+                style="background-color: {{ block.settings.bg-color }}; color: {{ block.settings.text-color }};">
+                {{ block.settings.text }}
+            </a>
+            {% endif %}
+            {% if block.settings.note != blank %}
+            <div class="cwc-reasons__note">{{ block.settings.note }}</div>
+            {% endif %}
+        </div>
+        {% endif %}
+        {% endfor %}
+
     </div>
 </section>
+
+        
+{{ 'CWC_reasons.js' | asset_url | script_tag }}
+
+
 
 
 {% schema %}
 {
 "name": "CWC Reasons",
 "settings": [
-{
-"type": "color",
-"id": "section_bg",
-"label": "Section background",
-"default": "#ffffff"
-},
-{
-"type": "text",
-"id": "caption",
-"label": "Caption",
-"default": "Why Choose Us?"
-},
-{
-"type": "color",
-"id": "caption_bg",
-"label": "Caption background",
-"default": "#111111"
-},
-{
-"type": "color",
-"id": "caption_color",
-"label": "Caption text color",
-"default": "#ffffff"
-},
-{
-"type": "text",
-"id": "heading",
-"label": "Heading",
-"default": "The Reasons Customers Love Us"
-},
-{
-"type": "color",
-"id": "heading_color",
-"label": "Heading color",
-"default": "#111111"
-},
-{
-"type": "color",
-"id": "text_color",
-"label": "Text color",
-"default": "#444444"
-},
+
 {
 "type": "color",
 "id": "card_bg",
@@ -138,26 +176,92 @@
 },
 {
 "type": "color",
-"id": "btn_bg",
-"label": "Button background",
-"default": "#111111"
+"id": "section_bg",
+"label": "Section background",
+"default": "#ffffff"
+},
+{
+"type": "range",
+"id": "padding_top",
+"label": "Padding top",
+"min": 0,
+"max": 200,
+"step": 4,
+"unit": "px",
+"default": 60
+},
+{
+"type": "range",
+"id": "padding_bottom",
+"label": "Padding bottom",
+"min": 0,
+"max": 200,
+"step": 4,
+"unit": "px",
+"default": 60
+}
+],
+"blocks": [
+{
+"type": "caption",
+"name": "Caption",
+"settings": [
+{
+"type": "text",
+"id": "text",
+"label": "Caption text",
+"default": "Why Choose Us?"
 },
 {
 "type": "color",
-"id": "btn_color",
-"label": "Button text color",
-"default": "#ffffff"
+"id": "caption_bg",
+"label": "Caption background",
+"default": "#60A1A2"
 },
-
-
+{
+"type": "color",
+"id": "caption_color",
+"label": "Caption text color",
+"default": "#ffffff"
+}
+]
+},
+{
+"type": "heading",
+"name": "Heading",
+"settings": [
+{
+"type": "richtext",
+"id": "text",
+"label": "Heading text",
+"default": "<p>The Reasons Customers Love Us</p>"
+},
+{
+"type": "color",
+"id": "heading_color",
+"label": "Heading color",
+"default": "#111111"
+}
+]
+},
+{
+"type": "text",
+"name": "Intro text",
+"settings": [
 {
 "type": "richtext",
 "id": "text",
 "label": "Intro text",
 "default": "<p>Here’s what sets us apart from other brands.</p>"
+},
+{
+"type": "color",
+"id": "text_color",
+"label": "Text color",
+"default": "#444444"
 }
-],
-"blocks": [
+]
+},
 {
 "type": "reason",
 "name": "Reason card",
@@ -170,7 +274,20 @@
 {
 "type": "text",
 "id": "badge",
-"label": "Badge"
+"label": "Badge",
+"default": "Reason 1"
+},
+{
+"type": "color",
+"id": "badge_bg",
+"label": "Badge background",
+"default": "#60A1A2"
+},
+{
+"type": "color",
+"id": "badge_color",
+"label": "Badge text color",
+"default": "#ffffff"
 },
 {
 "type": "text",
@@ -194,12 +311,24 @@
 "type": "text",
 "id": "text",
 "label": "Button text",
-"default": "Shop Now"
+"default": "Try Risk-Free Today"
 },
 {
 "type": "url",
 "id": "link",
 "label": "Button link"
+},
+{
+"type": "color",
+"id": "text-color",
+"label": "Button Label color",
+"default": "#ffffff"
+},
+{
+"type": "color",
+"id": "bg-color",
+"label": "Button Background color",
+"default": "#125657"
 },
 {
 "type": "text",
@@ -215,20 +344,16 @@
 "name": "Reasons",
 "category": "Custom",
 "blocks": [
-{
-"type": "reason"
-},
-{
-"type": "reason"
-},
-{
-"type": "reason"
-},
-{
-"type": "button"
-}
+{ "type": "caption" },
+{ "type": "heading" },
+{ "type": "text" },
+{ "type": "reason" },
+{ "type": "reason" },
+{ "type": "reason" },
+{ "type": "button" }
 ]
 }
 ]
 }
+
 {% endschema %}

@@ -16,22 +16,22 @@
     <div class="cwc-testimonials__wrapper">
 
         <div class="cwc-testimonials__carousel">
-            <div class="carousel-track">
+            <div class="cwc-testimonials__carousel-track">
                 {% for block in section.blocks %}
-                <div class="testimonial-card">
-                    <div class="testimonial-rating">
+                <div class="cwc-testimonial-card">
+                    <div class="cwc-testimonial-rating">
                         {% render 'trust-starts' %}
                     </div>
 
                     {% if block.settings.title != blank %}
-                    <h3 class="testimonial-title">{{ block.settings.title }}</h3>
+                    <h3 class="cwc-testimonials__testimonial-title">{{ block.settings.title }}</h3>
                     {% endif %}
 
                     {% if block.settings.text != blank %}
-                    <p class="testimonial-text">{{ block.settings.text }}</p>
+                    <p class="cwc-testimonials__testimonial-text">{{ block.settings.text }}</p>
                     {% endif %}
 
-                    <div class="testimonial-author">
+                    <div class="cwc-testimonials__testimonial-author">
                         {% if block.settings.author_image != blank %}
                         <img src="{{ block.settings.author_image | img_url: '100x100' }}"
                             alt="{{ block.settings.author_name }}">
@@ -42,7 +42,7 @@
                         <span class="verified">✔ Verified Customer</span>
                     </div>
 
-                    <div class="testimonial-tags">
+                    <div class="cwc-testimonials__testimonial-tags">
                         {% if block.settings.feature_one != blank %}
                         <span class="tag">{{ block.settings.feature_one }}</span>
                         {% endif %}
@@ -55,15 +55,15 @@
 
             </div>
 
-            <div class="carousel-progress">
-                <div class="progress-bar"></div>
+            <div class="cwc-testimonials__carousel-progress">
+                <div class="cwc-testimonials__progress-bar"></div>
             </div>
 
-            <div class="carousel-controls">
-                <button class="carousel-prev" aria-label="Previous">&#10094;</button>
+            <div class="cwc-testimonials__carousel-controls">
+                <button class="cwc-testimonials__carousel-prev" aria-label="Previous">&#10094;</button>
 
 
-                <button class="carousel-next" aria-label="Next">&#10095;</button>
+                <button class="cwc-testimonials__carousel-next" aria-label="Next">&#10095;</button>
             </div>
         </div>
 

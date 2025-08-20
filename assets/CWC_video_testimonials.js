@@ -1,9 +1,21 @@
 document.addEventListener("DOMContentLoaded", function () {
-  const track = document.querySelector(".cwc-testimonials__carousel-track");
-  const cards = Array.from(document.querySelectorAll(".cwc-testimonial-card"));
-  const prevBtn = document.querySelector(".cwc-testimonials__carousel-prev");
-  const nextBtn = document.querySelector(".cwc-testimonials__carousel-next");
-  const progressBar = document.querySelector(".cwc-testimonials__progress-bar");
+  const track = document.querySelector(
+    ".cwc-video-testimonials .carousel-track"
+  );
+  const cards = Array.from(
+    document.querySelectorAll(".cwc-video-testimonials .video-card")
+  );
+  const prevBtn = document.querySelector(
+    ".cwc-video-testimonials .carousel-prev"
+  );
+  const nextBtn = document.querySelector(
+    ".cwc-video-testimonials .carousel-next"
+  );
+  const progressBar = document.querySelector(
+    ".cwc-video-testimonials .progress-bar"
+  );
+
+  if (!track || cards.length === 0) return; // stop if no cards
 
   let cardWidth, gap, visibleCount, currentIndex;
 
@@ -11,7 +23,6 @@ document.addEventListener("DOMContentLoaded", function () {
     visibleCount = window.innerWidth <= 768 ? 1 : 3; // mobile vs desktop
   }
 
-  // Clone enough cards for visible viewport
   function cloneCards() {
     const startClones = cards
       .slice(0, visibleCount)
@@ -33,7 +44,7 @@ document.addEventListener("DOMContentLoaded", function () {
     const moveX = -(currentIndex * (cardWidth + gap));
     track.style.transform = `translateX(${moveX}px)`;
 
-    // update progress ignoring clones
+    // progress bar ignoring clones
     const realIndex =
       (currentIndex - visibleCount + cards.length) % cards.length;
     const progress = ((realIndex + 1) / cards.length) * 100;
@@ -49,7 +60,7 @@ document.addEventListener("DOMContentLoaded", function () {
       () => {
         if (currentIndex >= cards.length + visibleCount) {
           track.style.transition = "none";
-          currentIndex = visibleCount; // reset back to first real
+          currentIndex = visibleCount;
           updateCarousel(false);
         }
       },
@@ -66,7 +77,7 @@ document.addEventListener("DOMContentLoaded", function () {
       () => {
         if (currentIndex < visibleCount) {
           track.style.transition = "none";
-          currentIndex = cards.length; // reset back to last real group
+          currentIndex = cards.length;
           updateCarousel(false);
         }
       },
@@ -74,14 +85,27 @@ document.addEventListener("DOMContentLoaded", function () {
     );
   }
 
+  // Prevent videos from playing while sliding
+  function pauseAllVideos() {
+    const videos = track.querySelectorAll("video");
+    videos.forEach((v) => v.pause());
+  }
+
   // Init
   setVisibleCount();
   cloneCards();
-  currentIndex = visibleCount; // start after clones
+  currentIndex = visibleCount;
   setDimensions();
 
-  nextBtn.addEventListener("click", handleNext);
-  prevBtn.addEventListener("click", handlePrev);
+  nextBtn.addEventListener("click", () => {
+    pauseAllVideos();
+    handleNext();
+  });
+  prevBtn.addEventListener("click", () => {
+    pauseAllVideos();
+    handlePrev();
+  });
+
   window.addEventListener("resize", () => {
     setVisibleCount();
     setDimensions();

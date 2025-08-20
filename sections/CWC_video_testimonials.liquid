@@ -1,0 +1,194 @@
+{% style %}
+#CWC_video_testimonials-{{ section.id }} {
+--section-bg: {{ section.settings.bg_color | default: '#FAF9F6' }};
+--text-color: {{ section.settings.text_color | default: '#111111' }};
+--button-bg: {{ section.settings.button_bg | default: '#009370' }};
+--button-text: {{ section.settings.button_text | default: '#ffffff' }};
+--padding-top: {{ section.settings.padding_top | default: 60 }}px;
+--padding-bottom: {{ section.settings.padding_bottom | default: 60 }}px;
+}
+{% endstyle %}
+
+{{ 'CWC_video_testimonials.css' | asset_url | stylesheet_tag }}
+
+<section id="CWC_video_testimonials-{{ section.id }}" class="cwc-video-testimonials">
+    <div class="cwc-video-testimonials__wrapper">
+
+        {% if section.settings.heading != blank %}
+        <h2 class="cwc-video-testimonials__heading">
+            {{ section.settings.heading }}
+        </h2>
+        {% endif %}
+
+        {% if section.settings.text != blank %}
+        <div class="cwc-video-testimonials__text">
+            {{ section.settings.text }}
+        </div>
+        {% endif %}
+
+        <div class="cwc-video-testimonials__carousel">
+            <div class="cwc-video-testimonials__carousel-track">
+                {% for block in section.blocks %}
+                {% if block.type == 'testimonial' %}
+                <div class="cwc-video-testimonials__video-card">
+                    {% if block.settings.video_url != blank %}
+                    <video controls preload="none">
+                        <source src="{{ block.settings.video_url }}" type="video/mp4">
+                        Your browser does not support the video tag.
+                    </video>
+                    {% endif %}
+                    <div class="cwc-video-testimonials__video-author">
+                        <span class="cwc-video-testimonials__author-name">{{ block.settings.author_name }}</span>
+                        <span class="cwc-video-testimonials__verified">✔ Verified Customer</span>
+                    </div>
+                </div>
+                {% endif %}
+                {% endfor %}
+            </div>
+
+            <div class="cwc-video-testimonials__carousel-progress">
+                <div class="cwc-video-testimonials__progress-bar"></div>
+            </div>
+
+            <div class="cwc-video-testimonials__carousel-controls">
+                <button class="cwc-video-testimonials__carousel-prev" aria-label="Previous">&#10094;</button>
+                <button class="cwc-video-testimonials__carousel-next" aria-label="Next">&#10095;</button>
+            </div>
+        </div>
+
+        {% if section.settings.button_label != blank %}
+        <div class="cwc-video-testimonials__cta">
+            <a href="{{ section.settings.button_link }}" class="cwc-video-testimonials__btn">
+                {{ section.settings.button_label }}
+            </a>
+            {% if section.settings.button_note != blank %}
+            <div class="cwc-video-testimonials__note">
+                {{ section.settings.button_note }}
+            </div>
+            {% endif %}
+        </div>
+        {% endif %}
+
+    </div>
+</section>
+
+
+{{ 'CWC_video_testimonials.js' | asset_url | script_tag }}
+
+
+
+{% schema %}
+{
+"name": "CWC Video Testimonials",
+"settings": [
+{
+"type": "text",
+"id": "heading",
+"label": "Heading",
+"default": "What Our Customers Say"
+},
+{
+"type": "richtext",
+"id": "text",
+"label": "Subtext",
+"default": "<p>See why thousands of people love our products</p>"
+},
+{
+"type": "text",
+"id": "button_label",
+"label": "Button label",
+"default": "Shop Now"
+},
+{
+"type": "url",
+"id": "button_link",
+"label": "Button link"
+},
+{
+"type": "text",
+"id": "button_note",
+"label": "Button note",
+"default": "No risk — 30 day money back guarantee"
+},
+{
+"type": "color",
+"id": "bg_color",
+"label": "Background color",
+"default": "#FAF9F6"
+},
+{
+"type": "color",
+"id": "text_color",
+"label": "Text color",
+"default": "#111111"
+},
+{
+"type": "color",
+"id": "button_bg",
+"label": "Button background color",
+"default": "#125657"
+},
+{
+"type": "color",
+"id": "button_text",
+"label": "Button text color",
+"default": "#ffffff"
+},
+{
+"type": "range",
+"id": "padding_top",
+"label": "Padding top",
+"min": 0,
+"max": 120,
+"step": 4,
+"default": 60,
+"unit": "px"
+},
+{
+"type": "range",
+"id": "padding_bottom",
+"label": "Padding bottom",
+"min": 0,
+"max": 120,
+"step": 4,
+"default": 60,
+"unit": "px"
+}
+],
+"blocks": [
+{
+"type": "testimonial",
+"name": "Testimonial",
+"settings": [
+{
+"type": "url",
+"id": "video_url",
+"label": "Video URL"
+},
+{
+"type": "text",
+"id": "author_name",
+"label": "Author name",
+"default": "Customer Name"
+}
+]
+}
+],
+"max_blocks": 8,
+"presets": [
+{
+"name": "Video Testimonials",
+"category": "Custom",
+"blocks": [
+{ "type": "testimonial" },
+{ "type": "testimonial" },
+{ "type": "testimonial" },
+{ "type": "testimonial" },
+{ "type": "testimonial" },
+{ "type": "testimonial" },
+{ "type": "testimonial" }
+]
+}
+]
+}
+{% endschema %}

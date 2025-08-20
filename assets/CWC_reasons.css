@@ -2,38 +2,46 @@
    CWC Reasons Section
    ================================ */
 
-.CWC_reasons {
+.cwc-reasons {
     background: var(--section-bg);
     padding: var(--padding-top) 1rem var(--padding-bottom);
+    padding-top: var(--padding-top);
+    padding-bottom: var(--padding-bottom);
+    padding-left: 3rem;
+    padding-right: 3rem;
 }
 
-.CWC_reasons .cwc-reasons__inner {
-    max-width: 1200px;
+.cwc-reasons__wrapper {
+    max-width: 1500px;
     margin: 0 auto;
     text-align: center;
 }
 
-.CWC_reasons .cwc-reasons__caption {
+.cwc-reasons__caption {
+    letter-spacing: 1px;
+    max-width: 266px;
+    width: 100%;
+    align-items: center;
+    border-radius: 10px;
     display: inline-block;
     background: var(--caption-bg);
     color: var(--caption-color);
-    font-size: 0.875rem;
+    font-size: 1.2rem;
     text-transform: uppercase;
-    font-weight: 600;
-    letter-spacing: 1px;
-    padding: 0.25rem 0.75rem;
-    border-radius: 999px;
+    margin: auto;
     margin-bottom: 1rem;
+    font-weight: bold;
+    padding: .6rem 1.5rem;
 }
 
-.CWC_reasons .cwc-reasons__heading {
+.cwc-reasons__heading {
     font-size: 2rem;
     font-weight: 700;
     color: var(--heading-color);
     margin-bottom: 1rem;
 }
 
-.CWC_reasons .cwc-reasons__text {
+.cwc-reasons__text {
     max-width: 700px;
     margin: 0 auto 2rem;
     color: var(--text-color);
@@ -42,59 +50,54 @@
 }
 
 /* Grid for cards */
-.CWC_reasons .cwc-reasons__grid {
-    display: grid;
-    grid-template-columns: repeat(3, 1fr);
-    gap: 1.5rem;
-    margin-bottom: 2rem;
+.cwc-reasons__grid {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 12.5px;
 }
 
-.CWC_reasons .cwc-reason {
-    background: var(--card-bg);
-    color: var(--card-text);
-    padding: 1.5rem;
-    border-radius: 1rem;
-    text-align: left;
-    transition: transform 0.25s ease, box-shadow 0.25s ease;
-}
 
-.CWC_reasons .cwc-reason:hover {
-    transform: translateY(-4px);
-    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.08);
-}
-
-.CWC_reasons .cwc-reason__img {
-    width: 64px;
-    height: 64px;
+.cwc-reasons__image img {
+    width: auto;
+    height: max-content;
     margin-bottom: 1rem;
     object-fit: contain;
+    border-radius: 4px;
 }
 
-.CWC_reasons .cwc-reason__badge {
-    font-size: 0.75rem;
-    text-transform: uppercase;
-    font-weight: 600;
-    color: var(--heading-color);
-    margin-bottom: 0.5rem;
+.cwc-reasons__badge {
+    text-transform: capitalize;
+    margin-bottom: .5rem;
+    border-radius: 4.7px;
+    font-weight: 500;
+    font-size: .9rem;
+    display: inline-block;
+    padding: 0rem .5rem;
+    /* margin-top: 1rem; */
+
 }
 
-.CWC_reasons .cwc-reason__title {
+.cwc-reasons__title {
     font-size: 1.25rem;
-    font-weight: 600;
     margin-bottom: 0.5rem;
 }
 
-.CWC_reasons .cwc-reason__text {
+.cwc-reasons__desc {
     font-size: 1rem;
     line-height: 1.5;
+
+    font-size: 0.95rem;
+    color: var(--text-color, #444);
 }
 
-/* Button block */
-.CWC_reasons .cwc-reasons__btn-wrap {
+/* CTA block */
+.cwc-reasons__cta {
     margin-top: 2rem;
+    text-align: center;
 }
 
-.CWC_reasons .cwc-reasons__btn {
+.cwc-reasons__btn {
     background: var(--btn-bg);
     color: var(--btn-color);
     padding: 0.75rem 1.5rem;
@@ -106,29 +109,237 @@
     transition: background 0.25s ease, color 0.25s ease;
 }
 
-.CWC_reasons .cwc-reasons__btn:hover {
+.cwc-reasons__btn:hover {
     opacity: 0.9;
 }
 
-.CWC_reasons .cwc-reasons__btn-note {
+.cwc-reasons__note {
     margin-top: 0.5rem;
     font-size: 0.875rem;
     color: var(--text-color);
 }
 
+.cwc-reasons__card {
+    background: var(--card-bg);
+    color: var(--card-text);
+    padding: 1.5rem;
+    border-radius: 1rem;
+    text-align: left;
+    transition: transform 0.25s ease, box-shadow 0.25s ease;
+}
+
+
+
+.cwc-reasons__card {
+    background: var(--card-bg, #fff);
+    padding: 1.25rem;
+    border-radius: 0.75rem;
+    text-align: center;
+    border: solid 1px;
+
+    background: white;
+    padding: 22px 21px 17px;
+    width: calc(20% - 10px);
+    border-radius: 12px;
+    border: .3px solid rgba(0, 0, 0, 0.3);
+    position: relative;
+    /* overflow: hidden; */
+
+
+
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: space-between;
+}
+
+
+.cwc-reasons__btn {
+    display: inline-block;
+    padding: 0.85rem 1.5rem;
+    font-weight: 600;
+    font-size: 1rem;
+    border-radius: 6px;
+    text-decoration: none;
+    text-align: center;
+    transition: all 0.3s ease-in-out;
+    border: 2px solid transparent;
+    max-width: 336px;
+    width: 100%;
+}
+
+.cwc-reasons__btn:hover {
+    background-color: transparent !important;
+    border-color: currentColor !important;
+    color: inherit !important;
+}
+
+.cwc-reasons__note {
+    margin-top: 0.5rem;
+    font-size: 0.875rem;
+    color: var(--text-color, #666);
+}
+
+
+.cwc-reasons__card {
+    perspective: 1000px;
+}
+
+.cwc-reasons__front {
+    display: flex;
+}
+
+.cwc-reasons__front {
+    display: flex;
+    flex-direction: column;
+}
+
+.cwc-icon-plus svg,
+.cwc-icon-minus svg {
+    background: #fff;
+    border: .5px solid rgba(0, 0, 0, 0.3);
+    width: 1.8rem;
+    height: 1.8rem;
+    border-radius: 50%;
+    padding: 6px;
+    display: inline;
+    align-items: center;
+    text-align: center;
+    margin: auto;
+}
+
+/*  */
+/*  */
+/*  */
+.reason-details {
+    display: none;
+    overflow: hidden;
+    transition: max-height 0.35s ease;
+    height: 100% !important;
+}
+
+.cwc-reasons__card.open .reason-details {
+    display: block;
+}
+
+.toggle-button {
+    background: none;
+    border: none;
+    cursor: pointer;
+    margin-top: 1rem;
+    width: 100%;
+}
+
+/* transition styles */
+.cwc-reasons__card {
+    perspective: 1000px;
+}
+
+.cwc-reasons__content {
+    transform-style: preserve-3d;
+    transition: transform 0.6s ease;
+    position: relative;
+}
+
+.cwc-reasons__front,
+.cwc-reasons__back {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    backface-visibility: hidden;
+}
+
+.cwc-reasons__front {
+    position: relative;
+}
+
+.cwc-reasons__front {
+    transform: rotateY(0deg);
+}
+
+.cwc-reasons__back {
+    transform: rotateY(180deg);
+}
+
+.cwc-reasons__card.open .cwc-reasons__content {
+    transform: rotateY(180deg);
+}
+
+
+/* MOBILE ============================ */
+@media (max-width: 991px) {
+    .cwc-reasons__card {
+        width: 100%;
+        border-radius: 5.64px;
+        border: .3px solid rgba(0, 0, 0, 0.3);
+        padding: .5rem;
+        display: flex;
+        flex-direction: row;
+    }
+
+    .cwc-reasons__title {
+        margin: 0rem;
+        font-size: 1rem;
+        text-align: left;
+    }
+
+    .cwc-reasons-content {
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: flex-start;
+        padding-left: 1rem;
+        padding-right: 1rem;
+    }
+
+    .cwc-reasons__grid {
+        /* grid-template-rows: repeat(5, 1fr); */
+        /* grid-template-columns: 1fr; */
+        display: flex;
+        flex-wrap: wrap;
+        justify-content: center;
+    }
+
+    .cwc-reasons__badge {
+        font-size: .8rem;
+        padding: 0rem .8rem;
+    }
+
+    .cwc-reasons {
+        padding-left: 1rem;
+        padding-right: 1rem;
+    }
+
+    .cwc-reasons__image img {
+        width: 100%;
+        border-radius: 5.17px;
+        max-width: 88px;
+        min-width: 88px;
+        height: auto;
+        margin: auto;
+        /* margin-right: 1rem; */
+    }
+
+    .cwc_reason-card__content {
+        display: flex;
+        align-items: flex-start;
+        flex-direction: column;
+        justify-content: center;
+
+    }
+
+    /* transition styles */
+    .cwc-reasons__back {
+        /* position: static; */
+    }
+
+    .toggle-button {
+        height: auto;
+        width: auto;
+    }
+}
+
 /* Responsive */
-@media (max-width: 900px) {
-    .CWC_reasons .cwc-reasons__grid {
-        grid-template-columns: repeat(2, 1fr);
-    }
-}
-
-@media (max-width: 600px) {
-    .CWC_reasons .cwc-reasons__grid {
-        grid-template-columns: 1fr;
-    }
-
-    .CWC_reasons .cwc-reasons__heading {
-        font-size: 1.5rem;
-    }
-}
+@media screen and (max-width: 767px) {}
