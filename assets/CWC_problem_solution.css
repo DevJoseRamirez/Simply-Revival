@@ -1,0 +1,157 @@
+/* ================================
+   CWC Problem Solution Styles
+   ================================ */
+
+.cwc-problem-solution {
+    background: var(--section-bg);
+    padding-top: var(--padding-top);
+    padding-bottom: var(--padding-bottom);
+}
+
+.cwc-problem-solution__wrapper {
+    max-width: 1500px;
+    margin: 0 auto;
+    padding: 0 3rem;
+}
+
+/* Headings and text */
+.cwc-problem-solution__subhead {
+    text-align: center;
+    margin-bottom: 1rem;
+}
+
+.cwc-problem-solution__caption {
+    text-align: center;
+    background: inherit;
+    color: inherit;
+    letter-spacing: 1px;
+    max-width: 266px;
+    width: 100%;
+    align-items: center;
+    border-radius: 10px;
+    font-size: 1rem;
+    text-transform: uppercase;
+    margin: auto;
+    margin-bottom: 1rem;
+    font-weight: 600;
+    padding: .6rem 1.5rem;
+}
+
+
+.cwc-problem-solution__heading {
+    text-align: center;
+    margin-bottom: 1.25rem;
+    text-align: center;
+}
+
+.cwc-problem-solution__heading>* {
+    text-align: center;
+}
+
+.cwc-problem-solution__heading>b {
+    /* text-align: center; */
+    /* color: var(--highlight-color); */
+}
+
+
+.cwc-problem-solution__text {
+    text-align: center;
+    margin-bottom: 2rem;
+    max-width: 800px;
+    margin-left: auto;
+    margin-right: auto;
+}
+
+/* ================================
+   Two-column Table Row
+   ================================ */
+.cwc-problem-solution__tables {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 2rem;
+    margin-bottom: 3rem;
+}
+
+.cwc-problem-solution__table {
+    border-radius: 12px;
+    padding: 2rem;
+    background: var(--table-bg, #fff);
+}
+
+.cwc-problem-solution__table-title {
+    font-weight: 700;
+    margin-bottom: 1rem;
+}
+
+.cwc-problem-solution__table ul {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+}
+
+.cwc-problem-solution__table li {
+    display: flex;
+    align-items: center;
+    margin-bottom: 1rem;
+    font-size: 1rem;
+    line-height: 1.4;
+}
+
+.cwc-problem-solution__table li img {
+    max-width: 36px;
+    height: auto;
+    margin-right: .95rem;
+    object-fit: contain;
+}
+
+/* ================================
+   Image Row (3 Columns)
+   ================================ */
+.cwc-problem-solution__image-row {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 1.5rem;
+    align-items: center;
+}
+
+.cwc-problem-solution__image-row img {
+    width: 100%;
+    height: auto;
+    object-fit: contain;
+}
+
+/* ================================
+   Responsive
+   ================================ */
+@media (max-width: 768px) {
+    .cwc-problem-solution__table li img {
+        margin-right: 10px;
+    }
+
+    .cwc-problem-solution__table li {
+        grid-gap: 10px;
+        max-width: 134px;
+        margin-left: auto;
+        margin-right: auto;
+    }
+
+    .cwc-problem-solution__wrapper {
+        padding: 0 1rem;
+    }
+
+    .cwc-problem-solution__tables {
+        /* grid-template-columns: 1fr; */
+        gap: 8px;
+
+    }
+
+    .cwc-problem-solution__table {
+        padding: 30px 16px 23px 12px;
+    }
+
+    .cwc-problem-solution__image-row {
+        grid-template-columns: repeat(3, 1fr);
+        /* stays 3 across */
+        gap: 1rem;
+    }
+}

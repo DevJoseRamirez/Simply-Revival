@@ -1,0 +1,301 @@
+{% style %}
+#CWC_problem_solution-{{ section.id }} {
+--section-bg: {{ section.settings.background_color }};
+--padding-top: {{ section.settings.padding_top }}px;
+--padding-bottom: {{ section.settings.padding_bottom }}px;
+--padding-top-mobile: {{ section.settings.padding_top | times: 0.5 }}px;
+--padding-bottom-mobile: {{ section.settings.padding_bottom | times: 0.5 }}px;
+}
+{% endstyle %}
+
+{{ 'CWC_problem_solution.css' | asset_url | stylesheet_tag }}
+
+<section id="CWC_problem_solution-{{ section.id }}" class="cwc-problem-solution">
+    <div class="cwc-problem-solution__wrapper">
+
+        <div class="cwc-problem-solution__content">
+            {% for block in section.blocks %}
+
+            {%- if block.settings.text != blank -%}
+            <div class="cwc-problem-solution__caption" {{ block.shopify_attributes }}
+                style="background:{{ block.settings.bg_color }}; color:{{ block.settings.text_color }};">
+                {{ block.settings.text }}
+            </div>
+            {%- endif -%}
+
+            {%- if block.settings.subhead != blank -%}
+            <div class="cwc-problem-solution__subhead">
+                {{ block.settings.subhead }}
+            </div>
+            {%- endif -%}
+
+            {%- if block.settings.heading != blank -%}
+            <div class="cwc-problem-solution__heading">
+                {{ block.settings.heading }}
+            </div>
+            {%- endif -%}
+
+            {%- if block.settings.text != blank -%}
+            <div class="cwc-problem-solution__text">
+                {{ block.settings.text }}
+            </div>
+            {%- endif -%}
+
+            {% endfor %}
+        </div>
+
+
+
+
+        <div class="cwc-problem-solution__tables">
+            {% for block in section.blocks %}
+            {% if block.type == 'table' %}
+            <div class="cwc-problem-solution__table" style="background-color: {{ block.settings.bg_color }}" {{
+                block.shopify_attributes }}>
+                {% if block.settings.title != blank %}
+                <div class="cwc-problem-solution__table-title">{{ block.settings.title }}</div>
+                {% endif %}
+                <ul class="cwc-problem-solution__list">
+                    {% if block.settings.icon1 != blank or block.settings.text1 != blank %}
+                    <li>
+                        {% if block.settings.icon1 != blank %}
+                        <img src="{{ block.settings.icon1 | img_url: '48x' }}" alt="">
+                        {% endif %}
+                        {{ block.settings.text1 }}
+                    </li>
+                    {% endif %}
+                    {% if block.settings.icon2 != blank or block.settings.text2 != blank %}
+                    <li>
+                        {% if block.settings.icon2 != blank %}
+                        <img src="{{ block.settings.icon2 | img_url: '48x' }}" alt="">
+                        {% endif %}
+                        {{ block.settings.text2 }}
+                    </li>
+                    {% endif %}
+                    {% if block.settings.icon3 != blank or block.settings.text3 != blank %}
+                    <li>
+                        {% if block.settings.icon3 != blank %}
+                        <img src="{{ block.settings.icon3 | img_url: '48x' }}" alt="">
+                        {% endif %}
+                        {{ block.settings.text3 }}
+                    </li>
+                    {% endif %}
+                </ul>
+            </div>
+            {% endif %}
+            {% endfor %}
+        </div>
+
+
+
+        {% for block in section.blocks %}
+        {% if block.type == 'image_row' %}
+        <div class="cwc-problem-solution__image-row" {{ block.shopify_attributes }}>
+            {% if block.settings.image1 != blank %}
+            <img src="{{ block.settings.image1 | img_url: '400x' }}" alt="">
+            {% endif %}
+            {% if block.settings.image2 != blank %}
+            <img src="{{ block.settings.image2 | img_url: '400x' }}" alt="">
+            {% endif %}
+            {% if block.settings.image3 != blank %}
+            <img src="{{ block.settings.image3 | img_url: '400x' }}" alt="">
+            {% endif %}
+        </div>
+        {% endif %}
+        {% endfor %}
+
+    </div>
+</section>
+
+
+{% schema %}
+{
+"name": "CWC Problem Solution",
+"tag": "section",
+"settings": [
+{
+"type": "richtext",
+"id": "subhead",
+"label": "Subhead"
+},
+{
+"type": "richtext",
+"id": "heading",
+"label": "Heading",
+"default": "<h3>From thinning & insecure to Full & Confident</h3>"
+},
+{
+"type": "richtext",
+"id": "text",
+"label": "Text"
+},
+{
+"type": "color",
+"id": "background_color",
+"label": "Background Color",
+"default": "#FAF9F6"
+},
+{
+"type": "range",
+"id": "padding_top",
+"label": "Padding Top",
+"default": 60,
+"min": 0,
+"max": 200,
+"step": 5,
+"unit": "px"
+},
+{
+"type": "range",
+"id": "padding_bottom",
+"label": "Padding Bottom",
+"default": 60,
+"min": 0,
+"max": 200,
+"step": 5,
+"unit": "px"
+}
+],
+"blocks": [
+{
+"type": "caption",
+"name": "Caption",
+"settings": [
+{
+"type": "text",
+"id": "text",
+"label": "Text"
+},
+{
+"type": "color",
+"id": "text_color",
+"label": "Text Color",
+"default": "#ffffff"
+},
+{
+"type": "color",
+"id": "bg_color",
+"label": "Background Color",
+"default": "#111111"
+}
+]
+},
+
+{
+"type": "heading",
+"name": "Heading",
+"settings": [
+{
+"type": "richtext",
+"id": "heading",
+"label": "Text"
+},
+{
+"type": "color",
+"id": "text_color",
+"label": "Text Color",
+"default": "#ffffff"
+}
+]
+},
+
+
+
+
+
+
+
+
+{
+"type": "table",
+"name": "Table",
+"settings": [
+{
+"type": "text",
+"id": "title",
+"label": "Title",
+"default": "Our Solution"
+},
+{
+"type": "color",
+"id": "bg_color",
+"label": "Background Color",
+"default": "#ffffff"
+},
+{
+"type": "image_picker",
+"id": "icon1",
+"label": "Icon 1"
+},
+{
+"type": "text",
+"id": "text1",
+"label": "Text 1"
+},
+{
+"type": "image_picker",
+"id": "icon2",
+"label": "Icon 2"
+},
+{
+"type": "text",
+"id": "text2",
+"label": "Text 2"
+},
+{
+"type": "image_picker",
+"id": "icon3",
+"label": "Icon 3"
+},
+{
+"type": "text",
+"id": "text3",
+"label": "Text 3"
+}
+]
+},
+{
+"type": "image_row",
+"name": "Image Row",
+"settings": [
+{
+"type": "image_picker",
+"id": "image1",
+"label": "Image 1"
+},
+{
+"type": "image_picker",
+"id": "image2",
+"label": "Image 2"
+},
+{
+"type": "image_picker",
+"id": "image3",
+"label": "Image 3"
+}
+]
+}
+],
+"presets": [
+{
+"name": "Problem Solution",
+"category": "Custom",
+"blocks": [
+{
+"type": "caption"
+},
+{
+"type": "table"
+
+},
+{
+"type": "table"
+},
+{
+"type": "image_row"
+}
+]
+}
+]
+}
+{% endschema %}

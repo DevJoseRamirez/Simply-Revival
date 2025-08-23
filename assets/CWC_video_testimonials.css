@@ -397,7 +397,7 @@
 
 /* Allow horizontal panning to start on the video surface */
 .cwc-video-testimonials__video {
-    touch-action: pan-x;
+    /* touch-action: pan-x; */
 }
 
 /* Buttons tap fast; don’t hint pan */
@@ -413,7 +413,7 @@
 }
 
 .cwc-video-testimonials__video {
-    touch-action: pan-x;
+    /* touch-action: pan-x; */
 }
 
 .cwc-video-testimonials__custom-play-button {
