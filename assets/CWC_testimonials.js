@@ -1,89 +1,33 @@
 document.addEventListener("DOMContentLoaded", function () {
-  const track = document.querySelector(".cwc-testimonials__carousel-track");
-  const cards = Array.from(document.querySelectorAll(".cwc-testimonial-card"));
-  const prevBtn = document.querySelector(".cwc-testimonials__carousel-prev");
-  const nextBtn = document.querySelector(".cwc-testimonials__carousel-next");
-  const progressBar = document.querySelector(".cwc-testimonials__progress-bar");
-
-  let cardWidth, gap, visibleCount, currentIndex;
-
-  function setVisibleCount() {
-    visibleCount = window.innerWidth <= 768 ? 1 : 3; // mobile vs desktop
-  }
-
-  // Clone enough cards for visible viewport
-  function cloneCards() {
-    const startClones = cards
-      .slice(0, visibleCount)
-      .map((c) => c.cloneNode(true));
-    const endClones = cards.slice(-visibleCount).map((c) => c.cloneNode(true));
-
-    startClones.forEach((c) => track.appendChild(c));
-    endClones.reverse().forEach((c) => track.insertBefore(c, track.firstChild));
-  }
-
-  function setDimensions() {
-    cardWidth = cards[0].offsetWidth;
-    gap = parseInt(getComputedStyle(cards[0]).marginRight) || 0;
-    updateCarousel(false);
-  }
-
-  function updateCarousel(animate = true) {
-    track.style.transition = animate ? "transform 0.4s ease" : "none";
-    const moveX = -(currentIndex * (cardWidth + gap));
-    track.style.transform = `translateX(${moveX}px)`;
-
-    // update progress ignoring clones
-    const realIndex =
-      (currentIndex - visibleCount + cards.length) % cards.length;
-    const progress = ((realIndex + 1) / cards.length) * 100;
-    progressBar.style.width = `${progress}%`;
-  }
-
-  function handleNext() {
-    currentIndex++;
-    updateCarousel();
-
-    track.addEventListener(
-      "transitionend",
-      () => {
-        if (currentIndex >= cards.length + visibleCount) {
-          track.style.transition = "none";
-          currentIndex = visibleCount; // reset back to first real
-          updateCarousel(false);
+  const swiper = new Swiper(".cwc-testimonials__carousel", {
+    slidesPerView: 3,
+    spaceBetween: 10,
+    loop: true,
+    speed: 400,
+    navigation: {
+      nextEl: ".cwc-testimonials__carousel-next",
+      prevEl: ".cwc-testimonials__carousel-prev",
+    },
+    pagination: {
+      el: ".swiper-pagination",
+      clickable: true,
+    },
+    breakpoints: {
+      0: { slidesPerView: 1 },
+      768: { slidesPerView: 2 },
+      1024: { slidesPerView: 3 },
+    },
+    on: {
+      slideChange(swiper) {
+        const progressBar = document.querySelector(
+          ".cwc-testimonials__progress-bar"
+        );
+        if (progressBar) {
+          const progress =
+            ((swiper.realIndex + 1) / swiper.slides.length) * 100;
+          progressBar.style.width = `${progress}%`;
         }
       },
-      { once: true }
-    );
-  }
-
-  function handlePrev() {
-    currentIndex--;
-    updateCarousel();
-
-    track.addEventListener(
-      "transitionend",
-      () => {
-        if (currentIndex < visibleCount) {
-          track.style.transition = "none";
-          currentIndex = cards.length; // reset back to last real group
-          updateCarousel(false);
-        }
-      },
-      { once: true }
-    );
-  }
-
-  // Init
-  setVisibleCount();
-  cloneCards();
-  currentIndex = visibleCount; // start after clones
-  setDimensions();
-
-  nextBtn.addEventListener("click", handleNext);
-  prevBtn.addEventListener("click", handlePrev);
-  window.addEventListener("resize", () => {
-    setVisibleCount();
-    setDimensions();
+    },
   });
 });

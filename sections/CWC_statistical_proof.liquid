@@ -1,0 +1,177 @@
+{% style %}
+#CWC_statistical_proof-{{ section.id }} {
+--section-bg: {{ section.settings.bg_color }};
+--text-color: {{ section.settings.text_color }};
+--highlight-color: {{ section.settings.highlight_color }};
+--padding-top: {{ section.settings.padding_top }}px;
+--padding-bottom: {{ section.settings.padding_bottom }}px;
+--padding-top-mobile: {{ section.settings.padding_top | times: 0.5 }}px;
+--padding-bottom-mobile: {{ section.settings.padding_bottom | times: 0.5 }}px;
+}
+{% endstyle %}
+
+{{ 'CWC_statistical_proof.css' | asset_url | stylesheet_tag }}
+
+
+<section id="CWC_statistical_proof-{{ section.id }}" class="cwc-statistical-proof">
+    <div class="cwc-statistical-proof__wrapper">
+
+        {% if section.settings.heading != blank %}
+        <h2 class="cwc-statistical-proof__heading">
+            {{ section.settings.heading }}
+        </h2>
+        {% endif %}
+
+        {% if section.settings.text != blank %}
+        <div class="cwc-statistical-proof__text">
+            {{ section.settings.text }}
+        </div>
+        {% endif %}
+
+        <div class="cwc-statistical-proof__grid">
+            {% for block in section.blocks %}
+            {% if block.type == 'stat' %}
+            <div class="cwc-statistical-proof__item" {{ block.shopify_attributes }}>
+
+                {% if block.settings.number != blank %}
+                <div class="cwc-statistical-proof__stat-number" style="color: var(--highlight-color);"
+                    data-value="{{ block.settings.number | remove: '%' }}">
+                    0%
+                </div>
+                {% endif %}
+
+                {% if block.settings.title != blank %}
+                <div class="cwc-statistical-proof__title">
+                    {{ block.settings.title }}
+                </div>
+                {% endif %}
+
+                {% if block.settings.text != blank %}
+                <div class="cwc-statistical-proof__desc">
+                    {{ block.settings.text }}
+                </div>
+                {% endif %}
+
+                <div class="cwc-statistical-proof__progress">
+                    <div class="cwc-statistical-proof__progress-bar"
+                        style="background-color: var(--highlight-color); width: 0%;">
+                    </div>
+                </div>
+                {% if forloop.index0 < 2 %}
+                    <div class="cwc-statistical-proof__seperator"></div>
+                {% endif %}
+            </div>
+            {% endif %}
+            {% endfor %}
+        </div>
+
+    </div>
+</section>
+
+
+{{ 'CWC_statistical_proof.js' | asset_url | script_tag }}
+
+
+
+{% schema %}
+{
+"name": "CWC Statistical Proof",
+"tag": "section",
+"class": "cwc-statistical-proof",
+"settings": [
+{
+"type": "richtext",
+"id": "heading",
+"label": "Heading",
+"default": "<h2>Simply Revival® Works - The Numbers Prove it</h2>"
+},
+{
+"type": "richtext",
+"id": "text",
+"label": "Text",
+"default": "<p>When clean, plant-based ingredients meet clinical potency, the results speak for themselves.</p>"
+},
+{
+"type": "color",
+"id": "bg_color",
+"label": "Section background color",
+"default": "#FAF9F6"
+},
+{
+"type": "image_picker",
+"id": "bg_image_desktop",
+"label": "Background image (Desktop)"
+},
+{
+"type": "image_picker",
+"id": "bg_image_mobile",
+"label": "Background image (Mobile)"
+},
+{
+"type": "color",
+"id": "highlight_color",
+"label": "Highlight color (percentage & progress bar)",
+"default": "#009370"
+},
+{
+"type": "range",
+"id": "padding_top",
+"label": "Padding top",
+"default": 60,
+"min": 0,
+"max": 200,
+"step": 5,
+"unit": "px"
+},
+{
+"type": "range",
+"id": "padding_bottom",
+"label": "Padding bottom",
+"default": 60,
+"min": 0,
+"max": 200,
+"step": 5,
+"unit": "px"
+}
+],
+"blocks": [
+{
+"type": "stat",
+"name": "Statistic",
+"settings": [
+{
+"type": "text",
+"id": "number",
+"label": "Number (with % sign)",
+"default": "94%"
+},
+{
+"type": "richtext",
+"id": "title",
+"label": "Title",
+"default": "<p><b>Said they noticed visibly less hair shedding </b></p>"
+},
+{
+"type": "richtext",
+"id": "text",
+"label": "Text",
+"default": "<p>After taking Simply Revival® consistently for 3+ weeks</p>"
+}
+]
+}
+],
+"max_blocks": 4,
+"presets": [
+{
+"name": "Statistical Proof",
+"category": "Custom",
+"blocks": [
+{ "type": "stat" },
+{ "type": "stat" },
+{ "type": "stat" },
+{ "type": "stat" }
+]
+}
+]
+}
+{% endschema %}

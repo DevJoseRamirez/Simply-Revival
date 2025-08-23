@@ -13,7 +13,14 @@
 
 .cwc-video-testimonials__wrapper {
     max-width: 1200px;
+    max-width: 1500px;
     margin: 0 auto;
+
+    max-width: 1200px;
+    max-width: 1500px;
+    margin: 0 auto;
+    padding: 0 1rem;
+    padding: 0 3rem;
 }
 
 .cwc-video-testimonials__heading {
@@ -36,6 +43,8 @@
     position: relative;
     overflow: hidden;
     margin-bottom: 2rem;
+
+    /* max-width: 1500px; */
 }
 
 .cwc-video-testimonials__carousel-track {
@@ -49,12 +58,19 @@
     flex-shrink: 0;
     padding: 0 1rem;
     box-sizing: border-box;
+
+    box-sizing: border-box;
+    text-align: center;
+
+
+    background: var(--card-bg);
+    margin: 0rem;
 }
 
 .cwc-video-testimonials__carousel video {
     width: 100%;
     height: auto;
-    border-radius: 12px;
+    border-radius: 6px;
     box-shadow: 0 8px 20px rgba(0, 0, 0, 0.12);
 }
 
@@ -66,6 +82,15 @@
     justify-content: center;
     align-items: center;
     gap: 6px;
+    flex-direction: column;
+
+    border-radius: 6px;
+    border: 1px solid #eee;
+    padding: 0 1rem;
+    padding: 10px 10px 13px;
+    margin-top: 8px;
+
+
 }
 
 .cwc-video-testimonials__author-name {
@@ -79,18 +104,17 @@
 
 /* Controls */
 .cwc-video-testimonials__carousel-controls {
-    position: absolute;
-    top: 50%;
-    left: 0;
-    right: 0;
     display: flex;
-    justify-content: space-between;
-    transform: translateY(-50%);
-    pointer-events: none;
+    justify-content: center;
+    align-items: center;
+    gap: 1rem;
+    margin-top: 1.5rem;
+    position: static;
+    height: auto;
 }
 
 .cwc-video-testimonials__carousel-controls button {
-    background: rgba(0, 0, 0, 0.5);
+    /* background: rgba(0, 0, 0, 0.5);
     color: #fff;
     border: none;
     border-radius: 50%;
@@ -102,7 +126,7 @@
     display: flex;
     justify-content: center;
     align-items: center;
-    transition: background 0.3s;
+    transition: background 0.3s; */
 }
 
 .cwc-video-testimonials__carousel-controls button:hover {
@@ -161,6 +185,242 @@
     color: #666;
 }
 
+/* video */
+
+.cwc-video-testimonials__video-card {
+    background: #fff;
+    border-radius: 12px;
+    padding: 0 0 1rem;
+    height: 100%;
+    width: auto;
+}
+
+
+.swiper-slide .swiper-slide-next {}
+
+.cwc-video-testimonials__video-card {
+    width: calc(100% / 5);
+}
+
+.cwc-video-testimonials__video-wrapper {
+    width: 100%;
+}
+
+.cwc-video-testimonials__carousel video {
+    width: 100%;
+}
+
+.cwc-video-testimonials__video-card video {
+    /* width: 100%; */
+    /* height: auto; */
+    border-radius: 10px;
+}
+
+.cwc-video-testimonials__carousel {
+    overflow: hidden;
+    margin-bottom: 2rem;
+}
+
+
+.cwc-custom-play-button {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    background: url(play-icon.svg) no-repeat center center;
+    background-size: contain;
+    width: 60px;
+    height: 60px;
+    border: none;
+    cursor: pointer;
+    z-index: 10;
+}
+
+
+/* ==============================
+   Controls & Progress
+   ============================== */
+.cwc-video-testimonials__carousel-controls {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 1rem;
+    margin-top: 1.5rem;
+    position: static;
+    height: auto;
+}
+
+.cwc-testimonials .cwc-video-testimonials__carousel-prev,
+.cwc-testimonials .cwc-video-testimonials__carousel-next {}
+
+
+
+.cwc-video-testimonials__carousel-progress {
+    flex: 1;
+    height: 4px;
+    background: rgba(0, 0, 0, 0.1);
+    border-radius: 2px;
+    overflow: hidden;
+    max-width: 300px;
+    max-width: 280px;
+    margin: auto;
+
+    margin-top: 2rem;
+}
+
+.cwc-video-testimonials__progress-bar {
+    height: 100%;
+    width: 0%;
+    background: var(--accent-color, #007aff);
+    transition: width 0.3s linear;
+}
+
+
+.cwc-video-testimonial-card {
+    box-sizing: border-box;
+    padding: 2rem 1.5rem;
+    text-align: center;
+    border-radius: 12px;
+    background: var(--card-bg);
+    border: 1px solid #eee;
+}
+
+
+.cwc-video-testimonials__carousel-controls {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 1rem;
+    margin-top: 1.5rem;
+    position: static;
+    height: auto;
+}
+
+.cwc-video-testimonials__carousel-prev,
+.cwc-video-testimonials__carousel-next {
+    position: static;
+}
+
+
+.cwc-video-wrapper {
+    position: relative;
+    width: 100%;
+    aspect-ratio: 16 / 9;
+    /* or 4/5, or use a variable */
+    overflow: hidden;
+}
+
+.cwc-video-wrapper video {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    display: block;
+}
+
+.cwc-video-testimonials__carousel .swiper-slide {
+    width: auto;
+    /* or 80% for mobile */
+    max-width: 320px;
+    max-width: 250px;
+    /* width: calc(98% /5); */
+    /* match your intended */
+}
+
+.cwc-video-testimonials__video-wrapper {
+    position: relative;
+    /* aspect-ratio: 16 / 9; */
+    overflow: hidden;
+}
+
+.cwc-video-testimonials__video-wrapper video {
+    /* width: 100%; */
+    /* height: 100%; */
+    object-fit: cover;
+    display: block;
+}
+
+.cwc-video-testimonials__custom-play-button {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    z-index: 2;
+    background: none;
+    border: none;
+    cursor: pointer;
+
+    /* background-color: red; */
+    /* background: none; */
+    border-radius: 50%;
+
+    height: max-content;
+    width: max-content;
+    /* height: 36px; */
+    /* width: 36px; */
+
+    /* display: none; */
+}
+
+.cwc-video-testimonials__custom-play-button svg {
+
+    height: 43px;
+    width: 43px;
+
+}
+
+.cwc-video-testimonials__custom-play-button svg.play-icon {
+    display: block;
+    height: 43px;
+    width: 43px;
+}
+
+.cwc-video-testimonials__custom-play-button svg.pause-icon {
+    display: none;
+}
+
+.cwc-video-testimonials__custom-play-button.is-playing svg.play-icon {
+    display: none;
+}
+
+.cwc-video-testimonials__custom-play-button.is-playing svg.pause-icon {
+    display: block;
+}
+
+
+/* 
+
+ */
+/* TESTING TESTINT TESTING */
+.cwc-video-testimonials__custom-play-button {
+    touch-action: manipulation;
+}
+
+/* Allow horizontal panning to start on the video surface */
+.cwc-video-testimonials__video {
+    touch-action: pan-x;
+}
+
+/* Buttons tap fast; don’t hint pan */
+.cwc-video-testimonials__custom-play-button {
+    touch-action: manipulation;
+}
+
+/* Prevent accidental image dragging / selection during drags */
+.cwc-video-testimonials__video,
+.cwc-video-testimonials__video-wrapper {
+    -webkit-user-drag: none;
+    user-select: none;
+}
+
+.cwc-video-testimonials__video {
+    touch-action: pan-x;
+}
+
+.cwc-video-testimonials__custom-play-button {
+    touch-action: manipulation;
+}
+
+
 /* Mobile */
 @media screen and (max-width: 768px) {
     .cwc-video-testimonials__heading {
@@ -175,5 +435,9 @@
         width: 32px;
         height: 32px;
         font-size: 1.2rem;
+    }
+
+    .cwc-video-testimonials__wrapper {
+        padding: 0 1.25rem;
     }
 }

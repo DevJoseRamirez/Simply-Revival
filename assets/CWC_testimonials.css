@@ -10,8 +10,10 @@
 
 .cwc-testimonials__wrapper {
     max-width: 1200px;
+    max-width: 1500px;
     margin: 0 auto;
     padding: 0 1rem;
+    padding: 0 3rem;
 }
 
 /* ==============================
@@ -122,23 +124,14 @@
     justify-content: center;
     margin-top: 1.5rem;
     gap: 1rem;
+
+    position: relative;
 }
 
 .cwc-testimonials .cwc-testimonials__carousel-prev,
-.cwc-testimonials .cwc-testimonials__carousel-next {
-    background: var(--button-bg, #000);
-    color: var(--button-text, #fff);
-    border: none;
-    padding: 0.6rem 1rem;
-    border-radius: 4px;
-    cursor: pointer;
-    font-size: 1rem;
-}
+.cwc-testimonials .cwc-testimonials__carousel-next {}
 
-.cwc-testimonials .cwc-testimonials__carousel-prev:hover,
-.cwc-testimonials .cwc-testimonials__carousel-next:hover {
-    opacity: 0.8;
-}
+
 
 .cwc-testimonials__carousel-progress {
     flex: 1;
@@ -147,6 +140,7 @@
     border-radius: 2px;
     overflow: hidden;
     max-width: 300px;
+    max-width: 280px;
     margin: auto;
 
     margin-top: 2rem;
@@ -159,13 +153,40 @@
     transition: width 0.3s linear;
 }
 
+
+.cwc-testimonial-card {
+    box-sizing: border-box;
+    padding: 2rem 1.5rem;
+    text-align: center;
+    border-radius: 12px;
+    background: var(--card-bg);
+    border: 1px solid #eee;
+    margin: 0rem;
+}
+
+
+.cwc-testimonials__carousel-controls {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 1rem;
+    margin-top: 1.5rem;
+    position: static;
+    height: auto;
+}
+
+.cwc-testimonials__carousel-prev,
+.cwc-testimonials__carousel-next {
+    position: static;
+}
+
 /* ==============================
    Mobile Overrides (last in file)
    ============================== */
 @media (max-width: 768px) {
     .cwc-testimonials {
-        padding-top: var(--padding-top-mobile);
-        padding-bottom: var(--padding-bottom-mobile);
+        /* padding-top: var(--padding-top-mobile); */
+        /* padding-bottom: var(--padding-bottom-mobile); */
     }
 
     .cwc-testimonial-card {
@@ -184,6 +205,10 @@
 
     .cwc-testimonials__carousel {
         overflow: visible;
+    }
+
+    .cwc-testimonials__wrapper {
+        padding: 0 1.25rem;
     }
 }
 

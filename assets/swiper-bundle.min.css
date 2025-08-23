@@ -1,0 +1,28 @@
+.swiper {
+    overflow: hidden;
+}
+
+.swiper-wrapper {
+    display: flex;
+}
+
+.swiper-slide {
+    flex-shrink: 0;
+    width: auto;
+    /* Swiper controls width */
+}
+
+.swiper-button-prev,
+.swiper-button-next {
+    margin: 0rem !important;
+    position: static !important;
+}
+
+.swiper-wrapper {
+    display: flex;
+}
+
+.swiper-slide {
+    flex-shrink: 0;
+    box-sizing: border-box;
+}
