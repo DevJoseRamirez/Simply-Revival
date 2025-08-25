@@ -48,8 +48,8 @@
     text-align: center;
 }
 
-.cwc-problem-solution__heading>b {
-    /* text-align: center; */
+.cwc-problem-solution__heading>bb {
+    text-align: center;
     /* color: var(--highlight-color); */
 }
 
@@ -112,12 +112,20 @@
     grid-template-columns: repeat(3, 1fr);
     gap: 1.5rem;
     align-items: center;
+    display: flex;
+    align-items: center;
+    justify-content: center;
 }
 
 .cwc-problem-solution__image-row img {
-    width: 100%;
+    width: auto;
     height: auto;
     object-fit: contain;
+    vertical-align: center;
+    margin: auto;
+    object-position: center;
+    max-width: 400px;
+    max-width: calc(100% / 3);
 }
 
 /* ================================

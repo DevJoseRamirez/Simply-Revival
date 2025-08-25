@@ -1,0 +1,618 @@
+{% style %}
+  #CWC_comparison-{{ section.id }} {
+    --section-bg-start: {{ section.settings.background_start_color }};
+    --section-bg-end:   {{ section.settings.background_end_color }};
+    --text-color: {{ section.settings.text_color }};
+    --padding-top: {{ section.settings.padding_top }}px;
+    --padding-bottom: {{ section.settings.padding_bottom }}px;
+    --padding-top-mobile: {{ section.settings.padding_top | times: 0.5 }}px;
+    --padding-bottom-mobile: {{ section.settings.padding_bottom | times: 0.5 }}px;
+  }
+{% endstyle %}
+
+{{ 'CWC_comparison.css' | asset_url | stylesheet_tag }}
+
+<section id="CWC_comparison-{{ section.id }}" class="cwc-comparison">
+  <div class="cwc-comparison__wrapper">
+    <!-- Mobile-only heading -->
+    <div class="cwc-comparison__mobile-heading">
+      {% for block in section.blocks %}
+        {% if block.type == 'heading' %}
+          <div
+            class="cwc-comparison__heading"
+            style="color: {{ block.settings.text_color }};"
+            {{ block.shopify_attributes }}
+          >
+            {{ block.settings.text }}
+          </div>
+        {% endif %}
+      {% endfor %}
+    </div>
+
+    <div class="cwc-comparison__grid">
+      <!-- Left Tables Column -->
+
+      <div class="cwc-comparison__tables">
+        {% assign table_count = 0 %}
+        {% for block in section.blocks %}
+          {% comment %} Brand Table {% endcomment %}
+          {% if block.type == 'brand_table' %}
+            {% assign table_count = table_count | plus: 1 %}
+            <div
+              class="cwc-comparison__table{% if table_count == 2 %} cwc-comparison__table--right{% endif %}"
+              style="background-color: {{ block.settings.background_color }}; color: {{ block.settings.text_color }};"
+              {{ block.shopify_attributes }}
+            >
+              {% if block.settings.product_image != blank %}
+                <div class="cwc-comparison__product">
+                  <img
+                    src="{{ block.settings.product_image | image_url: width: 120 }}"
+                    alt="{{ block.settings.product_image.alt }}"
+                    width="{{ block.settings.product_image.width }}"
+                    height="{{ block.settings.product_image.height }}"
+                  >
+                </div>
+              {% endif %}
+
+              {% if block.settings.title != blank %}
+                <h3
+                  class="cwc-comparison__table-title"
+                  style="color: {{ block.settings.text_color }};"
+                >
+                  {{ block.settings.title }}
+                </h3>
+              {% endif %}
+
+              <ul class="cwc-comparison__list">
+                {% if block.settings.text1 != blank %}
+                  <li class="cwc-comparison__item">
+                    {% if block.settings.icon1 != blank %}
+                      <img
+                        src="{{ block.settings.icon1 | image_url: width: 24 }}"
+                        alt="{{ block.settings.icon1.alt }}"
+                        width="{{ block.settings.icon1.width }}"
+                        height="{{ block.settings.icon1.height }}"
+                      >
+                    {% endif %}
+                    <span>{{ block.settings.text1 }}</span>
+                  </li>
+                {% endif %}
+
+                {% if block.settings.text2 != blank %}
+                  <li class="cwc-comparison__item">
+                    {% if block.settings.icon2 != blank %}
+                      <img
+                        src="{{ block.settings.icon2 | image_url: width: 24 }}"
+                        alt="{{ block.settings.icon2.alt }}"
+                        width="{{ block.settings.icon2.width }}"
+                        height="{{ block.settings.icon2.height }}"
+                      >
+                    {% endif %}
+                    <span>{{ block.settings.text2 }}</span>
+                  </li>
+                {% endif %}
+
+                {% if block.settings.text3 != blank %}
+                  <li class="cwc-comparison__item">
+                    {% if block.settings.icon3 != blank %}
+                      <img
+                        src="{{ block.settings.icon3 | image_url: width: 24 }}"
+                        alt="{{ block.settings.icon3.alt }}"
+                        width="{{ block.settings.icon3.width }}"
+                        height="{{ block.settings.icon3.height }}"
+                      >
+                    {% endif %}
+                    <span>{{ block.settings.text3 }}</span>
+                  </li>
+                {% endif %}
+
+                {% if block.settings.text4 != blank %}
+                  <li class="cwc-comparison__item">
+                    {% if block.settings.icon4 != blank %}
+                      <img
+                        src="{{ block.settings.icon4 | image_url: width: 24 }}"
+                        alt="{{ block.settings.icon4.alt }}"
+                        width="{{ block.settings.icon4.width }}"
+                        height="{{ block.settings.icon4.height }}"
+                      >
+                    {% endif %}
+                    <span>{{ block.settings.text4 }}</span>
+                  </li>
+                {% endif %}
+
+                {% if block.settings.text5 != blank %}
+                  <li class="cwc-comparison__item">
+                    {% if block.settings.icon5 != blank %}
+                      <img
+                        src="{{ block.settings.icon5 | image_url: width: 24 }}"
+                        alt="{{ block.settings.icon5.alt }}"
+                        width="{{ block.settings.icon5.width }}"
+                        height="{{ block.settings.icon5.height }}"
+                      >
+                    {% endif %}
+                    <span>{{ block.settings.text5 }}</span>
+                  </li>
+                {% endif %}
+              </ul>
+            </div>
+          {% endif %}
+
+          {% comment %} competitor table {% endcomment %}
+          {% if block.type == 'competitor_table' %}
+            {% assign table_count = table_count | plus: 1 %}
+            <div
+              class="cwc-comparison__table{% if table_count == 2 %} cwc-comparison__table--right{% endif %}"
+              style="background-color: {{ block.settings.background_color }}; color: {{ block.settings.text_color }};"
+              {{ block.shopify_attributes }}
+            >
+              {% if block.settings.product_image != blank %}
+                <div class="cwc-comparison__product">
+                  <img
+                    src="{{ block.settings.product_image | image_url: width: 120 }}"
+                    alt="{{ block.settings.product_image.alt }}"
+                    width="{{ block.settings.product_image.width }}"
+                    height="{{ block.settings.product_image.height }}"
+                  >
+                </div>
+              {% endif %}
+
+              {% if block.settings.title != blank %}
+                <h3
+                  class="cwc-comparison__table-title"
+                  style="color: {{ block.settings.text_color }};"
+                >
+                  {{ block.settings.title }}
+                </h3>
+              {% endif %}
+
+              <ul class="cwc-comparison__list">
+                {% if block.settings.text1 != blank %}
+                  <li class="cwc-comparison__item">
+                    {% if block.settings.icon1 != blank %}
+                      <img
+                        src="{{ block.settings.icon1 | image_url: width: 24 }}"
+                        alt="{{ block.settings.icon1.alt }}"
+                        width="{{ block.settings.icon1.width }}"
+                        height="{{ block.settings.icon1.height }}"
+                      >
+                    {% endif %}
+                    <span>{{ block.settings.text1 }}</span>
+                  </li>
+                {% endif %}
+
+                {% if block.settings.text2 != blank %}
+                  <li class="cwc-comparison__item">
+                    {% if block.settings.icon2 != blank %}
+                      <img
+                        src="{{ block.settings.icon2 | image_url: width: 24 }}"
+                        alt="{{ block.settings.icon2.alt }}"
+                        width="{{ block.settings.icon2.width }}"
+                        height="{{ block.settings.icon2.height }}"
+                      >
+                    {% endif %}
+                    <span>{{ block.settings.text2 }}</span>
+                  </li>
+                {% endif %}
+
+                {% if block.settings.text3 != blank %}
+                  <li class="cwc-comparison__item">
+                    {% if block.settings.icon3 != blank %}
+                      <img
+                        src="{{ block.settings.icon3 | image_url: width: 24 }}"
+                        alt="{{ block.settings.icon3.alt }}"
+                        width="{{ block.settings.icon3.width }}"
+                        height="{{ block.settings.icon3.height }}"
+                      >
+                    {% endif %}
+                    <span>{{ block.settings.text3 }}</span>
+                  </li>
+                {% endif %}
+
+                {% if block.settings.text4 != blank %}
+                  <li class="cwc-comparison__item">
+                    {% if block.settings.icon4 != blank %}
+                      <img
+                        src="{{ block.settings.icon4 | image_url: width: 24 }}"
+                        alt="{{ block.settings.icon4.alt }}"
+                        width="{{ block.settings.icon4.width }}"
+                        height="{{ block.settings.icon4.height }}"
+                      >
+                    {% endif %}
+                    <span>{{ block.settings.text4 }}</span>
+                  </li>
+                {% endif %}
+
+                {% if block.settings.text5 != blank %}
+                  <li class="cwc-comparison__item">
+                    {% if block.settings.icon5 != blank %}
+                      <img
+                        src="{{ block.settings.icon5 | image_url: width: 24 }}"
+                        alt="{{ block.settings.icon5.alt }}"
+                        width="{{ block.settings.icon5.width }}"
+                        height="{{ block.settings.icon5.height }}"
+                      >
+                    {% endif %}
+                    <span>{{ block.settings.text5 }}</span>
+                  </li>
+                {% endif %}
+              </ul>
+            </div>
+          {% endif %}
+        {% endfor %}
+      </div>
+
+      <!-- Right Content Column -->
+      <div class="cwc-comparison__content">
+        {% for block in section.blocks %}
+          {% case block.type %}
+            {% when 'heading' %}
+              <div
+                class="cwc-comparison__heading cwc-comparison__heading--desktop"
+                style="color: {{ block.settings.text_color }};"
+                {{ block.shopify_attributes }}
+              >
+                {{ block.settings.text }}
+              </div>
+
+            {% when 'bullet' %}
+              <div
+                class="cwc-comparison__bullet"
+                style="color: {{ block.settings.text_color }};"
+                {{ block.shopify_attributes }}
+              >
+                {{ block.settings.text }}
+              </div>
+
+            {% when 'button' %}
+              {% if block.settings.button_text != blank %}
+                <div class="cwc-comparison__button-wrap">
+                  <a
+                    href="{{ block.settings.button_link }}"
+                    class="cwc-comparison__button"
+                    style="background-color: {{ block.settings.button_bg_color }}; color: {{ block.settings.button_text_color }};"
+                    {{ block.shopify_attributes }}
+                  >
+                    {{ block.settings.button_text }}
+                  </a>
+                  {% if block.settings.button_note != blank %}
+                    <div
+                      class="cwc-comparison__button-note"
+                      style="color: {{ block.settings.button_bg_color }}"
+                    >
+                      {{ block.settings.button_note }}
+                    </div>
+                  {% endif %}
+                </div>
+              {% endif %}
+          {% endcase %}
+        {% endfor %}
+      </div>
+    </div>
+  </div>
+</section>
+
+{% schema %}
+{
+  "name": "CWC Comparison",
+  "tag": "section",
+  "settings": [
+    {
+      "type": "color",
+      "id": "background_start_color",
+      "label": "Background start color",
+      "default": "#FAF9F6"
+    },
+    {
+      "type": "color",
+      "id": "background_end_color",
+      "label": "Background end color",
+      "default": "#FAF9F6"
+    },
+    {
+      "type": "color",
+      "id": "text_color",
+      "label": "Text color",
+      "default": "#000"
+    },
+    {
+      "type": "range",
+      "id": "padding_top",
+      "label": "Padding Top",
+      "default": 40,
+      "min": 0,
+      "max": 200,
+      "step": 5,
+      "unit": "px"
+    },
+    {
+      "type": "range",
+      "id": "padding_bottom",
+      "label": "Padding Bottom",
+      "default": 40,
+      "min": 0,
+      "max": 200,
+      "step": 5,
+      "unit": "px"
+    }
+  ],
+  "blocks": [
+    {
+      "type": "brand_table",
+      "name": "Brand Table",
+      "settings": [
+        {
+          "type": "image_picker",
+          "id": "product_image",
+          "label": "Product Image"
+        },
+        {
+          "type": "text",
+          "id": "title",
+          "label": "Table Title",
+          "default": "RESILIA"
+        },
+        {
+          "type": "color",
+          "id": "background_color",
+          "label": "Background Color",
+          "default": "#ffffff"
+        },
+        {
+          "type": "color",
+          "id": "text_color",
+          "label": "Text Color",
+          "default": "#111111"
+        },
+        {
+          "type": "image_picker",
+          "id": "icon1",
+          "label": "Icon 1"
+        },
+        {
+          "type": "text",
+          "id": "text1",
+          "label": "Text 1",
+          "default": "comparison highlight"
+        },
+        {
+          "type": "image_picker",
+          "id": "icon2",
+          "label": "Icon 2"
+        },
+        {
+          "type": "text",
+          "id": "text2",
+          "label": "Text 2",
+          "default": "comparison highlight"
+        },
+        {
+          "type": "image_picker",
+          "id": "icon3",
+          "label": "Icon 3"
+        },
+        {
+          "type": "text",
+          "id": "text3",
+          "label": "Text 3",
+          "default": "comparison highlight"
+        },
+        {
+          "type": "image_picker",
+          "id": "icon4",
+          "label": "Icon 4"
+        },
+        {
+          "type": "text",
+          "id": "text4",
+          "label": "Text 4",
+          "default": "comparison highlight"
+        },
+        {
+          "type": "image_picker",
+          "id": "icon5",
+          "label": "Icon 5"
+        },
+        {
+          "type": "text",
+          "id": "text5",
+          "label": "Text 5",
+          "default": "comparison highlight"
+        }
+      ]
+    },
+    {
+      "type": "competitor_table",
+      "name": "Competitor Table",
+      "settings": [
+        {
+          "type": "image_picker",
+          "id": "product_image",
+          "label": "Product Image"
+        },
+        {
+          "type": "text",
+          "id": "title",
+          "label": "Table Title",
+          "default": "RESILIA"
+        },
+        {
+          "type": "color",
+          "id": "background_color",
+          "label": "Background Color",
+          "default": "#ffffff"
+        },
+        {
+          "type": "color",
+          "id": "text_color",
+          "label": "Text Color",
+          "default": "#111111"
+        },
+        {
+          "type": "image_picker",
+          "id": "icon1",
+          "label": "Icon 1"
+        },
+        {
+          "type": "text",
+          "id": "text1",
+          "label": "Text 1",
+          "default": "comparison highlight"
+        },
+        {
+          "type": "image_picker",
+          "id": "icon2",
+          "label": "Icon 2"
+        },
+        {
+          "type": "text",
+          "id": "text2",
+          "label": "Text 2",
+          "default": "comparison highlight"
+        },
+        {
+          "type": "image_picker",
+          "id": "icon3",
+          "label": "Icon 3"
+        },
+        {
+          "type": "text",
+          "id": "text3",
+          "label": "Text 3",
+          "default": "comparison highlight"
+        },
+        {
+          "type": "image_picker",
+          "id": "icon4",
+          "label": "Icon 4"
+        },
+        {
+          "type": "text",
+          "id": "text4",
+          "label": "Text 4",
+          "default": "comparison highlight"
+        },
+        {
+          "type": "image_picker",
+          "id": "icon5",
+          "label": "Icon 5"
+        },
+        {
+          "type": "text",
+          "id": "text5",
+          "label": "Text 5",
+          "default": "comparison highlight"
+        }
+      ]
+    },
+    {
+      "type": "heading",
+      "name": "Heading",
+      "settings": [
+        {
+          "type": "richtext",
+          "id": "text",
+          "label": "Heading Text",
+          "default": "<h2><strong>Resilia®</strong> vs. Other Brands</h2>"
+        },
+        {
+          "type": "color",
+          "id": "text_color",
+          "label": "Text color",
+          "default": "#fff"
+        }
+      ]
+    },
+    {
+      "type": "bullet",
+      "name": "Bullet Point",
+      "settings": [
+        {
+          "type": "richtext",
+          "id": "text",
+          "label": "Bullet Text",
+          "default": "<p><strong>Clinically Backed Ingredients</strong> - Ingredients proven to work</p>"
+        },
+        {
+          "type": "color",
+          "id": "text_color",
+          "label": "Text color",
+          "default": "#fff"
+        }
+      ]
+    },
+    {
+      "type": "button",
+      "name": "CTA Button",
+      "settings": [
+        {
+          "type": "text",
+          "id": "button_text",
+          "label": "Button Text",
+          "default": "Try Risk-Free Today"
+        },
+        {
+          "type": "url",
+          "id": "button_link",
+          "label": "Button Link"
+        },
+        {
+          "type": "color",
+          "id": "button_bg_color",
+          "label": "Button Background Color",
+          "default": "#fff"
+        },
+        {
+          "type": "color",
+          "id": "button_text_color",
+          "label": "Button Text Color",
+          "default": "#125657"
+        },
+        {
+          "type": "richtext",
+          "id": "button_note",
+          "label": "Button Note Text",
+          "default": "<p>30-day money back guarantee</p>"
+        }
+      ]
+    }
+  ],
+  "presets": [
+    {
+      "name": "Comparison Section",
+      "category": "Custom",
+      "blocks": [
+        {
+          "type": "heading"
+        },
+        {
+          "type": "brand_table"
+        },
+        {
+          "type": "competitor_table"
+        },
+        {
+          "type": "bullet"
+        },
+        {
+          "type": "bullet"
+        },
+        {
+          "type": "bullet"
+        },
+        {
+          "type": "bullet"
+        },
+        {
+          "type": "bullet"
+        },
+        {
+          "type": "bullet"
+        },
+        {
+          "type": "button"
+        }
+      ]
+    }
+  ]
+}
+{% endschema %}
