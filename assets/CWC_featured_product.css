@@ -152,6 +152,7 @@
     display: flex;
     flex-wrap: wrap;
     gap: 0.75rem;
+
 }
 
 .cwc-featured-product__benefit {
@@ -162,7 +163,7 @@
     /* background: #f8f9fa; */
     border-radius: 6px;
     font-size: 0.9rem;
-    font-weight: 500;
+    font-weight: bold;
     color: #125657;
     width: 30%;
 }
@@ -507,6 +508,12 @@
    Mobile Styles
    ================================ */
 
+@media (max-width: 76991px) {
+    .cwc-featured-product__benefit {
+        width: 45%;
+    }
+}
+
 @media (max-width: 768px) {
     .cwc-featured-product {
         padding-top: var(--padding-top-mobile);
@@ -546,6 +553,15 @@
     .cwc-featured-product__benefit {
         font-size: 0.85rem;
         padding: 0.4rem 0.6rem;
+    }
+
+
+    /* ================================
+   FAQ Styles
+   ================================ */
+    .cwc-featured-product__faq {
+        display: none;
+
     }
 
     .cwc-featured-product__faq-question {

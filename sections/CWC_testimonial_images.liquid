@@ -1,0 +1,139 @@
+{% style %}
+  #CWC_testimonial_image-{{ section.id }} {
+    --section-bg: {{ section.settings.bg_color | default: '#FAF9F6' }};
+    --text-color: {{ section.settings.text_color | default: '#111111' }};
+    --padding-top: {{ section.settings.padding_top | default: 60 }}px;
+    --padding-bottom: {{ section.settings.padding_bottom | default: 60 }}px;
+  }
+{% endstyle %}
+
+{{ 'CWC_testimonial_images.css' | asset_url | stylesheet_tag }}
+{{ 'swiper-bundle.min.css' | asset_url | stylesheet_tag }}
+
+<section id="CWC_testimonial_images-{{ section.id }}" class="cwc-testimonial-images">
+  <div class="cwc-testimonial-images__wrapper">
+    {% if section.settings.section_title != blank %}
+      <div class="cwc-testimonial-images__header">
+        <h2 class="cwc-testimonial-images__title">{{ section.settings.section_title }}</h2>
+        {% if section.settings.section_subtitle != blank %}
+          <p class="cwc-testimonial-images__subtitle">{{ section.settings.section_subtitle }}</p>
+        {% endif %}
+      </div>
+    {% endif %}
+
+    <div class="swiper cwc-testimonial-images__carousel">
+      <div class="swiper-wrapper cwc-testimonial-images__swiper-wrapper">
+        {% for block in section.blocks %}
+          <div class="swiper-slide cwc-testimonial-images__swiper-slide">
+            <div class="cwc-testimonial-images-card" {{ block.shopify_attributes }}>
+              {% if block.settings.image != blank %}
+                <img
+                  src="{{ block.settings.image | image_url: width: 400  }}"
+                  alt="Customer testimonial"
+                  loading="lazy"
+                >
+              {% else %}
+                <img src="{{ 'placeholder.png' | asset_url }}" alt="Placeholder image" loading="lazy">
+              {% endif %}
+            </div>
+          </div>
+        {% endfor %}
+      </div>
+    </div>
+
+    <!-- Progress bar -->
+    <div class="cwc-testimonial-images__carousel-progress">
+      <div class="cwc-testimonial-images__progress-bar"></div>
+    </div>
+
+    <!-- Swiper controls -->
+    <div class="cwc-testimonial-images__carousel-controls">
+      <div class="swiper-button-prev cwc-testimonial-images__carousel-prev"></div>
+      <div class="swiper-button-next cwc-testimonial-images__carousel-next"></div>
+    </div>
+  </div>
+</section>
+
+{% comment %} {{ 'CWC_testimonial_images.js' | asset_url | script_tag }} {% endcomment %}
+
+{% schema %}
+{
+  "name": "CWC Testimonial Images",
+  "tag": "section",
+  "settings": [
+    {
+      "type": "text",
+      "id": "section_title",
+      "label": "Section Title",
+      "default": "10,000+ Hair Transformations"
+    },
+    {
+      "type": "text",
+      "id": "section_subtitle",
+      "label": "Section Subtitle"
+    },
+    {
+      "type": "color",
+      "id": "bg_color",
+      "label": "Background color",
+      "default": "#FAF9F6"
+    },
+    {
+      "type": "color",
+      "id": "text_color",
+      "label": "Text color",
+      "default": "#111111"
+    },
+    {
+      "type": "range",
+      "id": "padding_top",
+      "label": "Padding top",
+      "min": 0,
+      "max": 200,
+      "step": 4,
+      "unit": "px",
+      "default": 60
+    },
+    {
+      "type": "range",
+      "id": "padding_bottom",
+      "label": "Padding bottom",
+      "min": 0,
+      "max": 200,
+      "step": 4,
+      "unit": "px",
+      "default": 60
+    }
+  ],
+  "blocks": [
+    {
+      "type": "testimonial_image",
+      "name": "Testimonial Image",
+      "settings": [
+        {
+          "type": "image_picker",
+          "id": "image",
+          "label": "Image"
+        }
+      ]
+    }
+  ],
+  "presets": [
+    {
+      "name": "Testimonial Images",
+      "category": "Custom",
+      "blocks": [
+        {
+          "type": "testimonial_image"
+        },
+        {
+          "type": "testimonial_image"
+        },
+        {
+          "type": "testimonial_image"
+        }
+      ]
+    }
+  ]
+}
+{% endschema %}
