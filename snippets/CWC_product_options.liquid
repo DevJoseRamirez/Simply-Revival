@@ -1,0 +1,126 @@
+{% comment %}
+  here we need to inlucde the product pricing correctpoidng to each optioptions to its buttong
+  - as well pally to the change when checkbox selected update to the corectpoidng prices fto aligne with its avalible selling splan
+{% endcomment %}
+
+{% assign sel = product.selected_or_first_available_variant %}
+
+{% for option in product.options_with_values %}
+  <div class="cwc-featured-product__option">
+    <label class="cwc-option-label">{{ option.name }}</label>
+    <div class="cwc-option-buttons">
+      {% for value in option.values %}
+        {%- comment -%}
+          Candidate variant for this button:
+          - Set this option to "value"
+          - Keep other options set to the current selection (sel)
+        {%- endcomment -%}
+        {% assign candidate = null %}
+        {% for v in product.variants %}
+          {% assign match = true %}
+          {% if option.position == 1 %}
+            {% if v.option1 != value %}{% assign match = false %}{% endif %}
+            {% if product.options.size > 1 and v.option2 != sel.option2 %}{% assign match = false %}{% endif %}
+            {% if product.options.size > 2 and v.option3 != sel.option3 %}{% assign match = false %}{% endif %}
+          {% elsif option.position == 2 %}
+            {% if v.option2 != value %}{% assign match = false %}{% endif %}
+            {% if v.option1 != sel.option1 %}{% assign match = false %}{% endif %}
+            {% if product.options.size > 2 and v.option3 != sel.option3 %}{% assign match = false %}{% endif %}
+          {% else %}
+            {% if v.option3 != value %}{% assign match = false %}{% endif %}
+            {% if v.option1 != sel.option1 %}{% assign match = false %}{% endif %}
+            {% if v.option2 != sel.option2 %}{% assign match = false %}{% endif %}
+          {% endif %}
+          {% if match -%}
+            {%- assign candidate = v -%}
+            {%- break -%}
+          {%- endif %}
+        {% endfor %}
+
+        {%- assign is_selected = false -%}
+        {% if option.position == 1 and sel.option1 == value -%}
+          {%- assign is_selected = true %}
+        {% elsif option.position == 2 and sel.option2 == value -%}
+          {%- assign is_selected = true %}
+        {% elsif option.position == 3 and sel.option3 == value -%}
+          {%- assign is_selected = true %}
+        {% endif %}
+
+        {%- comment -%} price / savings {%- endcomment -%}
+        {% assign show_compare = false %}
+        {% assign save_money = 0 %}
+        {% assign save_pct = 0 %}
+        {% if candidate and candidate.compare_at_price and candidate.compare_at_price > candidate.price %}
+          {% assign show_compare = true %}
+          {% assign save_money = candidate.compare_at_price | minus: candidate.price %}
+          {% assign save_pct = save_money | times: 100 | divided_by: candidate.compare_at_price %}
+        {% endif %}
+
+        {%- comment -%} thumbnail url from variant image {%- endcomment -%}
+        {% assign thumb_url = null %}
+        {% if candidate and candidate.featured_image %}
+          {% assign thumb_url = candidate.featured_image | image_url: width: 56 %}
+        {% elsif candidate and candidate.image %}
+          {% assign thumb_url = candidate.image | image_url: width: 56 %}
+        {% endif %}
+
+        <button
+          type="button"
+          class="cwc-option-button{% if is_selected %} selected{% endif %}{% unless candidate and candidate.available %} disabled{% endunless %}"
+          data-option-index="{{ option.position | minus: 1 }}"
+          data-option-name="{{ option.name | escape }}"
+          data-value="{{ value | escape }}"
+          {% if candidate %}
+            data-variant-id="{{ candidate.id }}"
+          {% endif %}
+          {% if candidate %}
+            data-price="{{ candidate.price }}"
+          {% endif %}
+          {% if candidate %}
+            data-compare="{{ candidate.compare_at_price | default: 0 }}"
+          {% endif %}
+          {% if thumb_url %}
+            data-thumb="{{ thumb_url }}"
+          {% endif %}
+          {% unless candidate and candidate.available %}
+            disabled aria-disabled="true"
+          {% endunless %}
+        >
+          {% if thumb_url %}
+            <span class="cwc-ob__thumb-wrap">
+              <img
+                class="cwc-ob__thumb"
+                src="{{ thumb_url }}"
+                alt="{{ candidate.title | escape }}"
+              >
+            </span>
+          {% endif %}
+
+          <span class="cwc-ob__label">{{ value }}</span>
+
+          {% if candidate %}
+            <span class="cwc-ob__prices">
+              <span class="cwc-ob__price">{{ candidate.price | money }}</span>
+              {% if show_compare %}
+                <span class="cwc-ob__compare">{{ candidate.compare_at_price | money }}</span>
+                <span class="cwc-ob__save">Save {{ save_money | money }} ({{ save_pct }}%)</span>
+              {% endif %}
+            </span>
+          {% else %}
+            <span class="cwc-ob__prices">
+              <span class="cwc-ob__unavail">Unavailable</span>
+            </span>
+          {% endif %}
+        </button>
+      {% endfor %}
+    </div>
+
+    <input
+      type="hidden"
+      name="options[{{ option.name | escape }}]"
+      class="option-input"
+      data-option-index="{{ option.position | minus: 1 }}"
+      value="{% if option.position == 1 %}{{ sel.option1 }}{% elsif option.position == 2 %}{{ sel.option2 }}{% else %}{{ sel.option3 }}{% endif %}"
+    >
+  </div>
+{% endfor %}

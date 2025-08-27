@@ -1,0 +1,9 @@
+{% if block.settings.icon != blank %}
+  <img src="{{ block.settings.icon | image_url: width: 24 }}" alt="{{ block.settings.icon.alt }}">
+{% endif %}
+<span>{{ block.settings.text }}</span>
+
+{% comment %}
+  can add js logic after for teh time our from today which ----
+  shoud display fo rthe esitiamte delivery date
+{% endcomment %}

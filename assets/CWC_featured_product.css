@@ -1,0 +1,559 @@
+/* ================================
+   CWC Featured Product Styles
+   ================================ */
+
+.cwc-featured-product {
+    background: var(--section-bg);
+    padding-top: var(--padding-top);
+    padding-bottom: var(--padding-bottom);
+}
+
+.cwc-featured-product__wrapper {
+    max-width: 1500px;
+    margin: 0 auto;
+    padding: 0 3rem;
+}
+
+.cwc-featured-product__grid {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 4rem;
+    gap: 2.56rem;
+    align-items: start;
+}
+
+/* ================================
+   Left Column
+   ================================ */
+
+.cwc-featured-product__left {
+    display: flex;
+    flex-direction: column;
+    gap: 2rem;
+    gap: 0rem;
+}
+
+.cwc-featured-product__image {
+    position: relative;
+}
+
+.cwc-featured-product__image img {
+    width: 100%;
+    height: auto;
+    border-radius: 8px;
+    object-fit: cover;
+}
+
+/* ================================
+   FAQ Styles
+   ================================ */
+
+.cwc-featured-product__faq {
+    border-bottom: 1px solid #e5e5e5;
+}
+
+.cwc-featured-product__faq-question {
+    width: 100%;
+    padding: 1.25rem 0;
+    background: none;
+    border: none;
+    text-align: left;
+    font-size: 1rem;
+    font-weight: 600;
+    color: #111111;
+    cursor: pointer;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    transition: color 0.3s ease;
+}
+
+.cwc-featured-product__faq-question:hover {
+    color: #125657;
+}
+
+.cwc-featured-product__faq-icon {
+    font-size: 1.25rem;
+    font-weight: 400;
+    transition: transform 0.3s ease;
+}
+
+.cwc-featured-product__faq.active .cwc-featured-product__faq-icon {
+    transform: rotate(45deg);
+}
+
+.cwc-featured-product__faq-answer {
+    max-height: 0;
+    overflow: hidden;
+    transition: max-height 0.3s ease;
+    padding: 0;
+}
+
+.cwc-featured-product__faq.active .cwc-featured-product__faq-answer {
+    padding-bottom: 1.25rem;
+}
+
+.cwc-featured-product__faq-answer p,
+.cwc-featured-product__faq-answer ul {
+    margin: 0 0 1rem 0;
+    line-height: 1.6;
+    color: #666666;
+}
+
+.cwc-featured-product__faq-answer ul {
+    padding-left: 1.5rem;
+}
+
+.cwc-featured-product__faq-answer li {
+    margin-bottom: 0.5rem;
+}
+
+/* ================================
+   Right Column
+   ================================ */
+
+.cwc-featured-product__right {
+    display: flex;
+    flex-direction: column;
+    gap: 1.5rem;
+    gap: 0rem;
+}
+
+.cwc-featured-product__rating {
+    font-size: 0.95rem;
+    color: #125657;
+    font-weight: 500;
+}
+
+.cwc-featured-product__text {
+    font-size: 1rem;
+    line-height: 1.6;
+    color: #111111;
+}
+
+.cwc-featured-product__text h1,
+.cwc-featured-product__text h2 {
+    font-size: 2rem;
+    font-weight: 700;
+    line-height: 1.2;
+    margin: 0 0 0.75rem 0;
+}
+
+.cwc-featured-product__text p {
+    margin: 0 0 1rem 0;
+    /* margin: 0rem; */
+}
+
+/* ================================
+   Benefits
+   ================================ */
+
+.cwc-featured-product__benefits {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 0.75rem;
+}
+
+.cwc-featured-product__benefit {
+    display: flex;
+    align-items: center;
+    gap: 0.5rem;
+    padding: 0.5rem 0rem;
+    /* background: #f8f9fa; */
+    border-radius: 6px;
+    font-size: 0.9rem;
+    font-weight: 500;
+    color: #125657;
+    width: 30%;
+}
+
+.cwc-featured-product__benefit img {
+    width: 20px;
+    height: 20px;
+    object-fit: contain;
+}
+
+/* ================================
+   Price Display
+   ================================ */
+
+.cwc-featured-product__price {
+    display: flex;
+    align-items: center;
+    justify-content: flex-start;
+    gap: 1rem;
+    margin: 1rem 0;
+    border-top: .55px solid rgba(0, 0, 0, .2);
+    border-bottom: .55px solid rgba(0, 0, 0, .2);
+    font-size: 1.4rem;
+    width: 100%;
+    gap: 3.3rem;
+    padding: .8rem 0rem;
+}
+
+.cwc-featured-product__price-current {
+    font-size: 2rem;
+    font-size: inherit;
+    font-weight: 700;
+    color: #60a1a2;
+}
+
+.cwc-featured-product__price-compare {
+    font-size: 1.25rem;
+    font-size: inherit;
+    font-weight: 400;
+    color: #08122a;
+    text-decoration: line-through;
+}
+
+.cwc-featured-product__price-save {
+    font-size: inherit;
+    font-size: 1rem;
+    font-weight: 600;
+    color: #fff;
+    padding: 0.25rem 0.5rem;
+    background: #60a1a2;
+    border-radius: 4px;
+}
+
+/* ================================
+   Product Options
+   ================================ */
+
+.cwc-featured-product__options {
+    display: flex;
+    flex-direction: column;
+    gap: 1rem;
+}
+
+.cwc-featured-product__option {
+    display: flex;
+    flex-direction: column;
+    gap: 0.5rem;
+}
+
+.cwc-featured-product__option label {
+    font-weight: 600;
+    font-size: 0.95rem;
+    color: #111111;
+}
+
+.cwc-featured-product__option select {
+    padding: 0.75rem 1rem;
+    border: 2px solid #e5e5e5;
+    border-radius: 6px;
+    background: #ffffff;
+    font-size: 1rem;
+    transition: border-color 0.3s ease;
+}
+
+.cwc-featured-product__option select:focus {
+    outline: none;
+    border-color: #125657;
+}
+
+.cwc-ob__thumb-wrap {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 100%;
+    max-width: max-content;
+}
+
+/* temp */
+.cwc-ob__thumb {
+    /* display: none; */
+    height: 4rem;
+    width: 100%;
+    max-width: 4.5rem;
+}
+
+/* ================================
+   Delivery Estimate
+   ================================ */
+
+.cwc-featured-product__delivery {
+    display: flex;
+    align-items: center;
+    gap: 0.5rem;
+    padding: 0.75rem 1rem;
+    background: #f0fdf4;
+    border-radius: 6px;
+    font-size: 0.95rem;
+    color: #125657;
+}
+
+.cwc-featured-product__delivery img {
+    width: 20px;
+    height: 20px;
+    object-fit: contain;
+}
+
+/* ================================
+   Add to Cart Form & Button
+   ================================ */
+
+.cwc-featured-product__form {
+    display: flex;
+    flex-direction: column;
+    gap: 1rem;
+    gap: 0rem;
+}
+
+.cwc-featured-product__button {
+    padding: 1rem 2rem;
+    font-weight: 700;
+    font-size: 1.1rem;
+    border-radius: 6px;
+    border: 2px solid transparent;
+    text-decoration: none;
+    transition: all 0.3s ease-in-out;
+    text-align: center;
+    text-transform: uppercase;
+    cursor: pointer;
+    width: 100%;
+}
+
+.cwc-featured-product__button:hover {
+    background-color: transparent !important;
+    border-color: currentColor !important;
+    color: inherit !important;
+}
+
+.cwc-featured-product__button:disabled {
+    opacity: 0.6;
+    cursor: not-allowed;
+}
+
+.cwc-featured-product__note {
+    font-size: 0.9rem;
+    color: #666666;
+    text-align: center;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 0.5rem;
+}
+
+.cwc-featured-product__button .cwc-featured-product__price-current {}
+
+.cwc-featured-product__button .cwc-featured-product__price-current {
+    font-size: inherit;
+    color: inherit
+}
+
+.cwc-featured-product__button .cwc-featured-product__price-compare {
+    opacity: .6;
+    color: inherit;
+    font-size: inherit;
+
+}
+
+.cwc-featured-product__button .cwc-featured-product__price-save {
+    display: none;
+}
+
+
+
+
+/* ================================
+   Selling Plans
+   ================================ */
+
+.cwc-featured-product__subscription {
+    border-radius: 6.119px;
+    border: 1px dashed #282B22;
+    background: #fff;
+
+    display: flex;
+    align-items: flex-start;
+    padding: 13.58px 20px 10px 18.3px;
+    padding: 0.85rem 1.25rem 0.625rem 1.14rem;
+
+    max-width: 100%;
+    /* margin-top: 24.7px; */
+    /* margin-bottom: 24px; */
+    position: relative;
+    width: 100%;
+
+}
+
+.cwc-subscription-checkbox {}
+
+.cwc-featured-product__subscription:has(input:checked) {
+    /* background: red; */
+    /* border-color: #10b981; */
+}
+
+.cwc-checkbox-subtitle {
+    font-weight: 400;
+    font-size: .71rem;
+    color: rgba(40, 40, 40, 1);
+}
+
+/********************************* TESTING  *********************************/
+.cwc-featured-product__options {
+    margin: 20px 0;
+}
+
+.cwc-featured-product__option {
+    margin-bottom: 20px;
+}
+
+.cwc-option-label {
+    display: block;
+    font-weight: 600;
+    margin-bottom: 12px;
+    font-size: 14px;
+}
+
+.cwc-option-buttons {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 12px;
+    display: flex;
+    align-items: flex-start;
+    justify-content: flex-start;
+    flex-wrap: nowrap;
+    flex-direction: column;
+}
+
+.cwc-option-button {
+    border: 2px solid #e5e7eb;
+    padding: 12px 20px;
+    background: white;
+    color: #374151;
+    font-weight: 500;
+    font-size: 14px;
+    cursor: pointer;
+    transition: all 0.2s ease;
+    min-width: 80px;
+    text-align: center;
+    position: relative;
+    width: 100%;
+    border-radius: 4px;
+
+    display: flex;
+    align-items: center;
+    justify-content: flex-start;
+}
+
+.cwc-option-button:hover {
+    border-color: #10b981;
+    color: #10b981;
+}
+
+.cwc-option-button.selected {
+    border-color: #10b981;
+    background: #10b981;
+    color: white;
+}
+
+.cwc-option-button.selected::after {
+    content: '';
+    position: absolute;
+    top: 4px;
+    right: 4px;
+    width: 12px;
+    height: 8px;
+    background: url('data:image/svg+xml;base64,PHN2ZyB3aWR0aD0iMTIiIGhlaWdodD0iOCIgdmlld0JveD0iMCAwIDEyIDgiIGZpbGw9Im5vbmUiIHhtbG5zPSJodHRwOi8vd3d3LnczLm9yZy8yMDAwL3N2ZyI+CjxwYXRoIGQ9Ik0xMC42NjY3IDAuNjY2NjI2TDQuMDAwMDQgNy4zMzMyOEwxLjMzMzM3IDQuNjY2NjIiIHN0cm9rZT0id2hpdGUiIHN0cm9rZS13aWR0aD0iMS4zMzMzMyIgc3Ryb2tlLWxpbmVjYXA9InJvdW5kIiBzdHJva2UtbGluZWpvaW49InJvdW5kIi8+Cjwvc3ZnPgo=') no-repeat center;
+}
+
+/* Special styling for bundle options like in the image */
+.cwc-option-button[data-value*="Buy"] {
+    padding: 16px 20px;
+    min-width: 200px;
+    text-align: left;
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    position: relative;
+    border-radius: 6px;
+
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: space-between;
+
+
+    padding: 16px 50px 12px 29px;
+
+
+}
+
+.cwc-option-button[data-value*="Most Popular"] {
+    position: relative;
+}
+
+.cwc-option-button[data-value*="Most Popular"]::before {
+    content: 'Most Popular';
+    position: absolute;
+    top: -8px;
+    right: 12px;
+    background: #10b981;
+    color: white;
+    padding: 4px 12px;
+    border-radius: 12px;
+    font-size: 12px;
+    font-weight: 600;
+}
+
+.cwc-option-button[data-value*="Free Shipping"] {
+    background: #ecfdf5;
+    border-color: #10b981;
+}
+
+/* ================================
+   Mobile Styles
+   ================================ */
+
+@media (max-width: 768px) {
+    .cwc-featured-product {
+        padding-top: var(--padding-top-mobile);
+        padding-bottom: var(--padding-bottom-mobile);
+    }
+
+    .cwc-featured-product__wrapper {
+        padding: 0 1rem;
+    }
+
+    .cwc-featured-product__grid {
+        grid-template-columns: 1fr;
+        gap: 2rem;
+    }
+
+    .cwc-featured-product__left {
+        gap: 1.5rem;
+    }
+
+    .cwc-featured-product__right {
+        gap: 1.25rem;
+    }
+
+    .cwc-featured-product__text h1,
+    .cwc-featured-product__text h2 {
+        font-size: 1.75rem;
+    }
+
+    .cwc-featured-product__price-current {
+        font-size: 1.75rem;
+    }
+
+    .cwc-featured-product__benefits {
+        gap: 0.5rem;
+    }
+
+    .cwc-featured-product__benefit {
+        font-size: 0.85rem;
+        padding: 0.4rem 0.6rem;
+    }
+
+    .cwc-featured-product__faq-question {
+        font-size: 0.95rem;
+        padding: 1rem 0;
+    }
+
+    .cwc-featured-product__faq.active .cwc-featured-product__faq-answer {
+        padding-bottom: 1rem;
+    }
+}

@@ -1,0 +1,21 @@
+<div class="cwc-featured-product__subscription" {{ block.shopify_attributes }}>
+  <div class="cwc-subscription-checkbox">
+    <input
+      type="checkbox"
+      id="auto-refill-{{ section.id }}"
+      class="cwc-auto-refill-checkbox"
+      checked
+    >
+    <label for="auto-refill-{{ section.id }}" class="cwc-checkbox-label">
+      <span class="cwc-checkbox-icon"></span>
+      <div class="cwc-checkbox-content">
+        <div class="cwc-checkbox-title">
+          {{ block.settings.title | default: 'Save 25% With Automatic Refills!' }}
+        </div>
+        <div class="cwc-checkbox-subtitle">
+          {{ block.settings.subtitle | default: 'Zero Commitment | Exclusive Discounts | Cancel Anytime' }}
+        </div>
+      </div>
+    </label>
+  </div>
+</div>

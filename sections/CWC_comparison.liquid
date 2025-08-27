@@ -43,25 +43,27 @@
               style="background-color: {{ block.settings.background_color }}; color: {{ block.settings.text_color }};"
               {{ block.shopify_attributes }}
             >
-              {% if block.settings.product_image != blank %}
-                <div class="cwc-comparison__product">
-                  <img
-                    src="{{ block.settings.product_image | image_url: width: 120 }}"
-                    alt="{{ block.settings.product_image.alt }}"
-                    width="{{ block.settings.product_image.width }}"
-                    height="{{ block.settings.product_image.height }}"
-                  >
-                </div>
-              {% endif %}
+              <div class="cwc-comparison__table-head">
+                {% if block.settings.product_image != blank %}
+                  <div class="cwc-comparison__product">
+                    <img
+                      src="{{ block.settings.product_image | image_url: width: 120 }}"
+                      alt="{{ block.settings.product_image.alt }}"
+                      width="{{ block.settings.product_image.width }}"
+                      height="{{ block.settings.product_image.height }}"
+                    >
+                  </div>
+                {% endif %}
 
-              {% if block.settings.title != blank %}
-                <h3
-                  class="cwc-comparison__table-title"
-                  style="color: {{ block.settings.text_color }};"
-                >
-                  {{ block.settings.title }}
-                </h3>
-              {% endif %}
+                {% if block.settings.title != blank %}
+                  <h3
+                    class="cwc-comparison__table-title"
+                    style="color: {{ block.settings.text_color }};"
+                  >
+                    {{ block.settings.title }}
+                  </h3>
+                {% endif %}
+              </div>
 
               <ul class="cwc-comparison__list">
                 {% if block.settings.text1 != blank %}
@@ -140,102 +142,103 @@
           {% comment %} competitor table {% endcomment %}
           {% if block.type == 'competitor_table' %}
             {% assign table_count = table_count | plus: 1 %}
-            <div
-              class="cwc-comparison__table{% if table_count == 2 %} cwc-comparison__table--right{% endif %}"
-              style="background-color: {{ block.settings.background_color }}; color: {{ block.settings.text_color }};"
-              {{ block.shopify_attributes }}
-            >
-              {% if block.settings.product_image != blank %}
-                <div class="cwc-comparison__product">
-                  <img
-                    src="{{ block.settings.product_image | image_url: width: 120 }}"
-                    alt="{{ block.settings.product_image.alt }}"
-                    width="{{ block.settings.product_image.width }}"
-                    height="{{ block.settings.product_image.height }}"
-                  >
+            <div class="cwc-competitor_table__table" {{ block.shopify_attributes }}>
+              {% if block.settings.title != blank %}
+                <div
+                  class="cwc-comparison__table-title"
+                  style="color: {{ block.settings.background_color }};"
+                >
+                  {{ block.settings.title }}
                 </div>
               {% endif %}
 
-              {% if block.settings.title != blank %}
-                <h3
-                  class="cwc-comparison__table-title"
-                  style="color: {{ block.settings.text_color }};"
-                >
-                  {{ block.settings.title }}
-                </h3>
-              {% endif %}
-
-              <ul class="cwc-comparison__list">
-                {% if block.settings.text1 != blank %}
-                  <li class="cwc-comparison__item">
-                    {% if block.settings.icon1 != blank %}
-                      <img
-                        src="{{ block.settings.icon1 | image_url: width: 24 }}"
-                        alt="{{ block.settings.icon1.alt }}"
-                        width="{{ block.settings.icon1.width }}"
-                        height="{{ block.settings.icon1.height }}"
-                      >
-                    {% endif %}
-                    <span>{{ block.settings.text1 }}</span>
-                  </li>
+              <div
+                class="cwc-comparison__table{% if table_count == 2 %} cwc-comparison__table--right{% endif %}"
+                style="background-color: {{ block.settings.background_color }}; color: {{ block.settings.text_color }};"
+              >
+                {% if block.settings.product_image != blank %}
+                  <div class="cwc-comparison__product">
+                    <img
+                      src="{{ block.settings.product_image | image_url: width: 120 }}"
+                      alt="{{ block.settings.product_image.alt }}"
+                      width="{{ block.settings.product_image.width }}"
+                      height="{{ block.settings.product_image.height }}"
+                    >
+                  </div>
                 {% endif %}
 
-                {% if block.settings.text2 != blank %}
-                  <li class="cwc-comparison__item">
-                    {% if block.settings.icon2 != blank %}
-                      <img
-                        src="{{ block.settings.icon2 | image_url: width: 24 }}"
-                        alt="{{ block.settings.icon2.alt }}"
-                        width="{{ block.settings.icon2.width }}"
-                        height="{{ block.settings.icon2.height }}"
-                      >
-                    {% endif %}
-                    <span>{{ block.settings.text2 }}</span>
-                  </li>
-                {% endif %}
+                <ul class="cwc-comparison__list">
+                  {% if block.settings.text1 != blank %}
+                    <li class="cwc-comparison__item">
+                      {% if block.settings.icon1 != blank %}
+                        <img
+                          src="{{ block.settings.icon1 | image_url: width: 24 }}"
+                          alt="{{ block.settings.icon1.alt }}"
+                          width="{{ block.settings.icon1.width }}"
+                          height="{{ block.settings.icon1.height }}"
+                        >
+                      {% endif %}
+                      <span>{{ block.settings.text1 }}</span>
+                    </li>
+                  {% endif %}
 
-                {% if block.settings.text3 != blank %}
-                  <li class="cwc-comparison__item">
-                    {% if block.settings.icon3 != blank %}
-                      <img
-                        src="{{ block.settings.icon3 | image_url: width: 24 }}"
-                        alt="{{ block.settings.icon3.alt }}"
-                        width="{{ block.settings.icon3.width }}"
-                        height="{{ block.settings.icon3.height }}"
-                      >
-                    {% endif %}
-                    <span>{{ block.settings.text3 }}</span>
-                  </li>
-                {% endif %}
+                  {% if block.settings.text2 != blank %}
+                    <li class="cwc-comparison__item">
+                      {% if block.settings.icon2 != blank %}
+                        <img
+                          src="{{ block.settings.icon2 | image_url: width: 24 }}"
+                          alt="{{ block.settings.icon2.alt }}"
+                          width="{{ block.settings.icon2.width }}"
+                          height="{{ block.settings.icon2.height }}"
+                        >
+                      {% endif %}
+                      <span>{{ block.settings.text2 }}</span>
+                    </li>
+                  {% endif %}
 
-                {% if block.settings.text4 != blank %}
-                  <li class="cwc-comparison__item">
-                    {% if block.settings.icon4 != blank %}
-                      <img
-                        src="{{ block.settings.icon4 | image_url: width: 24 }}"
-                        alt="{{ block.settings.icon4.alt }}"
-                        width="{{ block.settings.icon4.width }}"
-                        height="{{ block.settings.icon4.height }}"
-                      >
-                    {% endif %}
-                    <span>{{ block.settings.text4 }}</span>
-                  </li>
-                {% endif %}
+                  {% if block.settings.text3 != blank %}
+                    <li class="cwc-comparison__item">
+                      {% if block.settings.icon3 != blank %}
+                        <img
+                          src="{{ block.settings.icon3 | image_url: width: 24 }}"
+                          alt="{{ block.settings.icon3.alt }}"
+                          width="{{ block.settings.icon3.width }}"
+                          height="{{ block.settings.icon3.height }}"
+                        >
+                      {% endif %}
+                      <span>{{ block.settings.text3 }}</span>
+                    </li>
+                  {% endif %}
 
-                {% if block.settings.text5 != blank %}
-                  <li class="cwc-comparison__item">
-                    {% if block.settings.icon5 != blank %}
-                      <img
-                        src="{{ block.settings.icon5 | image_url: width: 24 }}"
-                        alt="{{ block.settings.icon5.alt }}"
-                        width="{{ block.settings.icon5.width }}"
-                        height="{{ block.settings.icon5.height }}"
-                      >
-                    {% endif %}
-                    <span>{{ block.settings.text5 }}</span>
-                  </li>
-                {% endif %}
-              </ul>
+                  {% if block.settings.text4 != blank %}
+                    <li class="cwc-comparison__item">
+                      {% if block.settings.icon4 != blank %}
+                        <img
+                          src="{{ block.settings.icon4 | image_url: width: 24 }}"
+                          alt="{{ block.settings.icon4.alt }}"
+                          width="{{ block.settings.icon4.width }}"
+                          height="{{ block.settings.icon4.height }}"
+                        >
+                      {% endif %}
+                      <span>{{ block.settings.text4 }}</span>
+                    </li>
+                  {% endif %}
+
+                  {% if block.settings.text5 != blank %}
+                    <li class="cwc-comparison__item">
+                      {% if block.settings.icon5 != blank %}
+                        <img
+                          src="{{ block.settings.icon5 | image_url: width: 24 }}"
+                          alt="{{ block.settings.icon5.alt }}"
+                          width="{{ block.settings.icon5.width }}"
+                          height="{{ block.settings.icon5.height }}"
+                        >
+                      {% endif %}
+                      <span>{{ block.settings.text5 }}</span>
+                    </li>
+                  {% endif %}
+                </ul>
+              </div>
             </div>
           {% endif %}
         {% endfor %}

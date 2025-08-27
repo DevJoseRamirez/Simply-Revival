@@ -1,0 +1,11 @@
+<span class="cwc-featured-product__price-current" id="current-price-{{ section_id }}">
+  {{ product.price | money }}
+</span>
+{% if product.compare_at_price > product.price %}
+  <span class="cwc-featured-product__price-compare" id="compare-price-{{ section_id }}">
+    {{ product.compare_at_price | money }}
+  </span>
+  <span class="cwc-featured-product__price-save" id="save-amount-{{ section_id }}">
+    Save {{ product.compare_at_price | minus: product.price | money }}
+  </span>
+{% endif %}

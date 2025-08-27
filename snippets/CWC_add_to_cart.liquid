@@ -1,0 +1,30 @@
+<button
+  type="submit"
+  class="cwc-featured-product__button"
+  style="background-color: {{ block.settings.button_bg_color }}; color: {{ block.settings.button_text_color }};"
+  id="add-to-cart-{{ section.id }}"
+
+  {% unless product.available %}
+    disabled
+  {% endunless %}
+>
+  {% if product.available %}
+    {{ block.settings.button_text | default: 'Add to Cart' }}
+    | {% render 'CWC_price_display', product: product, section_id: section_id, block: block %}
+
+  {% else %}
+    Sold Out
+  {% endif %}
+</button>
+{% if block.settings.note_text != blank %}
+  <div class="cwc-featured-product__note">
+    {{ block.settings.note_text }}
+  </div>
+{% endif %}
+
+{% comment %}
+  if controled optoins selected
+  also the routing to wither cart action or straight to chekcout
+  price in button needs to udpate correctpoinding to current options eelcted
+   - whether that be the one time purchase optoins of the selling subexitpino plans
+{% endcomment %}
