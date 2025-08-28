@@ -11,7 +11,7 @@
 {{ 'CWC_featured_product.css' | asset_url | stylesheet_tag }}
 
 {% if section.settings.product != blank %}
-{% assign product = section.settings.product %}
+  {% assign product = section.settings.product %}
 {% endif %}
 
 <section
@@ -36,6 +36,15 @@
                     alt="{{ block.settings.image.alt }}"
                     width="{{ block.settings.image.width }}"
                     height="{{ block.settings.image.height }}"
+                  >
+                </div>
+              {% else %}
+                <div class="cwc-featured-product__image" {{ block.shopify_attributes }}>
+                  <img
+                    src="{{ product.featured_image | image_url: width: 600 }}"
+                    alt="{{ product.featured_image.alt }}"
+                    width="{{ product.featured_image.width }}"
+                    height="{{ product.featured_image.height }}"
                   >
                 </div>
               {% endif %}
@@ -120,11 +129,7 @@
 
                 {% when 'subscription_toggle' %}
                   {% if product.selling_plan_groups.size > 0 %}
-                    {% render 'CWC_product_selling_plans',
-                      product: product,
-                      section_id: section.id,
-                      block: block
-                    %}
+                    {% render 'CWC_product_selling_plans', product: product, section_id: section.id, block: block %}
                   {% endif %}
 
                 {% when 'delivery_estimate' %}
@@ -414,6 +419,9 @@
         },
         {
           "type": "product_options"
+        },
+        {
+          "type": "subscription_toggle"
         },
         {
           "type": "delivery_estimate"
