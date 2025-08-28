@@ -1,0 +1,210 @@
+{% style %}
+  #CWC_image_benefits-{{ section.id }} {
+    --section-bg: {{ section.settings.background_color | default: '#ffffff' }};
+    --text-color: {{ section.settings.text_color | default: '#000000' }};
+    --title-color: {{ section.settings.title_color | default: '#000000' }};
+    --caption-color: {{ section.settings.caption_color | default: '#fff' }};
+    --caption-bg: {{ section.settings.caption_bg | default: '#60A1A2' }};
+    --padding-top: {{ section.settings.padding_top | default: 60 }}px;
+    --padding-bottom: {{ section.settings.padding_bottom | default: 60 }}px;
+    --padding-top-mobile: {{ section.settings.padding_top | default: 60 | times: 0.6 }}px;
+    --padding-bottom-mobile: {{ section.settings.padding_bottom | default: 60 | times: 0.6 }}px;
+  }
+{% endstyle %}
+
+{{ 'CWC_image_benefits.css' | asset_url | stylesheet_tag }}
+
+<section
+  id="CWC_image_benefits-{{ section.id }}"
+  class="cwc_image_benefits {% if section.settings.reverse_layout %}reverse{% endif %}"
+>
+  <div class="cwc_image_benefits__wrapper">
+    <!-- Image Column -->
+    <div class="cwc_image_benefits__image">
+      {% if section.settings.featured_image != blank %}
+        <img
+          src="{{ section.settings.featured_image | image_url: width: 600 }}"
+          alt="{{ section.settings.section_title | default: 'Product highlight' }}"
+        >
+      {% else %}
+        <div class="placeholder-image">
+          <span>Add featured image</span>
+        </div>
+      {% endif %}
+    </div>
+
+    <!-- Content Column -->
+    <div class="cwc_image_benefits__content">
+      {% if section.settings.section_caption != blank %}
+        <p class="cwc_image_benefits__caption">{{ section.settings.section_caption }}</p>
+      {% endif %}
+
+      {% if section.settings.section_title != blank %}
+        <div class="cwc_image_benefits__title">{{ section.settings.section_title }}</div>
+      {% endif %}
+
+      {% if section.blocks.size > 0 %}
+        <div class="cwc_image_benefits__list">
+          {% for block in section.blocks %}
+            <div
+              class="cwc_image_benefit-row"
+              {{ block.shopify_attributes }}
+              {% if block.settings.text_color != blank %}
+                style="--block-text-color: {{ block.settings.text_color }}"
+              {% endif %}
+            >
+              {% if block.settings.icon != blank %}
+                <div class="cwc_image_benefit-row__icon">
+                  <img
+                    src="{{ block.settings.icon | image_url: width: 64 }}"
+                    alt="{{ block.settings.title | default: 'Feature icon' }}"
+                  >
+                </div>
+              {% endif %}
+
+              <div class="cwc_image_benefit-row__content">
+                {% if block.settings.title != blank %}
+                  <h4 class="cwc_image_benefit-row__title">{{ block.settings.title }}</h4>
+                {% endif %}
+
+                {% if block.settings.text != blank %}
+                  <div class="cwc_image_benefit-row__text">{{ block.settings.text }}</div>
+                {% endif %}
+              </div>
+            </div>
+          {% endfor %}
+        </div>
+      {% endif %}
+    </div>
+  </div>
+</section>
+
+{% schema %}
+{
+  "name": "CWC Image Benefits",
+  "tag": "section",
+  "settings": [
+    {
+      "type": "image_picker",
+      "id": "featured_image",
+      "label": "Featured Image"
+    },
+    {
+      "type": "checkbox",
+      "id": "reverse_layout",
+      "label": "Image on Right (Reverse Layout)",
+      "default": false
+    },
+    {
+      "type": "richtext",
+      "id": "section_title",
+      "label": "Section Title",
+      "default": "<h3>DHT: The Hidden Hormone Behind Hair Loss</h3>"
+    },
+    {
+      "type": "text",
+      "id": "section_caption",
+      "label": "Section Caption",
+      "default": "We stop it naturally."
+    },
+    {
+      "type": "color",
+      "id": "background_color",
+      "label": "Background Color",
+      "default": "#ffffff"
+    },
+    {
+      "type": "color",
+      "id": "text_color",
+      "label": "Text Color",
+      "default": "#000000"
+    },
+    {
+      "type": "color",
+      "id": "title_color",
+      "label": "Title Color",
+      "default": "#000000"
+    },
+    {
+      "type": "color",
+      "id": "caption_color",
+      "label": "Caption Color",
+      "default": "#fff"
+    },
+        {
+      "type": "color",
+      "id": "caption_bg",
+      "label": "Caption Background Color",
+      "default": "#60A1A2"
+    },
+    {
+      "type": "range",
+      "id": "padding_top",
+      "label": "Padding Top",
+      "min": 0,
+      "max": 200,
+      "step": 4,
+      "unit": "px",
+      "default": 60
+    },
+    {
+      "type": "range",
+      "id": "padding_bottom",
+      "label": "Padding Bottom",
+      "min": 0,
+      "max": 200,
+      "step": 4,
+      "unit": "px",
+      "default": 60
+    }
+  ],
+  "blocks": [
+    {
+      "type": "highlight_row",
+      "name": "Highlight Row",
+      "settings": [
+        {
+          "type": "image_picker",
+          "id": "icon",
+          "label": "Icon (Optional)"
+        },
+        {
+          "type": "text",
+          "id": "title",
+          "label": "Title",
+          "default": "The Problem: DHT"
+        },
+        {
+          "type": "richtext",
+          "id": "text",
+          "label": "Description",
+          "default": "<p>DHT is a hormone that binds to receptors in your scalp - In excess it shrinks follicles, causing hair to thin and shed.</p>"
+        },
+        {
+          "type": "color",
+          "id": "text_color",
+          "label": "Text Color (Optional)"
+        }
+      ]
+    }
+  ],
+  "max_blocks": 6,
+  "presets": [
+    {
+      "name": "Image Benefits",
+      "category": "Custom",
+      "blocks": [
+        {
+          "type": "highlight_row"
+        },
+        {
+          "type": "highlight_row"
+        },
+        {
+          "type": "highlight_row"
+        }
+      ]
+    }
+  ]
+}
+{% endschema %}

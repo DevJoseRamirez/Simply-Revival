@@ -1,496 +1,1094 @@
 {
   "sections": {
-    "advanced_content_gXD9KM": {
-      "type": "advanced-content",
+    "cwc_hero_banner_image_LL6Efb": {
+      "type": "CWC_hero_banner_image",
       "blocks": {
-        "html_nXLQtR": {
-          "type": "html",
+        "review_CPbkRA": {
+          "type": "review",
           "settings": {
-            "code": "<style>\n    .banner-image {\n        width: 100%;\n        height: auto;\n        display: block; \/* Prevents extra space below the image *\/\n    }\n\n    \/* Hide mobile banner on desktop *\/\n    .mobile-banner {\n        display: none;\n    }\n\n    \/* Show desktop banner by default *\/\n    .desktop-banner {\n        display: block;\n    }\n\n    @media (max-width: 767px) {\n        \/* Show mobile banner on mobile *\/\n        .mobile-banner {\n            display: block;\n            margin-bottom: -25px; \/* Fix for removing extra space on mobile *\/\n        }\n        \/* Hide desktop banner on mobile *\/\n        .desktop-banner {\n            display: none;\n        }\n    }\n\n    \/* Remove any extra spacing *\/\n    .banner-container {\n        margin: 0;\n        padding: 0;\n    }\n<\/style>\n\n<div class=\"banner-container\">\n    <!-- Desktop Banner -->\n    <a href=\"https:\/\/simplyrevival.com\/products\/simply%C2%AE-dht-blocker\" class=\"desktop-banner\">\n        <img src=\"https:\/\/cdn.shopify.com\/s\/files\/1\/0880\/6173\/9289\/files\/b.jpg?v=1731960066\" alt=\"Desktop Banner\" class=\"banner-image\">\n    <\/a>\n\n    <!-- Mobile Banner -->\n    <a href=\"https:\/\/simplyrevival.com\/products\/simply%C2%AE-dht-blocker\" class=\"mobile-banner\">\n        <img src=\"https:\/\/cdn.shopify.com\/s\/files\/1\/0880\/6173\/9289\/files\/c.jpg?v=1731959155\" alt=\"Mobile Banner\" class=\"banner-image\">\n    <\/a>\n<\/div>",
-            "width": "100%",
-            "align": "center"
-          }
-        }
-      },
-      "block_order": [
-        "html_nXLQtR"
-      ],
-      "settings": {
-        "animation": "",
-        "setwidth": "full",
-        "text_color": "rgba(0,0,0,0)",
-        "bgsection": "#ffffff",
-        "rangebg": 0,
-        "bgbefore": "rgba(0,0,0,0)",
-        "e_size": "auto",
-        "e_repeat": "no-repeat",
-        "e_position": "center center",
-        "zindex": "1",
-        "title_top": "",
-        "title": "",
-        "des": "",
-        "align-heading": "center",
-        "padding": false,
-        "col_center": false,
-        "paddingsection": "0px 0px 0px 0px",
-        "paddingmobile": "0px 0px 0px 0px",
-        "marginsection": "0px 0px 0px 0px",
-        "marginmobile": "0px 0px 0px 0px"
-      }
-    },
-    "scrolling_text_DMz6aQ": {
-      "type": "scrolling-text",
-      "blocks": {
-        "item_LjaWpR": {
-          "type": "item",
-          "settings": {
-            "code": "<b>No Preservatives<\/b>",
-            "image": "shopify:\/\/shop_images\/no_p.svg"
+            "text": "<p><strong>Rated 4.8\/5<\/strong> | Trusted by 20,000+<\/p>"
           }
         },
-        "item_NaqPcU": {
-          "type": "item",
+        "headline_QhEjxg": {
+          "type": "headline",
           "settings": {
-            "code": "<b>Beauty Backed by Science<\/b>",
-            "image": "shopify:\/\/shop_images\/Test_Tube.svg"
+            "text": "<p>The #1 Natural DHT Blocker for Hair Loss<\/p>"
           }
         },
-        "item_K8nhqQ": {
-          "type": "item",
+        "subtext_Xj8nfb": {
+          "type": "subtext",
           "settings": {
-            "code": "<b>Proudly 3rd Party Quality Tested<\/b>",
-            "image": "shopify:\/\/shop_images\/Checked_14352391-7e04-448c-8145-02125ac808b4.svg"
+            "text": "<p>Results within 30 days or less<\/p>"
           }
         },
-        "item_mwMKjV": {
-          "type": "item",
-          "settings": {
-            "code": "<b>ZERO Nasty Additives<\/b>",
-            "image": "shopify:\/\/shop_images\/Unavailable.svg"
-          }
-        },
-        "item_Vd9kpL": {
-          "type": "item",
-          "settings": {
-            "code": "<b>Blocks DHT Naturally\n<\/b>",
-            "image": "shopify:\/\/shop_images\/Psychiatry--Streamline-Rounded----Material-Symbols.svg"
-          }
-        }
-      },
-      "block_order": [
-        "item_LjaWpR",
-        "item_NaqPcU",
-        "item_K8nhqQ",
-        "item_mwMKjV",
-        "item_Vd9kpL"
-      ],
-      "custom_css": [
-        ".textscroll-item span.px-5 {padding-left: 10px !important; padding-right: 10px !important; margin-right: 10px !important;}",
-        ".image-content__image {margin-right: 7px !important;}",
-        ".d-flex.align-items-center {margin-bottom: 0px !important; margin-right: 10px !important;}"
-      ],
-      "settings": {
-        "animation": "",
-        "size_text": "p",
-        "text_style": "solid",
-        "size_icon": 20,
-        "speed": 10,
-        "scroll_type": "from-right",
-        "background": "#035057",
-        "gradient_bg": "",
-        "text": "#ffffff",
-        "paddingsection": "10px 0px 10px 0px",
-        "paddingmobile": "20px 0px 20px 0px",
-        "marginsection": "0px 0px 0px 0px",
-        "marginmobile": "0px 0px 0px 0px"
-      }
-    },
-    "advanced_content_WeBLtk": {
-      "type": "advanced-content",
-      "blocks": {
-        "html_yCi4wP": {
-          "type": "html",
-          "settings": {
-            "code": "<style>\n    .image-container {\n        margin-bottom: 0;\n    }\n\n    .image-block {\n        text-align: left; \/* Default alignment for larger screens *\/\n    }\n\n    @media (min-width: 768px) {\n        .image-block {\n            text-align: right;\n        }\n    }\n\n    @media (max-width: 767px) {\n        .image-container {\n            margin-bottom: -20px; \/* Set bottom margin to -20px on mobile for the whole block *\/\n        }\n        \n        \/* Center text and images on mobile *\/\n        .image-block {\n            text-align: center;\n        }\n    }\n<\/style>\n\n<div class=\"image-container\">\n    <div class=\"image-block\">\n        <a href=\"#\" class=\"image-link\">\n            <img src=\"https:\/\/cdn.shopify.com\/s\/files\/1\/0880\/6173\/9289\/files\/hair.svg?v=1729474839\" alt=\"Image description\" class=\"block-image\" style=\"width: 40px; height: 40px;\">\n        <\/a>\n        <p style=\"font-size: 18px; font-weight: bold; margin-top: 10px;\">Better Hair Health<\/p>\n        <p>Promotes Healthy Hair Growth & Prevents Hair Loss.<\/p>\n    <\/div>\n    <br>\n    <div class=\"image-block\">\n        <a href=\"#\" class=\"image-link\">\n            <img src=\"https:\/\/cdn.shopify.com\/s\/files\/1\/0880\/6173\/9289\/files\/skin.svg?v=1729475384\" alt=\"Image description\" class=\"block-image\" style=\"width: 40px; height: 40px;\">\n        <\/a>\n        <p style=\"font-size: 18px; font-weight: bold; margin-top: 10px;\">Clear & Healthy Skin<\/p>\n        <p>Supports Clear, Acne-Free Skin & Reduces Inflammation<\/p>\n    <\/div>\n<\/div>",
-            "width": "33%",
-            "align": "auto"
-          }
-        },
-        "image_AFzNpT": {
-          "type": "image",
-          "settings": {
-            "width": "33%",
-            "align": "auto",
-            "image": "shopify:\/\/shop_images\/Simply_DHT_Blocker_Product_Images2.png",
-            "width_image": 100,
-            "image_link": "",
-            "enable_top": false,
-            "code": "",
-            "padding-left": false,
-            "padding-right": false
-          }
-        },
-        "html_m4kKDC": {
-          "type": "html",
-          "settings": {
-            "code": "<style>\n    .unique-image-block {\n        text-align: left; \/* Default alignment for larger screens *\/\n    }\n\n    @media (max-width: 767px) {\n        .unique-image-block {\n            text-align: center; \/* Center alignment on mobile screens *\/\n        }\n    }\n<\/style>\n\n<div class=\"unique-image-block\">\n    <a href=\"#\" class=\"image-link\">\n        <img src=\"https:\/\/cdn.shopify.com\/s\/files\/1\/0880\/6173\/9289\/files\/clear.svg?v=1729475647\" alt=\"Image description\" class=\"block-image\" style=\"width: 40px; height: 40px;\">\n    <\/a>\n    <p style=\"font-size: 18px; font-weight: bold; margin-top: 10px;\">Glow Naturally,<\/p>\n    <p>Enhances Natural Glow with a Blend of Botanicals<\/p>\n<\/div>\n<br>\n<div class=\"unique-image-block\">\n    <a href=\"#\" class=\"image-link\">\n        <img src=\"https:\/\/cdn.shopify.com\/s\/files\/1\/0880\/6173\/9289\/files\/vitamin.svg?v=1729475801\" alt=\"Image description\" class=\"block-image\" style=\"width: 40px; height: 40px;\">\n    <\/a>\n    <p style=\"font-size: 18px; font-weight: bold; margin-top: 10px;\">Beauty from Within<\/p>\n    <p>Rich in Vitamins & Minerals to Boost Beauty from Within<\/p>\n<\/div>",
-            "width": "33%",
-            "align": "auto"
-          }
-        }
-      },
-      "block_order": [
-        "html_yCi4wP",
-        "image_AFzNpT",
-        "html_m4kKDC"
-      ],
-      "custom_css": [
-        "@media (max-width: 768px) {.grid__item-inner--image {display: none; }}"
-      ],
-      "settings": {
-        "animation": "",
-        "setwidth": "container",
-        "text_color": "rgba(0,0,0,0)",
-        "bgsection": "#ffffff",
-        "rangebg": 0,
-        "bgbefore": "rgba(0,0,0,0)",
-        "e_size": "auto",
-        "e_repeat": "no-repeat",
-        "e_position": "center center",
-        "zindex": "0",
-        "title_top": "",
-        "title": "",
-        "des": "<h2 style=\"text-align: center; color: black; font-weight: bold;\">\n    <span style=\"color: #FF9500;\">1,000+ Years<\/span> Of Healing Wisdom In Every Capsule\n<\/h2>",
-        "align-heading": "center",
-        "padding": true,
-        "col_center": false,
-        "paddingsection": "20px 0px 0px 0px",
-        "paddingmobile": "20px 0px 10px 0px",
-        "marginsection": "0px 0px 0px 0px",
-        "marginmobile": "0px 0px 0px 0px"
-      }
-    },
-    "rich_text_BYexe6": {
-      "type": "rich-text",
-      "blocks": {
-        "button_Wy7Rr7": {
+        "button_YXp8Eq": {
           "type": "button",
           "settings": {
-            "button": "BUY NOW & SAVE 40%",
-            "link": "shopify:\/\/products\/skin-hair-nails-complex",
-            "style_btn": "btn-theme"
-          }
-        }
-      },
-      "block_order": [
-        "button_Wy7Rr7"
-      ],
-      "custom_css": [
-        ".btn.btn-theme {font-weight: 800;}"
-      ],
-      "settings": {
-        "animation": "",
-        "setwidth": "container",
-        "bgsection": "#ffffff",
-        "gradient_bg": "",
-        "title_color": "rgba(0,0,0,0)",
-        "title_top": "",
-        "title": "",
-        "text": "",
-        "align-heading": "center",
-        "paddingsection": "0px 0px 20px 0px",
-        "paddingmobile": "0px 0px 20px 0px",
-        "marginsection": "0px 0px 0px 0px",
-        "marginmobile": "0px 0px 0px 0px"
-      }
-    },
-    "70b7f2d2-4c12-4305-88bd-da89e2d18d5b": {
-      "type": "quotes-special",
-      "blocks": {
-        "template--14684877652053__70b7f2d2-4c12-4305-88bd-da89e2d18d5b-1665853262e19e6bf8-0": {
-          "type": "quote",
-          "settings": {
-            "title": "Hair Growth Results in Just Weeks!",
-            "quote": "<h5>“I’ve been using Simply for about a month, and I can already see a noticeable difference in my hair growth. My hair feels thicker, and the bald spots around my hairline are filling in. I was skeptical at first, but this supplement really delivers on its promises. The fact that it’s all-natural with no nasty additives is a huge bonus. Definitely a must-try if you’re struggling with thinning hair!”<\/h5>",
-            "rate": 5,
-            "author": "",
-            "info": "",
-            "avatar": "shopify:\/\/shop_images\/review_1.png"
+            "text": "Try Risk-Free Today",
+            "link": "shopify:\/\/products\/simply®-dht-blocker-test-new",
+            "button_color": "#125657",
+            "button_text_color": "#ffffff"
           }
         },
-        "template--14684877652053__70b7f2d2-4c12-4305-88bd-da89e2d18d5b-1665853262e19e6bf8-1": {
-          "type": "quote",
+        "note_tfEfPa": {
+          "type": "note",
           "settings": {
-            "title": "My Skin Has Never Looked Better",
-            "quote": "<h5>“ Simply Revival's supplement has become a game-changer for my skincare routine. Three weeks in, my skin is clearer and glowing like never before! The ingredients like Bamboo and Horsetail extract seem to really help with post-blemish marks and overall complexion. Plus, I love that it's gluten-free and preservative-free. Highly recommend it! \"<\/h5>",
-            "rate": 5,
-            "author": "",
-            "info": "",
-            "avatar": "shopify:\/\/shop_images\/skin.png"
+            "text": "<p>365-day money back guarantee<\/p>"
           }
         }
       },
       "block_order": [
-        "template--14684877652053__70b7f2d2-4c12-4305-88bd-da89e2d18d5b-1665853262e19e6bf8-0",
-        "template--14684877652053__70b7f2d2-4c12-4305-88bd-da89e2d18d5b-1665853262e19e6bf8-1"
+        "review_CPbkRA",
+        "headline_QhEjxg",
+        "subtext_Xj8nfb",
+        "button_YXp8Eq",
+        "note_tfEfPa"
       ],
+      "name": "Hero Banner Image",
       "settings": {
-        "animation": "fade-up",
-        "setwidth": "container",
-        "bgsection": "#ffffff",
-        "title_top": "",
-        "title": "",
-        "des": "",
-        "align-heading": "center",
-        "color_rate": "#ffffff",
-        "color_rated": "#ff9500",
-        "image_size": "square",
-        "arrows": false,
-        "draggable": true,
-        "dots": true,
-        "infinite": true,
-        "paddingsection": "40px 0px 40px 0px",
-        "paddingmobile": "30px 0px 30px 0px",
-        "marginsection": "0px 0px 0px 0px",
-        "marginmobile": "0px 0px 0px 0px"
+        "background_color": "#ffffff",
+        "text_color": "#202020",
+        "alt_text": "",
+        "image_position": "left",
+        "padding_top": 40,
+        "padding_bottom": 40
       }
     },
-    "rich_text_PHcFyM": {
-      "type": "rich-text",
+    "cwc_usp_columns_BmJWgA": {
+      "type": "CWC_usp_columns",
       "blocks": {
-        "button_FePxJy": {
-          "type": "button",
+        "usp_BqG3ze": {
+          "type": "usp",
           "settings": {
-            "button": "BUY NOW & SAVE 40% →",
-            "link": "shopify:\/\/products\/skin-hair-nails-complex",
-            "style_btn": "btn-theme"
-          }
-        }
-      },
-      "block_order": [
-        "button_FePxJy"
-      ],
-      "custom_css": [
-        ".btn.btn-theme {font-weight: 800;}"
-      ],
-      "settings": {
-        "animation": "",
-        "setwidth": "container",
-        "bgsection": "#ffffff",
-        "gradient_bg": "",
-        "title_color": "rgba(0,0,0,0)",
-        "title_top": "",
-        "title": "",
-        "text": "",
-        "align-heading": "center",
-        "paddingsection": "0px 0px 20px 0px",
-        "paddingmobile": "0px 0px 20px 0px",
-        "marginsection": "0px 0px 0px 0px",
-        "marginmobile": "0px 0px 0px 0px"
-      }
-    },
-    "advanced_content_MEK8Cr": {
-      "type": "advanced-content",
-      "blocks": {
-        "image_fE9kpy": {
-          "type": "image",
-          "settings": {
-            "width": "50%",
-            "align": "center",
-            "image": "shopify:\/\/shop_images\/Simply.png",
-            "width_image": 100,
-            "image_link": "",
-            "enable_top": false,
-            "code": "",
-            "padding-left": false,
-            "padding-right": false
+            "text": "No Harsh Side Effects"
           }
         },
-        "image_CjD8RV": {
-          "type": "image",
+        "usp_NgqMbQ": {
+          "type": "usp",
           "settings": {
-            "width": "50%",
-            "align": "center",
-            "image": "shopify:\/\/shop_images\/old__solutions.png",
-            "width_image": 100,
-            "image_link": "",
-            "enable_top": false,
-            "code": "",
-            "padding-left": false,
-            "padding-right": false
+            "text": "Third Party Tested"
+          }
+        },
+        "usp_qkV6cN": {
+          "type": "usp",
+          "settings": {
+            "text": "Clean Ingredients"
           }
         }
       },
       "block_order": [
-        "image_fE9kpy",
-        "image_CjD8RV"
+        "usp_BqG3ze",
+        "usp_NgqMbQ",
+        "usp_qkV6cN"
       ],
+      "name": "USP Columns",
       "settings": {
-        "animation": "",
-        "setwidth": "container",
+        "background_color": "#125657",
         "text_color": "#ffffff",
-        "bgsection": "#035057",
-        "rangebg": 0,
-        "bgbefore": "rgba(0,0,0,0)",
-        "e_size": "auto",
-        "e_repeat": "no-repeat",
-        "e_position": "center center",
-        "zindex": "0",
-        "title_top": "",
-        "title": "",
-        "des": "<h2 style=\"text-align: center; color: white; font-weight: bold;\">\n     Nature's Simple <span style=\"color: #FF9500;\">Wellness Solution<\/span>\n<\/h2>",
-        "align-heading": "center",
-        "padding": true,
-        "col_center": false,
-        "paddingsection": "30px 0px 0px 0px",
-        "paddingmobile": "40px 0px 0px 0px",
-        "marginsection": "0px 0px 0px 0px",
-        "marginmobile": "0px 0px 0px 0px"
+        "padding_top": 20,
+        "padding_bottom": 20
       }
     },
-    "rich_text_3UMrzJ": {
-      "type": "rich-text",
+    "cwc_social_proof_QLBenN": {
+      "type": "CWC_social_proof",
       "blocks": {
-        "button_qHTCHp": {
+        "image_hi3JD6": {
+          "type": "image",
+          "settings": {
+            "image": "shopify:\/\/shop_images\/Simply_Revival___Customer_Reviews_-_01-min.png"
+          }
+        },
+        "image_wTXVg9": {
+          "type": "image",
+          "settings": {
+            "image": "shopify:\/\/shop_images\/Simply_Revival___Customer_Reviews_-_04-min.png"
+          }
+        },
+        "image_CWYeDh": {
+          "type": "image",
+          "settings": {
+            "image": "shopify:\/\/shop_images\/Simply_Revival___Customer_Reviews_-_05-min.png"
+          }
+        },
+        "image_yEEJen": {
+          "type": "image",
+          "settings": {
+            "image": "shopify:\/\/shop_images\/Simply_Revival___Customer_Reviews_-_02-min.png"
+          }
+        },
+        "image_C8nLhd": {
+          "type": "image",
+          "settings": {
+            "image": "shopify:\/\/shop_images\/Simply_Revival___Customer_Reviews_-_07-min.png"
+          }
+        },
+        "image_8LcPTU": {
+          "type": "image",
+          "settings": {
+            "image": "shopify:\/\/shop_images\/Simply_Revival___Customer_Reviews_-_06-min.png"
+          }
+        },
+        "image_Cc7Pe9": {
+          "type": "image",
+          "settings": {
+            "image": "shopify:\/\/shop_images\/Simply_Revival___Customer_Reviews_-_03-min.png"
+          }
+        },
+        "image_keajay": {
+          "type": "image",
+          "settings": {
+            "image": "shopify:\/\/shop_images\/Simply_Revival___Customer_Reviews_-_08-min.png"
+          }
+        }
+      },
+      "block_order": [
+        "image_hi3JD6",
+        "image_wTXVg9",
+        "image_CWYeDh",
+        "image_yEEJen",
+        "image_C8nLhd",
+        "image_8LcPTU",
+        "image_Cc7Pe9",
+        "image_keajay"
+      ],
+      "name": "Social Proof",
+      "settings": {
+        "show_stars": true,
+        "heading": "<h2>Real Stories, Real Results<\/h2>",
+        "text": "<p>See What customer Are Saying About Simply Revival<\/p>",
+        "bg_color": "#fffee3",
+        "text_color": "#111111",
+        "padding_top": 60,
+        "padding_bottom": 20
+      }
+    },
+    "cwc_testimonials_WEmh8r": {
+      "type": "CWC_testimonials",
+      "blocks": {
+        "testimonial_GptQmF": {
+          "type": "testimonial",
+          "settings": {
+            "rating": 5,
+            "title": "Amazing product!",
+            "text": "This product completely exceeded my expectations...",
+            "author_name": "Jane D.",
+            "feature_one": "Eco-friendly",
+            "feature_two": "Durable"
+          }
+        },
+        "testimonial_K4gkic": {
+          "type": "testimonial",
+          "settings": {
+            "rating": 5,
+            "title": "Amazing product!",
+            "text": "This product completely exceeded my expectations...",
+            "author_name": "Jane D.",
+            "feature_one": "Eco-friendly",
+            "feature_two": "Durable"
+          }
+        },
+        "testimonial_eCAb9R": {
+          "type": "testimonial",
+          "settings": {
+            "rating": 5,
+            "title": "Amazing product!",
+            "text": "This product completely exceeded my expectations...",
+            "author_name": "Jane D.",
+            "feature_one": "Eco-friendly",
+            "feature_two": "Durable"
+          }
+        },
+        "testimonial_VADCWP": {
+          "type": "testimonial",
+          "settings": {
+            "rating": 5,
+            "title": "Amazing product!",
+            "text": "This product completely exceeded my expectations...",
+            "author_name": "Jane D.",
+            "feature_one": "Eco-friendly",
+            "feature_two": "Durable"
+          }
+        },
+        "testimonial_fyQBKR": {
+          "type": "testimonial",
+          "settings": {
+            "rating": 5,
+            "title": "Amazing product!",
+            "text": "This product completely exceeded my expectations...",
+            "author_name": "Jane D.",
+            "feature_one": "Eco-friendly",
+            "feature_two": "Durable"
+          }
+        },
+        "testimonial_8Yec7F": {
+          "type": "testimonial",
+          "settings": {
+            "rating": 5,
+            "title": "Amazing product!",
+            "text": "This product completely exceeded my expectations...",
+            "author_name": "Jane D.",
+            "feature_one": "Eco-friendly",
+            "feature_two": "Durable"
+          }
+        }
+      },
+      "block_order": [
+        "testimonial_GptQmF",
+        "testimonial_K4gkic",
+        "testimonial_eCAb9R",
+        "testimonial_VADCWP",
+        "testimonial_fyQBKR",
+        "testimonial_8Yec7F"
+      ],
+      "name": "Testimonials",
+      "settings": {
+        "bg_color": "#fffee3",
+        "text_color": "#111111",
+        "card_bg": "#ffffff",
+        "highlight_color": "#009370",
+        "padding_top": 20,
+        "padding_bottom": 60
+      }
+    },
+    "cwc_product_highlight_rows_FfmKTT": {
+      "type": "CWC_product_highlight_rows",
+      "blocks": {
+        "highlight_row_FFKnJJ": {
+          "type": "highlight_row",
+          "settings": {
+            "title": "The Problem: DHT",
+            "text": "<p>DHT is a hormone that binds to receptors in your scalp - In excess it shrinks follicles, causing hair to thin and shed.<\/p>",
+            "text_color": ""
+          }
+        },
+        "highlight_row_4BTrLT": {
+          "type": "highlight_row",
+          "settings": {
+            "title": "The Problem: DHT",
+            "text": "<p>DHT is a hormone that binds to receptors in your scalp - In excess it shrinks follicles, causing hair to thin and shed.<\/p>",
+            "text_color": ""
+          }
+        },
+        "highlight_row_WLKkUN": {
+          "type": "highlight_row",
+          "settings": {
+            "title": "The Problem: DHT",
+            "text": "<p>DHT is a hormone that binds to receptors in your scalp - In excess it shrinks follicles, causing hair to thin and shed.<\/p>",
+            "text_color": ""
+          }
+        }
+      },
+      "block_order": [
+        "highlight_row_FFKnJJ",
+        "highlight_row_4BTrLT",
+        "highlight_row_WLKkUN"
+      ],
+      "name": "Image Benefits",
+      "settings": {
+        "featured_image": "shopify:\/\/shop_images\/Simply_Revival_DHT__The_Hidden_Hormone_Behind_Hair_Loss-min.png",
+        "reverse_layout": false,
+        "section_title": "<h3><strong>DHT: The Hidden Hormone Behind Hair Loss<\/strong><\/h3>",
+        "section_caption": "We stop it naturally.",
+        "background_color": "#ffffff",
+        "text_color": "#000000",
+        "title_color": "#000000",
+        "caption_color": "#ffffff",
+        "caption_bg": "#60a1a2",
+        "padding_top": 60,
+        "padding_bottom": 60
+      }
+    },
+    "cwc_testimonial_images_JLFnAi": {
+      "type": "CWC_testimonial_images",
+      "blocks": {
+        "testimonial_image_KGL4ec": {
+          "type": "testimonial_image",
+          "settings": {
+            "image": "shopify:\/\/shop_images\/2_cae72de7-b70b-4635-bfa9-df0293dd3c6e.jpg"
+          }
+        },
+        "testimonial_image_zBPWXp": {
+          "type": "testimonial_image",
+          "settings": {
+            "image": "shopify:\/\/shop_images\/Lisiting_4_UPDATED_9d210c6c-d888-4fc6-9e7b-cfa3e5ef50dd.jpg"
+          }
+        },
+        "testimonial_image_dQtKPn": {
+          "type": "testimonial_image",
+          "settings": {
+            "image": "shopify:\/\/shop_images\/6_1_324c9233-d19d-4236-9655-d323fd198128.jpg"
+          }
+        },
+        "testimonial_image_D3gdCe": {
+          "type": "testimonial_image",
+          "settings": {
+            "image": "shopify:\/\/shop_images\/CombineyourwellnessPost-3_e9c177da-2c25-45d5-a28d-c076c2090cff.jpg"
+          }
+        },
+        "testimonial_image_3UVyy6": {
+          "type": "testimonial_image",
+          "settings": {
+            "image": "shopify:\/\/shop_images\/2-6_3706e9e2-c473-4d16-91ee-6c3845d24afd.jpg"
+          }
+        }
+      },
+      "block_order": [
+        "testimonial_image_KGL4ec",
+        "testimonial_image_zBPWXp",
+        "testimonial_image_dQtKPn",
+        "testimonial_image_D3gdCe",
+        "testimonial_image_3UVyy6"
+      ],
+      "name": "Testimonial Images",
+      "settings": {
+        "section_title": "10,000+ Hair Transformations",
+        "section_subtitle": "",
+        "bg_color": "#faf9f6",
+        "text_color": "#111111",
+        "padding_top": 60,
+        "padding_bottom": 60
+      }
+    },
+    "cwc_background_features_ajA4iB": {
+      "type": "CWC_background_features",
+      "blocks": {
+        "checkmark_33KMpG": {
+          "type": "checkmark",
+          "settings": {
+            "text": "Made in the USA"
+          }
+        },
+        "checkmark_kKRRLg": {
+          "type": "checkmark",
+          "settings": {
+            "text": "No GMOs"
+          }
+        },
+        "checkmark_De6wGc": {
+          "type": "checkmark",
+          "settings": {
+            "text": "Gluten free"
+          }
+        },
+        "checkmark_fpUB4x": {
+          "type": "checkmark",
+          "settings": {
+            "text": "No preservatives"
+          }
+        },
+        "checkmark_AdkWHc": {
+          "type": "checkmark",
+          "settings": {
+            "text": "No Sugar"
+          }
+        },
+        "checkmark_QzRYaG": {
+          "type": "checkmark",
+          "settings": {
+            "text": "FDA Registered Facility"
+          }
+        },
+        "icon_block_7gQjkt": {
+          "type": "icon_block",
+          "settings": {
+            "text": "Feature description"
+          }
+        },
+        "icon_block_AezJaq": {
+          "type": "icon_block",
+          "settings": {
+            "text": "Feature description"
+          }
+        },
+        "icon_block_bNBJDW": {
+          "type": "icon_block",
+          "settings": {
+            "text": "Feature description"
+          }
+        },
+        "icon_block_fe3nU8": {
+          "type": "icon_block",
+          "settings": {
+            "text": "Feature description"
+          }
+        }
+      },
+      "block_order": [
+        "checkmark_33KMpG",
+        "checkmark_kKRRLg",
+        "checkmark_De6wGc",
+        "checkmark_fpUB4x",
+        "checkmark_AdkWHc",
+        "checkmark_QzRYaG",
+        "icon_block_7gQjkt",
+        "icon_block_AezJaq",
+        "icon_block_bNBJDW",
+        "icon_block_fe3nU8"
+      ],
+      "name": "Background Features",
+      "settings": {
+        "headline": "Why Trust Simply Revival® vs Standard Prescriptions?",
+        "bg_color": "#125657",
+        "text_color": "#ffffff",
+        "padding_top": 60,
+        "padding_bottom": 60
+      }
+    },
+    "cwc_reasons_yzTB3N": {
+      "type": "CWC_reasons",
+      "blocks": {
+        "caption_P9fDj3": {
+          "type": "caption",
+          "settings": {
+            "text": "Why Choose Us?",
+            "caption_bg": "#60a1a2",
+            "caption_color": "#ffffff"
+          }
+        },
+        "heading_DUb4Fr": {
+          "type": "heading",
+          "settings": {
+            "text": "<h3>The Reasons Customers Love Us<\/h3>",
+            "heading_color": "#111111"
+          }
+        },
+        "text_K7C7tW": {
+          "type": "text",
+          "settings": {
+            "text": "<p>Here’s what sets us apart from other brands.<\/p>",
+            "text_color": "#444444"
+          }
+        },
+        "reason_PLdDTL": {
+          "type": "reason",
+          "settings": {
+            "img": "shopify:\/\/shop_images\/feedback_94cf01ef-6dce-445d-b250-0db73774ce6d.jpg",
+            "badge": "Reason 1",
+            "badge_bg": "#60a1a2",
+            "badge_color": "#ffffff",
+            "title": "Clinical Strength",
+            "text": "<p>Explain this reason in 1–2 short sentences.<\/p>"
+          }
+        },
+        "reason_CcHDxL": {
+          "type": "reason",
+          "settings": {
+            "img": "shopify:\/\/shop_images\/feedback_94cf01ef-6dce-445d-b250-0db73774ce6d.jpg",
+            "badge": "Reason 2",
+            "badge_bg": "#60a1a2",
+            "badge_color": "#ffffff",
+            "title": "10 Legendary Herbs. One formula",
+            "text": "<p>Explain this reason in 1–2 short sentences.<\/p>"
+          }
+        },
+        "reason_JmG9Ga": {
+          "type": "reason",
+          "settings": {
+            "img": "shopify:\/\/shop_images\/3_405603d9-fa0a-44f7-9326-b4067cdb0570.jpg",
+            "badge": "Reason 3",
+            "badge_bg": "#60a1a2",
+            "badge_color": "#ffffff",
+            "title": "dfdfdffd",
+            "text": "<p>Explain thisadffdsdfsdfsd reason in 1–2 short sentences.<\/p>"
+          }
+        },
+        "reason_BcKrTd": {
+          "type": "reason",
+          "settings": {
+            "img": "shopify:\/\/shop_images\/Lisiting_4_UPDATED.jpg",
+            "badge": "Reason 4",
+            "badge_bg": "#60a1a2",
+            "badge_color": "#ffffff",
+            "title": "Reason title",
+            "text": "<p>Explain this reason in 1–2 short sentences.<\/p>"
+          }
+        },
+        "reason_X4kHiY": {
+          "type": "reason",
+          "settings": {
+            "img": "shopify:\/\/shop_images\/5.jpg",
+            "badge": "Reason 5",
+            "badge_bg": "#60a1a2",
+            "badge_color": "#ffffff",
+            "title": "Reason title",
+            "text": "<p>Explain this reason in 1–2 short sentences.<\/p>"
+          }
+        },
+        "button_edYeHU": {
           "type": "button",
           "settings": {
-            "button": "BUY NOW & SAVE 40% →",
-            "link": "shopify:\/\/products\/skin-hair-nails-complex",
-            "style_btn": "btn-theme"
+            "text": "Shop Now",
+            "link": "",
+            "text-color": "#ffffff",
+            "bg-color": "#125657",
+            "note": "365 - day money back guarantee"
           }
         }
       },
       "block_order": [
-        "button_qHTCHp"
+        "caption_P9fDj3",
+        "heading_DUb4Fr",
+        "text_K7C7tW",
+        "reason_PLdDTL",
+        "reason_CcHDxL",
+        "reason_JmG9Ga",
+        "reason_BcKrTd",
+        "reason_X4kHiY",
+        "button_edYeHU"
       ],
-      "custom_css": [
-        ".btn.btn-theme {font-weight: 800;}"
-      ],
+      "name": "Reasons",
       "settings": {
-        "animation": "",
-        "setwidth": "container",
-        "bgsection": "#035057",
-        "gradient_bg": "",
-        "title_color": "rgba(0,0,0,0)",
-        "title_top": "",
-        "title": "",
+        "card_bg": "#f9f9f9",
+        "card_text": "#222222",
+        "section_bg": "#fffee3",
+        "padding_top": 60,
+        "padding_bottom": 60
+      }
+    },
+    "cwc_video_testimonials_6bGNRY": {
+      "type": "CWC_video_testimonials",
+      "blocks": {
+        "testimonial_6xrgxP": {
+          "type": "testimonial",
+          "settings": {
+            "video_file": "shopify:\/\/files\/videos\/Sugar Finds🍭_7509894323903663391-no-watermark.MP4",
+            "video_url": "",
+            "author_name": "Customer Name"
+          }
+        },
+        "testimonial_hBMbGd": {
+          "type": "testimonial",
+          "settings": {
+            "video_file": "shopify:\/\/files\/videos\/Marc Malcolm lets go_7480697220061269291-no-watermark.MP4",
+            "video_url": "",
+            "author_name": "Customer Name"
+          }
+        },
+        "testimonial_KyP9Lm": {
+          "type": "testimonial",
+          "settings": {
+            "video_file": "shopify:\/\/files\/videos\/Video 1.mp4",
+            "video_url": "",
+            "author_name": "Customer Name"
+          }
+        },
+        "testimonial_BYqMYx": {
+          "type": "testimonial",
+          "settings": {
+            "video_file": "shopify:\/\/files\/videos\/VIDEO 1 (1).mp4",
+            "video_url": "",
+            "author_name": "Customer Name"
+          }
+        },
+        "testimonial_bxWgWE": {
+          "type": "testimonial",
+          "settings": {
+            "video_file": "shopify:\/\/files\/videos\/IMG_5850.mov",
+            "video_url": "",
+            "author_name": "Customer Name"
+          }
+        },
+        "testimonial_jn93rT": {
+          "type": "testimonial",
+          "settings": {
+            "video_file": "shopify:\/\/files\/videos\/IMG_4207.mov",
+            "video_url": "",
+            "author_name": "Customer Name"
+          }
+        }
+      },
+      "block_order": [
+        "testimonial_6xrgxP",
+        "testimonial_hBMbGd",
+        "testimonial_KyP9Lm",
+        "testimonial_BYqMYx",
+        "testimonial_bxWgWE",
+        "testimonial_jn93rT"
+      ],
+      "name": "Video Testimonials",
+      "settings": {
+        "heading": "What Our Customers Say",
+        "text": "<p>See why thousands of people love our products<\/p>",
+        "button_label": "Try Risk-Free Today",
+        "button_link": "",
+        "button_note": "No risk — 30 day money back guarantee",
+        "bg_color": "#faf9f6",
+        "text_color": "#111111",
+        "button_bg": "#009370",
+        "button_text": "#ffffff",
+        "padding_top": 60,
+        "padding_bottom": 60
+      }
+    },
+    "cwc_problem_solution_gF7ac4": {
+      "type": "CWC_problem_solution",
+      "blocks": {
+        "caption_RrLjRf": {
+          "type": "caption",
+          "settings": {
+            "text": "captoin",
+            "text_color": "#ffffff",
+            "bg_color": "#60a1a2"
+          }
+        },
+        "heading_TJejUe": {
+          "type": "heading",
+          "settings": {
+            "text": "<h3>From Thinning & Insecure<\/h3><h3>to Full & Confident<\/h3>",
+            "text_color": "#ffffff"
+          }
+        },
+        "table_U4yKMB": {
+          "type": "table",
+          "settings": {
+            "title": "Your Problem",
+            "bg_color": "#ffffff",
+            "icon1": "shopify:\/\/shop_images\/A_full_head_of_healthy_hair_1.png",
+            "text1": "Struggling with thinning hairline\/crown",
+            "icon2": "shopify:\/\/shop_images\/A_full_head_of_healthy_hair_1.png",
+            "text2": "Feeling insecure about your hair",
+            "icon3": "shopify:\/\/shop_images\/A_full_head_of_healthy_hair_1.png",
+            "text3": "Sick and tired of prescription side effects"
+          }
+        },
+        "table_8LRhr9": {
+          "type": "table",
+          "settings": {
+            "title": "Our Solution",
+            "bg_color": "#f1f1f1",
+            "icon1": "shopify:\/\/shop_images\/A_full_head_of_healthy_hair_1.png",
+            "text1": "A full head of healthy hair",
+            "icon2": "shopify:\/\/shop_images\/A_full_head_of_healthy_hair_64px.png",
+            "text2": "New found confidence",
+            "icon3": "shopify:\/\/shop_images\/A_full_head_of_healthy_hair_64px.png",
+            "text3": "No harsh side effects"
+          }
+        },
+        "image_row_KdhpqJ": {
+          "type": "image_row",
+          "settings": {
+            "image1": "shopify:\/\/shop_images\/Simply_Revival_365-Day_Risk-Free_Trial-min.png",
+            "image2": "shopify:\/\/shop_images\/A_full_head_of_healthy_hair_64px.png",
+            "image3": "shopify:\/\/shop_images\/Simply_Revival_365-Day_Risk-Free_Trial-min.png"
+          }
+        }
+      },
+      "block_order": [
+        "caption_RrLjRf",
+        "heading_TJejUe",
+        "table_U4yKMB",
+        "table_8LRhr9",
+        "image_row_KdhpqJ"
+      ],
+      "name": "Problem Solution",
+      "settings": {
+        "subhead": "",
+        "heading": "<h3>From Thinning & Insecure to<br\/>Full & Confident<\/h3>",
         "text": "",
-        "align-heading": "center",
-        "paddingsection": "0px 0px 20px 0px",
-        "paddingmobile": "0px 0px 20px 0px",
-        "marginsection": "0px 0px 0px 0px",
-        "marginmobile": "0px 0px 0px 0px"
+        "background_color": "#fffee3",
+        "padding_top": 60,
+        "padding_bottom": 60
       }
     },
-    "advanced_content_GDCdVh": {
-      "type": "advanced-content",
+    "cwc_statistical_proof_madMF3": {
+      "type": "CWC_statistical_proof",
       "blocks": {
-        "image_MMza3c": {
-          "type": "image",
+        "stat_jgnKPr": {
+          "type": "stat",
           "settings": {
-            "width": "50%",
-            "align": "center",
-            "image": "shopify:\/\/shop_images\/Bad_PRice.png",
-            "width_image": 60,
-            "image_link": "shopify:\/\/products\/skin-hair-nails-complex",
-            "enable_top": true,
-            "code": "<p style=\"color: white; text-align: center; font-weight: bold; margin-bottom: 10px;\">\n    Your average supplement receipt:\n<\/p>",
-            "padding-left": false,
-            "padding-right": false
+            "number": "94%",
+            "title": "<p><strong>Said they noticed visibly less hair shedding <\/strong><\/p>",
+            "text": "<p>After taking Simply Revival® consistently for 3+ weeks<\/p>"
           }
         },
-        "image_JJwpdb": {
-          "type": "image",
-          "disabled": true,
+        "stat_3AyBMx": {
+          "type": "stat",
           "settings": {
-            "width": "50%",
-            "align": "center",
-            "image": "shopify:\/\/shop_images\/Simply_Price.png",
-            "width_image": 60,
-            "image_link": "shopify:\/\/products\/skin-hair-nails-complex",
-            "enable_top": true,
-            "code": "<p style=\"color: white; text-align: center; font-weight: bold; margin-bottom: 10px;\">\n    Your supplement receipt with Simply:\n<br>\n<\/p>",
-            "padding-left": false,
-            "padding-right": false
+            "number": "88%",
+            "title": "<p><strong>Said they noticed visibly less hair shedding <\/strong><\/p>",
+            "text": "<p>After taking Simply Revival® consistently for 3+ weeks<\/p>"
+          }
+        },
+        "stat_e7cQae": {
+          "type": "stat",
+          "settings": {
+            "number": "94%",
+            "title": "<p><b>Said they noticed visibly less hair shedding <\/b><\/p>",
+            "text": "<p>After taking Simply Revival® consistently for 3+ weeks<\/p>"
+          }
+        },
+        "stat_JNd673": {
+          "type": "stat",
+          "settings": {
+            "number": "94%",
+            "title": "<p><strong>Said they noticed visibly less hair shedding <\/strong><\/p>",
+            "text": "<p>After taking Simply Revival® consistently for 3+ weeks<\/p>"
           }
         }
       },
       "block_order": [
-        "image_MMza3c",
-        "image_JJwpdb"
+        "stat_jgnKPr",
+        "stat_3AyBMx",
+        "stat_e7cQae",
+        "stat_JNd673"
       ],
-      "disabled": true,
+      "name": "Statistical Proof",
       "settings": {
-        "animation": "",
-        "setwidth": "container",
+        "heading": "<h3>Simply Revival® Works - The Numbers Prove it<\/h3>",
+        "text": "<p>When clean, plant-based ingredients meet clinical potency, the results speak for themselves.<\/p>",
+        "bg_color": "#fffee3",
+        "highlight_color": "#009370",
+        "padding_top": 60,
+        "padding_bottom": 60
+      }
+    },
+    "cwc_comparison_RdafCY": {
+      "type": "CWC_comparison",
+      "blocks": {
+        "brand_table_YAPVJe": {
+          "type": "brand_table",
+          "settings": {
+            "product_image": "shopify:\/\/shop_images\/A_full_head_of_healthy_hair_64px.png",
+            "title": "Simply Revival®",
+            "background_color": "#60a1a2",
+            "text_color": "#ffffff",
+            "icon1": "shopify:\/\/shop_images\/A_full_head_of_healthy_hair_1.png",
+            "text1": "No harsh side effects",
+            "icon2": "shopify:\/\/shop_images\/A_full_head_of_healthy_hair_1.png",
+            "text2": "All Natural Formula",
+            "icon3": "shopify:\/\/shop_images\/A_full_head_of_healthy_hair_1.png",
+            "text3": "Preservative & paraben free",
+            "icon4": "shopify:\/\/shop_images\/A_full_head_of_healthy_hair_1.png",
+            "text4": "No Sugar & Gluten Free",
+            "icon5": "shopify:\/\/shop_images\/A_full_head_of_healthy_hair_1.png",
+            "text5": "Made in the USA"
+          }
+        },
+        "competitor_table_DFgAkA": {
+          "type": "competitor_table",
+          "settings": {
+            "title": "Prescriptions",
+            "background_color": "#ffffff",
+            "text_color": "#111111",
+            "icon1": "shopify:\/\/shop_images\/A_full_head_of_healthy_hair_1.png",
+            "text1": "Nasty Side Effects",
+            "icon2": "shopify:\/\/shop_images\/A_full_head_of_healthy_hair_1.png",
+            "text2": "Chemical formula",
+            "icon3": "shopify:\/\/shop_images\/A_full_head_of_healthy_hair_1.png",
+            "text3": "Fillers & additives",
+            "icon4": "shopify:\/\/shop_images\/A_full_head_of_healthy_hair_1.png",
+            "text4": "Sugar, flavors, binders",
+            "icon5": "shopify:\/\/shop_images\/A_full_head_of_healthy_hair_1.png",
+            "text5": "Manufactured overseas"
+          }
+        },
+        "heading_AJkrWk": {
+          "type": "heading",
+          "settings": {
+            "text": "<h3>Simply Revival® vs Prescriptions<\/h3>",
+            "text_color": "#ffffff"
+          }
+        },
+        "bullet_RYPGQE": {
+          "type": "bullet",
+          "settings": {
+            "text": "<p><strong>Clinically Backed Ingredients<\/strong> – Ingredients proven to work<\/p>",
+            "text_color": "#ffffff"
+          }
+        },
+        "bullet_gtXNEN": {
+          "type": "bullet",
+          "settings": {
+            "text": "<p><strong>Clinically Backed Ingredients<\/strong> – Ingredients proven to work<\/p>",
+            "text_color": "#ffffff"
+          }
+        },
+        "bullet_w4cY4M": {
+          "type": "bullet",
+          "settings": {
+            "text": "<p><strong>Clinically Backed Ingredients<\/strong> – Ingredients proven to work<\/p>",
+            "text_color": "#ffffff"
+          }
+        },
+        "bullet_GQhpr3": {
+          "type": "bullet",
+          "settings": {
+            "text": "<p><strong>Clinically Backed Ingredients<\/strong> &ndash; Ingredients proven to work<\/p>",
+            "text_color": "#ffffff"
+          }
+        },
+        "bullet_LqhbUx": {
+          "type": "bullet",
+          "settings": {
+            "text": "<p><strong>Clinically Backed Ingredients<\/strong> &ndash; Ingredients proven to work<\/p>",
+            "text_color": "#ffffff"
+          }
+        },
+        "button_qkeT3e": {
+          "type": "button",
+          "settings": {
+            "button_text": "Try Risk-Free Today",
+            "button_link": "",
+            "button_bg_color": "#ffffff",
+            "button_text_color": "#125657",
+            "button_note": "<p>30-day money back guarantee<\/p>"
+          }
+        }
+      },
+      "block_order": [
+        "brand_table_YAPVJe",
+        "competitor_table_DFgAkA",
+        "heading_AJkrWk",
+        "bullet_RYPGQE",
+        "bullet_gtXNEN",
+        "bullet_w4cY4M",
+        "bullet_GQhpr3",
+        "bullet_LqhbUx",
+        "button_qkeT3e"
+      ],
+      "name": "Comparison",
+      "settings": {
+        "background_start_color": "#125657",
+        "background_end_color": "#0c4546",
         "text_color": "#ffffff",
-        "bgsection": "#035057",
-        "rangebg": 0,
-        "bgbefore": "rgba(0,0,0,0)",
-        "e_size": "auto",
-        "e_repeat": "no-repeat",
-        "e_position": "center center",
-        "zindex": "0",
-        "title_top": "",
-        "title": "",
-        "des": "<h2 style=\"text-align: center; color: white; font-weight: bold;\">\n    Condense Your Wellness Routine & <span style=\"color: #FF9500;\">Save Thousands<\/span>\n<\/h2>",
-        "align-heading": "center",
-        "padding": true,
-        "col_center": false,
-        "paddingsection": "30px 0px 0px 0px",
-        "paddingmobile": "40px 0px 40px 0px",
-        "marginsection": "0px 0px 0px 0px",
-        "marginmobile": "0px 0px 0px 0px"
+        "padding_top": 70,
+        "padding_bottom": 40
       }
     },
-    "image_content_WVURGR": {
-      "type": "image-content",
+    "cwc_featured_product_L4Wq3K": {
+      "type": "CWC_featured_product",
       "blocks": {
-        "image_block_HfMmea": {
-          "type": "image_block",
+        "product_image_NNiAV9": {
+          "type": "product_image",
           "settings": {
-            "image": "shopify:\/\/shop_images\/dht_sitting_in_sand.png"
+            "image": "{{ section.settings.product.featured_image }}"
           }
         },
-        "text_block_eJjUHz": {
-          "type": "text_block",
+        "faq_HUfr6L": {
+          "type": "faq",
           "settings": {
-            "width": "100%",
-            "bgtext": "#ffffff",
-            "title_color": "#282828",
-            "subtitle": "",
-            "title": "",
-            "size_text": "h2",
-            "text": "<h2 style=\"color: #282828;\">Try Us <span style=\"color: #FF9500;\"><b>Risk Free<\/b><\/span>\n<\/h2><b>\n<\/b>",
-            "answer_content": "<p><strong>We believe in Simply and can’t wait for you to see REAL results!<\/strong><\/p><p><strong>If you don’t notice a difference in your hair, skin, or nail health after 30 days of consistent use, reach out to us for a full refund.<\/strong><\/p><p><strong>If you don’t see the glow, it’s on us!<\/strong><\/p>",
-            "style_btn": "btn-theme",
-            "button": "BUY NOW & SAVE 40% →",
-            "link": "shopify:\/\/products\/skin-hair-nails-complex",
-            "enable_padding": true,
-            "align": "left"
+            "title": "Description",
+            "content": ""
+          }
+        },
+        "faq_e9NTRz": {
+          "type": "faq",
+          "settings": {
+            "title": "Description",
+            "content": ""
+          }
+        },
+        "rating_dVmiAj": {
+          "type": "rating",
+          "settings": {
+            "text": "<p>★★★★★ Rated 4.9 Excellent | <a href=\"#az_reviews\" title=\"#az_reviews\"><span style=\"text-decoration:underline\"><strong>323 Reviews<\/strong><\/span><\/a><\/p>"
+          }
+        },
+        "text_fRwEd7": {
+          "type": "text",
+          "settings": {
+            "content": "<p>{{ section.settings.product.vendor }}<\/p>"
+          }
+        },
+        "text_ezzyhR": {
+          "type": "text",
+          "settings": {
+            "content": "<h3>{{ section.settings.product.title }}<\/h3>"
+          }
+        },
+        "text_6BAAni": {
+          "type": "text",
+          "settings": {
+            "content": "<p>A natural blend of two ancient super-oils – Oregano & Black Seed – to strengthen your immune system & support long-term health.<\/p>"
+          }
+        },
+        "benefits_yBL8MF": {
+          "type": "benefits",
+          "settings": {
+            "icon1": "shopify:\/\/shop_images\/A_full_head_of_healthy_hair_1.png",
+            "text1": "benefit one",
+            "icon2": "shopify:\/\/shop_images\/A_full_head_of_healthy_hair_64px.png",
+            "text2": "benefit one",
+            "icon3": "shopify:\/\/shop_images\/A_full_head_of_healthy_hair_1.png",
+            "text3": "benefit one",
+            "text4": "benefit one",
+            "text5": "benefit one",
+            "text6": "benefit one"
+          }
+        },
+        "price_display_YRWbRk": {
+          "type": "price_display",
+          "settings": {}
+        },
+        "product_options_Qjwezj": {
+          "type": "product_options",
+          "settings": {}
+        },
+        "subscription_toggle_JBnJtn": {
+          "type": "subscription_toggle",
+          "settings": {
+            "title": "Save 25% With Automatic Refills!",
+            "subtitle": "Zero Commitment | Exclusive Discounts | Cancel Anytime"
+          }
+        },
+        "delivery_estimate_8XnWbT": {
+          "type": "delivery_estimate",
+          "settings": {
+            "text": "Order now for delivery by: September 1st"
+          }
+        },
+        "add_to_cart_FcqgJW": {
+          "type": "add_to_cart",
+          "settings": {
+            "button_text": "Add to Cart",
+            "button_bg_color": "#125657",
+            "button_text_color": "#ffffff",
+            "note_text": "<p>30-day money back guarantee<\/p>"
           }
         }
       },
       "block_order": [
-        "image_block_HfMmea",
-        "text_block_eJjUHz"
+        "product_image_NNiAV9",
+        "faq_HUfr6L",
+        "faq_e9NTRz",
+        "rating_dVmiAj",
+        "text_fRwEd7",
+        "text_ezzyhR",
+        "text_6BAAni",
+        "benefits_yBL8MF",
+        "price_display_YRWbRk",
+        "product_options_Qjwezj",
+        "subscription_toggle_JBnJtn",
+        "delivery_estimate_8XnWbT",
+        "add_to_cart_FcqgJW"
       ],
-      "custom_css": [
-        ".btn.btn-theme {font-weight: 800;}"
-      ],
+      "name": "Featured Product",
       "settings": {
-        "animation": "",
-        "setwidth": "container",
-        "bgsection": "#ffffff",
-        "rangebg": 0,
-        "bgbefore": "rgba(0,0,0,0)",
-        "bg_pos": "left",
-        "enable_padding": true,
-        "align_center": true,
-        "paddingsection": "20px 0px 20px 0px",
-        "paddingmobile": "40px 0px 40px 0px",
-        "marginsection": "0px 0px 0px 0px",
-        "marginmobile": "0px 0px 0px 0px"
+        "product": "simply®-dht-blocker-test-new",
+        "background_color": "#faf9f6",
+        "padding_top": 60,
+        "padding_bottom": 60
+      }
+    },
+    "cwc_free_trial_Anjcm8": {
+      "type": "CWC_free_trial",
+      "blocks": {
+        "badge_8RigWr": {
+          "type": "badge",
+          "settings": {
+            "badge_number": "365",
+            "badge_text": "DAYS"
+          }
+        },
+        "subhead_VVqJrq": {
+          "type": "subhead",
+          "settings": {
+            "text": "FEEL THE DIFFERENCE"
+          }
+        },
+        "headline_4t8yRH": {
+          "type": "headline",
+          "settings": {
+            "text": "365-Day Risk-Free Trial"
+          }
+        },
+        "subtext_UGrQRi": {
+          "type": "subtext",
+          "settings": {
+            "text": "<p>If you don’t experience noticeable improvements within 365 days, simply return your order for a full refund!<\/p>"
+          }
+        },
+        "button_zVGUHY": {
+          "type": "button",
+          "settings": {
+            "text": "Try Risk-Free Today",
+            "link": "",
+            "button_color": "#125657",
+            "button_text_color": "#ffffff"
+          }
+        }
+      },
+      "block_order": [
+        "badge_8RigWr",
+        "subhead_VVqJrq",
+        "headline_4t8yRH",
+        "subtext_UGrQRi",
+        "button_zVGUHY"
+      ],
+      "name": "Free Trial Section",
+      "settings": {
+        "background_color": "#fffee3",
+        "text_color": "#000000",
+        "image": "shopify:\/\/shop_images\/Simply_Revival_365-Day_Risk-Free_Trial-min.png",
+        "alt_text": "",
+        "image_position": "right",
+        "padding_top": 40,
+        "padding_bottom": 0
+      }
+    },
+    "cwc_faqs_qkQiMD": {
+      "type": "CWC_faqs",
+      "blocks": {
+        "faq_KXMP8C": {
+          "type": "faq",
+          "settings": {
+            "title": "<p>Question<\/p>",
+            "text": "<p>AnswerAnswerAnswerAnswerAnswerAnswerAnswerAnswerAnswerAnswerAnswerAnswerAnswerAnswerAnswer<\/p><p>AnswerAnswerAnswerAnswerAnswer<\/p><p>AnswerAnswer<\/p>"
+          }
+        },
+        "faq_PmUWp8": {
+          "type": "faq",
+          "settings": {
+            "title": "<p>Question<\/p>",
+            "text": "<p>Answer<\/p>"
+          }
+        },
+        "faq_wcznCW": {
+          "type": "faq",
+          "settings": {
+            "title": "<p>Question<\/p>",
+            "text": "<p>Answer<\/p>"
+          }
+        },
+        "faq_WMzwyg": {
+          "type": "faq",
+          "settings": {
+            "title": "<p>Question<\/p>",
+            "text": "<p>Answer<\/p>"
+          }
+        },
+        "faq_DQz37J": {
+          "type": "faq",
+          "settings": {
+            "title": "<p>Question<\/p>",
+            "text": "<p>Answer<\/p>"
+          }
+        },
+        "faq_gKRnqL": {
+          "type": "faq",
+          "settings": {
+            "title": "<p>Question<\/p>",
+            "text": "<p>Answer<\/p>"
+          }
+        }
+      },
+      "block_order": [
+        "faq_KXMP8C",
+        "faq_PmUWp8",
+        "faq_wcznCW",
+        "faq_WMzwyg",
+        "faq_DQz37J",
+        "faq_gKRnqL"
+      ],
+      "name": "FAQs",
+      "settings": {
+        "bg_color": "#125657",
+        "text_color": "#ffffff",
+        "heading": "<h3>Frequently Asked Questions<\/h3>",
+        "text": "<p>Find the answers to some of the most common questions below<\/p>",
+        "faq_bg_color": "#ffffff",
+        "padding_top": 60,
+        "padding_bottom": 60
       }
     },
     "areviews_one_product_AJxgzy": {
@@ -498,63 +1096,24 @@
       "settings": {
         "areviews_one_product": "simply®-dht-blocker"
       }
-    },
-    "rich_text_dDQ7TH": {
-      "type": "rich-text",
-      "blocks": {
-        "button_DP797i": {
-          "type": "button",
-          "settings": {
-            "button": "BUY NOW & SAVE 40% →",
-            "link": "shopify:\/\/products\/skin-hair-nails-complex",
-            "style_btn": "btn-theme"
-          }
-        }
-      },
-      "block_order": [
-        "button_DP797i"
-      ],
-      "disabled": true,
-      "settings": {
-        "animation": "",
-        "setwidth": "container",
-        "bgsection": "#ffffff",
-        "gradient_bg": "",
-        "title_color": "rgba(0,0,0,0)",
-        "title_top": "",
-        "title": "",
-        "text": "",
-        "align-heading": "center",
-        "paddingsection": "0px 0px 20px 0px",
-        "paddingmobile": "0px 0px 20px 0px",
-        "marginsection": "0px 0px 0px 0px",
-        "marginmobile": "0px 0px 0px 0px"
-      }
-    },
-    "areviews_section_AwgBKq": {
-      "type": "areviews-section",
-      "name": "Areviews Product Section",
-      "settings": {
-        "hide_areviews_title_rating": false,
-        "areviews_theme_font": "inherit",
-        "areviews_stars_colors": "#f3c621",
-        "areviews_write_reviews_botton_color": "#373737"
-      }
     }
   },
   "order": [
-    "advanced_content_gXD9KM",
-    "scrolling_text_DMz6aQ",
-    "advanced_content_WeBLtk",
-    "rich_text_BYexe6",
-    "70b7f2d2-4c12-4305-88bd-da89e2d18d5b",
-    "rich_text_PHcFyM",
-    "advanced_content_MEK8Cr",
-    "rich_text_3UMrzJ",
-    "advanced_content_GDCdVh",
-    "image_content_WVURGR",
-    "areviews_one_product_AJxgzy",
-    "rich_text_dDQ7TH",
-    "areviews_section_AwgBKq"
+    "cwc_hero_banner_image_LL6Efb",
+    "cwc_usp_columns_BmJWgA",
+    "cwc_social_proof_QLBenN",
+    "cwc_testimonials_WEmh8r",
+    "cwc_product_highlight_rows_FfmKTT",
+    "cwc_testimonial_images_JLFnAi",
+    "cwc_background_features_ajA4iB",
+    "cwc_reasons_yzTB3N",
+    "cwc_video_testimonials_6bGNRY",
+    "cwc_problem_solution_gF7ac4",
+    "cwc_statistical_proof_madMF3",
+    "cwc_comparison_RdafCY",
+    "cwc_featured_product_L4Wq3K",
+    "cwc_free_trial_Anjcm8",
+    "cwc_faqs_qkQiMD",
+    "areviews_one_product_AJxgzy"
   ]
 }

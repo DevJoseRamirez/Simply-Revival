@@ -1,7 +1,7 @@
 {
   "sections": {
     "main": {
-      "type": "product-template-1",
+      "type": "CWC_product_template",
       "blocks": {
         "10baeeb8-3d3b-4115-8375-8a90ab8f58e9": {
           "type": "text",
