@@ -1,5 +1,5 @@
 {% style %}
-  #CWC_testimonial_image-{{ section.id }} {
+  #CWC_testimonial_images-{{ section.id }} {
     --section-bg: {{ section.settings.bg_color | default: '#FAF9F6' }};
     --text-color: {{ section.settings.text_color | default: '#111111' }};
     --padding-top: {{ section.settings.padding_top | default: 60 }}px;
@@ -54,7 +54,9 @@
   </div>
 </section>
 
-{% comment %} {{ 'CWC_testimonial_images.js' | asset_url | script_tag }} {% endcomment %}
+
+{{ 'CWC_testimonial_images.js' | asset_url | script_tag }}
+
 
 {% schema %}
 {

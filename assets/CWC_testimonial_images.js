@@ -1,7 +1,7 @@
 document.addEventListener("DOMContentLoaded", function () {
   const swiper = new Swiper(".cwc-testimonial-images__carousel", {
     slidesPerView: 3,
-    spaceBetween: 20,
+    spaceBetween: 10,
     loop: true,
     speed: 400,
     navigation: {
@@ -13,18 +13,9 @@ document.addEventListener("DOMContentLoaded", function () {
       clickable: true,
     },
     breakpoints: {
-      0: {
-        slidesPerView: 1,
-        spaceBetween: 16,
-      },
-      768: {
-        slidesPerView: 2,
-        spaceBetween: 16,
-      },
-      1024: {
-        slidesPerView: 3,
-        spaceBetween: 20,
-      },
+      0: { slidesPerView: 1 },
+      768: { slidesPerView: 2 },
+      1024: { slidesPerView: 3 },
     },
     on: {
       slideChange(swiper) {
