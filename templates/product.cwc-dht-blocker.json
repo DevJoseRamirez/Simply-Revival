@@ -5,7 +5,6 @@
       "blocks": {
         "10baeeb8-3d3b-4115-8375-8a90ab8f58e9": {
           "type": "text",
-          "disabled": true,
           "settings": {
             "text": "{{ product.vendor }}",
             "text_style": "subtitle"
@@ -271,6 +270,7 @@
     },
     "product-requently": {
       "type": "product-bundle",
+      "disabled": true,
       "settings": {
         "animation": "fade-up",
         "bgsection": "#ffffff",
@@ -323,6 +323,7 @@
         "147e9960-c5fe-44f4-8469-9583a9752a0a",
         "2e69c5c0-ab83-4cda-9c38-1aaab6fdf1cc"
       ],
+      "disabled": true,
       "settings": {
         "animation": "fade-up",
         "setwidth": "container",
@@ -334,390 +335,9 @@
         "marginmobile": "0px 0px 0px 0px"
       }
     },
-    "b01596d8-87db-4853-92d9-23e7da360734": {
-      "type": "image-text-product",
-      "blocks": {
-        "template--19541120287040__b01596d8-87db-4853-92d9-23e7da360734-text_icon-1": {
-          "type": "text_icon",
-          "settings": {
-            "block_title": "RECYCLED",
-            "block_des": "<p>Environmentally conscious pieces sustainably crafted from recycled fabrics<\/p>"
-          }
-        },
-        "template--19541120287040__b01596d8-87db-4853-92d9-23e7da360734-text_icon-2": {
-          "type": "text_icon",
-          "settings": {
-            "block_title": "LIGHTWEIGHT",
-            "block_des": "<p>Woven to feel light as air on your skin so that you never overheat<\/p>"
-          }
-        },
-        "template--19541120287040__b01596d8-87db-4853-92d9-23e7da360734-text_icon-3": {
-          "type": "text_icon",
-          "settings": {
-            "block_title": "BREATHABLE",
-            "block_des": "<p>Made of fibers with a loose natural structure that allows for airflow<\/p>"
-          }
-        },
-        "template--19541120287040__b01596d8-87db-4853-92d9-23e7da360734-text_icon-4": {
-          "type": "text_icon",
-          "settings": {
-            "block_title": "RELAXED",
-            "block_des": "<p>A lived-in look with softness that only gets better over time<\/p>"
-          }
-        }
-      },
-      "block_order": [
-        "template--19541120287040__b01596d8-87db-4853-92d9-23e7da360734-text_icon-1",
-        "template--19541120287040__b01596d8-87db-4853-92d9-23e7da360734-text_icon-2",
-        "template--19541120287040__b01596d8-87db-4853-92d9-23e7da360734-text_icon-3",
-        "template--19541120287040__b01596d8-87db-4853-92d9-23e7da360734-text_icon-4"
-      ],
-      "settings": {
-        "animation": "fade-up",
-        "section_css_class": "",
-        "setwidth": "container-fluid",
-        "block_text_color": "#1d4d41",
-        "block_text_bg": "#edf2eb",
-        "paddingsection": "0px 0px 0px 0px",
-        "paddingmobile": "0px 0px 40px 0px",
-        "marginsection": "0px 0px 0px 0px",
-        "marginmobile": "0px 0px 0px 0px"
-      }
-    },
-    "93495e3d-f562-4706-aa2e-14cf6b83c216": {
-      "type": "rich-text",
-      "blocks": {
-        "e313bb24-b47f-4f70-82d8-21e78d481ad8": {
-          "type": "image",
-          "settings": {
-            "img-in-hero": 44,
-            "image_link": ""
-          }
-        },
-        "b103ea62-6bf1-49fd-ab23-3d4bb5dc1243": {
-          "type": "spacer",
-          "settings": {
-            "hero-spacer": 8
-          }
-        },
-        "84ad5551-3059-4091-a4ca-408e36eaeff9": {
-          "type": "sub_title",
-          "settings": {
-            "subtitle": "Sustainability"
-          }
-        },
-        "4c0967d6-9bfa-4693-98ce-decc57dda257": {
-          "type": "heading",
-          "settings": {
-            "title": "Our fabrics are developed specifically for us and we only produce quality apparel that lasts.",
-            "size_text": "h4"
-          }
-        }
-      },
-      "block_order": [
-        "e313bb24-b47f-4f70-82d8-21e78d481ad8",
-        "b103ea62-6bf1-49fd-ab23-3d4bb5dc1243",
-        "84ad5551-3059-4091-a4ca-408e36eaeff9",
-        "4c0967d6-9bfa-4693-98ce-decc57dda257"
-      ],
-      "settings": {
-        "animation": "fade-up",
-        "setwidth": "container",
-        "bgsection": "#faf9e6",
-        "gradient_bg": "linear-gradient(180deg, rgba(114, 255, 179, 0) 1%, rgba(250, 249, 230, 1) 98%)",
-        "title_color": "#1d4d41",
-        "title_top": "Sub Title Top",
-        "title": "Talk about your brand",
-        "text": "<p>Use this text to share information about your brand with your customers. Describe a product, share announcements, or welcome customers to your store.<\/p>",
-        "align-heading": "center",
-        "paddingsection": "80px 0px 80px 0px",
-        "paddingmobile": "40px 0px 40px 0px",
-        "marginsection": "0px 0px 0px 0px",
-        "marginmobile": "0px 0px 0px 0px"
-      }
-    },
-    "30d4e0bd-da81-4442-b71d-c0fd1f5b3906": {
-      "type": "image-content-6",
-      "blocks": {
-        "template--14654207721557__30d4e0bd-da81-4442-b71d-c0fd1f5b3906-16658225273f87a081-0": {
-          "type": "image_block",
-          "settings": {
-            "style_content": "default",
-            "w_image": 40,
-            "pos_image": 81,
-            "e_image": "right",
-            "enable_video": false,
-            "text_circle": "Fashion2 style store",
-            "video_url": ""
-          }
-        },
-        "template--14654207721557__30d4e0bd-da81-4442-b71d-c0fd1f5b3906-16658225273f87a081-1": {
-          "type": "text_block",
-          "settings": {
-            "bgtext": "#ffffff",
-            "subtitle": "MATCH COLORS",
-            "title": "Hyper Wearable  Fashion",
-            "size_text": "h2",
-            "text": "<p>Pair large text with an image to give focus to your chosen product, collection, or blog post. Add details on availability, style, or even provide a review.<\/p>",
-            "answer_content": "<p>Pair large text with an image to give focus to your chosen product, collection, or blog post. Add details on availability, style, or even provide a review.<\/p>",
-            "button": "discover now",
-            "link": "#ProductSection-template--23675152072985__main",
-            "style_btn": "btn-outline",
-            "align": "left"
-          }
-        }
-      },
-      "block_order": [
-        "template--14654207721557__30d4e0bd-da81-4442-b71d-c0fd1f5b3906-16658225273f87a081-0",
-        "template--14654207721557__30d4e0bd-da81-4442-b71d-c0fd1f5b3906-16658225273f87a081-1"
-      ],
-      "settings": {
-        "animation": "fade-up",
-        "setwidth": "container",
-        "bgsection": "#ffffff",
-        "size": "50-50",
-        "enable_padding": true,
-        "align_center": true,
-        "paddingsection": "100px 0px 100px 0px",
-        "paddingmobile": "48px 0px 48x 0px",
-        "marginsection": "0px 0px 0px 0px",
-        "marginmobile": "0px 0px 0px 0px"
-      }
-    },
-    "1e04ea1d-fcaa-48a4-9b36-62344d508849": {
-      "type": "parallax-banner",
-      "blocks": {
-        "83897ed0-76f5-408a-bfaf-429b0c45b4c5": {
-          "type": "sub_title",
-          "settings": {
-            "subtitle": "THE MATERIALS"
-          }
-        },
-        "30314b3c-e1a1-468e-b2d5-399f32e2bbda": {
-          "type": "heading",
-          "settings": {
-            "title": "Made in Italy and Spain",
-            "size_text": "h2"
-          }
-        },
-        "dd148053-296c-4c9b-99a6-63c2328328fe": {
-          "type": "paragraph",
-          "settings": {
-            "subtext": "We work exclusively with tanneries in Italy, France and Spain. For each supplier we look for specific characteristics that will ensure that the material selected corresponds in every respect to the products we wish to manufacture."
-          }
-        }
-      },
-      "block_order": [
-        "83897ed0-76f5-408a-bfaf-429b0c45b4c5",
-        "30314b3c-e1a1-468e-b2d5-399f32e2bbda",
-        "dd148053-296c-4c9b-99a6-63c2328328fe"
-      ],
-      "settings": {
-        "animation": "fade",
-        "setwidth": "full",
-        "bgsection": "#ffffff",
-        "parrallax_enable": true,
-        "height_section": "550",
-        "height_section_mobile": "450",
-        "align": "center",
-        "position_text": "mid-center",
-        "bg_box": "#ffffff",
-        "opacity_bgbox": 1,
-        "title_color": "#ffffff",
-        "bg_overlay": "#000000",
-        "gradient_bg": "",
-        "opacity_bg_overlay": 0.4,
-        "paddingsection": "0px 0px 0px 0px",
-        "marginsection": "0px 0px 0px 0px"
-      }
-    },
-    "70b7f2d2-4c12-4305-88bd-da89e2d18d5b": {
-      "type": "quotes-special",
-      "blocks": {
-        "template--14684877652053__70b7f2d2-4c12-4305-88bd-da89e2d18d5b-1665853262e19e6bf8-0": {
-          "type": "quote",
-          "settings": {
-            "title": "Wonderful !",
-            "quote": "<h4>“Absolutely loved it. The fit, the quality and the color. This is a slim fit jean like none other and the only one I will buy.”<\/h4>",
-            "rate": 5,
-            "author": "— Susan P.",
-            "info": ""
-          }
-        },
-        "template--14684877652053__70b7f2d2-4c12-4305-88bd-da89e2d18d5b-1665853262e19e6bf8-1": {
-          "type": "quote",
-          "settings": {
-            "title": "perfect !",
-            "quote": "<h4>“ The most comfortable shoes ever!! I have them in 3 colors. And I am not done. \"<\/h4>",
-            "rate": 5,
-            "author": "—  Jaycie Glove",
-            "info": ""
-          }
-        },
-        "template--14684877652053__70b7f2d2-4c12-4305-88bd-da89e2d18d5b-1665853262e19e6bf8-2": {
-          "type": "quote",
-          "settings": {
-            "title": "Awesome",
-            "quote": "<h4>\" I love Lola! They're one of my favorite brands. Customer service is excellent. I have only returned items once and it was so easy. \" <\/h4>",
-            "rate": 5,
-            "author": "—  Kai Felix",
-            "info": ""
-          }
-        }
-      },
-      "block_order": [
-        "template--14684877652053__70b7f2d2-4c12-4305-88bd-da89e2d18d5b-1665853262e19e6bf8-0",
-        "template--14684877652053__70b7f2d2-4c12-4305-88bd-da89e2d18d5b-1665853262e19e6bf8-1",
-        "template--14684877652053__70b7f2d2-4c12-4305-88bd-da89e2d18d5b-1665853262e19e6bf8-2"
-      ],
-      "settings": {
-        "animation": "fade-up",
-        "setwidth": "container",
-        "bgsection": "#ffffff",
-        "title_top": "Sub Title Top",
-        "title": "User reviews",
-        "des": "",
-        "align-heading": "center",
-        "color_rate": "#f1f1f1",
-        "color_rated": "#1d4d41",
-        "image_size": "landscape",
-        "arrows": true,
-        "draggable": true,
-        "dots": true,
-        "infinite": true,
-        "paddingsection": "100px 0px 100px 0px",
-        "paddingmobile": "40px 0px 40px 0px",
-        "marginsection": "0px 0px 0px 0px",
-        "marginmobile": "0px 0px 0px 0px"
-      }
-    },
-    "c5690cdb-c04d-45fd-9c6c-cfee011363ca": {
-      "type": "service",
-      "blocks": {
-        "template--14684877652053__c5690cdb-c04d-45fd-9c6c-cfee011363ca-166585292003960893-0": {
-          "type": "service",
-          "settings": {
-            "bgblock": "rgba(0,0,0,0)",
-            "title": "Free Shipping",
-            "description": "From all orders over $100",
-            "icon": "<svg aria-hidden=\"true\" focusable=\"false\" role=\"presentation\" class=\"icon icon-truck\" viewbox=\"0 0 82 82\"><path d=\"M7.238 68.717H1.867V2.12H58.4v16.736h3.886c9.755 0 17.663 7.908 17.663 17.663v32.199h-5.917M55.781 68.717H25.487\"><\/path><path d=\"M58.334 42.124h15.068v-4.27c0-6.82-5.53-12.35-12.351-12.35h-2.718v16.62M73.909 70.236a9.125 9.125 0 1 0-18.013-2.931 9.125 9.125 0 0 0 18.013 2.93ZM25.367 70.235a9.125 9.125 0 1 0-18.012-2.931 9.125 9.125 0 0 0 7.54 10.471 9.125 9.125 0 0 0 10.472-7.54Z\"><\/path><path d=\"M13.723 77.507c-3.966.658-7.937 1.51-11.857 2.593M60.373 76.736c-10.512-1.212-24.298-1.969-38.645-.451M79.768 80.121s-4.96-1.222-12.975-2.395\"><\/path><\/svg>"
-          }
-        },
-        "template--14684877652053__c5690cdb-c04d-45fd-9c6c-cfee011363ca-166585292003960893-1": {
-          "type": "service",
-          "settings": {
-            "bgblock": "rgba(0,0,0,0)",
-            "title": "The Beach Club",
-            "description": "Be rewarded every time",
-            "icon": "<svg aria-hidden=\"true\" focusable=\"false\" role=\"presentation\" class=\"icon icon-plant-based\" viewbox=\"0 0 82 82\"><path d=\"M41 20.701V80M56.735 26.294c0 8.703-7.045 15.758-15.735 15.758s-15.735-7.055-15.735-15.758C25.265 14.719 41 2 41 2s15.735 12.719 15.735 24.294ZM30.479 46.972c6.145 6.154 6.145 16.132 0 22.285-6.145 6.154-16.107 6.154-22.252 0C.054 61.072 2.2 40.936 2.2 40.936s20.106-2.149 28.279 6.036Z\"><\/path><path d=\"M41 77.861S27.525 60.403 10.092 50.177M51.412 46.972c-6.145 6.154-6.145 16.132 0 22.285 6.145 6.153 16.107 6.154 22.252 0 8.173-8.185 6.027-28.321 6.027-28.321s-20.106-2.149-28.279 6.036Z\"><\/path><path d=\"M40.891 77.861s13.475-17.458 30.908-27.684\"><\/path><\/svg>"
-          }
-        },
-        "template--14684877652053__c5690cdb-c04d-45fd-9c6c-cfee011363ca-166585292003960893-2": {
-          "type": "service",
-          "settings": {
-            "bgblock": "rgba(0,0,0,0)",
-            "title": "Instant Refunds",
-            "description": "Return money within 30 days",
-            "icon": "<svg aria-hidden=\"true\" focusable=\"false\" role=\"presentation\" class=\"icon icon-package\" viewbox=\"0 0 82 82\"><path d=\"M80 21v39L41 80 2 60V21L41 2l39 19Z\"><\/path><path d=\"m2 21 39 20 38.571-19.807M41 41.478v38.338\"><\/path><path d=\"m27.715 8.643 38.409 19.473v17.543l-11.617 6.067V33.83L16.098 14.355\"><\/path><\/svg>"
-          }
-        },
-        "4273663e-a3ea-49a8-a7c1-c872309fc99c": {
-          "type": "service",
-          "settings": {
-            "bgblock": "rgba(0,0,0,0)",
-            "title": "Wear Now",
-            "description": "Pay in easy instalments.",
-            "icon": "<svg aria-hidden=\"true\" focusable=\"false\" role=\"presentation\" class=\"icon icon-shield\" viewbox=\"0 0 64 64\"><defs><style>.a{fill:none;stroke:#000;stroke-width:2px}<\/style><\/defs><path class=\"a\" d=\"M21.18 31.69L28.54 39l15.91-15.88\"><\/path><path class=\"a\" d=\"M53 12.54v15.24a31.41 31.41 0 0 1-3.7 14.95A25.46 25.46 0 0 1 32 56a25.46 25.46 0 0 1-17.3-13.27A31.41 31.41 0 0 1 11 27.78V12.54C24.88 13.67 32 8 32 8s7.12 5.67 21 4.54z\"><\/path><\/svg>"
-          }
-        }
-      },
-      "block_order": [
-        "template--14684877652053__c5690cdb-c04d-45fd-9c6c-cfee011363ca-166585292003960893-0",
-        "template--14684877652053__c5690cdb-c04d-45fd-9c6c-cfee011363ca-166585292003960893-1",
-        "template--14684877652053__c5690cdb-c04d-45fd-9c6c-cfee011363ca-166585292003960893-2",
-        "4273663e-a3ea-49a8-a7c1-c872309fc99c"
-      ],
-      "settings": {
-        "animation": "fade-up",
-        "setwidth": "container",
-        "bgsection": "#f9f7f2",
-        "title_top": "Sub Title Top",
-        "title": "Service",
-        "des": "",
-        "align-heading": "center",
-        "paddingbox": "0px 0px 0px 0px",
-        "iconcolor": "#1d4d41",
-        "titlecolor": "#1d4d41",
-        "subcolor": "#1d4d41",
-        "size": 44,
-        "service_heading": "h6",
-        "layout": "style-2",
-        "enable_carousel": true,
-        "arrows": false,
-        "draggable": true,
-        "dots": true,
-        "infinite": true,
-        "paddingsection": "32px 0px 32px 0px",
-        "paddingmobile": "32px 0px 16px 0px",
-        "marginsection": "0px 0px 0px 0px",
-        "marginmobile": "0px 0px 0px 0px"
-      }
-    },
-    "bcb1cba3-80fc-49a2-a033-40cf0618e9c8": {
-      "type": "faq-accordion",
-      "blocks": {
-        "template--14684877652053__bcb1cba3-80fc-49a2-a033-40cf0618e9c8-16659371170e440ef7-0": {
-          "type": "faq",
-          "settings": {
-            "faq_title": "Is the shipping free?",
-            "faq_des": "<p>Yes. Worldwide shipping is already included in the price. We use DHL express with 3 days delivery time.<\/p>"
-          }
-        },
-        "template--14684877652053__bcb1cba3-80fc-49a2-a033-40cf0618e9c8-16659371170e440ef7-1": {
-          "type": "faq",
-          "settings": {
-            "faq_title": "When will I receive my item?",
-            "faq_des": "<p>When we have received your order, you will automatically receive an e-mail confirming your order. Orders made before 2 PM (CET) will be picked, packed and shipped the same day. Delivery time is usually 2-4 working days with DHL Express.<\/p>"
-          }
-        },
-        "template--14684877652053__bcb1cba3-80fc-49a2-a033-40cf0618e9c8-16659371170e440ef7-2": {
-          "type": "faq",
-          "settings": {
-            "faq_title": "Can I change or return my item?",
-            "faq_des": "<p>If you want to change a product into another model, strap color etc., please contact us so we are able to reserve the new item in our stock immediately. You are always entitled to an exchange or refund within 30 days after you have received your package, as long as the item has not been used.<\/p>"
-          }
-        }
-      },
-      "block_order": [
-        "template--14684877652053__bcb1cba3-80fc-49a2-a033-40cf0618e9c8-16659371170e440ef7-0",
-        "template--14684877652053__bcb1cba3-80fc-49a2-a033-40cf0618e9c8-16659371170e440ef7-1",
-        "template--14684877652053__bcb1cba3-80fc-49a2-a033-40cf0618e9c8-16659371170e440ef7-2"
-      ],
-      "settings": {
-        "animation": "",
-        "setwidth": "container",
-        "bgsection": "#ffffff",
-        "e_size": "auto",
-        "e_repeat": "no-repeat",
-        "e_pos": "center center",
-        "title_top": "Sub Title Top",
-        "title": "FAQs",
-        "des": "Have a question ? We are here to help.",
-        "align-heading": "center",
-        "title_size": "h6",
-        "e_first_open": false,
-        "e_reverse": true,
-        "e_small": true,
-        "left_html": "",
-        "e_right": false,
-        "paddingsection": "80px 0px 0px 0px",
-        "paddingmobile": "60px 0px 60px 0px",
-        "marginsection": "0px 0px 0px 0px",
-        "marginmobile": "0px 0px 0px 0px"
-      }
-    },
     "product-recommendations": {
       "type": "product-recommendations",
+      "disabled": true,
       "settings": {
         "animation": "fade-up",
         "setwidth": "container-fluid",
@@ -736,6 +356,7 @@
     },
     "product-recent": {
       "type": "recently-viewed",
+      "disabled": true,
       "settings": {
         "enable": true,
         "animation": "fade-up",
@@ -753,12 +374,107 @@
     },
     "1629746450643786911": {
       "type": "areviews-section",
-      "disabled": true,
       "settings": {
         "hide_areviews_title_rating": false,
         "areviews_theme_font": "inherit",
         "areviews_stars_colors": "#f3c621",
         "areviews_write_reviews_botton_color": "#373737"
+      }
+    },
+    "cwc_featured_product_LPNhiH": {
+      "type": "CWC_featured_product",
+      "blocks": {
+        "product_image_rgLqbA": {
+          "type": "product_image",
+          "settings": {}
+        },
+        "faq_6PTVDV": {
+          "type": "faq",
+          "settings": {
+            "title": "Description",
+            "content": ""
+          }
+        },
+        "faq_RU6gwD": {
+          "type": "faq",
+          "settings": {
+            "title": "Description",
+            "content": ""
+          }
+        },
+        "rating_dxtja3": {
+          "type": "rating",
+          "settings": {
+            "text": "<p>★★★★★ Rated 4.9 Excellent | 323 Reviews<\/p>"
+          }
+        },
+        "text_EWkMh8": {
+          "type": "text",
+          "settings": {
+            "content": ""
+          }
+        },
+        "benefits_KJCPKC": {
+          "type": "benefits",
+          "settings": {
+            "text1": "",
+            "text2": "",
+            "text3": "",
+            "text4": "",
+            "text5": "",
+            "text6": ""
+          }
+        },
+        "price_display_7pM8fU": {
+          "type": "price_display",
+          "settings": {}
+        },
+        "product_options_3yrc6E": {
+          "type": "product_options",
+          "settings": {}
+        },
+        "subscription_toggle_xgh8kn": {
+          "type": "subscription_toggle",
+          "settings": {
+            "title": "Save 25% With Automatic Refills!",
+            "subtitle": "Zero Commitment | Exclusive Discounts | Cancel Anytime"
+          }
+        },
+        "delivery_estimate_bQMMHf": {
+          "type": "delivery_estimate",
+          "settings": {
+            "text": "Order now for delivery by: September 1st"
+          }
+        },
+        "add_to_cart_gitriN": {
+          "type": "add_to_cart",
+          "settings": {
+            "button_text": "Add to Cart",
+            "button_bg_color": "#125657",
+            "button_text_color": "#ffffff",
+            "note_text": "<p>30-day money back guarantee<\/p>"
+          }
+        }
+      },
+      "block_order": [
+        "product_image_rgLqbA",
+        "faq_6PTVDV",
+        "faq_RU6gwD",
+        "rating_dxtja3",
+        "text_EWkMh8",
+        "benefits_KJCPKC",
+        "price_display_7pM8fU",
+        "product_options_3yrc6E",
+        "subscription_toggle_xgh8kn",
+        "delivery_estimate_bQMMHf",
+        "add_to_cart_gitriN"
+      ],
+      "name": "Featured Product",
+      "settings": {
+        "product": "simply®-dht-blocker-test-new",
+        "background_color": "#FAF9F6",
+        "padding_top": 60,
+        "padding_bottom": 60
       }
     }
   },
@@ -766,15 +482,9 @@
     "main",
     "product-requently",
     "product-content",
-    "b01596d8-87db-4853-92d9-23e7da360734",
-    "93495e3d-f562-4706-aa2e-14cf6b83c216",
-    "30d4e0bd-da81-4442-b71d-c0fd1f5b3906",
-    "1e04ea1d-fcaa-48a4-9b36-62344d508849",
-    "70b7f2d2-4c12-4305-88bd-da89e2d18d5b",
-    "c5690cdb-c04d-45fd-9c6c-cfee011363ca",
-    "bcb1cba3-80fc-49a2-a033-40cf0618e9c8",
     "product-recommendations",
     "product-recent",
-    "1629746450643786911"
+    "1629746450643786911",
+    "cwc_featured_product_LPNhiH"
   ]
 }

@@ -1,3 +1,7 @@
+  <h1>testing here</h1>
+
+
+
 {% comment %} FOR TRACKING SPECIFCALY - ID NEED TO BE UPDATE TO MATCH NEW PRODUCT {% endcomment %}
 <!-- product-template-1.liquid -->
 <script>
@@ -99,15 +103,10 @@
 
   {% comment %} SECTIONS STARTS HERE {% endcomment %}
 
+  {{ 'CWC_product_template.css' | asset_url | stylesheet_tag }}
+  {{ 'CWC_product_template.js' | asset_url | script_tag }}
 
-{% comment %} {{ 'CWC_product_template.css' | asset_url | stylesheet_tag }} {% endcomment %}
-{% comment %} {{ 'CWC_product_template.js' | asset_url | script_tag }} {% endcomment %}
-
-
-
-
-<h1>testing here</h1>
-
+  <h1>testing here</h1>
 
   <div class="row product-single">
     {% comment %} ============================ {% endcomment %}
@@ -151,6 +150,11 @@
           itemprop="availability"
           href="http://schema.org/{% if product.available %}InStock{% else %}OutOfStock{% endif %}"
         >
+
+        {% comment %} ============================ {% endcomment %}
+        {% comment %} BLOCKS {% endcomment %}
+        {% comment %} ============================ {% endcomment %}
+
         <div class="product-single__meta small--text-center">
           {%- for block in section.blocks -%}
             {%- case block.type -%}
@@ -1146,6 +1150,10 @@
   <script src="{{ 'product-model.js' | asset_url }}" defer></script>
 {%- endif -%}
 
+{% comment %} ============================ {% endcomment %}
+{% comment %} JAVASCRIPT {% endcomment %}
+{% comment %} ============================ {% endcomment %}
+
 {% javascript %}
   class productPairsRight extends HTMLElement {
     connectedCallback() {
@@ -1400,13 +1408,18 @@
   // execute above function
   initPhotoSwipeFromDOM('.my-gallery');
 {% endjavascript %}
+
+
+
+
+
 {% schema %}
 {
-  "name": "Product overview",
+  "name": "CWC Main Product",
   "settings": [
     {
       "type": "header",
-      "content": "Layout"
+      "content": "Layout -testing"
     },
     {
       "type": "select",
