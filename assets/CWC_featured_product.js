@@ -16,8 +16,12 @@ function initFeaturedProduct(section, sectionId, variants, sellingPlanGroups) {
   const form = section.querySelector(`#product-form-${sectionId}`);
   const variantIdInput = section.querySelector(".variant-id-input"); // <input name="id">
   const sellingPlanInput = section.querySelector(".selling-plan-input"); // <input name="selling_plan">
-  const optionButtons = section.querySelectorAll(".cwc-option-button");
-  const optionInputs = section.querySelectorAll(".option-input"); // These are <input name="options[...]">
+  const optionButtons = section.querySelectorAll(
+    ".cwc-featured-product__option_button"
+  );
+  const optionInputs = section.querySelectorAll(
+    ".cwc-featured-product__option-input"
+  ); // These are <input name="options[...]">
   const addToCartButton = section.querySelector(`#add-to-cart-${sectionId}`);
   const currentPriceEl = section.querySelector(`#current-price-${sectionId}`);
   const comparePriceEl = section.querySelector(`#compare-price-${sectionId}`);
@@ -84,7 +88,9 @@ function initFeaturedProduct(section, sectionId, variants, sellingPlanGroups) {
 
   function updateAllButtonPrices(isAutoRefill) {
     // Get all option buttons and update their prices based on subscription state
-    const allButtons = section.querySelectorAll(".cwc-option-button");
+    const allButtons = section.querySelectorAll(
+      ".cwc-featured-product__option_button"
+    );
 
     allButtons.forEach((button) => {
       const variantId = button.getAttribute("data-variant-id");
@@ -113,9 +119,15 @@ function initFeaturedProduct(section, sectionId, variants, sellingPlanGroups) {
       }
 
       // Update button price elements
-      const priceEl = button.querySelector(".cwc-ob__price");
-      const compareEl = button.querySelector(".cwc-ob__compare");
-      const saveEl = button.querySelector(".cwc-ob__save");
+      const priceEl = button.querySelector(
+        ".cwc-featured-product__option_button_price"
+      );
+      const compareEl = button.querySelector(
+        ".cwc-featured-product__option_button_compare_price"
+      );
+      const saveEl = button.querySelector(
+        ".cwc-featured-product__option_button_save_perc"
+      );
 
       if (priceEl) {
         priceEl.textContent = formatPrice(displayPrice);
@@ -129,7 +141,8 @@ function initFeaturedProduct(section, sectionId, variants, sellingPlanGroups) {
         if (saveEl) {
           const savings = displayComparePrice - displayPrice;
           const savingsPct = Math.round((savings / displayComparePrice) * 100);
-          saveEl.textContent = `Save ${formatPrice(savings)} (${savingsPct}%)`;
+          // saveEl.textContent = `You Save ${formatPrice(savings)} (${savingsPct}%)`;
+          saveEl.textContent = `You Save ${savingsPct}%`;
           saveEl.style.display = "inline";
         }
       } else {
@@ -226,8 +239,10 @@ function initFeaturedProduct(section, sectionId, variants, sellingPlanGroups) {
         }
         if (saveElement) {
           const savings = displayComparePrice - displayPrice;
-          saveElement.textContent = "Save " + formatPrice(savings);
-          saveElement.style.display = "inline";
+          // saveElement.textContent = "Save   " + formatPrice(savings);
+          saveElement.innerHTML =
+            "<span>Save</span> " + `<span>${formatPrice(savings)}</span>`;
+          saveElement.style.display = "flex";
         }
 
         const buttonComparePrice = addToCartButton
@@ -287,7 +302,9 @@ function initFeaturedProduct(section, sectionId, variants, sellingPlanGroups) {
       console.log("Button data:", { optionIndex, value, variantId });
 
       // Remove selected class from siblings
-      const siblings = this.parentNode.querySelectorAll(".cwc-option-button");
+      const siblings = this.parentNode.querySelectorAll(
+        ".cwc-featured-product__option_button"
+      );
       siblings.forEach((sibling) => sibling.classList.remove("selected"));
 
       // Add selected class to clicked button

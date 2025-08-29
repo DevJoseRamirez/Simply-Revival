@@ -1,12 +1,187 @@
+{% style %}
+  .cwc-featured-product__subscription {
+    border-radius: 6.119px;
+    border: 1px dashed #282b22;
+    background: #fff;
+
+    display: flex;
+    align-items: flex-start;
+    padding: 13.58px 20px 10px 18.3px;
+    padding: 0.85rem 1.25rem 0.625rem 1.14rem;
+
+    max-width: 100%;
+    position: relative;
+    width: 100%;
+    margin-top: 10px;
+
+    border-radius: 6.119px;
+  }
+
+  input[type='checkbox'].cwc-auto-refill-checkbox {
+    accent-color: #00937026;
+    height: 1rem;
+    width: 1rem;
+    /* height: 16px; */
+    /* width: auto; */
+
+    padding: 1rem;
+
+    background: #095946;
+    background-image: url(https://cdn.shopify.com/s/files/1/0583/9637/7159/files/Done.svg);
+    background-size: 12.425px;
+    background-repeat: no-repeat;
+    background-position: center;
+    border-color: #095946;
+  }
+
+  /* temp */
+  .cwc-checkbox-label {
+    background-size: 12.425px;
+  }
+  . cwc-checkbox-label {
+    background: #095946;
+    background-image: url(https://cdn.shopify.com/s/files/1/0583/9637/7159/files/Done.svg);
+    background-size: 12.425px;
+    background-repeat: no-repeat;
+    background-position: center;
+    border-color: #095946;
+  }
+  input[type='checkbox'].cwc-auto-refill-checkbox {
+    /* display: none; */
+  }
+
+  /* temp end */
+
+  .cwc-subscription-checkbox {
+    display: flex;
+    height: 100%;
+    width: auto;
+    align-items: center;
+    justify-content: center;
+    gap: 12px;
+  }
+
+  .cwc-featured-product__subscription:has(input:checked) {
+    background-color: #00937026;
+    background-color: #0f92ae26;
+    border: 1.3px dashed #125657;
+  }
+
+  .cwc-checkbox-subtitle {
+    font-weight: 400;
+    font-size: 0.71rem;
+    color: rgba(40, 40, 40, 1);
+  }
+  .cwc-featured-product__subscription {
+  }
+
+  .cwc-checkbox-content {
+    display: flex;
+    align-items: flex-start;
+    justify-content: center;
+    flex-direction: column;
+  }
+  .cwc-checkbox-title {
+    font-weight: 600;
+  }
+  @media (max-width: 768px) {
+  }
+  /* TESTING */
+  .cwc-subscription-checkbox {
+    display: flex;
+    align-items: center;
+  }
+
+  .cwc-checkbox-wrapper {
+    position: relative;
+    display: inline-block;
+    width: 20px;
+    height: 20px;
+    margin-right: 10px;
+  }
+
+  .cwc-auto-refill-checkbox {
+    opacity: 0;
+    position: absolute;
+    cursor: pointer;
+    height: 100%;
+    width: 100%;
+    z-index: 1;
+  }
+
+  .cwc-checkbox-label {
+    position: absolute;
+    top: 0;
+    left: 0;
+    height: 100%;
+    width: 100%;
+    background-color: #fff;
+    border: 1px solid #ccc;
+    border-radius: 3px;
+    cursor: pointer;
+    display: flex;
+    align-items: center;
+    opacity: 0;
+  }
+
+  .cwc-checkbox-icon-wrapper {
+    position: relative;
+    flex-shrink: 0;
+  }
+
+  .cwc-checkbox-icon {
+    position: absolute;
+    left: 50%;
+    top: 50%;
+    transform: translate(-50%, -50%);
+    width: 10px;
+    height: 10px;
+    background-color: #007bff;
+    border-radius: 3px;
+    opacity: 0;
+    transition: opacity 0.3s;
+  }
+
+  .cwc-auto-refill-checkbox:checked + .cwc-checkbox-label .cwc-checkbox-icon {
+    opacity: 1;
+  }
+
+  .cwc-checkbox-label:active + .cwc-checkbox-wrapper input[type='checkbox'] {
+    opacity: 0;
+  }
+
+  .cwc-checkbox-label:focus + .cwc-checkbox-wrapper input[type='checkbox'] {
+    opacity: 0;
+  }
+
+  .cwc-checkbox-wrapper input[type='checkbox']:checked + .cwc-checkbox-label .cwc-checkbox-icon {
+    opacity: 1;
+  }
+
+  .cwc-auto-refill-checkbox {
+    opacity: 1;
+    visibility: visible;
+    display: block;
+  }
+  .cwc-subscription-checkbox-wrapper {
+    display: flex;
+    align-items: flex-end;
+    justify-content: center;
+  }
+  /*  */
+{% endstyle %}
+
 <div class="cwc-subscription-checkbox">
-  <input
-    type="checkbox"
-    id="auto-refill-{{ section.id }}"
-    class="cwc-auto-refill-checkbox"
-    checked
-  >
-  <label for="auto-refill-{{ section.id }}" class="cwc-checkbox-label">
-    <span class="cwc-checkbox-icon"></span>
+  <div class="cwc-subscription-checkbox-wrapper">
+    <input
+      type="checkbox"
+      id="auto-refill-{{ section.id }}"
+      class="cwc-auto-refill-checkbox"
+      checked
+    >
+    <label for="auto-refill-{{ section.id }}" class="cwc-checkbox-label"> </label>
+  </div>
+  <div class="">
     <div class="cwc-checkbox-content">
       <div class="cwc-checkbox-title">
         {{ block.settings.title | default: 'Save 25% With Automatic Refills!' }}
@@ -15,5 +190,25 @@
         {{ block.settings.subtitle | default: 'Zero Commitment | Exclusive Discounts | Cancel Anytime' }}
       </div>
     </div>
-  </label>
+  </div>
 </div>
+
+{% comment %}
+  <div></div>
+
+
+
+  <div class="auto-refill-banner">
+    <div class="auto-refill-checkbox">
+      <input type="checkbox" checked="" id="auto-refill" value="691079971000">
+      <label for="auto-refill"> </label>
+    </div>
+    <div class="auto-refill-content">
+      <div class="headline"><strong>Save 25% with Automatic Refills</strong></div>
+      <div class="subtexts">Zero Commitment | Exclusive Discounts | Cancel Anytime</div>
+    </div>
+  </div>
+
+
+   \
+{% endcomment %}

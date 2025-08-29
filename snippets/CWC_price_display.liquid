@@ -35,12 +35,17 @@
 
   .cwc-featured-product__price-save {
     font-size: inherit;
+    display: flex;
     font-size: 0.9rem;
     font-weight: 600;
     color: #fff;
     padding: 0.15rem 0.6rem;
     background: #60a1a2;
     border-radius: 4px;
+    gap: 8px;
+  }
+  .cwc-featured-product__price-save span {
+    font-size: inherit;
   }
 {% endstyle %}
 
@@ -51,8 +56,10 @@
   <span class="cwc-featured-product__price-compare" id="compare-price-{{ section_id }}">
     {{ product.compare_at_price | money }}
   </span>
-  <span class="cwc-featured-product__price-save" id="save-amount-{{ section_id }}">
-    <span> Save </span>
-    {{ product.compare_at_price | minus: product.price | money }}
-  </span>
+  <div class="cwc-featured-product__price-save" id="save-amount-{{ section_id }}">
+    <span>Save</span>
+    <span>
+      {{ product.compare_at_price | minus: product.price | money }}
+    </span>
+  </div>
 {% endif %}

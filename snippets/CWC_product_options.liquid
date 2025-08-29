@@ -1,14 +1,17 @@
 {% comment %}
-  here we need to inlucde the product pricing correctpoidng to each optioptions to its buttong
-  - as well pally to the change when checkbox selected update to the corectpoidng prices fto aligne with its avalible selling splan
+  cwc-featured-product__options
 {% endcomment %}
+
+{{ 'CWC_product_options.css' | asset_url | stylesheet_tag }}
 
 {% assign sel = product.selected_or_first_available_variant %}
 
 {% for option in product.options_with_values %}
   <div class="cwc-featured-product__option">
-    <label class="cwc-option-label">{{ option.name }}</label>
-    <div class="cwc-option-buttons">
+    {% comment %} <label class="cwc-option-label">{{ option.name }}</label> {% endcomment %}
+
+    <div class="cwc-featured-product__option_buttons">
+      {% comment %} <div class="cwc-option-buttons"> {% endcomment %}
       {% for value in option.values %}
         {%- comment -%}
           Candidate variant for this button:
@@ -64,9 +67,15 @@
           {% assign thumb_url = candidate.image | image_url: width: 56 %}
         {% endif %}
 
+        {% comment %}
+          ======================
+           START OF OPTOINS
+          ======================
+        {% endcomment %}
+
         <button
           type="button"
-          class="cwc-option-button{% if is_selected %} selected{% endif %}{% unless candidate and candidate.available %} disabled{% endunless %}"
+          class="cwc-featured-product__option_button{% if is_selected %} selected{% endif %}{% unless candidate and candidate.available %} disabled{% endunless %}"
           data-option-index="{{ option.position | minus: 1 }}"
           data-option-name="{{ option.name | escape }}"
           data-value="{{ value | escape }}"
@@ -87,28 +96,33 @@
           {% endunless %}
         >
           {% if thumb_url %}
-            <span class="cwc-ob__thumb-wrap">
+            <span class="cwc-featured-product__option_button_thumb-wrap">
               <img
-                class="cwc-ob__thumb"
+                class="cwc-featured-product__option_button_thumb"
                 src="{{ thumb_url }}"
                 alt="{{ candidate.title | escape }}"
               >
             </span>
           {% endif %}
 
-          <span class="cwc-ob__label">{{ value }}</span>
+          <div class="cwc-featured-product__option_button_value_wrap">
+            <span class="cwc-featured-product__option_button_value">{{ value }}</span>
+            <span class="cwc-featured-product__option_button_save_perc">You Save {{ save_pct }}%</span>
+          </div>
 
           {% if candidate %}
-            <span class="cwc-ob__prices">
-              <span class="cwc-ob__price">{{ candidate.price | money }}</span>
+            <span class="cwc-featured-product__option_button_prices">
+              <span class="cwc-featured-product__option_button_price">{{ candidate.price | money }}</span>
               {% if show_compare %}
-                <span class="cwc-ob__compare">{{ candidate.compare_at_price | money }}</span>
-                <span class="cwc-ob__save">Save {{ save_money | money }} ({{ save_pct }}%)</span>
+                <span class="cwc-featured-product__option_button_compare_price">
+                  {{- candidate.compare_at_price | money -}}
+                </span>
+                {% comment %} <span class="cwc-ob__save">Save {{ save_money | money }} ({{ save_pct }}%)</span> {% endcomment %}
               {% endif %}
             </span>
           {% else %}
-            <span class="cwc-ob__prices">
-              <span class="cwc-ob__unavail">Unavailable</span>
+            <span class="cwc-featured-product__option_button_prices">
+              <span class="cwc-featured-product__option_button_unavalible">Unavailable</span>
             </span>
           {% endif %}
         </button>
@@ -118,7 +132,7 @@
     <input
       type="hidden"
       name="options[{{ option.name | escape }}]"
-      class="option-input"
+      class="cwc-featured-product__option-input"
       data-option-index="{{ option.position | minus: 1 }}"
       value="{% if option.position == 1 %}{{ sel.option1 }}{% elsif option.position == 2 %}{{ sel.option2 }}{% else %}{{ sel.option3 }}{% endif %}"
     >
