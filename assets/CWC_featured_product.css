@@ -33,16 +33,7 @@
     gap: 0rem;
 }
 
-.cwc-featured-product__image {
-    position: relative;
-}
 
-.cwc-featured-product__image img {
-    width: 100%;
-    height: auto;
-    border-radius: 8px;
-    object-fit: cover;
-}
 
 /* ================================
    FAQ Styles
@@ -119,103 +110,31 @@
     gap: 0rem;
 }
 
-.cwc-featured-product__rating {
-    font-size: 0.95rem;
-    color: #125657;
-    font-weight: 500;
-}
-
 .cwc-featured-product__text {
     font-size: 1rem;
     line-height: 1.6;
     color: #111111;
-}
 
-.cwc-featured-product__text h1,
-.cwc-featured-product__text h2 {
-    font-size: 2rem;
-    font-weight: 700;
-    line-height: 1.2;
-    margin: 0 0 0.75rem 0;
-}
-
-.cwc-featured-product__text p {
-    margin: 0 0 1rem 0;
-    /* margin: 0rem; */
+    /* margin-bottom: 1rem; */
 }
 
 /* ================================
    Benefits
    ================================ */
-
-.cwc-featured-product__benefits {
-    display: flex;
-    flex-wrap: wrap;
-    gap: 0.75rem;
-
+.cwc-featured-product__title {
+    margin-bottom: 1rem;
 }
 
-.cwc-featured-product__benefit {
-    display: flex;
-    align-items: center;
-    gap: 0.5rem;
-    padding: 0.5rem 0rem;
-    /* background: #f8f9fa; */
-    border-radius: 6px;
-    font-size: 0.9rem;
-    font-weight: bold;
-    color: #125657;
-    width: 30%;
-}
 
-.cwc-featured-product__benefit img {
-    width: 20px;
-    height: 20px;
-    object-fit: contain;
-}
 
 /* ================================
-   Price Display
+   Content
    ================================ */
 
-.cwc-featured-product__price {
-    display: flex;
-    align-items: center;
-    justify-content: flex-start;
-    gap: 1rem;
-    margin: 1rem 0;
-    border-top: .55px solid rgba(0, 0, 0, .2);
-    border-bottom: .55px solid rgba(0, 0, 0, .2);
-    font-size: 1.4rem;
-    width: 100%;
-    gap: 3.3rem;
-    padding: .8rem 0rem;
+.cwc-featured-product__desc {
+    margin-bottom: 1rem;
 }
 
-.cwc-featured-product__price-current {
-    font-size: 2rem;
-    font-size: inherit;
-    font-weight: 700;
-    color: #60a1a2;
-}
-
-.cwc-featured-product__price-compare {
-    font-size: 1.25rem;
-    font-size: inherit;
-    font-weight: 400;
-    color: #08122a;
-    text-decoration: line-through;
-}
-
-.cwc-featured-product__price-save {
-    font-size: inherit;
-    font-size: 1rem;
-    font-weight: 600;
-    color: #fff;
-    padding: 0.25rem 0.5rem;
-    background: #60a1a2;
-    border-radius: 4px;
-}
 
 /* ================================
    Product Options
@@ -508,11 +427,6 @@
    Mobile Styles
    ================================ */
 
-@media (max-width: 76991px) {
-    .cwc-featured-product__benefit {
-        width: 45%;
-    }
-}
 
 @media (max-width: 768px) {
     .cwc-featured-product {
@@ -546,14 +460,7 @@
         font-size: 1.75rem;
     }
 
-    .cwc-featured-product__benefits {
-        gap: 0.5rem;
-    }
 
-    .cwc-featured-product__benefit {
-        font-size: 0.85rem;
-        padding: 0.4rem 0.6rem;
-    }
 
 
     /* ================================

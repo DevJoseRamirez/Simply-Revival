@@ -1,0 +1,40 @@
+{% style %}
+  .cwc-featured-product__rating {
+    font-size: 0.95rem;
+    color: #125657;
+    font-weight: 500;
+  }
+
+  .cwc-featured-product__rating_wrapper {
+    display: flex;
+    align-items: center;
+    justify-content: flex-start;
+    gap: 6px;
+    width: 100%;
+    margin-bottom: 1rem;
+    /* gap: 10px; */
+  }
+
+  .cwc-featured-product__rating_stars {
+    height: 1rem;
+    width: auto;
+
+    display: flex;
+    align-items: center;
+    justify-content: center;
+  }
+
+  .cwc-featured-product__rating_stars svg {
+    height: 100%;
+    width: auto;
+  }
+{% endstyle %}
+
+<div class="cwc-featured-product__rating_wrapper">
+  <div class="cwc-featured-product__rating_stars">
+    {% render 'CWC_rating_stars', fill: block.settings.star_color %}
+  </div>
+  <div class="cwc-featured-product__rating_text">
+    {{ block.settings.text }}
+  </div>
+</div>

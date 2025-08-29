@@ -1,0 +1,81 @@
+{% style %}
+  .cwc-featured-product__image {
+    position: relative;
+  }
+
+  .cwc-featured-product__image-badge {
+    position: absolute;
+    letter-spacing: 1px;
+    font-size: 1.1rem;
+    font-size: 1rem;
+    font-weight: 500;
+    color: inherit;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    border-radius: 20px;
+    gap: 8px;
+    top: 1rem;
+    left: 1rem;
+    padding: 2px 3rem;
+    border: 0.8px solid #d0d0d0;
+  }
+
+  .cwc-featured-product__image img {
+    width: 100%;
+    height: auto;
+    border-radius: 8px;
+    object-fit: cover;
+  }
+  .cwc-featured-product__image-badge-sold {
+    position: absolute;
+    font-size: 1rem;
+    font-weight: 500;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    bottom: 1.3rem;
+    left: 1rem;
+    padding: 4px 3rem;
+    border: 0.2px solid #cfcfcfff;
+    border-radius: 5px;
+  }
+{% endstyle %}
+
+{% if block.settings.image != blank %}
+  {% if block.settings.badge_text != blank %}
+    <div
+      class="cwc-featured-product__image-badge"
+      style="background: {{ block.settings.badge_bg_color }}; color: {{ block.settings.badge_text_color }}"
+    >
+      {% render 'CWC_crown', fill_color: {{ block.settings.badge_text_color  }} %}
+      {{ block.settings.badge_text }}
+    </div>
+  {% endif %}
+
+  <img
+    src="{{ block.settings.image | image_url: width: 600 }}"
+    alt="{{ block.settings.image.alt }}"
+    width="{{ block.settings.image.width }}"
+    height="{{ block.settings.image.height }}"
+  >
+
+  {% if block.settings.badge_sold_text != blank %}
+    <div
+      class="cwc-featured-product__image-badge-sold"
+      style="background: {{ block.settings.badge_sold_bg_color }}; color: {{ block.settings.badge_sold_text_color }}"
+    >
+      {{ block.settings.badge_sold_text }}
+    </div>
+  {% endif %}
+
+{% else %}
+  <div class="cwc-featured-product__image" {{ block.shopify_attributes }}>
+    <img
+      src="{{ product.featured_image | image_url: width: 600 }}"
+      alt="{{ product.featured_image.alt }}"
+      width="{{ product.featured_image.width }}"
+      height="{{ product.featured_image.height }}"
+    >
+  </div>
+{% endif %}
