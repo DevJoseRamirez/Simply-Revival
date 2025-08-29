@@ -1,0 +1,15 @@
+{% for i in (1..6) %}
+  {% assign icon_key = 'icon' | append: i %}
+  {% assign text_key = 'text' | append: i %}
+  {% if block.settings[icon_key] != blank or block.settings[text_key] != blank %}
+    <div class="cwc-featured-product__benefit">
+      {% if block.settings[icon_key] != blank %}
+        <img
+          src="{{ block.settings[icon_key] | image_url: width: 24 }}"
+          alt="{{ block.settings[icon_key].alt }}"
+        >
+      {% endif %}
+      <span>{{ block.settings[text_key] }}</span>
+    </div>
+  {% endif %}
+{% endfor %}

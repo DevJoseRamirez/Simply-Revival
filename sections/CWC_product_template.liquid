@@ -1,5 +1,11 @@
-  <h1>testing here</h1>
+{% comment %} 
+[] create all the needed blocks
+[] add all the needed blocks
+[] mobile and desktop
+ ---- idealy create your own everything hre to use elsewehre 
 
+
+{% endcomment %}
 
 
 {% comment %} FOR TRACKING SPECIFCALY - ID NEED TO BE UPDATE TO MATCH NEW PRODUCT {% endcomment %}
@@ -59,6 +65,11 @@
 {%- endif -%}
 {{ 'product-template.css' | asset_url | stylesheet_tag }}
 
+{% comment %} ================================= {% endcomment %}
+{% comment %} ================================= {% endcomment %}
+{% comment %} ================================= {% endcomment %}
+{% comment %} ================================= {% endcomment %}
+
 <div
   class="{{ section.settings.setwidth }} js-recently-view"
   itemscope
@@ -103,10 +114,18 @@
 
   {% comment %} SECTIONS STARTS HERE {% endcomment %}
 
+  {% style %}
+    #ProductSection-{{ section.id }} {
+      --section-bg: {{ section.settings.background_color }};
+      --padding-top: {{ section.settings.padding_top }}px;
+      --padding-bottom: {{ section.settings.padding_bottom }}px;
+      --padding-top-mobile: {{ section.settings.padding_top | times: 0.5 }}px;
+      --padding-bottom-mobile: {{ section.settings.padding_bottom | times: 0.5 }}px;
+    }
+  {% endstyle %}
+
   {{ 'CWC_product_template.css' | asset_url | stylesheet_tag }}
   {{ 'CWC_product_template.js' | asset_url | script_tag }}
-
-  <h1>testing here</h1>
 
   <div class="row product-single">
     {% comment %} ============================ {% endcomment %}
@@ -158,6 +177,60 @@
         <div class="product-single__meta small--text-center">
           {%- for block in section.blocks -%}
             {%- case block.type -%}
+                {% comment %} my blocks {% endcomment %}
+
+              {% when 'faq' %}
+                <div class="cwc_product_template__faq" {{ block.shopify_attributes }}>
+                  {% render 'CWC_faqs', product: product, section_id: section.id, block: block %}
+                </div>
+
+              {% when 'rating' %}
+                <div class="cwc_product_template__rating" {{ block.shopify_attributes }}>
+                  {{ block.settings.text }}
+                </div>
+              {% when 'cwc_text' %}
+                <div class="cwc_product_template__text" {{ block.shopify_attributes }}>
+                  {{ block.settings.content }}
+                </div>
+              {% when 'benefits' %}
+                <div class="cwc_product_template__benefits" {{ block.shopify_attributes }}>
+                  {% render 'CWC_benefits', product: product, section_id: section.id, block: block %}
+                </div>
+
+              {% when 'price_display' %}
+                <div class="cwc_product_template__price" {{ block.shopify_attributes }}>
+                  {% render 'CWC_price_display', product: product, section_id: section.id, block: block %}
+                </div>
+
+              {% when 'product_options' %}
+                {% if product.variants.size > 1 %}
+                  <div class="cwc_product_template__options" {{ block.shopify_attributes }}>
+                    {% render 'CWC_product_options', product: product, section_id: section.id, block: block %}
+                  </div>
+                {% endif %}
+
+              {% when 'subscription_toggle' %}
+                {% if product.selling_plan_groups.size > 0 %}
+                  {% render 'CWC_product_selling_plans', product: product, section_id: section.id, block: block %}
+                {% endif %}
+
+              {% when 'delivery_estimate' %}
+                <div class="cwc_product_template__delivery" {{ block.shopify_attributes }}>
+                  {% render 'CWC_delivery_estimate', product: product, section_id: section.id, block: block %}
+
+                  {% if block.settings.icon != blank %}
+                    <img src="{{ block.settings.icon | image_url: width: 24 }}" alt="{{ block.settings.icon.alt }}">
+                  {% endif %}
+                  <span>{{ block.settings.text }}</span>
+                </div>
+
+              {% when 'add_to_cart' %}
+                <div class="cwc_product_template__add_to_cart" {{ block.shopify_attributes }}>
+                  {% render 'CWC_add_to_cart', product: product, section_id: section.id, block: block %}
+                </div>
+
+                {% comment %} my blocks {% endcomment %}
+
               {%- when '@app' -%}
                 {% render block %}
               {%- when 'text' -%}
@@ -1409,10 +1482,6 @@
   initPhotoSwipeFromDOM('.my-gallery');
 {% endjavascript %}
 
-
-
-
-
 {% schema %}
 {
   "name": "CWC Main Product",
@@ -1420,6 +1489,32 @@
     {
       "type": "header",
       "content": "Layout -testing"
+    },
+    {
+      "type": "color",
+      "id": "background_color",
+      "label": "Background Color",
+      "default": "#FAF9F6"
+    },
+    {
+      "type": "range",
+      "id": "padding_top",
+      "label": "Padding Top",
+      "default": 60,
+      "min": 0,
+      "max": 200,
+      "step": 5,
+      "unit": "px"
+    },
+    {
+      "type": "range",
+      "id": "padding_bottom",
+      "label": "Padding Bottom",
+      "default": 60,
+      "min": 0,
+      "max": 200,
+      "step": 5,
+      "unit": "px"
     },
     {
       "type": "select",
@@ -1683,10 +1778,207 @@
       "default": "#fff"
     }
   ],
+
   "blocks": [
     {
       "type": "@app"
     },
+{
+      "type": "product_image",
+      "name": "Product Image",
+      "settings": [
+        {
+          "type": "image_picker",
+          "id": "image",
+          "label": "Image"
+        }
+      ]
+    },
+    {
+      "type": "faq",
+      "name": "FAQ",
+      "settings": [
+        {
+          "type": "text",
+          "id": "title",
+          "label": "Question",
+          "default": "Description"
+        },
+        {
+          "type": "richtext",
+          "id": "content",
+          "label": "Answer"
+        }
+      ]
+    },
+    {
+      "type": "rating",
+      "name": "Star Rating",
+      "settings": [
+        {
+          "type": "richtext",
+          "id": "text",
+          "label": "Rating Text",
+          "default": "<p>★★★★★ Rated 4.9 Excellent | 323 Reviews</p>"
+        }
+      ]
+    },
+    {
+      "type": "cwc_text",
+      "name": "Text Block",
+      "settings": [
+        {
+          "type": "richtext",
+          "id": "content",
+          "label": "Content"
+        }
+      ]
+    },
+    {
+      "type": "benefits",
+      "name": "Benefits",
+      "settings": [
+        {
+          "type": "image_picker",
+          "id": "icon1",
+          "label": "Icon 1"
+        },
+        {
+          "type": "text",
+          "id": "text1",
+          "label": "Text 1"
+        },
+        {
+          "type": "image_picker",
+          "id": "icon2",
+          "label": "Icon 2"
+        },
+        {
+          "type": "text",
+          "id": "text2",
+          "label": "Text 2"
+        },
+        {
+          "type": "image_picker",
+          "id": "icon3",
+          "label": "Icon 3"
+        },
+        {
+          "type": "text",
+          "id": "text3",
+          "label": "Text 3"
+        },
+        {
+          "type": "image_picker",
+          "id": "icon4",
+          "label": "Icon 4"
+        },
+        {
+          "type": "text",
+          "id": "text4",
+          "label": "Text 4"
+        },
+        {
+          "type": "image_picker",
+          "id": "icon5",
+          "label": "Icon 5"
+        },
+        {
+          "type": "text",
+          "id": "text5",
+          "label": "Text 5"
+        },
+        {
+          "type": "image_picker",
+          "id": "icon6",
+          "label": "Icon 6"
+        },
+        {
+          "type": "text",
+          "id": "text6",
+          "label": "Text 6"
+        }
+      ]
+    },
+    {
+      "type": "price_display",
+      "name": "Price Display",
+      "settings": []
+    },
+    {
+      "type": "product_options",
+      "name": "Product Options",
+      "settings": []
+    },
+    {
+      "type": "subscription_toggle",
+      "name": "Subscription Toggle",
+      "settings": [
+        {
+          "type": "text",
+          "id": "title",
+          "label": "Title",
+          "default": "Save 25% With Automatic Refills!"
+        },
+        {
+          "type": "text",
+          "id": "subtitle",
+          "label": "Subtitle",
+          "default": "Zero Commitment | Exclusive Discounts | Cancel Anytime"
+        }
+      ]
+    },
+    {
+      "type": "delivery_estimate",
+      "name": "Delivery Estimate",
+      "settings": [
+        {
+          "type": "image_picker",
+          "id": "icon",
+          "label": "Icon"
+        },
+        {
+          "type": "text",
+          "id": "text",
+          "label": "Estimate Text",
+          "default": "Order now for delivery by: September 1st"
+        }
+      ]
+    },
+    {
+      "type": "add_to_cart",
+      "name": "Add to Cart Button",
+      "settings": [
+        {
+          "type": "text",
+          "id": "button_text",
+          "label": "Button Text",
+          "default": "Add to Cart"
+        },
+        {
+          "type": "color",
+          "id": "button_bg_color",
+          "label": "Button Background Color",
+          "default": "#125657"
+        },
+        {
+          "type": "color",
+          "id": "button_text_color",
+          "label": "Button Text Color",
+          "default": "#ffffff"
+        },
+        {
+          "type": "richtext",
+          "id": "note_text",
+          "label": "Note Text",
+          "default": "<p>30-day money back guarantee</p>"
+        }
+      ]
+    },
+
+
+
+
     {
       "type": "text",
       "name": "Text",
