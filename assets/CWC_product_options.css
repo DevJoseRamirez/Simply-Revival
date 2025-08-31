@@ -34,6 +34,7 @@
       flex-wrap: nowrap;
       flex-direction: column;
       gap: 18px;
+      cursor: pointer;
   }
 
 

@@ -211,6 +211,33 @@ function initFeaturedProduct(section, sectionId, variants, sellingPlanGroups) {
         console.log("Updated price element to:", formatPrice(displayPrice));
       }
 
+      // button price display update prices
+      const buttonCurrentPriceEl = section.querySelector(
+        `#current-price-button-${sectionId}`
+      );
+      const buttonComparePriceEl = section.querySelector(
+        `#compare-price-button-${sectionId}`
+      );
+
+      if (buttonCurrentPriceEl) {
+        buttonCurrentPriceEl.textContent = formatPrice(displayPrice);
+        console.log(
+          "Updated button current price to:",
+          formatPrice(displayPrice)
+        );
+      }
+
+      if (displayComparePrice && displayComparePrice > displayPrice) {
+        if (buttonComparePriceEl) {
+          buttonComparePriceEl.textContent = formatPrice(displayComparePrice);
+          buttonComparePriceEl.style.display = "inline";
+        }
+      } else {
+        if (buttonComparePriceEl) buttonComparePriceEl.style.display = "none";
+      }
+
+      // button price display update prices END
+
       // Update ALL option button prices based on subscription state
       updateAllButtonPrices(isAutoRefill);
 

@@ -37,6 +37,11 @@
               <div class="cwc-featured-product__faq" {{ block.shopify_attributes }}>
                 {% render 'CWC_faqs', product: product, section_id: section.id, block: block %}
               </div>
+
+
+
+
+              
           {% endcase %}
         {% endfor %}
       </div>
@@ -117,27 +122,12 @@
                     </div>
                   {% endif %}
 
-
-
-
-
-
-
-
                 {% when 'subscription_toggle' %}
                   {% if product.selling_plan_groups.size > 0 %}
                     <div class="cwc-featured-product__subscription" {{ block.shopify_attributes }}>
                       {% render 'CWC_product_selling_plans', product: product, section_id: section.id, block: block %}
                     </div>
                   {% endif %}
-
-
-
-
-
-
-
-
 
                 {% when 'delivery_estimate' %}
                   <div class="cwc-featured-product__delivery" {{ block.shopify_attributes }}>
@@ -147,6 +137,11 @@
                 {% when 'add_to_cart' %}
                   <div class="cwc-featured-product__add_to_cart" {{ block.shopify_attributes }}>
                     {% render 'CWC_add_to_cart', product: product, section_id: section.id, block: block %}
+                  </div>
+
+                {% when 'guarantee_text' %}
+                  <div class="cwc-featured-product__guarantee_text" {{ block.shopify_attributes }}>
+                    {% render 'CWC_guarantee_text', product: product, section_id: section.id, block: block %}
                   </div>
               {% endcase %}
             {% endfor %}
@@ -420,15 +415,29 @@
       "name": "Delivery Estimate",
       "settings": [
         {
-          "type": "image_picker",
-          "id": "icon",
-          "label": "Icon"
-        },
-        {
           "type": "text",
           "id": "text",
           "label": "Estimate Text",
-          "default": "Order now for delivery by: September 1st"
+          "default": "Order now for delivery by"
+        },
+        {
+          "type": "number",
+          "id": "max_shipping_days",
+          "label": "Max shipping days",
+          "info": "Effect the estimate date display",
+          "default": 7
+        },
+        {
+          "type": "color",
+          "id": "text_color",
+          "label": "Text color",
+          "default": "#125657"
+        },
+        {
+          "type": "color",
+          "id": "bg_color",
+          "label": "Background color",
+          "default": "#D8FFF4"
         }
       ]
     },
@@ -453,12 +462,23 @@
           "id": "button_text_color",
           "label": "Button Text Color",
           "default": "#ffffff"
+        }
+      ]
+    },
+    {
+      "type": "guarantee_text",
+      "name": "Guarantee Text",
+      "settings": [
+        {
+          "type": "text",
+          "id": "text",
+          "label": "Text",
+          "default": "365-day money back guarantee"
         },
         {
-          "type": "richtext",
-          "id": "note_text",
-          "label": "Note Text",
-          "default": "<p>30-day money back guarantee</p>"
+          "type": "image_picker",
+          "id": "icon",
+          "label": "Icon"
         }
       ]
     }
@@ -500,6 +520,9 @@
         },
         {
           "type": "add_to_cart"
+        },
+        {
+          "type": "guarantee_text"
         }
       ]
     }

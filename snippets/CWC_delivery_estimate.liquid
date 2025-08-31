@@ -1,9 +1,73 @@
-{% if block.settings.icon != blank %}
-  <img src="{{ block.settings.icon | image_url: width: 24 }}" alt="{{ block.settings.icon.alt }}">
-{% endif %}
-<span>{{ block.settings.text }}</span>
+{% style %}
+  .cwc-featured-product__delivery {
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+  padding: 0.75rem 1rem;
+  background: #f0fdf4;
+  border-radius: 6px;
+  font-size: 0.95rem;
+  color: #125657;
+  align-items: center;
+  justify-content: center;
+  background: {{ block.settings.bg_color }};
+  color: {{ block.settings.text_color }};
+  padding: 6px;
+  width: 100%;
+  margin-bottom: 1rem;
+  margin-top: 6px;
+  font-size: 0.89rem;
+  }
+  .cwc-featured-product__delivery_wrapper {
+  display: flex;
+  align-items: center;
+  align-items: center;
+  justify-content: center;
+  width: 100%;
 
-{% comment %}
-  can add js logic after for teh time our from today which ----
-  shoud display fo rthe esitiamte delivery date
-{% endcomment %}
+  font-size: 0.89rem;
+
+  }
+  .cwc-featured-product__delivery-icon svg {
+  height: 18px;
+  width: auto;
+  }
+  .cwc-featured-product__delivery-text_content {
+  font-size: 0.89rem;
+  margin-left: 10px;
+  }
+  .cwc-featured-product__delivery-est_date {
+  font-weight: 600;
+  text-decoration: underline;
+  }
+{% endstyle %}
+
+<div class="cwc-featured-product__delivery_wrapper">
+  <span class="cwc-featured-product__delivery-icon">
+    {% render 'CWC_delivery_time_icon', text_color: block.settings.text_color, bg_color: block.settings.bg_color %}
+  </span>
+  <div class="cwc-featured-product__delivery-text_content">
+    <span class="cwc-featured-product__delivery-text">{{ block.settings.text }} : </span>
+    <span class="cwc-featured-product__delivery-est_date" data-max-days="{{ block.settings.max_shipping_days }}"></span>
+  </div>
+</div>
+
+<script>
+  document.addEventListener('DOMContentLoaded', function () {
+    const estimateEl = document.querySelector('.cwc-featured-product__delivery-est_date');
+    if (!estimateEl) return;
+
+    const maxDays = parseInt(estimateEl.dataset.maxDays, 10) || 5;
+
+    const deliveryDate = new Date();
+    deliveryDate.setDate(deliveryDate.getDate() + maxDays);
+
+    // Full month name + numeric day
+    const options = { month: 'long', day: 'numeric' };
+    //  const options = { weekday: 'short', month: 'short', day: 'numeric' };
+
+    const formattedDate = deliveryDate.toLocaleDateString(undefined, options);
+
+    estimateEl.textContent = formattedDate;
+  });
+</script>

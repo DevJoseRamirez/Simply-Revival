@@ -36,70 +36,6 @@
 
 
 /* ================================
-   FAQ Styles
-   ================================ */
-
-.cwc-featured-product__faq {
-    border-bottom: 1px solid #e5e5e5;
-}
-
-.cwc-featured-product__faq-question {
-    width: 100%;
-    padding: 1.25rem 0;
-    background: none;
-    border: none;
-    text-align: left;
-    font-size: 1rem;
-    font-weight: 600;
-    color: #111111;
-    cursor: pointer;
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-    transition: color 0.3s ease;
-}
-
-.cwc-featured-product__faq-question:hover {
-    color: #125657;
-}
-
-.cwc-featured-product__faq-icon {
-    font-size: 1.25rem;
-    font-weight: 400;
-    transition: transform 0.3s ease;
-}
-
-.cwc-featured-product__faq.active .cwc-featured-product__faq-icon {
-    transform: rotate(45deg);
-}
-
-.cwc-featured-product__faq-answer {
-    max-height: 0;
-    overflow: hidden;
-    transition: max-height 0.3s ease;
-    padding: 0;
-}
-
-.cwc-featured-product__faq.active .cwc-featured-product__faq-answer {
-    padding-bottom: 1.25rem;
-}
-
-.cwc-featured-product__faq-answer p,
-.cwc-featured-product__faq-answer ul {
-    margin: 0 0 1rem 0;
-    line-height: 1.6;
-    color: #666666;
-}
-
-.cwc-featured-product__faq-answer ul {
-    padding-left: 1.5rem;
-}
-
-.cwc-featured-product__faq-answer li {
-    margin-bottom: 0.5rem;
-}
-
-/* ================================
    Right Column
    ================================ */
 
@@ -136,28 +72,6 @@
 }
 
 
-
-/* ================================
-   Delivery Estimate
-   ================================ */
-
-.cwc-featured-product__delivery {
-    display: flex;
-    align-items: center;
-    gap: 0.5rem;
-    padding: 0.75rem 1rem;
-    background: #f0fdf4;
-    border-radius: 6px;
-    font-size: 0.95rem;
-    color: #125657;
-}
-
-.cwc-featured-product__delivery img {
-    width: 20px;
-    height: 20px;
-    object-fit: contain;
-}
-
 /* ================================
    Add to Cart Form & Button
    ================================ */
@@ -169,58 +83,8 @@
     gap: 0rem;
 }
 
-.cwc-featured-product__button {
-    padding: 1rem 2rem;
-    font-weight: 700;
-    font-size: 1.1rem;
-    border-radius: 6px;
-    border: 2px solid transparent;
-    text-decoration: none;
-    transition: all 0.3s ease-in-out;
-    text-align: center;
-    text-transform: uppercase;
-    cursor: pointer;
-    width: 100%;
-}
 
-.cwc-featured-product__button:hover {
-    background-color: transparent !important;
-    border-color: currentColor !important;
-    color: inherit !important;
-}
 
-.cwc-featured-product__button:disabled {
-    opacity: 0.6;
-    cursor: not-allowed;
-}
-
-.cwc-featured-product__note {
-    font-size: 0.9rem;
-    color: #666666;
-    text-align: center;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    gap: 0.5rem;
-}
-
-.cwc-featured-product__button .cwc-featured-product__price-current {}
-
-.cwc-featured-product__button .cwc-featured-product__price-current {
-    font-size: inherit;
-    color: inherit
-}
-
-.cwc-featured-product__button .cwc-featured-product__price-compare {
-    opacity: .6;
-    color: inherit;
-    font-size: inherit;
-
-}
-
-.cwc-featured-product__button .cwc-featured-product__price-save {
-    display: none;
-}
 
 /* ================================
    Mobile Styles
@@ -262,20 +126,5 @@
 
 
 
-    /* ================================
-   FAQ Styles
-   ================================ */
-    .cwc-featured-product__faq {
-        display: none;
 
-    }
-
-    .cwc-featured-product__faq-question {
-        font-size: 0.95rem;
-        padding: 1rem 0;
-    }
-
-    .cwc-featured-product__faq.active .cwc-featured-product__faq-answer {
-        padding-bottom: 1rem;
-    }
 }

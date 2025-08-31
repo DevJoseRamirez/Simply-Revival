@@ -62,7 +62,8 @@
     cursor: pointer;
     text-align: left;
     font-weight: bold;
-
+    font-weight: 500;
+    line-height: 18px;
 
 }
 
@@ -78,6 +79,7 @@
 .toggle-icon {
     font-size: 1.25rem;
     transition: transform 0.3s ease-in-out;
+    font-weight: 400;
 }
 
 .faq-item.open .toggle-icon {
