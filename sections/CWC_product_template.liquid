@@ -185,7 +185,7 @@
 
               {% when 'faq' %}
                 <div class="cwc_product_template__faq" {{ block.shopify_attributes }}>
-                  {% render 'CWC_faqs', product: product, section_id: section.id, block: block %}
+                  {% render 'CWC_faq_blocks', product: product, section_id: section.id, block: block %}
                 </div>
 
               {% when 'rating' %}

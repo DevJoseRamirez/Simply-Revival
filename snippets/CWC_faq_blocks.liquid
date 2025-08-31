@@ -1,7 +1,6 @@
 {% style %}
   .cwc-featured-product__faq {
     border-bottom: 1px solid #e5e5e5;
-
     background: white;
     color: black;
     margin-bottom: 11px;
@@ -9,6 +8,8 @@
     overflow: hidden;
     transition: all 0.3s ease;
     border: 1px solid rgba(228, 228, 228, 1);
+    width: 100%;
+    box-sizing: border-box;
   }
 
   .cwc-featured-product__faq-question {
@@ -25,6 +26,14 @@
     cursor: pointer;
     font-weight: 500;
     font-size: 1rem;
+    width: 100%;
+    box-sizing: border-box;
+
+    width: 100%;
+    max-width: 100%;
+    box-sizing: border-box;
+    word-break: break-word;
+    gap: 1rem;
   }
 
   .cwc-featured-product__faq-question:hover {
@@ -38,18 +47,34 @@
   }
 
   .cwc-featured-product__faq.active .cwc-featured-product__faq-icon {
-    transform: rotate(45deg);
+    /* transform: rotate(45deg); */
   }
 
   .cwc-featured-product__faq-answer {
     max-height: 0;
+    width: 100%;
+    box-sizing: border-box;
     overflow: hidden;
     transition: max-height 0.3s ease;
-    padding: 0;
+    padding: 0 38px 0 38px; /* Add horizontal padding by default */
+    word-break: normal;
+    /* word-break: break-all; */
+
+    width: 100%;
+    max-width: 100%;
+    box-sizing: border-box;
+    word-break: break-word;
   }
 
+  .cwc-featured-product__faq-answer > * {
+    /* word-break: normal; */
+    /* max-height: 0; */
+    /* width: 100%; */
+    /* box-sizing: border-box; */
+    /* overflow: hidden; */
+  }
   .cwc-featured-product__faq.active .cwc-featured-product__faq-answer {
-    padding-bottom: 1.25rem;
+    padding-bottom: 1.25rem; /* Add bottom padding when active */
   }
 
   .cwc-featured-product__faq-answer p,
@@ -59,6 +84,10 @@
     color: #666666;
   }
 
+  .cwc-featured-product__faq-answer p:last-child {
+    margin-bottom: 0;
+  }
+
   .cwc-featured-product__faq-answer ul {
     padding-left: 1.5rem;
   }
@@ -66,14 +95,15 @@
   .cwc-featured-product__faq-answer li {
     margin-bottom: 0.5rem;
   }
-  @media (max-width: 768px) {
-    .cwc-featured-product__faq {
-      display: none;
-    }
 
+  @media (max-width: 768px) {
     .cwc-featured-product__faq-question {
       font-size: 0.95rem;
-      padding: 1rem 0;
+      padding: 1rem 1.25rem;
+    }
+
+    .cwc-featured-product__faq-answer {
+      padding: 0 1.25rem 0 1.25rem;
     }
 
     .cwc-featured-product__faq.active .cwc-featured-product__faq-answer {

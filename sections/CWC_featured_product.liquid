@@ -35,12 +35,8 @@
 
             {% when 'faq' %}
               <div class="cwc-featured-product__faq" {{ block.shopify_attributes }}>
-                {% render 'CWC_faqs', product: product, section_id: section.id, block: block %}
+                {% render 'CWC_faq_blocks', product: product, section_id: section.id, block: block %}
               </div>
-
-
-
-
               
           {% endcase %}
         {% endfor %}

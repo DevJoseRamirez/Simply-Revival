@@ -480,6 +480,88 @@ function initFeaturedProduct(section, sectionId, variants, sellingPlanGroups) {
       });
   });
 
+  // Add this function inside your initFeaturedProduct function
+  function initFAQBlocks() {
+    const faqItems = section.querySelectorAll(".cwc-featured-product__faq");
+
+    console.log(`Section ${sectionId}: Found ${faqItems.length} FAQ items`);
+
+    faqItems.forEach((item, index) => {
+      const question = item.querySelector(
+        ".cwc-featured-product__faq-question"
+      );
+      const answer = item.querySelector(".cwc-featured-product__faq-answer");
+      const icon = item.querySelector(".cwc-featured-product__faq-icon");
+
+      if (!question || !answer) return;
+
+      question.addEventListener("click", () => {
+        console.log(`Clicked FAQ ${index} in section ${sectionId}`);
+        console.log(
+          `Current state: ${
+            item.classList.contains("active") ? "active" : "inactive"
+          }`
+        );
+
+        const isCurrentlyActive = item.classList.contains("active");
+
+        // Close all others first - BUT ONLY IN THIS SECTION
+        faqItems.forEach((other, otherIndex) => {
+          if (other !== item && other.classList.contains("active")) {
+            console.log(`Closing FAQ ${otherIndex} in section ${sectionId}`);
+            const otherAnswer = other.querySelector(
+              ".cwc-featured-product__faq-answer"
+            );
+            const otherIcon = other.querySelector(
+              ".cwc-featured-product__faq-icon"
+            );
+
+            // Start closing animation
+            otherAnswer.style.maxHeight = otherAnswer.scrollHeight + "px";
+            setTimeout(() => {
+              otherAnswer.style.maxHeight = "0";
+              other.classList.remove("active");
+              if (otherIcon) otherIcon.textContent = "+";
+            }, 10);
+          }
+        });
+
+        // Small delay to let others start closing, then toggle this one
+        setTimeout(() => {
+          if (isCurrentlyActive) {
+            console.log(`Closing clicked FAQ ${index}`);
+            // Close this FAQ
+            answer.style.maxHeight = answer.scrollHeight + "px";
+            setTimeout(() => {
+              answer.style.maxHeight = "0";
+              item.classList.remove("active");
+              if (icon) icon.textContent = "+";
+            }, 10);
+          } else {
+            console.log(`Opening clicked FAQ ${index}`);
+            // Open this FAQ
+            item.classList.add("active");
+            if (icon) icon.textContent = "−";
+            answer.style.maxHeight = answer.scrollHeight + "px";
+
+            // After transition, allow natural height growth
+            answer.addEventListener(
+              "transitionend",
+              () => {
+                if (item.classList.contains("active")) {
+                  answer.style.maxHeight = "none";
+                }
+              },
+              { once: true }
+            );
+          }
+        }, 50);
+      });
+    });
+  }
+
+  // Initialize FAQ blocks
+  initFAQBlocks(section);
   // Initialize with current selection
   updateVariant();
 
