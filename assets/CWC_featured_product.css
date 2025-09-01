@@ -87,6 +87,13 @@
 
 
 
+@media (max-width: 918px) {
+    .cwc-featured-product__grid {
+        grid-template-columns: 1fr;
+        gap: 2rem;
+    }
+}
+
 
 /* ================================
    Mobile Styles
@@ -103,10 +110,6 @@
         padding: 0 1rem;
     }
 
-    .cwc-featured-product__grid {
-        grid-template-columns: 1fr;
-        gap: 2rem;
-    }
 
     .cwc-featured-product__left {
         gap: 1.5rem;

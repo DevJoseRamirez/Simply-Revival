@@ -33,11 +33,11 @@
                 {% render 'CWC_product_image', product: product, section_id: section.id, block: block %}
               </div>
 
+              {% comment %} image carosel {% endcomment %}
             {% when 'faq' %}
               <div class="cwc-featured-product__faq" {{ block.shopify_attributes }}>
                 {% render 'CWC_faq_blocks', product: product, section_id: section.id, block: block %}
               </div>
-              
           {% endcase %}
         {% endfor %}
       </div>
@@ -264,7 +264,7 @@
           "type": "richtext",
           "id": "text",
           "label": "Rating Text",
-          "default": "<p>★★★★★ Rated 4.9 Excellent | 323 Reviews</p>"
+          "default": "<p>Rated 4.9 Excellent | 323 Reviews</p>"
         }
       ]
     },
@@ -386,7 +386,23 @@
     {
       "type": "product_options",
       "name": "Product Options",
-      "settings": []
+      "settings": [
+        {
+          "type": "image_picker",
+          "id": "image1",
+          "label": "Options Image 1"
+        },
+        {
+          "type": "image_picker",
+          "id": "image2",
+          "label": "Options Image 2"
+        },
+        {
+          "type": "image_picker",
+          "id": "image3",
+          "label": "Options Image 3"
+        }
+      ]
     },
     {
       "type": "subscription_toggle",

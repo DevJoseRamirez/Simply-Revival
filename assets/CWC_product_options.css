@@ -201,6 +201,7 @@
       align-items: center;
       justify-content: space-between;
       padding: 16px 50px 12px 29px;
+      padding: 1rem 3rem .86rem 1.86rem;
   }
 
   .cwc-featured-product__option_button[data-value*='Most Popular'] {

@@ -14,9 +14,19 @@
 
 .swiper-button-prev,
 .swiper-button-next {
+    margin: 0rem;
+    position: static;
+}
+
+/* 
+
+.swiper-button-prev,
+.swiper-button-next {
     margin: 0rem !important;
     position: static !important;
 }
+
+*/
 
 .swiper-wrapper {
     display: flex;
