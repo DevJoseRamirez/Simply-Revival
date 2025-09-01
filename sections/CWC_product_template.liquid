@@ -46,7 +46,7 @@
 
             {% when 'faq' %}
               {% assign faq_on = true %}
-              <div class="cwc_product-template__faq" {{ block.shopify_attributes }}>
+              <div class="cwc_product-template__faq dekstop__only" {{ block.shopify_attributes }}>
                 {% render 'CWC_faq_blocks', product: product, section_id: section.id, block: block %}
               </div>
           {% endcase %}
@@ -152,6 +152,12 @@
                 {% when 'guarantee_text' %}
                   <div class="cwc_product-template__guarantee_text" {{ block.shopify_attributes }}>
                     {% render 'CWC_guarantee_text', product: product, section_id: section.id, block: block %}
+                  </div>
+
+                {% when 'faq' %}
+                  {% assign faq_on = true %}
+                  <div class="cwc_product-template__faq mobile__only" {{ block.shopify_attributes }}>
+                    {% render 'CWC_faq_blocks', product: product, section_id: section.id, block: block %}
                   </div>
               {% endcase %}
             {% endfor %}
@@ -561,12 +567,7 @@
         {
           "type": "image_carousel"
         },
-        {
-          "type": "faq"
-        },
-        {
-          "type": "faq"
-        },
+
         {
           "type": "rating"
         },
@@ -599,6 +600,12 @@
         },
         {
           "type": "guarantee_text"
+        },
+        {
+          "type": "faq"
+        },
+        {
+          "type": "faq"
         }
       ]
     }

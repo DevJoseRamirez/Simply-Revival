@@ -98,11 +98,25 @@
   .cwc-featured-product__faq-answer li {
     margin-bottom: 0.5rem;
   }
+  .cwc_product-template__faq.desktop__only,
+  .cwc-featured-product__faq.desktop__only {
+    display: block;
+  }
+
+  .cwc_product-template__faq.mobile__only,
+  .cwc-featured-product__faq.mobile__only {
+    display: none;
+  }
 
   @media (max-width: 768px) {
-    .cwc_product-template__faq,
-    .cwc-featured-product__faq {
+    .cwc_product-template__faq.desktop__only,
+    .cwc-featured-product__faq.desktop__only {
       display: none;
+    }
+
+    .cwc_product-template__faq.mobile__only,
+    .cwc-featured-product__faq.mobile__only {
+      display: block;
     }
 
     .cwc-featured-product__faq-question {
