@@ -20,15 +20,28 @@
   .cwc-featured-product__guarantee_text-content > *,
   .cwc-featured-product__guarantee_text-content {
     font-size: 1.03rem;
+    font-size: 0.98rem;
   }
   .cwc-featured-product__guarantee_text-icon {
     display: flex;
     align-items: center;
     justify-content: center;
+    margin-top: -2px;
   }
   .cwc-featured-product__guarantee_text-icon_img {
     height: auto;
     width: auto;
+  }
+
+  @media (max-width: 991px) {
+    .cwc-featured-product__guarantee_text-content > *,
+    .cwc-featured-product__guarantee_text-content {
+      font-size: 0.988125rem;
+    }
+    .cwc-featured-product__guarantee_text-icon_img {
+      height: 14px;
+      width: auto;
+    }
   }
 {% endstyle %}
 

@@ -4,12 +4,12 @@
     display: flex;
     flex-wrap: wrap;
     margin-bottom: 27px;
+    margin-bottom: 1.6875rem;
     column-gap: 1rem;
 
-    
     padding: 1rem 1rem 0.5rem 1rem;
     border-radius: 5.65px;
-    background: #fbfbfb;
+    background: #d4d4d41a;
   }
 
   .cwc-featured-product__benefit {
@@ -31,8 +31,7 @@
     height: 20px;
     object-fit: contain;
   }
-
-  @media (max-width: 768px) {
+  @media (max-width: 991px) {
     .cwc_product-template__benefits,
     .cwc-featured-product__benefits {
       gap: 0.5rem;
@@ -45,6 +44,23 @@
       font-size: 0.85rem;
       padding: 0.4rem 0.6rem;
     }
+    .cwc_product-template__benefits,
+    .cwc-featured-product__benefits {
+      padding: 0rem 0rem;
+      border-radius: 5.65px;
+      background: none;
+    }
+    .cwc-featured-product__benefit {
+      padding: 0.4rem 0rem;
+      font-size: 0.875rem;
+    }
+    .cwc_product-template__benefits,
+    .cwc-featured-product__benefits {
+      gap: 0rem;
+    }
+  }
+
+  @media (max-width: 768px) {
   }
 {% endstyle %}
 

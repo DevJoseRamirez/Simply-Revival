@@ -14,6 +14,8 @@
     max-width: 1500px;
     margin: 0 auto;
     padding: 0 3.125rem;
+    margin-left: auto;
+    margin-right: auto;
 }
 
 .cwc_product-template__grid {
@@ -53,37 +55,7 @@
 
 
 
-/* star rating */
 
-.cwc_product-template__rating {
-    font-size: 0.95rem;
-    color: #125657;
-    font-weight: 500;
-}
-
-.cwc_product-template__rating .cwc-featured-product__rating_wrapper {
-    display: flex;
-    align-items: center;
-    justify-content: flex-start;
-    gap: 6px;
-    width: 100%;
-    margin-bottom: 1rem;
-    /* gap: 10px; */
-}
-
-.cwc_product-template__rating .cwc-featured-product__rating_stars {
-    height: 1rem;
-    width: auto;
-
-    display: flex;
-    align-items: center;
-    justify-content: center;
-}
-
-.cwc_product-template__rating .cwc-featured-product__rating_stars svg {
-    height: 100%;
-    width: auto;
-}
 
 /* ================================
    Content
@@ -95,7 +67,14 @@
 
 .cwc_product-template__desc {
     margin-bottom: 1rem;
+    font-size: 1rem;
+
 }
+
+.cwc_product-template__desc>p {
+    font-size: 1rem;
+}
+
 
 /* ================================
    Add to Cart Form & Button
@@ -114,13 +93,27 @@
    Mobile Styles
    ================================ */
 
-
-@media (max-width: 918px) {
+@media (max-width: 991px) {
     .cwc_product-template__grid {
         grid-template-columns: 1fr;
         gap: 2rem;
+        gap: 1rem;
+        gap: 0rem;
     }
+
+    .cwc_product-template__desc {
+        font-size: 0.875rem;
+
+    }
+
+    .cwc_product-template__desc>p {
+        font-size: 0.875rem;
+    }
+
+
 }
+
+/* @media (max-width: 918px) {} */
 
 
 @media (max-width: 768px) {
@@ -150,9 +143,4 @@
     .cwc_product-template__price-current {
         font-size: 1.75rem;
     }
-}
-
-/* ============================================== */
-nav.breadcrumb.g-breadcrumb {
-    display: none;
 }

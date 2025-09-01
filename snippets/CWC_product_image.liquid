@@ -61,10 +61,12 @@
   {% endif %}
 
   <img
-    src="{{ block.settings.image | image_url: width: 600 }}"
+    src="{{ block.settings.image | image_url: width: 700 }}"
     alt="{{ block.settings.image.alt }}"
     width="{{ block.settings.image.width }}"
     height="{{ block.settings.image.height }}"
+    fetchpriority="meduim"
+    loading="lazy"
   >
 
   {% if block.settings.badge_sold_text != blank %}
@@ -89,10 +91,12 @@
 
   <div class="cwc-featured-product__image" {{ block.shopify_attributes }}>
     <img
-      src="{{ product.featured_image | image_url: width: 600 }}"
+      src="{{ product.featured_image | image_url: width: 700 }}"
       alt="{{ product.featured_image.alt }}"
       width="{{ product.featured_image.width }}"
       height="{{ product.featured_image.height }}"
+      fetchpriority="meduim"
+      loading="lazy"
     >
   </div>
 

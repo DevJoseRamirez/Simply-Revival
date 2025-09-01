@@ -36,6 +36,23 @@
 
   /* --- button */
 
+
+  /* Special styling for bundle options like in the image */
+  /* .cwc-featured-product__option_button[data-value*='Buy'] { */
+  .cwc-featured-product__option_button {
+      min-width: 200px;
+      text-align: left;
+      position: relative;
+      border-radius: 6px;
+      display: flex;
+      /* gap: 2rem; */
+      flex-direction: row;
+      align-items: center;
+      justify-content: space-between;
+      padding: 16px 50px 12px 29px;
+      padding: 1rem 3rem .86rem 1.86rem;
+  }
+
   .cwc-featured-product__option_button {
       border: 1px solid #e5e7eb;
       padding: 12px 20px;
@@ -43,6 +60,7 @@
       color: #374151;
       font-weight: 500;
       font-size: 14px;
+      font-size: 0.875rem;
       cursor: pointer;
       transition: all 0.2s ease;
       min-width: 80px;
@@ -57,6 +75,10 @@
       gap: 2rem;
       gap: 1.5rem;
       border: 1px solid rgba(0, 0, 0, .3);
+
+
+      gap: 1.5rem;
+
   }
 
   . cwc-featured-product__option_button:hover {
@@ -111,6 +133,7 @@
       color: inherit;
       font-weight: 500;
       font-size: .98rem;
+      font-size: 0.875rem;
   }
 
   .cwc-featured-product__option_button_compare_price {
@@ -167,14 +190,17 @@
 
   .cwc-featured-product__option_buttons .cwc-featured-product__option_button:nth-child(1) .cwc-featured-product__option_button_thumb {
       height: 54px;
+      height: 3.375rem;
   }
 
   .cwc-featured-product__option_buttons .cwc-featured-product__option_button:nth-child(2) .cwc-featured-product__option_button_thumb {
       height: 57px;
+      height: 3.5625rem;
   }
 
   .cwc-featured-product__option_buttons .cwc-featured-product__option_button:nth-child(3) .cwc-featured-product__option_button_thumb {
       height: 49px;
+      height: 3.0625rem;
   }
 
   .cwc-option-label {
@@ -184,40 +210,54 @@
       font-size: 14px;
   }
 
-
-  /* Special styling for bundle options like in the image */
-  .cwc-featured-product__option_button[data-value*='Buy'] {
-      min-width: 200px;
-      text-align: left;
-      position: relative;
-      border-radius: 6px;
-      display: flex;
-      gap: 2rem;
-      flex-direction: row;
-      align-items: center;
-      justify-content: space-between;
-      padding: 16px 50px 12px 29px;
-      padding: 1rem 3rem .86rem 1.86rem;
-  }
-
-  .cwc-featured-product__option_button[data-value*='Most Popular'] {
-      position: relative;
-  }
-
-  .cwc-featured-product__option_button[data-value*='Most Popular']::before {
+  .cwc-featured-product__option_buttons .cwc-featured-product__option_button:nth-child(2)::before {
       content: 'Most Popular';
       position: absolute;
-      top: -8px;
-      right: 12px;
-      background: #10b981;
-      color: white;
-      padding: 4px 12px;
+      top: -10px;
+      right: 20px;
+      background: #125657;
+      color: #fff;
+      padding: 0px 12px;
       border-radius: 12px;
       font-size: 12px;
       font-weight: 600;
   }
 
-  .cwc-featured-product__option_button[data-value*='Free Shipping'] {
-      background: #ecfdf5;
-      border-color: #10b981;
+
+  .cwc-featured-product__option_buttons .cwc-featured-product__option_button:nth-child(3)::before {
+      content: 'Free Shipping';
+      position: absolute;
+      top: -10px;
+      right: 20px;
+      background: #125657;
+      color: #fff;
+      padding: 0px 12px;
+      border-radius: 12px;
+      font-size: 12px;
+      font-weight: 600;
+  }
+
+
+  @media (max-width: 991px) {
+      .cwc-featured-product__option_buttons .cwc-featured-product__option_button:nth-child(1) .cwc-featured-product__option_button_thumb {
+          height: 2.875rem;
+      }
+
+      .cwc-featured-product__option_buttons .cwc-featured-product__option_button:nth-child(2) .cwc-featured-product__option_button_thumb {
+          height: 3.125rem;
+      }
+
+      .cwc-featured-product__option_buttons .cwc-featured-product__option_button:nth-child(3) .cwc-featured-product__option_button_thumb {
+          height: 2.6875rem;
+      }
+
+      .cwc-featured-product__option_buttons .cwc-featured-product__option_button:nth-child(2)::before,
+      .cwc-featured-product__option_buttons .cwc-featured-product__option_button:nth-child(3)::before {
+          font-size: 11px;
+          right: 10px;
+      padding: 0px 16px;
+
+      }
+
+
   }
