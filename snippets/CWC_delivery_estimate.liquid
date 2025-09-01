@@ -1,45 +1,46 @@
 {% style %}
-  .cwc-featured-product__delivery {
-  display: flex;
-  align-items: center;
-  gap: 0.5rem;
-  padding: 0.75rem 1rem;
-  background: #f0fdf4;
-  border-radius: 6px;
-  font-size: 0.95rem;
-  color: #125657;
-  align-items: center;
-  justify-content: center;
-  background: {{ block.settings.bg_color }};
-  color: {{ block.settings.text_color }};
-  padding: 6px;
-  width: 100%;
-  margin-bottom: 1rem;
-  margin-top: 6px;
-  font-size: 0.89rem;
-  }
-  .cwc-featured-product__delivery_wrapper {
-  display: flex;
-  align-items: center;
-  align-items: center;
-  justify-content: center;
-  width: 100%;
+  .cwc_product-template__delivery,
+    .cwc-featured-product__delivery {
+    display: flex;
+    align-items: center;
+    gap: 0.5rem;
+    padding: 0.75rem 1rem;
+    background: #f0fdf4;
+    border-radius: 6px;
+    font-size: 0.95rem;
+    color: #125657;
+    align-items: center;
+    justify-content: center;
+    background: {{ block.settings.bg_color }};
+    color: {{ block.settings.text_color }};
+    padding: 6px;
+    width: 100%;
+    margin-bottom: 1rem;
+    margin-top: 6px;
+    font-size: 0.89rem;
+    }
+    .cwc-featured-product__delivery_wrapper {
+    display: flex;
+    align-items: center;
+    align-items: center;
+    justify-content: center;
+    width: 100%;
 
-  font-size: 0.89rem;
+    font-size: 0.89rem;
 
-  }
-  .cwc-featured-product__delivery-icon svg {
-  height: 18px;
-  width: auto;
-  }
-  .cwc-featured-product__delivery-text_content {
-  font-size: 0.89rem;
-  margin-left: 10px;
-  }
-  .cwc-featured-product__delivery-est_date {
-  font-weight: 600;
-  text-decoration: underline;
-  }
+    }
+    .cwc-featured-product__delivery-icon svg {
+    height: 18px;
+    width: auto;
+    }
+    .cwc-featured-product__delivery-text_content {
+    font-size: 0.89rem;
+    margin-left: 10px;
+    }
+    .cwc-featured-product__delivery-est_date {
+    font-weight: 600;
+    text-decoration: underline;
+    }
 {% endstyle %}
 
 <div class="cwc-featured-product__delivery_wrapper">
@@ -54,20 +55,21 @@
 
 <script>
   document.addEventListener('DOMContentLoaded', function () {
-    const estimateEl = document.querySelector('.cwc-featured-product__delivery-est_date');
-    if (!estimateEl) return;
+    // Find ALL delivery estimate elements on the page
+    const estimateElements = document.querySelectorAll('.cwc-featured-product__delivery-est_date');
 
-    const maxDays = parseInt(estimateEl.dataset.maxDays, 10) || 5;
+    // Update each one individually
+    estimateElements.forEach((estimateEl) => {
+      const maxDays = parseInt(estimateEl.dataset.maxDays, 10) || 5;
 
-    const deliveryDate = new Date();
-    deliveryDate.setDate(deliveryDate.getDate() + maxDays);
+      const deliveryDate = new Date();
+      deliveryDate.setDate(deliveryDate.getDate() + maxDays);
 
-    // Full month name + numeric day
-    const options = { month: 'long', day: 'numeric' };
-    //  const options = { weekday: 'short', month: 'short', day: 'numeric' };
+      // Full month name + numeric day
+      const options = { month: 'long', day: 'numeric' };
+      const formattedDate = deliveryDate.toLocaleDateString(undefined, options);
 
-    const formattedDate = deliveryDate.toLocaleDateString(undefined, options);
-
-    estimateEl.textContent = formattedDate;
+      estimateEl.textContent = formattedDate;
+    });
   });
 </script>

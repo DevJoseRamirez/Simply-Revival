@@ -1,12 +1,15 @@
 {% style %}
+  .cwc_product-template__benefits,
   .cwc-featured-product__benefits {
     display: flex;
     flex-wrap: wrap;
-    background: #fbfbfb;
-    border-radius: 5.65px;
     margin-bottom: 27px;
     column-gap: 1rem;
+
+    
     padding: 1rem 1rem 0.5rem 1rem;
+    border-radius: 5.65px;
+    background: #fbfbfb;
   }
 
   .cwc-featured-product__benefit {
@@ -30,6 +33,7 @@
   }
 
   @media (max-width: 768px) {
+    .cwc_product-template__benefits,
     .cwc-featured-product__benefits {
       gap: 0.5rem;
     }

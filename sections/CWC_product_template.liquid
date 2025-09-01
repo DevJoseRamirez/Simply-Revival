@@ -41,6 +41,7 @@
               </div>
 
             {% when 'faq' %}
+              {% assign faq_on = true %}
               <div class="cwc_product-template__faq" {{ block.shopify_attributes }}>
                 {% render 'CWC_faq_blocks', product: product, section_id: section.id, block: block %}
               </div>
@@ -129,7 +130,7 @@
 
                 {% when 'subscription_toggle' %}
                   {% if product.selling_plan_groups.size > 0 %}
-                    <div class="cwc_product-template__subscription" {{ block.shopify_attributes }}>
+                      <div class="cwc_product-template__subscription" {{ block.shopify_attributes }}>
                       {% render 'CWC_product_selling_plans', product: product, section_id: section.id, block: block %}
                     </div>
                   {% endif %}
@@ -246,15 +247,46 @@
       "name": "Image Carousel",
       "settings": [
         {
-          "type": "text",
-          "id": "title",
-          "label": "Question",
-          "default": "Description"
+          "type": "image_picker",
+          "id": "image",
+          "label": "Image"
         },
         {
-          "type": "richtext",
-          "id": "content",
-          "label": "Answer"
+          "type": "text",
+          "id": "badge_text",
+          "label": "Image Badge Text",
+          "default": "BestSeller"
+        },
+        {
+          "type": "color",
+          "id": "badge_text_color",
+          "label": "Badge text Color",
+          "default": "#fff"
+        },
+        {
+          "type": "color",
+          "id": "badge_bg_color",
+          "label": "Badge Background Color",
+          "default": "#60a1a2"
+        },
+
+        {
+          "type": "text",
+          "id": "badge_sold_text",
+          "label": "Sold Badge Text",
+          "default": "50+ Sold Today"
+        },
+        {
+          "type": "color",
+          "id": "badge_sold_text_color",
+          "label": "Sold Badge text Color",
+          "default": "#000"
+        },
+        {
+          "type": "color",
+          "id": "badge_sold_bg_color",
+          "label": "Sold Badge Background Color",
+          "default": "#fff"
         }
       ]
     },
@@ -306,7 +338,8 @@
         {
           "type": "richtext",
           "id": "title",
-          "label": "Title Override (Optional)"
+          "label": "Title Override (Optional)",
+          "default": "<h3>{{ product.title }}</h3>"
         }
       ]
     },
@@ -344,7 +377,8 @@
         {
           "type": "text",
           "id": "text1",
-          "label": "Text 1"
+          "label": "Text 1",
+          "default": "Strengthens hair follicles & helps prevent hair loss"
         },
         {
           "type": "image_picker",
@@ -432,7 +466,7 @@
           "type": "text",
           "id": "title",
           "label": "Title",
-          "default": "Save 25% With Automatic Refills!"
+          "default": "Save 25% With Automatic Refills"
         },
         {
           "type": "text",
@@ -521,9 +555,6 @@
       "category": "Product",
       "blocks": [
         {
-          "type": "product_image"
-        },
-        {
           "type": "image_carousel"
         },
         {
@@ -536,7 +567,13 @@
           "type": "rating"
         },
         {
-          "type": "text"
+          "type": "vendor"
+        },
+        {
+          "type": "title"
+        },
+        {
+          "type": "desc"
         },
         {
           "type": "benefits"
