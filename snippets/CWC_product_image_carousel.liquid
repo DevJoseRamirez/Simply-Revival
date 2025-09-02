@@ -4,298 +4,17 @@
 {% endcomment %}
 
 {% style %}
-         .cwc-product-carousel-{{ section_id }} {
-         --badge-bg: {{ block.settings.badge_bg_color | default: '#60a1a2' }};
-         --badge-text: {{ block.settings.badge_text_color | default: '#ffffff' }};
-         --sold-badge-bg: {{ block.settings.badge_sold_bg_color | default: '#ffffff' }};
-         --sold-badge-text: {{ block.settings.badge_sold_text_color | default: '#000000' }};
-         }
-
-         .cwc_product-template__image_carousel {
-          margin-bottom: 1rem;
-         }
-         .cwc-product-carousel {
-         position: relative;
-         width: 100%;
-         overflow: hidden;
-         background: none;
-
-
-
-         overflow: visible;
-         }
-
-         .cwc-product-carousel .swiper {
-         width: 100%;
-         }
-
-         .cwc-product-carousel .swiper-slide {
-         position: relative;
-         overflow: hidden;
-         height: max-content !important;
-         border-radius: 8px;
-         }
-
-         .cwc-product-carousel .swiper-slide img {
-         width: 100%;
-         height: 100%;
-         object-fit: cover;
-         object-fit: contain;
-         display: block;
-         }
-
-         /* Product Badges */
-         .cwc-product-badges {
-         position: absolute;
-         top: 1rem;
-         left: 1rem;
-         z-index: 10;
-         display: flex;
-         flex-direction: column;
-         gap: 0.5rem;
-         }
-
-         .cwc-product-badge {
-         padding: 0.375rem 0.75rem;
-         border-radius: 20px;
-         font-size: 0.8rem;
-         font-weight: 600;
-         text-transform: uppercase;
-         letter-spacing: 0.5px;
-         }
-
-         .cwc-product-badge--primary {
-         background: var(--badge-bg);
-         color: var(--badge-text);
-         }
-
-         .cwc-product-badge--sold {
-         background: var(--sold-badge-bg);
-         color: var(--sold-badge-text);
-         border: 1px solid rgba(0, 0, 0, 0.1);
-         }
-
-         /* Navigation Arrows */
-        .cwc-product-thumbnails   .swiper-button-prev:after,
-          .cwc-product-thumbnails  .swiper-button-next:after {
-         font-size: 14px !important;
-
-         }
-
-         .cwc-product-thumbnails .swiper-button-next,
-         .cwc-product-thumbnails .swiper-button-prev {
-         background: rgba(255, 255, 255, 0.9);
-         background: #d8dad2;
-         border-radius: 50%;
-         transition: all 0.3s ease;
-           width: 24px !important;
-         height: 24px !important;
-           top: 50% !important;
-        bottom: 50% !important;
-        transform: translateY(-50%) !important;
-
-        box-shadow: none;
-         }
-
-         .cwc-product-thumbnails .swiper-button-next:hover,
-         .cwc-product-thumbnails .swiper-button-prev:hover {
-         /* background: rgba(255, 255, 255, 1); */
-         background: #d8dad2;
-
-         }
-
-         .cwc-product-thumbnails .swiper-button-next {
-         right: -10px;
-         }
-
-         .cwc-product-thumbnails .swiper-button-prev {
-         left: -10px;
-         }
-
-
-
-         /* Thumbnail Navigation */
-         .cwc-product-thumbnails {
-         margin-top: 1rem;
-         position: relative;
-         }
-
-         .cwc-product-thumbnails .swiper {
-         width: 100%;
-         padding: 0;
-         }
-
-         .cwc-product-thumbnails .swiper-slide {
-         width: auto;
-         border-radius: 6px;
-         }
-
-         .cwc-product-thumbnail {
-         width: 60px;
-         height: 60px;
-         height: auto;
-         width: 100%;
-         border-radius: 6px;
-         overflow: hidden;
-         cursor: pointer;
-         border: 2px solid transparent;
-         transition: all 0.3s ease;
-         }
-
-         .cwc-product-thumbnail.active {
-         border-color: var(--badge-bg, #60a1a2);
-         }
-
-         .cwc-product-thumbnail:hover {
-         border-color: rgba(96, 161, 162, 0.5);
-         /* transform: translateY(-2px); */
-         }
-
-         .cwc-product-thumbnail img {
-         width: 100%;
-         height: 100%;
-         object-fit: cover;
-         }
-
-         .cwc-product-carousel .swiper-button-next,
-         .cwc-product-carousel .swiper-button-prev {
-         position: absolute !important;
-         }
-
-
-       .cwc-product_template__image-badge {
-        position: absolute;
-        letter-spacing: 1px;
-        font-size: 1.1rem;
-        font-size: 1rem;
-        font-weight: 500;
-        color: inherit;
-        display: flex;
-        align-items: center;
-        justify-content: center;
-        border-radius: 20px;
-        gap: 8px;
-        top: 1rem;
-        left: 1rem;
-        padding: 2px 3rem;
-        /* border: 0.8px solid #d0d0d0; */
-        z-index: 9;
-      }
-
-      .cwc-product_template__image-badge-sold {
-        position: absolute;
-        font-size: 1rem;
-        font-weight: 500;
-        display: flex;
-        align-items: center;
-        justify-content: center;
-        bottom: 1.3rem;
-        left: 1rem;
-        padding: 4px 3rem;
-        border: 0.2px solid #cfcfcfff;
-        border-radius: 5px;
-        z-index: 9;
-
-        opacity: .7;
-      }
-    /* .swiper  */
-    .cwc-product-main-carousel {
-      position: relative
-    }
-         /* Mobile Responsive */
-         @media (max-width: 768px) {
-         /* Hide thumbnails completely on mobile */
-         .cwc-product-thumbnails {
-         display: none;
-         }
-
-         .cwc-product-carousel .swiper-button-next,
-         .cwc-product-carousel .swiper-button-prev {
-         width: 36px;
-         height: 36px;
-         margin-top: -18px;
-         }
-
-         .cwc-product-carousel .swiper-button-next::after,
-         .cwc-product-carousel .swiper-button-prev::after {
-         font-size: 14px;
-         }
-
-         .cwc-product-carousel .swiper-button-next {
-         right: 0.5rem;
-         }
-
-         .cwc-product-carousel .swiper-button-prev {
-         left: 0.5rem;
-         }
-
-         .cwc-product-badges {
-         top: 0.75rem;
-         left: 0.75rem;
-         }
-
-         .cwc-product-badge {
-         font-size: 0.75rem;
-         padding: 0.25rem 0.5rem;
-         }
-         }
-
-         /* teing  */
-
-      /* testing */
-      .cwc-product-carousel .swiper-slide img {
-         width: 100%;
-         height: auto;           /* Changed from height: 100% */
-         max-width: 100%;        /* Added constraint */
-         object-fit: contain;    /* Changed from object-fit: cover */
-         display: block;
-      }
-         @media (max-width: 768px) {
-         .cwc-product-carousel {
-            overflow: hidden;     /* Restored overflow control */
-         }
-
-         .cwc-product-carousel .swiper {
-            width: 100%;
-            max-width: 100%;      /* Added constraint */
-         }
-
-         .cwc-product-carousel .swiper-slide {
-            width: 100% !important;
-            height: auto !important;    /* Let height be natural */
-            max-width: 100%;           /* Prevent overflow */
-
-            /* temp to see iamges */
-            border: 1px solid;
-         }
-
-         .cwc-product-carousel .swiper-slide img {
-            width: 100%;
-            height: auto;
-            max-width: 100%;
-            object-fit: contain;       /* Ensure full image is visible */
-         }
-      }
-
-
-
-  @media (max-width: 991px) {
-
-      .cwc-product_template__image-badge {
-        font-size: 0.875rem;
-        left: 13px;
-    top: 10px;
-    padding: 2px 2rem;
-      }
-      .cwc-product_template__image-badge-sold {
-      font-size: 0.875rem;
-        left: 13px;
-    bottom: 10px;
-    padding: 2px 1.5rem;
-      }
-
+  .cwc-product-carousel-{{ section_id }} {
+    --badge-bg: {{ block.settings.badge_bg_color | default: '#60a1a2' }};
+    --badge-text: {{ block.settings.badge_text_color | default: '#ffffff' }};
+    --sold-badge-bg: {{ block.settings.badge_sold_bg_color | default: '#ffffff' }};
+    --sold-badge-text: {{ block.settings.badge_sold_text_color | default: '#000000' }};
   }
 {% endstyle %}
+
+{{ 'CWC_product_image_carousel.css' | asset_url | stylesheet_tag }}
+
+
 
 {% comment %} Create a string of variant featured image IDs for filtering {% endcomment %}
 {% assign variant_image_ids = '' %}
@@ -473,86 +192,88 @@
   {% endif %}
 </div>
 
+{% comment %} {{ 'CWC_product_image_carousel.js' | asset_url | script_tag }} {% endcomment %}
+
 <!-- Initialize Swiper -->
 <script>
-  document.addEventListener('DOMContentLoaded', function() {
-  const carousel = document.getElementById('product-carousel-{{ section_id }}');
-  const thumbnails = document.getElementById('product-thumbnails-{{ section_id }}');
+  document.addEventListener('DOMContentLoaded', function () {
+      const carousel = document.getElementById('product-carousel-{{ section_id }}');
+      const thumbnails = document.getElementById('product-thumbnails-{{ section_id }}');
 
-  let mainSwiper, thumbSwiper;
+      let mainSwiper, thumbSwiper;
 
-  if (carousel) {
-  // Thumbnail swiper (initialize first)
-  if (thumbnails) {
-  const thumbSwiperEl = thumbnails.querySelector('.swiper');
-  if (thumbSwiperEl) {
-  thumbSwiper = new Swiper(thumbSwiperEl, {
-  slidesPerView: 5,
-  spaceBetween: 4,
-  watchSlidesProgress: true,
-  slideToClickedSlide: true,
-  grabCursor: true,
-  breakpoints: {
-  768: {
-  slidesPerView: 5,
-  spaceBetween: 4,
-  }
-  }
-  });
-  }
-  }
+      if (carousel) {
+          // Thumbnail swiper (initialize first)
+          if (thumbnails) {
+              const thumbSwiperEl = thumbnails.querySelector('.swiper');
+              if (thumbSwiperEl) {
+                  thumbSwiper = new Swiper(thumbSwiperEl, {
+                      slidesPerView: 5,
+                      spaceBetween: 4,
+                      watchSlidesProgress: true,
+                      slideToClickedSlide: true,
+                      grabCursor: true,
+                      breakpoints: {
+                          768: {
+                              slidesPerView: 5,
+                              spaceBetween: 4,
+                          }
+                      }
+                  });
+              }
+          }
 
-  // Main carousel
-  mainSwiper = new Swiper(carousel, {
-  loop: {% if product_images.size > 1 %}true{% else %}false{% endif %},
-  navigation: {
-  nextEl: '.cwc-product-carousel-{{ section_id }} .swiper-button-next',
-  prevEl: '.cwc-product-carousel-{{ section_id }} .swiper-button-prev',
+          // Main carousel
+          mainSwiper = new Swiper(carousel, {
+              loop: {% if product_images.size > 1 %}true{% else %} false{% endif %},
+      navigation: {
+          nextEl: '.cwc-product-carousel-{{ section_id }} .swiper-button-next',
+              prevEl: '.cwc-product-carousel-{{ section_id }} .swiper-button-prev',
+    },
+      keyboard: {
+          enabled: true,
+    },
+      grabCursor: true,
+          effect: 'slide',
+              speed: 400,
+                  {% if product_images.size > 1 %}
+    thumbs: {
+      swiper: thumbSwiper,
   },
-  keyboard: {
-  enabled: true,
-  },
-  grabCursor: true,
-  effect: 'slide',
-  speed: 400,
-  {% if product_images.size > 1 %}
-  thumbs: {
-  swiper: thumbSwiper,
-  },
-  {% endif %}
-  on: {
-  slideChange: function() {
-  // Update thumbnail active state manually
-  if (thumbnails) {
-  const thumbnailItems = thumbnails.querySelectorAll('.cwc-product-thumbnail');
-  thumbnailItems.forEach((thumb, index) => {
-  thumb.classList.toggle('active', index === this.realIndex);
-  });
+      {% endif %}
+      on: {
+      slideChange: function () {
+          // Update thumbnail active state manually
+          if (thumbnails) {
+              const thumbnailItems = thumbnails.querySelectorAll('.cwc-product-thumbnail');
+              thumbnailItems.forEach((thumb, index) => {
+                  thumb.classList.toggle('active', index === this.realIndex);
+              });
 
-  // Center the active thumbnail in view
-  if (thumbSwiper && this.realIndex < thumbnailItems.length) {
-  // thumbSwiper.slideTo(Math.max(0, this.realIndex - 2));
-  thumbSwiper.slideTo(Math.max(0, this.realIndex));
+              // Center the active thumbnail in view
+              if (thumbSwiper && this.realIndex < thumbnailItems.length) {
+                  // thumbSwiper.slideTo(Math.max(0, this.realIndex - 2));
+                  thumbSwiper.slideTo(Math.max(0, this.realIndex));
+              }
+          }
+      }
   }
-  }
-  }
-  }
-  });
+    });
 
   // Manual thumbnail click handlers (as backup)
   if (thumbnails) {
-  const thumbnailItems = thumbnails.querySelectorAll('.cwc-product-thumbnail');
-  thumbnailItems.forEach((thumb, index) => {
-  thumb.addEventListener('click', () => {
-  if (mainSwiper) {
-  mainSwiper.slideTo(index);
+      const thumbnailItems = thumbnails.querySelectorAll('.cwc-product-thumbnail');
+      thumbnailItems.forEach((thumb, index) => {
+          thumb.addEventListener('click', () => {
+              if (mainSwiper) {
+                  mainSwiper.slideTo(index);
+              }
+              // Update active states
+              thumbnailItems.forEach(t => t.classList.remove('active'));
+              thumb.classList.add('active');
+          });
+      });
   }
-  // Update active states
-  thumbnailItems.forEach(t => t.classList.remove('active'));
-  thumb.classList.add('active');
-  });
-  });
-  }
-  }
-  });
+    }
+    });
 </script>

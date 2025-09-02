@@ -18,8 +18,9 @@
           <div
             class="cwc-problem-solution__caption"
             {{ block.shopify_attributes }}
-            style="background:{{ block.settings.bg_color }}; color:{{ block.settings.text_color }};"
+            style="color:{{ block.settings.text_color }};"
           >
+            {% comment %} background:{{ block.settings.bg_color }}; {% endcomment %}
             {{ block.settings.text }}
           </div>
         {%- endif -%}
@@ -51,7 +52,7 @@
         {% if block.type == 'table' %}
           <div
             class="cwc-problem-solution__table"
-            style="background-color: {{ block.settings.bg_color }}"
+            style="background-color: {{ block.settings.bg_color }}; color: {{ block.settings.text_color}}"
             {{ block.shopify_attributes }}
           >
             {% if block.settings.title != blank %}
@@ -62,7 +63,7 @@
                 <li>
                   {% if block.settings.icon1 != blank %}
                     <img
-                      src="{{ block.settings.icon1 | image_url: width: 48 }}"
+                      src="{{ block.settings.icon1 | image_url: width: 32 }}"
                       alt="{{ block.settings.icon1.alt }}"
                       width="{{ block.settings.icon1.width }}"
                       height="{{ block.settings.icon1.height }}"
@@ -75,7 +76,7 @@
                 <li>
                   {% if block.settings.icon2 != blank %}
                     <img
-                      src="{{ block.settings.icon2 | image_url: width: 48 }}"
+                      src="{{ block.settings.icon2 | image_url: width: 32 }}"
                       alt="{{ block.settings.icon2.alt }}"
                       width="{{ block.settings.icon2.width }}"
                       height="{{ block.settings.icon2.height }}"
@@ -88,7 +89,7 @@
                 <li>
                   {% if block.settings.icon3 != blank %}
                     <img
-                      src="{{ block.settings.icon3 | image_url: width: 48 }}"
+                      src="{{ block.settings.icon3 | image_url: width: 32 }}"
                       alt="{{ block.settings.icon3.alt }}"
                       width="{{ block.settings.icon3.width }}"
                       height="{{ block.settings.icon3.height }}"
@@ -105,31 +106,8 @@
 
     {% for block in section.blocks %}
       {% if block.type == 'image_row' %}
-        <div class="cwc-problem-solution__image-row" {{ block.shopify_attributes }}>
-          {% if block.settings.image1 != blank %}
-            <img
-              src="{{ block.settings.image1 | image_url: width: auto }}"
-              alt="{{ block.settings.image1.alt }}"
-              width="{{ block.settings.image1.width }}"
-              height="{{ block.settings.image1.height }}"
-            >
-          {% endif %}
-          {% if block.settings.image2 != blank %}
-            <img
-              src="{{ block.settings.image2 | image_url: width: auto }}"
-              alt="{{ block.settings.image2.alt }}"
-              width="{{ block.settings.image2.width }}"
-              height="{{ block.settings.image2.height }}"
-            >
-          {% endif %}
-          {% if block.settings.image3 != blank %}
-            <img
-              src="{{ block.settings.image3 | image_url: width: auto }}"
-              alt="{{ block.settings.image3.alt }}"
-              width="{{ block.settings.image3.width }}"
-              height="{{ block.settings.image3.height }}"
-            >
-          {% endif %}
+        <div class="cwc-problem-solution__image-row cwc-transformation-row" {{ block.shopify_attributes }}>
+          {% render 'CWC_problem_solution__image_row', section_id: section.id, block: block %}
         </div>
       {% endif %}
     {% endfor %}
@@ -256,6 +234,12 @@
           "type": "color",
           "id": "bg_color",
           "label": "Background Color",
+          "default": "#1C7779"
+        },
+        {
+          "type": "color",
+          "id": "text_color",
+          "label": "Text Color",
           "default": "#ffffff"
         },
         {
@@ -296,17 +280,24 @@
       "settings": [
         {
           "type": "image_picker",
-          "id": "image1",
+          "id": "bf_image",
           "label": "Image 1"
         },
         {
-          "type": "image_picker",
-          "id": "image2",
-          "label": "Image 2"
+          "type": "text",
+          "id": "text",
+          "label": "Text",
+          "default": "Withing"
+        },
+        {
+          "type": "text",
+          "id": "hi_text",
+          "label": "Highlight Text",
+          "default": "28 Days"
         },
         {
           "type": "image_picker",
-          "id": "image3",
+          "id": "af_image",
           "label": "Image 3"
         }
       ]

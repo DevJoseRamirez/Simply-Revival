@@ -27,8 +27,8 @@
     width: 100%;
   }
   .cwc-featured-product__benefit img {
-    width: 20px;
-    height: 20px;
+    width: auto;
+    height: 1.198rem;
     object-fit: contain;
   }
   @media (max-width: 991px) {
@@ -40,10 +40,7 @@
       width: 45%;
       width: 100%;
     }
-    .cwc-featured-product__benefit {
-      font-size: 0.85rem;
-      padding: 0.4rem 0.6rem;
-    }
+
     .cwc_product-template__benefits,
     .cwc-featured-product__benefits {
       padding: 0rem 0rem;
@@ -61,6 +58,16 @@
   }
 
   @media (max-width: 768px) {
+    .cwc-featured-product__benefit {
+      font-size: 0.85rem;
+      padding: 2px 0rem;
+    }
+    .cwc-featured-product__benefit img {
+      height: 1.19625rem;
+    }
+    ..cwc-featured-product__benefit {
+      gap: 4px;
+    }
   }
 {% endstyle %}
 
@@ -71,7 +78,7 @@
     <div class="cwc-featured-product__benefit">
       {% if block.settings[icon_key] != blank %}
         <img
-          src="{{ block.settings[icon_key] | image_url: width: 24 }}"
+          src="{{ block.settings[icon_key] | image_url: width: 20 }}"
           alt="{{ block.settings[icon_key].alt }}"
         >
       {% endif %}

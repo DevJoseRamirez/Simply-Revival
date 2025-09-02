@@ -255,8 +255,19 @@
       .cwc-featured-product__option_buttons .cwc-featured-product__option_button:nth-child(3)::before {
           font-size: 11px;
           right: 10px;
-      padding: 0px 16px;
+          padding: 0px 16px;
 
+      }
+
+
+  }
+
+  /* ================================
+   Mobile Responsive (max-width: 768px)
+   ================================ */
+  @media (max-width: 768px) {
+      .cwc-featured-product__option_button {
+          padding: 0.875rem 1.5625rem 0.75rem 0.5625rem;
       }
 
 

@@ -1,0 +1,23 @@
+{% style %}
+  .cwc-reasons__btn {
+        background-color: {{ block.settings.button_bg_color }};
+        color: {{ block.settings.button_text_color }};
+  }
+  .cwc-reasons__btn:hover {
+     border-color: {{ block.settings.button_bg_color }};
+        background-color: {{ block.settings.button_text_color }};
+        color: {{ block.settings.button_bg_color }};
+  }
+{% endstyle %}
+
+{% if block.settings.text != blank %}
+  <a
+    href="{{ block.settings.link }}"
+    class="cwc-reasons__btn"
+  >
+    {{ block.settings.text }}
+  </a>
+{% endif %}
+{% if block.settings.note != blank %}
+  <div class="cwc-reasons__note">{{ block.settings.note }}</div>
+{% endif %}

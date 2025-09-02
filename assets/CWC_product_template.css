@@ -73,6 +73,7 @@
 
 .cwc_product-template__desc>p {
     font-size: 1rem;
+    line-height: normal;
 }
 
 
@@ -110,6 +111,11 @@
         font-size: 0.875rem;
     }
 
+    .cwc_product-template__right {
+        gap: 1.25rem;
+        padding-left: 0;
+    }
+
 
 }
 
@@ -120,10 +126,13 @@
     .cwc_product-template {
         padding-top: var(--padding-top-mobile);
         padding-bottom: var(--padding-bottom-mobile);
+        padding-top: 1rem;
+        padding-bottom: 1rem;
     }
 
     .cwc_product-template__wrapper {
         padding: 0 1rem;
+        padding: 0 1.25rem;
     }
 
     .cwc_product-template__left {
@@ -143,4 +152,9 @@
     .cwc_product-template__price-current {
         font-size: 1.75rem;
     }
+
+    .cwc_product-template__title {
+        margin-bottom: .5rem;
+    }
+
 }

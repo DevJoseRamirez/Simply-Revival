@@ -194,5 +194,11 @@ input[type='checkbox'].cwc-auto-refill-checkbox {
 }
 
 @media (max-width: 768px) {
+
     /* Add mobile-specific styles here if needed */
+    .cwc-featured-product__subscription,
+    .cwc_product-template__subscription {
+        padding: 0.5625rem 1rem 0.625rem;
+    }
+
 }

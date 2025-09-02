@@ -1,0 +1,51 @@
+<!-- Before Image -->
+<div class="cwc-transformation__before">
+  {% if block.settings.bf_image != blank %}
+    <img
+      src="{{ block.settings.bf_image | image_url: width: 300 }}"
+      alt="{{ block.settings.bf_image.alt | default: 'Before' }}"
+      width="{{ block.settings.bf_image.width }}"
+      height="{{ block.settings.bf_image.height }}"
+      fetchpriority="medium"
+      loading="lazy"
+    >
+  {% endif %}
+</div>
+
+<!-- Center Content (Text + Arrow) -->
+<div class="cwc-transformation__center">
+  <div class="cwc-transformation__text">
+    {% if block.settings.text != blank %}
+      <span class="cwc-transformation__regular-text">{{ block.settings.text }}</span>
+    {% endif %}
+    {% if block.settings.hi_text != blank %}
+      <span class="cwc-transformation__highlight-text">{{ block.settings.hi_text }}</span>
+    {% endif %}
+  </div>
+
+  <div class="cwc-transformation__arrow">
+    <svg xmlns="http://www.w3.org/2000/svg" width="74" height="28" viewBox="0 0 74 28" fill="none">
+      <path d="M72.5993 15.0061C73.3253 14.2801 73.3253 13.1029 72.5993 12.3768L60.7671 0.544561C60.041 -0.18152 58.8638 -0.18152 58.1377 0.54456C57.4116 1.27065 57.4116 2.44785 58.1377 3.17394L68.6552 13.6915L58.1377 24.2089C57.4116 24.935 57.4116 26.1122 58.1377 26.8383C58.8638 27.5644 60.041 27.5644 60.7671 26.8383L72.5993 15.0061ZM0 13.6915V15.5507H71.2846V13.6915V11.8322H0V13.6915Z" fill="url(#paint0_linear_191_38)"/>
+      <defs>
+        <linearGradient id="paint0_linear_191_38" x1="0" y1="14.1915" x2="71.2846" y2="14.1915" gradientUnits="userSpaceOnUse">
+          <stop stop-color="#125657"/>
+          <stop offset="1" stop-color="#CFF7ED"/>
+        </linearGradient>
+      </defs>
+    </svg>
+  </div>
+</div>
+
+<!-- After Image -->
+<div class="cwc-transformation__after">
+  {% if block.settings.af_image != blank %}
+    <img
+      src="{{ block.settings.af_image | image_url: width: 300 }}"
+      alt="{{ block.settings.af_image.alt | default: 'After' }}"
+      width="{{ block.settings.af_image.width }}"
+      height="{{ block.settings.af_image.height }}"
+      fetchpriority="medium"
+      loading="lazy"
+    >
+  {% endif %}
+</div>

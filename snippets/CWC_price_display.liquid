@@ -60,6 +60,29 @@
       gap: 2rem;
     }
   }
+  /* ================================
+   Mobile Responsive (max-width: 768px)
+   ================================ */
+  @media (max-width: 768px) {
+    .cwc_product-template__price,
+    .cwc-featured-product__price {
+      display: flex;
+      align-items: center;
+      justify-content: flex-start;
+      margin: 0rem 0 1rem 0;
+      border-top: 0.55px solid rgba(0, 0, 0, 0.2);
+      border-bottom: 0.55px solid rgba(0, 0, 0, 0.2);
+      font-size: 1.3125rem;
+      width: 100%;
+      padding: 0.5rem 0rem;
+      gap: 1.5rem;
+      font-size: 1.3125rem;
+    }
+    .cwc-featured-product__price-save {
+      line-height: normal;
+      font-size: 0.86rem;
+    }
+  }
 {% endstyle %}
 
 <span class="cwc-featured-product__price-current" id="current-price-{{ section_id }}">

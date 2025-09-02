@@ -126,22 +126,17 @@
 
     <!-- CTA block(s) below grid -->
     {% for block in section.blocks %}
-      {% if block.type == 'button' %}
-        <div class="cwc-reasons__cta" {{ block.shopify_attributes }}>
-          {% if block.settings.text != blank %}
-            <a
-              href="{{ block.settings.link }}"
-              class="cwc-reasons__btn"
-              style="background-color: {{ block.settings.bg-color }}; color: {{ block.settings.text-color }};"
-            >
-              {{ block.settings.text }}
-            </a>
-          {% endif %}
-          {% if block.settings.note != blank %}
-            <div class="cwc-reasons__note">{{ block.settings.note }}</div>
-          {% endif %}
-        </div>
-      {% endif %}
+      {% case block.type %}
+        {% when 'button' %}
+          <div class="cwc-reasons__cta" {{ block.shopify_attributes }}>
+            {% render 'CWC_button', product: product, section_id: section.id, block: block %}
+          </div>
+
+        {% when 'guarantee_text' %}
+          <div class="cwc_product-template__guarantee_text" {{ block.shopify_attributes }}>
+            {% render 'CWC_guarantee_text', product: product, section_id: section.id, block: block %}
+          </div>
+      {% endcase %}
     {% endfor %}
   </div>
 </section>
@@ -178,7 +173,7 @@
       "max": 200,
       "step": 4,
       "unit": "px",
-      "default": 60
+      "default": 40
     },
     {
       "type": "range",
@@ -188,7 +183,7 @@
       "max": 200,
       "step": 4,
       "unit": "px",
-      "default": 60
+      "default": 40
     }
   ],
   "blocks": [
@@ -310,21 +305,32 @@
         },
         {
           "type": "color",
-          "id": "text-color",
-          "label": "Button Label color",
-          "default": "#ffffff"
-        },
-        {
-          "type": "color",
-          "id": "bg-color",
-          "label": "Button Background color",
+          "id": "button_bg_color",
+          "label": "Button Background Color",
           "default": "#125657"
         },
         {
+          "type": "color",
+          "id": "button_text_color",
+          "label": "Button Text Color",
+          "default": "#ffffff"
+        }
+      ]
+    },
+    {
+      "type": "guarantee_text",
+      "name": "Guarantee Text",
+      "settings": [
+        {
           "type": "text",
-          "id": "note",
-          "label": "Small note",
+          "id": "text",
+          "label": "Text",
           "default": "365-day money back guarantee"
+        },
+        {
+          "type": "image_picker",
+          "id": "icon",
+          "label": "Icon"
         }
       ]
     }
@@ -339,9 +345,6 @@
         },
         {
           "type": "heading"
-        },
-        {
-          "type": "text"
         },
         {
           "type": "reason"
