@@ -1,5 +1,5 @@
 {% comment %}
-  CWC Product Image Carousel - Shows only non-variant featured images
+  CWC Product Image Carousel - Shows all product images
   Usage: {% render 'CWC_product_image_carousel', product: product, section_id: section.id, block: block %}
 {% endcomment %}
 
@@ -14,29 +14,8 @@
 
 {{ 'CWC_product_image_carousel.css' | asset_url | stylesheet_tag }}
 
-
-
-{% comment %} Create a string of variant featured image IDs for filtering {% endcomment %}
-{% assign variant_image_ids = '' %}
-{% for variant in product.variants %}
-  {% if variant.featured_image %}
-    {% if variant_image_ids == '' %}
-      {% assign variant_image_ids = variant.featured_image.id %}
-    {% else %}
-      {% assign variant_image_ids = variant_image_ids | append: ',' | append: variant.featured_image.id %}
-    {% endif %}
-  {% endif %}
-{% endfor %}
-
-{% comment %} Convert to array for easier checking {% endcomment %}
-{% assign variant_ids_array = variant_image_ids | split: ',' %}
-
-{% comment %} We'll use the original product.images and filter during rendering {% endcomment %}
-{% assign product_images = product.images %}
-
 <div class="cwc-product-carousel cwc-product-carousel-{{ section_id }}">
   <!-- Main Carousel -->
-
   <div class="swiper cwc-product-main-carousel" id="product-carousel-{{ section_id }}">
     <!-- Product Badges -->
     {% if block.settings.badge_text != blank %}
@@ -44,45 +23,14 @@
         class="cwc-product_template__image-badge"
         style="background: {{ block.settings.badge_bg_color }}; color: {{ block.settings.badge_text_color }}"
       >
-        {% render 'CWC_icon-crown', fill_color: {{ block.settings.badge_text_color  }} %}
+        {% render 'CWC_icon-crown', fill_color: block.settings.badge_text_color %}
         {{ block.settings.badge_text }}
       </div>
     {% endif %}
 
     <div class="swiper-wrapper">
-      {% assign filtered_count = 0 %}
-      {% if product_images.size > 0 %}
-        {% for image in product_images %}
-          {% comment %} Check if this image is NOT a variant featured image {% endcomment %}
-          {% assign is_variant_image = false %}
-          {% for variant_id in variant_ids_array %}
-            {% assign variant_id_number = variant_id | plus: 0 %}
-            {% assign image_id_number = image.id | plus: 0 %}
-            {% if variant_id_number == image_id_number %}
-              {% assign is_variant_image = true %}
-              {% break %}
-            {% endif %}
-          {% endfor %}
-
-          {% unless is_variant_image %}
-            {% assign filtered_count = filtered_count | plus: 1 %}
-            <div class="swiper-slide">
-              <img
-                src="{{ image | image_url: width: 700 }}"
-                alt="{{ image.alt | default: product.title }}"
-                width="{{ image.width }}"
-                height="{{ image.height }}"
-                fetchpriority="high"
-                loading="eager"
-              >
-            </div>
-          {% endunless %}
-        {% endfor %}
-      {% endif %}
-
-      {% comment %} Fallback if no non-variant images found {% endcomment %}
-      {% if filtered_count == 0 %}
-        {% for image in product_images %}
+      {% if product.images.size > 0 %}
+        {% for image in product.images %}
           <div class="swiper-slide">
             <img
               src="{{ image | image_url: width: 700 }}"
@@ -94,10 +42,18 @@
             >
           </div>
         {% endfor %}
+      {% else %}
+        <!-- Fallback if no images -->
+        <div class="swiper-slide">
+          <img
+            src="{{ 'placeholder.png' | asset_url }}"
+            alt="Product placeholder"
+            fetchpriority="high"
+            loading="eager"
+          >
+        </div>
       {% endif %}
     </div>
-
-    <!-- Product Badges -->
 
     {% if block.settings.badge_sold_text != blank %}
       <div
@@ -107,27 +63,10 @@
         {{ block.settings.badge_sold_text }}
       </div>
     {% endif %}
-
-    <!-- Navigation arrows -->
-    {% assign non_variant_count = 0 %}
-    {% for image in product_images %}
-      {% assign is_variant_image = false %}
-      {% for variant_id in variant_ids_array %}
-        {% assign variant_id_number = variant_id | plus: 0 %}
-        {% assign image_id_number = image.id | plus: 0 %}
-        {% if variant_id_number == image_id_number %}
-          {% assign is_variant_image = true %}
-          {% break %}
-        {% endif %}
-      {% endfor %}
-      {% unless is_variant_image %}
-        {% assign non_variant_count = non_variant_count | plus: 1 %}
-      {% endunless %}
-    {% endfor %}
   </div>
 
   <!-- Thumbnail Navigation -->
-  {% if non_variant_count > 1 or product_images.size > 1 %}
+  {% if product.images.size > 1 %}
     <div class="cwc-product-thumbnails" id="product-thumbnails-{{ section_id }}">
       <!-- Navigation arrows for thumbnails -->
       <div class="swiper-button-next cwc-product-thumbnails_next"></div>
@@ -135,57 +74,22 @@
 
       <div class="swiper">
         <div class="swiper-wrapper">
-          {% for image in product_images %}
-            {% comment %} Check if this image is NOT a variant featured image {% endcomment %}
-            {% assign is_variant_image = false %}
-            {% for variant_id in variant_ids_array %}
-              {% assign variant_id_number = variant_id | plus: 0 %}
-              {% assign image_id_number = image.id | plus: 0 %}
-              {% if variant_id_number == image_id_number %}
-                {% assign is_variant_image = true %}
-                {% break %}
-              {% endif %}
-            {% endfor %}
-
-            {% unless is_variant_image %}
-              <div class="swiper-slide">
-                <div
-                  class="cwc-product-thumbnail {% if forloop.first %}active{% endif %}"
-                  data-slide="{{ forloop.index0 }}"
+          {% for image in product.images %}
+            <div class="swiper-slide">
+              <div
+                class="cwc-product-thumbnail {% if forloop.first %}active{% endif %}"
+                data-slide="{{ forloop.index0 }}"
+              >
+                <img
+                  src="{{ image | image_url: width: 135 }}"
+                  alt="{{ image.alt | default: product.title }}"
+                  width="{{ image.width }}"
+                  height="{{ image.height }}"
+                  loading="lazy"
                 >
-                  <img
-                    src="{{ image | image_url: width: 135 }}"
-                    alt="{{ image.alt | default: product.title }}"
-                    width="{{ image.width }}"
-                    height="{{ image.height }}"
-                    fetchpriority="high"
-                    loading="eager"
-                  >
-                </div>
               </div>
-            {% endunless %}
+            </div>
           {% endfor %}
-
-          {% comment %} Fallback thumbnails if no non-variant images {% endcomment %}
-          {% if non_variant_count == 0 %}
-            {% for image in product_images %}
-              <div class="swiper-slide">
-                <div
-                  class="cwc-product-thumbnail {% if forloop.first %}active{% endif %}"
-                  data-slide="{{ forloop.index0 }}"
-                >
-                  <img
-                    src="{{ image | image_url: width: 135 }}"
-                    alt="{{ image.alt | default: product.title }}"
-                    width="{{ image.width }}"
-                    height="{{ image.height }}"
-                    fetchpriority="high"
-                    loading="eager"
-                  >
-                </div>
-              </div>
-            {% endfor %}
-          {% endif %}
         </div>
       </div>
     </div>
@@ -197,83 +101,82 @@
 <!-- Initialize Swiper -->
 <script>
   document.addEventListener('DOMContentLoaded', function () {
-      const carousel = document.getElementById('product-carousel-{{ section_id }}');
-      const thumbnails = document.getElementById('product-thumbnails-{{ section_id }}');
+    const carousel = document.getElementById('product-carousel-{{ section_id }}');
+    const thumbnails = document.getElementById('product-thumbnails-{{ section_id }}');
 
-      let mainSwiper, thumbSwiper;
+    let mainSwiper, thumbSwiper;
 
-      if (carousel) {
-          // Thumbnail swiper (initialize first)
-          if (thumbnails) {
-              const thumbSwiperEl = thumbnails.querySelector('.swiper');
-              if (thumbSwiperEl) {
-                  thumbSwiper = new Swiper(thumbSwiperEl, {
-                      slidesPerView: 5,
-                      spaceBetween: 4,
-                      watchSlidesProgress: true,
-                      slideToClickedSlide: true,
-                      grabCursor: true,
-                      breakpoints: {
-                          768: {
-                              slidesPerView: 5,
-                              spaceBetween: 4,
-                          }
-                      }
-                  });
+    if (carousel) {
+      // Thumbnail swiper (initialize first)
+      if (thumbnails) {
+        const thumbSwiperEl = thumbnails.querySelector('.swiper');
+        if (thumbSwiperEl) {
+          thumbSwiper = new Swiper(thumbSwiperEl, {
+            slidesPerView: 5,
+            spaceBetween: 4,
+            watchSlidesProgress: true,
+            slideToClickedSlide: true,
+            grabCursor: true,
+            navigation: {
+              nextEl: '.cwc-product-carousel-{{ section_id }} .cwc-product-thumbnails_next',
+              prevEl: '.cwc-product-carousel-{{ section_id }} .cwc-product-thumbnails_prev',
+            },
+            breakpoints: {
+              768: {
+                slidesPerView: 5,
+                spaceBetween: 4,
               }
-          }
+            }
+          });
+        }
+      }
 
-          // Main carousel
-          mainSwiper = new Swiper(carousel, {
-              loop: {% if product_images.size > 1 %}true{% else %} false{% endif %},
-      navigation: {
-          nextEl: '.cwc-product-carousel-{{ section_id }} .swiper-button-next',
-              prevEl: '.cwc-product-carousel-{{ section_id }} .swiper-button-prev',
-    },
-      keyboard: {
+      // Main carousel
+      mainSwiper = new Swiper(carousel, {
+        loop: {% if product.images.size > 1 %}true{% else %}false{% endif %},
+        keyboard: {
           enabled: true,
-    },
-      grabCursor: true,
-          effect: 'slide',
-              speed: 400,
-                  {% if product_images.size > 1 %}
-    thumbs: {
-      swiper: thumbSwiper,
-  },
-      {% endif %}
-      on: {
-      slideChange: function () {
-          // Update thumbnail active state manually
-          if (thumbnails) {
+        },
+        grabCursor: true,
+        effect: 'slide',
+        speed: 400,
+        {% if product.images.size > 1 %}
+        thumbs: {
+          swiper: thumbSwiper,
+        },
+        {% endif %}
+        on: {
+          slideChange: function () {
+            // Update thumbnail active state manually
+            if (thumbnails) {
               const thumbnailItems = thumbnails.querySelectorAll('.cwc-product-thumbnail');
               thumbnailItems.forEach((thumb, index) => {
-                  thumb.classList.toggle('active', index === this.realIndex);
+                thumb.classList.toggle('active', index === this.realIndex);
               });
 
               // Center the active thumbnail in view
               if (thumbSwiper && this.realIndex < thumbnailItems.length) {
-                  // thumbSwiper.slideTo(Math.max(0, this.realIndex - 2));
-                  thumbSwiper.slideTo(Math.max(0, this.realIndex));
+                thumbSwiper.slideTo(Math.max(0, this.realIndex));
               }
+            }
           }
-      }
-  }
-    });
-
-  // Manual thumbnail click handlers (as backup)
-  if (thumbnails) {
-      const thumbnailItems = thumbnails.querySelectorAll('.cwc-product-thumbnail');
-      thumbnailItems.forEach((thumb, index) => {
-          thumb.addEventListener('click', () => {
-              if (mainSwiper) {
-                  mainSwiper.slideTo(index);
-              }
-              // Update active states
-              thumbnailItems.forEach(t => t.classList.remove('active'));
-              thumb.classList.add('active');
-          });
+        }
       });
-  }
+
+      // Manual thumbnail click handlers (as backup)
+      if (thumbnails) {
+        const thumbnailItems = thumbnails.querySelectorAll('.cwc-product-thumbnail');
+        thumbnailItems.forEach((thumb, index) => {
+          thumb.addEventListener('click', () => {
+            if (mainSwiper) {
+              mainSwiper.slideTo(index);
+            }
+            // Update active states
+            thumbnailItems.forEach(t => t.classList.remove('active'));
+            thumb.classList.add('active');
+          });
+        });
+      }
     }
-    });
+  });
 </script>

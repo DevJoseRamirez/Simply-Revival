@@ -39,6 +39,7 @@
     object-fit: cover;
     object-fit: contain;
     display: block;
+    aspect-ratio: 1/1;
 }
 
 .cwc-product-carousel .swiper-slide img {

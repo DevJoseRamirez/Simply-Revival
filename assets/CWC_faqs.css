@@ -13,17 +13,22 @@
     max-width: 1500px;
     margin: 0 auto;
     padding: 0 1.5rem;
+    padding: 0 3.125rem;
 }
 
 .cwc-faqs__heading {
     margin-bottom: 1rem;
+    margin-bottom: 2.5rem;
     text-align: center;
     color: var(--text-color);
 }
 
+.cwc-faqs__heading {}
+
 .cwc-faqs__text *,
 .cwc-faqs__heading * {
     color: inherit;
+    text-align: center;
 }
 
 .cwc-faqs__text {
@@ -64,16 +69,29 @@
     font-weight: bold;
     font-weight: 500;
     line-height: 18px;
+    padding: 1.0625rem 1.25rem;
 
 }
 
 .faq-question p {
     margin: 0rem;
     font-weight: inherit;
+    line-height: normal;
+}
+
+.faq-answer {
+    line-height: normal;
+    /* margin-bottom: 1rem; */
+
 }
 
 .faq-answer p {
-    margin-bottom: 10px;
+    margin-bottom: 1.0625rem;
+    line-height: normal;
+}
+
+.faq-answer p:last-child {
+    margin-bottom: 1.8rem;
 }
 
 .toggle-icon {

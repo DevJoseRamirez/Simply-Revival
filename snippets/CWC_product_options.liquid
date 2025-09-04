@@ -1,5 +1,5 @@
 {% comment %}
-  cwc-featured-product__options
+  cwc-featured-product__options with custom block images
 {% endcomment %}
 
 {{ 'CWC_product_options.css' | asset_url | stylesheet_tag }}
@@ -59,9 +59,31 @@
           {% assign save_pct = save_money | times: 100 | divided_by: candidate.compare_at_price %}
         {% endif %}
 
-        {%- comment -%} thumbnail url from variant image {%- endcomment -%}
+        {%- comment -%}
+          Determine thumbnail URL:
+          1. Try custom block images first (based on forloop index)
+          2. Fall back to variant featured image
+        {%- endcomment -%}
+        {%- comment -%} thumbnail url - custom images first, then variant image {%- endcomment -%}
         {% assign thumb_url = null %}
-        {% if candidate and candidate.featured_image %}
+        {% assign option_index = forloop.index0 %}
+
+        {% if option_index == 0 and block.settings.image1 != blank %}
+          {% assign thumb_url = block.settings.image1 | image_url: width: 56 %}
+        {% elsif option_index == 1 and block.settings.image2 != blank %}
+          {% assign thumb_url = block.settings.image2 | image_url: width: 56 %}
+        {% elsif option_index == 2 and block.settings.image3 != blank %}
+          {% assign thumb_url = block.settings.image3 | image_url: width: 56 %}
+        {% elsif candidate and candidate.featured_image %}
+          {% assign thumb_url = candidate.featured_image | image_url: width: 56 %}
+        {% elsif candidate and candidate.image %}
+          {% assign thumb_url = candidate.image | image_url: width: 56 %}
+        {% endif %}
+
+        {% comment %} Use custom image if available, otherwise fall back to variant image {% endcomment %}
+        {% if custom_image_url %}
+          {% assign thumb_url = custom_image_url %}
+        {% elsif candidate and candidate.featured_image %}
           {% assign thumb_url = candidate.featured_image | image_url: width: 56 %}
         {% elsif candidate and candidate.image %}
           {% assign thumb_url = candidate.image | image_url: width: 56 %}
@@ -69,7 +91,7 @@
 
         {% comment %}
           ======================
-           START OF OPTOINS
+           START OF OPTIONS BUTTON
           ======================
         {% endcomment %}
 
@@ -88,6 +110,7 @@
           {% if candidate %}
             data-compare="{{ candidate.compare_at_price | default: 0 }}"
           {% endif %}
+          {% comment %} Remove all carousel-related data attributes {% endcomment %}
           {% if thumb_url %}
             data-thumb="{{ thumb_url }}"
           {% endif %}

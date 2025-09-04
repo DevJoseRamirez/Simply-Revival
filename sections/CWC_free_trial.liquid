@@ -1,24 +1,22 @@
 {% style %}
-#CWC_free_trial-{{ section.id }} {
-  --section-bg: {{ section.settings.background_color }};
-  --text-color: {{ section.settings.text_color }};
-  --padding-top: {{ section.settings.padding_top }}px;
-  --padding-bottom: {{ section.settings.padding_bottom }}px;
-  --padding-top-mobile: {{ section.settings.padding_top | times: 0.5 }}px;
-  --padding-bottom-mobile: {{ section.settings.padding_bottom | times: 0.5 }}px;
-}
+  #CWC_free_trial-{{ section.id }} {
+    --section-bg: {{ section.settings.background_color }};
+    --text-color: {{ section.settings.text_color }};
+    --padding-top: {{ section.settings.padding_top }}px;
+    --padding-bottom: {{ section.settings.padding_bottom }}px;
+    --padding-top-mobile: {{ section.settings.padding_top | times: 0.5 }}px;
+    --padding-bottom-mobile: {{ section.settings.padding_bottom | times: 0.5 }}px;
+  }
 {% endstyle %}
 
 {{ 'CWC_free_trial.css' | asset_url | stylesheet_tag }}
 
 <section id="CWC_free_trial-{{ section.id }}" class="CWC_free_trial CWC_free_trial-{{ section.id }}">
   <div class="CWC_free_trial-wrapper{% if section.settings.image_position == 'right' %} reverse{% endif %}">
-
     {%- comment -%} Left Content {%- endcomment -%}
     <div class="free-trial-content">
       {% for block in section.blocks %}
         {% case block.type %}
-
           {% when 'badge' %}
             {% if block.settings.badge_text != blank %}
               <div class="free-trial-badge" {{ block.shopify_attributes }}>
@@ -27,7 +25,10 @@
                     <img src="{{ block.settings.badge_bg | image_url }}" alt="{{ block.settings.badge_text | escape }}">
                   </div>
                 {% endif %}
-                <div class="badge-text">
+                <div
+                  class="badge-text"
+                  style=" background-image: url({{ block.settings.bg_image | image_url  }});"
+                >
                   <span>{{ block.settings.badge_number }}</span> {{ block.settings.badge_text }}
                 </div>
               </div>
@@ -35,7 +36,11 @@
 
           {% when 'subhead' %}
             {% if block.settings.text != blank %}
-              <div class="free-trial-subhead" {{ block.shopify_attributes }}>
+              <div
+                class="free-trial-subhead"
+                {{ block.shopify_attributes }}
+                style="color:{{  block.settings.text_color }}"
+              >
                 {{ block.settings.text }}
               </div>
             {% endif %}
@@ -56,12 +61,13 @@
 
           {% when 'button' %}
             {% if block.settings.text != blank %}
-              <a href="{{ block.settings.link }}" class="free-trial-button" {{ block.shopify_attributes }}
-                 style="background-color: {{ block.settings.button_color }}; color: {{ block.settings.button_text_color }}">
-                {{ block.settings.text }}
-              </a>
+              <div
+                class="free-trial-button"
+                {{ block.shopify_attributes }}
+              >
+                {% render 'CWC_button', section_id: section.id, block: block %}
+              </div>
             {% endif %}
-
         {% endcase %}
       {% endfor %}
     </div>
@@ -71,19 +77,24 @@
       {% if section.settings.image_mobile and section.settings.image_mobile != blank %}
         <picture>
           <source media="(max-width: 767px)" srcset="{{ section.settings.image_mobile | image_url }}">
-          <img src="{{ section.settings.image | image_url }}" alt="{{ section.settings.alt_text | escape }}" loading="lazy">
+          <img
+            src="{{ section.settings.image | image_url }}"
+            alt="{{ section.settings.alt_text | escape }}"
+            loading="lazy"
+          >
         </picture>
       {% elsif section.settings.image and section.settings.image != blank %}
-        <img src="{{ section.settings.image | image_url }}" alt="{{ section.settings.alt_text | escape }}" loading="lazy">
+        <img
+          src="{{ section.settings.image | image_url }}"
+          alt="{{ section.settings.alt_text | escape }}"
+          loading="lazy"
+        >
       {% else %}
         <img src="{{ 'placeholder.png' | asset_url }}" alt="Placeholder image" loading="lazy">
       {% endif %}
     </div>
-
   </div>
 </section>
-      
-
 
 {% schema %}
 {
@@ -145,7 +156,7 @@
       "max": 100,
       "step": 4,
       "unit": "px",
-      "default": 40
+      "default": 0
     }
   ],
   "blocks": [
@@ -158,6 +169,11 @@
           "id": "badge_number",
           "label": "Badge Number",
           "default": "90"
+        },
+        {
+          "type": "image_picker",
+          "id": "bg_image",
+          "label": "Badge Background"
         },
         {
           "type": "text",
@@ -181,6 +197,12 @@
           "id": "text",
           "label": "Subhead Text",
           "default": "FEEL THE DIFFERENCE"
+        },
+        {
+          "type": "color",
+          "id": "text_color",
+          "label": "Text Color",
+          "default": "#125657"
         }
       ]
     },
@@ -225,7 +247,7 @@
         },
         {
           "type": "color",
-          "id": "button_color",
+          "id": "button_bg_color",
           "label": "Button Background Color",
           "default": "#125657"
         },
