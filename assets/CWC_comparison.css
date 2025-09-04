@@ -14,6 +14,7 @@
     max-width: 1500px;
     margin: 0 auto;
     padding: 0 3rem;
+    padding: 0 3.125rem;
 }
 
 /* ================================
@@ -39,6 +40,7 @@
 .cwc-comparison__grid {
     display: grid;
     grid-template-columns: 1fr 1fr;
+    grid-template-columns: 50% 42%;
     gap: 3rem;
     gap: 6.6rem;
 
@@ -48,6 +50,10 @@
     justify-content: center;
 }
 
+.cwc-comparison__table {
+    border-radius: 6px;
+}
+
 /* ================================
    Left Tables Column
    ================================ */
@@ -55,15 +61,17 @@
 .cwc-comparison__tables {
     display: grid;
     grid-template-columns: 1fr 1fr;
+    grid-template-columns: 45% 50%;
+
     gap: 1rem;
-    gap: .8rem;
+    gap: .5rem;
     padding-bottom: 0rem;
     align-items: center;
-    justify-content: flex-end;
+    justify-content: flex-start;
 }
 
-.cwc-comparison__table {
-    border-radius: 4px;
+.cwc-brand_table__table {
+    border-radius: 6px;
     /* padding: 1.5rem 0rem; */
     text-align: center;
     /* padding-bottom: 0rem; */
@@ -76,11 +84,12 @@
 }
 
 .cwc-comparison__table-head {
-    margin-top: -3rem;
+    /* margin-top: -3rem; */
 }
 
 .cwc-comparison__product {
     margin-bottom: 1rem;
+    margin-bottom: .5rem;
 
     /* position: absolute; */
 }
@@ -91,16 +100,51 @@
     object-fit: contain;
     display: block;
     margin: 0 auto;
+    height: 100px;
+
+    /* width: 62px; */
+    /* height: auto; */
+    width: auto;
+    height: 80px;
+    object-fit: contain;
+    display: block;
+    height: 100px;
+    margin: -76px auto 0;
+    margin: -4.75rem auto 0;
+}
+
+.cwc-brand_table__table {
+    font-size: 1.2775rem;
+    /* font-family: 'Tenor Sans'; */
+    /* font-weight: 400; */
+    font-size: 20.44px;
+    line-height: 24px;
+    letter-spacing: 0;
+    margin-bottom: 1px;
+    text-transform: uppercase;
+
 }
 
 .cwc-comparison__table-title {
     font-size: 1.25rem;
+
     /* font-weight: 700; */
     margin-bottom: 1.5rem;
     margin-bottom: 1rem;
+    margin-bottom: .5rem;
     /* text-transform: uppercase; */
+    line-height: normal;
     text-align: center;
 
+
+
+
+
+}
+
+.cwc-brand_table__table .cwc-comparison__table-title {
+    margin-bottom: 0rem;
+    margin-bottom: -0.5rem;
 }
 
 .cwc-comparison__list {
@@ -118,14 +162,24 @@
     line-height: 1.4;
     text-align: center;
     /* min-height: 86.51px; */
-    padding: 1.5rem 0rem;
+    padding: 1.3rem 0rem;
     border-bottom: .87px solid;
 
     flex-direction: column;
     gap: .3rem;
+    gap: .2rem;
+
+}
 
 
+.cwc-competitor_table__table .cwc-comparison__item {
+    border-color: rgba(0, 0, 0, 0.06);
 
+}
+
+.cwc-comparison__item svg {
+    height: 22px;
+    width: auto;
 }
 
 .cwc-comparison__item:last-of-type {
@@ -135,14 +189,15 @@
 
 .cwc-comparison__item img {
     width: 24px;
-    height: 24px;
-    margin-right: 0.75rem;
+    height: auto;
+    /* margin-right: 0.75rem; */
     object-fit: contain;
     flex-shrink: 0;
 }
 
 .cwc-comparison__item span {
     flex: 1;
+    text-transform: capitalize;
 }
 
 .cwc-competitor_table__table {
@@ -153,6 +208,7 @@
     align-self: flex-end;
 }
 
+
 /* ================================
    Right Content Column
    ================================ */
@@ -160,7 +216,7 @@
 .cwc-comparison__content {
     display: flex;
     flex-direction: column;
-    gap: 1.5rem;
+    /* gap: 1.5rem; */
     /* padding-left: 2rem; */
     color: inherit;
     color: var(--text-color);
@@ -178,6 +234,7 @@
     margin-bottom: 1rem;
     color: inherit;
     text-align: left;
+    margin-bottom: 3.8125rem;
 }
 
 .cwc-comparison__bullet {
@@ -187,20 +244,26 @@
     align-items: flex-start;
     gap: 0.5rem;
     color: inherit;
+
+
+
+    margin-bottom: 2.375rem;
 }
 
 .cwc-comparison__bullet>* {
     color: inherit;
 }
 
-.cwc-comparison__bullet::before {
-    content: "✓";
-    color: #22c55e;
-    font-weight: 700;
-    font-size: 1.1rem;
-    flex-shrink: 0;
-    margin-top: 0.1rem;
+.cwc-comparison__bullet-icon svg {
+    height: 20px;
+    width: auto;
 }
+
+.cwc-comparison__bullet-text,
+.cwc-comparison__bullet-text>* {
+    color: inherit;
+}
+
 
 .cwc-comparison__button-wrap {
     display: flex;
@@ -208,12 +271,13 @@
     align-items: center;
     justify-content: center;
     width: 100%;
-    gap: .5rem;
+    /* gap: .5rem; */
 }
 
 .cwc-comparison__button {
     display: inline-block;
     padding: 1rem 2rem;
+    padding: 0.75rem 1.5rem;
     font-weight: 700;
     font-size: 1rem;
     border-radius: 6px;
@@ -223,7 +287,7 @@
     text-transform: uppercase;
     border: 2px solid transparent;
     width: 100%;
-    margin-top: 2rem;
+    margin-top: 1rem;
 }
 
 .cwc-comparison__button:hover {
@@ -233,26 +297,57 @@
 }
 
 .cwc-comparison__button-note {
-    font-size: 0.9rem;
-    opacity: 0.8;
-    margin-top: 1rem;
+    font-size: .9rem;
+    margin: 9.61px 0 0;
+    opacity: .8;
     display: flex;
-    gap: 0.5rem;
+    gap: .5rem;
     width: 100%;
     margin: auto;
     text-align: center;
     align-items: center;
     justify-content: center;
+    margin: 9.61px 0 0;
 }
 
 .cwc-comparison__button-note>* {
     color: inherit;
+
+    font-weight: 400;
+    font-size: 1.05375rem;
+    font-size: 1rem;
+    line-height: 1.32109375rem;
+    letter-spacing: 0;
+    text-align: center;
+    display: inline-flex;
+    grid-gap: 6.85px;
+    align-items: center;
+
 }
 
-.cwc-comparison__button-note::before {
-    content: "🛡️";
-    font-size: 1rem;
+
+.cwc-comparison__heading {
+    margin-bottom: 3.8125rem;
+    /* display: flex;
+    align-items: center;
+    justify-content: flex-start;
+    gap: 8px; */
 }
+
+.cwc-comparison__heading_text,
+.cwc-comparison__heading_bold_text {
+    display: inline;
+    font-size: 2.281875rem;
+    font-size: 2.381875rem;
+    font-weight: 600;
+    /* line-height: normal; */
+    font-weight: bold;
+    text-align: left;
+}
+
+.cwc-comparison__heading_bold_text {}
+
+.cwc-comparison__heading_bold {}
 
 /* ================================
    Mobile Styles
@@ -293,7 +388,7 @@
         gap: 0.5rem;
     }
 
-    .cwc-comparison__table {
+    .cwc-brand_table__table {
         padding: 1rem 0.75rem;
     }
 
