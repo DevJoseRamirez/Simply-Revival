@@ -3,23 +3,56 @@
     padding-top: var(--section-padding-top);
     padding-bottom: var(--section-padding-bottom);
     color: var(--section-text-color);
-    padding-left: 2rem;
-    padding-right: 2rem;
+    /* padding-left: 2rem; */
+    /* padding-right: 2rem; */
 }
 
 .cwc-background-features__wrapper {
     max-width: 1500px;
     margin: 0 auto;
     padding: 0 1rem;
+
+    border-radius: 10px;
+    padding: 39px 20px 33px;
+    padding: 1.5rem 1.2rem;
+    margin: 0 auto;
+    padding: 0 3rem;
+
+
+
+    max-width: 1500px;
+    padding: 0 3.125rem;
+
+
+    padding-left: 50px;
+    padding-right: 50px;
+    margin-left: auto;
+    margin-right: auto;
+}
+
+.cwc-background-features__container {
     background-color: var(--section-bg-color);
     background-image: var(--section-bg-image);
     background-size: cover;
     background-position: center;
-    border-radius: 10px;
-    padding: 39px 20px 33px;
-    padding: 1.5rem 1.2rem;
 
+    /* background-color: #0f5a47; */
+    padding: 39px 20px 33px;
+    color: #fff;
+    text-align: center;
+    border-radius: 10px;
+    margin-bottom: 41px;
+
+    background-color: #0f5a47;
+    padding: 39px 20px 33px;
+    color: #fff;
+    text-align: center;
+    border-radius: 10px;
+    margin-bottom: 41px;
 }
+
+
+
 
 .cwc-background-features__headline {
     text-align: center;
@@ -27,6 +60,13 @@
     font-weight: 600;
     margin-bottom: 1.5rem;
     color: var(--section-text-color);
+
+
+    font-size: 26px;
+    line-height: 100%;
+    letter-spacing: 0%;
+    text-align: center;
+    margin-bottom: 27px;
 }
 
 .cwc-background-features__checkmarks {
@@ -41,6 +81,18 @@
     display: flex;
     align-items: center;
     gap: 0.5rem;
+
+
+
+
+    font-weight: 300;
+    font-size: 16.57px;
+    line-height: 24.85px;
+    letter-spacing: 0%;
+    text-align: center;
+    display: flex;
+    align-items: center;
+    gap: 4px;
 }
 
 .cwc-background-features__checkmarks .checkmark-icon {
@@ -92,6 +144,20 @@
 .cwc-background-features__icons .benefit_text {
     font-size: 0.95rem;
     margin: 0;
+
+
+
+    font-weight: 400;
+    font-size: 11.06px;
+    line-height: 14.67px;
+    letter-spacing: 0;
+    text-align: center;
+    text-transform: uppercase;
+    margin: 10px 0 0;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    min-height: 44px;
 }
 
 @media (max-width: 767px) {

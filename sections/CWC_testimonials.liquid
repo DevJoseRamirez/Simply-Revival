@@ -1,205 +1,240 @@
 {% style %}
-#CWC_testimonials-{{ section.id }} {
---section-bg: {{ section.settings.bg_color | default: '#FAF9F6' }};
---text-color: {{ section.settings.text_color | default: '#111111' }};
---card-bg: {{ section.settings.card_bg | default: '#ffffff' }};
---highlight-color: {{ section.settings.highlight_color | default: '#009370' }};
---padding-top: {{ section.settings.padding_top | default: 60 }}px;
---padding-bottom: {{ section.settings.padding_bottom | default: 60 }}px;
-}
+  #CWC_testimonials-{{ section.id }} {
+  --section-bg: {{ section.settings.bg_color | default: '#FAF9F6' }};
+  --text-color: {{ section.settings.text_color | default: '#111111' }};
+  --card-bg: {{ section.settings.card_bg | default: '#ffffff' }};
+  --highlight-color: {{ section.settings.highlight_color | default: '#009370' }};
+  --padding-top: {{ section.settings.padding_top | default: 60 }}px;
+  --padding-bottom: {{ section.settings.padding_bottom | default: 60 }}px;
+  }
 {% endstyle %}
 
 {{ 'CWC_testimonials.css' | asset_url | stylesheet_tag }}
 {{ 'swiper-bundle.min.css' | asset_url | stylesheet_tag }}
 
 <section id="CWC_testimonials-{{ section.id }}" class="cwc-testimonials">
-    <div class="cwc-testimonials__wrapper">
-
-        <div class="swiper cwc-testimonials__carousel">
-            <div class="swiper-wrapper">
-                {% for block in section.blocks %}
-                <div class="swiper-slide">
-                    <div class="cwc-testimonial-card" {{ block.shopify_attributes }}>
-                        <div class="cwc-testimonial-rating">
-                            {% render 'CWC_trust_stars' %}
-                        </div>
-
-                        {% if block.settings.title != blank %}
-                        <h3 class="cwc-testimonials__testimonial-title">{{ block.settings.title }}</h3>
-                        {% endif %}
-
-                        {% if block.settings.text != blank %}
-                        <p class="cwc-testimonials__testimonial-text">{{ block.settings.text }}</p>
-                        {% endif %}
-
-                        <div class="cwc-testimonials__testimonial-author">
-                            {% if block.settings.author_image != blank %}
-                            <img src="{{ block.settings.author_image | img_url: '100x100' }}"
-                                alt="{{ block.settings.author_name }}">
-                            {% else %}
-                            <img src="{{ 'icon-placeholder.png' | asset_url }}" alt="Author placeholder">
-                            {% endif %}
-                            <span class="author-name">{{ block.settings.author_name }}</span>
-                            <span class="verified">✔ Verified Customer</span>
-                        </div>
-
-                        <div class="cwc-testimonials__testimonial-tags">
-                            {% if block.settings.feature_one != blank %}
-                            <span class="tag">{{ block.settings.feature_one }}</span>
-                            {% endif %}
-                            {% if block.settings.feature_two != blank %}
-                            <span class="tag">{{ block.settings.feature_two }}</span>
-                            {% endif %}
-                        </div>
-                    </div>
+  <div class="cwc-testimonials__wrapper">
+    <div class="swiper cwc-testimonials__carousel">
+      <div class="swiper-wrapper">
+        {% for block in section.blocks %}
+          <div class="swiper-slide">
+            {% comment %}  {% endcomment %}
+            {% comment %}  {% endcomment %}
+            {% comment %}  {% endcomment %}
+            {% comment %}  {% endcomment %}
+            {% comment %}  {% endcomment %}
+            <div class="cwc-testimonial-card" {{ block.shopify_attributes }}>
+              <div class="cwc-testimonials__testimonial-top">
+                <div class="cwc-testimonial-rating">
+                  <span class="cwc-testimonial-rating_text">{{ block.settings.star_rating }}</span>
+                  {% render 'CWC_trust_stars' %}
                 </div>
-                {% endfor %}
+
+                {% if block.settings.title != blank %}
+                  <h3 class="cwc-testimonials__testimonial-title">"{{ block.settings.title }}"</h3>
+                {% endif %}
+
+                {% if block.settings.text != blank %}
+                  <p class="cwc-testimonials__testimonial-text">{{ block.settings.text }}</p>
+                {% endif %}
+              </div>
+
+              <div class="cwc-testimonials__testimonial-bottom">
+                <div class="cwc-testimonials__testimonial-author_wrapper">
+                  <div class="cwc-testimonials__testimonial-author">
+                    {% if block.settings.author_image != blank %}
+                      <img
+                        loading="lazy"
+                        fetchpriority="low"
+                        src="{{ block.settings.author_image | image_url: width: 36  }}"
+                        alt="{{ block.settings.author_name }}"
+                        width="{{ block.settings.image.width }}"
+                        height="{{ block.settings.image.height }}"
+                      >
+
+                    {% else %}
+                      <img
+                        fetchpriority="low"
+                        src="{{ 'icon-placeholder.png' | asset_url  }}"
+                        alt="Author placeholder"
+                        width="{{ block.settings.image.width }}"
+                        height="{{ block.settings.image.height }}"
+                      >
+                    {% endif %}
+                    <span class="author-name">{{ block.settings.author_name }}</span>
+                  </div>
+
+                  <div class="cwc-testimonials__testimonial-author-verified">
+                    <span class="cwc-testimonials__testimonial-author-verified-icon">
+                      {%- render 'CWC_icon-check_badge', fill: '#009370' -%}
+                    </span>
+                    <span class="cwc-testimonials__testimonial-author-verified-text"> Verified Customer </span>
+                  </div>
+                </div>
+
+                <div class="cwc-testimonials__testimonial-tags">
+                  {% if block.settings.feature_one != blank %}
+                    <span class="tag">{{ block.settings.feature_one }}</span>
+                  {% endif %}
+                  {% if block.settings.feature_two != blank %}
+                    <span class="tag">{{ block.settings.feature_two }}</span>
+                  {% endif %}
+                </div>
+              </div>
             </div>
-        </div>
-    </div>
 
-    <!-- Progress bar -->
-    <div class="cwc-testimonials__carousel-progress">
-        <div class="cwc-testimonials__progress-bar"></div>
+            {% comment %}  {% endcomment %}
+            {% comment %}  {% endcomment %}
+            {% comment %}  {% endcomment %}
+            {% comment %}  {% endcomment %}
+            {% comment %}  {% endcomment %}
+          </div>
+        {% endfor %}
+      </div>
     </div>
+  </div>
 
-    <!-- Swiper controls -->
-    <div class="cwc-testimonials__carousel-controls">
-        <div class="swiper-button-prev cwc-testimonials__carousel-prev"></div>
-        <div class="swiper-button-next cwc-testimonials__carousel-next"></div>
-    </div>
+  <!-- Progress bar -->
+  <div class="cwc-testimonials__carousel-progress">
+    <div class="cwc-testimonials__progress-bar"></div>
+  </div>
 
+  <!-- Swiper controls -->
+  <div class="cwc-testimonials__carousel-controls">
+    <div class="swiper-button-prev cwc-testimonials__carousel-prev"></div>
+    <div class="swiper-button-next cwc-testimonials__carousel-next"></div>
+  </div>
 </section>
-
 
 {{ 'CWC_testimonials.js' | asset_url | script_tag }}
 
-
 {% schema %}
 {
-"name": "CWC Testimonials",
-"tag": "section",
-"settings": [
-{
-"type": "color",
-"id": "bg_color",
-"label": "Background color",
-"default": "#FAF9F6"
-},
-{
-"type": "color",
-"id": "text_color",
-"label": "Text color",
-"default": "#111111"
-},
-{
-"type": "color",
-"id": "card_bg",
-"label": "Card background color",
-"default": "#FFFFFF"
-},
-{
-"type": "color",
-"id": "highlight_color",
-"label": "Highlight color",
-"default": "#009370"
-}, {
-"type": "range",
-"id": "padding_top",
-"label": "Padding top",
-"min": 0,
-"max": 200,
-"step": 4,
-"unit": "px",
-"default": 60
-}, {
-"type": "range",
-"id": "padding_bottom",
-"label": "Padding bottom",
-"min": 0,
-"max": 200,
-"step": 4,
-"unit": "px",
-"default": 60
-}
-],
-"blocks": [
-{
-"type": "testimonial",
-"name": "Testimonial",
-"settings": [
-{
-"type": "range",
-"id": "rating",
-"label": "Star rating",
-"min": 1,
-"max": 5,
-"step": 1,
-"default": 5
-},
-{
-"type": "text",
-"id": "title",
-"label": "Headline",
-"default": "Amazing product!"
-},
-{
-"type": "textarea",
-"id": "text",
-"label": "Review text",
-"default": "This product completely exceeded my expectations..."
-},
-{
-"type": "text",
-"id": "author_name",
-"label": "Author name",
-"default": "Jane D."
-}, {
-"type": "image_picker",
-"id": "author_image",
-"label": "Author image"
-}, {
-"type": "text",
-"id": "feature_one",
-"label": "Tag / Feature #1",
-"default": "Eco-friendly"
-}, {
-"type": "text",
-"id": "feature_two",
-"label": "Tag / Feature #2",
-"default": "Durable"
-}
-]
-}
-],
-"presets": [
-{
-"name": "Testimonials",
-"category": "Custom",
-"blocks": [
-{
-"type": "testimonial"
-},
-{
-"type": "testimonial"
-},
-{
-"type": "testimonial"
-},
-{
-"type": "testimonial"
-},
-{
-"type": "testimonial"
-},
-{
-"type": "testimonial"
-},
-{
-"type": "testimonial"
-}
-]
-}
-]
+  "name": "CWC Testimonials",
+  "tag": "section",
+  "settings": [
+    {
+      "type": "color",
+      "id": "bg_color",
+      "label": "Background color",
+      "default": "#FAF9F6"
+    },
+    {
+      "type": "color",
+      "id": "text_color",
+      "label": "Text color",
+      "default": "#111111"
+    },
+    {
+      "type": "color",
+      "id": "card_bg",
+      "label": "Card background color",
+      "default": "#FFFFFF"
+    },
+    {
+      "type": "color",
+      "id": "highlight_color",
+      "label": "Highlight color",
+      "default": "#009370"
+    },
+    {
+      "type": "range",
+      "id": "padding_top",
+      "label": "Padding top",
+      "min": 0,
+      "max": 200,
+      "step": 4,
+      "unit": "px",
+      "default": 60
+    },
+    {
+      "type": "range",
+      "id": "padding_bottom",
+      "label": "Padding bottom",
+      "min": 0,
+      "max": 200,
+      "step": 4,
+      "unit": "px",
+      "default": 60
+    }
+  ],
+  "blocks": [
+    {
+      "type": "testimonial",
+      "name": "Testimonial",
+      "settings": [
+        {
+          "type": "text",
+          "id": "star_rating",
+          "label": "Star rating",
+          "default": "4.9"
+        },
+        {
+          "type": "text",
+          "id": "title",
+          "label": "Headline",
+          "default": "Amazing product!"
+        },
+        {
+          "type": "textarea",
+          "id": "text",
+          "label": "Review text",
+          "default": "This product completely exceeded my expectations..."
+        },
+        {
+          "type": "text",
+          "id": "author_name",
+          "label": "Author name",
+          "default": "Jane D."
+        },
+        {
+          "type": "image_picker",
+          "id": "author_image",
+          "label": "Author image"
+        },
+        {
+          "type": "text",
+          "id": "feature_one",
+          "label": "Tag / Feature #1",
+          "default": "Eco-friendly"
+        },
+        {
+          "type": "text",
+          "id": "feature_two",
+          "label": "Tag / Feature #2",
+          "default": "Durable"
+        }
+      ]
+    }
+  ],
+  "presets": [
+    {
+      "name": "Testimonials",
+      "category": "Custom",
+      "blocks": [
+        {
+          "type": "testimonial"
+        },
+        {
+          "type": "testimonial"
+        },
+        {
+          "type": "testimonial"
+        },
+        {
+          "type": "testimonial"
+        },
+        {
+          "type": "testimonial"
+        },
+        {
+          "type": "testimonial"
+        },
+        {
+          "type": "testimonial"
+        }
+      ]
+    }
+  ]
 }
 {% endschema %}
