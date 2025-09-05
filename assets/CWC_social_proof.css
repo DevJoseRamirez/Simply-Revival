@@ -20,6 +20,10 @@
 /* Stars */
 .cwc-social-proof__stars {
     margin-bottom: 1rem;
+    margin: 0 auto 0.740625rem;
+    max-width: 140px;
+    height: auto;
+    display: block;
 }
 
 .cwc-social-proof__stars svg {
@@ -36,12 +40,34 @@
     color: var(--text-color);
 }
 
+.cwc-social-proof__heading * {
+    font-weight: 600;
+    line-height: normal;
+
+}
+
+.cwc-social-proof__heading strong {
+    color: #009370;
+    /* color: #60a1a2; */
+}
+
+
 /* Subtext */
 .cwc-social-proof__text {
+    font-size: 1.115333333rem;
     font-size: 1rem;
     max-width: 700px;
     margin: 0 auto 2rem;
     color: var(--text-color);
+    text-align: center;
+    margin-bottom: 2.126666667rem;
+    font-weight: 400;
+    line-height: normal;
+}
+
+
+.cwc-social-proof__text>* {
+    margin-bottom: 0rem;
 }
 
 /* Carousel wrapper */
