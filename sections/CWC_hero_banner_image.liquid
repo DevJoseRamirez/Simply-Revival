@@ -58,7 +58,7 @@
           {% when 'review' %}
             {% if block.settings.text != blank %}
               <div class="hero-review" {{ block.shopify_attributes }}>
-                <div class="hero-starts">
+                <div class="hero-stars">
                   {% render 'CWC_trust_stars' %}
                 </div>
                 <div class="hero-text">
@@ -69,9 +69,9 @@
 
           {% when 'headline' %}
             {% if block.settings.text != blank %}
-              <h2 class="hero-headline" {{ block.shopify_attributes }}>
+              <div class="hero-headline" {{ block.shopify_attributes }}>
                 {{ block.settings.text }}
-              </h2>
+              </div>
             {% endif %}
 
           {% when 'subtext' %}

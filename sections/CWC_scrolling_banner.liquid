@@ -1,0 +1,189 @@
+{% style %}
+  #CWC_scrolling_banner-{{ section.id }} {
+    --section-bg: {{ section.settings.background_color }};
+    --text-color: {{ section.settings.text_color }};
+    --padding-top: {{ section.settings.padding_top }}px;
+    --padding-bottom: {{ section.settings.padding_bottom }}px;
+    --padding-top-mobile: {{ section.settings.padding_top | times: 0.5 }}px;
+    --padding-bottom-mobile: {{ section.settings.padding_bottom | times: 0.5 }}px;
+    --scroll-speed: {{ section.settings.scroll_speed }}s;
+  }
+{% endstyle %}
+
+{{ 'CWC_scrolling_banner.css' | asset_url | stylesheet_tag }}
+
+<section
+  id="CWC_scrolling_banner-{{ section.id }}"
+  class="CWC_scrolling_banner"
+>
+  <div class="CWC_scrolling_banner-wrapper">
+    <div class="CWC_scrolling_banner-track">
+      <div class="CWC_scrolling_banner-content">
+        {% for block in section.blocks %}
+          {% if block.type == 'item' %}
+            <div class="CWC_scrolling_banner-item" {{ block.shopify_attributes }}>
+              {% if block.settings.image != blank %}
+                <img
+                  src="{{ block.settings.image | image_url: width: 48 }}"
+                  alt="{{ block.settings.image.alt }}"
+                  width="{{ block.settings.image.width }}"
+                  height="{{ block.settings.image.height }}"
+                  class="CWC_scrolling_banner-icon"
+                >
+              {% endif %}
+              {% if block.settings.text != blank %}
+                <span class="CWC_scrolling_banner-text">{{ block.settings.text }}</span>
+              {% endif %}
+            </div>
+          {% endif %}
+        {% endfor %}
+        {% for block in section.blocks %}
+          {% if block.type == 'item' %}
+            <div class="CWC_scrolling_banner-item" {{ block.shopify_attributes }}>
+              {% if block.settings.image != blank %}
+                <img
+                  src="{{ block.settings.image | image_url: width: 48 }}"
+                  alt="{{ block.settings.image.alt }}"
+                  width="{{ block.settings.image.width }}"
+                  height="{{ block.settings.image.height }}"
+                  class="CWC_scrolling_banner-icon"
+                >
+              {% endif %}
+              {% if block.settings.text != blank %}
+                <span class="CWC_scrolling_banner-text">{{ block.settings.text }}</span>
+              {% endif %}
+            </div>
+          {% endif %}
+        {% endfor %}
+        {% for block in section.blocks %}
+          {% if block.type == 'item' %}
+            <div class="CWC_scrolling_banner-item" {{ block.shopify_attributes }}>
+              {% if block.settings.image != blank %}
+                <img
+                  src="{{ block.settings.image | image_url: width: 48 }}"
+                  alt="{{ block.settings.image.alt }}"
+                  width="{{ block.settings.image.width }}"
+                  height="{{ block.settings.image.height }}"
+                  class="CWC_scrolling_banner-icon"
+                >
+              {% endif %}
+              {% if block.settings.text != blank %}
+                <span class="CWC_scrolling_banner-text">{{ block.settings.text }}</span>
+              {% endif %}
+            </div>
+          {% endif %}
+        {% endfor %}
+      </div>
+    </div>
+  </div>
+</section>
+
+{% schema %}
+{
+  "name": "CWC Scrolling Banner",
+  "tag": "section",
+  "settings": [
+    {
+      "type": "color",
+      "id": "background_color",
+      "label": "Background Color",
+      "default": "#FAF9F6"
+    },
+    {
+      "type": "color",
+      "id": "text_color",
+      "label": "Text Color",
+      "default": "#125657"
+    },
+    {
+      "type": "range",
+      "id": "scroll_speed",
+      "label": "Scroll Speed",
+      "min": 10,
+      "max": 60,
+      "step": 5,
+      "unit": "s",
+      "default": 30,
+      "info": "Lower numbers = faster scrolling"
+    },
+    {
+      "type": "range",
+      "id": "padding_top",
+      "label": "Padding Top",
+      "min": 0,
+      "max": 100,
+      "step": 4,
+      "unit": "px",
+      "default": 4
+    },
+    {
+      "type": "range",
+      "id": "padding_bottom",
+      "label": "Padding Bottom",
+      "min": 0,
+      "max": 100,
+      "step": 4,
+      "unit": "px",
+      "default": 4
+    }
+  ],
+  "blocks": [
+    {
+      "type": "item",
+      "name": "Banner Item",
+      "limit": 8,
+      "settings": [
+        {
+          "type": "image_picker",
+          "id": "image",
+          "label": "Icon"
+        },
+        {
+          "type": "text",
+          "id": "text",
+          "label": "Text",
+          "default": "#1 Natural DHT Blocker"
+        }
+      ]
+    }
+  ],
+  "presets": [
+    {
+      "name": "Scrolling Banner",
+      "category": "Custom",
+      "blocks": [
+        {
+          "type": "item",
+          "settings": {
+            "text": "356 Day Guarantee"
+          }
+        },
+        {
+          "type": "item",
+          "settings": {
+            "text": " Tiktok Viral"
+          }
+        },
+        {
+          "type": "item",
+          "settings": {
+            "text": "#1 Natural DHT Blocker"
+          }
+        },
+        {
+          "type": "item",
+          "settings": {
+            "text": "Safe Formula"
+          }
+        },
+        {
+          "type": "item",
+          "settings": {
+            "text": "All Natural"
+          }
+        }
+      ]
+    }
+  ]
+}
+{% endschema %}

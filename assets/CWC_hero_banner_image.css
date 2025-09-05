@@ -4,18 +4,23 @@
     color: var(--text-color);
     padding-top: var(--padding-top);
     padding-bottom: var(--padding-bottom);
-    padding-left: 2rem;
-    padding-right: 2rem;
+    /* padding-left: 2rem; */
+    /* padding-right: 2rem; */
 }
 
 .CWC_hero_banner_image-wrapper {
     display: flex;
     align-items: center;
-    gap: 2rem;
+    /* gap: 2rem; */
     max-width: 1500px;
-    max-width: 1200px;
     margin: 0 auto;
     flex-direction: row;
+    padding: 0 3.125rem;
+
+    display: flex;
+    flex-wrap: wrap;
+    align-items: center;
+    justify-content: space-between;
 }
 
 .CWC_hero_banner_image-wrapper.reverse {
@@ -24,9 +29,6 @@
 
 /* === Image Column === */
 .CWC_hero_banner_image-image {
-    flex: 1 1 50%;
-
-
     flex: 1 1 45%;
     text-align: center;
 }
@@ -36,30 +38,36 @@
     height: auto;
     display: block;
     border-radius: 6px;
+
+    display: block;
+    border-radius: 6px;
+    height: auto;
+    max-width: 476px;
+    margin: 0 auto;
+    width: 100%;
 }
 
 /* === Content Column === */
 .CWC_hero_banner_image-content {
-    flex: 1 1 50%;
-    flex: 1 1 45%;
     text-align: center;
     display: flex;
     flex-direction: column;
-    gap: .5rem;
-
-
     flex: 1 1 36%;
     padding: 0;
     text-align: center;
 }
 
 .CWC_hero_banner_image-content .hero-review {
-    font-size: 0.95rem;
-    font-weight: 500;
+    color: #000;
+    font-size: 0.988125rem;
+    margin-bottom: 1.3325rem;
     display: flex;
-    gap: .5rem;
     align-items: center;
+    flex-wrap: wrap;
+    line-height: 1;
+    grid-gap: 0.65875rem;
     justify-content: center;
+
 }
 
 .CWC_hero_banner_image-content .hero-headline,
@@ -67,6 +75,18 @@
     font-size: 2.5rem;
     /* font-weight: 700; */
     line-height: 1.2;
+
+
+    /* more to rem units***************** */
+
+    font-weight: 400;
+    font-size: 2.499375rem;
+    line-height: 43.62px;
+    letter-spacing: 0%;
+    text-align: center;
+    margin-bottom: 18.18px;
+    color: #000;
+
 }
 
 .CWC_hero_banner_image-content .hero-subtext {
@@ -123,6 +143,27 @@
     font-size: 0.9rem;
     opacity: 0.8;
 }
+
+.hero-stars,
+.hero-text {
+    display: inline;
+}
+
+.hero-stars svg {
+    height: 17.2px;
+    width: auto;
+
+}
+
+.hero-text>p {
+    font-size: 0.988125rem;
+}
+
+.hero-text>strong {
+    font-weight: 600;
+}
+
+
 
 /* === Mobile Styles === */
 @media screen and (max-width: 767px) {
