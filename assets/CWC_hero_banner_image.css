@@ -6,6 +6,8 @@
     padding-bottom: var(--padding-bottom);
     /* padding-left: 2rem; */
     /* padding-right: 2rem; */
+    padding: 0 3.125rem;
+
 }
 
 .CWC_hero_banner_image-wrapper {
@@ -15,7 +17,6 @@
     max-width: 1500px;
     margin: 0 auto;
     flex-direction: row;
-    padding: 0 3.125rem;
 
     display: flex;
     flex-wrap: wrap;
@@ -25,6 +26,29 @@
 
 .CWC_hero_banner_image-wrapper.reverse {
     flex-direction: row-reverse;
+}
+
+/* === CTA Button === */
+.hero-button .cwc-reasons__btn {
+    display: inline-block;
+    padding: 1rem 2rem;
+    font-weight: 700;
+    font-size: 1rem;
+    border-radius: 6px;
+    text-decoration: none;
+    transition: all 0.3s ease-in-out;
+    text-align: center;
+    text-transform: uppercase;
+    border: 2px solid transparent;
+
+    padding: 1.02875rem;
+    line-height: 1.211875rem;
+}
+
+.hero-button .cwc-reasons__btn:hover {
+    background-color: transparent !important;
+    /* border-color: currentColor !important; */
+    /* color: inherit !important; */
 }
 
 /* === Image Column === */
@@ -70,23 +94,19 @@
 
 }
 
+.CWC_hero_banner_image-content .hero-headline {
+    margin-bottom: 1.13625rem;
+}
+
 .CWC_hero_banner_image-content .hero-headline,
 .CWC_hero_banner_image-content .hero-headline * {
     font-size: 2.5rem;
     /* font-weight: 700; */
     line-height: 1.2;
-
-
-    /* more to rem units***************** */
-
-    font-weight: 400;
     font-size: 2.499375rem;
-    line-height: 43.62px;
+    line-height: 2.72625rem;
     letter-spacing: 0%;
     text-align: center;
-    margin-bottom: 18.18px;
-    color: #000;
-
 }
 
 .CWC_hero_banner_image-content .hero-subtext {
@@ -94,55 +114,64 @@
     line-height: 1.5;
 }
 
-.CWC_hero_banner_image-content .hero-bullets {
-    display: flex;
-    flex-wrap: wrap;
-    gap: 1rem;
-}
 
-.CWC_hero_banner_image-content .hero-bullet {
+.CWC_hero_banner_image-content .hero-bullets {
     display: flex;
     align-items: center;
     gap: 0.5rem;
-    flex: 1 1 30%;
-    min-width: 140px;
+    /* min-width: 140px; */
+    justify-content: space-evenly;
+    margin-bottom: 1.13625rem;
+
+
+
 }
 
-.CWC_hero_banner_image-content .hero-bullet img {
-    width: 20px;
-    height: 20px;
-    object-fit: contain;
+.hero-bullets .bullet {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-direction: column;
+    gap: 0rem;
+    flex: 1;
+    /* margin-bottom: 1.13625rem; */
+    gap: 0.5rem;
+    flex-direction: row;
+    /* justify-content: flex-start; */
+    margin-bottom: 6px;
+
 }
 
-.CWC_hero_banner_image-content .hero-bullet span {
+.hero-bullets .bullet-icon {
+    margin-bottom: 2px;
+}
+
+.hero-bullets .bullet-icon svg {
+    width: 22px;
+    height: auto;
+}
+
+.hero-bullets .bullet-text {
     font-size: 0.95rem;
-}
-
-/* === CTA Button === */
-.CWC_hero_banner_image-content .hero-button {
-    display: inline-block;
-    padding: 1rem 2rem;
-    font-weight: 700;
     font-size: 1rem;
-    border-radius: 6px;
-    text-decoration: none;
-    transition: all 0.3s ease-in-out;
-    text-align: center;
-    text-transform: uppercase;
-    border: 2px solid transparent;
+    line-height: 1;
+    line-height: normal;
 }
 
-.CWC_hero_banner_image-content .hero-button:hover {
-    background-color: transparent !important;
-    border-color: currentColor !important;
-    color: inherit !important;
-}
 
 /* === Note Text === */
 .CWC_hero_banner_image-content .hero-note {
-    font-size: 0.9rem;
-    opacity: 0.8;
+    font-size: .9rem;
+    display: flex;
+    gap: .5rem;
+    width: 100%;
+    text-align: center;
+    align-items: center;
+    justify-content: center;
+    margin: 9.61px 0 0;
 }
+
+.CWC_hero_banner_image-content .hero-note svg {}
 
 .hero-stars,
 .hero-text {
@@ -151,6 +180,7 @@
 
 .hero-stars svg {
     height: 17.2px;
+    height: 16.2px;
     width: auto;
 
 }
@@ -159,8 +189,8 @@
     font-size: 0.988125rem;
 }
 
-.hero-text>strong {
-    font-weight: 600;
+.hero-text strong {
+    font-weight: 500;
 }
 
 

@@ -82,78 +82,53 @@
             {% endif %}
 
           {% when 'bullets' %}
-            <h1>{{ block.settings.text_2 }}</h1>
             <div class="hero-bullets" {{ block.shopify_attributes }}>
-              {% if block.settings.text_1 != blank %}
-                <div class="bullet">
-                  {% if block.settings.icon_1 -%}
-                    <img
-                      class="bullet-icon"
+              <div class="hero-bullets-wrapper">
+                {% if block.settings.text_1 != blank %}
+                  <div class="bullet">
+                    {% if block.settings.text_1 != blank %}
+                      <span class="bullet-icon"> {% render 'CWC_icon-check', stroke: '#125657' %}</span>
 
-                      src="{{ block.settings.icon_1 | image_url }}"
-                      alt="{{ block.settings.icon_1.alt }}"
-                      width="{{ block.settings.icon_1.width }}"
-                      height="{{ block.settings.icon_1.height }}"
-                    >
-                  {%- endif %}
-                  {% if block.settings.text_1 != blank %}
-                    <div class="bullet-text">{{ block.settings.text_1 }}</div>
-                  {% endif %}
-                </div>
-              {% endif %}
+                      <div class="bullet-text">{{ block.settings.text_1 }}</div>
+                    {% endif %}
+                  </div>
+                {% endif %}
 
-              {% if block.settings.text_2 != blank %}
-                <div class="bullet">
-                  {% if block.settings.icon_2 -%}
-                    <img
-                      class="bullet-icon"
+                {% if block.settings.text_2 != blank %}
+                  <div class="bullet">
+                    {% if block.settings.text_2 != blank %}
+                      <span class="bullet-icon"> {% render 'CWC_icon-check', stroke: '#125657' %}</span>
 
-                      src="{{ block.settings.icon_2 | image_url }}"
-                      alt="{{ block.settings.icon_2.alt }}"
-                      width="{{ block.settings.icon_2.width }}"
-                      height="{{ block.settings.icon_2.height }}"
-                    >
-                  {%- endif %}
-                  {% if block.settings.text_2 != blank %}
-                    <div class="bullet-text">{{ block.settings.text_2 }}</div>
-                  {% endif %}
-                </div>
-              {% endif %}
+                      <div class="bullet-text">{{ block.settings.text_2 }}</div>
+                    {% endif %}
+                  </div>
+                {% endif %}
 
-              {% if block.settings.text_3 != blank %}
-                <div class="bullet">
-                  {% if block.settings.icon_3 -%}
-                    <img
-                      class="bullet-icon"
-                      src="{{ block.settings.icon_3 | image_url }}"
-                      alt="{{ block.settings.icon_3.alt }}"
-                      width="{{ block.settings.icon_3.width }}"
-                      height="{{ block.settings.icon_3.height }}"
-                    >
-                  {%- endif %}
-                  {% if block.settings.text_3 != blank %}
-                    <div class="bullet-text">{{ block.settings.text_3 }}</div>
-                  {% endif %}
-                </div>
-              {% endif %}
+                {% if block.settings.text_3 != blank %}
+                  <div class="bullet">
+                    {% if block.settings.text_3 != blank %}
+                      <span class="bullet-icon"> {% render 'CWC_icon-check', stroke: '#125657' %}</span>
+                      <div class="bullet-text">{{ block.settings.text_3 }}</div>
+                    {% endif %}
+                  </div>
+                {% endif %}
+              </div>
             </div>
 
           {% when 'button' %}
             {% if block.settings.text != blank %}
-              <a
-                href="{{ block.settings.link }}"
+              <div
                 class="hero-button"
                 {{ block.shopify_attributes }}
-                style="background-color: {{ block.settings.button_color }}; color: {{ block.settings.button_text_color }}"
               >
-                {{ block.settings.text }}
-              </a>
+                {% render 'CWC_button',  section_id; section.id, block: block %}
+              </div>
             {% endif %}
 
           {% when 'note' %}
             {% if block.settings.text != blank %}
               <div class="hero-note" {{ block.shopify_attributes }}>
-                {{ block.settings.text }}
+                {% render 'CWC_guarantee_text', product: product, section: section, block: block %}
               </div>
             {% endif %}
         {% endcase %}
@@ -171,13 +146,13 @@
       "type": "color",
       "id": "background_color",
       "label": "Background Color",
-      "default": "#ffffff"
+      "default": "#D0F0F2"
     },
     {
       "type": "color",
       "id": "text_color",
       "label": "Text Color",
-      "default": "#202020"
+      "default": "#222222"
     },
     {
       "type": "image_picker",
@@ -264,37 +239,25 @@
     },
     {
       "type": "bullets",
-      "name": "Bullet Points (3)",
+      "name": "Bullet Points",
       "settings": [
-        {
-          "type": "image_picker",
-          "id": "icon_1",
-          "label": "Bullet 1 Image"
-        },
         {
           "type": "text",
           "id": "text_1",
-          "label": "Bullet 1 Text"
-        },
-        {
-          "type": "image_picker",
-          "id": "icon_2",
-          "label": "Bullet 2 Image"
+          "label": "Bullet 1 Text",
+          "default": "Results within 30 days or less"
         },
         {
           "type": "text",
           "id": "text_2",
-          "label": "Bullet 2 Text"
-        },
-        {
-          "type": "image_picker",
-          "id": "icon_3",
-          "label": "Bullet 3 Image"
+          "label": "Bullet 2 Text",
+          "default": "No Side Effects or Money Back"
         },
         {
           "type": "text",
           "id": "text_3",
-          "label": "Bullet 3 Text"
+          "label": "Bullet 3 Text",
+          "default": "Ultra-Potent herbal formula without fillers"
         }
       ]
     },
@@ -315,7 +278,7 @@
         },
         {
           "type": "color",
-          "id": "button_color",
+          "id": "button_bg_color",
           "label": "Button Background Color",
           "default": "#125657"
         },
@@ -336,6 +299,11 @@
           "id": "text",
           "label": "Note Content",
           "default": "<p>365-day money back guarantee</p>"
+        },
+        {
+          "type": "image_picker",
+          "id": "icon",
+          "label": "Icon"
         }
       ]
     }
@@ -348,6 +316,7 @@
         { "type": "review" },
         { "type": "headline" },
         { "type": "subtext" },
+        { "type": "bullets" },
         { "type": "button" },
         { "type": "note" }
       ]

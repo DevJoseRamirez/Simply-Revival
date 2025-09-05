@@ -245,7 +245,7 @@
                 {{ block.shopify_attributes }}
               >
                 <span class="cwc-comparison__bullet-icon">
-                  {% render 'CWC_icon-check', fill: block.settings.text_color -%}
+                  {% render 'CWC_icon-check_fill', fill: block.settings.text_color -%}
                 </span>
                 <span style="color: {{ block.settings.text_color }};" class="cwc-comparison__bullet-text">
                   {{ block.settings.text }}
@@ -269,11 +269,9 @@
                       style="color: {{ block.settings.button_bg_color }}"
                     >
 
-                      {% render 'CWC_icon-shield', fill: '#353535' %}
+                      {% render 'CWC_icon-shield', fill: block.settings.button_bg_color %}
                       {{ block.settings.button_note }}
                     </div>
-
-
 
 
                   {% endif %}
