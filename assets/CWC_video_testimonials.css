@@ -34,7 +34,7 @@
 .cwc-video-testimonials__heading>* {
     font-weight: 600;
     line-height: 1;
-    font-weight: 500;
+    font-weight: 600;
     font-size: 31px;
     line-height: 100%;
     letter-spacing: 0;
@@ -45,6 +45,8 @@
     color: #009370;
     /* color: #60a1a2; */
     color: var(--accent-color);
+    font-weight: 600;
+
 }
 
 

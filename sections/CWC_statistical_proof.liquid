@@ -14,21 +14,16 @@
 
 <section id="CWC_statistical_proof-{{ section.id }}" class="cwc-statistical-proof">
   <div class="cwc-statistical-proof__wrapper">
-
     {% for block in section.blocks %}
       {% case block.type %}
         {% when 'heading' %}
-          <div class="cwc-statistical-proof__heading">
+          <div class="cwc-statistical-proof__heading" {{ block.shopify_attributes }}>
             {% render 'CWC_heading', section_id: section.id, block: block %}
-
-            {{ section.settings.heading }}
           </div>
 
         {% when 'text' %}
-          <div class="cwc-statistical-proof__text">
-            {{ section.settings.text }}
+          <div class="cwc-statistical-proof__text" {{ block.shopify_attributes }}>
             {% render 'CWC_text', section_id: section.id, block: block %}
-
           </div>
       {% endcase %}
     {% endfor %}
@@ -84,18 +79,6 @@
   "class": "cwc-statistical-proof",
   "settings": [
     {
-      "type": "richtext",
-      "id": "heading",
-      "label": "Heading",
-      "default": "<h2>Simply Revival® Works - The Numbers Prove it</h2>"
-    },
-    {
-      "type": "richtext",
-      "id": "text",
-      "label": "Text",
-      "default": "<p>When clean, plant-based ingredients meet clinical potency, the results speak for themselves.</p>"
-    },
-    {
       "type": "color",
       "id": "bg_color",
       "label": "Section background color",
@@ -140,6 +123,48 @@
   ],
   "blocks": [
     {
+      "type": "heading",
+      "name": "Heading",
+      "settings": [
+        {
+          "type": "richtext",
+          "id": "heading",
+          "label": "Heading",
+          "default": "<h3>Simply Revival® Works - The Numbers Prove it</h3>"
+        },
+        {
+          "type": "color",
+          "id": "text_color",
+          "label": "Text Color",
+          "default": "#202020"
+        },
+        {
+          "type": "color",
+          "id": "bold_color",
+          "label": "Bold Text Color",
+          "default": "#60a1a2"
+        }
+      ]
+    },
+    {
+      "type": "text",
+      "name": "Text",
+      "settings": [
+        {
+          "type": "richtext",
+          "id": "text",
+          "label": "Text",
+          "default": "<p>When clean, plant-based ingredients meet clinical potency, the results speak for themselves.</p>"
+        },
+        {
+          "type": "color",
+          "id": "text_color",
+          "label": "Text Color",
+          "default": "#202020"
+        }
+      ]
+    },
+    {
       "type": "stat",
       "name": "Statistic",
       "settings": [
@@ -164,12 +189,19 @@
       ]
     }
   ],
-  "max_blocks": 4,
+  "max_blocks": 6,
   "presets": [
     {
       "name": "Statistical Proof",
       "category": "Custom",
-      "blocks": [{ "type": "stat" }, { "type": "stat" }, { "type": "stat" }, { "type": "stat" }]
+      "blocks": [
+        { "type": "heading" },
+        { "type": "text" },
+        { "type": "stat" },
+        { "type": "stat" },
+        { "type": "stat" },
+        { "type": "stat" }
+      ]
     }
   ]
 }

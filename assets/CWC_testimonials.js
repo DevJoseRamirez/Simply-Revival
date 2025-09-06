@@ -1,7 +1,7 @@
 document.addEventListener("DOMContentLoaded", function () {
   const swiper = new Swiper(".cwc-testimonials__carousel", {
     slidesPerView: 3,
-    spaceBetween: 10,
+    spaceBetween: 16,
     loop: true,
     speed: 400,
     navigation: {

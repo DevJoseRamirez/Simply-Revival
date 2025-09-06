@@ -43,6 +43,8 @@
 
 .cwc-reasons__heading>* {
     line-height: normal;
+    font-weight: 700;
+    font-weight: 600;
 }
 
 .cwc-reasons__text {

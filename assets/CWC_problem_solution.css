@@ -113,10 +113,16 @@
     font-size: 1rem;
     line-height: 1.4;
     gap: 0.9375rem;
+
+    display: flex;
+    align-items: center;
+    grid-gap: 15px;
+    margin-bottom: 1.25rem;
 }
 
 .cwc-problem-solution__table li img {
     max-width: 32px;
+    max-width: 31px;
     height: auto;
     /* margin-right: .95rem; */
     object-fit: contain;

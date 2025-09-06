@@ -15,14 +15,9 @@
 <section id="CWC_testimonials-{{ section.id }}" class="cwc-testimonials">
   <div class="cwc-testimonials__wrapper">
     <div class="swiper cwc-testimonials__carousel">
-      <div class="swiper-wrapper">
+      <div class="swiper-wrapper cwc-testimonials__carousel_swiper-wrapper">
         {% for block in section.blocks %}
-          <div class="swiper-slide">
-            {% comment %}  {% endcomment %}
-            {% comment %}  {% endcomment %}
-            {% comment %}  {% endcomment %}
-            {% comment %}  {% endcomment %}
-            {% comment %}  {% endcomment %}
+          <div class="swiper-slide cwc-testimonials__carousel_swiper-slide">
             <div class="cwc-testimonial-card" {{ block.shopify_attributes }}>
               <div class="cwc-testimonials__testimonial-top">
                 <div class="cwc-testimonial-rating">
@@ -70,9 +65,6 @@
                     </span>
                     <span class="cwc-testimonials__testimonial-author-verified-text"> Verified Customer </span>
                   </div>
-
-
-                  
                 </div>
 
                 <div class="cwc-testimonials__testimonial-tags">
@@ -85,12 +77,6 @@
                 </div>
               </div>
             </div>
-
-            {% comment %}  {% endcomment %}
-            {% comment %}  {% endcomment %}
-            {% comment %}  {% endcomment %}
-            {% comment %}  {% endcomment %}
-            {% comment %}  {% endcomment %}
           </div>
         {% endfor %}
       </div>

@@ -1,0 +1,11 @@
+{% style %}
+  .cwc-statistical-proof__text,
+  .cwc-statistical-proof__text > * {
+      color: {{ block.settings.text_color }};
+    }
+    .cwc-statistical-proof__text strong {
+      color:{{ block.settings.bold_color }};
+  text-align: center;
+  }
+{% endstyle %}
+{{ block.settings.text }}

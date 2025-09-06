@@ -176,6 +176,7 @@
 .hero-stars,
 .hero-text {
     display: inline;
+    line-height: 1;
 }
 
 .hero-stars svg {
@@ -193,34 +194,109 @@
     font-weight: 500;
 }
 
+@media screen and (max-width: 991px) {
 
+    .CWC_hero_banner_image-wrapper {
+        flex-direction: column-reverse;
+    }
+
+    .CWC_hero_banner_image-content {
+        padding-top: 1.46875rem;
+    }
+
+    .CWC_hero_banner_image-content .hero-review {
+        font-size: 13.04px;
+        margin-bottom: 17.05px;
+        line-height: 19.57px;
+        grid-gap: 8.7px;
+    }
+
+    .hero-stars svg {
+        max-width: 74px;
+    }
+
+    .hero-text>p {
+        font-size: 0.815rem;
+    }
+
+    .CWC_hero_banner_image-content .hero-headline {
+        margin-bottom: 15px;
+
+    }
+
+    .CWC_hero_banner_image-content .hero-headline,
+    .CWC_hero_banner_image-content .hero-headline * {
+        font-size: 33px;
+        line-height: 36px;
+        max-width: 330px;
+        margin-left: auto;
+        margin-right: auto;
+    }
+
+    /* bullets */
+    .hero-bullets .bullet {
+        margin-bottom: 2px;
+    }
+
+    .CWC_hero_banner_image-content .hero-bullets {
+        margin: 0 auto 15px;
+    }
+
+    .hero-bullets .bullet-text {
+        font-size: .9rem;
+    }
+
+    .hero-bullets .bullet-icon svg {
+        width: 20px;
+    }
+
+    /* button */
+    .hero-button .cwc-reasons__btn {
+        max-width: 277px;
+        border-radius: 5px;
+        font-size: .86rem;
+        margin-bottom: 8px;
+        padding: 0.85rem;
+        line-height: 1;
+    }
+
+    .hero-note .cwc-featured-product__guarantee_text-content>*,
+    .hero-note .cwc-featured-product__guarantee_text-content {
+        font-size: 0.875rem;
+    }
+
+    .CWC_hero_banner_image-content .hero-note {
+        margin: 0rem;
+    }
+
+}
 
 /* === Mobile Styles === */
 @media screen and (max-width: 767px) {
     .CWC_hero_banner_image {
-        padding-top: var(--padding-top-mobile);
-        padding-bottom: var(--padding-bottom-mobile);
-        padding-left: 1rem;
-        padding-right: 1rem;
+        /* padding-top: var(--padding-top-mobile); */
+        /* padding-bottom: var(--padding-bottom-mobile); */
+        /* padding-left: 1rem; */
+        /* padding-right: 1rem; */
     }
 
     .CWC_hero_banner_image-wrapper,
     .CWC_hero_banner_image-wrapper.reverse {
-        flex-direction: column-reverse;
-        gap: 1.5rem;
+        /* flex-direction: column-reverse; */
+        /* gap: 1.5rem; */
     }
 
     .CWC_hero_banner_image-content {
-        align-items: center;
-        text-align: center;
+        /* align-items: center; */
+        /* text-align: center; */
     }
 
     .CWC_hero_banner_image-content .hero-headline {
-        font-size: 1.6rem;
+        /* font-size: 1.6rem; */
     }
 
     .CWC_hero_banner_image-content .hero-subtext {
-        font-size: 1rem;
+        /* font-size: 1rem; */
     }
 
     .CWC_hero_banner_image-content .hero-bullets {

@@ -1,35 +1,40 @@
-    {% style %}
-#CWC_usp_columns-{{ section.id }} {
-  --section-bg: {{ section.settings.background_color }};
-  --text-color: {{ section.settings.text_color }};
-  --padding-top: {{ section.settings.padding_top }}px;
-  --padding-bottom: {{ section.settings.padding_bottom }}px;
-  --padding-top-mobile: {{ section.settings.padding_top | times: 0.5 }}px;
-  --padding-bottom-mobile: {{ section.settings.padding_bottom | times: 0.5 }}px;
-}
+{% style %}
+  #CWC_usp_columns-{{ section.id }} {
+    --section-bg: {{ section.settings.background_color }};
+    --text-color: {{ section.settings.text_color }};
+    --padding-top: {{ section.settings.padding_top }}px;
+    --padding-bottom: {{ section.settings.padding_bottom }}px;
+    --padding-top-mobile: {{ section.settings.padding_top | times: 0.5 }}px;
+    --padding-bottom-mobile: {{ section.settings.padding_bottom | times: 0.5 }}px;
+  }
 {% endstyle %}
 
 {{ 'CWC_usp_columns.css' | asset_url | stylesheet_tag }}
 
-<section id="CWC_usp_columns-{{ section.id }}" class="CWC_usp_columns CWC_usp_columns-{{ section.id }}">
-  <div class="CWC_usp_columns-wrapper">
-    {% for block in section.blocks %}
-      {% if block.type == 'usp' %}
-        <div class="usp-item" {{ block.shopify_attributes }}>
-          {% if block.settings.icon != blank %}
-            <span class="usp-icon">
-              <img src="{{ block.settings.icon | image_url }}" alt="{{ block.settings.text | strip_html | escape }}" loading="lazy">
-            </span>
-          {% endif %}
-          {% if block.settings.text != blank %}
-            <span class="usp-text">{{ block.settings.text }}</span>
-          {% endif %}
-        </div>
-      {% endif %}
-    {% endfor %}
+<section id="CWC_usp_columns-{{ section.id }}" class="cwc_usp_columns cwc_usp_columns-{{ section.id }}">
+  <div class="cwc_usp_columns-wrapper">
+    <div class="cwc_usp_columns-container">
+      {% for block in section.blocks %}
+        {% if block.type == 'usp' %}
+          <div class="usp-item" {{ block.shopify_attributes }}>
+            {% if block.settings.icon != blank %}
+              <span class="usp-icon">
+                <img
+                  src="{{ block.settings.icon | image_url }}"
+                  alt="{{ block.settings.text | strip_html | escape }}"
+                  loading="lazy"
+                >
+              </span>
+            {% endif %}
+            {% if block.settings.text != blank %}
+              <span class="usp-text">{{ block.settings.text }}</span>
+            {% endif %}
+          </div>
+        {% endif %}
+      {% endfor %}
+    </div>
   </div>
 </section>
-
 
 {% schema %}
 {

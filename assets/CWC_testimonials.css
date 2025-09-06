@@ -94,7 +94,7 @@
     letter-spacing: 0;
     text-align: left;
     margin-bottom: 20px;
-
+    font-size: 1.125rem;
 }
 
 .cwc-testimonials__testimonial-text {
@@ -114,6 +114,7 @@
 
     max-width: 400px;
     display: flex;
+    font-size: 0.875rem;
 }
 
 
@@ -254,18 +255,13 @@
     border: 1px solid #eee;
     margin: 0rem;
 
-
-
-
-
-
     background: #fff;
     border-radius: 8px;
     padding: 27px 25px;
     flex: 0 0 400px;
     scroll-snap-align: start;
     border: 1px solid rgba(0, 0, 0, .3);
-    margin: 1px 4px;
+    /* margin: 1px 4px; */
 }
 
 
