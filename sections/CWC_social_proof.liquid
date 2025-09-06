@@ -27,7 +27,12 @@
     {% endif %}
 
     {% if section.settings.heading != blank %}
-      <div class="cwc-social-proof__heading">{{ section.settings.heading }}</div>
+      <div
+        class="cwc-social-proof__heading"
+        style="--accent-color: {{ section.settings.bold_color }};"
+      >
+        {{ section.settings.heading }}
+      </div>
     {% endif %}
 
     {% if section.settings.text != blank %}
@@ -84,6 +89,12 @@
       "id": "heading",
       "label": "Heading",
       "default": "<p>Real Stories, Real Results</p>"
+    },
+    {
+      "type": "color",
+      "id": "bold_color",
+      "label": "Bold Text Color",
+      "default": "#125657"
     },
     {
       "type": "richtext",

@@ -49,6 +49,8 @@
 .cwc-social-proof__heading strong {
     color: #009370;
     /* color: #60a1a2; */
+    color: var(--accent-color);
+
 }
 
 

@@ -6,6 +6,7 @@
   --button-text: {{ section.settings.button_text | default: '#ffffff' }};
   --padding-top: {{ section.settings.padding_top | default: 60 }}px;
   --padding-bottom: {{ section.settings.padding_bottom | default: 60 }}px;
+  --accent-color: {{ section.settings.bold_color }};
   }
 {% endstyle %}
 
@@ -15,7 +16,11 @@
 <section id="CWC_video_testimonials-{{ section.id }}" class="cwc-video-testimonials">
   <div class="cwc-video-testimonials__wrapper">
     {% if section.settings.heading != blank %}
-      <h2 class="cwc-video-testimonials__heading">{{ section.settings.heading }}</h2>
+      <div
+        class="cwc-video-testimonials__heading"
+      >
+        {{ section.settings.heading }}
+      </div>
     {% endif %}
 
     {% if section.settings.text != blank %}
@@ -94,7 +99,13 @@
 
                 <div class="cwc-video-testimonials__video-author" {{ block.shopify_attributes }}>
                   <span class="cwc-video-testimonials__author-name">{{ block.settings.author_name }}</span>
-                  <span class="cwc-video-testimonials__verified">✔ Verified Customer</span>
+
+                  <div class="cwc-video-testimonials__verified">
+                    <span class="cwc-video-testimonials__verified-icon">
+                      {%- render 'CWC_icon-check_badge', fill: '#009370' -%}
+                    </span>
+                    <span class="cwc-video-testimonials__verified-text"> Verified Customer </span>
+                  </div>
                 </div>
               </div>
             </div>
@@ -113,16 +124,19 @@
       <div class="swiper-button-next cwc-video-testimonials__carousel-next"></div>
     </div>
 
-    {% if section.settings.button_label != blank %}
-      <div class="cwc-video-testimonials__cta">
-        <a href="{{ section.settings.button_link }}" class="cwc-video-testimonials__btn">
-          {{ section.settings.button_label }}
-        </a>
-        {% if section.settings.button_note != blank %}
-          <div class="cwc-video-testimonials__note">{{ section.settings.button_note }}</div>
-        {% endif %}
-      </div>
-    {% endif %}
+    {% for block in section.blocks %}
+      {% case block.type %}
+        {% when 'button' %}
+          <div class="cwc-video-testimonials__cta" {{ block.shopify_attributes }}>
+            {% render 'CWC_button', product: product, section_id: section.id, block: block %}
+          </div>
+
+        {% when 'guarantee_text' %}
+          <div class="cwc-video-testimonials__note" {{ block.shopify_attributes }}>
+            {% render 'CWC_guarantee_text', product: product, section_id: section.id, block: block %}
+          </div>
+      {% endcase %}
+    {% endfor %}
   </div>
 </section>
 
@@ -133,10 +147,16 @@
   "name": "CWC Video Testimonials",
   "settings": [
     {
-      "type": "text",
+      "type": "richtext",
       "id": "heading",
       "label": "Heading",
-      "default": "What Our Customers Say"
+      "default": "<h3>Real People, <strong>Real Results</strong></h3>"
+    },
+    {
+      "type": "color",
+      "id": "bold_color",
+      "label": "Bold Text Color",
+      "default": "#125657"
     },
     {
       "type": "richtext",
@@ -233,6 +253,52 @@
           "default": "Customer Name"
         }
       ]
+    },
+    {
+      "type": "button",
+      "name": "Button",
+      "settings": [
+        {
+          "type": "text",
+          "id": "text",
+          "label": "Button Text",
+          "default": "Try Risk-Free Today"
+        },
+        {
+          "type": "url",
+          "id": "link",
+          "label": "Button Link"
+        },
+        {
+          "type": "color",
+          "id": "button_bg_color",
+          "label": "Button Background Color",
+          "default": "#125657"
+        },
+        {
+          "type": "color",
+          "id": "button_text_color",
+          "label": "Button Text Color",
+          "default": "#ffffff"
+        }
+      ]
+    },
+    {
+      "type": "guarantee_text",
+      "name": "Guarantee Text",
+      "settings": [
+        {
+          "type": "text",
+          "id": "text",
+          "label": "Text",
+          "default": "365-day money back guarantee"
+        },
+        {
+          "type": "image_picker",
+          "id": "icon",
+          "label": "Icon"
+        }
+      ]
     }
   ],
   "max_blocks": 8,
@@ -247,7 +313,9 @@
         { "type": "testimonial" },
         { "type": "testimonial" },
         { "type": "testimonial" },
-        { "type": "testimonial" }
+        { "type": "testimonial" },
+        { "type": "button" },
+        { "type": "guarantee_text" }
       ]
     }
   ]

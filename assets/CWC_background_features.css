@@ -1,31 +1,25 @@
 .cwc-background-features {
-
     padding-top: var(--section-padding-top);
     padding-bottom: var(--section-padding-bottom);
     color: var(--section-text-color);
-    /* padding-left: 2rem; */
-    /* padding-right: 2rem; */
 }
 
 .cwc-background-features__wrapper {
     max-width: 1500px;
     margin: 0 auto;
     padding: 0 1rem;
-
     border-radius: 10px;
-    padding: 39px 20px 33px;
     padding: 1.5rem 1.2rem;
     margin: 0 auto;
     padding: 0 3rem;
-
-
-
     max-width: 1500px;
     padding: 0 3.125rem;
 
-
-    padding-left: 50px;
-    padding-right: 50px;
+    /* converted from pixels to rem */
+    padding-left: 3.125rem;
+    /* 50px ÷ 16 = 3.125rem */
+    padding-right: 3.125rem;
+    /* 50px ÷ 16 = 3.125rem */
     margin-left: auto;
     margin-right: auto;
 }
@@ -36,23 +30,17 @@
     background-size: cover;
     background-position: center;
 
-    /* background-color: #0f5a47; */
-    padding: 39px 20px 33px;
-    color: #fff;
-    text-align: center;
-    border-radius: 10px;
-    margin-bottom: 41px;
-
+    /* converted from pixels to rem */
     background-color: #0f5a47;
-    padding: 39px 20px 33px;
+    padding: 2.4375rem 1.25rem 2.0625rem;
+    /* 39px 20px 33px */
     color: #fff;
     text-align: center;
-    border-radius: 10px;
-    margin-bottom: 41px;
+    border-radius: 0.625rem;
+    /* 10px ÷ 16 = 0.625rem */
+    margin-bottom: 2.5625rem;
+    /* 41px ÷ 16 = 2.5625rem */
 }
-
-
-
 
 .cwc-background-features__headline {
     text-align: center;
@@ -61,12 +49,14 @@
     margin-bottom: 1.5rem;
     color: var(--section-text-color);
 
-
-    font-size: 26px;
+    /* converted from pixels to rem */
+    font-size: 1.625rem;
+    /* 26px ÷ 16 = 1.625rem */
     line-height: 100%;
     letter-spacing: 0%;
     text-align: center;
-    margin-bottom: 27px;
+    margin-bottom: 1.6875rem;
+    /* 27px ÷ 16 = 1.6875rem */
 }
 
 .cwc-background-features__checkmarks {
@@ -82,17 +72,19 @@
     align-items: center;
     gap: 0.5rem;
 
-
-
-
+    /* converted from pixels to rem */
     font-weight: 300;
-    font-size: 16.57px;
-    line-height: 24.85px;
+    font-size: 1.03563rem;
+    /* 16.57px ÷ 16 = 1.03563rem */
+    line-height: 1.55313rem;
+    /* 24.85px ÷ 16 = 1.55313rem */
     letter-spacing: 0%;
     text-align: center;
     display: flex;
     align-items: center;
+    gap: 0.25rem;
     gap: 4px;
+    /* 4px ÷ 16 = 0.25rem */
 }
 
 .cwc-background-features__checkmarks .checkmark-icon {
@@ -109,29 +101,21 @@
     display: grid;
     grid-template-columns: repeat(auto-fit, minmax(180px, 1fr));
     gap: 1.5rem;
-
-
     display: flex;
     flex-wrap: wrap;
     justify-content: center;
-    gap: 33px;
+    gap: 2.0625rem;
+    /* 33px ÷ 16 = 2.0625rem */
 }
 
 .cwc-background-features__icons .icon-block {
-    border: 2px solid var(--section-text-color);
-    border-radius: 8px;
-    padding: 1.5rem;
-    text-align: center;
     height: auto;
-
-
-
     border: 1.2px solid #fff;
-    padding: .5rem .4rem;
+    padding: 11px 5px 9px;
     border-radius: 6.11px;
     width: 75px;
-    width: 100px;
     text-align: center;
+    box-sizing: border-box;
 
 }
 
@@ -145,19 +129,30 @@
     font-size: 0.95rem;
     margin: 0;
 
-
-
+    /* converted from pixels to rem */
     font-weight: 400;
-    font-size: 11.06px;
-    line-height: 14.67px;
+    font-size: 0.69125rem;
+    /* 11.06px ÷ 16 = 0.69125rem */
+    line-height: 0.91688rem;
+    /* 14.67px ÷ 16 = 0.91688rem */
     letter-spacing: 0;
     text-align: center;
     text-transform: uppercase;
-    margin: 10px 0 0;
+    margin: 0.625rem 0 0;
+    /* 10px ÷ 16 = 0.625rem */
     display: flex;
     flex-direction: column;
     justify-content: center;
-    min-height: 44px;
+    min-height: 2.75rem;
+    /* 44px ÷ 16 = 2.75rem */
+    font-size: 0.73rem;
+
+}
+
+.icon-block svg {
+    margin: 0 auto;
+    height: 40px;
+    width: auto;
 }
 
 @media (max-width: 767px) {

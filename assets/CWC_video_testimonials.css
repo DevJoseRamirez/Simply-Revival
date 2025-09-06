@@ -27,16 +27,52 @@
 .cwc-video-testimonials__heading {
     font-size: 2rem;
     font-weight: 600;
-    margin-bottom: 1rem;
+    margin-bottom: 4px;
 }
+
+
+.cwc-video-testimonials__heading>* {
+    font-weight: 600;
+    line-height: 1;
+    font-weight: 500;
+    font-size: 31px;
+    line-height: 100%;
+    letter-spacing: 0;
+    text-align: center;
+
+
+}
+
+.cwc-video-testimonials__heading strong {
+    color: #009370;
+    /* color: #60a1a2; */
+    color: var(--accent-color);
+}
+
 
 .cwc-video-testimonials__text {
     font-size: 1.1rem;
     margin-bottom: 2.5rem;
-    max-width: 700px;
+    /* max-width: 700px; */
     margin-left: auto;
     margin-right: auto;
     color: var(--text-color);
+    font-weight: 400;
+    font-size: 17px;
+    line-height: 19px;
+    letter-spacing: 0;
+    text-align: center;
+    margin-bottom: 29px;
+
+}
+
+.cwc-video-testimonials__text>* {
+    font-weight: 400;
+    font-size: 17px;
+    font-size: 1rem;
+    line-height: 19px;
+    letter-spacing: 0;
+    text-align: center;
 }
 
 /* Carousel */
@@ -96,6 +132,8 @@
 
 .cwc-video-testimonials__author-name {
     font-weight: 500;
+
+    
 }
 
 .cwc-video-testimonials__verified {
@@ -272,7 +310,7 @@
 .cwc-video-testimonials__progress-bar {
     height: 100%;
     width: 0%;
-    background: var(--accent-color, #007aff);
+    background: var(--accent-color, #125657);
     transition: width 0.3s linear;
 }
 
