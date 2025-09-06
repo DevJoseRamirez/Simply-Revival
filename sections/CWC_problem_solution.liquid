@@ -28,10 +28,11 @@
         {% if block.type == 'heading' %}
           <div
             class="cwc-problem-solution__heading"
-            style="color:{{ block.settings.text_color }};"
+            data-accent-color="#009370"
+            style="color:{{ block.settings.text_color }}; "
             {{ block.shopify_attributes }}
           >
-            {{ block.settings.text }}
+            {% render 'CWC_heading', section_id: section.id, block: block %}
           </div>
         {%- endif -%}
 
@@ -200,6 +201,12 @@
           "id": "text_color",
           "label": "Text Color",
           "default": "#ffffff"
+        },
+        {
+          "type": "color",
+          "id": "bold_color",
+          "label": "Bold Text Color",
+          "default": "#d0f0f2"
         }
       ]
     },

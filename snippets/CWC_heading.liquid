@@ -1,0 +1,12 @@
+{% style %}
+  .cwc-problem-solution__heading,
+  .cwc-problem-solution__heading > * {
+      color: {{ block.settings.text_color }};
+    }
+    .cwc-problem-solution__heading strong {
+      color:{{ block.settings.bold_color }};
+  text-align: center;
+  }
+{% endstyle %}
+
+{{ block.settings.text }}

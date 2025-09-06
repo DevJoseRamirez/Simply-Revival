@@ -45,7 +45,6 @@
 
 }
 
-
 .cwc-problem-solution__heading {
     text-align: center;
     margin-bottom: 1.25rem;
@@ -55,13 +54,9 @@
 
 .cwc-problem-solution__heading>* {
     text-align: center;
-    color: inherit;
+    font-weight: 500;
 }
 
-.cwc-problem-solution__heading>bb {
-    text-align: center;
-    /* color: var(--highlight-color); */
-}
 
 
 .cwc-problem-solution__text {
