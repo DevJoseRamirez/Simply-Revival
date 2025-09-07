@@ -96,6 +96,16 @@
         grid-template-columns: 1fr;
         gap: 2rem;
     }
+
+    .cwc-featured-product__right {
+        padding-left: 0rem;
+    }
+
+    .cwc-featured-product__wrapper {
+        padding: 0 1.25rem;
+    }
+
+
 }
 
 

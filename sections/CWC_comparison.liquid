@@ -15,19 +15,30 @@
 <section id="CWC_comparison-{{ section.id }}" class="cwc-comparison">
   <div class="cwc-comparison__wrapper">
     <!-- Mobile-only heading -->
-    <div class="cwc-comparison__mobile-heading">
-      {% for block in section.blocks %}
-        {% if block.type == 'heading' %}
-          <div
-            class="cwc-comparison__heading"
-            style="color: {{ block.settings.text_color }};"
-            {{ block.shopify_attributes }}
-          >
-            {{ block.settings.text }}
-          </div>
-        {% endif %}
-      {% endfor %}
-    </div>
+    {% for block in section.blocks %}
+      {% case block.type %}
+        {% when 'heading' %}
+          {% if block.settings.bold_text != blank %}
+            <div
+              class="cwc-comparison__heading cwc-comparison__mobile-heading"
+              {{ block.shopify_attributes }}
+            >
+              <h3
+                style="color: {{ block.settings.bold_color }};"
+                class="cwc-comparison__heading_bold_text"
+              >
+                {{- block.settings.bold_text -}}
+              </h3>
+              <h3
+                style="color: {{ block.settings.text_color }};"
+                class="cwc-comparison__heading_text"
+              >
+                {{- block.settings.text -}}
+              </h3>
+            </div>
+          {% endif %}
+      {% endcase %}
+    {% endfor %}
 
     <div class="cwc-comparison__grid">
       <!-- Left Tables Column -->
@@ -268,12 +279,9 @@
                       class="cwc-comparison__button-note"
                       style="color: {{ block.settings.button_bg_color }}"
                     >
-
                       {% render 'CWC_icon-shield', fill: block.settings.button_bg_color %}
                       {{ block.settings.button_note }}
                     </div>
-
-
                   {% endif %}
                 </div>
               {% endif %}

@@ -459,6 +459,31 @@
     touch-action: manipulation;
 }
 
+@media screen and (max-width: 991px) {
+    .cwc-video-testimonials__wrapper {
+        padding-left: 1.25rem;
+        padding-right: 1.25rem;
+    }
+
+    .cwc-video-testimonials__wrapper .cwc-reasons__cta {
+        max-width: 100%;
+        margin-top: 1.25rem;
+    }
+
+    .cwc-video-testimonials__wrapper .cwc-reasons__btn {
+        width: 100%;
+        border-radius: 5px;
+        font-size: .86rem;
+        font-size: .9rem;
+        margin-bottom: 8px;
+        padding: .85rem;
+        line-height: 1;
+        width: 100%;
+        max-width: 100%;
+        margin-bottom: 0rem;
+    }
+
+}
 
 /* Mobile */
 @media screen and (max-width: 768px) {

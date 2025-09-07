@@ -1,3 +1,4 @@
+{% comment %} /* background-color: {{ block.settings.button_text_color }} !important; */ {% endcomment %}
 {% style %}
   .cwc-reasons__btn {
         background-color: {{ block.settings.button_bg_color }} !important;
@@ -5,7 +6,7 @@
   }
   .cwc-reasons__btn:hover {
      border-color: {{ block.settings.button_bg_color }};
-        background-color: {{ block.settings.button_text_color }} !important;
+        background-color: transparent;
         color: {{ block.settings.button_bg_color }} !important;
   }
 {% endstyle %}

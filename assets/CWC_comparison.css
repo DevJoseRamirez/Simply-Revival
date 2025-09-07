@@ -48,6 +48,9 @@
     align-items: start;
     align-items: center;
     justify-content: center;
+
+
+    margin-top: 72px;
 }
 
 .cwc-comparison__table {
@@ -188,7 +191,7 @@
 
 
 .cwc-comparison__item img {
-    width: 24px;
+    width: 31px;
     height: auto;
     /* margin-right: 0.75rem; */
     object-fit: contain;
@@ -353,7 +356,92 @@
    Mobile Styles
    ================================ */
 
+
+
+
+@media (max-width: 991px) {
+
+    .cwc-comparison__wrapper {
+        padding: 0 1.25rem;
+
+    }
+
+
+    .cwc-comparison__heading--desktop {
+        display: none;
+    }
+
+    .cwc-comparison__grid {
+        flex-direction: column;
+        flex-direction: column;
+        align-items: center;
+        display: flex;
+
+        margin-top: 138px;
+        grid-gap: 32px;
+    }
+
+    .cwc-comparison__bullet {
+        display: none;
+    }
+
+    .cwc-comparison__tables {
+        justify-content: center;
+        width: 100%;
+        flex: 1;
+        display: flex;
+    }
+
+    .cwc-comparison__content {
+        flex: 1;
+    }
+
+    .cwc-brand_table__table {
+        /* background-color: #60a1a2; */
+        /* color: #ffffff; */
+        /* background: rgba(0, 147, 112, 1); */
+        text-align: center;
+        padding: 0 0 21.86px;
+        width: 234px;
+        border-radius: 4.33px;
+        position: relative;
+
+    }
+
+    .cwc-competitor_table__table {
+        width: 198px;
+        /* background: rgba(255, 255, 255, 1); */
+        /* color: #000; */
+        /* border: .87px solid rgba(0, 0, 0, 0.06); */
+    }
+
+    .cwc-comparison__item span {
+        flex: 1;
+        text-transform: capitalize;
+        font-size: 14px;
+        line-height: 17px;
+        max-width: 101px;
+        margin-top: 6px;
+    }
+
+    .cwc-comparison__item {
+        padding: 1.2rem 0rem;
+    }
+
+
+    .cwc-comparison__mobile-heading {
+        font-size: 35.51px;
+        line-height: 36.74px;
+        text-align: center;
+        max-width: 229px;
+        margin: 0 auto;
+        display: block;
+    }
+}
+
 @media (max-width: 768px) {
+
+
     .cwc-comparison {
         padding-top: var(--padding-top-mobile);
         padding-bottom: var(--padding-bottom-mobile);
@@ -364,13 +452,7 @@
     }
 
     /* Show mobile heading, hide desktop heading */
-    .cwc-comparison__mobile-heading {
-        display: block;
-    }
 
-    .cwc-comparison__heading--desktop {
-        display: none;
-    }
 
     /* Hide right content column on mobile */
     .cwc-comparison__content {
@@ -405,7 +487,6 @@
 
     /* competitors */
 
-
     .cwc-comparison__item {
         font-size: 0.85rem;
         margin-bottom: 0.75rem;
@@ -419,4 +500,5 @@
         margin-right: 0;
         margin-bottom: 0.25rem;
     }
+
 }

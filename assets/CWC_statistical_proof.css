@@ -81,10 +81,11 @@
 .cwc-statistical-proof__stat-number {
     color: var(--highlight-color, #009370);
     font-weight: 500;
+    font-weight: 600;
     font-size: 33.54px;
     line-height: 35px;
     letter-spacing: 0;
-    /* margin-bottom: 4px; */
+    margin-bottom: 2px;
 }
 
 .cwc-statistical-proof__stat-title {
@@ -153,6 +154,42 @@
 /* ================================
    Mobile
    ================================ */
+@media (max-width: 991px) {
+    .cwc-statistical-proof__grid {
+        grid-template-columns: 1fr;
+    }
+
+    .cwc-statistical-proof__item {
+        border-bottom: .3px solid rgba(0, 0, 0, 0.3);
+        padding-bottom: 15px;
+    }
+
+    .cwc-statistical-proof__wrapper {
+        padding: 0 1.25rem;
+    }
+
+    .cwc-statistical-proof__text,
+    .cwc-statistical-proof__text>* {
+        margin-bottom: 39px;
+        margin-top: 0;
+        padding-top: 0;
+        max-width: 292px;
+        margin-left: auto;
+        margin-right: auto;
+        line-height: normal;
+    }
+
+    .cwc-statistical-proof__heading .cwc_heading--block * {
+        line-height: normal;
+        margin-bottom: 0rem;
+        font-size: 1.625rem;
+    }
+
+    .cwc-statistical-proof__item:last-child {
+        border: none;
+    }
+}
+
 @media (max-width: 768px) {
     .cwc-statistical-proof__wrapper {
         padding: 0 1rem;

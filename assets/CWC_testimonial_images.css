@@ -162,10 +162,14 @@
 /* ==============================
    Mobile Responsive
    ============================== */
-@media (max-width: 768px) {
+@media (max-width: 991px) {
     .cwc-testimonial-images__wrapper {
         padding: 0 1.25rem;
     }
+
+}
+
+@media (max-width: 768px) {
 
     .cwc-testimonial-images__title {
         font-size: 2rem;

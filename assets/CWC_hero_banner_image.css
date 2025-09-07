@@ -43,6 +43,8 @@
 
     padding: 1.02875rem;
     line-height: 1.211875rem;
+    width: 100%;
+    max-width: 336px;
 }
 
 .hero-button .cwc-reasons__btn:hover {
