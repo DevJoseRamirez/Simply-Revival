@@ -346,6 +346,8 @@
     /* line-height: normal; */
     font-weight: bold;
     text-align: left;
+
+    line-height: normal;
 }
 
 .cwc-comparison__heading_bold_text {}
