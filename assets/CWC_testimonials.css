@@ -283,6 +283,14 @@
 /* ==============================
    Mobile Overrides (last in file)
    ============================== */
+
+@media (max-width: 991px) {
+
+    .cwc-testimonials__wrapper {
+        padding: 0 1.25rem;
+    }
+}
+
 @media (max-width: 768px) {
     .cwc-testimonials {
         /* padding-top: var(--padding-top-mobile); */
@@ -307,9 +315,7 @@
         overflow: visible;
     }
 
-    .cwc-testimonials__wrapper {
-        padding: 0 1.25rem;
-    }
+
 }
 
 

@@ -155,6 +155,13 @@
     width: auto;
 }
 
+@media screen and (max-width: 991px) {
+
+    .cwc-background-features__wrapper {
+        padding: 0 1.25rem;
+    }
+}
+
 @media (max-width: 767px) {
     .cwc-background-features__headline {
         font-size: 1.5rem;

@@ -8,6 +8,9 @@
     padding-bottom: var(--padding-bottom);
     padding-left: 2rem;
     padding-right: 2rem;
+
+
+
 }
 
 .cwc_image_benefits__wrapper {
@@ -160,12 +163,17 @@
 /* ==============================
    Mobile Responsive
    ============================== */
-@media screen and (max-width: 768px) {
+@media screen and (max-width: 991px) {
     .cwc_image_benefits {
         padding-left: 1.25rem;
         padding-right: 1.25rem;
-        padding-top: var(--padding-top-mobile);
-        padding-bottom: var(--padding-bottom-mobile);
+    }
+}
+
+@media screen and (max-width: 768px) {
+    .cwc_image_benefits {
+        /* padding-top: var(--padding-top-mobile); */
+        /* padding-bottom: var(--padding-bottom-mobile); */
     }
 
     .cwc_image_benefits__wrapper {
@@ -207,8 +215,8 @@
 
 @media screen and (max-width: 480px) {
     .cwc_image_benefits {
-        padding-left: 1rem;
-        padding-right: 1rem;
+        /* padding-left: 1rem; */
+        /* padding-right: 1rem; */
     }
 
     .cwc_image_benefits__title {

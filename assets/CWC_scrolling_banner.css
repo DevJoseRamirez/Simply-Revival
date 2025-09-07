@@ -77,6 +77,14 @@
 /* ================================
    Mobile Styles
    ================================ */
+
+@media screen and (max-width: 991px) {
+    .CWC_scrolling_banner-text {
+        font-size: 0.86rem;
+    }
+}
+
+
 @media screen and (max-width: 768px) {
     .CWC_scrolling_banner {
         padding-top: var(--padding-top-mobile);
@@ -92,7 +100,5 @@
         height: 20px;
     }
 
-    .CWC_scrolling_banner-text {
-        font-size: 0.9rem;
-    }
+
 }

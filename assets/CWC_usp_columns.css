@@ -28,6 +28,7 @@
   display: flex;
   justify-content: space-between;
   gap: 43px;
+  gap: 2.6875rem;
   width: 100%;
 
 }
@@ -73,12 +74,25 @@
 }
 
 /* Mobile Styles */
+
+@media screen and (max-width: 991px) {
+  .cwc_usp_columns-container {
+    padding: 0 1.25rem;
+  }
+
+  .cwc_usp_columns {
+    padding-top: 1.076875rem;
+    padding-bottom: 1.7rem;
+  }
+}
+
 @media screen and (max-width: 767px) {
   .cwc_usp_columns {
     padding-top: var(--padding-top-mobile);
     padding-bottom: var(--padding-bottom-mobile);
     padding-left: 1rem;
     padding-right: 1rem;
+
   }
 
   .cwc_usp_columns-wrapper {

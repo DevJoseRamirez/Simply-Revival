@@ -95,15 +95,13 @@
                   </div>
                 {% endif %}
               </div>
-
-              <!-- BACK -->
-              <div class="cwc-reasons__back">
-                {% if block.settings.text != blank %}
-                  <div class="cwc-reasons__desc">{{ block.settings.text }}</div>
-                {% endif %}
-              </div>
             </div>
-
+            <!-- BACK -->
+            <div class="cwc-reasons__back">
+              {% if block.settings.text != blank %}
+                <div class="cwc-reasons__desc">{{ block.settings.text }}</div>
+              {% endif %}
+            </div>
             <!-- Toggle button always at bottom -->
             <button class="toggle-button" aria-expanded="false">
               <span class="cwc-icon-plus">
@@ -134,8 +132,7 @@
 
         {% when 'guarantee_text' %}
           <div class="cwc_product-template__guarantee_text" {{ block.shopify_attributes }}>
-
-                  {% comment %} {%- render 'CWC_icon-check_badge', fill: '#fff' -%} {% endcomment %}
+            {% comment %} {%- render 'CWC_icon-check_badge', fill: '#fff' -%} {% endcomment %}
 
             {% render 'CWC_guarantee_text', product: product, section_id: section.id, block: block %}
           </div>
