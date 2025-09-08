@@ -226,13 +226,6 @@
         padding: 2px 1.5rem;
     }
 
-}
-
-/* ================================
-   Mobile Responsive (max-width: 768px)
-   ================================ */
-@media (max-width: 768px) {
-
     .cwc-product-thumbnails {
         display: none;
     }
@@ -295,3 +288,8 @@
         object-fit: contain;
     }
 }
+
+/* ================================
+   Mobile Responsive (max-width: 768px)
+   ================================ */
+@media (max-width: 768px) {}

@@ -116,6 +116,10 @@
         padding-left: 0;
     }
 
+    .cwc_product-template__wrapper {
+        padding: 0 1rem;
+        padding: 0 1.25rem;
+    }
 
 }
 
@@ -130,10 +134,7 @@
         padding-bottom: 1rem;
     }
 
-    .cwc_product-template__wrapper {
-        padding: 0 1rem;
-        padding: 0 1.25rem;
-    }
+
 
     .cwc_product-template__left {
         gap: 1.5rem;

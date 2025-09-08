@@ -120,9 +120,9 @@
 
 
 /* Responsive */
-@media (max-width: 768px) {
+@media (max-width: 991px) {
     .cwc-faqs__wrapper {
-        padding: 0 1rem;
+        padding: 0 1.25rem;
     }
 
     .faq-question {

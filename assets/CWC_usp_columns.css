@@ -67,7 +67,7 @@
 
 .cwc_usp_columns .usp-text {
   font-size: 0.9rem;
-  font-weight: 600;
+  font-weight: 500;
   letter-spacing: 0.5px;
   text-transform: uppercase;
   line-height: 1.2;
@@ -82,26 +82,27 @@
 
   .cwc_usp_columns {
     padding-top: 1.076875rem;
-    padding-bottom: 1.7rem;
+    padding-bottom: 1.076875rem;
   }
 }
 
 @media screen and (max-width: 767px) {
-  .cwc_usp_columns {
-    padding-top: var(--padding-top-mobile);
-    padding-bottom: var(--padding-bottom-mobile);
-    padding-left: 1rem;
-    padding-right: 1rem;
 
-  }
-
-  .cwc_usp_columns-wrapper {
-    flex-direction: column;
-    gap: 0.75rem;
+  .cwc_usp_columns .usp-text {
+    font-size: 0.6875rem;
   }
 
   .cwc_usp_columns .usp-item {
-    width: 100%;
-    max-width: 320px;
+    border: 1.01px solid #fff;
+    padding: 7px 8px 9px 5px;
+    border-radius: 5.05px;
+    font-size: 9.14px;
+    text-align: left;
+    line-height: 12px;
   }
+
+  .cwc_usp_columns-container {
+    gap: 6px;
+  }
+
 }

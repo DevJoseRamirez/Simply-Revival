@@ -249,8 +249,8 @@
 }
 
 .cwc-reasons__btn {
-    background: var(--btn-bg);
-    color: var(--btn-color);
+    /* background: var(--btn-bg); */
+    /* color: var(--btn-color); */
     font-size: 1rem;
     font-weight: 600;
     padding: 0.8rem 1.5rem;
@@ -265,9 +265,9 @@
 }
 
 .cwc-reasons__btn:hover {
-    background-color: transparent !important;
-    border-color: currentColor !important;
-    color: inherit !important;
+    /* background-color: transparent !important; */
+    /* border-color: currentColor !important; */
+    /* color: inherit !important; */
 }
 
 .cwc-reasons__note {

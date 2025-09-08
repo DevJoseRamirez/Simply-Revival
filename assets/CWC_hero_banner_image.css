@@ -197,6 +197,9 @@
 }
 
 @media screen and (max-width: 991px) {
+    .CWC_hero_banner_image {
+        padding: 0 1.125rem;
+    }
 
     .CWC_hero_banner_image-wrapper {
         flex-direction: column-reverse;
@@ -275,6 +278,10 @@
 
 /* === Mobile Styles === */
 @media screen and (max-width: 767px) {
+    .hero-bullets .bullet {
+        margin-bottom: 0rem;
+    }
+
     .CWC_hero_banner_image {
         /* padding-top: var(--padding-top-mobile); */
         /* padding-bottom: var(--padding-bottom-mobile); */
