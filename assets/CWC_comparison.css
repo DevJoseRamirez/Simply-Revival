@@ -369,6 +369,8 @@
         font-size: .9rem;
         margin-bottom: 8px;
         padding: .85rem;
+        padding: 1.1rem .85rem;
+        font-size: 1rem;
         line-height: 1;
         width: 100%;
         max-width: 100%;
@@ -478,22 +480,22 @@
         padding-bottom: var(--padding-bottom-mobile);
     }
 
-    .cwc-comparison__wrapper {
-        padding: 0 1rem;
-    }
+    .cwc-comparison__wrapper {}
 
     /* Show mobile heading, hide desktop heading */
 
 
     /* Hide right content column on mobile */
     .cwc-comparison__content {
-        display: none;
+        /* display: none; */
     }
 
     /* Make grid single column (tables only) */
     .cwc-comparison__grid {
-        grid-template-columns: 1fr;
-        gap: 0;
+        /* grid-template-columns: 1fr; */
+        /* gap: 0; */
+        /* margin-top: 100px; */
+        margin-top: 6.625rem;
     }
 
     .cwc-comparison__tables {
@@ -506,7 +508,7 @@
     }
 
     .cwc-comparison__product img {
-        height: 60px;
+        /* height: 60px; */
     }
 
     .cwc-comparison__table-title {
@@ -514,10 +516,7 @@
         margin-bottom: 1rem;
     }
 
-
-
     /* competitors */
-
     .cwc-comparison__item {
         font-size: 0.85rem;
         margin-bottom: 0.75rem;

@@ -88,6 +88,10 @@
 .faq-answer p {
     margin-bottom: 1.0625rem;
     line-height: normal;
+    width: 100%;
+    max-width: 100%;
+    box-sizing: border-box;
+    word-break: break-word;
 }
 
 .faq-answer p:last-child {
@@ -117,6 +121,9 @@
     /* JS will set max-height inline to scrollHeight */
 }
 
+.cwc-faqs__button-wrap.mobile__only {
+    display: none;
+}
 
 
 /* Responsive */
@@ -128,4 +135,78 @@
     .faq-question {
         font-size: 0.95rem;
     }
+
+    .cwc-faqs__button-wrap.mobile__only {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        justify-content: center;
+        width: 100%;
+        /* gap: .5rem; */
+    }
+
+    .cwc-faqs__button {
+        display: inline-block;
+        padding: 1rem 2rem;
+        padding: 0.75rem 1.5rem;
+        font-weight: 700;
+        font-size: 1rem;
+        border-radius: 6px;
+        text-decoration: none;
+        transition: all 0.3s ease-in-out;
+        text-align: center;
+        text-transform: uppercase;
+        border: 2px solid transparent;
+        width: 100%;
+        margin-top: 1rem;
+        color: var(--bt_text_color);
+        background-color: var(--bt_bg_color);
+    }
+
+    .cwc-faqs__button:hover {
+        background-color: transparent !important;
+        border-color: var(--bt_bg_color) !important;
+        color: var(--bt_bg_color) !important;
+    }
+
+    .cwc-faqs__button-note {
+        font-size: .9rem;
+        margin: 9.61px 0 0;
+        opacity: .8;
+        display: flex;
+        gap: .5rem;
+        width: 100%;
+        margin: auto;
+        text-align: center;
+        align-items: center;
+        justify-content: center;
+        margin: 9.61px 0 0;
+    }
+
+    .cwc-faqs__button-note>* {
+        color: inherit;
+
+        font-weight: 400;
+        font-size: 1.05375rem;
+        font-size: 1rem;
+        line-height: 1.32109375rem;
+        letter-spacing: 0;
+        text-align: center;
+        display: inline-flex;
+        grid-gap: 6.85px;
+        align-items: center;
+
+    }
+
+    .cwc-faqs__button-note {
+        font-size: 0.875rem;
+        line-height: normal;
+    }
+
+    .cwc-faqs__button-note svg {
+        margin-top: -1px;
+    }
+
 }
+
+@media (max-width: 768px) {}

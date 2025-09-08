@@ -121,6 +121,12 @@
 
   .cwc-featured-product__option_button_value {
       font-weight: 600;
+      font-size: 0.8125rem;
+  }
+
+  .cwc-featured-product__option_button_save_perc {
+      font-size: 0.8125rem;
+
   }
 
   /* ---- prices */
@@ -267,7 +273,8 @@
    ================================ */
   @media (max-width: 768px) {
       .cwc-featured-product__option_button {
-          padding: 0.875rem 1.5625rem 0.75rem 0.5625rem;
+          padding: 0.875rem 0.875rem 0.75rem 0.5625rem;
+          gap: 6px;
       }
 
 

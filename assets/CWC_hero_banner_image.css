@@ -32,13 +32,13 @@
 .hero-button .cwc-reasons__btn {
     display: inline-block;
     padding: 1rem 2rem;
-    font-weight: 700;
+    font-weight: 600;
     font-size: 1rem;
     border-radius: 6px;
     text-decoration: none;
     transition: all 0.3s ease-in-out;
     text-align: center;
-    text-transform: uppercase;
+    /* text-transform: uppercase; */
     border: 2px solid transparent;
 
     padding: 1.02875rem;
@@ -258,11 +258,16 @@
     /* button */
     .hero-button .cwc-reasons__btn {
         max-width: 277px;
+        max-width: 300px;
         border-radius: 5px;
         font-size: .86rem;
         margin-bottom: 8px;
         padding: 0.85rem;
         line-height: 1;
+
+        padding: 1.1rem .85rem;
+        font-size: 1rem;
+
     }
 
     .hero-note .cwc-featured-product__guarantee_text-content>*,

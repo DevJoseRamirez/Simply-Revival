@@ -1,13 +1,14 @@
 {% style %}
-  .cwc_heading--block,
-  .cwc_heading--block > * {
+  .cwc_heading--block-{{ block.id }},
+  .cwc_heading--block-{{ block.id }} > * {
       color: {{ block.settings.text_color }};
+      line-height: normal;
     }
-    .cwc_heading--block strong {
+    .cwc_heading--block-{{ block.id }} strong {
       color:{{ block.settings.bold_color }};
   text-align: center;
   }
 {% endstyle %}
-<div class="cwc_heading--block">
+<div class="cwc_heading--block-{{ block.id }}">
   {{ block.settings.heading }}
 </div>

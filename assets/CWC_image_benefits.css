@@ -179,6 +179,11 @@
     .cwc_image_benefits__wrapper {
         flex-direction: column;
         gap: 2rem;
+        gap: 1rem;
+    }
+
+    .cwc_image_benefits__caption {
+        border-radius: 6px;
     }
 
     .cwc_image_benefits.reverse .cwc_image_benefits__wrapper {

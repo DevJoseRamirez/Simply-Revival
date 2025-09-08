@@ -234,6 +234,8 @@
         font-size: .86rem;
         margin-bottom: 8px;
         padding: .85rem;
+           padding: 1.1rem .85rem;
+        font-size: 1rem;
         line-height: 1;
     }
 }

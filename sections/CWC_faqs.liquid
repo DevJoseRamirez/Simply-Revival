@@ -1,145 +1,205 @@
 {% style %}
-#CWC_faqs-{{ section.id }} {
---section-bg: {{ section.settings.bg_color }};
---text-color: {{ section.settings.text_color }};
---padding-top: {{ section.settings.padding_top }}px;
---padding-bottom: {{ section.settings.padding_bottom }}px;
---padding-top-mobile: {{ section.settings.padding_top | times: 0.5 }}px;
---padding-bottom-mobile: {{ section.settings.padding_bottom | times: 0.5 }}px;
---faq-bg: {{ section.settings.faq_bg_color | default: '#ffffff' }};
-}
+  #CWC_faqs-{{ section.id }} {
+  --section-bg: {{ section.settings.bg_color }};
+  --text-color: {{ section.settings.text_color }};
+  --padding-top: {{ section.settings.padding_top }}px;
+  --padding-bottom: {{ section.settings.padding_bottom }}px;
+  --padding-top-mobile: {{ section.settings.padding_top | times: 0.5 }}px;
+  --padding-bottom-mobile: {{ section.settings.padding_bottom | times: 0.5 }}px;
+  --faq-bg: {{ section.settings.faq_bg_color | default: '#ffffff' }};
+  }
 {% endstyle %}
-
 
 {{ 'CWC_faqs.css' | asset_url | stylesheet_tag }}
 
-
 <section id="CWC_faqs-{{ section.id }}" class="cwc-faqs">
-    <div class="cwc-faqs__wrapper">
+  <div class="cwc-faqs__wrapper">
+    {% if section.settings.heading != blank %}
+      <div class="cwc-faqs__heading">
+        {{ section.settings.heading }}
+      </div>
+    {% endif %}
 
-        {% if section.settings.heading != blank %}
-        <div class="cwc-faqs__heading">
-            {{ section.settings.heading }}
-        </div>
-        {% endif %}
+    {% if section.settings.text != blank %}
+      <div class="cwc-faqs__text">
+        {{ section.settings.text }}
+      </div>
+    {% endif %}
 
-        {% if section.settings.text != blank %}
-        <div class="cwc-faqs__text">
-            {{ section.settings.text }}
-        </div>
-        {% endif %}
-
-        <div class="cwc-faqs__items">
-            {% for block in section.blocks %}
+    <div class="cwc-faqs__items">
+      {% for block in section.blocks %}
+        {% case block.type %}
+          {% when 'faq' %}
             <div class="faq-item" {{ block.shopify_attributes }}>
-                <button class="faq-question">
-                    {{ block.settings.title }}
-                    <span class="toggle-icon">+</span>
-                </button>
-                <div class="faq-answer">
-                    {{ block.settings.text }}
-                </div>
+              <button class="faq-question">
+                {{ block.settings.title }}
+                <span class="toggle-icon">+</span>
+              </button>
+              <div class="faq-answer">
+                {{ block.settings.text }}
+              </div>
             </div>
-            {% endfor %}
-        </div>
-
+        {% endcase %}
+      {% endfor %}
     </div>
-</section>
 
+    {% for block in section.blocks %}
+      {% case block.type %}
+        {% when 'button' %}
+          {% if block.settings.button_text != blank %}
+            <div class="cwc-faqs__button-wrap mobile__only">
+              <a
+                href="{{ block.settings.button_link }}"
+                class="cwc-faqs__button"
+                style="--bt_bg_color: {{ block.settings.button_bg_color }}; --bt_text_color: {{ block.settings.button_text_color }};"
+                {{ block.shopify_attributes }}
+              >
+                {{ block.settings.button_text }}
+              </a>
+
+              {% if block.settings.button_note != blank %}
+                <div
+                  class="cwc-faqs__button-note"
+                  style="color: {{ block.settings.button_bg_color }}"
+                >
+                  {% render 'CWC_icon-shield', fill: block.settings.button_bg_color %}
+                  {{ block.settings.button_note }}
+                </div>
+              {% endif %}
+            </div>
+          {% endif %}
+      {% endcase %}
+    {% endfor %}
+  </div>
+</section>
 
 {{ 'CWC_faqs.js' | asset_url | script_tag }}
 
-
-
 {% schema %}
 {
-"name": "CWC FAQs",
-"tag": "section",
-"settings": [
-{
-"type": "color",
-"id": "bg_color",
-"label": "Section background color",
-"default": "#FAFAFA"
-},
-{
-"type": "color",
-"id": "text_color",
-"label": "Text color",
-"default": "#000000"
-},
-{
-"type": "richtext",
-"id": "heading",
-"label": "Heading",
-"default": "<p>Frequently Asked Questions</p>"
-},
-{
-"type": "richtext",
-"id": "text",
-"label": "Intro text",
-"default": "<p>Find the answers to some of the most common questions below.</p>"
-},
-{
-"type": "color",
-"id": "faq_bg_color",
-"label": "FAQ block background color",
-"default": "#FFFFFF"
-},
-{
-"type": "range",
-"id": "padding_top",
-"label": "Padding top",
-"default": 80,
-"min": 0,
-"max": 200,
-"step": 4,
-"unit": "px"
-},
-{
-"type": "range",
-"id": "padding_bottom",
-"label": "Padding bottom",
-"default": 80,
-"min": 0,
-"max": 200,
-"step": 4,
-"unit": "px"
-}
-],
-"blocks": [
-{
-"type": "faq",
-"name": "FAQ",
-"settings": [
-{
-"type": "richtext",
-"id": "title",
-"label": "Question",
-"default": "<p>What is your return policy?</p>"
-},
-{
-"type": "richtext",
-"id": "text",
-"label": "Answer",
-"default": "<p>We offer a 30-day return policy on all items.</p>"
-}
-]
-}
-],
-"presets": [
-{
-"name": "FAQs",
-"category": "Custom",
-"blocks": [
-{ "type": "faq" },
-{ "type": "faq" },
-{ "type": "faq" },
-{ "type": "faq" },
-{ "type": "faq" },
-{ "type": "faq" }
-]
-}
-]
+  "name": "CWC FAQs",
+  "tag": "section",
+  "settings": [
+    {
+      "type": "color",
+      "id": "bg_color",
+      "label": "Section background color",
+      "default": "#FAFAFA"
+    },
+    {
+      "type": "color",
+      "id": "text_color",
+      "label": "Text color",
+      "default": "#000000"
+    },
+    {
+      "type": "richtext",
+      "id": "heading",
+      "label": "Heading",
+      "default": "<p>Frequently Asked Questions</p>"
+    },
+    {
+      "type": "richtext",
+      "id": "text",
+      "label": "Intro text",
+      "default": "<p>Find the answers to some of the most common questions below.</p>"
+    },
+    {
+      "type": "color",
+      "id": "faq_bg_color",
+      "label": "FAQ block background color",
+      "default": "#FFFFFF"
+    },
+    {
+      "type": "range",
+      "id": "padding_top",
+      "label": "Padding top",
+      "default": 80,
+      "min": 0,
+      "max": 200,
+      "step": 4,
+      "unit": "px"
+    },
+    {
+      "type": "range",
+      "id": "padding_bottom",
+      "label": "Padding bottom",
+      "default": 80,
+      "min": 0,
+      "max": 200,
+      "step": 4,
+      "unit": "px"
+    }
+  ],
+  "blocks": [
+    {
+      "type": "faq",
+      "name": "FAQ",
+      "settings": [
+        {
+          "type": "richtext",
+          "id": "title",
+          "label": "Question",
+          "default": "<p>What is your return policy?</p>"
+        },
+        {
+          "type": "richtext",
+          "id": "text",
+          "label": "Answer",
+          "default": "<p>We offer a 30-day return policy on all items.</p>"
+        }
+      ]
+    },
+    {
+      "type": "button",
+      "name": "CTA Button",
+      "settings": [
+        {
+          "type": "text",
+          "id": "button_text",
+          "label": "Button Text",
+          "default": "Try Risk-Free Today"
+        },
+        {
+          "type": "url",
+          "id": "button_link",
+          "label": "Button Link"
+        },
+        {
+          "type": "color",
+          "id": "button_bg_color",
+          "label": "Button Background Color",
+          "default": "#fff"
+        },
+        {
+          "type": "color",
+          "id": "button_text_color",
+          "label": "Button Text Color",
+          "default": "#125657"
+        },
+        {
+          "type": "text",
+          "id": "button_note",
+          "label": "Button Note Text",
+          "default": "365-day money back guarantee"
+        }
+      ]
+    }
+  ],
+  "presets": [
+    {
+      "name": "FAQs",
+      "category": "Custom",
+      "blocks": [
+        { "type": "faq" },
+        { "type": "faq" },
+        { "type": "faq" },
+        { "type": "faq" },
+        { "type": "faq" },
+        { "type": "faq" },
+        { "type": "button" }
+      ]
+    }
+  ]
 }
 {% endschema %}

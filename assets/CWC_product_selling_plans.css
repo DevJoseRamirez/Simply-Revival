@@ -194,6 +194,10 @@ input[type='checkbox'].cwc-auto-refill-checkbox {
 }
 
 @media (max-width: 768px) {
+    .cwc-checkbox-title {
+        font-size: 0.78rem;
+    }
+
 
     /* Add mobile-specific styles here if needed */
     .cwc-featured-product__subscription,
