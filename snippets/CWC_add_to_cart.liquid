@@ -20,6 +20,8 @@
       width: 100%;
       background-color: {{ block.settings.button_bg_color }};
       color: {{ block.settings.button_text_color }};
+      -webkit-tap-highlight-color: transparent;
+
       }
 
       .cwc-featured-product__button:hover {
@@ -27,6 +29,14 @@
       background-color: {{ block.settings.button_text_color }};
       color: {{ block.settings.button_bg_color }};
       }
+
+
+      .cwc-featured-product__button:active {
+            outline: none;
+      -webkit-tap-highlight-color: transparent;
+      box-shadow: none;
+      }
+
 
       .cwc-featured-product__button:disabled {
       opacity: 0.6;

@@ -218,7 +218,7 @@
     }
 }
 
-@media screen and (max-width: 480px) {
+@media screen and (max-width: 375px) {
     .cwc_image_benefits {
         /* padding-left: 1rem; */
         /* padding-right: 1rem; */

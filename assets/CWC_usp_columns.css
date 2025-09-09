@@ -62,10 +62,11 @@
 }
 
 .cwc_usp_columns .usp-icon img {
-  width: 20px;
-  height: 20px;
+  width: 27px;
+  height: 27px;
   object-fit: contain;
 }
+
 
 .cwc_usp_columns .usp-text {
   font-size: 0.9rem;
@@ -91,7 +92,7 @@
 @media screen and (max-width: 767px) {
 
   .cwc_usp_columns .usp-text {
-    font-size: 0.6875rem;
+    font-size: 0.65rem;
   }
 
   .cwc_usp_columns .usp-item {
@@ -101,10 +102,16 @@
     font-size: 9.14px;
     text-align: left;
     line-height: 12px;
+    gap: .5rem;
   }
 
   .cwc_usp_columns-container {
     gap: 6px;
+  }
+
+  .cwc_usp_columns .usp-icon img {
+    min-width: 33px;
+    height: 33px;
   }
 
 }

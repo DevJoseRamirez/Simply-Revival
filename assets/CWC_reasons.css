@@ -350,6 +350,8 @@
         transition: none;
         position: static;
         transform: none;
+
+        width: 100%;
     }
 
 
@@ -364,12 +366,13 @@
         backface-visibility: visible;
     }
 
-
     .cwc-reasons__title {
         margin: 0rem;
         font-size: 1rem;
         text-align: left;
         font-size: 1.125rem;
+
+        /* max-width: 80%; */
     }
 
     .cwc-reasons__badge {
@@ -456,7 +459,7 @@
         font-size: .9rem;
         margin-bottom: 8px;
         padding: .85rem;
-           padding: 1.1rem .85rem;
+        padding: 1.1rem .85rem;
         font-size: 1rem;
         line-height: 1;
         width: 100%;
@@ -465,4 +468,25 @@
     }
 
 
+}
+
+@media (max-width: 767px) {
+
+    /* .cwc-reasons__title { */
+    .cwc-reasons-content {
+        max-width: 65%;
+        /* background: red; */
+        width: 100%;
+    }
+
+    .cwc-reasons-content {
+        padding-right: 3rem;
+    }
+
+}
+
+@media (max-width: 375px) {
+    .cwc-background-features__checkmarks {
+        display: flex;
+    }
 }

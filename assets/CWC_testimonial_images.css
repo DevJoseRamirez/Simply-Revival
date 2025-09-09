@@ -190,11 +190,11 @@
     }
 
     .cwc-testimonial-images__header {
-        margin-bottom: 2rem;
+        margin-bottom: 1.5rem;
     }
 }
 
-@media (max-width: 480px) {
+@media (max-width: 375px) {
     .cwc-testimonial-images__title {
         font-size: 1.75rem;
     }

@@ -51,7 +51,26 @@
       justify-content: space-between;
       padding: 16px 50px 12px 29px;
       padding: 1rem 3rem .86rem 1.86rem;
+
+      outline: none;
+      box-shadow: none;
+      -webkit-tap-highlight-color: transparent;
+      /* For iOS Safari */
+
   }
+
+
+  .cwc-featured-product__option_button:active,
+  .cwc-featured-product__option_button:focus,
+  .cwc-featured-product__option_button,
+  .cwc-featured-product__option_buttons:active,
+  .cwc-featured-product__option_buttons:focus,
+  .cwc-featured-product__option_buttons {
+      outline: none;
+      -webkit-tap-highlight-color: transparent;
+      box-shadow: none;
+  }
+
 
   .cwc-featured-product__option_button {
       border: 1px solid #e5e7eb;
