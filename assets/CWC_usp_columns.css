@@ -57,6 +57,8 @@
   width: 100%;
   text-align: center;
   justify-content: center;
+
+  gap: 0.625rem;
 }
 
 .cwc_usp_columns .usp-icon img {

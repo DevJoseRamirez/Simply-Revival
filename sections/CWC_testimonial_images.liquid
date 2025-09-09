@@ -28,9 +28,12 @@
             <div class="cwc-testimonial-images-card" {{ block.shopify_attributes }}>
               {% if block.settings.image != blank %}
                 <img
-                  src="{{ block.settings.image | image_url: width: 400  }}"
-                  alt="Customer testimonial"
                   loading="lazy"
+                  fetchpriority="medium"
+                  src="{{ block.settings.image | image_url: width: 400  }}"
+                  alt="{{ block.settings.image.alt }}"
+                  width="{{ block.settings.image.width }}"
+                  height="{{ block.settings.image.height }}"
                 >
               {% else %}
                 <img src="{{ 'placeholder.png' | asset_url }}" alt="Placeholder image" loading="lazy">

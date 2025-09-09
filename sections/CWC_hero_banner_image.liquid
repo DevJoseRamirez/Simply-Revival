@@ -22,8 +22,8 @@
         <picture>
           <source media="(max-width: 767px)" srcset="{{ section.settings.image_mobile | image_url }}">
           <img
-            loading="lazy"
-            fetchpriority="low"
+            loading="eager"
+            fetchpriority="high"
             src="{{ section.settings.image_mobile | image_url }}"
             alt="{{ section.settings.image_mobile.alt }}"
             width="{{ section.settings.image_mobile.width }}"
@@ -32,8 +32,8 @@
         </picture>
       {% elsif section.settings.image and section.settings.image != blank %}
         <img
-          loading="lazy"
-          fetchpriority="low"
+          loading="eager"
+          fetchpriority="high"
           src="{{ section.settings.image | image_url }}"
           alt="{{ section.settings.image.alt }}"
           width="{{ section.settings.image.width }}"
