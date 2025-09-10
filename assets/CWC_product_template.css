@@ -10,6 +10,15 @@
     padding-top: 2.5rem;
 }
 
+#cwc_product-template--anchor {
+    visibility: hidden;
+    position: relative;
+    top: -4rem;
+    height: 3px;
+    /* background: red; */
+    /* visibility: visible; */
+}
+
 .cwc_product-template__wrapper {
     max-width: 1500px;
     margin: 0 auto;

@@ -11,6 +11,15 @@
 
 }
 
+#cwc-featured-product--anchor {
+    visibility: hidden;
+    position: relative;
+    top: -4rem;
+    height: 3px;
+    /* background: red; */
+    /* visibility: visible; */
+}
+
 .cwc-featured-product__wrapper {
     max-width: 1500px;
     margin: 0 auto;
@@ -141,7 +150,7 @@
 
     .cwc-featured-product__price-current {
         font-size: 1.75rem;
-        
+
     }
 
 
