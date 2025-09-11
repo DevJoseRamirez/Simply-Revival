@@ -38,16 +38,14 @@
         <div class="cwc-background-features__icons">
           {% for block in icon_blocks %}
             <div class="icon-block" {{ block.shopify_attributes }}>
-
-              
-                  {%- render 'CWC_icon-check_badge', fill: '#fff' -%}
+              {%- render 'CWC_icon-check_badge', fill: '#fff' -%}
 
               {% if block.settings.icon != blank %}
                 <div class="icon-image">
                   <img src="{{ block.settings.icon | img_url: '200x' }}" alt="{{ block.settings.text | escape }}">
                 </div>
               {% endif %}
-              
+
               {% if block.settings.text != blank %}
                 <div class="benefit_text">{{ block.settings.text }}</div>
               {% endif %}
@@ -84,7 +82,7 @@
       "type": "color",
       "id": "text_color",
       "label": "Text color",
-      "default": "#000000"
+      "default": "#ffffff"
     },
     {
       "type": "range",
