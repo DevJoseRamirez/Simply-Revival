@@ -13,6 +13,31 @@
 {{ 'CWC_statistical_proof.css' | asset_url | stylesheet_tag }}
 
 <section id="CWC_statistical_proof-{{ section.id }}" class="cwc-statistical-proof">
+  {% if section.settings.bg_image_desktop != blank %}
+    <div
+      class="cwc-statistical-proof__bg-desktop"
+      style="background-image: url('{{ section.settings.bg_image_desktop | image_url }}');"
+    ></div>
+  {% endif %}
+
+  {% comment %} Mobile Background Image {% endcomment %}
+  {% if section.settings.bg_image_mobile != blank %}
+    <div
+      class="cwc-statistical-proof__bg-mobile"
+      style="background-image: url('{{ section.settings.bg_image_mobile | image_url }}');"
+    ></div>
+  {% elsif section.settings.bg_image_desktop != blank %}
+    {% comment %} Fallback to desktop image if no mobile image provided {% endcomment %}
+    <div
+      class="cwc-statistical-proof__bg-mobile"
+      style="background-image: url('{{ section.settings.bg_image_desktop | image_url }}');"
+    ></div>
+  {% endif %}
+
+
+
+
+
   <div class="cwc-statistical-proof__wrapper">
     {% for block in section.blocks %}
       {% case block.type %}

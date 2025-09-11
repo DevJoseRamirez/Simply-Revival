@@ -155,6 +155,7 @@
         "item_Utx3gR",
         "item_Nd3wDc"
       ],
+      "disabled": true,
       "custom_css": [
         ".textscroll-item span.px-5 {padding-left: 10px !important; padding-right: 10px !important; margin-right: 10px !important;}",
         ".image-content__image {margin-right: 7px !important;}",

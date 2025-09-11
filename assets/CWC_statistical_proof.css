@@ -3,13 +3,47 @@
    ================================ */
 
 .cwc-statistical-proof {
-    background-color: var(--section-bg);
-    background-image: var(--bg-image-desktop);
-    background-size: cover;
-    background-position: center;
     padding-top: var(--padding-top);
     padding-bottom: var(--padding-bottom);
     color: var(--text-color, #111);
+    position: relative;
+}
+
+
+/* ================================
+   Background Image Divs
+   ================================ */
+.cwc-statistical-proof__bg-desktop,
+.cwc-statistical-proof__bg-mobile {
+    position: absolute;
+    /* IMPORTANT: Makes the divs fill the parent */
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+    z-index: 0;
+    pointer-events: none;
+    background-size: 100% 100%;
+
+    /* Allows clicks to pass through to content */
+
+    padding: 40px 0px 60px;
+    text-align: center;
+    background-size: 100% 100%;
+    background-position: center;
+    background-repeat: no-repeat;
+}
+
+/* Desktop: Show desktop background, hide mobile */
+.cwc-statistical-proof__bg-desktop {
+    display: block;
+}
+
+.cwc-statistical-proof__bg-mobile {
+    display: none;
 }
 
 .cwc-statistical-proof__wrapper {
@@ -21,6 +55,9 @@
     padding: 0 3.125rem;
     text-align: center;
     box-sizing: border-box;
+    
+    z-index: 1;
+    position: relative;
 }
 
 .cwc-statistical-proof__item {
@@ -191,9 +228,21 @@
 }
 
 @media (max-width: 768px) {
-    .cwc-statistical-proof__wrapper {
-        padding: 0 1rem;
+
+
+
+    /* Hide desktop background on mobile */
+    .cwc-statistical-proof__bg-desktop {
+        display: none;
     }
+
+    /* Show mobile background on mobile */
+    .cwc-statistical-proof__bg-mobile {
+        display: block;
+    }
+
+
+    .cwc-statistical-proof__wrapper {}
 
     .cwc-statistical-proof__grid {
         grid-template-columns: 1fr;
