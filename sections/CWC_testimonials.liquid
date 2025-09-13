@@ -12,51 +12,91 @@
 {{ 'CWC_testimonials.css' | asset_url | stylesheet_tag }}
 {{ 'swiper-bundle.min.css' | asset_url | stylesheet_tag }}
 
+{% comment %}
+  UNIFIED DATA ASSIGNMENT
+  Create consistent data structure regardless of source
+{% endcomment %}
+{% if section.settings.testimonials_collection %}
+  {% comment %} Use metaobject data {% endcomment %}
+  {% assign customer_testimonial_list = section.settings.testimonials_collection.testimonials.value %}
+{% else %}
+  {% comment %} Use section blocks data {% endcomment %}
+  {% assign customer_testimonial_list = section.blocks %}
+{% endif %}
+
 <section id="CWC_testimonials-{{ section.id }}" class="cwc-testimonials">
   <div class="cwc-testimonials__wrapper">
     <div class="swiper cwc-testimonials__carousel">
       <div class="swiper-wrapper cwc-testimonials__carousel_swiper-wrapper">
-        {% for block in section.blocks %}
+        {% for customer_testimonial in customer_testimonial_list %}
+          {% comment %}
+            UNIFIED VARIABLE ASSIGNMENT
+            Assign variables based on data source
+          {% endcomment %}
+          {% if section.settings.testimonials_collection %}
+            {% comment %} Metaobject source {% endcomment %}
+            {% assign rating = customer_testimonial.rating %}
+            {% assign title = customer_testimonial.title %}
+            {% assign text = customer_testimonial.text %}
+            {% assign author = customer_testimonial.author %}
+            {% assign tag1 = customer_testimonial.tag1 %}
+            {% assign tag2 = customer_testimonial.tag2 %}
+            {% assign img_value = customer_testimonial.profile_image %}
+            {% assign img_url = customer_testimonial.profile_image | image_url: width: 36 %}
+          {% else %}
+            {% comment %} Block source {% endcomment %}
+            {% assign rating = customer_testimonial.settings.star_rating %}
+            {% assign title = customer_testimonial.settings.title %}
+            {% assign text = customer_testimonial.settings.text %}
+            {% assign author = customer_testimonial.settings.author_name %}
+            {% assign tag1 = customer_testimonial.settings.feature_one %}
+            {% assign tag2 = customer_testimonial.settings.feature_two %}
+            {% assign img_value = customer_testimonial.settings.author_image %}
+            {% assign img_url = customer_testimonial.settings.author_image | image_url: width: 36 %}
+          {% endif %}
+          {% comment %}
+            SINGLE RENDER SECTION
+            Everything below uses the same unified variables
+          {% endcomment %}
           <div class="swiper-slide cwc-testimonials__carousel_swiper-slide">
             <div class="cwc-testimonial-card" {{ block.shopify_attributes }}>
               <div class="cwc-testimonials__testimonial-top">
                 <div class="cwc-testimonial-rating">
-                  <span class="cwc-testimonial-rating_text">{{ block.settings.star_rating }}</span>
+                  <span class="cwc-testimonial-rating_text">{{ rating }}</span>
                   {% render 'CWC_trust_stars' %}
                 </div>
 
-                {% if block.settings.title != blank %}
-                  <h3 class="cwc-testimonials__testimonial-title">"{{ block.settings.title }}"</h3>
+                {% if title != blank %}
+                  <h3 class="cwc-testimonials__testimonial-title">"{{ title }}"</h3>
                 {% endif %}
 
-                {% if block.settings.text != blank %}
-                  <p class="cwc-testimonials__testimonial-text">{{ block.settings.text }}</p>
+                {% if text != blank %}
+                  <p class="cwc-testimonials__testimonial-text">{{ text }}</p>
                 {% endif %}
               </div>
 
               <div class="cwc-testimonials__testimonial-bottom">
                 <div class="cwc-testimonials__testimonial-author_wrapper">
                   <div class="cwc-testimonials__testimonial-author">
-                    {% if block.settings.author_image != blank %}
+                    {% if img_value != blank %}
                       <img
                         loading="lazy"
                         fetchpriority="low"
-                        src="{{ block.settings.author_image | image_url: width: 36  }}"
-                        alt="{{ block.settings.author_name }}"
-                        width="{{ block.settings.image.width }}"
-                        height="{{ block.settings.image.height }}"
+                        src="{{ img_url }}"
+                        alt="{{ author }}"
+                        width="36"
+                        height="36"
                       >
-
                     {% else %}
                       <img
                         fetchpriority="low"
-                        src="{{ 'icon-placeholder.png' | asset_url  }}"
+                        src="{{ 'icon-placeholder.png' | asset_url }}"
                         alt="Author placeholder"
-                        width="{{ block.settings.image.width }}"
-                        height="{{ block.settings.image.height }}"
+                        width="36"
+                        height="36"
                       >
                     {% endif %}
-                    <span class="author-name">{{ block.settings.author_name }}</span>
+                    <span class="author-name">{{ author }}</span>
                   </div>
 
                   <div class="cwc-testimonials__testimonial-author-verified">
@@ -68,11 +108,11 @@
                 </div>
 
                 <div class="cwc-testimonials__testimonial-tags">
-                  {% if block.settings.feature_one != blank %}
-                    <span class="tag">{{ block.settings.feature_one }}</span>
+                  {% if tag1 != blank %}
+                    <span class="tag">{{ tag1 }}</span>
                   {% endif %}
-                  {% if block.settings.feature_two != blank %}
-                    <span class="tag">{{ block.settings.feature_two }}</span>
+                  {% if tag2 != blank %}
+                    <span class="tag">{{ tag2 }}</span>
                   {% endif %}
                 </div>
               </div>
@@ -102,6 +142,13 @@
   "name": "CWC Testimonials",
   "tag": "section",
   "settings": [
+    {
+      "type": "metaobject",
+      "id": "testimonials_collection",
+      "label": "Testimonials Collection",
+      "metaobject_type": "testimonial_collections",
+      "info": "Select a testimonial collection metaobject. Leave blank to use individual blocks below."
+    },
     {
       "type": "color",
       "id": "bg_color",
@@ -196,23 +243,12 @@
       ]
     }
   ],
+  "max_blocks": 12,
   "presets": [
     {
       "name": "Testimonials",
       "category": "Custom",
       "blocks": [
-        {
-          "type": "testimonial"
-        },
-        {
-          "type": "testimonial"
-        },
-        {
-          "type": "testimonial"
-        },
-        {
-          "type": "testimonial"
-        },
         {
           "type": "testimonial"
         },

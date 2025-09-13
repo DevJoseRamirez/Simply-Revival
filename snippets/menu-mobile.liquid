@@ -5,6 +5,7 @@
     </div>
     <ul class="drawer__nav menu-mobile-footer-content">
       {%- for link in linklists[settings.main_linklist].links -%}
+        
         {%- assign child_list_handle = link.title | handleize -%}
         {%- if link.links != blank -%}
           <li class="drawer__nav-item">

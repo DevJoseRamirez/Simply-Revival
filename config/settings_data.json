@@ -81,7 +81,7 @@
     "font_weight_sub": "400",
     "base_size_sup": 14,
     "letter_spacing_sub": 0.2,
-    "main_linklist": "new-menu",
+    "main_linklist": "main-menu",
     "login_enable": false,
     "currency_enable_image": false,
     "selector_enable_name": false,

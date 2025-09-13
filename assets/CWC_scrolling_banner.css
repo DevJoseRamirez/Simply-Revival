@@ -9,7 +9,7 @@
     padding-bottom: var(--padding-bottom);
     overflow: hidden;
     position: relative;
-    border-top: 1px solid rgba(0, 0, 0, .3);
+    border: 1px solid rgba(0, 0, 0, .2);
 }
 
 .CWC_scrolling_banner-wrapper {

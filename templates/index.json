@@ -82,7 +82,7 @@
           "type": "button",
           "settings": {
             "text": "Try Risk-Free Today",
-            "link": "shopify:\/\/products\/simply®-dht-blocker-test-new",
+            "link": "shopify:\/\/products\/natural-dht-blocker",
             "button_bg_color": "#125657",
             "button_text_color": "#ffffff"
           }
@@ -232,45 +232,48 @@
         "testimonial_GptQmF": {
           "type": "testimonial",
           "settings": {
-            "star_rating": "4.8",
-            "title": "Finally found something that works!",
-            "text": "I've been struggling with hair loss for about 3 years and tried everything. Simply Revival's DHT blocker has been a game changer - I'm seeing new growth after just 2 months of consistent use. The capsules are easy to take and no side effects!",
-            "author_name": "MARCUS T.",
-            "feature_one": "Hair Growth",
-            "feature_two": "Natural Formula"
+            "star_rating": "4.9",
+            "title": "Stopped my receding hairline!",
+            "text": "I'm 28 and noticed my hairline starting to go back. Been using Simply Revival for 4 months and the hair loss completely stopped. Even seeing some regrowth at the temples. This stuff actually works!",
+            "author_name": "MIKE D.",
+            "author_image": "shopify:\/\/shop_images\/Simply_Revival___Natural_DHT_Blocker_-_Testimonial_Profile_Image_01-min.png",
+            "feature_one": "Hair Regrowth",
+            "feature_two": "Male Pattern Baldness"
           }
         },
         "testimonial_VN4eEk": {
           "type": "testimonial",
           "settings": {
-            "star_rating": "4.9",
-            "title": "My acne cleared up dramatically!",
-            "text": "I'm 26 and was dealing with stubborn jawline acne that wouldn't go away. After reading about DHT and hormonal acne, I tried this product. Within 6 weeks my breakouts reduced by like 80%. So glad I found Simply Revival!",
-            "author_name": "JESSICA R.",
-            "feature_one": "Acne Control",
-            "feature_two": "Hormonal Balance"
+            "star_rating": "5.0",
+            "title": "Best investment I've made",
+            "text": "Started losing hair at 25 which destroyed my confidence. Simply Revival has been a lifesaver - my hair is thicker, stronger, and I'm not shedding nearly as much. Wish I found this sooner!",
+            "author_name": "JASON R.",
+            "author_image": "shopify:\/\/shop_images\/Simply_Revival___Natural_DHT_Blocker_-_Testimonial_Profile_Image_08-min.png",
+            "feature_one": "Confidence Boost",
+            "feature_two": "Hair Thickness"
           }
         },
         "testimonial_AqhKTF": {
           "type": "testimonial",
           "settings": {
-            "star_rating": "4.9",
-            "title": "Hair shedding stopped completely",
-            "text": "Used to lose handfuls of hair in the shower every day. After 3 months on Simply Revival, my hair loss has practically stopped and my hair feels thicker. The natural ingredients give me confidence it's safe for long-term use.",
-            "author_name": "DAVID L.",
-            "feature_one": "Hair Retention",
-            "feature_two": "Clean Ingredients"
+            "star_rating": "4.8",
+            "title": "Finally something that blocks DHT naturally",
+            "text": "Tried finasteride but the side effects scared me off. Simply Revival gives me the DHT blocking I need without any harsh chemicals or scary side effects. Natural approach that actually works.",
+            "author_name": "ALEX T.",
+            "author_image": "shopify:\/\/shop_images\/Simply_Revival___Natural_DHT_Blocker_-_Testimonial_Profile_Image_11-min.png",
+            "feature_one": "Natural DHT Block",
+            "feature_two": "No Harsh Side Effects"
           }
         },
         "testimonial_66QGfb": {
           "type": "testimonial",
           "settings": {
             "star_rating": "4.8",
-            "title": "Great value for the price",
-            "text": "Compared to other DHT blockers on the market, Simply Revival offers the best bang for your buck. Quality ingredients, effective results, and way more affordable than prescription options. Been using for 4 months now.",
-            "author_name": "SARAH M.",
-            "feature_one": "Affordable",
-            "feature_two": "Effective Formula"
+            "title": "Crown area filling in nicely",
+            "text": "My crown was getting pretty thin and obvious. After 3 months on Simply Revival, the area is definitely filling back in. My barber even commented on how much better my hair looks now.",
+            "author_name": "RYAN M.",
+            "feature_one": "Crown Regrowth",
+            "feature_two": "Visible Results"
           }
         },
         "testimonial_daP8MU": {
@@ -280,6 +283,7 @@
             "title": "Nails and hair both improved!",
             "text": "Started taking this primarily for hair thinning but noticed my nails got stronger too! They're growing faster and don't break as easily. Love that Simply Revival covers multiple benefits in one supplement.",
             "author_name": "AMANDA K.",
+            "author_image": "shopify:\/\/shop_images\/Simply_Revival___Natural_DHT_Blocker_-_Testimonial_Profile_Image_12-min.png",
             "feature_one": "Hair & Nails",
             "feature_two": "Multi-Benefit"
           }
@@ -287,89 +291,80 @@
         "testimonial_Qnj7Wm": {
           "type": "testimonial",
           "settings": {
-            "star_rating": "4.8",
-            "title": "Easy to incorporate into routine",
-            "text": "The capsules are the perfect size and don't have any weird taste or smell. I take them with breakfast every morning and never forget. Consistent use is key and Simply Revival makes it simple to stay on track.",
-            "author_name": "TYLER J.",
-            "feature_one": "Easy to Take",
-            "feature_two": "Daily Wellness"
+            "star_rating": "5.0",
+            "title": "Shower drain stays clean now!",
+            "text": "Used to clog the shower drain with hair every week. Since starting Simply Revival 5 months ago, barely any hair comes out when I wash. The shedding reduction is incredible.",
+            "author_name": "CONNOR L.",
+            "author_image": "shopify:\/\/shop_images\/Simply_Revival___Natural_DHT_Blocker_-_Testimonial_Profile_Image_03-min.png",
+            "feature_one": "Reduced Shedding",
+            "feature_two": "Hair Retention"
           }
         },
         "testimonial_nRzrjt": {
           "type": "testimonial",
           "settings": {
-            "star_rating": "4.8",
-            "title": "Easy to incorporate into routine",
-            "text": "The capsules are the perfect size and don't have any weird taste or smell. I take them with breakfast every morning and never forget. Consistent use is key and Simply Revival makes it simple to stay on track.",
-            "author_name": "TYLER J.",
-            "feature_one": "Easy to Take",
-            "feature_two": "Daily Wellness"
+            "star_rating": "4.9",
+            "title": "Great for younger guys like me",
+            "text": "I'm only 22 but hair loss runs in my family. Starting Simply Revival early was the smartest decision I made. Keeping my hair thick and healthy while I still have it. Prevention is key!",
+            "author_name": "ETHAN K.",
+            "feature_one": "Early Prevention",
+            "feature_two": "Family History"
           }
         },
         "testimonial_KPWGdx": {
           "type": "testimonial",
           "settings": {
+            "star_rating": "4.8",
+            "title": "Perfect alternative to prescriptions",
+            "text": "Didn't want to deal with prescription drugs and their side effects. Simply Revival gives me natural DHT blocking with ingredients I can actually pronounce. Results speak for themselves.",
+            "author_name": "TRAVIS S.",
+            "author_image": "shopify:\/\/shop_images\/Simply_Revival___Natural_DHT_Blocker_-_Testimonial_Profile_Image_09-min.png",
+            "feature_one": "Prescription Alternative",
+            "feature_two": "Clean Ingredients"
+          }
+        },
+        "testimonial_nWcpQm": {
+          "type": "testimonial",
+          "settings": {
             "star_rating": "5.0",
-            "title": "Hormonal acne finally under control",
-            "text": "Struggled with cystic acne along my jawline for months. Nothing worked until I discovered DHT blockers. Simply Revival has been incredible - my skin is the clearest it's been in years. Highly recommend!",
-            "author_name": "RACHEL P.",
-            "feature_one": "Quick Results",
-            "feature_two": "Confidence Boost"
+            "title": "Temples are growing back!",
+            "text": "My temples were pretty far gone but Simply Revival is bringing them back. It's slow but steady progress. After 6 months I can see actual hair where there was just scalp before.",
+            "author_name": "DEREK J.",
+            "feature_one": "Temple Regrowth",
+            "feature_two": "Long-term Results"
           }
         },
         "testimonial_itWUqi": {
           "type": "testimonial",
           "settings": {
-            "star_rating": "5.0",
-            "title": "Hormonal acne finally under control",
-            "text": "Struggled with cystic acne along my jawline for months. Nothing worked until I discovered DHT blockers. Simply Revival has been incredible - my skin is the clearest it's been in years. Highly recommend!",
-            "author_name": "KEVIN S.",
-            "feature_one": "Cystic Acne",
-            "feature_two": "Clear Skin"
+            "star_rating": "4.9",
+            "title": "Hair feels stronger and healthier",
+            "text": "Not just about stopping loss - my hair actually feels different now. Thicker, stronger, more volume. Simply Revival is improving my hair quality from the inside out. Couldn't be happier.",
+            "author_name": "BRANDON W.",
+            "feature_one": "Hair Quality",
+            "feature_two": "Stronger Hair"
           }
         },
         "testimonial_t77RC8": {
           "type": "testimonial",
           "settings": {
             "star_rating": "4.8",
-            "title": "Natural ingredients I can trust",
-            "text": "Love that Simply Revival uses clean, natural ingredients without fillers or junk. As someone who's picky about what I put in my body, this product meets all my standards while actually delivering results.",
-            "author_name": "MICHELLE W.",
-            "feature_one": "Clean Formula",
-            "feature_two": "Trustworthy"
+            "title": "Genetics don't have to win",
+            "text": "Dad and both grandfathers are bald, thought I was doomed. Simply Revival is helping me fight my genetics and win. At 35, my hair is in better shape than it was 5 years ago!",
+            "author_name": "STEVE C.",
+            "feature_one": "Fighting Genetics",
+            "feature_two": "Age Defying"
           }
         },
         "testimonial_w7imhz": {
           "type": "testimonial",
           "settings": {
             "star_rating": "4.8",
-            "title": "Perfect for sensitive stomachs",
-            "text": "I have a sensitive stomach and many supplements upset me, but Simply Revival is gentle and causes zero digestive issues. I can take it with or without food and feel great. The hair benefits are just a bonus!",
-            "author_name": "CHRIS B.",
-            "feature_one": "Gentle Formula",
-            "feature_two": "Stomach Friendly"
-          }
-        },
-        "testimonial_AttRim": {
-          "type": "testimonial",
-          "settings": {
-            "star_rating": "5.0",
-            "title": "Subscription service is convenient",
-            "text": "The monthly subscription ensures I never run out and saves me money too. Simply Revival has become an essential part of my daily routine. My hair stylist even commented on how much healthier my hair looks now.",
-            "author_name": "Nicole F.",
-            "feature_one": "Subscription",
-            "feature_two": "Hair Health"
-          }
-        },
-        "testimonial_x3Dgii": {
-          "type": "testimonial",
-          "settings": {
-            "star_rating": "4.9",
-            "title": "Packaging and shipping excellent",
-            "text": "Product always arrives quickly and well-packaged. The bottles are sealed properly and the capsules stay fresh. Simply Revival clearly cares about quality from production to delivery. Very professional company!",
-            "author_name": "BRANDON M.",
-            "feature_one": "Quality Packaging",
-            "feature_two": "Fast Shipping"
+            "title": "Easy daily routine addition",
+            "text": "Just two capsules with breakfast - couldn't be simpler. Simply Revival fits perfectly into my morning routine and the results after 4 months make it totally worth it. My hair is my confidence!",
+            "author_name": "NOAH P.",
+            "feature_one": "Easy Routine",
+            "feature_two": "Daily WellnessRetry"
           }
         }
       },
@@ -382,20 +377,147 @@
         "testimonial_Qnj7Wm",
         "testimonial_nRzrjt",
         "testimonial_KPWGdx",
+        "testimonial_nWcpQm",
         "testimonial_itWUqi",
         "testimonial_t77RC8",
-        "testimonial_w7imhz",
-        "testimonial_AttRim",
-        "testimonial_x3Dgii"
+        "testimonial_w7imhz"
       ],
       "name": "Testimonials",
       "settings": {
+        "testimonials_collection": "main-testimonial",
         "bg_color": "#fffee3",
         "text_color": "#111111",
         "card_bg": "#ffffff",
         "highlight_color": "#009370",
         "padding_top": 20,
         "padding_bottom": 40
+      }
+    },
+    "cwc_product_highlight_rows_9eKtpB": {
+      "type": "CWC_product_highlight_rows",
+      "blocks": {
+        "highlight_row_GnUnpT": {
+          "type": "highlight_row",
+          "settings": {
+            "title": "🧬 The Problem: DHT",
+            "text": "<p>DHT is a hormone that binds to receptors in your scalp - In excess it shrinks follicles, causing hair to thin and shed.<\/p>",
+            "text_color": ""
+          }
+        },
+        "highlight_row_RPKWpA": {
+          "type": "highlight_row",
+          "settings": {
+            "title": "🌿 The Solution: Natural Blockers",
+            "text": "<p>Our formula combines vitamins, herbs, botanical extracts, and other natural ingredients to reduce DHT levels safely.<\/p>",
+            "text_color": ""
+          }
+        },
+        "highlight_row_n3iXiH": {
+          "type": "highlight_row",
+          "settings": {
+            "title": "💪 The Impact: Stronger Growth",
+            "text": "<p>By lowering DHT, your follicles stay open and nourished, supporting regrowth, thickness, and healthier hair long term.<\/p>",
+            "text_color": ""
+          }
+        }
+      },
+      "block_order": [
+        "highlight_row_GnUnpT",
+        "highlight_row_RPKWpA",
+        "highlight_row_n3iXiH"
+      ],
+      "name": "Image Benefits",
+      "settings": {
+        "featured_image": "shopify:\/\/shop_images\/Simply_Revival_DHT__The_Hidden_Hormone_Behind_Hair_Loss-min.png",
+        "reverse_layout": false,
+        "section_title": "<h3><strong>DHT: The Hidden Hormone Behind Hair Loss<\/strong><\/h3>",
+        "section_caption": "We stop it naturally.",
+        "background_color": "#ffffff",
+        "text_color": "#000000",
+        "title_color": "#000000",
+        "caption_color": "#ffffff",
+        "caption_bg": "#60a1a2",
+        "padding_top": 60,
+        "padding_bottom": 60
+      }
+    },
+    "cwc_testimonial_images_rH8y8c": {
+      "type": "CWC_testimonial_images",
+      "blocks": {
+        "testimonial_image_8mmHEQ": {
+          "type": "testimonial_image",
+          "settings": {
+            "image": "shopify:\/\/shop_images\/Simply_Revival___Transformation_-_It_s_a_process_but_so_far_it_has_been_good.png"
+          }
+        },
+        "testimonial_image_rVaM3j": {
+          "type": "testimonial_image",
+          "settings": {
+            "image": "shopify:\/\/shop_images\/Simply_Revival___Transformation_-_noticeable_difference.png"
+          }
+        },
+        "testimonial_image_Hi4qYV": {
+          "type": "testimonial_image",
+          "settings": {
+            "image": "shopify:\/\/shop_images\/Simply_Revival___Transformation_-_notice_a_tremendous_improvement_in_my_hairline.png"
+          }
+        },
+        "testimonial_image_NiNTwq": {
+          "type": "testimonial_image",
+          "settings": {
+            "image": "shopify:\/\/shop_images\/Simply_Revival___Transformation_-_Definitely_see_my_results.png"
+          }
+        },
+        "testimonial_image_fUPFWf": {
+          "type": "testimonial_image",
+          "settings": {
+            "image": "shopify:\/\/shop_images\/Simply_Revival___Transformation_-_I_have_baby_hairs_growing_where_nothing_used_to_be.png"
+          }
+        },
+        "testimonial_image_rWHbhm": {
+          "type": "testimonial_image",
+          "settings": {
+            "image": "shopify:\/\/shop_images\/Simply_Revival___Transformation_-_I_m_on_my_4th_bottle_I_gained_all_my_hair_back_I_m_super_happy.png"
+          }
+        },
+        "testimonial_image_zJyBRz": {
+          "type": "testimonial_image",
+          "settings": {
+            "image": "shopify:\/\/shop_images\/Simply_Revival___Transformation_-_Look_y_all_this_product_works..png"
+          }
+        },
+        "testimonial_image_ExGmjV": {
+          "type": "testimonial_image",
+          "settings": {
+            "image": "shopify:\/\/shop_images\/Simply_Revival___Transformation_-_My_bald_spot_on_my_crown_is_gone_and_my_hairline_is_so_thick_now..png"
+          }
+        },
+        "testimonial_image_pKeVMm": {
+          "type": "testimonial_image",
+          "settings": {
+            "image": "shopify:\/\/shop_images\/Simply_Revival___Transformation_-_started_seeing_results_after_21_days.png"
+          }
+        }
+      },
+      "block_order": [
+        "testimonial_image_8mmHEQ",
+        "testimonial_image_rVaM3j",
+        "testimonial_image_Hi4qYV",
+        "testimonial_image_NiNTwq",
+        "testimonial_image_fUPFWf",
+        "testimonial_image_rWHbhm",
+        "testimonial_image_zJyBRz",
+        "testimonial_image_ExGmjV",
+        "testimonial_image_pKeVMm"
+      ],
+      "name": "Testimonial Images",
+      "settings": {
+        "section_title": "10,000+ Hair Transformations",
+        "section_subtitle": "",
+        "bg_color": "#fffee3",
+        "text_color": "#111111",
+        "padding_top": 60,
+        "padding_bottom": 60
       }
     },
     "cwc_background_features_ajA4iB": {
@@ -480,8 +602,8 @@
         "bg_color": "#125657",
         "bg_image": "shopify:\/\/shop_images\/Simply_Revival___Why_Trust_Simply_Revival_vs_Standard_Prescriptions-min.png",
         "text_color": "#ffffff",
-        "padding_top": 40,
-        "padding_bottom": 40
+        "padding_top": 60,
+        "padding_bottom": 60
       }
     },
     "cwc_reasons_yzTB3N": {
@@ -842,6 +964,8 @@
       "name": "Statistical Proof",
       "settings": {
         "bg_color": "#ffffff",
+        "bg_image_desktop": "shopify:\/\/shop_images\/Simply_Revival_Works_-_The_Numbers_Prove_it.png",
+        "bg_image_mobile": "shopify:\/\/shop_images\/Simply_Revival_Works_-_The_Numbers_Prove_it-min.png",
         "highlight_color": "#60a1a2",
         "padding_top": 40,
         "padding_bottom": 60
@@ -992,13 +1116,13 @@
         "benefits_YFNXMn": {
           "type": "benefits",
           "settings": {
-            "icon1": "shopify:\/\/shop_images\/A_full_head_of_healthy_hair_1.png",
+            "icon1": "shopify:\/\/shop_images\/Simply_Revival___Strengthens_hair_follicles_helps_prevent_hair_loss-min_5e9aa147-53e9-4dd5-abd0-3271e31cb4b7.png",
             "text1": "Promotes healthy hair growth & helps prevent hair loss",
-            "icon2": "shopify:\/\/shop_images\/A_full_head_of_healthy_hair_64px.png",
+            "icon2": "shopify:\/\/shop_images\/Simply_Revival___Deeply_hydrates_scalp_Repairs_damaged_hair_fibers-min_62adfec7-0fca-4c4b-8103-500a718ca1ce.png",
             "text2": "Combats excessive shedding & enhances hair regrowth.",
-            "icon3": "shopify:\/\/shop_images\/A_full_head_of_healthy_hair_1.png",
+            "icon3": "shopify:\/\/shop_images\/Simply_Revival___Reduces_shedding_while_promoting_thicker_fuller_growth-min_69b2e63b-b83a-4f0e-bc4e-cb7d8a8fd8c3.png",
             "text3": "Soothes irritated scalp and restores healthy balance",
-            "icon4": "shopify:\/\/shop_images\/A_full_head_of_healthy_hair_1.png",
+            "icon4": "shopify:\/\/shop_images\/Simply_Revival___9_premium_oils_to_boost_circulation_and_restore_shine.-min_363002cf-ebff-4873-a3f4-597084723ae6.png",
             "text4": "Rich in nutrients to boost immune health & natural healing",
             "text5": "",
             "text6": ""
@@ -1082,7 +1206,7 @@
       ],
       "name": "Featured Product",
       "settings": {
-        "product": "simply®-dht-blocker-test-new",
+        "product": "natural-dht-blocker",
         "background_color": "#ffffff",
         "padding_top": 40,
         "padding_bottom": 40
@@ -1236,6 +1360,8 @@
     "cwc_usp_columns_BmJWgA",
     "cwc_social_proof_QLBenN",
     "cwc_testimonials_WEmh8r",
+    "cwc_product_highlight_rows_9eKtpB",
+    "cwc_testimonial_images_rH8y8c",
     "cwc_background_features_ajA4iB",
     "cwc_reasons_yzTB3N",
     "cwc_video_testimonials_6bGNRY",

@@ -310,7 +310,9 @@
 .cwc-video-testimonials__progress-bar {
     height: 100%;
     width: 0%;
-    background: var(--accent-color, #125657);
+    /* background: var(--accent-color, #125657); */
+    background: var(--accent-color, #60a1a2);
+
     transition: width 0.3s linear;
 }
 

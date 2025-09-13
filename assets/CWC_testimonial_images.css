@@ -165,8 +165,17 @@
 .cwc-testimonial-images__progress-bar {
     height: 100%;
     width: 0%;
-    background: #009370;
+    /* background: #125657; */
+
+    background: var(--accent-color, #60a1a2);
     transition: width 0.3s linear;
+}
+
+
+.cwc-testimonial-images__carousel-controls .cwc-testimonial-images__carousel-next,
+.cwc-testimonial-images__carousel-controls .cwc-testimonial-images__carousel-prev {
+    background: white;
+    background-color: white;
 }
 
 /* ==============================
