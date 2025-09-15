@@ -26,13 +26,31 @@
     color: var(--text-color);
 }
 
+
+/* Heading */
 .cwc-testimonial-images__title {
-    font-size: 2.5rem;
-    font-weight: 700;
-    line-height: 1.2;
     font-size: 1.8rem;
     font-weight: 600;
+    margin-bottom: 0.5rem;
+    color: var(--text-color);
 }
+
+.cwc-testimonial-images__title * {
+    font-weight: 600;
+    line-height: normal;
+
+}
+
+.cwc-testimonial-images__title strong {
+    color: #009370;
+    /* color: #60a1a2; */
+    color: var(--accent-color);
+
+}
+
+
+
+
 
 .cwc-testimonials__testimonial-author-verified-text {
     font-weight: 400;

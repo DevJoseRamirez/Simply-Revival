@@ -196,16 +196,8 @@
 
                   {% if block.settings.text4 != blank %}
                     <li class="cwc-comparison__item">
-                      {% if block.settings.icon4 != blank %}
-                        {% render 'CWC_icon-x', fill: '#353535' %}
-
-                        {% comment %} <img {% endcomment %}
-                        {% comment %} src="{{ block.settings.icon4 | image_url: width: 24 }}" {% endcomment %}
-                        {% comment %} alt="{{ block.settings.icon4.alt }}" {% endcomment %}
-                        {% comment %} width="{{ block.settings.icon4.width }}" {% endcomment %}
-                        {% comment %} height="{{ block.settings.icon4.height }}" {% endcomment %}
-                        {% comment %} > {% endcomment %}
-                      {% endif %}
+                      {% render 'CWC_icon-x', fill: '#353535' %}
+                      
                       <span>{{ block.settings.text4 }}</span>
                     </li>
                   {% endif %}

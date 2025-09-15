@@ -14,7 +14,24 @@
   <div class="cwc-testimonial-images__wrapper">
     {% if section.settings.section_title != blank %}
       <div class="cwc-testimonial-images__header">
-        <h3 class="cwc-testimonial-images__title">{{ section.settings.section_title }}</h3>
+        {% comment %} <h3 class="cwc-testimonial-images__title">{{ section.settings.section_title }}</h3> {% endcomment %}
+
+
+
+    {% if section.settings.section_title != blank %}
+      <div
+        class="cwc-testimonial-images__title"
+        style="--accent-color: {{ section.settings.bold_color }};"
+      >
+        {{ section.settings.section_title }}
+      </div>
+    {% endif %}
+
+
+
+
+
+
         {% if section.settings.section_subtitle != blank %}
           <p class="cwc-testimonial-images__subtitle">{{ section.settings.section_subtitle }}</p>
         {% endif %}
@@ -65,10 +82,16 @@
   "tag": "section",
   "settings": [
     {
-      "type": "text",
+      "type": "richtext",
       "id": "section_title",
       "label": "Section Title",
-      "default": "10,000+ Hair Transformations"
+      "default": "<h3>10,000+ <strong>Hair Transformations</strong></h3>"
+    },
+       {
+      "type": "color",
+      "id": "bold_color",
+      "label": "Bold Text Color",
+      "default": "#125657"
     },
     {
       "type": "text",
