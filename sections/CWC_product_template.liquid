@@ -1,29 +1,3 @@
-{% comment %} trracking scripts included {% endcomment %}
-<script>
-  {% if product %}
-  ttq.track('AddToCart', {
-    content_id: ['{{ 9537594261785 }}'], // Using product ID for tracking
-    content_type: 'product'
-  });
-  {% endif %}
-</script>
-<script>
-  {% if product %}
-  ttq.track('ViewContent', {
-    content_id: ['{{ 9537594261785 }}'], // Using product ID for tracking
-    content_type: 'product'
-  });
-  {% endif %}
-</script>
-<script>
-  {% if product %}
-  ttq.track('InitiateCheckout', {
-    content_id: ['{{ 9537594261785 }}'], // Using product ID for tracking
-    content_type: 'product'
-  });
-  {% endif %}
-</script>
-
 {% style %}
     #CWC_product_template-{{ section.id }} {
       --section-bg: {{ section.settings.background_color }};
@@ -281,11 +255,6 @@
       "type": "image_carousel",
       "name": "Image Carousel",
       "settings": [
-        {
-          "type": "image_picker",
-          "id": "image",
-          "label": "Image"
-        },
         {
           "type": "text",
           "id": "badge_text",

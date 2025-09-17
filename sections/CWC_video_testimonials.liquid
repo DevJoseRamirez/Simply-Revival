@@ -16,9 +16,7 @@
 <section id="CWC_video_testimonials-{{ section.id }}" class="cwc-video-testimonials">
   <div class="cwc-video-testimonials__wrapper">
     {% if section.settings.heading != blank %}
-      <div
-        class="cwc-video-testimonials__heading"
-      >
+      <div class="cwc-video-testimonials__heading">
         {{ section.settings.heading }}
       </div>
     {% endif %}
@@ -29,20 +27,23 @@
 
     <div class="swiper cwc-video-testimonials__carousel">
       <div class="swiper-wrapper cwc-video-testimonials__swiper-wrapper">
-        {% for block in section.blocks %}
-          {% if block.type == 'testimonial' %}
+        {% if section.settings.video_testimonials_collection %}
+          {% comment %} METAOBJECT LOOP {% endcomment %}
+          {% for video_testimonial in section.settings.video_testimonials_collection.testimonial_list.value %}
             <div class="swiper-slide cwc-video-testimonials__swiper-slide">
-              <div class="cwc-video-testimonials__video-card" {{ block.shopify_attributes }}>
-                {% if block.settings.video_file != blank %}
-                  {% assign mp4_source = block.settings.video_file.sources | where: 'format', 'mp4' | first %}
+              <div class="cwc-video-testimonials__video-card">
+                {% if video_testimonial.video != blank %}
+                  {% assign mp4_source = video_testimonial.video.value.sources | where: 'format', 'mp4' | first %}
 
                   <div class="cwc-video-testimonials__video-wrapper">
                     <video
-                      data-video-id="{{ block.id }}{{ forloop.index0 }}"
+                      data-video-id="{{ video_testimonial.id }}{{ forloop.index0 }}"
                       class="cwc-video-testimonials__video"
                       playsinline
                       preload="metadata"
-                      poster="{{ block.settings.video_file.preview_image | image_url: width: 1100 }}"
+                      poster="{{ video_testimonial.video.value.preview_image | image_url: width: 500 }}"
+                      height="{{ video_testimonial.video.value.preview_image.width }}"
+                      width="{{ video_testimonial.video.value.preview_image.height }}"
                     >
                       {% if mp4_source %}
                         <source src="{{ mp4_source.url }}" type="video/mp4">
@@ -50,7 +51,6 @@
                     </video>
 
                     <button class="cwc-video-testimonials__custom-play-button" aria-label="Play video">
-                      <!-- inline play icon -->
                       <svg
                         class="play-icon"
                         width="44"
@@ -70,35 +70,17 @@
                             d="M30.407 20.8061C31.6018 21.4959 31.6018 23.2205 30.407 23.9103L19.6535 30.1189C18.4587 30.8087 16.9652 29.9464 16.9652 28.5667L16.9652 16.1497C16.9652 14.77 18.4587 13.9077 19.6535 14.5976L30.407 20.8061Z"
                             fill="white"></path>
                         <defs>
-                            <clipPath id="bgblur_0_184_1311_clip_path"
-                                transform="translate(7.62703 7.61355)">
+                            <clipPath id="bgblur_0_184_1311_clip_path" transform="translate(7.62703 7.61355)">
                                 <circle cx="22.3448" cy="22.3583" r="21.5069"></circle>
                             </clipPath>
                         </defs>
                       </svg>
                     </button>
                   </div>
-
-                {% elsif block.settings.video_url != blank %}
-                  <div class="cwc-video-testimonials__video-wrapper">
-                    <video
-                      playsinline
-                      loop
-                      preload="metadata"
-                      poster="{% if block.settings.thumbnail != blank %}{{ block.settings.thumbnail | image_url: width: 1100 }}{% endif %}"
-                    >
-                      <source src="{{ block.settings.video_url }}" type="video/mp4">
-                    </video>
-                    <button class="cwc-custom-play-button" aria-label="Play video">
-                      <svg width="44" height="44" ...>
-                        ...
-                      </svg>
-                    </button>
-                  </div>
                 {% endif %}
 
-                <div class="cwc-video-testimonials__video-author" {{ block.shopify_attributes }}>
-                  <span class="cwc-video-testimonials__author-name">{{ block.settings.author_name }}</span>
+                <div class="cwc-video-testimonials__video-author">
+                  <span class="cwc-video-testimonials__author-name">{{ video_testimonial.author }}</span>
 
                   <div class="cwc-video-testimonials__verified">
                     <span class="cwc-video-testimonials__verified-icon">
@@ -109,8 +91,107 @@
                 </div>
               </div>
             </div>
-          {% endif %}
-        {% endfor %}
+          {% endfor %}
+
+        {% else %}
+          {% comment %} BLOCKS LOOP {% endcomment %}
+          {% for block in section.blocks %}
+            {% if block.type == 'testimonial' %}
+              <div class="swiper-slide cwc-video-testimonials__swiper-slide">
+                <div class="cwc-video-testimonials__video-card" {{ block.shopify_attributes }}>
+                  {% if block.settings.video_file != blank %}
+                    {% assign mp4_source = block.settings.video_file.sources | where: 'format', 'mp4' | first %}
+
+                    <div class="cwc-video-testimonials__video-wrapper">
+                      <video
+                        data-video-id="{{ block.id }}{{ forloop.index0 }}"
+                        class="cwc-video-testimonials__video"
+                        playsinline
+                        preload="metadata"
+                        poster="{{ block.settings.video_file.preview_image | image_url: width: 500 }}"
+                        height="{{ block.settings.video_file.preview_image.width }}"
+                        width="{{ block.settings.video_file.preview_image.height }}"
+                      >
+                        {% if mp4_source %}
+                          <source src="{{ mp4_source.url }}" type="video/mp4">
+                        {% endif %}
+                      </video>
+
+                      <button class="cwc-video-testimonials__custom-play-button" aria-label="Play video">
+                        <svg
+                          class="play-icon"
+                          width="44"
+                          height="44"
+                          viewBox="0 0 44 44"
+                          fill="none"
+                          xmlns="http://www.w3.org/2000/svg"
+                        >
+                          <foreignObject x="-7.62703" y="-7.61355" width="59.9436" height="59.9436">
+                              <div xmlns="http://www.w3.org/1999/xhtml"
+                                  style="backdrop-filter:blur(4.23px);clip-path:url(#bgblur_0_184_1311_clip_path);height:100%;width:100%">
+                              </div>
+                          </foreignObject>
+                          <circle data-figma-bg-blur-radius="8.46486" cx="22.3448" cy="22.3583" r="21.5069"
+                              fill="white" fill-opacity="0.2"></circle>
+                          <path
+                              d="M30.407 20.8061C31.6018 21.4959 31.6018 23.2205 30.407 23.9103L19.6535 30.1189C18.4587 30.8087 16.9652 29.9464 16.9652 28.5667L16.9652 16.1497C16.9652 14.77 18.4587 13.9077 19.6535 14.5976L30.407 20.8061Z"
+                              fill="white"></path>
+                          <defs>
+                              <clipPath id="bgblur_0_184_1311_clip_path" transform="translate(7.62703 7.61355)">
+                                  <circle cx="22.3448" cy="22.3583" r="21.5069"></circle>
+                              </clipPath>
+                          </defs>
+                        </svg>
+                      </button>
+                    </div>
+
+                  {% elsif block.settings.video_url != blank %}
+                    <div class="cwc-video-testimonials__video-wrapper">
+                      <video
+                        playsinline
+                        loop
+                        preload="metadata"
+                        poster="{% if block.settings.thumbnail != blank %}{{ block.settings.thumbnail | image_url: width: 1100 }}{% endif %}"
+                      >
+                        <source src="{{ block.settings.video_url }}" type="video/mp4">
+                      </video>
+                      <button class="cwc-custom-play-button" aria-label="Play video">
+                        <svg width="44" height="44" viewBox="0 0 44 44" fill="none" xmlns="http://www.w3.org/2000/svg">
+                          <foreignObject x="-7.62703" y="-7.61355" width="59.9436" height="59.9436">
+                              <div xmlns="http://www.w3.org/1999/xhtml"
+                                  style="backdrop-filter:blur(4.23px);clip-path:url(#bgblur_0_184_1311_clip_path);height:100%;width:100%">
+                              </div>
+                          </foreignObject>
+                          <circle data-figma-bg-blur-radius="8.46486" cx="22.3448" cy="22.3583" r="21.5069"
+                              fill="white" fill-opacity="0.2"></circle>
+                          <path
+                              d="M30.407 20.8061C31.6018 21.4959 31.6018 23.2205 30.407 23.9103L19.6535 30.1189C18.4587 30.8087 16.9652 29.9464 16.9652 28.5667L16.9652 16.1497C16.9652 14.77 18.4587 13.9077 19.6535 14.5976L30.407 20.8061Z"
+                              fill="white"></path>
+                          <defs>
+                              <clipPath id="bgblur_0_184_1311_clip_path" transform="translate(7.62703 7.61355)">
+                                  <circle cx="22.3448" cy="22.3583" r="21.5069"></circle>
+                              </clipPath>
+                          </defs>
+                        </svg>
+                      </button>
+                    </div>
+                  {% endif %}
+
+                  <div class="cwc-video-testimonials__video-author" {{ block.shopify_attributes }}>
+                    <span class="cwc-video-testimonials__author-name">{{ block.settings.author_name }}</span>
+
+                    <div class="cwc-video-testimonials__verified">
+                      <span class="cwc-video-testimonials__verified-icon">
+                        {%- render 'CWC_icon-check_badge', fill: '#009370' -%}
+                      </span>
+                      <span class="cwc-video-testimonials__verified-text"> Verified Customer </span>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            {% endif %}
+          {% endfor %}
+        {% endif %}
       </div>
     </div>
 
@@ -147,6 +228,13 @@
   "name": "CWC Video Testimonials",
   "settings": [
     {
+      "type": "metaobject",
+      "id": "video_testimonials_collection",
+      "label": "Video Testimonials Collection",
+      "metaobject_type": "video_testimonial_list",
+      "info": "Select a video testimonial collection metaobject. Leave blank to use individual blocks below."
+    },
+    {
       "type": "richtext",
       "id": "heading",
       "label": "Heading",
@@ -163,23 +251,6 @@
       "id": "text",
       "label": "Subtext",
       "default": "<p>See why thousands of people love our products</p>"
-    },
-    {
-      "type": "text",
-      "id": "button_label",
-      "label": "Button label",
-      "default": "Shop Now"
-    },
-    {
-      "type": "url",
-      "id": "button_link",
-      "label": "Button link"
-    },
-    {
-      "type": "text",
-      "id": "button_note",
-      "label": "Button note",
-      "default": "No risk — 30 day money back guarantee"
     },
     {
       "type": "color",
@@ -307,10 +378,6 @@
       "name": "Video Testimonials",
       "category": "Custom",
       "blocks": [
-        { "type": "testimonial" },
-        { "type": "testimonial" },
-        { "type": "testimonial" },
-        { "type": "testimonial" },
         { "type": "testimonial" },
         { "type": "testimonial" },
         { "type": "testimonial" },

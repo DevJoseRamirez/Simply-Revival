@@ -1,5 +1,60 @@
 {
   "sections": {
+    "cwc_scrolling_banner_6nEerz": {
+      "type": "CWC_scrolling_banner",
+      "blocks": {
+        "item_WYMXkQ": {
+          "type": "item",
+          "settings": {
+            "image": "shopify:\/\/shop_images\/Simply_Revival___356_Day_Guarantee_-_64px.png",
+            "text": "356 Day Guarantee"
+          }
+        },
+        "item_eRQTUW": {
+          "type": "item",
+          "settings": {
+            "image": "shopify:\/\/shop_images\/Simply_Revival___Tiktok_Viral_-_64px.png",
+            "text": "Tiktok Viral"
+          }
+        },
+        "item_d4j3Ch": {
+          "type": "item",
+          "settings": {
+            "image": "shopify:\/\/shop_images\/Simply_Revival___1_Natural_DHT_Blocker_-_64px-min.png",
+            "text": "#1 Natural DHT Blocker"
+          }
+        },
+        "item_NqwRT7": {
+          "type": "item",
+          "settings": {
+            "image": "shopify:\/\/shop_images\/Simply_Revival___Safe_Formula_-_64px.png",
+            "text": "Safe Formula"
+          }
+        },
+        "item_F6tAcU": {
+          "type": "item",
+          "settings": {
+            "image": "shopify:\/\/shop_images\/Simply_Revival___All_Natural_-_64px.png",
+            "text": "All Natural"
+          }
+        }
+      },
+      "block_order": [
+        "item_WYMXkQ",
+        "item_eRQTUW",
+        "item_d4j3Ch",
+        "item_NqwRT7",
+        "item_F6tAcU"
+      ],
+      "name": "Scrolling Banner",
+      "settings": {
+        "background_color": "#ffffff",
+        "text_color": "#125657",
+        "scroll_speed": 30,
+        "padding_top": 4,
+        "padding_bottom": 4
+      }
+    },
     "product-content": {
       "type": "product-content",
       "blocks": {
@@ -113,7 +168,7 @@
             "badge_text": "BestSeller",
             "badge_text_color": "#ffffff",
             "badge_bg_color": "#60a1a2",
-            "badge_sold_text": "50+ Sold Today",
+            "badge_sold_text": "150+ Sold Today",
             "badge_sold_text_color": "#000000",
             "badge_sold_bg_color": "#ffffff"
           }
@@ -121,7 +176,7 @@
         "rating_efyjWb": {
           "type": "rating",
           "settings": {
-            "text": "<p>Rated <strong>4.9 Excellent <\/strong>| <a href=\"#az_reviews\" title=\"#az_reviews\"><span style=\"text-decoration:underline\">323 Reviews<\/span><\/a><\/p>"
+            "text": "<p>Rated <strong>4.9 Excellent <\/strong>| <a href=\"#az_reviews\" title=\"#az_reviews\"><span style=\"text-decoration:underline\">2,148 Reviews<\/span><\/a><\/p>"
           }
         },
         "vendor_7iLFXM": {
@@ -202,18 +257,37 @@
         },
         "faq_7YcCid": {
           "type": "faq",
-          "disabled": true,
           "settings": {
-            "title": "Description",
-            "content": "<p>Description DescriptionDescriptionDescriptionDescription<\/p><p> Description<\/p><p><\/p>"
+            "title": "What is Simply Revival?",
+            "content": "<p>Simply revival is a wellness brand focused on natural plant based supplements to support your hair health, immune system, and overall health - without synthetic ingredients or harsh side effects. <\/p>"
           }
         },
         "faq_wHxCrf": {
           "type": "faq",
-          "disabled": true,
           "settings": {
-            "title": "Description",
-            "content": "<p>DescriptionDescriptionDescriptionDescriptionDescriptionDescriptionDescription<\/p>"
+            "title": "Is Simply revival safe to use?",
+            "content": "<p>Yes, our formulas are crafted to be the safest on the market and still provide powerful results. <\/p>"
+          }
+        },
+        "faq_aUfJty": {
+          "type": "faq",
+          "settings": {
+            "title": "How long does it take to see results?",
+            "content": "<p>Most users reported noticing less hair loss in 3-6 weeks and new growth after 6-12 weeks. <\/p>"
+          }
+        },
+        "faq_ppfPCd": {
+          "type": "faq",
+          "settings": {
+            "title": "Is simply revival suitable for all hair types?",
+            "content": "<p>Yes, the formula is designed to to support hair heath for all types of hair. <\/p>"
+          }
+        },
+        "faq_Nm9pcE": {
+          "type": "faq",
+          "settings": {
+            "title": "Do you have a guarantee?",
+            "content": "<p>Yes, All orders are backed by our 365 day money back guarantee. If you’re not happy, we will make it right!<\/p>"
           }
         }
       },
@@ -231,7 +305,10 @@
         "add_to_cart_XREkcb",
         "guarantee_text_cjAzqP",
         "faq_7YcCid",
-        "faq_wHxCrf"
+        "faq_wHxCrf",
+        "faq_aUfJty",
+        "faq_ppfPCd",
+        "faq_Nm9pcE"
       ],
       "name": "Product Template",
       "settings": {
@@ -633,12 +710,13 @@
       ],
       "name": "Testimonial Images",
       "settings": {
-        "section_title": "10,000+ Hair Transformations",
+        "section_title": "<h3>10,000+ <strong>Hair Transformations<\/strong><\/h3>",
+        "bold_color": "#125657",
         "section_subtitle": "",
         "bg_color": "#fffee3",
         "text_color": "#111111",
-        "padding_top": 60,
-        "padding_bottom": 60
+        "padding_top": 40,
+        "padding_bottom": 40
       }
     },
     "cwc_background_features_fzEHDf": {
@@ -741,7 +819,7 @@
         "heading_jGHhHk": {
           "type": "heading",
           "settings": {
-            "text": "<h3>The Reasons Customers Love Us<\/h3>",
+            "text": "<h3>We’re different from everything you’ve tried<\/h3>",
             "heading_color": "#111111"
           }
         },
@@ -908,7 +986,8 @@
         "guarantee_text_TtNrBf": {
           "type": "guarantee_text",
           "settings": {
-            "text": "365-day money back guarantee"
+            "text": "365-day money back guarantee",
+            "icon": "shopify:\/\/shop_images\/Simply_Revival___Gurantee_-_DHT_Blocker-min.png"
           }
         }
       },
@@ -925,12 +1004,10 @@
       ],
       "name": "Video Testimonials",
       "settings": {
+        "video_testimonials_collection": "video-testimonial-list-lnxzuxpg",
         "heading": "<h3>Real People, <strong>Real Results<\/strong><\/h3>",
         "bold_color": "#125657",
         "text": "<p>See why thousands of people love our products<\/p>",
-        "button_label": "Shop Now",
-        "button_link": "",
-        "button_note": "No risk — 30 day money back guarantee",
         "bg_color": "#faf9f6",
         "text_color": "#111111",
         "button_bg": "#125657",
@@ -1322,6 +1399,7 @@
     }
   },
   "order": [
+    "cwc_scrolling_banner_6nEerz",
     "product-content",
     "product-requently",
     "product-recent",

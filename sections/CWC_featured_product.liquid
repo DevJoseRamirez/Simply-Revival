@@ -10,6 +10,10 @@
 
 {{ 'CWC_featured_product.css' | asset_url | stylesheet_tag }}
 
+{{ 'swiper-bundle.min.css' | asset_url | stylesheet_tag }}
+
+
+
 {% if section.settings.product != blank %}
   {% assign product = section.settings.product %}
 {% endif %}
@@ -34,7 +38,11 @@
                 {% render 'CWC_product_image', product: product, section_id: section.id, block: block %}
               </div>
 
-              {% comment %} image carosel {% endcomment %}
+               {% when 'image_carousel' %}
+              <div class="cwc-featured-product__image_carousel" {{ block.shopify_attributes }}>
+                {% render 'CWC_product_image_carousel', product: product, section_id: section.id, block: block %}
+              </div>
+
             {% when 'faq' %}
               <div class="cwc-featured-product__faq desktop__only" {{ block.shopify_attributes }}>
                 {% render 'CWC_faq_blocks', product: product, section_id: section.id, block: block %}
@@ -245,6 +253,51 @@
         }
       ]
     },
+
+    {
+      "type": "image_carousel",
+      "name": "Image Carousel",
+      "settings": [
+        {
+          "type": "text",
+          "id": "badge_text",
+          "label": "Image Badge Text",
+          "default": "BestSeller"
+        },
+        {
+          "type": "color",
+          "id": "badge_text_color",
+          "label": "Badge text Color",
+          "default": "#fff"
+        },
+        {
+          "type": "color",
+          "id": "badge_bg_color",
+          "label": "Badge Background Color",
+          "default": "#60a1a2"
+        },
+
+        {
+          "type": "text",
+          "id": "badge_sold_text",
+          "label": "Sold Badge Text",
+          "default": "50+ Sold Today"
+        },
+        {
+          "type": "color",
+          "id": "badge_sold_text_color",
+          "label": "Sold Badge text Color",
+          "default": "#000"
+        },
+        {
+          "type": "color",
+          "id": "badge_sold_bg_color",
+          "label": "Sold Badge Background Color",
+          "default": "#fff"
+        }
+      ]
+    },
+
     {
       "type": "faq",
       "name": "FAQ",

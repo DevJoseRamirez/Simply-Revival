@@ -82,7 +82,7 @@
           "type": "button",
           "settings": {
             "text": "Try Risk-Free Today",
-            "link": "shopify:\/\/products\/natural-dht-blocker",
+            "link": "#cwc-featured-product--anchor",
             "button_bg_color": "#125657",
             "button_text_color": "#ffffff"
           }
@@ -106,7 +106,7 @@
       "settings": {
         "background_color": "#d0f0f2",
         "text_color": "#202020",
-        "image": "shopify:\/\/shop_images\/Simply_Revival___The_1_Natural_DHT_Blocker_for_Hair_Loss-1-min.png",
+        "image": "shopify:\/\/shop_images\/Simply_Revival___The_1_Natural_DHT_Blocker_for_Hair_Loss_-_Hero_Image-min.png",
         "alt_text": "",
         "image_position": "left",
         "padding_top": 0,
@@ -512,7 +512,8 @@
       ],
       "name": "Testimonial Images",
       "settings": {
-        "section_title": "10,000+ Hair Transformations",
+        "section_title": "<h3>10,000+ <strong>Hair Transformations<\/strong><\/h3>",
+        "bold_color": "#125657",
         "section_subtitle": "",
         "bg_color": "#fffee3",
         "text_color": "#111111",
@@ -646,7 +647,7 @@
         "reason_CcHDxL": {
           "type": "reason",
           "settings": {
-            "img": "shopify:\/\/shop_images\/Simply_Revival___Reason_2_-_10_Legendary_Herbs._One_formula-min.png",
+            "img": "shopify:\/\/shop_images\/Simply_Revival___Reason_2_-_10_Legendary_Herbs._One_formula-min_1.png",
             "badge": "Reason 2",
             "badge_bg": "#60a1a2",
             "badge_color": "#ffffff",
@@ -814,12 +815,10 @@
       ],
       "name": "Video Testimonials",
       "settings": {
+        "video_testimonials_collection": "video-testimonial-list-lnxzuxpg",
         "heading": "<h3>Real People. <strong>Real Results<\/strong><\/h3>",
         "bold_color": "#125657",
         "text": "<p>See why thousands of people love our products<\/p>",
-        "button_label": "Try Risk-Free Today",
-        "button_link": "",
-        "button_note": "No risk — 30 day money back guarantee",
         "bg_color": "#faf9f6",
         "text_color": "#202020",
         "button_bg": "#125657",
@@ -881,7 +880,7 @@
             "bf_image": "shopify:\/\/shop_images\/Simply_Revival___DHT_Blocker_-_Before_Transformatoin-min_13a68d46-b0f7-4201-bd96-5ff627f3c840.png",
             "text": "Withing",
             "hi_text": "90 days",
-            "af_image": "shopify:\/\/shop_images\/Simply_Revival___DHT_Blocker_-_After_Transformatoin-min_4d30a9a4-5690-43ad-8227-f911f625a575.png"
+            "af_image": "shopify:\/\/shop_images\/Simply_Revival___The_1_Natural_DHT_Blocker_for_Hair_Loss___Trasformatoin_-_After-min.png"
           }
         }
       },
@@ -1079,12 +1078,24 @@
       "blocks": {
         "product_image_kwd8fK": {
           "type": "product_image",
+          "disabled": true,
           "settings": {
             "image": "{{ section.settings.product.featured_image }}",
             "badge_text": "BestSeller",
             "badge_text_color": "#ffffff",
             "badge_bg_color": "#60a1a2",
-            "badge_sold_text": "50+ Sold Today",
+            "badge_sold_text": "150+ Sold Today",
+            "badge_sold_text_color": "#000000",
+            "badge_sold_bg_color": "#ffffff"
+          }
+        },
+        "image_carousel_Yceajb": {
+          "type": "image_carousel",
+          "settings": {
+            "badge_text": "BestSeller",
+            "badge_text_color": "#ffffff",
+            "badge_bg_color": "#60a1a2",
+            "badge_sold_text": "150+ Sold Today",
             "badge_sold_text_color": "#000000",
             "badge_sold_bg_color": "#ffffff"
           }
@@ -1173,23 +1184,43 @@
         },
         "faq_RCm7Hx": {
           "type": "faq",
-          "disabled": true,
           "settings": {
-            "title": "Description",
-            "content": "<p>DescDescription Description Description DescDescription Description Description<\/p><p>DescDescription Description Description DescDescription Description Description<\/p>"
+            "title": "What is Simply Revival?",
+            "content": "<p>Simply revival is a wellness brand focused on natural plant based supplements to support your hair health, immune system, and overall health - without synthetic ingredients or harsh side effects. <\/p>"
           }
         },
         "faq_WQMen7": {
           "type": "faq",
-          "disabled": true,
           "settings": {
-            "title": "Description",
-            "content": "<p>DescDescription Description Description DescDescription Description Description<\/p>"
+            "title": "Is Simply revival safe to use?",
+            "content": "<p>Yes, our formulas are crafted to be the safest on the market and still provide powerful results. <\/p>"
+          }
+        },
+        "faq_W3fXUw": {
+          "type": "faq",
+          "settings": {
+            "title": "How long does it take to see results?",
+            "content": "<p>Most users reported noticing less hair loss in 3-6 weeks and new growth after 6-12 weeks. <\/p>"
+          }
+        },
+        "faq_Jwa3Xj": {
+          "type": "faq",
+          "settings": {
+            "title": "Is simply revival suitable for all hair types?",
+            "content": "<p>Yes, the formula is designed to to support hair heath for all types of hair. <\/p>"
+          }
+        },
+        "faq_yhhgHF": {
+          "type": "faq",
+          "settings": {
+            "title": "Do you have a guarantee?",
+            "content": "<p>Yes, All orders are backed by our 365 day money back guarantee. If you’re not happy, we will make it right!<\/p>"
           }
         }
       },
       "block_order": [
         "product_image_kwd8fK",
+        "image_carousel_Yceajb",
         "rating_RJ9Jif",
         "vendor_mpneHP",
         "title_eDCqi8",
@@ -1202,11 +1233,14 @@
         "add_to_cart_kKcAWF",
         "guarantee_text_neXtqF",
         "faq_RCm7Hx",
-        "faq_WQMen7"
+        "faq_WQMen7",
+        "faq_W3fXUw",
+        "faq_Jwa3Xj",
+        "faq_yhhgHF"
       ],
       "name": "Featured Product",
       "settings": {
-        "product": "natural-dht-blocker",
+        "product": "simply®-dht-blocker",
         "background_color": "#ffffff",
         "padding_top": 40,
         "padding_bottom": 40
@@ -1298,7 +1332,7 @@
           "type": "faq",
           "settings": {
             "title": "<p>Is simply revival suitable for all hair types?<\/p>",
-            "text": "<p>Yes, the formula is designed to to support hair heathy for all types of hair. <\/p>"
+            "text": "<p>Yes, the formula is designed to to support hair heath for all types of hair. <\/p>"
           }
         },
         "faq_DQz37J": {
@@ -1320,7 +1354,7 @@
           "type": "button",
           "settings": {
             "button_text": "Try Risk-Free Today",
-            "button_link": "",
+            "button_link": "#cwc-featured-product--anchor",
             "button_bg_color": "#d0f0f2",
             "button_text_color": "#125657",
             "button_note": "365-day money back guarantee"
