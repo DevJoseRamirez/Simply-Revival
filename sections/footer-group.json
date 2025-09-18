@@ -121,14 +121,22 @@
           "type": "social",
           "settings": {
             "title": "Follow us",
-            "width": "25%"
+            "width": "50%"
+          }
+        },
+        "menu_xJYkgb": {
+          "type": "menu",
+          "settings": {
+            "link_list": "manage-subscription",
+            "width": "50%"
           }
         }
       },
       "block_order": [
         "1595696762386",
         "ec49d85b-17bb-4b65-a49f-3086aa5430cd",
-        "social_3chW7W"
+        "social_3chW7W",
+        "menu_xJYkgb"
       ],
       "custom_css": [
         "footer {background-repeat: repeat; background-size: contain; background-position: center;}"

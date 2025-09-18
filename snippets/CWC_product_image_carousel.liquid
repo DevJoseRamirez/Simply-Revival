@@ -1,8 +1,3 @@
-{% comment %}
-  CWC Product Image Carousel - Shows all product images
-  Usage: {% render 'CWC_product_image_carousel', product: product, section_id: section.id, block: block %}
-{% endcomment %}
-
 {% style %}
   .cwc-product-carousel-{{ section_id }} {
     --badge-bg: {{ block.settings.badge_bg_color | default: '#60a1a2' }};
@@ -17,34 +12,65 @@
 <div class="cwc-product-carousel cwc-product-carousel-{{ section_id }}">
   <!-- Main Carousel -->
   <div class="swiper cwc-product-main-carousel" id="product-carousel-{{ section_id }}">
-    <!-- Product Badges -->
-    {% if block.settings.badge_text != blank %}
-      <div
-        class="cwc-product_template__image-badge"
-        style="background: {{ block.settings.badge_bg_color }}; color: {{ block.settings.badge_text_color }}"
-      >
-        {% render 'CWC_icon-crown', fill_color: block.settings.badge_text_color %}
-        {{ block.settings.badge_text }}
-      </div>
-    {% endif %}
-
     <div class="swiper-wrapper">
       {% if product.images.size > 0 %}
         {% for image in product.images %}
-          <div class="swiper-slide">
+          <div class="swiper-slide" data-slide-index="{{ forloop.index0 }}">
+            {% comment %} Add badges only to the first slide with a specific class {% endcomment %}
+            {% if forloop.first %}
+              {% if block.settings.badge_text != blank %}
+                <div
+                  class="cwc-product_template__image-badge cwc-badge-first-only"
+                  style="background: {{ block.settings.badge_bg_color }}; color: {{ block.settings.badge_text_color }}; opacity: 1; visibility: visible;"
+                >
+                  {% render 'CWC_icon-crown', fill_color: block.settings.badge_text_color %}
+                  {{ block.settings.badge_text }}
+                </div>
+              {% endif %}
+
+              {% if block.settings.badge_sold_text != blank %}
+                <div
+                  class="cwc-product_template__image-badge-sold cwc-badge-first-only"
+                  style="background: {{ block.settings.badge_sold_bg_color }}; color: {{ block.settings.badge_sold_text_color }}; opacity: 1; visibility: visible;"
+                >
+                  {{ block.settings.badge_sold_text }}
+                </div>
+              {% endif %}
+            {% endif %}
+
             <img
               src="{{ image | image_url: width: 700 }}"
               alt="{{ image.alt | default: product.title }}"
               width="{{ image.width }}"
               height="{{ image.height }}"
-              fetchpriority="high"
-              loading="eager"
+              fetchpriority="{% if forloop.first %}high{% else %}low{% endif %}"
+              loading="{% if forloop.first %}eager{% else %}lazy{% endif %}"
             >
           </div>
         {% endfor %}
       {% else %}
         <!-- Fallback if no images -->
         <div class="swiper-slide">
+          {% comment %} Add badges to placeholder slide if needed {% endcomment %}
+          {% if block.settings.badge_text != blank %}
+            <div
+              class="cwc-product_template__image-badge cwc-badge-first-only"
+              style="background: {{ block.settings.badge_bg_color }}; color: {{ block.settings.badge_text_color }}"
+            >
+              {% render 'CWC_icon-crown', fill_color: block.settings.badge_text_color %}
+              {{ block.settings.badge_text }}
+            </div>
+          {% endif %}
+
+          {% if block.settings.badge_sold_text != blank %}
+            <div
+              class="cwc-product_template__image-badge-sold cwc-badge-first-only"
+              style="background: {{ block.settings.badge_sold_bg_color }}; color: {{ block.settings.badge_sold_text_color }}"
+            >
+              {{ block.settings.badge_sold_text }}
+            </div>
+          {% endif %}
+
           <img
             src="{{ 'placeholder.png' | asset_url }}"
             alt="Product placeholder"
@@ -54,15 +80,6 @@
         </div>
       {% endif %}
     </div>
-
-    {% if block.settings.badge_sold_text != blank %}
-      <div
-        class="cwc-product_template__image-badge-sold"
-        style="background: {{ block.settings.badge_sold_bg_color }}; color: {{ block.settings.badge_sold_text_color }}"
-      >
-        {{ block.settings.badge_sold_text }}
-      </div>
-    {% endif %}
   </div>
 
   <!-- Thumbnail Navigation -->
@@ -146,6 +163,18 @@
         },
         {% endif %}
         on: {
+          init: function() {
+            // Get all original badges (not in cloned slides)
+            const originalBadges = carousel.querySelectorAll('.swiper-slide:not(.swiper-slide-duplicate) .cwc-badge-first-only');
+
+            // Hide all badges initially except if we're on slide 0
+            if (this.realIndex !== 0) {
+              originalBadges.forEach(badge => {
+                badge.style.opacity = '0';
+                badge.style.visibility = 'hidden';
+              });
+            }
+          },
           slideChange: function () {
             // Update thumbnail active state manually
             if (thumbnails) {
@@ -159,6 +188,18 @@
                 thumbSwiper.slideTo(Math.max(0, this.realIndex));
               }
             }
+
+            // Handle badge visibility - only show on first image with smooth transition
+            const originalBadges = carousel.querySelectorAll('.swiper-slide:not(.swiper-slide-duplicate) .cwc-badge-first-only');
+            originalBadges.forEach(badge => {
+              if (this.realIndex === 0) {
+                badge.style.opacity = '1';
+                badge.style.visibility = 'visible';
+              } else {
+                badge.style.opacity = '0';
+                badge.style.visibility = 'hidden';
+              }
+            });
           }
         }
       });

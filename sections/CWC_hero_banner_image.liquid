@@ -18,28 +18,38 @@
   <div class="CWC_hero_banner_image-wrapper{% if section.settings.image_position == 'right' %} reverse{% endif %}">
     {%- comment -%} Featured Image Column {%- endcomment -%}
     <div class="CWC_hero_banner_image-image">
-      {% if section.settings.image_mobile and section.settings.image_mobile != blank %}
+      {% if section.settings.image_mobile
+        and section.settings.image_mobile != blank
+        and section.settings.image
+        and section.settings.image != blank
+      %}
+        <!-- Both mobile and desktop images exist -->
         <picture>
-          <source media="(max-width: 767px)" srcset="{{ section.settings.image_mobile | image_url }}">
+          <source
+            media="(max-width: 767px)"
+            srcset="{{ section.settings.image_mobile | image_url }}"
+          >
           <img
             loading="eager"
             fetchpriority="high"
-            src="{{ section.settings.image_mobile | image_url }}"
-            alt="{{ section.settings.image_mobile.alt }}"
-            width="{{ section.settings.image_mobile.width }}"
-            height="{{ section.settings.image_mobile.height }}"
+            src="{{ section.settings.image | image_url }}"
+            alt="{{ section.settings.image.alt | default: section.settings.alt_text }}"
+            width="{{ section.settings.image.width }}"
+            height="{{ section.settings.image.height }}"
           >
         </picture>
       {% elsif section.settings.image and section.settings.image != blank %}
+        <!-- Only desktop image exists -->
         <img
           loading="eager"
           fetchpriority="high"
           src="{{ section.settings.image | image_url }}"
-          alt="{{ section.settings.image.alt }}"
+          alt="{{ section.settings.image.alt | default: section.settings.alt_text }}"
           width="{{ section.settings.image.width }}"
           height="{{ section.settings.image.height }}"
         >
       {% else %}
+        <!-- No images uploaded -->
         <img
           loading="lazy"
           fetchpriority="low"
