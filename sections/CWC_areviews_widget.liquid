@@ -1,0 +1,56 @@
+{% assign product_id = null %}
+
+{% if section.settings.product != blank %}
+  {% assign product_id = section.settings.product.id %}
+{% endif %}
+
+{% if product_id %}
+  {{ 'https://areviewsapp.com/css/reviews_online.css' | stylesheet_tag }}
+  <div id="az_reviews" class="az_reviews AReviewsApp" data-product_id="{{ product_id }}"></div>
+  <script src="https://areviewsapp.com/js_codes/areviews_app.js"></script>
+{% endif %}
+
+{% schema %}
+{
+  "name": "CWC Areviews Wdget",
+  "tag": "section",
+  "settings": [
+    {
+      "type": "product",
+      "id": "product",
+      "label": "Product Selection"
+    },
+    {
+      "type": "range",
+      "id": "padding_top",
+      "label": "Padding top",
+      "default": 60,
+      "min": 0,
+      "max": 200,
+      "step": 4,
+      "unit": "px"
+    },
+    {
+      "type": "range",
+      "id": "padding_bottom",
+      "label": "Padding bottom",
+      "default": 60,
+      "min": 0,
+      "max": 200,
+      "step": 4,
+      "unit": "px"
+    }
+  ],
+  "presets": [
+    {
+      "name": "Areviews Wdget",
+      "category": "custom"
+    }
+  ]
+}
+{% endschema %}
+
+{% comment %}
+  BILL HOURS:
+   3 HOURS CURRENLTY TO BILL
+{% endcomment %}

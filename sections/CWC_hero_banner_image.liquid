@@ -7,6 +7,9 @@
   --padding-top-mobile: {{ section.settings.padding_top | times: 0.5 }}px;
   --padding-bottom-mobile: {{ section.settings.padding_bottom | times: 0.5 }}px;
   }
+    nav.breadcrumb.g-breadcrumb {
+      display: none;
+  }
 {% endstyle %}
 
 {{ 'CWC_hero_banner_image.css' | asset_url | stylesheet_tag }}
