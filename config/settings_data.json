@@ -2631,11 +2631,6 @@
         "disabled": false,
         "settings": {}
       },
-      "10312807297210203588": {
-        "type": "shopify:\/\/apps\/aftersell-by-rokt\/blocks\/utm-triggers\/509ec35d-0632-4dfc-a105-fa799cd9d149",
-        "disabled": true,
-        "settings": {}
-      },
       "15588394620387169604": {
         "type": "shopify:\/\/apps\/subi-subscriptions\/blocks\/app-embed-block\/bc0dba25-cd46-4841-bea4-6bdfe9ac815f",
         "disabled": true,

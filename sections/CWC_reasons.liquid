@@ -74,11 +74,6 @@
                   </div>
                 {% else %}
                   <div class="cwc-reasons__image">
-                    {% comment %}
-                      srcset="{{ image | image_url: width: 400 }} 400w,
-                      {{ image | image_url: width: 700 }} 700w,
-                      {{ image | image_url: width: 1400 }} 1400w"
-                    {% endcomment %}
                     <img
                       loading="lazy"
                       fetchpriority="medium"

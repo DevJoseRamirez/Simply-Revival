@@ -1,0 +1,60 @@
+{
+  "sections": {
+    "main": {
+      "type": "main-page",
+      "disabled": true,
+      "settings": {}
+    },
+    "e7285e43-2bb7-46e5-a5e4-538568d8723e": {
+      "type": "image-content",
+      "blocks": {
+        "template--16736981025086__e7285e43-2bb7-46e5-a5e4-538568d8723e-1666759876b5fa9979-0": {
+          "type": "image_block",
+          "settings": {
+            "image": "shopify:\/\/shop_images\/DHT_IN_HAND.png"
+          }
+        },
+        "template--16736981025086__e7285e43-2bb7-46e5-a5e4-538568d8723e-1666759876b5fa9979-1": {
+          "type": "text_block",
+          "settings": {
+            "width": "100%",
+            "bgtext": "rgba(0,0,0,0)",
+            "title_color": "rgba(0,0,0,0)",
+            "subtitle": "Questions?",
+            "title": "We're here to help!",
+            "size_text": "h3",
+            "text": "",
+            "answer_content": "<p>Shoot us a message and we'll get back to you! <\/p><p><strong>Return\/Refund Policy<\/strong><\/p><p>We have a 30 day return policy. If your product arrives damaged, shoot us a picture and we will send you a fresh bottle! <\/p><p><strong>Subscriptions<\/strong><\/p><p>Please do not message us about canceling subscriptions as we do not handle this manually. Subscriptions can be managed by each customer!<\/p><p>Subscription Management<\/p><p><a href=\"https:\/\/portal.subi.co\/login\/\">https:\/\/portal.subi.co\/login\/<\/a><\/p>",
+            "style_btn": "btn-underline btn-underline-white",
+            "button": "",
+            "link": "",
+            "enable_padding": true,
+            "align": "left"
+          }
+        }
+      },
+      "block_order": [
+        "template--16736981025086__e7285e43-2bb7-46e5-a5e4-538568d8723e-1666759876b5fa9979-0",
+        "template--16736981025086__e7285e43-2bb7-46e5-a5e4-538568d8723e-1666759876b5fa9979-1"
+      ],
+      "settings": {
+        "animation": "fade-up",
+        "setwidth": "full",
+        "bgsection": "#f7f7f7",
+        "rangebg": 0,
+        "bgbefore": "rgba(0,0,0,0)",
+        "bg_pos": "left",
+        "enable_padding": true,
+        "align_center": true,
+        "paddingsection": "0px 0px 0px 0px",
+        "paddingmobile": "0px 0px 60px 0px",
+        "marginsection": "0px 0px 0px 0px",
+        "marginmobile": "0px 0px 0px 0px"
+      }
+    }
+  },
+  "order": [
+    "main",
+    "e7285e43-2bb7-46e5-a5e4-538568d8723e"
+  ]
+}
