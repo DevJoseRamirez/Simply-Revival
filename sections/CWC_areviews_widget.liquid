@@ -6,7 +6,7 @@
 
 {% if product_id %}
   {{ 'https://areviewsapp.com/css/reviews_online.css' | stylesheet_tag }}
-  <div id="az_reviews" class="az_reviews AReviewsApp" data-product_id="{{ product_id }}"></div>
+  <div id="az_reviews" class="az_reviews AReviewsApp" data-nosnippet data-product_id="{{ product_id }}"></div>
   <script src="https://areviewsapp.com/js_codes/areviews_app.js"></script>
 {% endif %}
 
@@ -50,9 +50,3 @@
 }
 {% endschema %}
 
-{% comment %}
-  BILL HOURS:
-   3 HOURS CURRENLTY TO BILL
-   + 1 hour
-   6 total curerntly total now
-{% endcomment %}

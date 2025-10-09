@@ -1,5 +1,5 @@
 {% comment %} SUBDOMAIN SWAP LINK  {% endcomment %}
-{{ request.host }}
+{% comment %} {{ request.host }} {% endcomment %}
 {% if request.host contains 'shop.' %}
   {% assign logo_url = '/pages/home' %}
 {% else %}
