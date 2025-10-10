@@ -3,6 +3,9 @@
     "main": {
       "type": "main-page",
       "disabled": true,
+      "custom_css": [
+        ".g-breadcrumb {display: none;}"
+      ],
       "settings": {}
     },
     "e7285e43-2bb7-46e5-a5e4-538568d8723e": {
@@ -36,6 +39,9 @@
       "block_order": [
         "template--16736981025086__e7285e43-2bb7-46e5-a5e4-538568d8723e-1666759876b5fa9979-0",
         "template--16736981025086__e7285e43-2bb7-46e5-a5e4-538568d8723e-1666759876b5fa9979-1"
+      ],
+      "custom_css": [
+        ".g-breadcrumb {display: none;}"
       ],
       "settings": {
         "animation": "fade-up",

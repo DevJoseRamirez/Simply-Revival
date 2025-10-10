@@ -67,7 +67,7 @@
         "headline_QhEjxg": {
           "type": "headline",
           "settings": {
-            "text": "<h2>The <strong>#1 Natural DHT<\/strong> Blocker for Hair Loss<\/h2>"
+            "text": "<h2>The <strong>#1 Natural DHT<\/strong> <\/h2><h2>Blocker for Hair Loss<\/h2>"
           }
         },
         "bullets_H7mHBE": {
@@ -933,7 +933,7 @@
           "settings": {
             "number": "96%",
             "title": "<p>Would recommend Simply Revival® to a friend<\/p>",
-            "text": "<p>After taking Simply Revival® consistently for 3+ weeks<\/p>"
+            "text": "<p>As a natural DHT blocker to treat hairloss<\/p>"
           }
         },
         "stat_e7cQae": {
@@ -1207,7 +1207,7 @@
         "faq_Jwa3Xj": {
           "type": "faq",
           "settings": {
-            "title": "Is simply revival suitable for all hair types?",
+            "title": "Is Simply Revival® suitable for all hair types?",
             "content": "<p>Yes, the formula is designed to to support hair heath for all types of hair. <\/p>"
           }
         },
@@ -1332,7 +1332,7 @@
         "faq_WMzwyg": {
           "type": "faq",
           "settings": {
-            "title": "<p>Is simply revival suitable for all hair types?<\/p>",
+            "title": "<p>Is Simply Revival® suitable for all hair types?<\/p>",
             "text": "<p>Yes, the formula is designed to to support hair heath for all types of hair. <\/p>"
           }
         },

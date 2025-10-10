@@ -3,9 +3,19 @@
     "main": {
       "type": "main-page",
       "settings": {}
+    },
+    "cwc_areviews_widget_CDfRk8": {
+      "type": "CWC_areviews_widget",
+      "name": "Areviews Wdget",
+      "settings": {
+        "product": "simply®-dht-blocker",
+        "padding_top": 60,
+        "padding_bottom": 60
+      }
     }
   },
   "order": [
-    "main"
+    "main",
+    "cwc_areviews_widget_CDfRk8"
   ]
 }
