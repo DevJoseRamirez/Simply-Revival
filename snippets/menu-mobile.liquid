@@ -2,6 +2,8 @@
 {% comment %} {{ request.host }} {% endcomment %}
 {% if request.host contains 'shop.' %}
   {% assign main_linklist = 'google-safe-menu' %}
+{% else %}
+  {% assign main_linklist = settings.main_linklist %}
 {% endif %}
 
 <div id="NavDrawer" class="drawer drawer--left">
@@ -9,8 +11,9 @@
     <div class="modal-header js-drawer-close py-4">
       <button type="button" class="close"></button>
     </div>
+
     <ul class="drawer__nav menu-mobile-footer-content">
-      {%- for link in linklists[settings.main_linklist].links -%}
+      {%- for link in linklists[main_linklist].links -%}
         {%- assign child_list_handle = link.title | handleize -%}
         {%- if link.links != blank -%}
           <li class="drawer__nav-item">
