@@ -20,7 +20,7 @@
         "item_d4j3Ch": {
           "type": "item",
           "settings": {
-            "image": "shopify:\/\/shop_images\/Simply_Revival___1_Natural_DHT_Blocker_-_64px-min.png",
+            "image": "shopify:\/\/shop_images\/Simply_Revival___Number-1_Natural_64px-min.png",
             "text": "Top Rated"
           }
         },
@@ -131,6 +131,7 @@
         "setwidth": "container",
         "title_top": "Sub Title Top",
         "title": "Recently viewed",
+        "des": "",
         "align-heading": "center",
         "limit": 6,
         "paddingsection": "0px 0px 60px 0px",
@@ -206,7 +207,9 @@
             "icon3": "shopify:\/\/shop_images\/Simply_Revival___Reduces_shedding_while_promoting_thicker_fuller_growth-min_69b2e63b-b83a-4f0e-bc4e-cb7d8a8fd8c3.png",
             "text3": "Soothes irritated scalp and restores healthy balance",
             "icon4": "shopify:\/\/shop_images\/Simply_Revival___9_premium_oils_to_boost_circulation_and_restore_shine.-min_363002cf-ebff-4873-a3f4-597084723ae6.png",
-            "text4": "Rich in nutrients to support overall wellness and vitality"
+            "text4": "Rich in nutrients to support overall wellness and vitality",
+            "text5": "",
+            "text6": ""
           }
         },
         "price_display_4QHJGW": {
@@ -216,9 +219,9 @@
         "product_options_nPiXV8": {
           "type": "product_options",
           "settings": {
-            "image1": "shopify:\/\/shop_images\/Simply_Revival___DHT_Blocker___Buy_3_-_Get_2_FREE-min_52525d88-7cfb-486f-bcfd-4c0cb6a8e6ec.png",
-            "image2": "shopify:\/\/shop_images\/Simply_Revival___DHT_Blocker___Buy_2_-_Get_1_FREE-min_01e026bf-7db9-4bd1-af6a-239ebbc10382.png",
-            "image3": "shopify:\/\/shop_images\/Simply_Revival___DHT_Blocker___Buy_One-min_d6b1c5cb-6f58-4fd0-a9f7-aa8fff12ca08.png"
+            "image1": "shopify:\/\/shop_images\/Simply_Revival___Buy_1-min_52525d88-7cfb-486f-bcfd-4c0cb6a8e6ec.png",
+            "image2": "shopify:\/\/shop_images\/Simply_Revival___Buy_2_-_Get_1_FREE-min_01e026bf-7db9-4bd1-af6a-239ebbc10382.png",
+            "image3": "shopify:\/\/shop_images\/Simply_Revival____Buy_3-Get-2-Free-min_d6b1c5cb-6f58-4fd0-a9f7-aa8fff12ca08.png"
           }
         },
         "subscription_toggle_pXPczQ": {
@@ -249,7 +252,7 @@
           "type": "guarantee_text",
           "settings": {
             "text": "365-day money back guarantee",
-            "icon": "shopify:\/\/shop_images\/Simply_Revival___Gurantee_-_DHT_Blocker-min.png"
+            "icon": "shopify:\/\/shop_images\/Simply_Revival___Gurantee-min.png"
           }
         },
         "faq_7YcCid": {
@@ -417,6 +420,7 @@
       "name": "Social Proof",
       "settings": {
         "show_stars": true,
+        "star_link": "",
         "heading": "<h3>Real Stories, <strong>Real Experiences<\/strong><\/h3>",
         "bold_color": "#125657",
         "text": "<p>See What customer Are Saying About Simply Revival<\/p>",
@@ -594,21 +598,24 @@
           "type": "highlight_row",
           "settings": {
             "title": "🧬 The Problem: DHT",
-            "text": "<p>DHT is a naturally occurring hormone that can influence the appearance of your hair and scalp health.<\/p>"
+            "text": "<p>DHT is a naturally occurring hormone that can influence the appearance of your hair and scalp health.<\/p>",
+            "text_color": ""
           }
         },
         "highlight_row_MnGEXr": {
           "type": "highlight_row",
           "settings": {
-            "title": "🌿 The Solution: Natural Blockers",
-            "text": "<p>Our formula blends vitamins, herbs, and botanical extracts traditionally used to support scalp and hair wellness.<\/p>"
+            "title": "🌿 The Solution: Natural Defenders",
+            "text": "<p>Our formula blends vitamins, herbs, and botanical extracts traditionally used to support scalp and hair wellness.<\/p>",
+            "text_color": ""
           }
         },
         "highlight_row_8hmLn3": {
           "type": "highlight_row",
           "settings": {
             "title": "💪 The Impact: Stronger Growth",
-            "text": "<p>With consistent use, your scalp and hair feel nourished and look fuller, supporting healthy-looking thickness over time.<\/p>"
+            "text": "<p>With consistent use, your scalp and hair feel nourished and look fuller, supporting healthy-looking thickness over time.<\/p>",
+            "text_color": ""
           }
         }
       },
@@ -620,6 +627,7 @@
       "name": "Image Benefits",
       "settings": {
         "featured_image": "shopify:\/\/shop_images\/Simply_Revival_DHT__The_Hidden_Hormone_Behind_Hair_Loss-min.png",
+        "reverse_layout": false,
         "section_title": "<h3><strong>DHT: A Natural Factor That Can Impact Hair Health<\/strong><\/h3>",
         "section_caption": "Support healthy hair naturally.",
         "background_color": "#ffffff",
@@ -704,6 +712,7 @@
       "settings": {
         "section_title": "<h3>10,000+ <strong>Hair Transformations<\/strong><\/h3>",
         "bold_color": "#125657",
+        "section_subtitle": "",
         "bg_color": "#fffee3",
         "text_color": "#111111",
         "padding_top": 40,
@@ -883,7 +892,7 @@
           "type": "guarantee_text",
           "settings": {
             "text": "365-day money back guarantee",
-            "icon": "shopify:\/\/shop_images\/Simply_Revival___Gurantee_-_DHT_Blocker-min.png"
+            "icon": "shopify:\/\/shop_images\/Simply_Revival___Gurantee-min.png"
           }
         }
       },
@@ -914,6 +923,7 @@
           "type": "testimonial",
           "settings": {
             "video_file": "shopify:\/\/files\/videos\/Simply Revival | Real People Real Results - lukefinds.mp4",
+            "video_url": "",
             "author_name": "Customer Name"
           }
         },
@@ -921,6 +931,7 @@
           "type": "testimonial",
           "settings": {
             "video_file": "shopify:\/\/files\/videos\/Simply Revival | Real People Real Results - TikTok-viral.mp4",
+            "video_url": "",
             "author_name": "Customer Name"
           }
         },
@@ -928,6 +939,7 @@
           "type": "testimonial",
           "settings": {
             "video_file": "shopify:\/\/files\/videos\/Simply Revival | Real People Real Results - alexcozys.mp4",
+            "video_url": "",
             "author_name": "Customer Name"
           }
         },
@@ -935,6 +947,7 @@
           "type": "testimonial",
           "settings": {
             "video_file": "shopify:\/\/files\/videos\/Simply Revival | Real People Real Results - thehealthwealth.mp4",
+            "video_url": "",
             "author_name": "Customer Name"
           }
         },
@@ -942,6 +955,7 @@
           "type": "testimonial",
           "settings": {
             "video_file": "shopify:\/\/files\/videos\/Simply Revival | Real People Real Results - kwakusella.mp4",
+            "video_url": "",
             "author_name": "Customer Name"
           }
         },
@@ -949,6 +963,7 @@
           "type": "testimonial",
           "settings": {
             "video_file": "shopify:\/\/files\/videos\/Simply Revival | Real People Real Results - Anakin.mp4",
+            "video_url": "",
             "author_name": "Customer Name"
           }
         },
@@ -956,6 +971,7 @@
           "type": "testimonial",
           "settings": {
             "video_file": "shopify:\/\/files\/videos\/Simply Revival | Real People Real Results - Marc_20Malcolm_20.mp4",
+            "video_url": "",
             "author_name": "Customer Name"
           }
         },
@@ -972,7 +988,7 @@
           "type": "guarantee_text",
           "settings": {
             "text": "365-day money back guarantee",
-            "icon": "shopify:\/\/shop_images\/Simply_Revival___Gurantee_-_DHT_Blocker-min.png"
+            "icon": "shopify:\/\/shop_images\/Simply_Revival___Gurantee-min.png"
           }
         }
       },
@@ -1067,7 +1083,9 @@
       ],
       "name": "Problem Solution",
       "settings": {
+        "subhead": "",
         "heading": "<h3>From thinning & insecure to Full & Confident<\/h3>",
+        "text": "",
         "background_color": "#125657",
         "padding_top": 40,
         "padding_bottom": 40
@@ -1157,7 +1175,6 @@
         "brand_table_ziRYCm": {
           "type": "brand_table",
           "settings": {
-            "product_image": "shopify:\/\/shop_images\/Simply_Revival___DHT_Blocker___Buy_3_-_Get_2_FREE-min_52525d88-7cfb-486f-bcfd-4c0cb6a8e6ec.png",
             "title": "Simply Revival®",
             "background_color": "#60a1a2",
             "text_color": "#ffffff",
@@ -1288,8 +1305,10 @@
         "background_color": "#fffee3",
         "text_color": "#000000",
         "image": "shopify:\/\/shop_images\/Simply_Revival___365_Day_Money_Back_Guarantee___Natural_DHT_Blocker-min_43ea7fa5-0dde-4ff0-b910-cc4b0d0aab12.png",
+        "alt_text": "",
         "image_position": "left",
-        "padding_top": 24
+        "padding_top": 24,
+        "padding_bottom": 0
       }
     },
     "cwc_faqs_gzUrmK": {
@@ -1363,6 +1382,7 @@
         "bg_color": "#125657",
         "text_color": "#ffffff",
         "heading": "<h3><strong>Frequently Asked Questions<\/strong><\/h3>",
+        "text": "",
         "faq_bg_color": "#ffffff",
         "padding_top": 80,
         "padding_bottom": 80
@@ -1370,16 +1390,13 @@
     },
     "cwc_areviews_widget_Mz88mr": {
       "type": "CWC_areviews_widget",
+      "disabled": true,
       "name": "Areviews Wdget",
       "settings": {
         "product": "simply®-dht-blocker",
         "padding_top": 60,
         "padding_bottom": 60
       }
-    },
-    "1629746450643786911": {
-      "type": "areviews-section",
-      "settings": {}
     }
   },
   "order": [
@@ -1402,7 +1419,6 @@
     "cwc_comparison_j8fkx6",
     "cwc_free_trial_yzRXJa",
     "cwc_faqs_gzUrmK",
-    "cwc_areviews_widget_Mz88mr",
-    "1629746450643786911"
+    "cwc_areviews_widget_Mz88mr"
   ]
 }

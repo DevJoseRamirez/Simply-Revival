@@ -20,7 +20,7 @@
         "item_NaAtWt": {
           "type": "item",
           "settings": {
-            "image": "shopify:\/\/shop_images\/Simply_Revival___1_Natural_DHT_Blocker_-_64px-min.png",
+            "image": "shopify:\/\/shop_images\/Simply_Revival___Number-1_Natural_64px-min.png",
             "text": "Top Rated"
           }
         },
@@ -252,7 +252,7 @@
           "type": "guarantee_text",
           "settings": {
             "text": "365-day money back guarantee",
-            "icon": "shopify:\/\/shop_images\/Simply_Revival___Gurantee_-_DHT_Blocker-min.png"
+            "icon": "shopify:\/\/shop_images\/Simply_Revival___Gurantee-min.png"
           }
         },
         "faq_7YcCid": {
@@ -605,7 +605,7 @@
         "highlight_row_MnGEXr": {
           "type": "highlight_row",
           "settings": {
-            "title": "🌿 The Solution: Natural Blockers",
+            "title": "🌿 The Solution: Natural Defenders",
             "text": "<p>Our formula blends vitamins, herbs, and botanical extracts traditionally used to support scalp and hair wellness.<\/p>",
             "text_color": ""
           }
@@ -892,7 +892,7 @@
           "type": "guarantee_text",
           "settings": {
             "text": "365-day money back guarantee",
-            "icon": "shopify:\/\/shop_images\/Simply_Revival___Gurantee_-_DHT_Blocker-min.png"
+            "icon": "shopify:\/\/shop_images\/Simply_Revival___Gurantee-min.png"
           }
         }
       },
@@ -987,7 +987,8 @@
         "guarantee_text_TtNrBf": {
           "type": "guarantee_text",
           "settings": {
-            "text": "365-day money back guarantee"
+            "text": "365-day money back guarantee",
+            "icon": "shopify:\/\/shop_images\/Simply_Revival___Gurantee-min.png"
           }
         }
       },
@@ -1388,20 +1389,12 @@
     },
     "cwc_areviews_widget_MDyBat": {
       "type": "CWC_areviews_widget",
+      "disabled": true,
       "name": "Areviews Wdget",
       "settings": {
         "product": "hair-revival-serum",
         "padding_top": 60,
         "padding_bottom": 60
-      }
-    },
-    "1629746450643786911": {
-      "type": "areviews-section",
-      "settings": {
-        "hide_areviews_title_rating": false,
-        "areviews_theme_font": "inherit",
-        "areviews_stars_colors": "#f3c621",
-        "areviews_write_reviews_botton_color": "#373737"
       }
     }
   },
@@ -1425,7 +1418,6 @@
     "cwc_comparison_j8fkx6",
     "cwc_free_trial_yzRXJa",
     "cwc_faqs_gzUrmK",
-    "cwc_areviews_widget_MDyBat",
-    "1629746450643786911"
+    "cwc_areviews_widget_MDyBat"
   ]
 }

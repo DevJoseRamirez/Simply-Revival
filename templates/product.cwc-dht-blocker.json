@@ -20,7 +20,7 @@
         "item_d4j3Ch": {
           "type": "item",
           "settings": {
-            "image": "shopify:\/\/shop_images\/Simply_Revival___1_Natural_DHT_Blocker_-_64px-min.png",
+            "image": "shopify:\/\/shop_images\/Simply_Revival___Number-1_Natural_64px-min.png",
             "text": "#1 Natural DHT Blocker"
           }
         },
@@ -219,9 +219,9 @@
         "product_options_nPiXV8": {
           "type": "product_options",
           "settings": {
-            "image1": "shopify:\/\/shop_images\/Simply_Revival___DHT_Blocker___Buy_3_-_Get_2_FREE-min_52525d88-7cfb-486f-bcfd-4c0cb6a8e6ec.png",
-            "image2": "shopify:\/\/shop_images\/Simply_Revival___DHT_Blocker___Buy_2_-_Get_1_FREE-min_01e026bf-7db9-4bd1-af6a-239ebbc10382.png",
-            "image3": "shopify:\/\/shop_images\/Simply_Revival___DHT_Blocker___Buy_One-min_d6b1c5cb-6f58-4fd0-a9f7-aa8fff12ca08.png"
+            "image1": "shopify:\/\/shop_images\/Simply_Revival___Buy_1-min_52525d88-7cfb-486f-bcfd-4c0cb6a8e6ec.png",
+            "image2": "shopify:\/\/shop_images\/Simply_Revival___Buy_2_-_Get_1_FREE-min_01e026bf-7db9-4bd1-af6a-239ebbc10382.png",
+            "image3": "shopify:\/\/shop_images\/Simply_Revival____Buy_3-Get-2-Free-min_d6b1c5cb-6f58-4fd0-a9f7-aa8fff12ca08.png"
           }
         },
         "subscription_toggle_pXPczQ": {
@@ -252,7 +252,7 @@
           "type": "guarantee_text",
           "settings": {
             "text": "365-day money back guarantee",
-            "icon": "shopify:\/\/shop_images\/Simply_Revival___Gurantee_-_DHT_Blocker-min.png"
+            "icon": "shopify:\/\/shop_images\/Simply_Revival___Gurantee-min.png"
           }
         },
         "faq_7YcCid": {
@@ -891,7 +891,7 @@
           "type": "guarantee_text",
           "settings": {
             "text": "365-day money back guarantee",
-            "icon": "shopify:\/\/shop_images\/Simply_Revival___Gurantee_-_DHT_Blocker-min.png"
+            "icon": "shopify:\/\/shop_images\/Simply_Revival___Gurantee-min.png"
           }
         }
       },
@@ -987,7 +987,7 @@
           "type": "guarantee_text",
           "settings": {
             "text": "365-day money back guarantee",
-            "icon": "shopify:\/\/shop_images\/Simply_Revival___Gurantee_-_DHT_Blocker-min.png"
+            "icon": "shopify:\/\/shop_images\/Simply_Revival___Gurantee-min.png"
           }
         }
       },
@@ -1174,7 +1174,6 @@
         "brand_table_ziRYCm": {
           "type": "brand_table",
           "settings": {
-            "product_image": "shopify:\/\/shop_images\/Simply_Revival___DHT_Blocker___Buy_3_-_Get_2_FREE-min_52525d88-7cfb-486f-bcfd-4c0cb6a8e6ec.png",
             "title": "Simply Revival®",
             "background_color": "#60a1a2",
             "text_color": "#ffffff",

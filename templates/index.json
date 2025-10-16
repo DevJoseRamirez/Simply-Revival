@@ -20,7 +20,7 @@
         "item_Wr4KGf": {
           "type": "item",
           "settings": {
-            "image": "shopify:\/\/shop_images\/Simply_Revival___1_Natural_DHT_Blocker_-_64px-min.png",
+            "image": "shopify:\/\/shop_images\/Simply_Revival___Number-1_Natural_64px-min.png",
             "text": "#1 Natural DHT Blocker"
           }
         },
@@ -91,7 +91,7 @@
           "type": "note",
           "settings": {
             "text": "<p>365-day money back guarantee<\/p>",
-            "icon": "shopify:\/\/shop_images\/Simply_Revival___Gurantee_-_DHT_Blocker-min.png"
+            "icon": "shopify:\/\/shop_images\/Simply_Revival___Gurantee-min.png"
           }
         }
       },
@@ -237,7 +237,6 @@
             "title": "Stopped my receding hairline!",
             "text": "I'm 28 and noticed my hairline starting to go back. Been using Simply Revival for 4 months and the hair loss completely stopped. Even seeing some regrowth at the temples. This stuff actually works!",
             "author_name": "MIKE D.",
-            "author_image": "shopify:\/\/shop_images\/Simply_Revival___Natural_DHT_Blocker_-_Testimonial_Profile_Image_01-min.png",
             "feature_one": "Hair Regrowth",
             "feature_two": "Male Pattern Baldness"
           }
@@ -249,7 +248,6 @@
             "title": "Best investment I've made",
             "text": "Started losing hair at 25 which destroyed my confidence. Simply Revival has been a lifesaver - my hair is thicker, stronger, and I'm not shedding nearly as much. Wish I found this sooner!",
             "author_name": "JASON R.",
-            "author_image": "shopify:\/\/shop_images\/Simply_Revival___Natural_DHT_Blocker_-_Testimonial_Profile_Image_08-min.png",
             "feature_one": "Confidence Boost",
             "feature_two": "Hair Thickness"
           }
@@ -261,7 +259,6 @@
             "title": "Finally something that blocks DHT naturally",
             "text": "Tried finasteride but the side effects scared me off. Simply Revival gives me the DHT blocking I need without any harsh chemicals or scary side effects. Natural approach that actually works.",
             "author_name": "ALEX T.",
-            "author_image": "shopify:\/\/shop_images\/Simply_Revival___Natural_DHT_Blocker_-_Testimonial_Profile_Image_11-min.png",
             "feature_one": "Natural DHT Block",
             "feature_two": "No Harsh Side Effects"
           }
@@ -284,7 +281,6 @@
             "title": "Nails and hair both improved!",
             "text": "Started taking this primarily for hair thinning but noticed my nails got stronger too! They're growing faster and don't break as easily. Love that Simply Revival covers multiple benefits in one supplement.",
             "author_name": "AMANDA K.",
-            "author_image": "shopify:\/\/shop_images\/Simply_Revival___Natural_DHT_Blocker_-_Testimonial_Profile_Image_12-min.png",
             "feature_one": "Hair & Nails",
             "feature_two": "Multi-Benefit"
           }
@@ -296,7 +292,6 @@
             "title": "Shower drain stays clean now!",
             "text": "Used to clog the shower drain with hair every week. Since starting Simply Revival 5 months ago, barely any hair comes out when I wash. The shedding reduction is incredible.",
             "author_name": "CONNOR L.",
-            "author_image": "shopify:\/\/shop_images\/Simply_Revival___Natural_DHT_Blocker_-_Testimonial_Profile_Image_03-min.png",
             "feature_one": "Reduced Shedding",
             "feature_two": "Hair Retention"
           }
@@ -319,7 +314,6 @@
             "title": "Perfect alternative to prescriptions",
             "text": "Didn't want to deal with prescription drugs and their side effects. Simply Revival gives me natural DHT blocking with ingredients I can actually pronounce. Results speak for themselves.",
             "author_name": "TRAVIS S.",
-            "author_image": "shopify:\/\/shop_images\/Simply_Revival___Natural_DHT_Blocker_-_Testimonial_Profile_Image_09-min.png",
             "feature_one": "Prescription Alternative",
             "feature_two": "Clean Ingredients"
           }
@@ -702,7 +696,7 @@
           "type": "guarantee_text",
           "settings": {
             "text": "365-day money back guarantee",
-            "icon": "shopify:\/\/shop_images\/Simply_Revival___Gurantee_-_DHT_Blocker-min.png"
+            "icon": "shopify:\/\/shop_images\/Simply_Revival___Gurantee-min.png"
           }
         }
       },
@@ -799,7 +793,7 @@
           "type": "guarantee_text",
           "settings": {
             "text": "365-day money back guarantee",
-            "icon": "shopify:\/\/shop_images\/Simply_Revival___Gurantee_-_DHT_Blocker-min.png"
+            "icon": "shopify:\/\/shop_images\/Simply_Revival___Gurantee-min.png"
           }
         }
       },
@@ -1146,11 +1140,7 @@
         },
         "product_options_gREanT": {
           "type": "product_options",
-          "settings": {
-            "image1": "shopify:\/\/shop_images\/Simply_Revival___DHT_Blocker___Buy_3_-_Get_2_FREE-min_52525d88-7cfb-486f-bcfd-4c0cb6a8e6ec.png",
-            "image2": "shopify:\/\/shop_images\/Simply_Revival___DHT_Blocker___Buy_2_-_Get_1_FREE-min_01e026bf-7db9-4bd1-af6a-239ebbc10382.png",
-            "image3": "shopify:\/\/shop_images\/Simply_Revival___DHT_Blocker___Buy_One-min_d6b1c5cb-6f58-4fd0-a9f7-aa8fff12ca08.png"
-          }
+          "settings": {}
         },
         "subscription_toggle_WDR8rQ": {
           "type": "subscription_toggle",
@@ -1180,7 +1170,7 @@
           "type": "guarantee_text",
           "settings": {
             "text": "365-day money back guarantee",
-            "icon": "shopify:\/\/shop_images\/Simply_Revival___Gurantee_-_DHT_Blocker-min.png"
+            "icon": "shopify:\/\/shop_images\/Simply_Revival___Gurantee-min.png"
           }
         },
         "faq_RCm7Hx": {

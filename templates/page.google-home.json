@@ -25,7 +25,7 @@
         "item_Mx7VCJ": {
           "type": "item",
           "settings": {
-            "image": "shopify:\/\/shop_images\/Simply_Revival___1_Natural_DHT_Blocker_-_64px-min.png",
+            "image": "shopify:\/\/shop_images\/Simply_Revival___Number-1_Natural_64px-min.png",
             "text": "Top Rated"
           }
         },
@@ -110,7 +110,7 @@
           "type": "note",
           "settings": {
             "text": "<p>365-day money back guarantee<\/p>",
-            "icon": "shopify:\/\/shop_images\/Simply_Revival___Gurantee_-_DHT_Blocker-min.png"
+            "icon": "shopify:\/\/shop_images\/Simply_Revival___Gurantee-min.png"
           }
         }
       },
@@ -323,7 +323,7 @@
         "highlight_row_KqhC3e": {
           "type": "highlight_row",
           "settings": {
-            "title": "🌿 The Solution: Natural Blockers",
+            "title": "🌿 The Solution: Natural Defenders",
             "text": "<p>Our formula blends vitamins, herbs, and botanical extracts traditionally used to support scalp and hair wellness.<\/p>",
             "text_color": ""
           }
@@ -603,7 +603,7 @@
           "type": "guarantee_text",
           "settings": {
             "text": "365-day money back guarantee",
-            "icon": "shopify:\/\/shop_images\/Simply_Revival___Gurantee_-_DHT_Blocker-min.png"
+            "icon": "shopify:\/\/shop_images\/Simply_Revival___Gurantee-min.png"
           }
         }
       },
@@ -664,7 +664,7 @@
           "type": "guarantee_text",
           "settings": {
             "text": "365-day money back guarantee",
-            "icon": "shopify:\/\/shop_images\/Simply_Revival___Gurantee_-_DHT_Blocker-min.png"
+            "icon": "shopify:\/\/shop_images\/Simply_Revival___Gurantee-min.png"
           }
         }
       },
@@ -985,11 +985,7 @@
         },
         "product_options_WUtKk3": {
           "type": "product_options",
-          "settings": {
-            "image1": "shopify:\/\/shop_images\/Simply_Revival___DHT_Blocker___Buy_3_-_Get_2_FREE-min_52525d88-7cfb-486f-bcfd-4c0cb6a8e6ec.png",
-            "image2": "shopify:\/\/shop_images\/Simply_Revival___DHT_Blocker___Buy_2_-_Get_1_FREE-min_01e026bf-7db9-4bd1-af6a-239ebbc10382.png",
-            "image3": "shopify:\/\/shop_images\/Simply_Revival___DHT_Blocker___Buy_One-min_d6b1c5cb-6f58-4fd0-a9f7-aa8fff12ca08.png"
-          }
+          "settings": {}
         },
         "subscription_toggle_AnHmTF": {
           "type": "subscription_toggle",
