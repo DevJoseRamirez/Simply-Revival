@@ -1,9 +1,9 @@
-<!-- Before Image -->
-<div class="cwc-transformation__before">
+<!-- Left Image -->
+<div class="cwc-transformation__left">
   {% if block.settings.bf_image != blank %}
     <img
       src="{{ block.settings.bf_image | image_url: width: 300 }}"
-      alt="{{ block.settings.bf_image.alt | default: 'Before' }}"
+      alt="{{ block.settings.bf_image.alt | default: 'Step One' }}"
       width="{{ block.settings.bf_image.width }}"
       height="{{ block.settings.bf_image.height }}"
       fetchpriority="medium"
@@ -36,12 +36,12 @@
   </div>
 </div>
 
-<!-- After Image -->
-<div class="cwc-transformation__after">
+<!-- Right Image -->
+<div class="cwc-transformation__right">
   {% if block.settings.af_image != blank %}
     <img
       src="{{ block.settings.af_image | image_url: width: 300 }}"
-      alt="{{ block.settings.af_image.alt | default: 'After' }}"
+      alt="{{ block.settings.af_image.alt | default: 'Step Two' }}"
       width="{{ block.settings.af_image.width }}"
       height="{{ block.settings.af_image.height }}"
       fetchpriority="medium"

@@ -110,6 +110,14 @@
         <div class="cwc-problem-solution__image-row cwc-transformation-row" {{ block.shopify_attributes }}>
           {% render 'CWC_problem_solution__image_row', section_id: section.id, block: block %}
         </div>
+        {% if block.settings.show_subtext %}
+          <div
+            style="color: {{ block.settings.text_color }}"
+            class="educational-disclaimer"
+          >
+            Illustration for educational purposes only.
+          </div>
+        {% endif %}
       {% endif %}
     {% endfor %}
   </div>
@@ -306,6 +314,18 @@
           "type": "image_picker",
           "id": "af_image",
           "label": "Image 3"
+        },
+        {
+          "type": "checkbox",
+          "id": "show_subtext",
+          "label": "Show Educational disclaimer",
+          "default": false
+        },
+        {
+          "type": "color",
+          "id": "text_color",
+          "label": "Text Color",
+          "default": "#FAF9F6"
         }
       ]
     }

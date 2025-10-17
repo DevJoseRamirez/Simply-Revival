@@ -10,27 +10,22 @@
 {{ 'CWC_testimonial_images.css' | asset_url | stylesheet_tag }}
 {{ 'swiper-bundle.min.css' | asset_url | stylesheet_tag }}
 
+{% if section.settings.testimonial_list %}
+  {% assign image_testimonial_list = section.settings.testimonial_list.image_testimonial_list.value %}
+{% endif %}
+
 <section id="CWC_testimonial_images-{{ section.id }}" class="cwc-testimonial-images">
   <div class="cwc-testimonial-images__wrapper">
     {% if section.settings.section_title != blank %}
       <div class="cwc-testimonial-images__header">
-        {% comment %} <h3 class="cwc-testimonial-images__title">{{ section.settings.section_title }}</h3> {% endcomment %}
-
-
-
-    {% if section.settings.section_title != blank %}
-      <div
-        class="cwc-testimonial-images__title"
-        style="--accent-color: {{ section.settings.bold_color }};"
-      >
-        {{ section.settings.section_title }}
-      </div>
-    {% endif %}
-
-
-
-
-
+        {% if section.settings.section_title != blank %}
+          <div
+            class="cwc-testimonial-images__title"
+            style="--accent-color: {{ section.settings.bold_color }};"
+          >
+            {{ section.settings.section_title }}
+          </div>
+        {% endif %}
 
         {% if section.settings.section_subtitle != blank %}
           <p class="cwc-testimonial-images__subtitle">{{ section.settings.section_subtitle }}</p>
@@ -40,24 +35,48 @@
 
     <div class="swiper cwc-testimonial-images__carousel">
       <div class="swiper-wrapper cwc-testimonial-images__swiper-wrapper">
-        {% for block in section.blocks %}
-          <div class="swiper-slide cwc-testimonial-images__swiper-slide">
-            <div class="cwc-testimonial-images-card" {{ block.shopify_attributes }}>
-              {% if block.settings.image != blank %}
-                <img
-                  loading="lazy"
-                  fetchpriority="medium"
-                  src="{{ block.settings.image | image_url: width: 400  }}"
-                  alt="{{ block.settings.image.alt }}"
-                  width="{{ block.settings.image.width }}"
-                  height="{{ block.settings.image.height }}"
-                >
-              {% else %}
-                <img src="{{ 'placeholder.png' | asset_url }}" alt="Placeholder image" loading="lazy">
-              {% endif %}
+        {% comment %} metaobject render {% endcomment %}
+        {% if image_testimonial_list %}
+          {% for image__testimonial in image_testimonial_list %}
+            <div class="swiper-slide cwc-testimonial-images__swiper-slide">
+              <div class="cwc-testimonial-images-card" {{ block.shopify_attributes }}>
+                {% if image__testimonial.image_testimonial != blank %}
+                  <img
+                    loading="lazy"
+                    fetchpriority="medium"
+                    src="{{ image__testimonial.image_testimonial | image_url: width: 400  }}"
+                    alt="{{ image__testimonial.image_testimonial.alt }}"
+                    width="{{ image__testimonial.image_testimonial.width }}"
+                    height="{{ image__testimonial.image_testimonial.height }}"
+                  >
+                {% else %}
+                  <img src="{{ 'placeholder.png' | asset_url }}" alt="Placeholder image" loading="lazy">
+                {% endif %}
+              </div>
             </div>
-          </div>
-        {% endfor %}
+          {% endfor %}
+
+          {% comment %} Block Renders {% endcomment %}
+        {% else %}
+          {% for block in section.blocks %}
+            <div class="swiper-slide cwc-testimonial-images__swiper-slide">
+              <div class="cwc-testimonial-images-card" {{ block.shopify_attributes }}>
+                {% if block.settings.image != blank %}
+                  <img
+                    loading="lazy"
+                    fetchpriority="medium"
+                    src="{{ block.settings.image | image_url: width: 400  }}"
+                    alt="{{ block.settings.image.alt }}"
+                    width="{{ block.settings.image.width }}"
+                    height="{{ block.settings.image.height }}"
+                  >
+                {% else %}
+                  <img src="{{ 'placeholder.png' | asset_url }}" alt="Placeholder image" loading="lazy">
+                {% endif %}
+              </div>
+            </div>
+          {% endfor %}
+        {% endif %}
       </div>
     </div>
 
@@ -82,12 +101,23 @@
   "tag": "section",
   "settings": [
     {
+      "type": "header",
+      "content": "Testimonial Source"
+    },
+    {
+      "type": "metaobject",
+      "id": "testimonial_list",
+      "label": "Image Testimonial List",
+      "metaobject_type": "image_testimonial_list",
+      "info": "Select a testimonial image list to display"
+    },
+    {
       "type": "richtext",
       "id": "section_title",
       "label": "Section Title",
       "default": "<h3>10,000+ <strong>Hair Transformations</strong></h3>"
     },
-       {
+    {
       "type": "color",
       "id": "bold_color",
       "label": "Bold Text Color",
