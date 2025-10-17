@@ -194,20 +194,20 @@
         "desc_jFWt9g": {
           "type": "desc",
           "settings": {
-            "desc": "<p>A blend of 9 natural super-oils formulated to nourish the scalp, strengthen the look of hair, and support overall hair vitality.<\/p>"
+            "desc": "<p>A blend of 9 natural super-oils formulated to nourish the scalp, condition the hair, and support a fuller-looking appearance.<\/p><p><\/p>"
           }
         },
         "benefits_p34Qab": {
           "type": "benefits",
           "settings": {
-            "icon1": "shopify:\/\/shop_images\/Simply_Revival___Strengthens_hair_follicles_helps_prevent_hair_loss-min_5e9aa147-53e9-4dd5-abd0-3271e31cb4b7.png",
-            "text1": "Supports stronger, healthier-looking strands",
-            "icon2": "shopify:\/\/shop_images\/Simply_Revival___Deeply_hydrates_scalp_Repairs_damaged_hair_fibers-min_62adfec7-0fca-4c4b-8103-500a718ca1ce.png",
-            "text2": "Deeply hydrates the scalp and smooths the appearance of damaged hair",
-            "icon3": "shopify:\/\/shop_images\/Simply_Revival___Reduces_shedding_while_promoting_thicker_fuller_growth-min_69b2e63b-b83a-4f0e-bc4e-cb7d8a8fd8c3.png",
-            "text3": "Helps maintain fuller-looking hair with consistent use",
-            "icon4": "shopify:\/\/shop_images\/Simply_Revival___9_premium_oils_to_boost_circulation_and_restore_shine.-min_363002cf-ebff-4873-a3f4-597084723ae6.png",
-            "text4": "9 premium oils that nurture scalp comfort and natural shine",
+            "icon1": "shopify:\/\/shop_images\/Natural_Hair_Support_Serum___Simply_Revival___Supports_stronger_healthier-looking_strands-min.png",
+            "text1": "Supports the appearance of stronger, healthier-looking strands",
+            "icon2": "shopify:\/\/shop_images\/Natural_Hair_Support_Serum___Simply_Revival___Deeply_hydrates_the_scalp_and_smooths_the_appearance_of_damaged_hair-min.png",
+            "text2": "Deeply conditions and hydrates the scalp and hair",
+            "icon3": "shopify:\/\/shop_images\/Natural_Hair_Support_Serum___Simply_Revival___Helps_maintain_fuller-looking_hair_with_consistent_use-min.png",
+            "text3": "Helps maintain fuller, more voluminous look with consistent use",
+            "icon4": "shopify:\/\/shop_images\/Natural_Hair_Support_Serum___Simply_Revival___9_premium_oils_that_nurture_scalp_comfort_and_natural_shine.-min.png",
+            "text4": "9 premium oils that enhance natural shine and smoothness",
             "text5": "",
             "text6": ""
           }
@@ -219,9 +219,9 @@
         "product_options_nPiXV8": {
           "type": "product_options",
           "settings": {
-            "image1": "shopify:\/\/shop_images\/Simply_Revival___Topical_DHT_Blocker_Serum___Buy_3_-_Get_2_FREE-min.png",
-            "image2": "shopify:\/\/shop_images\/Simply_Revival___Topical_DHT_Blocker_Serum___Buy_2_-_Get_1_FREE-min.png",
-            "image3": "shopify:\/\/shop_images\/Simply_Revival___Topical_DHT_Blocker_Serum___Buy_One-min.png"
+            "image1": "shopify:\/\/shop_images\/Simply_Revival___Natural_Hair_Support_Serum___Buy_One.png",
+            "image2": "shopify:\/\/shop_images\/Simply_Revival___Natural_Hair_Support_Serum___Buy_2_-_Get_1_FREE.png",
+            "image3": "shopify:\/\/shop_images\/Simply_Revival___Natural_Hair_Support_Serum___Buy_3_-_Get_2_FREE.png"
           }
         },
         "subscription_toggle_pXPczQ": {
@@ -259,14 +259,14 @@
           "type": "faq",
           "settings": {
             "title": "What is Simply Revival?",
-            "content": "<p>Simply revival is a wellness brand focused on natural plant based supplements to support your hair health, immune system, and overall health - without synthetic ingredients or harsh side effects.<\/p>"
+            "content": "<p>Simply Revival is a wellness brand focused on plant-based formulations that support healthy-looking hair and overall well-being — made without synthetic ingredients or harsh additives.<\/p>"
           }
         },
         "faq_AD8NBA": {
           "type": "faq",
           "settings": {
             "title": "Is Simply revival safe to use?",
-            "content": "<p>Yes, our formulas are crafted to be the safest on the market and still provide powerful results.<\/p>"
+            "content": "<p>Yes, our formulas are crafted with high-quality, plant-based ingredients and designed for everyday use.<\/p>"
           }
         },
         "faq_8NkFB8": {
@@ -597,24 +597,24 @@
         "highlight_row_fjEPnU": {
           "type": "highlight_row",
           "settings": {
-            "title": "🧬 The Problem: DHT",
-            "text": "<p>DHT is a naturally occurring hormone that can influence the appearance of your hair and scalp health.<\/p>",
+            "title": "🌿 Everyday Factors",
+            "text": "<p>Things like stress, environment, and daily care can all influence how your hair looks and feels.<br\/><\/p>",
             "text_color": ""
           }
         },
         "highlight_row_MnGEXr": {
           "type": "highlight_row",
           "settings": {
-            "title": "🌿 The Solution: Natural Defenders",
-            "text": "<p>Our formula blends vitamins, herbs, and botanical extracts traditionally used to support scalp and hair wellness.<\/p>",
+            "title": "🍃 The Approach",
+            "text": "<p>Our formula combines nourishing oils, herbs, and vitamins to help support scalp hydration and overall hair wellness.<br\/><\/p>",
             "text_color": ""
           }
         },
         "highlight_row_8hmLn3": {
           "type": "highlight_row",
           "settings": {
-            "title": "💪 The Impact: Stronger Growth",
-            "text": "<p>With consistent use, your scalp and hair feel nourished and look fuller, supporting healthy-looking thickness over time.<\/p>",
+            "title": "💪 The Result",
+            "text": "<p>With consistent use, hair looks smoother, shinier, and naturally fuller over time.<br\/><\/p>",
             "text_color": ""
           }
         }
@@ -626,10 +626,10 @@
       ],
       "name": "Image Benefits",
       "settings": {
-        "featured_image": "shopify:\/\/shop_images\/Simply_Revival_DHT__The_Hidden_Hormone_Behind_Hair_Loss-min.png",
+        "featured_image": "shopify:\/\/shop_images\/Simply_Revival___DHT__A_Natural_Factor_That_Can_Impact_Hair_Health-min.png",
         "reverse_layout": false,
-        "section_title": "<h3><strong>DHT: A Natural Factor That Can Impact Hair Health<\/strong><\/h3>",
-        "section_caption": "Support healthy hair naturally.",
+        "section_title": "<h3><strong>Everyday elements can affect shine, fullness, and scalp comfort.<\/strong><\/h3>",
+        "section_caption": "Nourish your hair naturally.",
         "background_color": "#ffffff",
         "text_color": "#000000",
         "title_color": "#000000",
@@ -710,7 +710,8 @@
       ],
       "name": "Testimonial Images",
       "settings": {
-        "section_title": "<h3>10,000+ <strong>Hair Transformations<\/strong><\/h3>",
+        "testimonial_list": "image-testimonial-list-et8lvccj",
+        "section_title": "<h3>10,000+ <strong>Happy Customers<\/strong><\/h3>",
         "bold_color": "#125657",
         "section_subtitle": "",
         "bg_color": "#fffee3",
@@ -827,56 +828,56 @@
         "reason_UiAERk": {
           "type": "reason",
           "settings": {
-            "img": "shopify:\/\/shop_images\/Simply_Revival___Reason_1_-_Clinical_Strength-min.png",
+            "img": "shopify:\/\/shop_images\/Simply_Revival___Reason_1_-_Clinical_Strength.png",
             "badge": "Reason 1",
             "badge_bg": "#60a1a2",
             "badge_color": "#ffffff",
-            "title": "Clinical Strength",
-            "text": "<p>Simply Revival® delivers 350mg+ of our proprietary blend of herbs including saw palmetto and stinging nettle.<\/p>"
+            "title": "Advanced Quality Blend",
+            "text": "<p>Simply Revival® features 350mg+ of our proprietary blend of herbs including saw palmetto and stinging nettle.<\/p>"
           }
         },
         "reason_TKEJHx": {
           "type": "reason",
           "settings": {
-            "img": "shopify:\/\/shop_images\/Simply_Revival___Reason_2_-_10_Legendary_Herbs._One_formula-min.png",
-            "badge": "Reason 1",
+            "img": "shopify:\/\/shop_images\/Simply_Revival___Reason_2_-_9_Legendary_Herbs._One_formula.png",
+            "badge": "Reason 2",
             "badge_bg": "#60a1a2",
             "badge_color": "#ffffff",
-            "title": "9 Legendary Herbs. One formula",
-            "text": "<p>We combine 9 renowned herbs into one potent blend that supports scalp and hair wellness for a fuller-looking appearance.<\/p>"
+            "title": "9 Legendary Herbs. One Formula",
+            "text": "<p>We combine 9 renowned herbs into one balanced blend designed to help maintain scalp comfort and support the appearance of fuller-looking hair<\/p>"
           }
         },
         "reason_YLnYnw": {
           "type": "reason",
           "settings": {
-            "img": "shopify:\/\/shop_images\/Simply_Revival___Reason_3_-_No_taste._No_hassle._No_Side_Effects-min.png",
-            "badge": "Reason 1",
+            "img": "shopify:\/\/shop_images\/Simply_Revival___Reason_3_-_No_taste._No_hassle._Clean_and_Gentle.png",
+            "badge": "Reason 3",
             "badge_bg": "#60a1a2",
             "badge_color": "#ffffff",
-            "title": "No taste. No hassle. Clean and Gentle",
+            "title": "No Taste. No Hassle. Clean and Gentle",
             "text": "<p>Our plant-based capsules are easy to swallow, tasteless, and gentle on your body.<\/p>"
           }
         },
         "reason_xJhUca": {
           "type": "reason",
           "settings": {
-            "img": "shopify:\/\/shop_images\/Simply_Revival___Reason_4_-_Real_Results_Fast-min.png",
-            "badge": "Reason 1",
+            "img": "shopify:\/\/shop_images\/Simply_Revival___Reason_4_-_Visible_Improvement_Over_Time.png",
+            "badge": "Reason 4",
             "badge_bg": "#60a1a2",
             "badge_color": "#ffffff",
             "title": "Visible Improvement Over Time",
-            "text": "<p>Many users notice their hair looks healthier and fuller with consistent use – leading to greater confidence in their routine.<\/p>"
+            "text": "<p>Users report their hair looks healthier and fuller with consistent use — making it easy to feel good about their daily routine.<\/p>"
           }
         },
         "reason_az3atk": {
           "type": "reason",
           "settings": {
-            "img": "shopify:\/\/shop_images\/Simply_Revival___Reason_5_-_Radical_Transparency-min.png",
-            "badge": "Reason 1",
+            "img": "shopify:\/\/shop_images\/Simply_Revival___Reason_5_-_Radical_Transparency.png",
+            "badge": "Reason 5",
             "badge_bg": "#60a1a2",
             "badge_color": "#ffffff",
             "title": "Radical Transparency",
-            "text": "<p>No fillers. No fluff. Just clinically backed ingredients.<\/p>"
+            "text": "<p>No fillers. No fluff. Just research-inspired botanical ingredients.<\/p>"
           }
         },
         "button_wYqzHE": {
@@ -1031,7 +1032,7 @@
         "heading_NaQgDb": {
           "type": "heading",
           "settings": {
-            "heading": "<h3>From self-conscious to<br\/><strong>Confident in your hair<\/strong><\/h3><h2>💪<\/h2>",
+            "heading": "<h3>From everyday care to<br\/><strong>Fuller Confidence<\/strong><\/h3><h2>💪<\/h2>",
             "text_color": "#ffffff",
             "bold_color": "#d0f0f2"
           }
@@ -1039,38 +1040,38 @@
         "table_G4t4EN": {
           "type": "table",
           "settings": {
-            "title": "Your Problem",
+            "title": "Your Goal",
             "bg_color": "#1c7779",
             "text_color": "#ffffff",
-            "icon1": "shopify:\/\/shop_images\/Simply_Revival___Struggling_with_thinning_hairline-crown-min.png",
-            "text1": "Noticing changes in your hairline or volume",
-            "icon2": "shopify:\/\/shop_images\/Simply_Revival___Feeling_insecure_about_your_hair-min.png",
-            "text2": "Feeling insecure about your hair",
-            "icon3": "shopify:\/\/shop_images\/Simply_Revival___Sick_and_tired_of_prescription_side_effects-min.png",
-            "text3": "Looking for a natural alternative you can feel good about"
+            "icon1": "shopify:\/\/shop_images\/Simply_Revival___Noticing_changes_in_your_hairline_or_volume-min.png",
+            "text1": "Keep your hair looking thick and healthy",
+            "icon2": "shopify:\/\/shop_images\/Simply_Revival___Feeling_insecure_about_your_hair-min_d2e1d1dd-61fc-4757-add3-5f6bc0cae628.png",
+            "text2": "Use clean, plant-based care you can trust",
+            "icon3": "shopify:\/\/shop_images\/Simply_Revival___Looking_for_a_natural_alternative_you_can_feel_good_about-min.png",
+            "text3": "Feel good about your daily routine"
           }
         },
         "table_pm6GiK": {
           "type": "table",
           "settings": {
-            "title": "Our Solution",
+            "title": "Our Support",
             "bg_color": "#72c9ca",
             "text_color": "#ffffff",
-            "icon1": "shopify:\/\/shop_images\/Simply_Revival___A_full_head_of_healthy_hair-min.png",
-            "text1": "Hair that looks fuller and healthier",
-            "icon2": "shopify:\/\/shop_images\/Simply_Revival___New_found_confidence-min.png",
-            "text2": "New found confidence",
-            "icon3": "shopify:\/\/shop_images\/Simply_Revival___No_harsh_side_effects-min_a3ac93f0-38c8-4903-88e4-7ddcc56efb4e.png",
-            "text3": "Formulated with clean, gentle ingredients"
+            "icon1": "shopify:\/\/shop_images\/Simply_Revival___Hair_that_looks_fuller_and_healthier-min.png",
+            "text1": "Helps hair look fuller and well-nourished",
+            "icon2": "shopify:\/\/shop_images\/Simply_Revival___New_found_confidence-min_d4c42d74-8006-45e8-8e09-333e354c3687.png",
+            "text2": "Promotes natural shine and balance",
+            "icon3": "shopify:\/\/shop_images\/Simply_Revival___Formulated_with_clean_gentle_ingredients-min.png",
+            "text3": "Made without harsh additives"
           }
         },
         "image_row_Bdgqed": {
           "type": "image_row",
           "settings": {
-            "bf_image": "shopify:\/\/shop_images\/Simply_Revival___Topical_DHT_Blocker_Serum_-_After_Transformatoin.png",
+            "bf_image": "shopify:\/\/shop_images\/Simply_Revival___Natural_Hair_Support_Formula___Transformatoin-min.png",
             "text": "After Consistent",
             "hi_text": "USE",
-            "af_image": "shopify:\/\/shop_images\/Simply_Revival___Topical_DHT_Blocker_Serum_-_Before_Transformatoin.png"
+            "af_image": "shopify:\/\/shop_images\/Simply_Revival___Natural_Hair_Support_Serum___Consistent_Use-min.png"
           }
         }
       },
@@ -1113,7 +1114,7 @@
           "type": "stat",
           "settings": {
             "number": "93%",
-            "title": "<p>Said their hair looked healthier and stronger<br\/><\/p>",
+            "title": "<p>Said their hair looked healthier and stronger  <br\/><\/p>",
             "text": "<p>After consistent use of Simply Revival®<\/p>"
           }
         },
@@ -1121,24 +1122,24 @@
           "type": "stat",
           "settings": {
             "number": "96%",
-            "title": "<p>Would recommend Simply Revival® to a friend<\/p>",
-            "text": "<p>As a natural, plant-based supplement for healthy-looking hair<\/p>"
+            "title": "<p>Would recommend Simply Revival® to a friend  <br\/><\/p>",
+            "text": "<p>As a natural, plant-based formula for healthy-looking hair<br\/><\/p>"
           }
         },
         "stat_U84iMg": {
           "type": "stat",
           "settings": {
             "number": "90%",
-            "title": "<p>Said their hair looked fuller and their skin appeared healthier<\/p>",
-            "text": "<p>With consistent use over time<\/p>"
+            "title": "<p>Said their hair looked fuller and their skin appeared healthier  <br\/><\/p>",
+            "text": "<p>With consistent use over time<br\/><\/p>"
           }
         },
         "stat_Gax64r": {
           "type": "stat",
           "settings": {
             "number": "89%",
-            "title": "<p>Said they prefer Simply Revival®’s formula<\/p>",
-            "text": "<p>Over other hair-support supplements they’ve tried<\/p>"
+            "title": "<p>Said they prefer Simply Revival®’s formula  <br\/><\/p>",
+            "text": "<p>Over other hair-care products they’ve tried<br\/><\/p>"
           }
         }
       },
@@ -1173,7 +1174,7 @@
         "brand_table_ziRYCm": {
           "type": "brand_table",
           "settings": {
-            "product_image": "shopify:\/\/shop_images\/Simply_Revival___Topical_DHT_Blocker_Serum-min_d715a850-3dca-458a-aca5-f5ac9d55fc51.png",
+            "product_image": "shopify:\/\/shop_images\/Simply_Revival___Natural_Hair_Support_Serum___Buy_One.png",
             "title": "Simply Revival®",
             "background_color": "#60a1a2",
             "text_color": "#ffffff",
@@ -1195,7 +1196,7 @@
             "title": "Conventional Formulas",
             "background_color": "#ffffff",
             "text_color": "#111111",
-            "text1": "Harsh chemical blends",
+            "text1": "Conventional Formulas",
             "text2": "Synthetic formula",
             "text3": "Fillers & additives",
             "text4": "Sugar, flavors, binders",
@@ -1205,7 +1206,7 @@
         "bullet_tHDNbt": {
           "type": "bullet",
           "settings": {
-            "text": "<p><strong>Real Experiences Without Harsh Chemicals <\/strong>– Gentle on your body, supportive of healthy-looking hair.<\/p>",
+            "text": "<p><strong>Real Experiences Without Harsh Chemicals <\/strong>– Gentle on your scalp, supportive of healthy-looking hair.  <br\/><\/p>",
             "text_color": "#ffffff"
           }
         },
@@ -1219,7 +1220,7 @@
         "bullet_pAprff": {
           "type": "bullet",
           "settings": {
-            "text": "<p><strong>Clinically Studied Ingredients <\/strong>– Backed by research, crafted for quality and effectiveness.<\/p>",
+            "text": "<p><strong>Quality Tested Ingredients<\/strong> – Crafted with research-informed botanical blends for everyday care.  <br\/><\/p>",
             "text_color": "#ffffff"
           }
         },
@@ -1248,7 +1249,7 @@
         "background_start_color": "#005556",
         "background_end_color": "#047f7f",
         "text_color": "#ffffff",
-        "padding_top": 100,
+        "padding_top": 55,
         "padding_bottom": 65
       }
     },
@@ -1279,7 +1280,7 @@
         "subtext_LixbJV": {
           "type": "subtext",
           "settings": {
-            "text": "<p>If you’re not completely satisfied within 365 days, simply return your order for a full refund!<\/p>"
+            "text": "<p>If you’re not completely happy with your purchase, simply return it within 365 days for a full refund.  <br\/><\/p>"
           }
         },
         "button_ezWWFE": {
@@ -1303,7 +1304,7 @@
       "settings": {
         "background_color": "#fffee3",
         "text_color": "#000000",
-        "image": "shopify:\/\/shop_images\/Simply_Revival___365_Day_Money_Back_Guarantee___Topical_DHT_Blocker-min.png",
+        "image": "shopify:\/\/shop_images\/Simply_Revival___Natural_Hair_Support_Serum___Guarantee-min.png",
         "alt_text": "",
         "image_position": "left",
         "padding_top": 24,
@@ -1316,15 +1317,15 @@
         "faq_PCeDn4": {
           "type": "faq",
           "settings": {
-            "title": "<p>What is Simply Revival<\/p>",
-            "text": "<p>Simply revival is a wellness brand focused on natural plant based supplements to support your hair health, immune system, and overall health - without synthetic ingredients or harsh side effects.<\/p>"
+            "title": "<p>What is Simply Revival?<\/p>",
+            "text": "<p>Simply Revival is a wellness brand focused on plant-based formulations that support healthy-looking hair and overall well-being — made without synthetic ingredients or harsh additives.<\/p>"
           }
         },
         "faq_xzkw93": {
           "type": "faq",
           "settings": {
             "title": "<p>Is Simply revival safe to use?<\/p>",
-            "text": "<p>Yes, our formulas are crafted to be the safest on the market and still provide powerful results.<\/p>"
+            "text": "<p>Yes, our formulas are crafted with high-quality, plant-based ingredients and designed for everyday use.<\/p>"
           }
         },
         "faq_cXUTTa": {
