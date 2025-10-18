@@ -743,7 +743,9 @@
             "bf_image": "shopify:\/\/shop_images\/Simply_Revival___DHT_Blocker_-_Before_Transformatoin-min_13a68d46-b0f7-4201-bd96-5ff627f3c840.png",
             "text": "After Consistent",
             "hi_text": "use",
-            "af_image": "shopify:\/\/shop_images\/Simply_Revival___The_1_Natural_DHT_Blocker_for_Hair_Loss___Trasformatoin_-_After-min.png"
+            "af_image": "shopify:\/\/shop_images\/Simply_Revival___The_1_Natural_DHT_Blocker_for_Hair_Loss___Trasformatoin_-_After-min.png",
+            "show_subtext": false,
+            "text_color": "#faf9f6"
           }
         }
       },

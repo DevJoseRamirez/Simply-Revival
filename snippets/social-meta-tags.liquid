@@ -1,9 +1,9 @@
 <!-- /snippets/social-meta-tags.liquid -->
 {%- liquid
-  assign og_title = page_title 
-  assign og_url = canonical_url 
-  assign og_type = 'website' 
-  assign og_description = page_description | default: shop.description | default: shop.name 
+  assign og_title = page_title
+  assign og_url = canonical_url
+  assign og_type = 'website'
+  assign og_description = page_description | default: shop.description | default: shop.name
 -%}
 
 {%- if settings.share_image -%}
@@ -12,8 +12,8 @@
 {%- endif -%}
 {%- if template.name == 'product' -%}
   {%- liquid
-    assign og_title = product.title | strip_html 
-    assign og_type = 'product' 
+    assign og_title = product.title | strip_html
+    assign og_type = 'product'
   -%}
   {%- if product.images.size > 0 -%}
     {%- capture og_image_tags -%}{%- for image in product.images limit: 3 -%}<meta property="og:image" content="http:{{ image.src | image_url: width: 1200, height: 1200 }}">{%- endfor -%}{%- endcapture -%}
@@ -21,9 +21,9 @@
   {%- endif -%}
 {%- elsif template.name == 'article' -%}
   {%- liquid
-    assign og_title = article.title | strip_html 
-    assign og_type = 'article' 
-    assign og_description = article.excerpt_or_content | strip_html 
+    assign og_title = article.title | strip_html
+    assign og_type = 'article'
+    assign og_description = article.excerpt_or_content | strip_html
   -%}
   {%- if article.image -%}
     {%- capture og_image_tags -%}<meta property="og:image" content="http:{{ article.image | image_url: width: 1200, height: 1200 }}">{%- endcapture -%}
@@ -45,7 +45,16 @@
 <meta property="og:url" content="{{ og_url }}">
 <meta property="og:title" content="{{ og_title }}">
 <meta property="og:type" content="{{ og_type }}">
-<meta property="og:description" content="{{ og_description }}">
+
+{% if request.host contains 'shop.' %}
+  <meta
+    property="og:description"
+    content="Simply Revival’s Natural Hair Support Formula helps maintain the appearance of thicker, fuller-looking hair using plant-based ingredients for everyday scalp wellness."
+  >
+{% else %}
+  <meta property="og:description" content="{{ og_description | escape }}">
+{% endif %}
+
 {%- if template.name == 'product' -%}
   <meta property="og:price:amount" content="{{ product.price | money_without_currency | strip_html }}">
   <meta property="og:price:currency" content="{{ shop.currency }}">
@@ -57,7 +66,15 @@
 {%- endunless -%}
 <meta name="twitter:card" content="summary_large_image">
 <meta name="twitter:title" content="{{ og_title }}">
-<meta name="twitter:description" content="{{ og_description }}">
+{% if request.host contains 'shop.' %}
+  <meta
+    name="twitter:description"
+    content="Simply Revival’s Natural Hair Support Formula helps maintain the appearance of thicker, fuller-looking hair using plant-based ingredients for everyday scalp wellness."
+  >
+{% else %}
+  <meta name="twitter:description" content="{{ og_description | escape }}">
+{% endif %}
+
 <script>
   document.documentElement.className = document.documentElement.className.replace('no-js', 'js');
 </script>

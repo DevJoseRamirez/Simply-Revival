@@ -626,7 +626,7 @@
       ],
       "name": "Image Benefits",
       "settings": {
-        "featured_image": "shopify:\/\/shop_images\/Simply_Revival___DHT__A_Natural_Factor_That_Can_Impact_Hair_Health-min.png",
+        "featured_image": "shopify:\/\/shop_images\/Simply_Revival___Everyday_elements_can_affect_shine_fullness_and_scalp_comfort.-min.png",
         "reverse_layout": false,
         "section_title": "<h3><strong>Everyday elements can affect shine, fullness, and scalp comfort.<\/strong><\/h3>",
         "section_caption": "Nourish your hair naturally.",
@@ -865,8 +865,8 @@
             "badge": "Reason 4",
             "badge_bg": "#60a1a2",
             "badge_color": "#ffffff",
-            "title": "Visible Improvement Over Time",
-            "text": "<p>Users report their hair looks healthier and fuller with consistent use — making it easy to feel good about their daily routine.<\/p>"
+            "title": "Visible difference over time",
+            "text": "<p>Users say their hair looks healthier and fuller — making it easy to feel good about their daily routine.<\/p>"
           }
         },
         "reason_az3atk": {
@@ -877,7 +877,7 @@
             "badge_bg": "#60a1a2",
             "badge_color": "#ffffff",
             "title": "Radical Transparency",
-            "text": "<p>No fillers. No fluff. Just research-inspired botanical ingredients.<\/p>"
+            "text": "<p>No fillers. No fluff. Just thoughtfully selected botanical ingredients.<\/p>"
           }
         },
         "button_wYqzHE": {
@@ -1024,7 +1024,7 @@
         "caption_HBMmJc": {
           "type": "caption",
           "settings": {
-            "text": "Hair Health Starts Here",
+            "text": "Healthy-Looking Hair Starts Here",
             "text_color": "#ffffff",
             "bg_color": "#60a1a2"
           }
@@ -1069,9 +1069,11 @@
           "type": "image_row",
           "settings": {
             "bf_image": "shopify:\/\/shop_images\/Simply_Revival___Natural_Hair_Support_Formula___Transformatoin-min.png",
-            "text": "After Consistent",
+            "text": "With Regular",
             "hi_text": "USE",
-            "af_image": "shopify:\/\/shop_images\/Simply_Revival___Natural_Hair_Support_Serum___Consistent_Use-min.png"
+            "af_image": "shopify:\/\/shop_images\/Simply_Revival___Natural_Hair_Support_Serum___Consistent_Use-min.png",
+            "show_subtext": true,
+            "text_color": "#faf9f6"
           }
         }
       },
@@ -1114,7 +1116,7 @@
           "type": "stat",
           "settings": {
             "number": "93%",
-            "title": "<p>Said their hair looked healthier and stronger  <br\/><\/p>",
+            "title": "<p>Said their hair looked healthier and felt stronger-looking.<\/p>",
             "text": "<p>After consistent use of Simply Revival®<\/p>"
           }
         },
@@ -1206,21 +1208,21 @@
         "bullet_tHDNbt": {
           "type": "bullet",
           "settings": {
-            "text": "<p><strong>Real Experiences Without Harsh Chemicals <\/strong>– Gentle on your scalp, supportive of healthy-looking hair.  <br\/><\/p>",
+            "text": "<p><strong>Real feedback from customers<\/strong> – gentle on your scalp and supportive of healthy-looking hair.<\/p>",
             "text_color": "#ffffff"
           }
         },
         "bullet_HeMT46": {
           "type": "bullet",
           "settings": {
-            "text": "<p><strong>Safe for Daily Use<\/strong> – No prescriptions, no hassle, just consistent hair wellness support.<\/p>",
+            "text": "<p><strong>Simple for daily use <\/strong>– no hassle, just consistent hair care support.<\/p>",
             "text_color": "#ffffff"
           }
         },
         "bullet_pAprff": {
           "type": "bullet",
           "settings": {
-            "text": "<p><strong>Quality Tested Ingredients<\/strong> – Crafted with research-informed botanical blends for everyday care.  <br\/><\/p>",
+            "text": "<p><strong>Quality Tested Ingredients<\/strong> – Crafted with thoughtfully formulated botanical blends<\/p>",
             "text_color": "#ffffff"
           }
         },

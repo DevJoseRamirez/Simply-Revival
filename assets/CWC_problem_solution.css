@@ -42,7 +42,7 @@
     align-items: center;
     justify-content: center;
     margin-bottom: .9375rem;
-
+    max-width: max-content;
 }
 
 .cwc-problem-solution__heading {
@@ -315,6 +315,7 @@
         height: 30px;
         max-width: 230px;
         margin-bottom: 8.41px;
+        max-width: max-content;
     }
 
     .cwc-problem-solution__tables {
