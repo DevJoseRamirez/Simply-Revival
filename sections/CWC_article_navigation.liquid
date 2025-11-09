@@ -1,0 +1,176 @@
+{% style %}
+   footer {
+
+   }
+   sticky-header,
+   .announcement-bar-section ,
+   .section-header ,
+  .announcement-bar-carousel{
+       display: none !important;
+   }
+
+  #CWC_article_navigation-{{ section.id }} {
+  --bg-color: {{ section.settings.bg_color }};
+  --bg-color-end:{{ section.settings.bg_color_end }};
+  --padding-top: {{ section.settings.padding_top }}px;
+  --padding-bottom: {{ section.settings.padding_bottom }}px;
+  }
+{% endstyle %}
+
+{{ 'CWC_article_navigation.css' | asset_url | stylesheet_tag }}
+
+<section id="CWC_article_navigation-{{ section.id }}" class="cwc-article-navigation">
+  <div class="cwc-article-navigation__wrapper">
+    <!-- Logo -->
+    <div class="cwc-article-navigation__logo">
+      {% if section.settings.logo != blank %}
+        <div href="#" class="cwc-article-navigation__logo-link">
+          <img
+            loading="eager"
+            fetchpriority="high"
+            src="{{ section.settings.logo | image_url: width: 200   }}"
+            alt="{{ section.settings.logo.alt | default: "logo" }}"
+            width="{{ section.settings.img.width }}"
+            height="{{ section.settings.img.height }}"
+          >
+        </div>
+      {% endif %}
+    </div>
+
+    <!-- Desktop Nav -->
+    <nav class="cwc-article-navigation__links">
+      {% if section.settings.link1_label != blank %}
+        <a href="{{ section.settings.link1_url }}" class="cwc-article-navigation__nav-link">
+          {{- section.settings.link1_label -}}
+        </a>
+      {% endif %}
+      {% if section.settings.link2_label != blank %}
+        <a href="{{ section.settings.link2_url }}" class="cwc-article-navigation__nav-link">
+          {{- section.settings.link2_label -}}
+        </a>
+      {% endif %}
+      {% if section.settings.link3_label != blank %}
+        <a href="{{ section.settings.link3_url }}" class="cwc-article-navigation__nav-link">
+          {{- section.settings.link3_label -}}
+        </a>
+      {% endif %}
+    </nav>
+
+    <!-- Burger Menu -->
+    <button class="cwc-article-navigation__burger" aria-label="Menu">&#9776;</button>
+  </div>
+
+  <!-- Mobile Dropdown -->
+  <div class="cwc-article-navigation__mobile-menu">
+    {% if section.settings.link1_label != blank %}
+      <a href="{{ section.settings.link1_url }}" class="cwc-article-navigation__mobile-link">
+        {{- section.settings.link1_label -}}
+      </a>
+    {% endif %}
+    {% if section.settings.link2_label != blank %}
+      <a href="{{ section.settings.link2_url }}" class="cwc-article-navigation__mobile-link">
+        {{- section.settings.link2_label -}}
+      </a>
+    {% endif %}
+    {% if section.settings.link3_label != blank %}
+      <a href="{{ section.settings.link3_url }}" class="cwc-article-navigation__mobile-link">
+        {{- section.settings.link3_label -}}
+      </a>
+    {% endif %}
+  </div>
+</section>
+
+<script>
+  document.addEventListener('DOMContentLoaded', function () {
+    const burger = document.querySelector('#CWC_article_navigation-{{ section.id }} .cwc-article-navigation__burger');
+    const mobileMenu = document.querySelector(
+      '#CWC_article_navigation-{{ section.id }} .cwc-article-navigation__mobile-menu'
+    );
+
+    burger.addEventListener('click', () => {
+      mobileMenu.classList.toggle('active');
+    });
+  });
+</script>
+
+{% schema %}
+{
+  "name": "CWC Article Navigation",
+  "settings": [
+    {
+      "type": "image_picker",
+      "id": "logo",
+      "label": "Logo"
+    },
+    {
+      "type": "text",
+      "id": "link1_label",
+      "label": "Link 1 Label",
+      "default": "Order"
+    },
+    {
+      "type": "url",
+      "id": "link1_url",
+      "label": "Link 1 URL"
+    },
+    {
+      "type": "text",
+      "id": "link2_label",
+      "label": "Link 2 Label",
+      "default": "About"
+    },
+    {
+      "type": "url",
+      "id": "link2_url",
+      "label": "Link 2 URL"
+    },
+    {
+      "type": "text",
+      "id": "link3_label",
+      "label": "Link 3 Label",
+      "default": "Contact"
+    },
+    {
+      "type": "url",
+      "id": "link3_url",
+      "label": "Link 3 URL"
+    },
+    {
+      "type": "color",
+      "id": "bg_color",
+      "label": "Background Color",
+      "default": "#45b5b7"
+    },
+    {
+      "type": "color",
+      "id": "bg_color_end",
+      "label": "Background Color 2",
+      "default": "#1e6c7a"
+    },
+    {
+      "type": "range",
+      "id": "padding_top",
+      "min": 0,
+      "max": 100,
+      "step": 4,
+      "default": 16,
+      "label": "Padding Top"
+    },
+    {
+      "type": "range",
+      "id": "padding_bottom",
+      "min": 0,
+      "max": 100,
+      "step": 4,
+      "default": 16,
+      "label": "Padding Bottom"
+    }
+  ],
+  "presets": [
+    {
+      "name": "Article Navigation",
+      "category": "Advertorial"
+    }
+  ]
+}
+{% endschema %}

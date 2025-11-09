@@ -507,6 +507,7 @@
       ],
       "name": "Testimonial Images",
       "settings": {
+        "testimonial_list": "",
         "section_title": "<h3>10,000+ <strong>Hair Transformations<\/strong><\/h3>",
         "bold_color": "#125657",
         "section_subtitle": "",
@@ -875,7 +876,9 @@
             "bf_image": "shopify:\/\/shop_images\/Simply_Revival___DHT_Blocker_-_Before_Transformatoin-min_13a68d46-b0f7-4201-bd96-5ff627f3c840.png",
             "text": "Withing",
             "hi_text": "90 days",
-            "af_image": "shopify:\/\/shop_images\/Simply_Revival___The_1_Natural_DHT_Blocker_for_Hair_Loss___Trasformatoin_-_After-min.png"
+            "af_image": "shopify:\/\/shop_images\/Simply_Revival___The_1_Natural_DHT_Blocker_for_Hair_Loss___Trasformatoin_-_After-min.png",
+            "show_subtext": false,
+            "text_color": "#faf9f6"
           }
         }
       },
@@ -1140,7 +1143,11 @@
         },
         "product_options_gREanT": {
           "type": "product_options",
-          "settings": {}
+          "settings": {
+            "image1": "shopify:\/\/shop_images\/Simply_Revival___Natural_Hair_Support_Blend___Buy_One-min.png",
+            "image2": "shopify:\/\/shop_images\/Simply_Revival___Natural_Hair_Support_Blend___Buy_2_-_Get_1_FREE-min.png",
+            "image3": "shopify:\/\/shop_images\/Simply_Revival___Natural_Hair_Support_Blend___Buy_3_-_Get_2_FREE-min.png"
+          }
         },
         "subscription_toggle_WDR8rQ": {
           "type": "subscription_toggle",

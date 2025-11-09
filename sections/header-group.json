@@ -8,7 +8,7 @@
         "item_CAgTzF": {
           "type": "Item",
           "settings": {
-            "code": "Up To 70% Off + Free Shipping",
+            "code": "BLACK FRIDAY MEGA SALE -  Up To 70% Off!",
             "button_text": "",
             "button_link": ""
           }
@@ -17,6 +17,7 @@
       "block_order": [
         "item_CAgTzF"
       ],
+      "custom_css": [],
       "settings": {
         "enable": true,
         "animation": "fade",

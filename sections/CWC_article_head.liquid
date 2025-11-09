@@ -1,0 +1,453 @@
+{% style %}
+  #CWC_article_head-{{ section.id }} {
+  --section-bg: {{ section.settings.bg_color }};
+  --padding-top: {{ section.settings.padding_top }}px;
+  --padding-bottom: {{ section.settings.padding_bottom }}px;
+  --padding-top-mobile: {{ section.settings.padding_top | times: 0.5 }}px;
+  --padding-bottom-mobile: {{ section.settings.padding_bottom | times: 0.5 }}px;
+  --offer-bg-color: {{ section.settings.offer_bg }}
+  }
+{% endstyle %}
+
+{{ 'CWC_article_head.css' | asset_url | stylesheet_tag }}
+
+<section
+  id="CWC_article_head-{{ section.id }}"
+  class="cwc-article-head  {% if section.settings.sidebar %}cwc-article-head__article-grid{% endif %}"
+>
+  <div class="cwc-article-head__wrapper">
+    {% for block in section.blocks %}
+      {% case block.type %}
+        {% when 'heading' %}
+          <div
+            class="cwc-article-head__heading {{ block.settings.alignment }}"
+            style="color: {{ block.settings.text_color }}"
+            {{ block.shopify_attributes }}
+          >
+            {{ block.settings.text }}
+          </div>
+
+        {% when 'image' %}
+          <div class="cwc-article-head__image" {{ block.shopify_attributes }}>
+            {% if block.settings.image != blank %}
+              <img src="{{ block.settings.image | img_url: '1200x' }}" alt="">
+            {% else %}
+              <img src="{{ 'placeholder.png' | asset_url }}" alt="Placeholder image">
+            {% endif %}
+          </div>
+
+        {% when 'breadcrumbs' %}
+          <div class="cwc-article-head__breadcrumbs" {{ block.shopify_attributes }}>
+            {{ block.settings.breadcrumbs }}
+          </div>
+
+        {% when 'timestamp' %}
+          <div class="cwc-article-head__timestamp" {{ block.shopify_attributes }}>{{ block.settings.timestamp }}</div>
+
+          {% comment %}
+            {% when 'caption' %}
+            <div class="cwc-article-head__caption" {{ block.shopify_attributes }}>{{ block.settings.caption }}</div>
+          {% endcomment %}
+
+        {% when 'title' %}
+          <div class="cwc-article-head__title" {{ block.shopify_attributes }}>{{ block.settings.text }}</div>
+
+        {% when 'caption' %}
+          <div class="cwc-article-head__caption" {{ block.shopify_attributes }}>{{ block.settings.caption }}</div>
+
+        {% when 'note' %}
+          <div
+            class="cwc-article-head__note {% if block.settings.label %}cwc-article-head__label{% endif %} {% if block.settings.inset %}cwc-article-head__inset{% endif %}"
+            {{ block.shopify_attributes }}
+            style="background-color: {{ block.settings.bg-color }}; border-radius: {{ block.settings.radius }}px; border: {{ block.settings.border-type }} {{ block.settings.border-color }} 1px;"
+          >
+            {{ block.settings.note }}
+          </div>
+
+        {% when 'text' %}
+          <div class="cwc-article-head__text rte" {{ block.shopify_attributes }}>{{ block.settings.text }}</div>
+
+        {% when 'button' %}
+          <div
+            class="            cwc-article-head__button"
+            {{ block.shopify_attributes }}
+            style="
+              background-color:
+              {{ block.settings.bg-color }}
+              ;
+              color:
+              {{ block.settings.color }}
+            "
+          >
+            <a href="{{ block.settings.link }}" class="btn">
+              {{ block.settings.label }}
+            </a>
+          </div>
+      {% endcase %}
+    {% endfor %}
+  </div>
+
+  <div class="cwc-article-head__sidebar">
+    <a href="{{ section.settings.card_link }}" class="cwc-article-head__offer-card" {{ block.shopify_attributes }}>
+      {% if section.settings.logo %}
+        <img src="{{ section.settings.logo | img_url: '130x' }}" alt="Logo" class="cwc-article-head__soffer-card__logo">
+      {% endif %}
+
+      {% if section.settings.heading != blank %}
+        <div class="cwc-article-head__soffer-card__title">{{ section.settings.heading }}</div>
+      {% endif %}
+
+      {% if section.settings.product_image %}
+        <img
+          src="{{ section.settings.product_image | img_url: '180x' }}"
+          alt="Product"
+          class="cwc-article-head__soffer-card__product"
+        >
+      {% endif %}
+
+      {% if section.settings.text != blank %}
+        <div class="cwc-article-head__soffer-card__text">{{ section.settings.text }}</div>
+      {% endif %}
+    </a>
+
+    {% if section.settings.button_label != blank %}
+      <span
+        class="cwc-article-head__soffer-card__button"
+        style="background-color: {{ section.settings.button_bg }}; color: {{ section.settings.button_text }};"
+      >
+        {{ section.settings.button_label }}
+      </span>
+    {% endif %}
+  </div>
+</section>
+
+{% schema %}
+{
+  "name": "CWC Article Head",
+  "class": "cwc-article-head-section",
+  "settings": [
+    {
+      "type": "header",
+      "content": "Offer Details"
+    },
+    {
+      "type": "color",
+      "id": "offer_bg",
+      "label": "Offer card background color",
+      "default": "#FDF7EB"
+    },
+    {
+      "type": "url",
+      "id": "card_link",
+      "label": "Card link"
+    },
+    {
+      "type": "image_picker",
+      "id": "logo",
+      "label": "Logo image"
+    },
+    {
+      "type": "richtext",
+      "id": "heading",
+      "label": "Benefit title",
+      "default": "<p>Transformations you get</p>"
+    },
+    {
+      "type": "image_picker",
+      "id": "product_image",
+      "label": "Product image"
+    },
+    {
+      "type": "richtext",
+      "id": "text",
+      "label": "Offer Description",
+      "default": "<p>Description Here</p>"
+    },
+    {
+      "type": "color",
+      "id": "button_bg",
+      "label": "Button background color",
+      "default": "#000000"
+    },
+    {
+      "type": "color",
+      "id": "button_text",
+      "label": "Button text color",
+      "default": "#ffffff"
+    },
+    {
+      "type": "text",
+      "id": "button_label",
+      "label": "Button label",
+      "default": "Shop Now"
+    },
+    {
+      "type": "header",
+      "content": "Section Settings"
+    },
+    {
+      "type": "color",
+      "id": "bg_color",
+      "label": "Background color",
+      "default": "#ffffff"
+    },
+    {
+      "type": "checkbox",
+      "id": "sidebar",
+      "label": " Display in article format",
+      "default": true
+    },
+    {
+      "type": "range",
+      "id": "padding_top",
+      "label": "Padding top",
+      "min": 0,
+      "max": 200,
+      "step": 5,
+      "default": 40
+    },
+    {
+      "type": "range",
+      "id": "padding_bottom",
+      "label": "Padding bottom",
+      "min": 0,
+      "max": 200,
+      "step": 5,
+      "default": 40
+    }
+  ],
+  "blocks": [
+    {
+      "type": "breadcrumbs",
+      "name": "Breadcrumbs",
+      "settings": [
+        {
+          "type": "text",
+          "id": "breadcrumbs",
+          "label": "Breadcrumbs",
+          "default": "Home › Trending › This 2-Minute Healthy Habit Helps Ensure Great Health…Daily"
+        }
+      ]
+    },
+    {
+      "type": "timestamp",
+      "name": "Timestamp",
+      "settings": [
+        {
+          "type": "text",
+          "id": "timestamp",
+          "label": "Time stamp",
+          "default": "Jan 10 2025 at 9:17 am"
+        }
+      ]
+    },
+
+    {
+      "type": "heading",
+      "name": "Heading",
+      "settings": [
+        {
+          "type": "richtext",
+          "id": "text",
+          "label": "Heading text",
+          "default": "<p>This 2-Minute Healthy Habit Helps Ensure Great Health…Daily</p>"
+        },
+        {
+          "type": "select",
+          "id": "alignment",
+          "label": "Text alignment",
+          "options": [
+            {
+              "value": "left",
+              "label": "Left"
+            },
+            {
+              "value": "center",
+              "label": "Center"
+            },
+            {
+              "value": "right",
+              "label": "Right"
+            }
+          ],
+          "default": "left"
+        },
+        {
+          "type": "color",
+          "id": "text_color",
+          "label": "Text color",
+          "default": "#000000"
+        }
+      ]
+    },
+    {
+      "type": "image",
+      "name": "Image",
+      "settings": [
+        {
+          "type": "image_picker",
+          "id": "image",
+          "label": "Image"
+        }
+      ]
+    },
+    {
+      "type": "title",
+      "name": "Title",
+      "limit": 3,
+      "settings": [
+        {
+          "type": "richtext",
+          "id": "text",
+          "label": "Title text",
+          "default": "<p>Yo Fruits Yo Veggies</p>"
+        }
+      ]
+    },
+    {
+      "type": "caption",
+      "name": "Caption",
+      "limit": 3,
+      "settings": [
+        {
+          "type": "richtext",
+          "id": "caption",
+          "label": "Caption text",
+          "default": "<p>Superfoods Made Simple</p>"
+        }
+      ]
+    },
+    {
+      "type": "note",
+      "name": "Note",
+      "limit": 10,
+      "settings": [
+        {
+          "type": "richtext",
+          "id": "note",
+          "label": "Rich text",
+          "default": "<p>Yo Fruits Yo Veggies means more nutrition…no meaningless ingredients…and no single-use packaging </p>"
+        },
+        {
+          "type": "color",
+          "id": "bg-color",
+          "label": "Button color",
+          "default": "#F9F6ED"
+        },
+        {
+          "type": "select",
+          "id": "border-type",
+          "label": "Border type",
+          "options": [
+            {
+              "value": "none",
+              "label": "none"
+            },
+            {
+              "value": "solid",
+              "label": "Solid"
+            },
+            {
+              "value": "dashed",
+              "label": "Dashed"
+            },
+            {
+              "value": "dotted",
+              "label": "Dotted"
+            }
+          ],
+          "default": "solid"
+        },
+        {
+          "type": "color",
+          "id": "border-color",
+          "label": "border color",
+          "default": "#f4f4f4"
+        },
+        {
+          "type": "range",
+          "id": "radius",
+          "label": "border radius",
+          "min": 0,
+          "max": 40,
+          "step": 2,
+          "default": 8
+        },
+        {
+          "type": "checkbox",
+          "label": "Highlight box",
+          "id": "label",
+          "default": false
+        },
+        {
+          "type": "checkbox",
+          "label": "Inset Block",
+          "id": "inset",
+          "default": false
+        }
+      ]
+    },
+    {
+      "type": "text",
+      "name": "Text",
+      "limit": 10,
+      "settings": [
+        {
+          "type": "richtext",
+          "id": "text",
+          "label": "Rich text",
+          "default": "<p>Your simple solution to a healthier diet – and a healthier lifestyle!&nbsp;</p>"
+        }
+      ]
+    },
+    {
+      "type": "button",
+      "name": "Button",
+      "settings": [
+        {
+          "type": "text",
+          "id": "label",
+          "label": "Button label",
+          "default": "Check Availability"
+        },
+        {
+          "type": "color",
+          "id": "bg-color",
+          "label": "Button color"
+        },
+        {
+          "type": "color",
+          "id": "color",
+          "label": "Text color",
+          "default": "#000000"
+        },
+        {
+          "type": "url",
+          "id": "link",
+          "label": "Button link"
+        }
+      ]
+    }
+  ],
+  "presets": [
+    {
+      "name": "Article Head",
+      "category": "Advertorial",
+      "blocks": [
+        {
+          "type": "heading"
+        },
+        {
+          "type": "image"
+        },
+        {
+          "type": "title"
+        },
+        {
+          "type": "text"
+        }
+      ]
+    }
+  ]
+}
+{% endschema %}

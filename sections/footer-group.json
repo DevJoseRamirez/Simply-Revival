@@ -177,12 +177,32 @@
       "settings": {
         "areviews_one_product": "simply®-dht-blocker"
       }
+    },
+    "rich_text_CxcPjA": {
+      "type": "rich-text",
+      "name": "Rich text",
+      "settings": {
+        "animation": "",
+        "setwidth": "full",
+        "bgsection": "#ffffff",
+        "gradient_bg": "",
+        "title_color": "transparent",
+        "title_top": "",
+        "title": "",
+        "text": "<p><em>For cosmetic and nutritional support purposes only. Not intended to diagnose, treat, cure, or prevent any condition.<\/em><\/p>",
+        "align-heading": "center",
+        "paddingsection": "12px 0px 12px 0px",
+        "paddingmobile": "40px 0px 40px 0px",
+        "marginsection": "0px 0px 0px 0px",
+        "marginmobile": "0px 0px 0px 0px"
+      }
     }
   },
   "order": [
     "0e1d6853-0bb9-4de3-bd6e-7d204b51d5af",
     "newsletter-footer",
     "footer",
-    "areviews_one_product_MCVjGG"
+    "areviews_one_product_MCVjGG",
+    "rich_text_CxcPjA"
   ]
 }

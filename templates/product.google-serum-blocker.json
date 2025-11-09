@@ -28,7 +28,7 @@
           "type": "item",
           "settings": {
             "image": "shopify:\/\/shop_images\/Simply_Revival___Safe_Formula_-_64px.png",
-            "text": "Safe Formula"
+            "text": "Safe Blend"
           }
         },
         "item_zQ7LtP": {
@@ -194,7 +194,7 @@
         "desc_jFWt9g": {
           "type": "desc",
           "settings": {
-            "desc": "<p>A blend of 9 natural super-oils formulated to nourish the scalp, condition the hair, and support a fuller-looking appearance.<\/p><p><\/p>"
+            "desc": "<p>A blend of 9 natural super-oils formulated to nourish the scalp, condition the hair, and support a fuller-looking appearance.<\/p>"
           }
         },
         "benefits_p34Qab": {

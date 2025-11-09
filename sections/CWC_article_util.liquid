@@ -1,0 +1,572 @@
+{% style %}
+  #CWC_article_template-{{ section.id }} {
+  --section-bg: {{ section.settings.bg_color | default: '#FAF9F6' }};
+  --text-color: {{ section.settings.text_color | default: '#111111' }};
+  --padding-top: {{ section.settings.padding_top | default: 60 }}px;
+  --padding-bottom: {{ section.settings.padding_bottom | default: 60 }}px;
+  --padding-top-mobile: {{ section.settings.padding_top | times: 0.5 }}px;
+  --padding-bottom-mobile: {{ section.settings.padding_bottom | times: 0.5 }}px;
+  }
+{% endstyle %}
+
+{{ 'CWC_article_template.css' | asset_url | stylesheet_tag }}
+
+<section
+  id="CWC_article_template-{{ section.id }}"
+  class="cwc-article-template {% if section.settings.show_sidebar %}cwc-article-template__with-sidebar{% endif %}"
+>
+  <div class="cwc-article-template__container">
+    <!-- Main Content Area -->
+    <div class="cwc-article-template__wrapper">
+      {% for block in section.blocks %}
+        {% case block.type %}
+          {% when 'title_and_stars' %}
+            <div class="cwc-article-template__title-and-stars" {{ block.shopify_attributes }}>
+              {% if block.settings.title != blank %}
+                <h1 class="cwc-article-template__title">{{ block.settings.title }}</h1>
+              {% endif %}
+
+              {% if block.settings.show_stars %}
+                <div class="cwc-article-template__stars">
+                  {% render 'CWC_trust_stars' %}
+                </div>
+              {% endif %}
+
+              {% if block.settings.date != blank %}
+                <div class="cwc-article-template__date">{{ block.settings.date }}</div>
+              {% endif %}
+            </div>
+
+          {% when 'image_and_content' %}
+            <div class="cwc-article-template__image-and-content" {{ block.shopify_attributes }}>
+              {% if block.settings.image != blank %}
+                <div class="cwc-article-template__image">
+                  <img
+                    src="{{ block.settings.image | image_url: width: 800 }}"
+                    alt="Article image"
+                    loading="lazy"
+                  >
+                </div>
+              {% endif %}
+
+              <div class="cwc-article-template__content-stack">
+                {% if block.settings.content_1 != blank %}
+                  <div class="cwc-article-template__content-text rte">
+                    {{ block.settings.content_1 }}
+                  </div>
+                {% endif %}
+
+                {% if block.settings.content_2 != blank %}
+                  <div class="cwc-article-template__content-text rte">
+                    {{ block.settings.content_2 }}
+                  </div>
+                {% endif %}
+              </div>
+            </div>
+
+          {% when 'center_text' %}
+            <div class="cwc-article-template__center-text" {{ block.shopify_attributes }}>
+              {% if block.settings.text != blank %}
+                <div class="cwc-article-template__center-text-content rte">
+                  {{ block.settings.text }}
+                </div>
+              {% endif %}
+            </div>
+
+          {% when 'quote' %}
+            <div class="cwc-article-template__quote" {{ block.shopify_attributes }}>
+              {% if block.settings.quote_text != blank %}
+                <blockquote class="cwc-article-template__quote-text">
+                  {{ block.settings.quote_text }}
+                </blockquote>
+              {% endif %}
+            </div>
+
+          {% when 'star_review' %}
+            <div class="cwc-article-template__star-review" {{ block.shopify_attributes }}>
+              <div class="cwc-article-template__review-header">
+                {% if block.settings.review_title != blank %}
+                  <h3 class="cwc-article-template__review-title">{{ block.settings.review_title }}</h3>
+                {% endif %}
+
+                <div class="cwc-article-template__review-stars">
+                  {% render 'CWC_trust_stars' %}
+                </div>
+              </div>
+
+              {% if block.settings.review_text != blank %}
+                <div class="cwc-article-template__review-text rte">
+                  {{ block.settings.review_text }}
+                </div>
+              {% endif %}
+            </div>
+
+          {% when 'customer_reviews' %}
+            <div class="cwc-article-template__customer-reviews" {{ block.shopify_attributes }}>
+              {% if block.settings.block_title != blank %}
+                <h2 class="cwc-article-template__customer-reviews-title">{{ block.settings.block_title }}</h2>
+              {% endif %}
+
+              <div class="cwc-article-template__reviews-list">
+                {% for i in (1..5) %}
+                  {% capture review_title_key %}review_title_{{ i }}{% endcapture %}
+                  {% capture review_text_key %}review_text_{{ i }}{% endcapture %}
+
+                  {% if block.settings[review_title_key] != blank %}
+                    <div class="cwc-article-template__review-item">
+                      <h4 class="cwc-article-template__review-item-title">{{ block.settings[review_title_key] }}</h4>
+
+                      {% if block.settings[review_text_key] != blank %}
+                        <div class="cwc-article-template__review-item-text rte">
+                          {{ block.settings[review_text_key] }}
+                        </div>
+                      {% endif %}
+                    </div>
+                  {% endif %}
+                {% endfor %}
+              </div>
+            </div>
+
+          {% when 'button' %}
+            <div class="cwc-article-template__button-wrapper" {{ block.shopify_attributes }}>
+              {% if block.settings.button_link != blank and block.settings.button_text != blank %}
+                <a
+                  href="{{ block.settings.button_link }}"
+                  class="cwc-article-template__button"
+                  style="background-color: {{ block.settings.button_bg_color }}; color: {{ block.settings.button_text_color }};"
+                >
+                  {{ block.settings.button_text }}
+                </a>
+              {% endif %}
+            </div>
+
+          {% when 'faq' %}
+            <div class="cwc-article-template__faq" {{ block.shopify_attributes }}>
+              {% if block.settings.faq_title != blank %}
+                <h3 class="cwc-article-template__faq-title">{{ block.settings.faq_title }}</h3>
+              {% endif %}
+
+              {% if block.settings.faq_text != blank %}
+                <div class="cwc-article-template__faq-text rte">
+                  {{ block.settings.faq_text }}
+                </div>
+              {% endif %}
+            </div>
+
+          {% when 'disclaimer' %}
+            <div class="cwc-article-template__disclaimer" {{ block.shopify_attributes }}>
+              {% if block.settings.disclaimer_text != blank %}
+                <p class="cwc-article-template__disclaimer-text">{{ block.settings.disclaimer_text }}</p>
+              {% endif %}
+            </div>
+        {% endcase %}
+      {% endfor %}
+    </div>
+
+    <!-- Sticky Sidebar -->
+    {% if section.settings.show_sidebar %}
+      <aside class="cwc-article-template__sidebar">
+        <div class="cwc-article-template__sidebar-content">
+          {% if section.settings.sidebar_logo != blank %}
+            <div class="cwc-article-template__sidebar-logo">
+              <img
+                src="{{ section.settings.sidebar_logo | image_url: width: 130 }}"
+                alt="Logo"
+                loading="lazy"
+              >
+            </div>
+          {% endif %}
+
+          {% if section.settings.sidebar_heading != blank %}
+            <div class="cwc-article-template__sidebar-heading">
+              {{ section.settings.sidebar_heading }}
+            </div>
+          {% endif %}
+
+          {% if section.settings.sidebar_product_image != blank %}
+            <div class="cwc-article-template__sidebar-product-image">
+              <img
+                src="{{ section.settings.sidebar_product_image | image_url: width: 200 }}"
+                alt="Product"
+                loading="lazy"
+              >
+            </div>
+          {% endif %}
+
+          {% if section.settings.sidebar_text != blank %}
+            <div class="cwc-article-template__sidebar-text rte">
+              {{ section.settings.sidebar_text }}
+            </div>
+          {% endif %}
+
+          {% if section.settings.sidebar_button_text != blank and section.settings.sidebar_button_link != blank %}
+            <a
+              href="{{ section.settings.sidebar_button_link }}"
+              class="cwc-article-template__sidebar-button"
+              style="background-color: {{ section.settings.sidebar_button_bg }}; color: {{ section.settings.sidebar_button_text_color }};"
+            >
+              {{ section.settings.sidebar_button_text }}
+            </a>
+          {% endif %}
+        </div>
+      </aside>
+    {% endif %}
+  </div>
+</section>
+
+{% schema %}
+{
+  "name": "CWC Article Template",
+  "tag": "section",
+  "settings": [
+    {
+      "type": "header",
+      "content": "Section Settings"
+    },
+    {
+      "type": "color",
+      "id": "bg_color",
+      "label": "Background color",
+      "default": "#FAF9F6"
+    },
+    {
+      "type": "color",
+      "id": "text_color",
+      "label": "Text color",
+      "default": "#111111"
+    },
+    {
+      "type": "range",
+      "id": "padding_top",
+      "label": "Padding top",
+      "min": 0,
+      "max": 200,
+      "step": 4,
+      "unit": "px",
+      "default": 60
+    },
+    {
+      "type": "range",
+      "id": "padding_bottom",
+      "label": "Padding bottom",
+      "min": 0,
+      "max": 200,
+      "step": 4,
+      "unit": "px",
+      "default": 60
+    },
+    {
+      "type": "header",
+      "content": "Sidebar Settings"
+    },
+    {
+      "type": "checkbox",
+      "id": "show_sidebar",
+      "label": "Show sidebar",
+      "default": true
+    },
+    {
+      "type": "image_picker",
+      "id": "sidebar_logo",
+      "label": "Sidebar logo"
+    },
+    {
+      "type": "richtext",
+      "id": "sidebar_heading",
+      "label": "Sidebar heading",
+      "default": "<p>Product Benefits</p>"
+    },
+    {
+      "type": "image_picker",
+      "id": "sidebar_product_image",
+      "label": "Sidebar product image"
+    },
+    {
+      "type": "richtext",
+      "id": "sidebar_text",
+      "label": "Sidebar description",
+      "default": "<p>Product description goes here</p>"
+    },
+    {
+      "type": "url",
+      "id": "sidebar_button_link",
+      "label": "Sidebar button link"
+    },
+    {
+      "type": "text",
+      "id": "sidebar_button_text",
+      "label": "Sidebar button text",
+      "default": "Shop Now"
+    },
+    {
+      "type": "color",
+      "id": "sidebar_button_bg",
+      "label": "Sidebar button background color",
+      "default": "#000000"
+    },
+    {
+      "type": "color",
+      "id": "sidebar_button_text_color",
+      "label": "Sidebar button text color",
+      "default": "#ffffff"
+    }
+  ],
+  "blocks": [
+    {
+      "type": "title_and_stars",
+      "name": "Title and Stars",
+      "settings": [
+        {
+          "type": "richtext",
+          "id": "title",
+          "label": "Title",
+          "default": "<h1>Article Title Goes Here</h1>"
+        },
+        {
+          "type": "checkbox",
+          "id": "show_stars",
+          "label": "Show star rating",
+          "default": true
+        },
+        {
+          "type": "text",
+          "id": "date",
+          "label": "Date",
+          "default": "2025-01-10"
+        }
+      ]
+    },
+    {
+      "type": "image_and_content",
+      "name": "Image and Content",
+      "settings": [
+        {
+          "type": "image_picker",
+          "id": "image",
+          "label": "Image"
+        },
+        {
+          "type": "richtext",
+          "id": "content_1",
+          "label": "Content 1",
+          "default": "<p>First content block goes here</p>"
+        },
+        {
+          "type": "richtext",
+          "id": "content_2",
+          "label": "Content 2",
+          "default": "<p>Second content block goes here</p>"
+        }
+      ]
+    },
+    {
+      "type": "center_text",
+      "name": "Center Text",
+      "settings": [
+        {
+          "type": "richtext",
+          "id": "text",
+          "label": "Text",
+          "default": "<p>Centered text content goes here</p>"
+        }
+      ]
+    },
+    {
+      "type": "quote",
+      "name": "Quote",
+      "settings": [
+        {
+          "type": "textarea",
+          "id": "quote_text",
+          "label": "Quote text",
+          "default": "This is a quote from an expert or customer."
+        }
+      ]
+    },
+    {
+      "type": "star_review",
+      "name": "Star Review",
+      "settings": [
+        {
+          "type": "text",
+          "id": "review_title",
+          "label": "Review title",
+          "default": "Great Product!"
+        },
+        {
+          "type": "richtext",
+          "id": "review_text",
+          "label": "Review text",
+          "default": "<p>This is a review of the product with detailed feedback.</p>"
+        }
+      ]
+    },
+    {
+      "type": "customer_reviews",
+      "name": "Customer Reviews",
+      "settings": [
+        {
+          "type": "text",
+          "id": "block_title",
+          "label": "Block title",
+          "default": "Customer Reviews:"
+        },
+        {
+          "type": "text",
+          "id": "review_title_1",
+          "label": "Review 1 title",
+          "default": "Nancy S."
+        },
+        {
+          "type": "richtext",
+          "id": "review_text_1",
+          "label": "Review 1 text",
+          "default": "<p>First customer review goes here.</p>"
+        },
+        {
+          "type": "text",
+          "id": "review_title_2",
+          "label": "Review 2 title",
+          "default": "Helen L."
+        },
+        {
+          "type": "richtext",
+          "id": "review_text_2",
+          "label": "Review 2 text",
+          "default": "<p>Second customer review goes here.</p>"
+        },
+        {
+          "type": "text",
+          "id": "review_title_3",
+          "label": "Review 3 title",
+          "default": "Faye C."
+        },
+        {
+          "type": "richtext",
+          "id": "review_text_3",
+          "label": "Review 3 text",
+          "default": "<p>Third customer review goes here.</p>"
+        },
+        {
+          "type": "text",
+          "id": "review_title_4",
+          "label": "Review 4 title",
+          "default": "Torey S."
+        },
+        {
+          "type": "richtext",
+          "id": "review_text_4",
+          "label": "Review 4 text",
+          "default": "<p>Fourth customer review goes here.</p>"
+        },
+        {
+          "type": "text",
+          "id": "review_title_5",
+          "label": "Review 5 title",
+          "default": "Mandy L."
+        },
+        {
+          "type": "richtext",
+          "id": "review_text_5",
+          "label": "Review 5 text",
+          "default": "<p>Fifth customer review goes here.</p>"
+        }
+      ]
+    },
+    {
+      "type": "button",
+      "name": "Button",
+      "settings": [
+        {
+          "type": "url",
+          "id": "button_link",
+          "label": "Button link"
+        },
+        {
+          "type": "text",
+          "id": "button_text",
+          "label": "Button text",
+          "default": "Click Here For More Information"
+        },
+        {
+          "type": "color",
+          "id": "button_bg_color",
+          "label": "Button background color",
+          "default": "#009370"
+        },
+        {
+          "type": "color",
+          "id": "button_text_color",
+          "label": "Button text color",
+          "default": "#ffffff"
+        }
+      ]
+    },
+    {
+      "type": "faq",
+      "name": "FAQ",
+      "settings": [
+        {
+          "type": "richtext",
+          "id": "faq_title",
+          "label": "FAQ title",
+          "default": "<h3>How Much Does It Cost?</h3>"
+        },
+        {
+          "type": "richtext",
+          "id": "faq_text",
+          "label": "FAQ text",
+          "default": "<p>Answer to the frequently asked question goes here.</p>"
+        }
+      ]
+    },
+    {
+      "type": "disclaimer",
+      "name": "Disclaimer",
+      "settings": [
+        {
+          "type": "textarea",
+          "id": "disclaimer_text",
+          "label": "Disclaimer text",
+          "default": "This is an advertisement and not an actual news article, blog, or consumer protection update. The views expressed in this article are those of the advertiser and do not necessarily reflect those of the website."
+        }
+      ]
+    }
+  ],
+  "presets": [
+    {
+      "name": "Article Template",
+      "category": "Advertorial",
+      "blocks": [
+        {
+          "type": "title_and_stars"
+        },
+        {
+          "type": "image_and_content"
+        },
+        {
+          "type": "center_text"
+        },
+        {
+          "type": "quote"
+        },
+        {
+          "type": "star_review"
+        },
+        {
+          "type": "customer_reviews"
+        },
+        {
+          "type": "button"
+        },
+        {
+          "type": "faq"
+        },
+        {
+          "type": "disclaimer"
+        }
+      ]
+    }
+  ]
+}
+{% endschema %}
