@@ -1,0 +1,155 @@
+{% style %}
+  #CWC_offer_box-{{ section.id }} {
+    --section-bg: {{ section.settings.bg_color | default: '#ffffff' }};
+    --card-bg: {{ section.settings.card_bg_color | default: '#d1fae5' }};
+    --text-color: {{ section.settings.text_color | default: '#111111' }};
+    --button-bg: {{ section.settings.button_color | default: '#10b981' }};
+    --button-text: {{ section.settings.button_text_color | default: '#ffffff' }};
+    --padding-top: {{ section.settings.padding_top | default: 60 }}px;
+    --padding-bottom: {{ section.settings.padding_bottom | default: 60 }}px;
+    --padding-top-mobile: {{ section.settings.padding_top | times: 0.5 }}px;
+    --padding-bottom-mobile: {{ section.settings.padding_bottom | times: 0.5 }}px;
+  }
+{% endstyle %}
+
+{{ 'CWC_listicle_offer_box.css' | asset_url | stylesheet_tag }}
+
+<section
+  id="CWC_offer_box-{{ section.id }}"
+  class="cwc-offer-box"
+>
+  <div class="cwc-offer-box__container">
+    <div class="cwc-offer-box__card">
+      {% if section.settings.title != blank %}
+        <div class="cwc-offer-box__title rte">
+          {{ section.settings.title }}
+        </div>
+      {% endif %}
+
+      {% if section.settings.text != blank %}
+        <div class="cwc-offer-box__text rte">
+          {{ section.settings.text }}
+        </div>
+      {% endif %}
+
+      {% if section.settings.text_2 != blank %}
+        <div class="cwc-offer-box__text-2 rte">
+          {{ section.settings.text_2 }}
+        </div>
+      {% endif %}
+
+      {% if section.settings.button_link != blank and section.settings.button_text != blank %}
+        <a href="{{ section.settings.button_link }}" class="cwc-offer-box__button">
+          {{ section.settings.button_text }}
+        </a>
+      {% endif %}
+
+      {% if section.settings.subtext != blank %}
+        <div class="cwc-offer-box__subtext rte">
+          {{ section.settings.subtext }}
+        </div>
+      {% endif %}
+    </div>
+  </div>
+</section>
+
+{% schema %}
+{
+  "name": "CWC Offer Box",
+  "tag": "section",
+  "class": "section",
+  "settings": [
+    {
+      "type": "color",
+      "id": "bg_color",
+      "label": "Background color",
+      "default": "#ffffff"
+    },
+    {
+      "type": "color",
+      "id": "card_bg_color",
+      "label": "Card background color",
+      "default": "#d1fae5"
+    },
+    {
+      "type": "color",
+      "id": "text_color",
+      "label": "Text color",
+      "default": "#111111"
+    },
+    {
+      "type": "color",
+      "id": "button_color",
+      "label": "Button color",
+      "default": "#10b981"
+    },
+    {
+      "type": "color",
+      "id": "button_text_color",
+      "label": "Button text color",
+      "default": "#ffffff"
+    },
+    {
+      "type": "range",
+      "id": "padding_top",
+      "min": 0,
+      "max": 100,
+      "step": 10,
+      "unit": "px",
+      "label": "Padding top",
+      "default": 60
+    },
+    {
+      "type": "range",
+      "id": "padding_bottom",
+      "min": 0,
+      "max": 100,
+      "step": 10,
+      "unit": "px",
+      "label": "Padding bottom",
+      "default": 60
+    },
+    {
+      "type": "richtext",
+      "id": "title",
+      "label": "Title",
+      "default": "<h2>Ready to Take Action?</h2>"
+    },
+    {
+      "type": "richtext",
+      "id": "text",
+      "label": "Text",
+      "default": "<p>Your offer text goes here.</p>"
+    },
+    {
+      "type": "richtext",
+      "id": "text_2",
+      "label": "Text 2",
+      "default": "<p>Additional offer details go here.</p>"
+    },
+    {
+      "type": "text",
+      "id": "button_text",
+      "label": "Button text",
+      "default": "Click Here"
+    },
+    {
+      "type": "url",
+      "id": "button_link",
+      "label": "Button link"
+    },
+    {
+      "type": "richtext",
+      "id": "subtext",
+      "label": "Subtext (below button)",
+      "default": "<p>Additional information below the button.</p>"
+    }
+  ],
+  "presets": [
+    {
+      "name": "Offer Box",
+      "category": "Listicle"
+    }
+  ]
+}
+{% endschema %}

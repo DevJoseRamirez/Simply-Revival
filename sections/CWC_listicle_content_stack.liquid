@@ -1,0 +1,118 @@
+{% style %}
+  #CWC_content_stack-{{ section.id }} {
+    --section-bg: {{ section.settings.bg_color | default: '#ffffff' }};
+    --text-color: {{ section.settings.text_color | default: '#111111' }};
+    --padding-top: {{ section.settings.padding_top | default: 60 }}px;
+    --padding-bottom: {{ section.settings.padding_bottom | default: 60 }}px;
+    --padding-top-mobile: {{ section.settings.padding_top | times: 0.5 }}px;
+    --padding-bottom-mobile: {{ section.settings.padding_bottom | times: 0.5 }}px;
+  }
+{% endstyle %}
+
+{{ 'CWC_listicle_content_stack.css' | asset_url | stylesheet_tag }}
+
+<section
+  id="CWC_content_stack-{{ section.id }}"
+  class="cwc-content-stack"
+>
+  <div class="cwc-content-stack__container">
+    {% if section.settings.title != blank %}
+      <div class="cwc-content-stack__title rte">
+        {{ section.settings.title }}
+      </div>
+    {% endif %}
+
+    {% if section.settings.text != blank %}
+      <div class="cwc-content-stack__text rte">
+        {{ section.settings.text }}
+      </div>
+    {% endif %}
+
+    {% if section.settings.text_2 != blank %}
+      <div class="cwc-content-stack__text-2 rte">
+        {{ section.settings.text_2 }}
+      </div>
+    {% endif %}
+
+    {% if section.settings.image != blank %}
+      <div class="cwc-content-stack__image">
+        <img
+          src="{{ section.settings.image | image_url: width: 800 }}"
+          alt="Content image"
+          loading="lazy"
+        >
+      </div>
+    {% endif %}
+  </div>
+</section>
+
+{% schema %}
+{
+  "name": "CWC Content Stack",
+  "tag": "section",
+  "class": "section",
+  "settings": [
+    {
+      "type": "color",
+      "id": "bg_color",
+      "label": "Background color",
+      "default": "#ffffff"
+    },
+    {
+      "type": "color",
+      "id": "text_color",
+      "label": "Text color",
+      "default": "#111111"
+    },
+    {
+      "type": "range",
+      "id": "padding_top",
+      "min": 0,
+      "max": 100,
+      "step": 10,
+      "unit": "px",
+      "label": "Padding top",
+      "default": 60
+    },
+    {
+      "type": "range",
+      "id": "padding_bottom",
+      "min": 0,
+      "max": 100,
+      "step": 10,
+      "unit": "px",
+      "label": "Padding bottom",
+      "default": 60
+    },
+    {
+      "type": "richtext",
+      "id": "title",
+      "label": "Title",
+      "default": "<h2>Your Title Here</h2>"
+    },
+    {
+      "type": "richtext",
+      "id": "text",
+      "label": "Text",
+      "default": "<p>Your content goes here.</p>"
+    },
+    {
+      "type": "richtext",
+      "id": "text_2",
+      "label": "Text 2",
+      "default": "<p>Additional content goes here.</p>"
+    },
+    {
+      "type": "image_picker",
+      "id": "image",
+      "label": "Image"
+    }
+  ],
+  "presets": [
+    {
+      "name": "Content Stack",
+      "category": "Listicle"
+    }
+  ]
+}
+{% endschema %}

@@ -1,0 +1,185 @@
+/* ================================
+   CWC Listicle Columns Styles
+   ================================ */
+
+.cwc-listicle-columns {
+    background: var(--section-bg);
+    color: var(--text-color);
+    padding-top: var(--padding-top);
+    padding-bottom: var(--padding-bottom);
+}
+
+.cwc-listicle-columns__container {
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 0 2rem;
+    box-sizing: border-box;
+}
+
+/* ================================
+   Title and Text
+   ================================ */
+
+.cwc-listicle-columns__title {
+    margin: 0 0 1.5rem 0;
+    text-align: center;
+}
+
+.cwc-listicle-columns__title h1,
+.cwc-listicle-columns__title h2,
+.cwc-listicle-columns__title h3 {
+    margin: 0;
+    font-size: 2rem;
+    font-weight: 700;
+    line-height: 1.3;
+    color: inherit;
+}
+
+.cwc-listicle-columns__title p {
+    margin: 0;
+    font-size: 2rem;
+    font-weight: 700;
+    line-height: 1.3;
+    color: inherit;
+}
+
+.cwc-listicle-columns__text {
+    margin: 0 0 1rem 0;
+    font-size: 1rem;
+    line-height: 1.6;
+    text-align: center;
+}
+
+.cwc-listicle-columns__text p {
+    margin: 0 0 1rem 0;
+}
+
+.cwc-listicle-columns__text p:last-child {
+    margin-bottom: 0;
+}
+
+.cwc-listicle-columns__text-2 {
+    margin: 0 0 2.5rem 0;
+    font-size: 1rem;
+    line-height: 1.6;
+    text-align: center;
+}
+
+.cwc-listicle-columns__text-2 p {
+    margin: 0 0 1rem 0;
+}
+
+.cwc-listicle-columns__text-2 p:last-child {
+    margin-bottom: 0;
+}
+
+/* ================================
+   Grid Layout
+   ================================ */
+
+.cwc-listicle-columns__grid {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    gap: 1.5rem;
+}
+
+/* ================================
+   Card
+   ================================ */
+
+.cwc-listicle-columns__card {
+    background: var(--card-bg);
+    padding: 1.5rem;
+    border-radius: 8px;
+    border: 1px solid rgba(0, 0, 0, 0.1);
+    box-sizing: border-box;
+}
+
+.cwc-listicle-columns__card-title {
+    margin: 0 0 1rem 0;
+    font-size: 1.125rem;
+    font-weight: 600;
+    line-height: 1.4;
+    color: inherit;
+}
+
+.cwc-listicle-columns__card-title p {
+    margin: 0;
+}
+
+.cwc-listicle-columns__card-text {
+    margin: 0;
+    font-size: 0.9375rem;
+    line-height: 1.6;
+}
+
+.cwc-listicle-columns__card-text p {
+    margin: 0 0 1rem 0;
+}
+
+.cwc-listicle-columns__card-text p:last-child {
+    margin-bottom: 0;
+}
+
+/* ================================
+   Mobile Responsive
+   ================================ */
+
+@media (max-width: 1024px) {
+    .cwc-listicle-columns__grid {
+        grid-template-columns: repeat(2, 1fr);
+    }
+}
+
+@media (max-width: 768px) {
+    .cwc-listicle-columns__container {
+        padding: 0 1.5rem;
+    }
+
+    .cwc-listicle-columns__grid {
+        grid-template-columns: 1fr;
+        gap: 1rem;
+    }
+
+    .cwc-listicle-columns__title h1,
+    .cwc-listicle-columns__title h2,
+    .cwc-listicle-columns__title h3,
+    .cwc-listicle-columns__title p {
+        font-size: 1.5rem;
+    }
+
+    .cwc-listicle-columns {
+        padding-top: var(--padding-top-mobile);
+        padding-bottom: var(--padding-bottom-mobile);
+    }
+}
+
+@media (max-width: 480px) {
+    .cwc-listicle-columns__container {
+        padding: 0 1rem;
+    }
+
+    .cwc-listicle-columns__title h1,
+    .cwc-listicle-columns__title h2,
+    .cwc-listicle-columns__title h3,
+    .cwc-listicle-columns__title p {
+        font-size: 1.25rem;
+    }
+
+    .cwc-listicle-columns__text,
+    .cwc-listicle-columns__text-2 {
+        font-size: 0.9375rem;
+    }
+
+    .cwc-listicle-columns__card {
+        padding: 1rem;
+    }
+
+    .cwc-listicle-columns__card-title {
+        font-size: 1rem;
+    }
+
+    .cwc-listicle-columns__card-text {
+        font-size: 0.875rem;
+    }
+}

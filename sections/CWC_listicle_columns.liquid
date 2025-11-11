@@ -1,0 +1,176 @@
+{% style %}
+  #CWC_listicle_columns-{{ section.id }} {
+    --section-bg: {{ section.settings.bg_color | default: '#ffffff' }};
+    --text-color: {{ section.settings.text_color | default: '#111111' }};
+    --card-bg: {{ section.settings.card_bg_color | default: '#ffffff' }};
+    --padding-top: {{ section.settings.padding_top | default: 60 }}px;
+    --padding-bottom: {{ section.settings.padding_bottom | default: 60 }}px;
+    --padding-top-mobile: {{ section.settings.padding_top | times: 0.5 }}px;
+    --padding-bottom-mobile: {{ section.settings.padding_bottom | times: 0.5 }}px;
+  }
+{% endstyle %}
+
+{{ 'CWC_listicle_columns.css' | asset_url | stylesheet_tag }}
+
+<section
+  id="CWC_listicle_columns-{{ section.id }}"
+  class="cwc-listicle-columns"
+>
+  <div class="cwc-listicle-columns__container">
+    {% if section.settings.title != blank %}
+      <div class="cwc-listicle-columns__title rte">
+        {{ section.settings.title }}
+      </div>
+    {% endif %}
+
+    {% if section.settings.text != blank %}
+      <div class="cwc-listicle-columns__text rte">
+        {{ section.settings.text }}
+      </div>
+    {% endif %}
+
+    {% if section.settings.text_2 != blank %}
+      <div class="cwc-listicle-columns__text-2 rte">
+        {{ section.settings.text_2 }}
+      </div>
+    {% endif %}
+
+    <div class="cwc-listicle-columns__grid">
+      {% for block in section.blocks %}
+        {% if block.settings.title != blank or block.settings.text != blank %}
+          <div class="cwc-listicle-columns__card" {{ block.shopify_attributes }}>
+            {% if block.settings.title != blank %}
+              <div class="cwc-listicle-columns__card-title rte">
+                ✓ {{ block.settings.title }}
+              </div>
+            {% endif %}
+
+            {% if block.settings.text != blank %}
+              <div class="cwc-listicle-columns__card-text rte">
+                {{ block.settings.text }}
+              </div>
+            {% endif %}
+          </div>
+        {% endif %}
+      {% endfor %}
+    </div>
+  </div>
+</section>
+
+{% schema %}
+{
+  "name": "CWC Listicle Columns",
+  "tag": "section",
+  "class": "section",
+  "settings": [
+    {
+      "type": "color",
+      "id": "bg_color",
+      "label": "Background color",
+      "default": "#ffffff"
+    },
+    {
+      "type": "color",
+      "id": "text_color",
+      "label": "Text color",
+      "default": "#111111"
+    },
+    {
+      "type": "color",
+      "id": "card_bg_color",
+      "label": "Card background color",
+      "default": "#ffffff"
+    },
+    {
+      "type": "range",
+      "id": "padding_top",
+      "min": 0,
+      "max": 100,
+      "step": 10,
+      "unit": "px",
+      "label": "Padding top",
+      "default": 60
+    },
+    {
+      "type": "range",
+      "id": "padding_bottom",
+      "min": 0,
+      "max": 100,
+      "step": 10,
+      "unit": "px",
+      "label": "Padding bottom",
+      "default": 60
+    },
+    {
+      "type": "richtext",
+      "id": "title",
+      "label": "Title",
+      "default": "<h2>Your Title Here</h2>"
+    },
+    {
+      "type": "richtext",
+      "id": "text",
+      "label": "Text",
+      "default": "<p>Your content goes here.</p>"
+    },
+    {
+      "type": "richtext",
+      "id": "text_2",
+      "label": "Text 2",
+      "default": "<p>Additional content goes here.</p>"
+    }
+  ],
+  "blocks": [
+    {
+      "type": "column",
+      "name": "Column",
+      "settings": [
+        {
+          "type": "text",
+          "id": "title",
+          "label": "Title",
+          "default": "Column Title"
+        },
+        {
+          "type": "richtext",
+          "id": "text",
+          "label": "Text",
+          "default": "<p>Column content goes here.</p>"
+        }
+      ]
+    }
+  ],
+  "presets": [
+    {
+      "name": "Listicle Columns",
+      "category": "Listicle",
+      "blocks": [
+        {
+          "type": "column",
+          "settings": {
+            "title": "Column 1"
+          }
+        },
+        {
+          "type": "column",
+          "settings": {
+            "title": "Column 2"
+          }
+        },
+        {
+          "type": "column",
+          "settings": {
+            "title": "Column 3"
+          }
+        },
+        {
+          "type": "column",
+          "settings": {
+            "title": "Column 4"
+          }
+        }
+      ]
+    }
+  ]
+}
+{% endschema %}

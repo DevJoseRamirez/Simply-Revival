@@ -1,0 +1,178 @@
+{% style %}
+  #CWC_listicle_head-{{ section.id }} {
+    --section-bg: {{ section.settings.bg_color | default: '#ffffff' }};
+    --text-color: {{ section.settings.text_color | default: '#111111' }};
+    --padding-top: {{ section.settings.padding_top | default: 60 }}px;
+    --padding-bottom: {{ section.settings.padding_bottom | default: 60 }}px;
+    --padding-top-mobile: {{ section.settings.padding_top | times: 0.5 }}px;
+    --padding-bottom-mobile: {{ section.settings.padding_bottom | times: 0.5 }}px;
+  }
+{% endstyle %}
+
+{{ 'CWC_listicle_head.css' | asset_url | stylesheet_tag }}
+
+<section
+  id="CWC_listicle_head-{{ section.id }}"
+  class="cwc-listicle-head"
+>
+  <div class="cwc-listicle-head__container">
+    {% for block in section.blocks %}
+      {% case block.type %}
+        {% when 'heading' %}
+          {% if block.settings.heading != blank %}
+            <div class="cwc-listicle-head__heading" {{ block.shopify_attributes }}>
+              <div class="cwc-listicle-head__heading-content rte">
+                {{ block.settings.heading }}
+              </div>
+            </div>
+          {% endif %}
+
+        {% when 'author' %}
+          <div class="cwc-listicle-head__author" {{ block.shopify_attributes }}>
+            <div class="cwc-listicle-head__author-wrapper">
+              {% if block.settings.author_image != blank %}
+                <div class="cwc-listicle-head__author-image">
+                  <img
+                    src="{{ block.settings.author_image | image_url: width: 48 }}"
+                    alt="Author"
+                    loading="lazy"
+                  >
+                </div>
+              {% endif %}
+
+              <div class="cwc-listicle-head__author-info">
+                {% if block.settings.author_text != blank %}
+                  <div class="cwc-listicle-head__author-text rte">
+                    {{ block.settings.author_text }}
+                  </div>
+                {% endif %}
+
+                {% if block.settings.author_date != blank %}
+                  <div class="cwc-listicle-head__author-date">
+                    {{ block.settings.author_date }}
+                  </div>
+                {% endif %}
+              </div>
+            </div>
+          </div>
+
+        {% when 'summary' %}
+          {% if block.settings.summary != blank %}
+            <div class="cwc-listicle-head__summary" {{ block.shopify_attributes }}>
+              <div class="cwc-listicle-head__summary-content rte">
+                {{ block.settings.summary }}
+              </div>
+            </div>
+          {% endif %}
+      {% endcase %}
+    {% endfor %}
+  </div>
+</section>
+
+{% schema %}
+{
+  "name": "CWC Listicle Head",
+  "tag": "section",
+  "class": "section",
+  "settings": [
+    {
+      "type": "color",
+      "id": "bg_color",
+      "label": "Background color",
+      "default": "#ffffff"
+    },
+    {
+      "type": "color",
+      "id": "text_color",
+      "label": "Text color",
+      "default": "#111111"
+    },
+    {
+      "type": "range",
+      "id": "padding_top",
+      "min": 0,
+      "max": 100,
+      "step": 10,
+      "unit": "px",
+      "label": "Padding top",
+      "default": 60
+    },
+    {
+      "type": "range",
+      "id": "padding_bottom",
+      "min": 0,
+      "max": 100,
+      "step": 10,
+      "unit": "px",
+      "label": "Padding bottom",
+      "default": 60
+    }
+  ],
+  "blocks": [
+    {
+      "type": "heading",
+      "name": "Heading",
+      "settings": [
+        {
+          "type": "richtext",
+          "id": "heading",
+          "label": "Heading",
+          "default": "<h1>Your Listicle Title Goes Here</h1>"
+        }
+      ]
+    },
+    {
+      "type": "author",
+      "name": "Author",
+      "settings": [
+        {
+          "type": "image_picker",
+          "id": "author_image",
+          "label": "Author image"
+        },
+        {
+          "type": "richtext",
+          "id": "author_text",
+          "label": "Author text",
+          "default": "<p>By Author Name, Title</p>"
+        },
+        {
+          "type": "text",
+          "id": "author_date",
+          "label": "Author date",
+          "default": "Last Updated Nov 10, 2025"
+        }
+      ]
+    },
+    {
+      "type": "summary",
+      "name": "Summary",
+      "settings": [
+        {
+          "type": "richtext",
+          "id": "summary",
+          "label": "Summary",
+          "default": "<p><strong>Summary:</strong> Your summary text goes here. This section provides a brief overview of the listicle content.</p>"
+        }
+      ]
+    }
+  ],
+  "presets": [
+    {
+      "name": "Listicle Head",
+      "category": "Listicle",
+      "blocks": [
+        {
+          "type": "heading"
+        },
+        {
+          "type": "author"
+        },
+        {
+          "type": "summary"
+        }
+      ]
+    }
+  ]
+}
+{% endschema %}

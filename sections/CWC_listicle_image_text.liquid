@@ -1,0 +1,148 @@
+{% style %}
+  #CWC_image_text-{{ section.id }} {
+    --section-bg: {{ section.settings.bg_color | default: '#ffffff' }};
+    --text-color: {{ section.settings.text_color | default: '#111111' }};
+    --pill-color: {{ section.settings.pill_color | default: '#10b981' }};
+    --padding-top: {{ section.settings.padding_top | default: 60 }}px;
+    --padding-bottom: {{ section.settings.padding_bottom | default: 60 }}px;
+    --padding-top-mobile: {{ section.settings.padding_top | times: 0.5 }}px;
+    --padding-bottom-mobile: {{ section.settings.padding_bottom | times: 0.5 }}px;
+  }
+{% endstyle %}
+
+{{ 'CWC_listicle_image_text.css' | asset_url | stylesheet_tag }}
+
+<section
+  id="CWC_image_text-{{ section.id }}"
+  class="cwc-image-text"
+>
+  <div class="cwc-image-text__container">
+    <div class="cwc-image-text__grid {% if section.settings.image_position %}cwc-image-text__grid--image-last{% else %}cwc-image-text__grid--image-first{% endif %}">
+      {% if section.settings.image != blank %}
+        <div class="cwc-image-text__image-wrapper">
+          <div class="cwc-image-text__image">
+            <img
+              src="{{ section.settings.image | image_url: width: 500 }}"
+              alt="Content image"
+              loading="lazy"
+            >
+          </div>
+          {% if section.settings.pill_text != blank %}
+            <div class="cwc-image-text__pill">
+              {{ section.settings.pill_text }}
+            </div>
+          {% endif %}
+        </div>
+      {% endif %}
+
+      <div class="cwc-image-text__content">
+        {% if section.settings.title != blank %}
+          <div class="cwc-image-text__title rte">
+            {{ section.settings.title }}
+          </div>
+        {% endif %}
+
+        {% if section.settings.text != blank %}
+          <div class="cwc-image-text__text rte">
+            {{ section.settings.text }}
+          </div>
+        {% endif %}
+
+        {% if section.settings.text_2 != blank %}
+          <div class="cwc-image-text__text-2 rte">
+            {{ section.settings.text_2 }}
+          </div>
+        {% endif %}
+      </div>
+    </div>
+  </div>
+</section>
+
+{% schema %}
+{
+  "name": "CWC Image Text",
+  "tag": "section",
+  "class": "section",
+  "settings": [
+    {
+      "type": "color",
+      "id": "bg_color",
+      "label": "Background color",
+      "default": "#ffffff"
+    },
+    {
+      "type": "color",
+      "id": "text_color",
+      "label": "Text color",
+      "default": "#111111"
+    },
+    {
+      "type": "color",
+      "id": "pill_color",
+      "label": "Pill highlight color",
+      "default": "#10b981"
+    },
+    {
+      "type": "range",
+      "id": "padding_top",
+      "min": 0,
+      "max": 100,
+      "step": 10,
+      "unit": "px",
+      "label": "Padding top",
+      "default": 60
+    },
+    {
+      "type": "range",
+      "id": "padding_bottom",
+      "min": 0,
+      "max": 100,
+      "step": 10,
+      "unit": "px",
+      "label": "Padding bottom",
+      "default": 60
+    },
+    {
+      "type": "checkbox",
+      "id": "image_position",
+      "label": "Image on right (toggle for left)",
+      "default": false
+    },
+    {
+      "type": "image_picker",
+      "id": "image",
+      "label": "Image"
+    },
+    {
+      "type": "text",
+      "id": "pill_text",
+      "label": "Pill text",
+      "default": "Pill Label"
+    },
+    {
+      "type": "richtext",
+      "id": "title",
+      "label": "Title",
+      "default": "<h2>Your Title Here</h2>"
+    },
+    {
+      "type": "richtext",
+      "id": "text",
+      "label": "Text",
+      "default": "<p>Your content goes here.</p>"
+    },
+    {
+      "type": "richtext",
+      "id": "text_2",
+      "label": "Text 2",
+      "default": "<p>Additional content goes here.</p>"
+    }
+  ],
+  "presets": [
+    {
+      "name": "Image Text",
+      "category": "Listicle"
+    }
+  ]
+}
+{% endschema %}
