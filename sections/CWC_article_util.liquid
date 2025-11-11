@@ -23,12 +23,13 @@
           {% when 'title_and_stars' %}
             <div class="cwc-article-template__title-and-stars" {{ block.shopify_attributes }}>
               {% if block.settings.title != blank %}
-                <h1 class="cwc-article-template__title">{{ block.settings.title }}</h1>
+                <div class="cwc-article-template__title">{{ block.settings.title }}</div>
               {% endif %}
 
               {% if block.settings.show_stars %}
                 <div class="cwc-article-template__stars">
-                  {% render 'CWC_trust_stars' %}
+                  {% comment %} {% render 'CWC_trust_stars' fill_color: '#fff' %} {% endcomment %}
+                  {% render 'CWC_rating_stars', fill_color: '#f97316' %}
                 </div>
               {% endif %}
 
@@ -37,8 +38,8 @@
               {% endif %}
             </div>
 
-          {% when 'image_and_content' %}
-            <div class="cwc-article-template__image-and-content" {{ block.shopify_attributes }}>
+          {% when 'image' %}
+            <div class="cwc-article-template__image" {{ block.shopify_attributes }}>
               {% if block.settings.image != blank %}
                 <div class="cwc-article-template__image">
                   <img
@@ -48,7 +49,10 @@
                   >
                 </div>
               {% endif %}
+            </div>
 
+          {% when 'content' %}
+            <div class="cwc-article-template__content" {{ block.shopify_attributes }}>
               <div class="cwc-article-template__content-stack">
                 {% if block.settings.content_1 != blank %}
                   <div class="cwc-article-template__content-text rte">
@@ -64,6 +68,16 @@
               </div>
             </div>
 
+          {% when 'spacer' %}
+            <div class="cwc-article-template__spacer" {{ block.shopify_attributes }}>
+              <br>
+            </div>
+
+          {% when 'divider' %}
+            <div class="cwc-article-template__divider" {{ block.shopify_attributes }}>
+              <hr>
+            </div>
+
           {% when 'center_text' %}
             <div class="cwc-article-template__center-text" {{ block.shopify_attributes }}>
               {% if block.settings.text != blank %}
@@ -76,9 +90,9 @@
           {% when 'quote' %}
             <div class="cwc-article-template__quote" {{ block.shopify_attributes }}>
               {% if block.settings.quote_text != blank %}
-                <blockquote class="cwc-article-template__quote-text">
+                <div class="cwc-article-template__quote-text">
                   {{ block.settings.quote_text }}
-                </blockquote>
+                </div>
               {% endif %}
             </div>
 
@@ -151,6 +165,38 @@
                   {{ block.settings.faq_text }}
                 </div>
               {% endif %}
+            </div>
+
+          {% when 'columns' %}
+            <div class="cwc-article-template__columns" {{ block.shopify_attributes }}>
+              <div class="cwc-article-template__columns-grid">
+                {% for i in (1..3) %}
+                  {% capture column_title_key %}column_title_{{ i }}{% endcapture %}
+                  {% capture column_subtext_key %}column_subtext_{{ i }}{% endcapture %}
+                  {% capture column_text_key %}column_text_{{ i }}{% endcapture %}
+
+                  {% if block.settings[column_title_key] != blank %}
+                    <div
+                      class="cwc-article-template__column-card"
+                      style="background-color: {{ block.settings.card_bg_color }}; border-color: {{ block.settings.card_bg_color }};"
+                    >
+                      <h3 class="cwc-article-template__column-title" style="color: {{ block.settings.title_color }};">
+                        {{ block.settings[column_title_key] }}
+                      </h3>
+
+                      {% if block.settings[column_subtext_key] != blank %}
+                        <p class="cwc-article-template__column-subtext">{{ block.settings[column_subtext_key] }}</p>
+                      {% endif %}
+
+                      {% if block.settings[column_text_key] != blank %}
+                        <div class="cwc-article-template__column-text rte">
+                          {{ block.settings[column_text_key] }}
+                        </div>
+                      {% endif %}
+                    </div>
+                  {% endif %}
+                {% endfor %}
+              </div>
             </div>
 
           {% when 'disclaimer' %}
@@ -227,7 +273,7 @@
       "type": "color",
       "id": "bg_color",
       "label": "Background color",
-      "default": "#FAF9F6"
+      "default": "#fff"
     },
     {
       "type": "color",
@@ -337,14 +383,20 @@
       ]
     },
     {
-      "type": "image_and_content",
-      "name": "Image and Content",
+      "type": "image",
+      "name": "Image",
       "settings": [
         {
           "type": "image_picker",
           "id": "image",
           "label": "Image"
-        },
+        }
+      ]
+    },
+    {
+      "type": "content",
+      "name": "Content",
+      "settings": [
         {
           "type": "richtext",
           "id": "content_1",
@@ -521,6 +573,78 @@
       ]
     },
     {
+      "type": "columns",
+      "name": "Columns",
+      "settings": [
+        {
+          "type": "color",
+          "id": "card_bg_color",
+          "label": "Card background color",
+          "default": "#ffffff"
+        },
+        {
+          "type": "color",
+          "id": "title_color",
+          "label": "Title color",
+          "default": "#009370"
+        },
+        {
+          "type": "text",
+          "id": "column_title_1",
+          "label": "Column 1 title",
+          "default": "1. First Column"
+        },
+        {
+          "type": "text",
+          "id": "column_subtext_1",
+          "label": "Column 1 subtext",
+          "default": "Subheading for column 1"
+        },
+        {
+          "type": "richtext",
+          "id": "column_text_1",
+          "label": "Column 1 text",
+          "default": "<p>Description text for column 1 goes here.</p>"
+        },
+        {
+          "type": "text",
+          "id": "column_title_2",
+          "label": "Column 2 title",
+          "default": "2. Second Column"
+        },
+        {
+          "type": "text",
+          "id": "column_subtext_2",
+          "label": "Column 2 subtext",
+          "default": "Subheading for column 2"
+        },
+        {
+          "type": "richtext",
+          "id": "column_text_2",
+          "label": "Column 2 text",
+          "default": "<p>Description text for column 2 goes here.</p>"
+        },
+        {
+          "type": "text",
+          "id": "column_title_3",
+          "label": "Column 3 title",
+          "default": "3. Third Column"
+        },
+        {
+          "type": "text",
+          "id": "column_subtext_3",
+          "label": "Column 3 subtext",
+          "default": "Subheading for column 3"
+        },
+        {
+          "type": "richtext",
+          "id": "column_text_3",
+          "label": "Column 3 text",
+          "default": "<p>Description text for column 3 goes here.</p>"
+        }
+      ]
+    },
+    {
       "type": "disclaimer",
       "name": "Disclaimer",
       "settings": [
@@ -531,6 +655,16 @@
           "default": "This is an advertisement and not an actual news article, blog, or consumer protection update. The views expressed in this article are those of the advertiser and do not necessarily reflect those of the website."
         }
       ]
+    },
+    {
+      "type": "spacer",
+      "name": "Spacer",
+      "settings": []
+    },
+    {
+      "type": "divider",
+      "name": "Divider",
+      "settings": []
     }
   ],
   "presets": [
@@ -542,7 +676,10 @@
           "type": "title_and_stars"
         },
         {
-          "type": "image_and_content"
+          "type": "content"
+        },
+        {
+          "type": "image"
         },
         {
           "type": "center_text"
@@ -558,6 +695,9 @@
         },
         {
           "type": "button"
+        },
+        {
+          "type": "columns"
         },
         {
           "type": "faq"
