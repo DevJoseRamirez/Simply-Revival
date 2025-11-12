@@ -59,7 +59,10 @@
         {% when 'summary' %}
           {% if block.settings.summary != blank %}
             <div class="cwc-listicle-head__summary" {{ block.shopify_attributes }}>
-              <div class="cwc-listicle-head__summary-content rte">
+              <div
+                class="cwc-listicle-head__summary-content rte"
+                style="border-color: {{ block.settings.bold_color }}"
+              >
                 {{ block.settings.summary }}
               </div>
             </div>
@@ -153,6 +156,12 @@
           "id": "summary",
           "label": "Summary",
           "default": "<p><strong>Summary:</strong> Your summary text goes here. This section provides a brief overview of the listicle content.</p>"
+        },
+        {
+          "type": "color",
+          "id": "bold_color",
+          "label": "bold color",
+          "default": "#009370"
         }
       ]
     }

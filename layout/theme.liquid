@@ -111,10 +111,9 @@ ttq('track', 'PageView');
     {%- render 'loading' -%}
 
 
-{%- unless template contains 'listicle' or template contains 'advertorial'-%}
+{%- unless template contains 'listicle' or template contains 'advertorial' or template contains 'offer'-%}
   {%- sections 'header-group' -%}
 {%- endunless -%}
-
 
 
     <div class="page-container page-element is-moved-by-drawer">
@@ -135,7 +134,12 @@ ttq('track', 'PageView');
           </div>
         {% endif %}
       </main>
+
+{%- unless template contains 'listicle' or template contains 'advertorial' or template contains 'offer'-%}
     {%- sections 'footer-group' -%}
+{%- endunless -%}
+
+
      {%- liquid
       section 'pnewsletter'
       section 'product-suggest'
@@ -143,6 +147,7 @@ ttq('track', 'PageView');
       section 'custom-color'
      -%}
     </div>
+    
     {%- liquid
       render 'back-to-top' 
       render 'menu-mobile' 

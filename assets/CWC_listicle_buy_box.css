@@ -183,6 +183,13 @@
     /* Red for risk */
 }
 
+.cwc-buy-box__offer-timer-separator {
+    margin-left: 4px;
+    font-size: 1.2rem;
+    font-weight: bolder;
+}
+
+
 /* ================================
    Mobile Responsive
    ================================ */

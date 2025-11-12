@@ -65,7 +65,8 @@
                 {% liquid
                   assign block_button_bg = block.settings.button_bg_color | default: section.settings.button_color
                   assign block_button_text = block.settings.button_text_color | default: section.settings.button_text_color
-                  assign block_end_date = block.settings.end_date
+                  assign use_synced_timer = block.settings.use_synced_timer
+                  assign synced_timer_id = block.settings.synced_timer_section_id
                 %}
                 <div class="cwc-buy-box__offer-block" {{ block.shopify_attributes }}>
                   {% if block.settings.title != blank %}
@@ -90,72 +91,93 @@
                     </a>
                   {% endif %}
 
-                  {% if block_end_date != blank %}
+                  {% if use_synced_timer %}
                     <div class="cwc-buy-box__offer-timer-wrapper">
                       <span class="cwc-buy-box__offer-timer-label">DEAL ENDING IN:</span>
                       <div
                         class="cwc-buy-box__offer-timer"
                         id="offer-timer-{{ block.id }}"
-                        data-end-date="{{ block_end_date }}"
+                        data-synced-timer-id="{{ synced_timer_id }}"
                       >
-                        <span class="cwc-buy-box__offer-timer-value" data-unit="hours">00</span>:
-                        <span class="cwc-buy-box__offer-timer-value" data-unit="minutes">00</span>:
+                        <span class="cwc-buy-box__offer-timer-value" data-unit="hours">00</span>
+                        <span class="cwc-buy-box__offer-timer-separator">:</span>
+                        <span class="cwc-buy-box__offer-timer-value" data-unit="minutes">00</span>
+                        <span class="cwc-buy-box__offer-timer-separator">:</span>
                         <span class="cwc-buy-box__offer-timer-value" data-unit="seconds">00</span>
                       </div>
                     </div>
-                  {% endif %}
+                    <script>
+                      (function () {
+                        const el = document.getElementById('offer-timer-{{ block.id }}');
+                        if (!el) return;
 
-                  {% if block.settings.subtext != blank %}
-                    <div class="cwc-buy-box__offer-subtext rte">
-                      {{ block.settings.subtext }}
-                    </div>
-                  {% endif %}
-                </div>
+                        const syncedTimerId = el.dataset.syncedTimerId || 'global_promo_timer';
+                        const COOKIE_NAME = 'promo_timer_end_' + syncedTimerId;
 
-                {% if block_end_date != blank %}
-                  <script>
-                    (function () {
-                      const timerElement = document.getElementById('offer-timer-{{ block.id }}');
-                      if (!timerElement) return;
+                        // Cookie helpers
+                        function getCookie(name) {
+                          const match = document.cookie.match(new RegExp('(^| )' + name + '=([^;]+)'));
+                          return match ? match[2] : null;
+                        }
 
-                      const endDate = timerElement.dataset.endDate;
-                      const endTime = new Date(endDate).getTime();
+                        // CRITICAL: This section ONLY reads the cookie, never creates it
+                        // The promotion banner section must be present on the page to initialize the timer
+                        const savedEndTime = getCookie(COOKIE_NAME);
 
-                      if (isNaN(endTime)) {
-                        console.error(
-                          'Invalid date format for timer in block {{ block.id }}. Expected format: YYYY-MM-DD HH:MM:SS'
-                        );
-                        return;
-                      }
-
-                      const hoursSpan = timerElement.querySelector('[data-unit="hours"]');
-                      const minutesSpan = timerElement.querySelector('[data-unit="minutes"]');
-                      const secondsSpan = timerElement.querySelector('[data-unit="seconds"]');
-
-                      function updateTimer() {
-                        const now = new Date().getTime();
-                        const distance = endTime - now;
-
-                        if (distance < 0) {
-                          clearInterval(timerInterval);
-                          timerElement.innerHTML = '<span class="cwc-buy-box__offer-timer-expired">EXPIRED</span>';
+                        if (!savedEndTime) {
+                          el.innerHTML = '<span class="cwc-buy-box__offer-timer-value">Waiting for timer...</span>';
+                          // Check every 500ms if cookie appears (in case banner loads after)
+                          const checkInterval = setInterval(function () {
+                            const newCheck = getCookie(COOKIE_NAME);
+                            if (newCheck) {
+                              clearInterval(checkInterval);
+                              location.reload(); // Reload to start timer properly
+                            }
+                          }, 500);
                           return;
                         }
 
-                        const hours = Math.floor((distance % (1000 * 60 * 60 * 24)) / (1000 * 60 * 60));
-                        const minutes = Math.floor((distance % (1000 * 60 * 60)) / (1000 * 60));
-                        const seconds = Math.floor((distance % (1000 * 60)) / 1000);
+                        const endTime = parseInt(savedEndTime, 10);
 
-                        hoursSpan.textContent = String(hours).padStart(2, '0');
-                        minutesSpan.textContent = String(minutes).padStart(2, '0');
-                        secondsSpan.textContent = String(seconds).padStart(2, '0');
-                      }
+                        // Get timer elements
+                        const hEl = el.querySelector('[data-unit="hours"]');
+                        const mEl = el.querySelector('[data-unit="minutes"]');
+                        const sEl = el.querySelector('[data-unit="seconds"]');
 
-                      updateTimer();
-                      const timerInterval = setInterval(updateTimer, 1000);
-                    })();
-                  </script>
-                {% endif %}
+                        // Update countdown
+                        function update() {
+                          const now = Date.now();
+                          const left = endTime - now;
+
+                          if (left <= 0) {
+                            // Don't reset here - let the banner handle resets
+                            // Just check if banner updated the cookie
+                            const currentCookie = getCookie(COOKIE_NAME);
+                            if (currentCookie && parseInt(currentCookie) !== endTime) {
+                              location.reload(); // Banner reset the timer, reload to sync
+                            } else {
+                              el.innerHTML = '<span class="cwc-buy-box__offer-timer-expired">EXPIRED</span>';
+                            }
+                            clearInterval(timer);
+                            return;
+                          }
+
+                          const hrs = Math.floor(left / (1000 * 60 * 60));
+                          const mins = Math.floor((left % (1000 * 60 * 60)) / (1000 * 60));
+                          const secs = Math.floor((left % (1000 * 60)) / 1000);
+
+                          hEl.textContent = String(hrs).padStart(2, '0');
+                          mEl.textContent = String(mins).padStart(2, '0');
+                          sEl.textContent = String(secs).padStart(2, '0');
+                        }
+
+                        // Start countdown
+                        update();
+                        let timer = setInterval(update, 1000);
+                      })();
+                    </script>
+                  {% endif %}
+                </div>
             {% endcase %}
           {% endfor %}
         </div>
@@ -301,11 +323,18 @@
           "label": "Button Text Color (Override)"
         },
         {
+          "type": "checkbox",
+          "id": "use_synced_timer",
+          "label": "Use Synced Timer",
+          "info": "Sync with promotion banner timer. IMPORTANT: Promotion banner must be on the page!",
+          "default": true
+        },
+        {
           "type": "text",
-          "id": "end_date",
-          "label": "Timer End Date",
-          "info": "Format: YYYY-MM-DD HH:MM:SS (e.g., 2025-12-31 23:59:59)",
-          "default": "2025-12-31 23:59:59"
+          "id": "synced_timer_section_id",
+          "label": "Timer Sync ID",
+          "info": "Must match the promotion banner section ID (default: global_promo_timer)",
+          "default": "global_promo_timer"
         }
       ]
     }
