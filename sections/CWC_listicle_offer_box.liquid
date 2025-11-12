@@ -2,6 +2,7 @@
   #CWC_offer_box-{{ section.id }} {
     --section-bg: {{ section.settings.bg_color | default: '#ffffff' }};
     --card-bg: {{ section.settings.card_bg_color | default: '#d1fae5' }};
+    --card-bg-end: {{ section.settings.card_bg_color | color_lighten: 10 }};
     --text-color: {{ section.settings.text_color | default: '#111111' }};
     --button-bg: {{ section.settings.button_color | default: '#10b981' }};
     --button-text: {{ section.settings.button_text_color | default: '#ffffff' }};

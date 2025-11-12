@@ -28,6 +28,10 @@
     padding: 3rem;
     text-align: center;
     box-sizing: border-box;
+
+
+    background: linear-gradient(180deg, var(--card-bg) 0%, var(--card-bg-end) 80%);
+
 }
 
 /* ================================
@@ -61,13 +65,15 @@
    ================================ */
 
 .cwc-offer-box__text {
-    margin: 0 0 1.5rem 0;
+    margin: 0 auto 1.5rem;
     font-size: 1rem;
     line-height: 1.6;
+    max-width: 780px;
 }
 
 .cwc-offer-box__text p {
     margin: 0 0 1rem 0;
+    font-size: 1.15rem;
 }
 
 .cwc-offer-box__text p:last-child {
@@ -117,6 +123,51 @@
     transform: translateY(0);
 }
 
+
+/* CTA */
+.cwc-offer-box__button {
+    /* margin-top: 2rem; */
+}
+
+.cwc-offer-box__button {
+    display: inline-block;
+    padding: 0.85rem 1.5rem;
+    font-weight: 600;
+    font-size: 1rem;
+    border-radius: 6px;
+    text-decoration: none;
+    text-align: center;
+    transition: all 0.3s ease-in-out;
+    border: 2px solid transparent;
+    max-width: 336px;
+    width: 100%;
+    background-color: var(--button-bg);
+    color: var(--button-text);
+}
+
+.cwc-offer-box__button:hover {
+    background-color: transparent !important;
+    border-color: var(--button-bg) !important;
+    color: var(--button-bg) !important;
+}
+
+
+
+.cwc-offer-box__button .cwc-reasons__btn {
+    font-size: 1rem;
+    font-weight: 600;
+    padding: .8rem 1.5rem;
+    border: 2px solid transparent;
+    border-radius: 6px;
+    text-decoration: none;
+    text-align: center;
+    transition: all .3s ease-in-out;
+    display: inline-block;
+    max-width: 336px;
+    width: 100%;
+}
+
+
 /* ================================
    Subtext
    ================================ */
@@ -135,6 +186,8 @@
 
 .cwc-offer-box__subtext p:last-child {
     margin-bottom: 0;
+    font-style: italic;
+    opacity: .8;
 }
 
 /* ================================

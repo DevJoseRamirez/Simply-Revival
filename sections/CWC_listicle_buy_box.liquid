@@ -28,9 +28,15 @@
 
       <div class="cwc-buy-box__content-wrapper">
         <div class="cwc-buy-box__image-area">
-          {% comment %} Placeholder for image - typically a block or a section setting for a main image {% endcomment %}
-          {% comment %} <img src="https://cdn.shopify.com/s/files/1/0000/0000/files/placeholder_product.png?v=1678886400" alt="Product Placeholder" loading="lazy"> {% endcomment %}
-          {{ 'image' | placeholder_svg_tag: 'placeholder-svg' }}
+          {% if section.settings.image != blank %}
+            <img
+              src="{{ section.settings.image | image_url: width: 500 }}"
+              alt="Content image"
+              loading="lazy"
+            >
+          {% else %}
+            {{ 'image' | placeholder_svg_tag: 'placeholder-svg' }}
+          {% endif %}
         </div>
 
         <div class="cwc-buy-box__text-area">
@@ -250,6 +256,11 @@
       "unit": "px",
       "label": "Padding bottom",
       "default": 80
+    },
+    {
+      "type": "image_picker",
+      "id": "image",
+      "label": "Image"
     },
     {
       "type": "richtext",

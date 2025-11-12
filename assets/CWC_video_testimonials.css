@@ -219,6 +219,21 @@
 
 
 
+.cwc-video-testimonials__cta .cwc-reasons__btn {
+    font-size: 1rem;
+    font-weight: 600;
+    padding: .8rem 1.5rem;
+    border: 2px solid transparent;
+    border-radius: 6px;
+    text-decoration: none;
+    text-align: center;
+    transition: all .3s ease-in-out;
+    display: inline-block;
+    max-width: 336px;
+    width: 100%;
+}
+
+
 .cwc-video-testimonials__note {
     margin-top: 0.5rem;
     font-size: 0.9rem;
