@@ -40,7 +40,7 @@
         {% if block.settings.title != blank or block.settings.text != blank %}
           <div class="cwc-listicle-columns__card" {{ block.shopify_attributes }}>
             {% if block.settings.title != blank %}
-              <div class="cwc-listicle-columns__card-title rte">✓ {{ block.settings.title }}</div>
+              <div class="cwc-listicle-columns__card-title rte">{{ block.settings.title }}</div>
             {% endif %}
 
             {% if block.settings.text != blank %}

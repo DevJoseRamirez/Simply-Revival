@@ -11,6 +11,20 @@
 
 {{ 'CWC_social_proof.css' | asset_url | stylesheet_tag }}
 
+{% liquid
+  # Determine source: metaobject or blocks
+  assign use_metaobject = false
+  assign image_items = section.blocks
+
+  if section.settings.social_proof_image_list != blank
+    assign social_proof_image_list = section.settings.social_proof_image_list
+    if social_proof_image_list.list.value.count > 0
+      assign use_metaobject = true
+      assign image_items = social_proof_image_list.list.value
+    endif
+  endif
+%}
+
 <section id="CWC_social_proof-{{ section.id }}" class="cwc-social-proof">
   <div class="cwc-social-proof__wrapper">
     {% if section.settings.show_stars %}
@@ -19,7 +33,6 @@
         {% if section.settings.star_link != blank %}
           href="{{ section.settings.star_link }}"
         {% endif %}
-
         class="cwc-social-proof__stars"
       >
         {% render 'CWC_trust_stars' %}
@@ -41,27 +54,74 @@
 
     <div class="cwc_social-proof-carousel">
       <div class="cwc_carousel-track">
-        {% for block in section.blocks %}
-          <div class="cwc_carousel-item" {{ block.shopify_attributes }}>
-            <img src="{{ block.settings.image | img_url: '100x' }}" alt="Social Proof">
-          </div>
-        {% endfor %}
-        {% comment %} duplication for infinite motion {% endcomment %}
-        {% for block in section.blocks %}
-          <div class="cwc_carousel-item">
-            <img src="{{ block.settings.image | img_url: '100x' }}" alt="Social Proof">
-          </div>
-        {% endfor %}
-        {% for block in section.blocks %}
-          <div class="cwc_carousel-item">
-            <img src="{{ block.settings.image | img_url: '100x' }}" alt="Social Proof">
-          </div>
-        {% endfor %}
-        {% for block in section.blocks %}
-          <div class="cwc_carousel-item">
-            <img src="{{ block.settings.image | img_url: '100x' }}" alt="Social Proof">
-          </div>
-        {% endfor %}
+        {% if use_metaobject %}
+          {% comment %} Render from metaobject {% endcomment %}
+          {% for item in image_items %}
+            {% assign item_image = item.image.value %}
+            {% if item_image != blank %}
+              <div class="cwc_carousel-item">
+                <img src="{{ item_image | img_url: '100x' }}" alt="Social Proof">
+              </div>
+            {% endif %}
+          {% endfor %}
+          {% comment %} Duplication for infinite motion {% endcomment %}
+          {% for item in image_items %}
+            {% assign item_image = item.image.value %}
+            {% if item_image != blank %}
+              <div class="cwc_carousel-item">
+                <img src="{{ item_image | img_url: '100x' }}" alt="Social Proof">
+              </div>
+            {% endif %}
+          {% endfor %}
+          {% for item in image_items %}
+            {% assign item_image = item.image.value %}
+            {% if item_image != blank %}
+              <div class="cwc_carousel-item">
+                <img src="{{ item_image | img_url: '100x' }}" alt="Social Proof">
+              </div>
+            {% endif %}
+          {% endfor %}
+          {% for item in image_items %}
+            {% assign item_image = item.image.value %}
+            {% if item_image != blank %}
+              <div class="cwc_carousel-item">
+                <img src="{{ item_image | img_url: '100x' }}" alt="Social Proof">
+              </div>
+            {% endif %}
+          {% endfor %}
+
+          {% comment %} Render from blocks (fallback) {% endcomment %}
+        {% else %}
+          {% for block in section.blocks %}
+            {% if block.settings.image != blank %}
+              <div class="cwc_carousel-item" {{ block.shopify_attributes }}>
+                <img src="{{ block.settings.image | img_url: '100x' }}" alt="Social Proof">
+              </div>
+            {% endif %}
+          {% endfor %}
+          {% comment %} Duplication for infinite motion {% endcomment %}
+          {% for block in section.blocks %}
+            {% if block.settings.image != blank %}
+              <div class="cwc_carousel-item">
+                <img src="{{ block.settings.image | img_url: '100x' }}" alt="Social Proof">
+              </div>
+            {% endif %}
+          {% endfor %}
+          {% for block in section.blocks %}
+            {% if block.settings.image != blank %}
+              <div class="cwc_carousel-item">
+                <img src="{{ block.settings.image | img_url: '100x' }}" alt="Social Proof">
+              </div>
+            {% endif %}
+          {% endfor %}
+          {% for block in section.blocks %}
+            {% if block.settings.image != blank %}
+              <div class="cwc_carousel-item">
+                <img src="{{ block.settings.image | img_url: '100x' }}" alt="Social Proof">
+              </div>
+            {% endif %}
+          {% endfor %}
+        {% endif %}
       </div>
     </div>
   </div>
@@ -73,6 +133,21 @@
 {
   "name": "CWC Social Proof",
   "settings": [
+    {
+      "type": "paragraph",
+      "content": "Configure images using either the metaobject list below OR the blocks at the bottom. Metaobject takes priority if set."
+    },
+    {
+      "type": "metaobject",
+      "id": "social_proof_image_list",
+      "label": "Social Proof Image List",
+      "metaobject_type": "social_proof_image_list",
+      "info": "Select a metaobject list of type 'social_proof_image_list'. Falls back to blocks if not set."
+    },
+    {
+      "type": "header",
+      "content": "Display Settings"
+    },
     {
       "type": "checkbox",
       "id": "show_stars",
@@ -88,7 +163,7 @@
       "type": "richtext",
       "id": "heading",
       "label": "Heading",
-      "default": "<h3>Real Stories, Real Results</h3>"
+      "default": "<h3>Real Stories, <b>Real Results</b></h3>"
     },
     {
       "type": "color",
@@ -103,10 +178,14 @@
       "default": "<p>See What customer Are Saying About Simply Revival</p>"
     },
     {
+      "type": "header",
+      "content": "Style Settings"
+    },
+    {
       "type": "color",
       "id": "bg_color",
       "label": "Background color",
-      "default": "#FAF9F6"
+      "default": "#FFFEE3"
     },
     {
       "type": "color",
@@ -138,8 +217,12 @@
   "blocks": [
     {
       "type": "image",
-      "name": "Carousel Image",
+      "name": "Carousel Image (Fallback)",
       "settings": [
+        {
+          "type": "paragraph",
+          "content": "These blocks are only used if no metaobject is selected above."
+        },
         {
           "type": "image_picker",
           "id": "image",

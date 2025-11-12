@@ -10,8 +10,9 @@
 }
 
 .cwc-image-text__container {
-    max-width: 1200px;
     max-width: 900px;
+    max-width: 1200px;
+    max-width: 1000px;
     margin: 0 auto;
     padding: 0 2rem;
     box-sizing: border-box;
@@ -44,6 +45,10 @@
     order: 1;
 }
 
+.cwc-image-text__grid--image-last .cwc-image-text__pill {
+    float: right;
+}
+
 /* ================================
    Image Wrapper
    ================================ */
@@ -71,8 +76,8 @@
     display: inline-block;
     background: var(--pill-color);
     color: #ffffff;
-    padding: 0.5rem 1rem;
-    border-radius: 20px;
+    padding: 0.3rem 1rem;
+    border-radius: 8px;
     font-size: 0.875rem;
     font-weight: 600;
     margin-top: 1rem;
@@ -117,6 +122,8 @@
 
 .cwc-image-text__text p {
     margin: 0 0 1rem 0;
+    font-size: 1.15rem;
+
 }
 
 .cwc-image-text__text p:last-child {
@@ -131,6 +138,8 @@
 
 .cwc-image-text__text-2 p {
     margin: 0 0 1rem 0;
+    opacity: .8;
+    font-style: italic;
 }
 
 .cwc-image-text__text-2 p:last-child {

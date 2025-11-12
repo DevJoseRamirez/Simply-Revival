@@ -75,80 +75,53 @@
       if (!el) return;
 
       const COOKIE_NAME = 'promo_timer_end_global_promo_timer';
-      const MIN_HOURS = {{ section.settings.min_hours | default: 3 }};
-      const MAX_HOURS = {{ section.settings.max_hours | default: 6 }};
+      const MIN_HOURS = Number({{ section.settings.min_hours | default: 3 }}) || 3;
+      const MAX_HOURS = Number({{ section.settings.max_hours | default: 6 }}) || 6;
 
-      // Cookie helpers
       function getCookie(name) {
-        const match = document.cookie.match(new RegExp('(^| )' + name + '=([^;]+)'));
-        return match ? match[2] : null;
+        const m = document.cookie.match(new RegExp('(^| )' + name + '=([^;]+)'));
+        return m ? m[2] : null;
       }
-
       function setCookie(name, value, days = 365) {
         const d = new Date();
-        d.setTime(d.getTime() + days * 24 * 60 * 60 * 1000);
-        document.cookie = name + '=' + value + ';expires=' + d.toUTCString() + ';path=/';
+        d.setTime(d.getTime() + days * 864e5);
+        const secure = location.protocol === 'https:' ? ';Secure' : '';
+        document.cookie = name + '=' + value + ';expires=' + d.toUTCString() + ';path=/;SameSite=Lax' + secure;
+      }
+      function randHours() { return MIN_HOURS + Math.random() * Math.max(0, (MAX_HOURS - MIN_HOURS)); }
+
+      let endTime = Number.parseInt(getCookie(COOKIE_NAME), 10);
+      if (!Number.isFinite(endTime) || endTime <= Date.now()) {
+        endTime = Date.now() + randHours() * 3600_000;
+        setCookie(COOKIE_NAME, String(endTime));
       }
 
-      // Generate random hours between min and max
-      function getRandomHours() {
-        return MIN_HOURS + Math.random() * (MAX_HOURS - MIN_HOURS);
-      }
+      // 🔔 Let any listeners (buy-box) know the current endTime
+      window.dispatchEvent(new CustomEvent('promoTimerReady', { detail: { name: COOKIE_NAME, endTime } }));
 
-      // Initialize or get end time
-      let endTime;
-      const savedEndTime = getCookie(COOKIE_NAME);
-
-      if (savedEndTime) {
-        endTime = parseInt(savedEndTime, 10);
-
-        // Check if expired
-        if (endTime <= Date.now()) {
-          // Reset with new random time
-          const randomHours = getRandomHours();
-          endTime = Date.now() + randomHours * 60 * 60 * 1000;
-          setCookie(COOKIE_NAME, endTime);
-        }
-      } else {
-        // First visit - create new timer
-        const randomHours = getRandomHours();
-        endTime = Date.now() + randomHours * 60 * 60 * 1000;
-        setCookie(COOKIE_NAME, endTime);
-      }
-
-      // Get timer elements
       const hEl = el.querySelector('[data-unit="hours"]');
       const mEl = el.querySelector('[data-unit="minutes"]');
       const sEl = el.querySelector('[data-unit="seconds"]');
 
-      // Update countdown
-      function update() {
-        const now = Date.now();
-        const left = endTime - now;
-
+      function tick() {
+        const left = endTime - Date.now();
         if (left <= 0) {
-          // Timer expired - reset
-          clearInterval(timer);
-          const randomHours = getRandomHours();
-          endTime = Date.now() + randomHours * 60 * 60 * 1000;
-          setCookie(COOKIE_NAME, endTime);
-          update(); // Start new countdown immediately
-          timer = setInterval(update, 1000);
-          return;
+          // Reset & announce again
+          endTime = Date.now() + randHours() * 3600_000;
+          setCookie(COOKIE_NAME, String(endTime));
+          window.dispatchEvent(new CustomEvent('promoTimerReady', { detail: { name: COOKIE_NAME, endTime } }));
+          return; // next interval will pick up the new endTime
         }
-
-        const hrs = Math.floor(left / (1000 * 60 * 60));
-        const mins = Math.floor((left % (1000 * 60 * 60)) / (1000 * 60));
-        const secs = Math.floor((left % (1000 * 60)) / 1000);
-
+        const hrs = Math.floor(left / 3600_000);
+        const mins = Math.floor((left % 3600_000) / 60_000);
+        const secs = Math.floor((left % 60_000) / 1000);
         hEl.textContent = String(hrs).padStart(2, '0');
         mEl.textContent = String(mins).padStart(2, '0');
         sEl.textContent = String(secs).padStart(2, '0');
       }
 
-      // Start countdown
-      update();
-      let timer = setInterval(update, 1000);
+      tick();
+      const timer = setInterval(tick, 1000);
     })();
   </script>
 {% endif %}

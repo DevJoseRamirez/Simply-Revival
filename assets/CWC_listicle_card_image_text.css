@@ -1,0 +1,192 @@
+/* ================================
+   CWC Listicle Card Image Text Styles
+   ================================ */
+
+.cwc-card-image-text {
+    background: var(--section-bg);
+    color: var(--text-color);
+    padding-top: var(--padding-top);
+    padding-bottom: var(--padding-bottom);
+}
+
+.cwc-card-image-text__container {
+    max-width: 1200px;
+    max-width: 1000px;
+    margin: 0 auto;
+    padding: 0 2rem;
+    box-sizing: border-box;
+}
+
+/* ================================
+   Card
+   ================================ */
+
+.cwc-card-image-text__card {
+    background: var(--card-bg);
+    border-radius: 12px;
+    padding: 3rem;
+    box-sizing: border-box;
+    position: relative;
+}
+
+/* ================================
+   Grid Layout
+   ================================ */
+
+.cwc-card-image-text__grid {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 3rem;
+    align-items: center;
+}
+
+/* ================================
+   Text Content
+   ================================ */
+.cwc-card-image-text__grid .last {
+    order: 2;
+
+}
+
+.cwc-card-image-text__item--text {
+    /* order: 1; */
+    /* Default: Text first (left) */
+
+    display: flex;
+    flex-direction: column;
+    height: 100%;
+    justify-content: space-between;
+}
+
+.cwc-card-image-text__item--image {
+    /* order: 2; */
+    /* Default: Image second (right) */
+    position: relative;
+}
+
+/* Image First Toggle Logic (Image on left, Text on right) */
+.cwc-card-image-text__item--image:first-child {
+    /* order: 1; */
+}
+
+.cwc-card-image-text__item--text:last-child {
+    /* order: 2; */
+}
+
+/* ================================
+   Header (Number and Badge)
+   ================================ */
+
+.cwc-card-image-text__header {
+    display: flex;
+    align-items: center;
+    gap: 1rem;
+    margin-bottom: 1rem;
+}
+
+.cwc-card-image-text__number {
+    font-size: 2rem;
+    font-weight: 700;
+    color: var(--badge-bg);
+    line-height: 1;
+    padding: .5rem 1rem;
+    background: var(--number-bg);
+    font-style: italic;
+    font-weight: 600;
+}
+
+/* ================================
+   Badge (Floating on Image)
+   ================================ */
+
+.cwc-card-image-text__badge {
+    /* position: absolute; */
+    top: 1rem;
+    right: 1rem;
+    background: var(--badge-bg);
+    color: var(--badge-text);
+    padding: 0.5rem 0.75rem;
+    border-radius: 8px;
+    font-size: 1.5rem;
+    line-height: 1;
+    z-index: 10;
+    width: fit-content;
+    font-size: 1rem;
+}
+
+/* ================================
+   Image
+   ================================ */
+
+.cwc-card-image-text__image-wrapper img {
+    width: 100%;
+    height: auto;
+    display: block;
+    border-radius: 8px;
+}
+
+/* ================================
+   Title and Text
+   ================================ */
+
+.cwc-card-image-text__title {
+    margin-bottom: 1rem;
+}
+
+.cwc-card-image-text__title h1,
+.cwc-card-image-text__title h2,
+.cwc-card-image-text__title h3 {
+    font-size: 2rem;
+    font-weight: 700;
+    line-height: 1.2;
+    margin: 0;
+}
+
+.cwc-card-image-text__text {
+    font-size: 1rem;
+    line-height: 1.6;
+}
+
+.cwc-card-image-text__text p {
+    margin: 0 0 1rem 0;
+}
+
+.cwc-card-image-text__text p:last-child {
+    margin-bottom: 0;
+}
+
+/* ================================
+   Mobile Responsive
+   ================================ */
+
+@media (max-width: 992px) {
+    .cwc-card-image-text__grid {
+        grid-template-columns: 1fr;
+        gap: 2rem;
+    }
+
+    .cwc-card-image-text__item--text,
+    .cwc-card-image-text__item--image {
+        order: initial !important;
+        /* Reset order for mobile stack */
+    }
+
+    .cwc-card-image-text__card {
+        padding: 2rem 1.5rem;
+    }
+
+    .cwc-card-image-text__container {
+        padding: 0 1.5rem;
+    }
+
+    .cwc-card-image-text__title h1,
+    .cwc-card-image-text__title h2,
+    .cwc-card-image-text__title h3 {
+        font-size: 1.5rem;
+    }
+
+    .cwc-card-image-text {
+        padding-top: var(--padding-top-mobile);
+        padding-bottom: var(--padding-bottom-mobile);
+    }
+}

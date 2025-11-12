@@ -114,66 +114,87 @@
                         const syncedTimerId = el.dataset.syncedTimerId || 'global_promo_timer';
                         const COOKIE_NAME = 'promo_timer_end_' + syncedTimerId;
 
-                        // Cookie helpers
                         function getCookie(name) {
-                          const match = document.cookie.match(new RegExp('(^| )' + name + '=([^;]+)'));
-                          return match ? match[2] : null;
+                          const m = document.cookie.match(new RegExp('(^| )' + name + '=([^;]+)'));
+                          return m ? m[2] : null;
                         }
 
-                        // CRITICAL: This section ONLY reads the cookie, never creates it
-                        // The promotion banner section must be present on the page to initialize the timer
-                        const savedEndTime = getCookie(COOKIE_NAME);
-
-                        if (!savedEndTime) {
-                          el.innerHTML = '<span class="cwc-buy-box__offer-timer-value">Waiting for timer...</span>';
-                          // Check every 500ms if cookie appears (in case banner loads after)
-                          const checkInterval = setInterval(function () {
-                            const newCheck = getCookie(COOKIE_NAME);
-                            if (newCheck) {
-                              clearInterval(checkInterval);
-                              location.reload(); // Reload to start timer properly
-                            }
-                          }, 500);
-                          return;
-                        }
-
-                        const endTime = parseInt(savedEndTime, 10);
-
-                        // Get timer elements
                         const hEl = el.querySelector('[data-unit="hours"]');
                         const mEl = el.querySelector('[data-unit="minutes"]');
                         const sEl = el.querySelector('[data-unit="seconds"]');
 
-                        // Update countdown
-                        function update() {
-                          const now = Date.now();
-                          const left = endTime - now;
+                        let endTime = Number.parseInt(getCookie(COOKIE_NAME), 10);
+                        let interval = null;
 
-                          if (left <= 0) {
-                            // Don't reset here - let the banner handle resets
-                            // Just check if banner updated the cookie
-                            const currentCookie = getCookie(COOKIE_NAME);
-                            if (currentCookie && parseInt(currentCookie) !== endTime) {
-                              location.reload(); // Banner reset the timer, reload to sync
-                            } else {
-                              el.innerHTML = '<span class="cwc-buy-box__offer-timer-expired">EXPIRED</span>';
-                            }
-                            clearInterval(timer);
-                            return;
+                        function start(end) {
+                          endTime = end;
+                          if (interval) {
+                            clearInterval(interval);
+                            interval = null;
                           }
 
-                          const hrs = Math.floor(left / (1000 * 60 * 60));
-                          const mins = Math.floor((left % (1000 * 60 * 60)) / (1000 * 60));
-                          const secs = Math.floor((left % (1000 * 60)) / 1000);
+                          function update() {
+                            const left = endTime - Date.now();
+                            if (left <= 0) {
+                              // Show expired until banner resets; keep listening for event
+                              if (el) el.innerHTML = '<span class="cwc-buy-box__offer-timer-expired">EXPIRED</span>';
+                              clearInterval(interval);
+                              interval = null;
+                              return;
+                            }
+                            const hrs = Math.floor(left / 3600_000);
+                            const mins = Math.floor((left % 3600_000) / 60_000);
+                            const secs = Math.floor((left % 60_000) / 1000);
+                            hEl.textContent = String(hrs).padStart(2, '0');
+                            mEl.textContent = String(mins).padStart(2, '0');
+                            sEl.textContent = String(secs).padStart(2, '0');
+                          }
 
-                          hEl.textContent = String(hrs).padStart(2, '0');
-                          mEl.textContent = String(mins).padStart(2, '0');
-                          sEl.textContent = String(secs).padStart(2, '0');
+                          // restore structure if we had replaced content
+                          if (!hEl || !mEl || !sEl) {
+                            el.innerHTML = `
+        <span class="cwc-buy-box__offer-timer-value" data-unit="hours">00</span>
+        <span class="cwc-buy-box__offer-timer-separator">:</span>
+        <span class="cwc-buy-box__offer-timer-value" data-unit="minutes">00</span>
+        <span class="cwc-buy-box__offer-timer-separator">:</span>
+        <span class="cwc-buy-box__offer-timer-value" data-unit="seconds">00</span>`;
+                          }
+
+                          update();
+                          interval = setInterval(update, 1000);
                         }
 
-                        // Start countdown
-                        update();
-                        let timer = setInterval(update, 1000);
+                        // 1) If we already have a valid future cookie, start immediately
+                        if (Number.isFinite(endTime) && endTime > Date.now()) {
+                          start(endTime);
+                        } else {
+                          // 2) Otherwise show waiting/expired and listen for the banner to announce
+                          el.innerHTML = '<span class="cwc-buy-box__offer-timer-value">Waiting for timer…</span>';
+
+                          // Also do a light poll as a fallback in case event is missed
+                          let pollCount = 0;
+                          const poll = setInterval(() => {
+                            const v = Number.parseInt(getCookie(COOKIE_NAME), 10);
+                            if (Number.isFinite(v) && v > Date.now()) {
+                              clearInterval(poll);
+                              start(v);
+                            } else if (++pollCount > 60) {
+                              // ~60s max
+                              clearInterval(poll);
+                              el.innerHTML = '<span class="cwc-buy-box__offer-timer-expired">EXPIRED</span>';
+                            }
+                          }, 1000);
+
+                          // Primary: event-driven sync from the banner
+                          function onReady(e) {
+                            if (!e.detail || e.detail.name !== COOKIE_NAME) return;
+                            if (Number.isFinite(e.detail.endTime) && e.detail.endTime > Date.now()) {
+                              clearInterval(poll);
+                              start(e.detail.endTime);
+                            }
+                          }
+                          window.addEventListener('promoTimerReady', onReady, { once: false });
+                        }
                       })();
                     </script>
                   {% endif %}

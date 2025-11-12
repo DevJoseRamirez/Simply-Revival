@@ -10,8 +10,10 @@
 }
 
 .cwc-listicle-columns__container {
-    max-width: 1200px;
     max-width: 900px;
+    max-width: 1200px;
+    max-width: 1000px;
+
     margin: 0 auto;
     padding: 0 2rem;
     box-sizing: border-box;
@@ -81,6 +83,7 @@
 .cwc-listicle-columns__grid {
     display: grid;
     grid-template-columns: repeat(4, 1fr);
+    grid-template-columns: repeat(2, 1fr);
     gap: 1.5rem;
 }
 
@@ -99,6 +102,7 @@
 .cwc-listicle-columns__card-title {
     margin: 0 0 1rem 0;
     font-size: 1.125rem;
+    font-size: 1.25rem;
     font-weight: 600;
     line-height: 1.4;
     color: inherit;
@@ -116,6 +120,7 @@
 
 .cwc-listicle-columns__card-text p {
     margin: 0 0 1rem 0;
+    font-size: 1.15rem;
 }
 
 .cwc-listicle-columns__card-text p:last-child {
