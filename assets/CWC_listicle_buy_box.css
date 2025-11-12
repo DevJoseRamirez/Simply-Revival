@@ -1,0 +1,222 @@
+/* ================================
+   CWC Listicle Buy Box Styles
+   ================================ */
+
+.cwc-buy-box {
+    background: var(--section-bg);
+    color: var(--text-color);
+    padding-top: var(--padding-top);
+    padding-bottom: var(--padding-bottom);
+    font-family: sans-serif;
+}
+
+.cwc-buy-box__container {
+    max-width: 1000px;
+    margin: 0 auto;
+    padding: 0 2rem;
+    box-sizing: border-box;
+}
+
+/* ================================
+   Card
+   ================================ */
+
+.cwc-buy-box__card {
+    background: var(--card-bg);
+    border-radius: 12px;
+    padding: 3rem;
+    box-sizing: border-box;
+    position: relative;
+    box-shadow: 0 10px 15px -3px rgba(0, 0, 0, 0.1), 0 4px 6px -2px rgba(0, 0, 0, 0.05);
+    /* border: 4px solid #ef4444; */
+    /* Red border from image reference */
+}
+
+/* ================================
+   Floating Badge
+   ================================ */
+
+.cwc-buy-box__floating-badge {
+    position: absolute;
+    top: 0;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    background: var(--button-bg);
+    color: var(--button-text);
+    padding: 0.5rem 1.5rem;
+    border-radius: 9999px;
+    font-size: 0.875rem;
+    font-weight: 700;
+    text-transform: uppercase;
+    letter-spacing: 0.05em;
+    white-space: nowrap;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.2);
+}
+
+/* ================================
+   Content Wrapper (Image + Text)
+   ================================ */
+
+.cwc-buy-box__content-wrapper {
+    display: flex;
+    gap: 2rem;
+    align-items: flex-start;
+}
+
+.cwc-buy-box__image-area {
+    flex: 1;
+    max-width: 40%;
+}
+
+.cwc-buy-box__image-area img {
+    width: 100%;
+    height: auto;
+    display: block;
+    border-radius: 8px;
+}
+
+.cwc-buy-box__text-area {
+    flex: 1;
+    max-width: 60%;
+}
+
+/* ================================
+   Main Content
+   ================================ */
+
+.cwc-buy-box__title {
+    margin-bottom: 0.5rem;
+}
+
+.cwc-buy-box__title h3,
+.cwc-buy-box__title p {
+    font-size: 1rem;
+    font-weight: 600;
+    text-transform: uppercase;
+    color: #ef4444;
+    /* Red color from image */
+    margin: 0;
+}
+
+.cwc-buy-box__text {
+    margin-bottom: 1.5rem;
+}
+
+.cwc-buy-box__text p {
+    margin: 0 0 0.5rem 0;
+    line-height: 1.4;
+}
+
+.cwc-buy-box__text strong {
+    font-size: 1.5rem;
+    color: #ef4444;
+    /* Red color from image */
+    display: block;
+    margin-bottom: 0.5rem;
+}
+
+.cwc-buy-box__button {
+    display: inline-block;
+    background: var(--button-bg);
+    color: var(--button-text);
+    padding: 1rem 2.5rem;
+    border-radius: 8px;
+    font-size: 1rem;
+    font-weight: 600;
+    text-decoration: none;
+    text-align: center;
+    transition: opacity 0.3s ease;
+    margin-bottom: 1rem;
+}
+
+.cwc-buy-box__button:hover {
+    opacity: 0.9;
+}
+
+.cwc-buy-box__subtext {
+    font-size: 0.875rem;
+    line-height: 1.5;
+    margin-bottom: 2rem;
+}
+
+/* ================================
+   Offer Block (Nested)
+   ================================ */
+
+.cwc-buy-box__offer-block {
+    /* border: 1px solid #10b981; */
+    /* Green outline from image */
+    padding: 1rem;
+    border-radius: 8px;
+    text-align: center;
+}
+
+.cwc-buy-box__offer-timer-wrapper {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 0.5rem;
+    margin-bottom: 0.5rem;
+    font-size: 0.875rem;
+    font-weight: 600;
+    color: #10b981;
+    /* Green color */
+}
+
+.cwc-buy-box__offer-timer {
+    font-size: 1.125rem;
+    font-weight: 700;
+}
+
+.cwc-buy-box__offer-timer-value {
+    font-variant-numeric: tabular-nums;
+}
+
+.cwc-buy-box__offer-subtext {
+    font-size: 0.875rem;
+    line-height: 1.4;
+    margin-top: 0.5rem;
+}
+
+.cwc-buy-box__offer-subtext strong {
+    color: #ef4444;
+    /* Red for risk */
+}
+
+/* ================================
+   Mobile Responsive
+   ================================ */
+
+@media (max-width: 768px) {
+    .cwc-buy-box__container {
+        padding: 0 1.5rem;
+    }
+
+    .cwc-buy-box__card {
+        padding: 2rem 1.5rem;
+    }
+
+    .cwc-buy-box__content-wrapper {
+        flex-direction: column;
+        gap: 1.5rem;
+    }
+
+    .cwc-buy-box__image-area,
+    .cwc-buy-box__text-area {
+        max-width: 100%;
+    }
+
+    .cwc-buy-box__floating-badge {
+        font-size: 0.75rem;
+        padding: 0.4rem 1rem;
+    }
+
+    .cwc-buy-box__text strong {
+        font-size: 1.25rem;
+    }
+
+    .cwc-buy-box {
+        padding-top: var(--padding-top-mobile);
+        padding-bottom: var(--padding-bottom-mobile);
+    }
+}

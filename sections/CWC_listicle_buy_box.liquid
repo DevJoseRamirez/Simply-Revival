@@ -1,0 +1,325 @@
+{% style %}
+  #CWC_listicle_buy_box-{{ section.id }} {
+    --section-bg: {{ section.settings.bg_color | default: '#ffffff' }};
+    --card-bg: {{ section.settings.card_bg_color | default: '#f0fdf4' }}; /* Light green from image */
+    --text-color: {{ section.settings.text_color | default: '#111111' }};
+    --button-bg: {{ section.settings.button_color | default: '#4c1d95' }}; /* Dark purple from image */
+    --button-text: {{ section.settings.button_text_color | default: '#ffffff' }};
+    --padding-top: {{ section.settings.padding_top | default: 80 }}px;
+    --padding-bottom: {{ section.settings.padding_bottom | default: 80 }}px;
+    --padding-top-mobile: {{ section.settings.padding_top | times: 0.5 }}px;
+    --padding-bottom-mobile: {{ section.settings.padding_bottom | times: 0.5 }}px;
+  }
+{% endstyle %}
+
+{{ 'CWC_listicle_buy_box.css' | asset_url | stylesheet_tag }}
+
+<section
+  id="CWC_listicle_buy_box-{{ section.id }}"
+  class="cwc-buy-box"
+>
+  <div class="cwc-buy-box__container">
+    <div class="cwc-buy-box__card">
+      {% if section.settings.floating_badge_text != blank %}
+        <div class="cwc-buy-box__floating-badge">
+          {{ section.settings.floating_badge_text }}
+        </div>
+      {% endif %}
+
+      <div class="cwc-buy-box__content-wrapper">
+        <div class="cwc-buy-box__image-area">
+          {% comment %} Placeholder for image - typically a block or a section setting for a main image {% endcomment %}
+          {% comment %} <img src="https://cdn.shopify.com/s/files/1/0000/0000/files/placeholder_product.png?v=1678886400" alt="Product Placeholder" loading="lazy"> {% endcomment %}
+          {{ 'image' | placeholder_svg_tag: 'placeholder-svg' }}
+        </div>
+
+        <div class="cwc-buy-box__text-area">
+          {% if section.settings.title != blank %}
+            <div class="cwc-buy-box__title rte">
+              {{ section.settings.title }}
+            </div>
+          {% endif %}
+
+          {% if section.settings.text != blank %}
+            <div class="cwc-buy-box__text rte">
+              {{ section.settings.text }}
+            </div>
+          {% endif %}
+
+          {% if section.settings.button_link != blank and section.settings.button_text != blank %}
+            <a href="{{ section.settings.button_link }}" class="cwc-buy-box__button">
+              {{ section.settings.button_text }}
+            </a>
+          {% endif %}
+
+          {% if section.settings.subtext != blank %}
+            <div class="cwc-buy-box__subtext rte">
+              {{ section.settings.subtext }}
+            </div>
+          {% endif %}
+
+          {% comment %} Render blocks for additional offers {% endcomment %}
+          {% for block in section.blocks %}
+            {% case block.type %}
+              {% when 'offer' %}
+                {% liquid
+                  assign block_button_bg = block.settings.button_bg_color | default: section.settings.button_color
+                  assign block_button_text = block.settings.button_text_color | default: section.settings.button_text_color
+                  assign block_end_date = block.settings.end_date
+                %}
+                <div class="cwc-buy-box__offer-block" {{ block.shopify_attributes }}>
+                  {% if block.settings.title != blank %}
+                    <div class="cwc-buy-box__offer-title rte">
+                      {{ block.settings.title }}
+                    </div>
+                  {% endif %}
+
+                  {% if block.settings.text != blank %}
+                    <div class="cwc-buy-box__offer-text rte">
+                      {{ block.settings.text }}
+                    </div>
+                  {% endif %}
+
+                  {% if block.settings.button_link != blank and block.settings.button_text != blank %}
+                    <a
+                      href="{{ block.settings.button_link }}"
+                      class="cwc-buy-box__offer-button"
+                      style="--offer-button-bg: {{ block_button_bg }}; --offer-button-text: {{ block_button_text }};"
+                    >
+                      {{ block.settings.button_text }}
+                    </a>
+                  {% endif %}
+
+                  {% if block_end_date != blank %}
+                    <div class="cwc-buy-box__offer-timer-wrapper">
+                      <span class="cwc-buy-box__offer-timer-label">DEAL ENDING IN:</span>
+                      <div
+                        class="cwc-buy-box__offer-timer"
+                        id="offer-timer-{{ block.id }}"
+                        data-end-date="{{ block_end_date }}"
+                      >
+                        <span class="cwc-buy-box__offer-timer-value" data-unit="hours">00</span>:
+                        <span class="cwc-buy-box__offer-timer-value" data-unit="minutes">00</span>:
+                        <span class="cwc-buy-box__offer-timer-value" data-unit="seconds">00</span>
+                      </div>
+                    </div>
+                  {% endif %}
+
+                  {% if block.settings.subtext != blank %}
+                    <div class="cwc-buy-box__offer-subtext rte">
+                      {{ block.settings.subtext }}
+                    </div>
+                  {% endif %}
+                </div>
+
+                {% if block_end_date != blank %}
+                  <script>
+                    (function () {
+                      const timerElement = document.getElementById('offer-timer-{{ block.id }}');
+                      if (!timerElement) return;
+
+                      const endDate = timerElement.dataset.endDate;
+                      const endTime = new Date(endDate).getTime();
+
+                      if (isNaN(endTime)) {
+                        console.error(
+                          'Invalid date format for timer in block {{ block.id }}. Expected format: YYYY-MM-DD HH:MM:SS'
+                        );
+                        return;
+                      }
+
+                      const hoursSpan = timerElement.querySelector('[data-unit="hours"]');
+                      const minutesSpan = timerElement.querySelector('[data-unit="minutes"]');
+                      const secondsSpan = timerElement.querySelector('[data-unit="seconds"]');
+
+                      function updateTimer() {
+                        const now = new Date().getTime();
+                        const distance = endTime - now;
+
+                        if (distance < 0) {
+                          clearInterval(timerInterval);
+                          timerElement.innerHTML = '<span class="cwc-buy-box__offer-timer-expired">EXPIRED</span>';
+                          return;
+                        }
+
+                        const hours = Math.floor((distance % (1000 * 60 * 60 * 24)) / (1000 * 60 * 60));
+                        const minutes = Math.floor((distance % (1000 * 60 * 60)) / (1000 * 60));
+                        const seconds = Math.floor((distance % (1000 * 60)) / 1000);
+
+                        hoursSpan.textContent = String(hours).padStart(2, '0');
+                        minutesSpan.textContent = String(minutes).padStart(2, '0');
+                        secondsSpan.textContent = String(seconds).padStart(2, '0');
+                      }
+
+                      updateTimer();
+                      const timerInterval = setInterval(updateTimer, 1000);
+                    })();
+                  </script>
+                {% endif %}
+            {% endcase %}
+          {% endfor %}
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+{% schema %}
+{
+  "name": "Listicle Buy Box",
+  "tag": "section",
+  "class": "section",
+  "settings": [
+    {
+      "type": "color",
+      "id": "bg_color",
+      "label": "Section Background color",
+      "default": "#ffffff"
+    },
+    {
+      "type": "color",
+      "id": "card_bg_color",
+      "label": "Card Background color",
+      "default": "#f0fdf4"
+    },
+    {
+      "type": "color",
+      "id": "text_color",
+      "label": "Text color",
+      "default": "#111111"
+    },
+    {
+      "type": "range",
+      "id": "padding_top",
+      "min": 0,
+      "max": 100,
+      "step": 10,
+      "unit": "px",
+      "label": "Padding top",
+      "default": 80
+    },
+    {
+      "type": "range",
+      "id": "padding_bottom",
+      "min": 0,
+      "max": 100,
+      "step": 10,
+      "unit": "px",
+      "label": "Padding bottom",
+      "default": 80
+    },
+    {
+      "type": "richtext",
+      "id": "title",
+      "label": "Main Title",
+      "default": "<h3>FREE GIFTS WITH YOUR ORDER</h3>"
+    },
+    {
+      "type": "richtext",
+      "id": "text",
+      "label": "Main Text",
+      "default": "<p><strong>UP TO 60% OFF FOR A LIMITED TIME ONLY!</strong></p><p>This limited-time deal is in high demand and stock keeps selling out.</p>"
+    },
+    {
+      "type": "text",
+      "id": "floating_badge_text",
+      "label": "Floating Badge Text",
+      "default": "⚡ BLACK FRIDAY VIP ACCESS"
+    },
+    {
+      "type": "color",
+      "id": "button_color",
+      "label": "Main Button color",
+      "default": "#4c1d95"
+    },
+    {
+      "type": "color",
+      "id": "button_text_color",
+      "label": "Main Button text color",
+      "default": "#ffffff"
+    },
+    {
+      "type": "text",
+      "id": "button_text",
+      "label": "Main Button text",
+      "default": "GET 60% OFF →"
+    },
+    {
+      "type": "url",
+      "id": "button_link",
+      "label": "Main Button link"
+    },
+    {
+      "type": "richtext",
+      "id": "subtext",
+      "label": "Subtext (below main button)",
+      "default": "<p>Try it today with a 30-Day Money-Back Guarantee!</p>"
+    }
+  ],
+  "blocks": [
+    {
+      "type": "offer",
+      "name": "Offer Block",
+      "settings": [
+        {
+          "type": "richtext",
+          "id": "title",
+          "label": "Offer Title",
+          "default": "<h4>Limited Time Offer!</h4>"
+        },
+        {
+          "type": "richtext",
+          "id": "text",
+          "label": "Offer Text",
+          "default": "<p>This is a special, time-sensitive offer.</p>"
+        },
+        {
+          "type": "richtext",
+          "id": "subtext",
+          "label": "Offer Subtext",
+          "default": "<p>Risk: High | Free Shipping</p>"
+        },
+        {
+          "type": "text",
+          "id": "button_text",
+          "label": "Button Text",
+          "default": "Claim Offer"
+        },
+        {
+          "type": "url",
+          "id": "button_link",
+          "label": "Button Link"
+        },
+        {
+          "type": "color",
+          "id": "button_bg_color",
+          "label": "Button Background Color (Override)"
+        },
+        {
+          "type": "color",
+          "id": "button_text_color",
+          "label": "Button Text Color (Override)"
+        },
+        {
+          "type": "text",
+          "id": "end_date",
+          "label": "Timer End Date",
+          "info": "Format: YYYY-MM-DD HH:MM:SS (e.g., 2025-12-31 23:59:59)",
+          "default": "2025-12-31 23:59:59"
+        }
+      ]
+    }
+  ],
+  "presets": [
+    {
+      "name": "Listicle Buy Box",
+      "category": "Listicle",
+      "blocks": [
+        {
+          "type": "offer"
+        }
+      ]
+    }
+  ]
+}
+{% endschema %}

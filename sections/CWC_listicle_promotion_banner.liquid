@@ -1,0 +1,196 @@
+{% style %}
+  #CWC_listicle_promotion_banner-{{ section.id }} {
+    --section-bg: {{ section.settings.bg_color | default: '#1f2937' }};
+    --text-color: {{ section.settings.text_color | default: '#ffffff' }};
+    --padding-top: {{ section.settings.padding_top | default: 20 }}px;
+    --padding-bottom: {{ section.settings.padding_bottom | default: 20 }}px;
+    --padding-top-mobile: {{ section.settings.padding_top | times: 0.5 }}px;
+    --padding-bottom-mobile: {{ section.settings.padding_bottom | times: 0.5 }}px;
+
+    /* Timer colors - inverse of section colors */
+    --timer-bg: var(--text-color);
+    --timer-text: var(--section-bg);
+  }
+{% endstyle %}
+
+{{ 'CWC_listicle_promotion_banner.css' | asset_url | stylesheet_tag }}
+
+<section
+  id="CWC_listicle_promotion_banner-{{ section.id }}"
+  class="cwc-promotion-banner"
+>
+  <div class="cwc-promotion-banner__container">
+    <div class="cwc-promotion-banner__content">
+      {% if section.settings.top_text != blank %}
+        <div class="cwc-promotion-banner__top-text rte">
+          {{ section.settings.top_text }}
+        </div>
+      {% endif %}
+
+      {% if section.settings.bottom_text != blank %}
+        <div class="cwc-promotion-banner__bottom-text rte">
+          {{ section.settings.bottom_text }}
+        </div>
+      {% endif %}
+    </div>
+
+    {% if section.settings.show_timer and section.settings.end_date != blank %}
+      <div class="cwc-promotion-banner__timer-wrapper">
+        <div
+          class="cwc-promotion-banner__timer"
+          id="timer-{{ section.id }}"
+          data-end-date="{{ section.settings.end_date }}"
+        >
+          <div class="cwc-promotion-banner__timer-segment">
+            <div class="cwc-promotion-banner__timer-top">
+              <span class="cwc-promotion-banner__timer-value" data-unit="hours">00</span>
+              <span class="cwc-promotion-banner__timer-separator">:</span>
+            </div>
+            <span class="cwc-promotion-banner__timer-label">HRS</span>
+          </div>
+
+          <div class="cwc-promotion-banner__timer-segment">
+            <div class="cwc-promotion-banner__timer-top">
+              <span class="cwc-promotion-banner__timer-value" data-unit="minutes">00</span>
+              <span class="cwc-promotion-banner__timer-separator">:</span>
+            </div>
+            <span class="cwc-promotion-banner__timer-label">MIN</span>
+          </div>
+
+          <div class="cwc-promotion-banner__timer-segment">
+            <div class="cwc-promotion-banner__timer-top">
+              <span class="cwc-promotion-banner__timer-value" data-unit="seconds">00</span>
+            </div>
+            <span class="cwc-promotion-banner__timer-label">SEC</span>
+          </div>
+        </div>
+      </div>
+    {% endif %}
+  </div>
+</section>
+
+{% if section.settings.show_timer and section.settings.end_date != blank %}
+  <script>
+    (function () {
+      const el = document.getElementById('timer-{{ section.id }}');
+      if (!el) return;
+
+      const input = el.dataset.endDate.trim(); // e.g. "12-31"
+      const [month, day] = input.split('-').map(Number);
+
+      if (!month || !day || month > 12 || day > 31) {
+        el.innerHTML = '<span class="cwc-promotion-banner__timer-expired">INVALID DATE</span>';
+        return;
+      }
+
+      const now = new Date();
+      let target = new Date(now.getFullYear(), month - 1, day, 23, 59, 59);
+
+      // If the date already passed this year, roll to next year
+      if (target.getTime() < now.getTime()) {
+        target = new Date(now.getFullYear() + 1, month - 1, day, 23, 59, 59);
+      }
+
+      const hoursEl = el.querySelector('[data-unit="hours"]');
+      const minutesEl = el.querySelector('[data-unit="minutes"]');
+      const secondsEl = el.querySelector('[data-unit="seconds"]');
+
+      function updateTimer() {
+        const now = Date.now();
+        const distance = target.getTime() - now;
+
+        if (distance <= 0) {
+          clearInterval(timer);
+          el.innerHTML = '<span class="cwc-promotion-banner__timer-expired">EXPIRED</span>';
+          return;
+        }
+
+        const hours = Math.floor((distance / (1000 * 60 * 60)) % 24);
+        const minutes = Math.floor((distance / (1000 * 60)) % 60);
+        const seconds = Math.floor((distance / 1000) % 60);
+
+        hoursEl.textContent = String(hours).padStart(2, '0');
+        minutesEl.textContent = String(minutes).padStart(2, '0');
+        secondsEl.textContent = String(seconds).padStart(2, '0');
+      }
+
+      updateTimer();
+      const timer = setInterval(updateTimer, 1000);
+    })();
+  </script>
+{% endif %}
+
+{% comment %} {{ 'CWC_listicle_promotion_banner.js' | asset_url | script_tag }} {% endcomment %}
+
+{% schema %}
+{
+  "name": "Listicle Promotion Banner",
+  "tag": "section",
+  "class": "section",
+  "settings": [
+    {
+      "type": "color",
+      "id": "bg_color",
+      "label": "Background color",
+      "default": "#1f2937"
+    },
+    {
+      "type": "color",
+      "id": "text_color",
+      "label": "Text color",
+      "default": "#ffffff"
+    },
+    {
+      "type": "range",
+      "id": "padding_top",
+      "min": 0,
+      "max": 50,
+      "step": 5,
+      "unit": "px",
+      "label": "Padding top",
+      "default": 20
+    },
+    {
+      "type": "range",
+      "id": "padding_bottom",
+      "min": 0,
+      "max": 50,
+      "step": 5,
+      "unit": "px",
+      "label": "Padding bottom",
+      "default": 20
+    },
+    {
+      "type": "richtext",
+      "id": "top_text",
+      "label": "Top Text (e.g., Badge/Headline)",
+      "default": "<p>⚡ BLACK FRIDAY VIP ACCESS</p>"
+    },
+    {
+      "type": "richtext",
+      "id": "bottom_text",
+      "label": "Bottom Text (e.g., Offer Detail)",
+      "default": "<p>UP TO 50% OFF WITH FREE GIFTS</p>"
+    },
+    {
+      "type": "checkbox",
+      "id": "show_timer",
+      "label": "Show Countdown Timer",
+      "default": true
+    },
+    {
+      "type": "text",
+      "id": "end_date",
+      "label": "Timer End Date",
+      "info": "Enter month and day only (MM-DD). Countdown ends at 23:59:59 on that date.",
+      "default": "12-31"
+    }
+  ],
+  "presets": [
+    {
+      "name": "Listicle Promotion Banner",
+      "category": "Listicle"
+    }
+  ]
+}
+{% endschema %}

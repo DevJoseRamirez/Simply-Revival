@@ -1,0 +1,182 @@
+/* ================================
+   CWC Listicle Promotion Banner Styles
+   ================================ */
+
+.cwc-promotion-banner {
+    background: var(--section-bg);
+    color: var(--text-color);
+    padding-top: var(--padding-top);
+    padding-bottom: var(--padding-bottom);
+    text-align: center;
+    font-family: sans-serif;
+    /* Use a clean font for the timer */
+}
+
+.cwc-promotion-banner__container {
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 0 2rem;
+    box-sizing: border-box;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-wrap: wrap;
+    gap: 1.5rem;
+}
+
+/* ================================
+   Content
+   ================================ */
+
+.cwc-promotion-banner__content {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
+    color: var(--text-color);
+
+}
+
+.cwc-promotion-banner__top-text {
+    font-size: 0.875rem;
+    font-weight: 700;
+    letter-spacing: 0.05em;
+    text-transform: uppercase;
+    /* margin-bottom: 0.25rem; */
+    margin-bottom: -0.5rem;
+    color: inherit;
+
+
+    background-image: linear-gradient(315deg, #e8ac21, #fcdc6d);
+    -webkit-text-fill-color: transparent;
+    background-image: linear-gradient(315deg, #e8ac21, #fcdc6d);
+    -webkit-background-clip: text;
+    background-clip: text;
+    /* background-image: linear-gradient(196deg, #45b5b7 14%, #1e6c7a 83%); */
+
+}
+
+.cwc-promotion-banner__top-text p {
+    margin: 0;
+    color: inherit;
+    font-size: 1.125rem;
+}
+
+.cwc-promotion-banner__bottom-text {
+    font-size: 1.25rem;
+    font-weight: 600;
+    line-height: 1.2;
+    color: inherit;
+
+}
+
+.cwc-promotion-banner__bottom-text p {
+    margin: 0;
+    color: inherit;
+    font-size: 1.1rem;
+
+}
+
+/* ================================
+   Timer
+   ================================ */
+
+.cwc-promotion-banner__timer-wrapper {
+    /* Ensures the timer is visually distinct */
+    background: var(--timer-bg);
+    color: var(--timer-text);
+    padding: 0.5rem 1rem;
+    padding: 0.2rem 1.2rem;
+    border-radius: 6px;
+    display: inline-flex;
+    align-items: center;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+}
+
+.cwc-promotion-banner__timer {
+    display: flex;
+    gap: 0.75rem;
+    gap: 4px;
+    align-items: center;
+}
+
+.cwc-promotion-banner__timer-segment {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    line-height: 1;
+}
+
+.cwc-promotion-banner__timer-value {
+    font-size: 2rem;
+    font-size: 1.5rem;
+    font-weight: 900;
+    font-weight: bolder;
+    display: block;
+    font-style: italic;
+}
+
+.cwc-promotion-banner__timer-label {
+    font-size: 0.6rem;
+    font-size: 0.8rem;
+    line-height: normal;
+    font-weight: 600;
+    text-transform: uppercase;
+    /* margin-top: 0.25rem; */
+    letter-spacing: 0.05em;
+}
+
+.cwc-promotion-banner__timer-expired {
+    font-size: 1.25rem;
+    font-weight: 700;
+    padding: 0.5rem;
+}
+
+.cwc-promotion-banner__timer-top {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.cwc-promotion-banner__timer-separator {
+    margin-left: 4px;
+    font-size: 1.2rem;
+    font-weight: bolder;
+}
+
+/* ================================
+   Mobile Responsive
+   ================================ */
+
+@media (max-width: 768px) {
+    .cwc-promotion-banner__container {
+        flex-direction: column;
+        gap: 1rem;
+        padding: 0 1.5rem;
+    }
+
+    .cwc-promotion-banner__bottom-text {
+        font-size: 1rem;
+    }
+
+    .cwc-promotion-banner__timer-wrapper {
+        padding: 0.5rem 0.75rem;
+    }
+
+    .cwc-promotion-banner__timer {
+        gap: 0.5rem;
+    }
+
+    .cwc-promotion-banner__timer-value {
+        font-size: 1.5rem;
+    }
+
+    .cwc-promotion-banner__timer-label {
+        font-size: 0.5rem;
+    }
+
+    .cwc-promotion-banner {
+        padding-top: var(--padding-top-mobile);
+        padding-bottom: var(--padding-bottom-mobile);
+    }
+}
