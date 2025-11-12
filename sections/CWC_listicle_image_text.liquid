@@ -20,6 +20,11 @@
     <div class="cwc-image-text__grid {% if section.settings.image_position %}cwc-image-text__grid--image-last{% else %}cwc-image-text__grid--image-first{% endif %}">
       {% if section.settings.image != blank %}
         <div class="cwc-image-text__image-wrapper">
+          {% if section.settings.pill_text != blank %}
+            <div class="cwc-image-text__pill">
+              {{ section.settings.pill_text }}
+            </div>
+          {% endif %}
           <div class="cwc-image-text__image">
             <img
               src="{{ section.settings.image | image_url: width: 500 }}"
@@ -27,11 +32,6 @@
               loading="lazy"
             >
           </div>
-          {% if section.settings.pill_text != blank %}
-            <div class="cwc-image-text__pill">
-              {{ section.settings.pill_text }}
-            </div>
-          {% endif %}
         </div>
       {% endif %}
 

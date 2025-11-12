@@ -22,7 +22,9 @@
     <div class="cwc-buy-box__card">
       {% if section.settings.floating_badge_text != blank %}
         <div class="cwc-buy-box__floating-badge">
-          {{ section.settings.floating_badge_text }}
+          <div class="cwc-buy-box__floating-badge-text">
+            {{ section.settings.floating_badge_text }}
+          </div>
         </div>
       {% endif %}
 
@@ -40,15 +42,21 @@
         </div>
 
         <div class="cwc-buy-box__text-area">
+          {% if section.settings.sub_head != blank %}
+            <div class="cwc-buy-box__sub_head rte">
+              {{ section.settings.sub_head }}
+            </div>
+          {% endif %}
+
           {% if section.settings.title != blank %}
             <div class="cwc-buy-box__title rte">
               {{ section.settings.title }}
             </div>
           {% endif %}
 
-          {% if section.settings.text != blank %}
-            <div class="cwc-buy-box__text rte">
-              {{ section.settings.text }}
+          {% if section.settings.sub_text != blank %}
+            <div class="cwc-buy-box__sub_text rte">
+              {{ section.settings.sub_text }}
             </div>
           {% endif %}
 
@@ -264,21 +272,27 @@
     },
     {
       "type": "richtext",
-      "id": "title",
-      "label": "Main Title",
-      "default": "<h3>FREE GIFTS WITH YOUR ORDER</h3>"
+      "id": "sub_head",
+      "label": "Sub Head",
+      "default": "<p>FREE GIFTS WITH YOUR ORDER</p>"
     },
     {
       "type": "richtext",
-      "id": "text",
-      "label": "Main Text",
-      "default": "<p><strong>UP TO 60% OFF FOR A LIMITED TIME ONLY!</strong></p><p>This limited-time deal is in high demand and stock keeps selling out.</p>"
+      "id": "title",
+      "label": "Main Title",
+      "default": "<h3><strong>UP TO 60% OFF FOR A LIMITED TIME ONLY!</strong></h3>"
+    },
+    {
+      "type": "richtext",
+      "id": "sub_text",
+      "label": "Sub Text",
+      "default": "<p>This limited-time deal is in high demand and stock keeps selling out.</p>"
     },
     {
       "type": "text",
       "id": "floating_badge_text",
       "label": "Floating Badge Text",
-      "default": "⚡ BLACK FRIDAY VIP ACCESS"
+      "default": "⚡BLACK FRIDAY EXCLUSIVE"
     },
     {
       "type": "color",

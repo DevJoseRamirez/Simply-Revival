@@ -49,12 +49,27 @@
     color: var(--button-text);
     padding: 0.5rem 1.5rem;
     border-radius: 9999px;
-    font-size: 0.875rem;
+    border-radius: 12px;
+    border-radius: 16px;
+    /* font-size: 0.875rem; */
     font-weight: 700;
     text-transform: uppercase;
     letter-spacing: 0.05em;
     white-space: nowrap;
     box-shadow: 0 4px 6px rgba(0, 0, 0, 0.2);
+    /* testing */
+    background: #1f2937;
+}
+
+.cwc-buy-box__floating-badge-text {
+    font-size: .875rem;
+    font-weight: 700;
+    text-transform: uppercase;
+    color: inherit;
+    -webkit-text-fill-color: transparent;
+    background-image: linear-gradient(315deg, #e8ac21, #fcdc6d);
+    background-clip: text;
+    font-size: .9rem;
 }
 
 /* ================================
@@ -63,26 +78,61 @@
 
 .cwc-buy-box__content-wrapper {
     display: flex;
-    gap: 2rem;
+    /* gap: 2rem; */
     align-items: flex-start;
+    height: max-content;
+    height: 100%;
+
+    /* testing */
+    align-items: stretch;
 }
 
 .cwc-buy-box__image-area {
     flex: 1;
     /* max-width: 40%; */
+    max-width: 50%;
+    /* height: -webkit-fill-available; */
+    /* height: 100%; */
+    display: flex;
+
+    display: flex;
+    /* so child can stretch */
+    overflow: hidden;
 }
 
 .cwc-buy-box__image-area img {
     width: 100%;
     height: auto;
     display: block;
-    border-radius: 8px;
+    /* border-radius: 8px; */
+    /* height: -webkit-fill-available; */
+    max-width: none;
+    display: flex;
+
+    width: 100%;
+    height: 100%;
+    /* fill column height */
+    object-fit: cover;
+    /* cover the available area */
+    display: block;
+
+
+    border-bottom-left-radius: 8px;
+    border-top-left-radius: 8px;
+
 }
 
 .cwc-buy-box__text-area {
     flex: 1;
     /* max-width: 60%; */
-    flex: 1;
+
+    /* testing */
+    text-align: center;
+    /* padding: 2rem 2rem 2rem 0rem; */
+    padding: 2rem;
+    padding: 3rem;
+    max-width: 50%;
+
 }
 
 /* ================================
@@ -95,13 +145,21 @@
 
 .cwc-buy-box__title h3,
 .cwc-buy-box__title p {
-    font-size: 1rem;
-    font-weight: 600;
+    font-size: .9rem;
+    font-weight: bold;
     text-transform: uppercase;
-    color: #ef4444;
+    /* color: #ef4444; */
     /* Red color from image */
     margin: 0;
 }
+
+.cwc-buy-box__title b {
+    color: var(--bold-color);
+}
+
+
+
+
 
 .cwc-buy-box__text {
     margin-bottom: 1.5rem;
@@ -114,7 +172,7 @@
 
 .cwc-buy-box__text strong {
     font-size: 1.5rem;
-    color: #ef4444;
+    /* color: #ef4444; */
     /* Red color from image */
     display: block;
     margin-bottom: 0.5rem;
@@ -151,7 +209,7 @@
 .cwc-buy-box__offer-block {
     /* border: 1px solid #10b981; */
     /* Green outline from image */
-    padding: 1rem;
+    /* padding: 1rem; */
     border-radius: 8px;
     text-align: center;
 }

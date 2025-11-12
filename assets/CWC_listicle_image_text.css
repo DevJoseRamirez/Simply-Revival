@@ -39,6 +39,9 @@
 
 .cwc-image-text__grid--image-last .cwc-image-text__image-wrapper {
     order: 2;
+
+    display: flex;
+    flex-direction: column;
 }
 
 .cwc-image-text__grid--image-last .cwc-image-text__content {
@@ -46,7 +49,9 @@
 }
 
 .cwc-image-text__grid--image-last .cwc-image-text__pill {
-    float: right;
+    /* float: right; */
+    /* width: fit-content; */
+    /* margin-left: auto; */
 }
 
 /* ================================
@@ -77,10 +82,24 @@
     background: var(--pill-color);
     color: #ffffff;
     padding: 0.3rem 1rem;
-    border-radius: 8px;
+    padding: 0.45rem 1rem;
+    /* border-radius: 8px; */
     font-size: 0.875rem;
     font-weight: 600;
-    margin-top: 1rem;
+    /* margin-top: 1rem; */
+    margin-bottom: 1rem;
+    font-size: 1rem;
+
+
+    /* tesging */
+
+    width: 100%;
+    bottom: 0rem;
+    position: absolute;
+    margin: auto;
+    text-align: center;
+    border-bottom-left-radius: 8px;
+    border-bottom-right-radius: 8px;
 }
 
 /* ================================
