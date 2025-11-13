@@ -97,6 +97,9 @@
     border-radius: 8px;
     border: 1px solid rgba(0, 0, 0, 0.1);
     box-sizing: border-box;
+
+
+    box-shadow: 0 10px 15px -3px #0000001a, 0 4px 6px -2px #0000000d;
 }
 
 .cwc-listicle-columns__card-title {

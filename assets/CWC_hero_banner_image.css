@@ -53,6 +53,20 @@
     /* color: inherit !important; */
 }
 
+
+.hero-promo {
+    width: fit-content;
+    padding: .5rem 1rem;
+    line-height: normal;
+    font-size: 1.15rem;
+    margin: auto;
+    font-weight: bolder;
+    margin: 0 auto 1rem;
+    margin: 0 auto .75rem;
+    padding: 1rem 2rem;
+    font-size: 1.5rem;
+}
+
 /* === Image Column === */
 .CWC_hero_banner_image-image {
     flex: 1 1 45%;

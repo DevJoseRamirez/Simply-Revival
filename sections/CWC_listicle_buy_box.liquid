@@ -2,6 +2,7 @@
   #CWC_listicle_buy_box-{{ section.id }} {
     --section-bg: {{ section.settings.bg_color | default: '#ffffff' }};
     --card-bg: {{ section.settings.card_bg_color | default: '#f0fdf4' }}; /* Light green from image */
+    --bold-color: {{ section.settings.bold_color | default: '#ef4444' }};
     --text-color: {{ section.settings.text_color | default: '#111111' }};
     --button-bg: {{ section.settings.button_color | default: '#4c1d95' }}; /* Dark purple from image */
     --button-text: {{ section.settings.button_text_color | default: '#ffffff' }};
@@ -43,7 +44,7 @@
 
         <div class="cwc-buy-box__text-area">
           {% if section.settings.sub_head != blank %}
-            <div class="cwc-buy-box__sub_head rte">
+            <div class="cwc-buy-box__sub_head">
               {{ section.settings.sub_head }}
             </div>
           {% endif %}
@@ -66,45 +67,23 @@
             </a>
           {% endif %}
 
-          {% if section.settings.subtext != blank %}
-            <div class="cwc-buy-box__subtext rte">
-              {{ section.settings.subtext }}
-            </div>
-          {% endif %}
+          {% comment %}
+            {% if section.settings.subtext != blank %}
+              <div class="cwc-buy-box__subtext rte">
+                {{ section.settings.subtext }}
+              </div>
+            {% endif %}
+          {% endcomment %}
 
           {% comment %} Render blocks for additional offers {% endcomment %}
           {% for block in section.blocks %}
             {% case block.type %}
-              {% when 'offer' %}
-                {% liquid
-                  assign block_button_bg = block.settings.button_bg_color | default: section.settings.button_color
-                  assign block_button_text = block.settings.button_text_color | default: section.settings.button_text_color
-                  assign use_synced_timer = block.settings.use_synced_timer
-                  assign synced_timer_id = block.settings.synced_timer_section_id
-                %}
+              {% when 'timer' %}
+                {% assign assign use_synced_timer = block.settings.use_synced_timer %}
+                {% assign synced_timer_id = block.settings.synced_timer_section_id %}
+
+                {% comment %} use_synced_timer {% endcomment %}
                 <div class="cwc-buy-box__offer-block" {{ block.shopify_attributes }}>
-                  {% if block.settings.title != blank %}
-                    <div class="cwc-buy-box__offer-title rte">
-                      {{ block.settings.title }}
-                    </div>
-                  {% endif %}
-
-                  {% if block.settings.text != blank %}
-                    <div class="cwc-buy-box__offer-text rte">
-                      {{ block.settings.text }}
-                    </div>
-                  {% endif %}
-
-                  {% if block.settings.button_link != blank and block.settings.button_text != blank %}
-                    <a
-                      href="{{ block.settings.button_link }}"
-                      class="cwc-buy-box__offer-button"
-                      style="--offer-button-bg: {{ block_button_bg }}; --offer-button-text: {{ block_button_text }};"
-                    >
-                      {{ block.settings.button_text }}
-                    </a>
-                  {% endif %}
-
                   {% if use_synced_timer %}
                     <div class="cwc-buy-box__offer-timer-wrapper">
                       <span class="cwc-buy-box__offer-timer-label">DEAL ENDING IN:</span>
@@ -213,6 +192,55 @@
                     </script>
                   {% endif %}
                 </div>
+
+                {% comment %} use_synced_timer {% endcomment %}
+
+              {% when 'offer-off' %}
+                {% liquid
+                  assign block_button_bg = block.settings.button_bg_color | default: section.settings.button_color
+                  assign block_button_text = block.settings.button_text_color | default: section.settings.button_text_color
+                  assign use_synced_timer = block.settings.use_synced_timer
+                  assign synced_timer_id = block.settings.synced_timer_section_id
+                %}
+                <div class="cwc-buy-box__offer-block-2" {{ block.shopify_attributes }}>
+                  {% comment %} RISK BLOCK {% endcomment %}
+                  {% comment %} prefix all clas names with "cwc-buy-box__offer-" {% endcomment %}
+
+                  {% comment %} RISK BLOCK {% endcomment %}
+                  <div class="cwc-buy-box__offer-risk-block">
+                    <span class="cwc-buy-box__offer-risk-label">
+                      {{ block.settings.risk_label }}:
+                      <span class="cwc-buy-box__offer-risk-value">{{ block.settings.risk_value }}</span>
+                    </span>
+                    <span class="cwc-buy-box__offer-divider">|</span>
+                    <span class="cwc-buy-box__offer-shipping">
+                      <span class="cwc-buy-box__offer-shipping-highlight">{{ block.settings.shipping_highlight }}</span>
+                      {{ block.settings.shipping_text }}
+                    </span>
+                  </div>
+
+                  {% if block.settings.title != blank %}
+                    <div class="cwc-buy-box__offer-title rte">
+                      {{ block.settings.title }}
+                    </div>
+                  {% endif %}
+
+                  {% if block.settings.text != blank %}
+                    <div class="cwc-buy-box__offer-text rte">
+                      {{ block.settings.text }}
+                    </div>
+                  {% endif %}
+
+                  {% if block.settings.button_link != blank and block.settings.button_text != blank %}
+                    <a
+                      href="{{ block.settings.button_link }}"
+                      class="cwc-buy-box__offer-button"
+                      style="--offer-button-bg: {{ block_button_bg }}; --offer-button-text: {{ block_button_text }};"
+                    >
+                      {{ block.settings.button_text }}
+                    </a>
+                  {% endif %}
+                </div>
             {% endcase %}
           {% endfor %}
         </div>
@@ -244,6 +272,12 @@
       "id": "text_color",
       "label": "Text color",
       "default": "#111111"
+    },
+    {
+      "type": "color",
+      "id": "bold_color",
+      "label": "Highlight color",
+      "default": "#ef4444"
     },
     {
       "type": "range",
@@ -326,6 +360,26 @@
   ],
   "blocks": [
     {
+      "type": "timer",
+      "name": "Timer Block",
+      "settings": [
+        {
+          "type": "checkbox",
+          "id": "use_synced_timer",
+          "label": "Use Synced Timer",
+          "info": "Sync with promotion banner timer. IMPORTANT: Promotion banner must be on the page!",
+          "default": true
+        },
+        {
+          "type": "text",
+          "id": "synced_timer_section_id",
+          "label": "Timer Sync ID",
+          "info": "Must match the promotion banner section ID (default: global_promo_timer)",
+          "default": "global_promo_timer"
+        }
+      ]
+    },
+    {
       "type": "offer",
       "name": "Offer Block",
       "settings": [
@@ -367,20 +421,6 @@
           "type": "color",
           "id": "button_text_color",
           "label": "Button Text Color (Override)"
-        },
-        {
-          "type": "checkbox",
-          "id": "use_synced_timer",
-          "label": "Use Synced Timer",
-          "info": "Sync with promotion banner timer. IMPORTANT: Promotion banner must be on the page!",
-          "default": true
-        },
-        {
-          "type": "text",
-          "id": "synced_timer_section_id",
-          "label": "Timer Sync ID",
-          "info": "Must match the promotion banner section ID (default: global_promo_timer)",
-          "default": "global_promo_timer"
         }
       ]
     }

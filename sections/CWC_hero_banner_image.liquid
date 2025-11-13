@@ -80,6 +80,20 @@
               </div>
             {% endif %}
 
+          {% when 'promo' %}
+            {% if block.settings.text != blank %}
+              <div
+                class="hero-promo"
+                {{ block.shopify_attributes }}
+                style="
+                  color:{{ block.settings.promo_text_color }};
+                  background-color: {{ block.settings.promo_bg_color }}
+                "
+              >
+                {{ block.settings.text }}
+              </div>
+            {% endif %}
+
           {% when 'headline' %}
             {% if block.settings.text != blank %}
               <div class="hero-headline" {{ block.shopify_attributes }}>
@@ -223,6 +237,30 @@
           "id": "text",
           "label": "Review Content",
           "default": "<p><strong>Rated 4.8/5</strong> | Trusted by 20,000+</p>"
+        }
+      ]
+    },
+    {
+      "type": "promo",
+      "name": "Promo",
+      "settings": [
+        {
+          "type": "text",
+          "id": "text",
+          "label": "promo Text",
+          "default": "BLACK FRIDAY SALE"
+        },
+        {
+          "type": "color",
+          "id": "promo_bg_color",
+          "label": "promo Background Color",
+          "default": "#125657"
+        },
+        {
+          "type": "color",
+          "id": "promo_text_color",
+          "label": "Button Text Color",
+          "default": "#ffffff"
         }
       ]
     },

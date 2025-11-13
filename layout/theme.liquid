@@ -135,7 +135,9 @@ ttq('track', 'PageView');
         {% endif %}
       </main>
 
-{%- unless template contains 'listicle' or template contains 'advertorial' or template contains 'offer'-%}
+
+
+{%- unless template contains 'listicle' or template contains 'advertorial' -%}
     {%- sections 'footer-group' -%}
 {%- endunless -%}
 

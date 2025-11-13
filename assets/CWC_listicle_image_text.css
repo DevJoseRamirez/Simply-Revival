@@ -92,6 +92,7 @@
 
 
     /* tesging */
+    font-size: 1.2rem;
 
     width: 100%;
     bottom: 0rem;
@@ -144,6 +145,14 @@
     font-size: 1.15rem;
 
 }
+
+.cwc-image-text__text p a {
+    color: #800080 !important;
+    opacity: 1;
+    font-style: italic;
+    font-weight: 600;
+}
+
 
 .cwc-image-text__text p:last-child {
     margin-bottom: 0;
