@@ -102,10 +102,9 @@
                 {% if block.settings.review_title != blank %}
                   <h3 class="cwc-article-template__review-title">{{ block.settings.review_title }}</h3>
                 {% endif %}
-
-                <div class="cwc-article-template__review-stars">
-                  {% render 'CWC_trust_stars' %}
-                </div>
+              </div>
+              <div class="cwc-article-template__review-stars">
+                {% render 'CWC_rating_stars', fill_color: '#f97316' %}
               </div>
 
               {% if block.settings.review_text != blank %}
@@ -128,7 +127,7 @@
 
                   {% if block.settings[review_title_key] != blank %}
                     <div class="cwc-article-template__review-item">
-                      <h4 class="cwc-article-template__review-item-title">{{ block.settings[review_title_key] }}</h4>
+                      <div class="cwc-article-template__review-item-title">{{ block.settings[review_title_key] }}</div>
 
                       {% if block.settings[review_text_key] != blank %}
                         <div class="cwc-article-template__review-item-text rte">
@@ -232,18 +231,15 @@
           {% if section.settings.sidebar_product_image != blank %}
             <div class="cwc-article-template__sidebar-product-image">
               <img
-                src="{{ section.settings.sidebar_product_image | image_url: width: 200 }}"
+                src="{{ section.settings.sidebar_product_image | image_url: width: 320 }}"
                 alt="Product"
-                loading="lazy"
+                loading="eager"
+                priority="high"
               >
             </div>
           {% endif %}
 
-          {% if section.settings.sidebar_text != blank %}
-            <div class="cwc-article-template__sidebar-text rte">
-              {{ section.settings.sidebar_text }}
-            </div>
-          {% endif %}
+  
 
           {% if section.settings.sidebar_button_text != blank and section.settings.sidebar_button_link != blank %}
             <a
@@ -254,6 +250,15 @@
               {{ section.settings.sidebar_button_text }}
             </a>
           {% endif %}
+
+
+        {% if section.settings.sidebar_text != blank %}
+            <div class="cwc-article-template__sidebar-text rte">
+              {{ section.settings.sidebar_text }}
+            </div>
+          {% endif %}
+
+
         </div>
       </div>
     {% endif %}

@@ -43,6 +43,8 @@
             {% assign tag2 = customer_testimonial.tag2 %}
             {% assign img_value = customer_testimonial.profile_image %}
             {% assign img_url = customer_testimonial.profile_image | image_url: width: 36 %}
+
+            {% comment %} {{ customer_testimonial_list | json }} {% endcomment %}
           {% else %}
             {% comment %} Block source {% endcomment %}
             {% assign rating = customer_testimonial.settings.star_rating %}

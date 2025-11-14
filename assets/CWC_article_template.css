@@ -119,6 +119,21 @@
     font-size: 1rem;
 }
 
+.cwc-article-template__content-text>* {}
+
+.cwc-article-template__content-text>strong {
+    font-weight: 500;
+}
+
+.cwc-article-template__content-text * a {
+    color: purple !important;
+    opacity: 1;
+    font-style: italic;
+    font-weight: 600;
+    font-weight: 500;
+
+}
+
 .cwc-article-template__content-text p {
     margin: 0 0 1rem 0;
     font-size: 1.1rem;
@@ -172,6 +187,7 @@
     font-style: italic;
     line-height: 1.6;
     color: inherit;
+    font-size: 1rem;
 }
 
 /* ================================
@@ -181,7 +197,7 @@
 .cwc-article-template__star-review {
     margin-bottom: 2rem;
     padding: 1.5rem;
-    background-color: rgba(0, 0, 0, 0.02);
+    /* background-color: rgba(0, 0, 0, 0.02); */
     border-radius: 6px;
 }
 
@@ -189,7 +205,8 @@
     display: flex;
     align-items: flex-start;
     gap: 1rem;
-    margin-bottom: 1rem;
+    /* margin-bottom: 1rem; */
+    margin-bottom: .5rem;
 }
 
 .cwc-article-template__review-title {
@@ -202,7 +219,13 @@
 .cwc-article-template__review-stars {
     display: flex;
     gap: 0.25rem;
+    margin-bottom: .5rem;
     white-space: nowrap;
+}
+
+.cwc-article-template__review-stars svg {
+    height: 1.3rem;
+    width: auto;
 }
 
 .cwc-article-template__review-text {
@@ -269,7 +292,10 @@
 
 .cwc-article-template__review-item-text p {
     margin: 0;
+    font-size: 1rem;
+    line-height: normal;
 }
+
 
 /* ================================
    Button Block
@@ -303,6 +329,7 @@
 
 .cwc-article-template__faq {
     margin-bottom: 2rem;
+    margin-bottom: 1.5rem;
     padding: 1.5rem;
     background-color: rgba(0, 0, 0, 0.02);
     border-radius: 6px;
@@ -388,6 +415,8 @@
     flex-direction: column;
     align-items: center;
     padding: 1.5rem 1rem;
+    padding: 1.5rem 1rem;
+    /* padding: 2.5rem 1rem; */
     text-align: center;
 }
 
@@ -406,22 +435,35 @@
     font-weight: 600;
     margin-bottom: 1rem;
     line-height: 1.4;
+    margin-bottom: .5rem;
+
 }
 
 .cwc-article-template__sidebar-heading p {
     margin: 0;
+    /* testing */
+    font-size: 1rem;
+    line-height: 1.5rem;
+    line-height: normal;
+    font-size: 1.3rem;
+    font-size: 1.5rem;
+    font-weight: 600;
 }
 
 .cwc-article-template__sidebar-product-image {
     margin-bottom: 1rem;
     width: 100%;
+    margin-bottom: .5rem;
 }
 
 .cwc-article-template__sidebar-product-image img {
-    max-width: 100%;
+    /* max-width: 100%; */
     height: auto;
     display: block;
     border-radius: 4px;
+    margin: auto;
+    object-fit: cover;
+    width: 100%;
 }
 
 .cwc-article-template__sidebar-text {
@@ -429,10 +471,12 @@
     line-height: 1.5;
     margin-bottom: 1rem;
     color: rgba(0, 0, 0, 0.8);
+    margin-top: .5rem;
 }
 
 .cwc-article-template__sidebar-text p {
     margin: 0;
+    font-size: .9rem;
 }
 
 .cwc-article-template__sidebar-button {
@@ -447,6 +491,8 @@
     cursor: pointer;
     font-size: 0.9rem;
     box-sizing: border-box;
+    font-size: 1.2rem;
+
 }
 
 .cwc-article-template__sidebar-button:hover {
@@ -522,6 +568,7 @@
     background: darkslategray;
     width: fit-content;
     border-radius: 10px;
+    border-radius: 8px;
     padding: .5rem 1rem;
 }
 

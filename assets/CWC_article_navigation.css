@@ -48,6 +48,7 @@
     /* font-size: 1rem; */
     font-size: .9rem;
     transition: all 3s ease-in-out;
+    font-size: 1rem;
 }
 
 .cwc-article-navigation__burger {
