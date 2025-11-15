@@ -122,6 +122,17 @@
     font-weight: 600;
 }
 
+.cwc-listicle-subtext {
+    margin-bottom: 1rem;
+    margin-top: -1rem;
+}
+
+.cwc-listicle-subtext-content {}
+
+.cwc-listicle-subtext-content p {
+    font-size: 1.15rem;
+}
+
 /* ================================
    Mobile Responsive
    ================================ */
@@ -153,7 +164,7 @@
     .cwc-listicle-head__heading-content h2,
     .cwc-listicle-head__heading-content h3,
     .cwc-listicle-head__heading-content p {
-        font-size: 1.5rem;
+        /* font-size: 1.5rem; */
     }
 
     .cwc-listicle-head__author-wrapper {

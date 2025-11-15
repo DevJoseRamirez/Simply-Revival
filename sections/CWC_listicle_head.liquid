@@ -27,6 +27,15 @@
             </div>
           {% endif %}
 
+        {% when 'subtext' %}
+          {% if block.settings.subtext != blank %}
+            <div class="cwc-listicle-subtext" {{ block.shopify_attributes }}>
+              <div class="cwc-listicle-subtext-content rte">
+                {{ block.settings.subtext }}
+              </div>
+            </div>
+          {% endif %}
+
         {% when 'author' %}
           <div class="cwc-listicle-head__author" {{ block.shopify_attributes }}>
             <div class="cwc-listicle-head__author-wrapper">
@@ -121,6 +130,18 @@
           "id": "heading",
           "label": "Heading",
           "default": "<h1>Your Listicle Title Goes Here</h1>"
+        }
+      ]
+    },
+    {
+      "type": "subtext",
+      "name": "Subtext",
+      "settings": [
+        {
+          "type": "richtext",
+          "id": "subtext",
+          "label": "subtext",
+          "default": "<p>Optional sub text here</p>"
         }
       ]
     },

@@ -336,18 +336,29 @@
    ================================ */
 
 @media (max-width: 768px) {
+    .cwc-buy-box__offer-timer-wrapper {
+
+        font-size: 1rem;
+    }
+
     .cwc-buy-box__container {
         padding: 0 1.5rem;
     }
 
     .cwc-buy-box__card {
         padding: 2rem 1.5rem;
+        padding: 1rem;
     }
 
     .cwc-buy-box__content-wrapper {
         flex-direction: column;
         gap: 1.5rem;
     }
+
+    .cwc-buy-box__text-area {
+        padding: 0rem;
+    }
+
 
     .cwc-buy-box__image-area,
     .cwc-buy-box__text-area {

@@ -207,7 +207,7 @@
     .cwc-offer-box__title h2,
     .cwc-offer-box__title h3,
     .cwc-offer-box__title p {
-        font-size: 1.5rem;
+        /* font-size: 1.5rem; */
     }
 
     .cwc-offer-box {
@@ -230,7 +230,7 @@
     .cwc-offer-box__title h2,
     .cwc-offer-box__title h3,
     .cwc-offer-box__title p {
-        font-size: 1.25rem;
+        /* font-size: 1.25rem; */
     }
 
     .cwc-offer-box__text,

@@ -93,7 +93,7 @@
     .cwc-center-text__title h2,
     .cwc-center-text__title h3,
     .cwc-center-text__title p {
-        font-size: 1.5rem;
+        /* font-size: 1.5rem; */
     }
 
     .cwc-center-text {
@@ -111,7 +111,7 @@
     .cwc-center-text__title h2,
     .cwc-center-text__title h3,
     .cwc-center-text__title p {
-        font-size: 1.25rem;
+        /* font-size: 1.25rem; */
     }
 
     .cwc-center-text__text,

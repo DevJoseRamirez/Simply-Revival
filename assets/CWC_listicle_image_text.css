@@ -197,7 +197,7 @@
     .cwc-image-text__title h2,
     .cwc-image-text__title h3,
     .cwc-image-text__title p {
-        font-size: 1.5rem;
+        /* font-size: 1.5rem; */
     }
 
     .cwc-image-text {
@@ -219,7 +219,7 @@
     .cwc-image-text__title h2,
     .cwc-image-text__title h3,
     .cwc-image-text__title p {
-        font-size: 1.25rem;
+        /* font-size: 1.25rem; */
     }
 
     .cwc-image-text__text,
@@ -229,6 +229,7 @@
 
     .cwc-image-text__pill {
         font-size: 0.8125rem;
+        font-size: 1rem;
         padding: 0.375rem 0.75rem;
     }
 }

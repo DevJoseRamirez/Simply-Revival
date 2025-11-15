@@ -58,6 +58,14 @@
     "cwc_hero_banner_image_LL6Efb": {
       "type": "CWC_hero_banner_image",
       "blocks": {
+        "promo_bREHFC": {
+          "type": "promo",
+          "settings": {
+            "text": "BLACK FRIDAY SALE",
+            "promo_bg_color": "#125657",
+            "promo_text_color": "#72c9ca"
+          }
+        },
         "review_CPbkRA": {
           "type": "review",
           "settings": {
@@ -96,11 +104,82 @@
         }
       },
       "block_order": [
+        "promo_bREHFC",
         "review_CPbkRA",
         "headline_QhEjxg",
         "bullets_H7mHBE",
         "button_YXp8Eq",
         "note_tfEfPa"
+      ],
+      "disabled": true,
+      "name": "Hero Banner Image",
+      "settings": {
+        "background_color": "#d0f0f2",
+        "text_color": "#202020",
+        "image": "shopify:\/\/shop_images\/Simply_Revival___The_1_Natural_DHT_Blocker_for_Hair_Loss_-_Hero_Image-min.png",
+        "image_mobile": "shopify:\/\/shop_images\/Simply_Revival___The_1_Natural_DHT_Blocker_for_Hair_Loss_-_Hero_Image_Mobile-min.png",
+        "alt_text": "",
+        "image_position": "left",
+        "padding_top": 0,
+        "padding_bottom": 0
+      }
+    },
+    "cwc_hero_banner_image_yJLyAP": {
+      "type": "CWC_hero_banner_image",
+      "blocks": {
+        "promo_y9P6cT": {
+          "type": "promo",
+          "disabled": true,
+          "settings": {
+            "text": "BLACK FRIDAY SALE",
+            "promo_bg_color": "#125657",
+            "promo_text_color": "#72c9ca"
+          }
+        },
+        "review_MDVPN9": {
+          "type": "review",
+          "settings": {
+            "text": "<p><strong>Rated 4.8\/5<\/strong> | Trusted by 20,000+<\/p>"
+          }
+        },
+        "headline_UNtTwi": {
+          "type": "headline",
+          "settings": {
+            "text": "<h2>The <strong>#1 Natural DHT<\/strong> <\/h2><h2>Blocker for Hair Loss<\/h2>"
+          }
+        },
+        "bullets_P7YwHr": {
+          "type": "bullets",
+          "settings": {
+            "text_1": "Results within 30 days or less",
+            "text_2": "No Side Effects or Money Back",
+            "text_3": "Ultra-Potent herbal formula without fillers"
+          }
+        },
+        "button_jYrinn": {
+          "type": "button",
+          "settings": {
+            "text": "Try Risk-Free Today",
+            "link": "#cwc-featured-product--anchor",
+            "button_bg_color": "#125657",
+            "button_text_color": "#ffffff"
+          }
+        },
+        "note_Jqcgyi": {
+          "type": "note",
+          "settings": {
+            "text": "<p>365-day money back guarantee<\/p>",
+            "icon": "shopify:\/\/shop_images\/Simply_Revival___Gurantee-min.png"
+          }
+        }
+      },
+      "block_order": [
+        "promo_y9P6cT",
+        "review_MDVPN9",
+        "headline_UNtTwi",
+        "bullets_P7YwHr",
+        "button_jYrinn",
+        "note_Jqcgyi"
       ],
       "name": "Hero Banner Image",
       "settings": {
@@ -216,6 +295,7 @@
       ],
       "name": "Social Proof",
       "settings": {
+        "social_proof_image_list": "",
         "show_stars": true,
         "star_link": "#az_reviews",
         "heading": "<h3>Real Stories, <strong>Real Results<\/strong><\/h3>",
@@ -1389,6 +1469,7 @@
   "order": [
     "cwc_scrolling_banner_UbtU3E",
     "cwc_hero_banner_image_LL6Efb",
+    "cwc_hero_banner_image_yJLyAP",
     "cwc_usp_columns_BmJWgA",
     "cwc_social_proof_QLBenN",
     "cwc_testimonials_WEmh8r",

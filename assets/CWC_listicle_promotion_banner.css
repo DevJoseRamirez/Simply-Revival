@@ -152,7 +152,7 @@
 @media (max-width: 768px) {
     .cwc-promotion-banner__container {
         flex-direction: column;
-        gap: 1rem;
+        gap: 4px;
         padding: 0 1.5rem;
     }
 
@@ -161,7 +161,7 @@
     }
 
     .cwc-promotion-banner__timer-wrapper {
-        padding: 0.5rem 0.75rem;
+        padding: 0.3rem 0.75rem;
     }
 
     .cwc-promotion-banner__timer {
@@ -173,7 +173,7 @@
     }
 
     .cwc-promotion-banner__timer-label {
-        font-size: 0.5rem;
+        font-size: 0.6rem;
     }
 
     .cwc-promotion-banner {

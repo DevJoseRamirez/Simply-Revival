@@ -289,6 +289,10 @@
             "title": "Do you have a guarantee?",
             "content": "<p>Yes, All orders are backed by our 365 day money back guarantee. If you’re not happy, we will make it right!<\/p>"
           }
+        },
+        "areviews_reviews_importer_areviews_title_rating_39177F": {
+          "type": "shopify:\/\/apps\/areviews-reviews-importer\/blocks\/AreviewsTitleRating\/ab0ec5fe-c95b-4fd6-bfb8-db2a30d0756f",
+          "settings": {}
         }
       },
       "block_order": [
@@ -296,6 +300,7 @@
         "rating_efyjWb",
         "vendor_7iLFXM",
         "title_AkTrAX",
+        "areviews_reviews_importer_areviews_title_rating_39177F",
         "desc_jFWt9g",
         "benefits_p34Qab",
         "price_display_4QHJGW",
@@ -419,6 +424,7 @@
       ],
       "name": "Social Proof",
       "settings": {
+        "social_proof_image_list": "",
         "show_stars": true,
         "star_link": "",
         "heading": "<h3>Real Stories, <strong>Real Results<\/strong><\/h3>",
@@ -710,6 +716,7 @@
       ],
       "name": "Testimonial Images",
       "settings": {
+        "testimonial_list": "",
         "section_title": "<h3>10,000+ <strong>Hair Transformations<\/strong><\/h3>",
         "bold_color": "#125657",
         "section_subtitle": "",
@@ -838,7 +845,7 @@
           "type": "reason",
           "settings": {
             "img": "shopify:\/\/shop_images\/Simply_Revival___Reason_2_-_10_Legendary_Herbs._One_formula-min.png",
-            "badge": "Reason 1",
+            "badge": "Reason 2",
             "badge_bg": "#60a1a2",
             "badge_color": "#ffffff",
             "title": "10 Legendary Herbs. One formula",
@@ -849,7 +856,7 @@
           "type": "reason",
           "settings": {
             "img": "shopify:\/\/shop_images\/Simply_Revival___Reason_3_-_No_taste._No_hassle._No_Side_Effects-min.png",
-            "badge": "Reason 1",
+            "badge": "Reason 3",
             "badge_bg": "#60a1a2",
             "badge_color": "#ffffff",
             "title": "No taste. No hassle. No Side Effects",
@@ -860,7 +867,7 @@
           "type": "reason",
           "settings": {
             "img": "shopify:\/\/shop_images\/Simply_Revival___Reason_4_-_Real_Results_Fast-min.png",
-            "badge": "Reason 1",
+            "badge": "Reason 4",
             "badge_bg": "#60a1a2",
             "badge_color": "#ffffff",
             "title": "Real Results Fast",
@@ -871,7 +878,7 @@
           "type": "reason",
           "settings": {
             "img": "shopify:\/\/shop_images\/Simply_Revival___Reason_5_-_Radical_Transparency-min.png",
-            "badge": "Reason 1",
+            "badge": "Reason 5",
             "badge_bg": "#60a1a2",
             "badge_color": "#ffffff",
             "title": "Radical Transparency",
@@ -1069,7 +1076,9 @@
             "bf_image": "shopify:\/\/shop_images\/Simply_Revival___DHT_Blocker_-_Before_Transformatoin-min.png",
             "text": "Withing",
             "hi_text": "90 Days",
-            "af_image": "shopify:\/\/shop_images\/Simply_Revival___The_1_Natural_DHT_Blocker_for_Hair_Loss___Trasformatoin_-_After-min.png"
+            "af_image": "shopify:\/\/shop_images\/Simply_Revival___The_1_Natural_DHT_Blocker_for_Hair_Loss___Trasformatoin_-_After-min.png",
+            "show_subtext": false,
+            "text_color": "#faf9f6"
           }
         }
       },
@@ -1396,6 +1405,24 @@
         "areviews_stars_colors": "#f3c621",
         "areviews_write_reviews_botton_color": "#373737"
       }
+    },
+    "areviews_1763084574_a82078": {
+      "type": "apps",
+      "blocks": {
+        "areviews_reviews_importer_areviews_display_reviews_DF56F8": {
+          "type": "shopify:\/\/apps\/areviews-reviews-importer\/blocks\/AreviewsDisplayReviews\/ab0ec5fe-c95b-4fd6-bfb8-db2a30d0756f",
+          "settings": {
+            "hide_areviews_title_rating": false,
+            "areviews_theme_font": "inherit",
+            "areviews_stars_colors": "#f3c621",
+            "areviews_write_reviews_botton_color": "#373737"
+          }
+        }
+      },
+      "block_order": [
+        "areviews_reviews_importer_areviews_display_reviews_DF56F8"
+      ],
+      "settings": {}
     }
   },
   "order": [
@@ -1418,6 +1445,7 @@
     "cwc_comparison_j8fkx6",
     "cwc_free_trial_yzRXJa",
     "cwc_faqs_gzUrmK",
-    "1629746450643786911"
+    "1629746450643786911",
+    "areviews_1763084574_a82078"
   ]
 }

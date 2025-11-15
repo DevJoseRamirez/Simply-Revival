@@ -1,0 +1,526 @@
+{
+  "sections": {
+    "main": {
+      "type": "main-page",
+      "disabled": true,
+      "settings": {}
+    },
+    "cwc_listicle_promotion_banner_849zYy": {
+      "type": "CWC_listicle_promotion_banner",
+      "name": "Listicle Promotion Banner",
+      "settings": {
+        "bg_color": "#222222",
+        "text_color": "#ffffff",
+        "padding_top": 5,
+        "padding_bottom": 5,
+        "top_text": "<p><strong>⚡ BLACK FRIDAY SPECIAL<\/strong><\/p>",
+        "bottom_text": "<p><strong>UP TO 70% OFF WITH FREE GIFTS<\/strong><\/p>",
+        "show_timer": true,
+        "min_hours": 3,
+        "max_hours": 6
+      }
+    },
+    "cwc_listicle_head_9BLiKF": {
+      "type": "CWC_listicle_head",
+      "blocks": {
+        "heading_M9x96z": {
+          "type": "heading",
+          "settings": {
+            "heading": "<h1>7 Signs Your Hair Loss Is Actually DHT (And What To Do About It)<\/h1>"
+          }
+        },
+        "author_eVXder": {
+          "type": "author",
+          "settings": {
+            "author_image": "shopify:\/\/shop_images\/Sarah_author-min.png",
+            "author_text": "<p>By Sarah M. - Wellness Writer<\/p>",
+            "author_date": "Last Updated Nov 10, 2025"
+          }
+        },
+        "summary_THNYCd": {
+          "type": "summary",
+          "settings": {
+            "summary": "<p><strong>Summary:<\/strong> If you're losing more hair than usual, it might not be stress or aging—it could be DHT, a hormone that's sabotaging your follicles. Here are 7 telltale signs and what you can do about it naturally.<\/p>",
+            "bold_color": "#009370"
+          }
+        }
+      },
+      "block_order": [
+        "heading_M9x96z",
+        "author_eVXder",
+        "summary_THNYCd"
+      ],
+      "name": "Listicle Head",
+      "settings": {
+        "bg_color": "#ffffff",
+        "text_color": "#222222",
+        "padding_top": 60,
+        "padding_bottom": 20
+      }
+    },
+    "cwc_listicle_image_text_mYbiJk": {
+      "type": "CWC_listicle_image_text",
+      "name": "Listicle Image Text",
+      "settings": {
+        "bg_color": "#ffffff",
+        "text_color": "#111111",
+        "pill_color": "#60a1a2",
+        "padding_top": 40,
+        "padding_bottom": 50,
+        "image_position": true,
+        "image": "shopify:\/\/shop_images\/lplist-male_hair_support_05-min.png",
+        "pill_text": "Excessive Shedding",
+        "title": "<h2>🚿 Sign #1: Your Shower Drain Clogs More Often<\/h2>",
+        "text": "<p><strong>What's Happening:<\/strong> If you're pulling clumps of hair out of the drain every week (or even daily), that's not normal shedding. Most people lose 50-100 hairs a day, but when DHT levels spike, that number can double or triple.<\/p>",
+        "text_2": "<p><strong>Why It's DHT:<\/strong> DHT attaches to your hair follicles and slowly shrinks them. The first sign? Excessive shedding. Your hair isn't just \"falling out\"—it's being pushed out by follicles that are literally suffocating.<\/p>"
+      }
+    },
+    "cwc_listicle_image_text_DQdfAB": {
+      "type": "CWC_listicle_image_text",
+      "name": "Listicle Image Text",
+      "settings": {
+        "bg_color": "#ffffff",
+        "text_color": "#111111",
+        "pill_color": "#60a1a2",
+        "padding_top": 40,
+        "padding_bottom": 50,
+        "image_position": false,
+        "image": "shopify:\/\/shop_images\/lplist-male_hair_support_07-min.png",
+        "pill_text": "Receding Hairline",
+        "title": "<h2>👀 Sign #2: Your Hairline Is Creeping Back<\/h2>",
+        "text": "<p><strong>What's Happening:<\/strong> You might not be \"bald\" yet, but you've noticed your forehead looks a bit bigger in photos. Or maybe your temples are forming that classic \"M\" shape. It starts subtle, but it's unmistakable once you see it.<\/p>",
+        "text_2": "<p><strong>Why It's DHT:<\/strong> The follicles at your hairline and crown are the most sensitive to DHT. When DHT levels rise, these areas are the first to thin. It's not bad luck or genetics alone—it's a hormonal attack on your most vulnerable follicles.<\/p>"
+      }
+    },
+    "cwc_listicle_image_text_Www933": {
+      "type": "CWC_listicle_image_text",
+      "name": "Listicle Image Text",
+      "settings": {
+        "bg_color": "#ffffff",
+        "text_color": "#111111",
+        "pill_color": "#60a1a2",
+        "padding_top": 40,
+        "padding_bottom": 50,
+        "image_position": true,
+        "image": "shopify:\/\/shop_images\/lplist-male_hair_support_04-min.png",
+        "pill_text": "Hair Thinning",
+        "title": "<h2>🪮 Sign #3: Your Hair Feels Thinner and Weaker<\/h2>",
+        "text": "<p><strong>What's Happening:<\/strong> Your hair used to feel thick and full, but now it feels fine, almost fragile. When you run your fingers through it, there's less volume. It doesn't hold a style like it used to.<\/p>",
+        "text_2": "<p><strong>Why It's DHT:<\/strong> DHT doesn't just cause hair loss—it causes \"miniaturization.\" Your follicles shrink, and the hair they produce gets thinner and weaker with each growth cycle.<\/p>"
+      }
+    },
+    "cwc_listicle_image_text_gJVeBF": {
+      "type": "CWC_listicle_image_text",
+      "name": "Listicle Image Text",
+      "settings": {
+        "bg_color": "#ffffff",
+        "text_color": "#111111",
+        "pill_color": "#60a1a2",
+        "padding_top": 40,
+        "padding_bottom": 50,
+        "image_position": false,
+        "image": "shopify:\/\/shop_images\/lplist-male_hair_support_02-min.png",
+        "pill_text": "Morning Shedding",
+        "title": "<h2>🛏️ Sign #4: Hair on Your Pillow Every Morning<\/h2>",
+        "text": "<p><strong>What's Happening:<\/strong> You wake up and there are strands on your pillowcase. Not just one or two—enough that you notice it every single morning. It's becoming part of your routine, and it's unsettling.<\/p><p><a href=\"\/pages\/black-friday-exclusive-offer\" title=\"Black Friday Exclusive Offer\">See How Men Are Fighting Hair Loss Naturally <\/a><\/p>",
+        "text_2": "<p><strong>Why It's DHT:<\/strong> Hair that's affected by DHT has a shorter growth cycle. It falls out faster and grows back weaker (if at all). The pillow test is one of the earliest warning signs.<\/p>"
+      }
+    },
+    "cwc_listicle_image_text_6CkYXJ": {
+      "type": "CWC_listicle_image_text",
+      "name": "Listicle Image Text",
+      "settings": {
+        "bg_color": "#ffffff",
+        "text_color": "#111111",
+        "pill_color": "#60a1a2",
+        "padding_top": 40,
+        "padding_bottom": 50,
+        "image_position": true,
+        "image": "shopify:\/\/shop_images\/lplist-male_hair_support_03-min.png",
+        "pill_text": "Early Onset",
+        "title": "<h2>👨 Sign #5: You're Under 35, But Losing Hair Fast<\/h2>",
+        "text": "<p><strong>What's Happening:<\/strong> Hair loss used to be an \"old man\" problem, but now guys in their 20s and 30s are dealing with it. If you're noticing thinning earlier than your dad did, something's off.<\/p><p><a href=\"\/pages\/black-friday-exclusive-offer\" title=\"Black Friday Exclusive Offer\">Find Out How to Balance DHT Naturally<\/a><\/p>",
+        "text_2": "<p><strong>Why It's DHT:<\/strong> Modern factors—stress, diet, environmental toxins—can cause DHT levels to spike earlier in life. Your body is producing too much of this hormone too soon.<\/p>"
+      }
+    },
+    "cwc_listicle_image_text_mweWnR": {
+      "type": "CWC_listicle_image_text",
+      "name": "Listicle Image Text",
+      "settings": {
+        "bg_color": "#ffffff",
+        "text_color": "#111111",
+        "pill_color": "#60a1a2",
+        "padding_top": 40,
+        "padding_bottom": 50,
+        "image_position": false,
+        "image": "shopify:\/\/shop_images\/lplist-male_hair_support_06-min.png",
+        "pill_text": "Treatment Failure",
+        "title": "<h2>🧴 Sign #6: Products Aren't Working Anymore<\/h2>",
+        "text": "<p><strong>What's Happening:<\/strong> You've tried thickening shampoos, scalp treatments, even expensive salon products. Nothing seems to help. The shedding continues, the thinning gets worse.<\/p><p><a href=\"\/pages\/black-friday-exclusive-offer\" title=\"Black Friday Exclusive Offer\">See How Simply Revival Targets the Root Cause<\/a><\/p>",
+        "text_2": "<p><strong>Why It's DHT:<\/strong> Most hair products treat the symptom (thin hair) but not the cause (excess DHT). If you're not addressing the hormone, no amount of topical treatments will stop the cycle.<\/p>"
+      }
+    },
+    "cwc_listicle_image_text_BMCfpi": {
+      "type": "CWC_listicle_image_text",
+      "name": "Listicle Image Text",
+      "settings": {
+        "bg_color": "#ffffff",
+        "text_color": "#111111",
+        "pill_color": "#60a1a2",
+        "padding_top": 40,
+        "padding_bottom": 50,
+        "image_position": true,
+        "image": "shopify:\/\/shop_images\/lplist-male_hair_support_01-min.png",
+        "pill_text": "Visible Scalp",
+        "title": "<h2>🪞 Sign #7: Your Scalp Shows Through<\/h2>",
+        "text": "<p><strong>What's Happening:<\/strong> Bright overhead lights, bathroom mirrors, photos from above—you've started to avoid them. You can see your scalp through your hair, and it's making you self-conscious.<\/p><p><a href=\"\/pages\/black-friday-exclusive-offer\" title=\"Black Friday Exclusive Offer\">Discover the Natural Formula Helping Men Regain Confidence<\/a><\/p>",
+        "text_2": "<p><strong>Why It's DHT:<\/strong> This is the stage where hair density has noticeably decreased. The good news? If you can still see hair (even if it's thin), those follicles can often be revived.<\/p>"
+      }
+    },
+    "cwc_listicle_center_text_4rb3tL": {
+      "type": "CWC_listicle_center_text",
+      "name": "Listicle Center Text",
+      "settings": {
+        "bg_color": "#fffee3",
+        "text_color": "#111111",
+        "padding_top": 60,
+        "padding_bottom": 0,
+        "title": "<h2>If You Recognized 3 or More of These Signs, Here's What You Need to Know<\/h2>",
+        "text": "<p>DHT is the hidden culprit behind most male hair loss. It's not your fault, and it's not just \"genetics.\" But here's the truth: if you don't address the DHT, the shedding won't stop. The thinning will continue. And eventually, those follicles will shut down for good.<\/p><p>For years, the only option was prescription drugs with scary side effects. But there's a better way.<\/p>",
+        "text_2": ""
+      }
+    },
+    "cwc_listicle_buy_box_aWGq78": {
+      "type": "CWC_listicle_buy_box",
+      "blocks": {
+        "timer_hqgyyg": {
+          "type": "timer",
+          "settings": {
+            "use_synced_timer": true,
+            "synced_timer_section_id": "global_promo_timer"
+          }
+        },
+        "offer_c43iiH": {
+          "type": "offer",
+          "disabled": true,
+          "settings": {
+            "title": "<h4>Limited Time Offer!<\/h4>",
+            "text": "<p>This is a special, time-sensitive offer.<\/p>",
+            "subtext": "<p>Risk: High | Free Shipping<\/p>",
+            "button_text": "Claim Offer",
+            "button_link": "",
+            "button_bg_color": "",
+            "button_text_color": ""
+          }
+        }
+      },
+      "block_order": [
+        "timer_hqgyyg",
+        "offer_c43iiH"
+      ],
+      "name": "Listicle Buy Box",
+      "settings": {
+        "bg_color": "#fffee3",
+        "card_bg_color": "#ffffff",
+        "text_color": "#111111",
+        "bold_color": "#ef4444",
+        "padding_top": 80,
+        "padding_bottom": 60,
+        "image": "shopify:\/\/shop_images\/hair_support-1-min.png",
+        "sub_head": "<p>🎁 FREE GIFTS WITH YOUR ORDER<\/p>",
+        "title": "<h3><strong>UP TO 70% OFF <\/strong>FOR A LIMITED TIME ONLY!<\/h3>",
+        "sub_text": "<p>This limited-time deal is in high demand and stock keeps selling out<\/p>",
+        "floating_badge_text": "⚡ BLACK FRIDAY SPECIAL",
+        "button_color": "#125657",
+        "button_text_color": "#ffffff",
+        "button_text": "GET 60% OFF",
+        "button_link": "shopify:\/\/pages\/black-friday-exclusive-offer",
+        "subtext": "<p>Try it today with a 30-Day Money-Back Guarantee!<\/p>"
+      }
+    },
+    "cwc_listicle_center_text_KmMyTj": {
+      "type": "CWC_listicle_center_text",
+      "disabled": true,
+      "name": "Listicle Center Text",
+      "settings": {
+        "bg_color": "#ffffff",
+        "text_color": "#111111",
+        "padding_top": 60,
+        "padding_bottom": 60,
+        "title": "<h2>If You Recognized 3 or More of These Signs, Here's What You Need to Know<\/h2>",
+        "text": "<p>DHT is the hidden culprit behind most male hair loss. It's not your fault, and it's not just \"genetics.\" But here's the truth: if you don't address the DHT, the shedding won't stop. The thinning will continue. And eventually, those follicles will shut down for good.<\/p><p>For years, the only option was prescription drugs with scary side effects. But there's a better way.<\/p>",
+        "text_2": ""
+      }
+    },
+    "cwc_listicle_content_stack_PTUTEk": {
+      "type": "CWC_listicle_content_stack",
+      "disabled": true,
+      "name": "Listicle Content Stack",
+      "settings": {
+        "bg_color": "#ffffff",
+        "text_color": "#111111",
+        "padding_top": 60,
+        "padding_bottom": 60,
+        "title": "<h2>Introducing Simply Revival: The Natural DHT Blocker That's Changing the Game<\/h2>",
+        "text": "<p>An all-natural supplement that targets DHT at the source, combining 10 powerful herbs to help block DHT, reduce shedding, and support new hair growth.<\/p>",
+        "text_2": "",
+        "image": "shopify:\/\/shop_images\/Follicle-min.png"
+      }
+    },
+    "cwc_listicle_columns_R4Jxqb": {
+      "type": "CWC_listicle_columns",
+      "blocks": {
+        "column_Q7hckE": {
+          "type": "column",
+          "settings": {
+            "title": "✅ Blocks DHT Naturally",
+            "text": "<p>Saw Palmetto inhibits the enzyme that converts testosterone into DHT, protecting your follicles from shrinking.<\/p>"
+          }
+        },
+        "column_AinpR3": {
+          "type": "column",
+          "settings": {
+            "title": "✅ Nourishes Your Scalp",
+            "text": "<p>Stinging Nettle and other botanicals deliver essential vitamins and minerals that strengthen hair from the inside out.<\/p>"
+          }
+        },
+        "column_tpNj7b": {
+          "type": "column",
+          "settings": {
+            "title": "✅ No Harsh Side Effects",
+            "text": "<p>Unlike prescriptions, Simply Revival is made from clean, plant-based ingredients. No chemicals, no fillers, no scary fine print.<\/p>"
+          }
+        },
+        "column_LaXMQB": {
+          "type": "column",
+          "settings": {
+            "title": "✅ Real Results",
+            "text": "<p>Thousands of men are seeing less shedding, thicker hair, and regrowth in areas they thought were gone for good.<\/p>"
+          }
+        }
+      },
+      "block_order": [
+        "column_Q7hckE",
+        "column_AinpR3",
+        "column_tpNj7b",
+        "column_LaXMQB"
+      ],
+      "name": "Listicle Columns",
+      "settings": {
+        "bg_color": "#fffee3",
+        "text_color": "#37a637",
+        "card_bg_color": "#ffffff",
+        "padding_top": 0,
+        "padding_bottom": 60,
+        "title": "",
+        "text": "",
+        "text_2": ""
+      }
+    },
+    "cwc_social_proof_yt3UT8": {
+      "type": "CWC_social_proof",
+      "blocks": {
+        "image_9ECnz3": {
+          "type": "image",
+          "settings": {}
+        },
+        "image_ABBmE7": {
+          "type": "image",
+          "settings": {}
+        }
+      },
+      "block_order": [
+        "image_9ECnz3",
+        "image_ABBmE7"
+      ],
+      "name": "Social Proof",
+      "settings": {
+        "social_proof_image_list": "social-proof-image-list-o5xpgpmm",
+        "show_stars": true,
+        "star_link": "",
+        "heading": "<h3>Real Stories, <strong>Real Results<\/strong><\/h3>",
+        "bold_color": "#125657",
+        "text": "<p>See What customer Are Saying About Simply Revival<\/p>",
+        "bg_color": "#ffffff",
+        "text_color": "#111111",
+        "padding_top": 40,
+        "padding_bottom": 20
+      }
+    },
+    "cwc_testimonials_CQHBKE": {
+      "type": "CWC_testimonials",
+      "blocks": {
+        "testimonial_wNycg4": {
+          "type": "testimonial",
+          "settings": {
+            "star_rating": "4.9",
+            "title": "Amazing product!",
+            "text": "This product completely exceeded my expectations...",
+            "author_name": "Jane D.",
+            "feature_one": "Eco-friendly",
+            "feature_two": "Durable"
+          }
+        },
+        "testimonial_KwHMTi": {
+          "type": "testimonial",
+          "settings": {
+            "star_rating": "4.9",
+            "title": "Amazing product!",
+            "text": "This product completely exceeded my expectations...",
+            "author_name": "Jane D.",
+            "feature_one": "Eco-friendly",
+            "feature_two": "Durable"
+          }
+        },
+        "testimonial_6hefyf": {
+          "type": "testimonial",
+          "settings": {
+            "star_rating": "4.9",
+            "title": "Amazing product!",
+            "text": "This product completely exceeded my expectations...",
+            "author_name": "Jane D.",
+            "feature_one": "Eco-friendly",
+            "feature_two": "Durable"
+          }
+        }
+      },
+      "block_order": [
+        "testimonial_wNycg4",
+        "testimonial_KwHMTi",
+        "testimonial_6hefyf"
+      ],
+      "name": "Testimonials",
+      "settings": {
+        "testimonials_collection": "main-testimonial",
+        "bg_color": "#ffffff",
+        "text_color": "#111111",
+        "card_bg": "#ffffff",
+        "highlight_color": "#009370",
+        "padding_top": 20,
+        "padding_bottom": 40
+      }
+    },
+    "cwc_listicle_card_image_text_Wx9mFf": {
+      "type": "CWC_listicle_card_image_text",
+      "disabled": true,
+      "name": "Listicle Card Image Text",
+      "settings": {
+        "bg_color": "#ffffff",
+        "card_bg_color": "#f0fdf4",
+        "text_color": "#111111",
+        "padding_top": 60,
+        "padding_bottom": 60,
+        "image_first": false,
+        "image": "shopify:\/\/shop_images\/Follicle-min.png",
+        "number_text": "01",
+        "title": "<h2>Your Multivitamin Uses Cheap Forms Your Body Can't Absorb<\/h2>",
+        "text": "<p>Not all B12 is created equal. The cheap version in most drugstore vitamins is like giving your body instructions in a foreign language...<\/p>",
+        "badge_text": "Badge text",
+        "badge_bg_color": "#34bf49"
+      }
+    },
+    "cwc_listicle_offer_box_deaBDt": {
+      "type": "CWC_listicle_offer_box",
+      "name": "Listicle Offer Box",
+      "settings": {
+        "bg_color": "#ffffff",
+        "card_bg_color": "#d0f0f2",
+        "text_color": "#111111",
+        "button_color": "#125657",
+        "button_text_color": "#ffffff",
+        "padding_top": 40,
+        "padding_bottom": 60,
+        "title": "<h2>Ready to Stop DHT Before It's Too Late?<\/h2>",
+        "text": "<p>Due to high demand, Simply Revival can be hard to find in stock. But right now, a new batch is available.<\/p><p>If you recognized 3 or more of the signs above, this is your chance to fight back—naturally, safely, and effectively.<\/p>",
+        "text_2": "",
+        "button_text": "Check Availability Now",
+        "button_link": "shopify:\/\/pages\/black-friday-exclusive-offer",
+        "subtext": "<p>Made in the USA | Third-Party Tested | 365-Day Money-Back Guarantee<\/p>"
+      }
+    },
+    "cwc_video_testimonials_WA6Xrc": {
+      "type": "CWC_video_testimonials",
+      "blocks": {
+        "testimonial_mCmQTJ": {
+          "type": "testimonial",
+          "settings": {
+            "video_url": "",
+            "author_name": "Customer Name"
+          }
+        },
+        "testimonial_RXw88H": {
+          "type": "testimonial",
+          "settings": {
+            "video_url": "",
+            "author_name": "Customer Name"
+          }
+        },
+        "testimonial_F9xPcx": {
+          "type": "testimonial",
+          "settings": {
+            "video_url": "",
+            "author_name": "Customer Name"
+          }
+        },
+        "button_VhTP4d": {
+          "type": "button",
+          "settings": {
+            "text": "Try Risk-Free Today",
+            "link": "shopify:\/\/pages\/black-friday-exclusive-offer",
+            "button_bg_color": "#125657",
+            "button_text_color": "#ffffff"
+          }
+        },
+        "guarantee_text_fATMQH": {
+          "type": "guarantee_text",
+          "settings": {
+            "text": "365-day money back guarantee",
+            "icon": "shopify:\/\/shop_images\/Simply_Revival___Gurantee-min.png"
+          }
+        }
+      },
+      "block_order": [
+        "testimonial_mCmQTJ",
+        "testimonial_RXw88H",
+        "testimonial_F9xPcx",
+        "button_VhTP4d",
+        "guarantee_text_fATMQH"
+      ],
+      "name": "Video Testimonials",
+      "settings": {
+        "video_testimonials_collection": "video-testimonial-list-lnxzuxpg",
+        "heading": "<h3>Real Stories, <strong>Real Results<\/strong><\/h3>",
+        "bold_color": "#125657",
+        "text": "<p>See why thousands of people love our products<\/p>",
+        "bg_color": "#faf9f6",
+        "text_color": "#111111",
+        "button_bg": "#125657",
+        "button_text": "#ffffff",
+        "padding_top": 60,
+        "padding_bottom": 60
+      }
+    }
+  },
+  "order": [
+    "main",
+    "cwc_listicle_promotion_banner_849zYy",
+    "cwc_listicle_head_9BLiKF",
+    "cwc_listicle_image_text_mYbiJk",
+    "cwc_listicle_image_text_DQdfAB",
+    "cwc_listicle_image_text_Www933",
+    "cwc_listicle_image_text_gJVeBF",
+    "cwc_listicle_image_text_6CkYXJ",
+    "cwc_listicle_image_text_mweWnR",
+    "cwc_listicle_image_text_BMCfpi",
+    "cwc_listicle_center_text_4rb3tL",
+    "cwc_listicle_buy_box_aWGq78",
+    "cwc_listicle_center_text_KmMyTj",
+    "cwc_listicle_content_stack_PTUTEk",
+    "cwc_listicle_columns_R4Jxqb",
+    "cwc_social_proof_yt3UT8",
+    "cwc_testimonials_CQHBKE",
+    "cwc_listicle_card_image_text_Wx9mFf",
+    "cwc_listicle_offer_box_deaBDt",
+    "cwc_video_testimonials_WA6Xrc"
+  ]
+}
