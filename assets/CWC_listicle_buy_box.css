@@ -18,6 +18,15 @@
     box-sizing: border-box;
 }
 
+#CWC_listicle_buy_box--anchor {
+    visibility: hidden;
+    position: relative;
+    top: -12rem;
+    height: 3px;
+    /* background: red; */
+    /* visibility: visible; */
+}
+
 /* ================================
    Card
    ================================ */
@@ -336,6 +345,11 @@
    ================================ */
 
 @media (max-width: 768px) {
+
+    #CWC_listicle_buy_box--anchor {
+        top: -4rem;
+    }
+
     .cwc-buy-box__offer-timer-wrapper {
 
         font-size: 1rem;

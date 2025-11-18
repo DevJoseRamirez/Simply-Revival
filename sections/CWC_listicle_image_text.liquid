@@ -27,9 +27,10 @@
           {% endif %}
           <div class="cwc-image-text__image">
             <img
-              src="{{ section.settings.image | image_url: width: 500 }}"
+              src="{{ section.settings.image | image_url: width: 450 }}"
               alt="Content image"
-              loading="lazy"
+              loading="eager"
+              priority="mediums"
             >
           </div>
         </div>

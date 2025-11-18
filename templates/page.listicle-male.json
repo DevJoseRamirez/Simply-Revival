@@ -496,7 +496,7 @@
         "text_color": "#111111",
         "button_bg": "#125657",
         "button_text": "#ffffff",
-        "padding_top": 60,
+        "padding_top": 40,
         "padding_bottom": 60
       }
     }
