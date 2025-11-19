@@ -22,9 +22,10 @@
     visibility: hidden;
     position: relative;
     top: -12rem;
-    height: 3px;
+    height: 0px;
     /* background: red; */
     /* visibility: visible; */
+    /* background: var(--section-bg); */
 }
 
 /* ================================
@@ -315,6 +316,7 @@
     /* Red for risk */
     display: flex;
     gap: 2px;
+    color: var(--bold-color);
 }
 
 .cwc-buy-box__offer-timer-value {

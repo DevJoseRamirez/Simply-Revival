@@ -3,6 +3,8 @@
     --section-bg: {{ section.settings.bg_color | default: '#ffffff' }};
     --card-bg: {{ section.settings.card_bg_color | default: '#e0f2fe' }}; /* Light blue from image */
     --text-color: {{ section.settings.text_color | default: '#111111' }};
+    --card-bg-border: {{ section.settings.card_bg_color | color_darken: 10 }};
+    --alt-text-color: {{ section.settings.card_bg_color | color_darken: 74 }};
     --padding-top: {{ section.settings.padding_top | default: 60 }}px;
     --padding-bottom: {{ section.settings.padding_bottom | default: 60 }}px;
     --padding-top-mobile: {{ section.settings.padding_top | times: 0.5 }}px;
@@ -99,7 +101,7 @@
       "type": "richtext",
       "id": "text_2",
       "label": "Additional Text (Optional)",
-      "default": ""
+      "default": "<p>Secondary text input.</p>"
     }
   ],
   "presets": [

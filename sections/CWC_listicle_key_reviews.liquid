@@ -1,0 +1,170 @@
+{% style %}
+  #CWC_listicle_key_reviews-{{ section.id }} {
+    --section-bg: {{ section.settings.bg_color | default: '#ffffff' }};
+    --card-bg: {{ section.settings.card_bg_color | default: '#fcfcfc' }};
+    --text-color: {{ section.settings.text_color | default: '#111111' }};
+    --star-color: {{ section.settings.star_color | default: '#ffc107' }};
+    --padding-top: {{ section.settings.padding_top | default: 60 }}px;
+    --padding-bottom: {{ section.settings.padding_bottom | default: 60 }}px;
+    --padding-top-mobile: {{ section.settings.padding_top | times: 0.5 }}px;
+    --padding-bottom-mobile: {{ section.settings.padding_bottom | times: 0.5 }}px;
+  }
+{% endstyle %}
+
+{{ 'CWC_listicle_key_reviews.css' | asset_url | stylesheet_tag }}
+
+<section
+  id="CWC_listicle_key_reviews-{{ section.id }}"
+  class="cwc-key-reviews"
+>
+  <div class="cwc-key-reviews__container">
+    {% if section.settings.section_title != blank %}
+      <div class="cwc-key-reviews__section-title rte">
+        {{ section.settings.section_title }}
+      </div>
+    {% endif %}
+
+    {% if section.blocks.size > 0 %}
+      <div class="cwc-key-reviews__grid cwc-key-reviews__grid--{{ section.blocks.size }}">
+        {% for block in section.blocks %}
+          <div class="cwc-key-reviews__card" {{ block.shopify_attributes }}>
+            {% comment %} Star Rating Snippet Call {% endcomment %}
+            <div class="cwc-key-reviews__stars">
+              {% render 'CWC_rating_stars', fill_color: section.settings.star_color %}
+            </div>
+
+            {% if block.settings.review_text != blank %}
+              <div class="cwc-key-reviews__review-text rte">
+                {{ block.settings.review_text }}
+              </div>
+            {% endif %}
+
+            <div class="cwc-key-reviews__author-info">
+              {% if block.settings.author_image != blank %}
+                <div class="cwc-key-reviews__author-image-wrapper">
+                  {{
+                    block.settings.author_image
+                    | image_url: width: 50
+                    | image_tag: loading: 'lazy', sizes: '50px', widths: '50', alt: block.settings.author_name
+                  }}
+                </div>
+              {% else %}
+                {% comment %} Placeholder for initial letter if no image is provided {% endcomment %}
+                {% liquid
+                  assign first_letter = block.settings.author_name | strip_html | truncate: 1, '' | upcase
+                %}
+                {% if first_letter != blank %}
+                  <div class="cwc-key-reviews__author-initial">
+                    {{ first_letter }}
+                  </div>
+                {% endif %}
+              {% endif %}
+
+              <div class="cwc-key-reviews__author-details">
+                {% if block.settings.author_name != blank %}
+                  <div class="cwc-key-reviews__author-name rte">
+                    {{ block.settings.author_name }}
+                  </div>
+                {% endif %}
+                <div class="cwc-key-reviews__verified-customer">Verified Customer</div>
+              </div>
+            </div>
+          </div>
+        {% endfor %}
+      </div>
+    {% endif %}
+  </div>
+</section>
+
+{% schema %}
+{
+  "name": "Listicle Key Reviews",
+  "tag": "section",
+  "class": "section",
+  "settings": [
+    {
+      "type": "color",
+      "id": "bg_color",
+      "label": "Section Background color",
+      "default": "#ffffff"
+    },
+    {
+      "type": "color",
+      "id": "card_bg_color",
+      "label": "Card Background color",
+      "default": "#FAF8F3"
+    },
+    {
+      "type": "color",
+      "id": "text_color",
+      "label": "Text color",
+      "default": "#111111"
+    },
+    {
+      "type": "color",
+      "id": "star_color",
+      "label": "Star Color",
+      "default": "#ffc107"
+    },
+    {
+      "type": "range",
+      "id": "padding_top",
+      "min": 0,
+      "max": 100,
+      "step": 10,
+      "unit": "px",
+      "label": "Padding top",
+      "default": 60
+    },
+    {
+      "type": "range",
+      "id": "padding_bottom",
+      "min": 0,
+      "max": 100,
+      "step": 10,
+      "unit": "px",
+      "label": "Padding bottom",
+      "default": 60
+    },
+    {
+      "type": "richtext",
+      "id": "section_title",
+      "label": "Section Title",
+      "default": "<h2>What Moms Are Saying:</h2>"
+    }
+  ],
+  "blocks": [
+    {
+      "type": "review",
+      "name": "Review Card",
+      "settings": [
+        {
+          "type": "image_picker",
+          "id": "author_image",
+          "label": "Author Image"
+        },
+        {
+          "type": "richtext",
+          "id": "review_text",
+          "label": "Review Text",
+          "default": "<p>\"I didn't want to take anything harsh while breastfeeding, so Simply Revival was perfect. It's all-natural, and it actually works. My hairline is filling back in and I'm not finding clumps of hair in the shower anymore.\"</p>"
+        },
+        {
+          "type": "richtext",
+          "id": "author_name",
+          "label": "Author Name",
+          "default": "<p>Olivia T.</p>"
+        }
+      ]
+    }
+  ],
+  "max_blocks": 3,
+  "presets": [
+    {
+      "name": "Listicle Key Reviews",
+      "category": "Listicle",
+      "blocks": [{ "type": "review" }, { "type": "review" }, { "type": "review" }]
+    }
+  ]
+}
+{% endschema %}

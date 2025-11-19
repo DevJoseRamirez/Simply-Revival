@@ -1,0 +1,192 @@
+/* ================================
+   CWC Listicle Key Reviews Styles
+   ================================ */
+
+.cwc-key-reviews {
+    background: var(--section-bg);
+    color: var(--text-color);
+    padding-top: var(--padding-top);
+    padding-bottom: var(--padding-bottom);
+}
+
+.cwc-key-reviews__container {
+    max-width: 1000px;
+    max-width: 1000px;
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 0 2rem;
+    box-sizing: border-box;
+}
+
+/* ================================
+   Section Title
+   ================================ */
+
+.cwc-key-reviews__section-title {
+    text-align: center;
+    margin-bottom: 3rem;
+}
+
+.cwc-key-reviews__section-title h1,
+.cwc-key-reviews__section-title h2,
+.cwc-key-reviews__section-title h3,
+.cwc-key-reviews__section-title p {
+    /* font-size: 2rem; */
+    font-weight: 700;
+    line-height: 1.2;
+    margin: 0;
+    color: inherit;
+}
+
+/* ================================
+   Grid Layout
+   ================================ */
+
+.cwc-key-reviews__grid {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 2rem;
+}
+
+.cwc-key-reviews__grid--1 {
+    grid-template-columns: 1fr;
+}
+
+.cwc-key-reviews__grid--2 {
+    grid-template-columns: repeat(2, 1fr);
+}
+
+/* ================================
+   Review Card
+   ================================ */
+
+.cwc-key-reviews__card {
+    background: var(--card-bg);
+    border-radius: 12px;
+    padding: 2rem;
+    box-sizing: border-box;
+    display: flex;
+    flex-direction: column;
+    box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.05), 0 2px 4px -2px rgba(0, 0, 0, 0.05);
+    /* testing */
+    box-shadow: 0 10px 15px -3px #0000001a, 0 4px 6px -2px #0000000d;
+
+}
+
+.cwc-key-reviews__stars {
+    margin-bottom: 1rem;
+}
+
+.cwc-key-reviews__stars svg {
+    height: auto;
+    width: 6.75rem;
+}
+
+
+.cwc-key-reviews__review-text {
+    font-size: 1rem;
+    line-height: 1.6;
+    margin-bottom: 1.5rem;
+    flex-grow: 1;
+}
+
+.cwc-key-reviews__review-text p {
+    margin: 0;
+    font-size: 1rem;
+}
+
+/* ================================
+   Author Info
+   ================================ */
+
+.cwc-key-reviews__author-info {
+    display: flex;
+    align-items: center;
+    margin-top: auto;
+    /* Push to bottom */
+}
+
+.cwc-key-reviews__author-image-wrapper,
+.cwc-key-reviews__author-initial {
+    width: 40px;
+    height: 40px;
+    border-radius: 50%;
+    overflow: hidden;
+    margin-right: 0.75rem;
+    flex-shrink: 0;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 1.25rem;
+    font-weight: 700;
+    color: #ffffff;
+    background: #10b981;
+    /* Default background for initial */
+}
+
+.cwc-key-reviews__author-image-wrapper img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+}
+
+.cwc-key-reviews__author-name {
+    font-size: 1rem;
+    font-weight: 600;
+    line-height: 1.2;
+    margin: 0rem;
+}
+
+.cwc-key-reviews__author-name p {
+    margin: 0;
+}
+
+.cwc-key-reviews__verified-customer {
+    font-size: 0.75rem;
+    font-size: .8rem;
+    color: #6b7280;
+    /* Gray text for verified customer */
+    line-height: 1.2;
+}
+
+/* ================================
+   Mobile Responsive
+   ================================ */
+
+@media (max-width: 992px) {
+    .cwc-key-reviews__grid {
+        grid-template-columns: repeat(2, 1fr);
+    }
+}
+
+@media (max-width: 768px) {
+    .cwc-key-reviews__container {
+        padding: 0 1.5rem;
+    }
+
+    .cwc-key-reviews__grid {
+        grid-template-columns: 1fr;
+        /* Stack vertically */
+        gap: 1.5rem;
+    }
+
+    .cwc-key-reviews__section-title {
+        margin-bottom: 2rem;
+    }
+
+    .cwc-key-reviews__section-title h1,
+    .cwc-key-reviews__section-title h2,
+    .cwc-key-reviews__section-title h3,
+    .cwc-key-reviews__section-title p {
+        /* font-size: 1.5rem; */
+    }
+
+    .cwc-key-reviews__card {
+        padding: 1.5rem;
+    }
+
+    .cwc-key-reviews {
+        padding-top: var(--padding-top-mobile);
+        padding-bottom: var(--padding-bottom-mobile);
+    }
+}

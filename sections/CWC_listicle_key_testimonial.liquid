@@ -10,59 +10,62 @@
   }
 {% endstyle %}
 
-{{ 'CWC_key_testimonial.css' | asset_url | stylesheet_tag }}
+{{ 'CWC_listicle_key_testimonial.css' | asset_url | stylesheet_tag }}
 
 <section
   id="CWC_key_testimonial-{{ section.id }}"
-  class="cwc-key-testimonial"
+  class="cwc-listicle-key-testimonial"
 >
-  <div class="cwc-key-testimonial__container">
-    <div class="cwc-key-testimonial__content">
-
+  <div class="cwc-listicle-key-testimonial__container">
+    <div class="cwc-listicle-key-testimonial__content">
       {% if section.settings.image != blank or section.settings.testimonial_author != blank %}
-        <div class="cwc-key-testimonial__author-info">
+        <div class="cwc-listicle-key-testimonial__author-info">
           {% if section.settings.image != blank %}
-            <div class="cwc-key-testimonial__image-wrapper">
-              {{ section.settings.image | image_url: width: 100 | image_tag:
-                loading: 'lazy',
-                sizes: "100px",
-                widths: "50, 100",
-                alt: section.settings.testimonial_author
+            <div class="cwc-listicle-key-testimonial__image-wrapper">
+              {{
+                section.settings.image
+                | image_url: width: 100
+                | image_tag:
+                  loading: 'lazy',
+                  sizes: '100px',
+                  widths: '50, 100',
+                  alt: section.settings.testimonial_author
               }}
             </div>
           {% endif %}
 
-          {% if section.settings.testimonial_author != blank %}
-            <div class="cwc-key-testimonial__author-name rte">
-              {{ section.settings.testimonial_author }}
-            </div>
-          {% endif %}
+          {% comment %}
+            {% if section.settings.testimonial_author != blank %}
+              <div class="cwc-listicle-key-testimonial__author-name rte">
+                {{ section.settings.testimonial_author }}
+              </div>
+            {% endif %}
+          {% endcomment %}
         </div>
       {% endif %}
 
       {% comment %} Star Rating Snippet Call {% endcomment %}
-      <div class="cwc-key-testimonial__stars">
-        {% render 'CWC_rating_stars', fill: section.settings.star_color %}
+      <div class="cwc-listicle-key-testimonial__stars">
+        {% render 'CWC_rating_stars', fill_color: section.settings.star_color %}
       </div>
 
       {% if section.settings.title != blank %}
-        <div class="cwc-key-testimonial__title rte">
+        <div class="cwc-listicle-key-testimonial__title rte">
           {{ section.settings.title }}
         </div>
       {% endif %}
 
       {% if section.settings.text != blank %}
-        <div class="cwc-key-testimonial__text rte">
+        <div class="cwc-listicle-key-testimonial__text rte">
           {{ section.settings.text }}
         </div>
       {% endif %}
 
       {% if section.settings.author != blank %}
-        <div class="cwc-key-testimonial__author rte">
+        <div class="cwc-listicle-key-testimonial__author rte">
           {{ section.settings.author }}
         </div>
       {% endif %}
-
     </div>
   </div>
 </section>
