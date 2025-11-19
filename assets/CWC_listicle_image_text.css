@@ -120,7 +120,7 @@
 .cwc-image-text__title h2,
 .cwc-image-text__title h3 {
     margin: 0;
-    font-size: 1.875rem;
+    /* font-size: 1.875rem; */
     font-weight: 700;
     line-height: 1.3;
     color: inherit;

@@ -1,0 +1,151 @@
+{% style %}
+  #CWC_key_testimonial-{{ section.id }} {
+    --section-bg: {{ section.settings.bg_color | default: '#f8f4ff' }}; /* Light purple from image */
+    --text-color: {{ section.settings.text_color | default: '#111111' }};
+    --star-color: {{ section.settings.star_color | default: '#ffc107' }};
+    --padding-top: {{ section.settings.padding_top | default: 80 }}px;
+    --padding-bottom: {{ section.settings.padding_bottom | default: 80 }}px;
+    --padding-top-mobile: {{ section.settings.padding_top | times: 0.5 }}px;
+    --padding-bottom-mobile: {{ section.settings.padding_bottom | times: 0.5 }}px;
+  }
+{% endstyle %}
+
+{{ 'CWC_key_testimonial.css' | asset_url | stylesheet_tag }}
+
+<section
+  id="CWC_key_testimonial-{{ section.id }}"
+  class="cwc-key-testimonial"
+>
+  <div class="cwc-key-testimonial__container">
+    <div class="cwc-key-testimonial__content">
+
+      {% if section.settings.image != blank or section.settings.testimonial_author != blank %}
+        <div class="cwc-key-testimonial__author-info">
+          {% if section.settings.image != blank %}
+            <div class="cwc-key-testimonial__image-wrapper">
+              {{ section.settings.image | image_url: width: 100 | image_tag:
+                loading: 'lazy',
+                sizes: "100px",
+                widths: "50, 100",
+                alt: section.settings.testimonial_author
+              }}
+            </div>
+          {% endif %}
+
+          {% if section.settings.testimonial_author != blank %}
+            <div class="cwc-key-testimonial__author-name rte">
+              {{ section.settings.testimonial_author }}
+            </div>
+          {% endif %}
+        </div>
+      {% endif %}
+
+      {% comment %} Star Rating Snippet Call {% endcomment %}
+      <div class="cwc-key-testimonial__stars">
+        {% render 'CWC_rating_stars', fill: section.settings.star_color %}
+      </div>
+
+      {% if section.settings.title != blank %}
+        <div class="cwc-key-testimonial__title rte">
+          {{ section.settings.title }}
+        </div>
+      {% endif %}
+
+      {% if section.settings.text != blank %}
+        <div class="cwc-key-testimonial__text rte">
+          {{ section.settings.text }}
+        </div>
+      {% endif %}
+
+      {% if section.settings.author != blank %}
+        <div class="cwc-key-testimonial__author rte">
+          {{ section.settings.author }}
+        </div>
+      {% endif %}
+
+    </div>
+  </div>
+</section>
+
+{% schema %}
+{
+  "name": "Listicle Key Testimonial",
+  "tag": "section",
+  "class": "section",
+  "settings": [
+    {
+      "type": "color",
+      "id": "bg_color",
+      "label": "Background color",
+      "default": "#f8f4ff"
+    },
+    {
+      "type": "color",
+      "id": "text_color",
+      "label": "Text color",
+      "default": "#111111"
+    },
+    {
+      "type": "color",
+      "id": "star_color",
+      "label": "Star Color",
+      "default": "#ffc107"
+    },
+    {
+      "type": "range",
+      "id": "padding_top",
+      "min": 0,
+      "max": 100,
+      "step": 10,
+      "unit": "px",
+      "label": "Padding top",
+      "default": 80
+    },
+    {
+      "type": "range",
+      "id": "padding_bottom",
+      "min": 0,
+      "max": 100,
+      "step": 10,
+      "unit": "px",
+      "label": "Padding bottom",
+      "default": 80
+    },
+    {
+      "type": "image_picker",
+      "id": "image",
+      "label": "Author Image"
+    },
+    {
+      "type": "richtext",
+      "id": "testimonial_author",
+      "label": "Author Name (Above Stars)",
+      "default": "<p>Emma</p>"
+    },
+    {
+      "type": "richtext",
+      "id": "title",
+      "label": "Testimonial Quote (Title)",
+      "default": "<h2>\"I Didn't Realize How Much Hair I Was Losing Until It Finally Stopped.\"</h2>"
+    },
+    {
+      "type": "richtext",
+      "id": "text",
+      "label": "Testimonial Body Text",
+      "default": "<p>I was losing so much hair after my daughter was born—it was everywhere. I started Simply Revival at 4 months postpartum and within a month, the shedding slowed down. Now at 7 months, my hair is growing back and I feel like myself again.</p>"
+    },
+    {
+      "type": "richtext",
+      "id": "author",
+      "label": "Author Footer (e.g., Name, Verified Customer)",
+      "default": "<p>— Emma R., Verified Customer</p>"
+    }
+  ],
+  "presets": [
+    {
+      "name": "Listicle Key Testimonial",
+      "category": "Listicle"
+    }
+  ]
+}
+{% endschema %}

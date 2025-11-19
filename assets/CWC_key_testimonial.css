@@ -1,0 +1,159 @@
+/* ================================
+   CWC Key Testimonial Styles
+   ================================ */
+
+.cwc-key-testimonial {
+    background: var(--section-bg);
+    color: var(--text-color);
+    padding-top: var(--padding-top);
+    padding-bottom: var(--padding-bottom);
+    text-align: center;
+}
+
+.cwc-key-testimonial__container {
+    max-width: 1000px;
+    margin: 0 auto;
+    padding: 0 2rem;
+    box-sizing: border-box;
+}
+
+.cwc-key-testimonial__content {
+    max-width: 800px;
+    margin: 0 auto;
+}
+
+/* ================================
+   Author Info (Image and Name)
+   ================================ */
+
+.cwc-key-testimonial__author-info {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    margin-bottom: 1.5rem;
+}
+
+.cwc-key-testimonial__image-wrapper {
+    width: 100px;
+    height: 100px;
+    border-radius: 50%;
+    overflow: hidden;
+    margin-bottom: 0.5rem;
+    position: relative;
+    background: #e0d9f7; /* Light purple background for the circle */
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+}
+
+.cwc-key-testimonial__image-wrapper img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    display: block;
+}
+
+.cwc-key-testimonial__author-name {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    font-weight: 600;
+    font-size: 1rem;
+    color: #4c1d95; /* Dark purple text color */
+    line-height: 1;
+}
+
+.cwc-key-testimonial__author-name p {
+    margin: 0;
+}
+
+/* ================================
+   Stars
+   ================================ */
+
+.cwc-key-testimonial__stars {
+    margin-bottom: 2rem;
+}
+
+/* Assuming CWC_rating_stars snippet uses SVG or similar,
+   we'll rely on the fill color passed via Liquid. */
+
+/* ================================
+   Title (Quote)
+   ================================ */
+
+.cwc-key-testimonial__title {
+    margin-bottom: 2rem;
+    font-style: italic;
+}
+
+.cwc-key-testimonial__title h1,
+.cwc-key-testimonial__title h2,
+.cwc-key-testimonial__title h3,
+.cwc-key-testimonial__title p {
+    font-size: 1.8rem;
+    font-weight: 500;
+    line-height: 1.4;
+    margin: 0;
+    color: inherit;
+}
+
+/* ================================
+   Body Text
+   ================================ */
+
+.cwc-key-testimonial__text {
+    max-width: 600px;
+    margin: 0 auto 2rem auto;
+    font-size: 1rem;
+    line-height: 1.6;
+}
+
+.cwc-key-testimonial__text p {
+    margin: 0 0 1rem 0;
+}
+
+.cwc-key-testimonial__text p:last-child {
+    margin-bottom: 0;
+}
+
+/* ================================
+   Author Footer
+   ================================ */
+
+.cwc-key-testimonial__author {
+    font-size: 0.875rem;
+    font-weight: 500;
+    line-height: 1.5;
+    color: inherit;
+    opacity: 0.8;
+}
+
+.cwc-key-testimonial__author p {
+    margin: 0;
+}
+
+/* ================================
+   Mobile Responsive
+   ================================ */
+
+@media (max-width: 768px) {
+    .cwc-key-testimonial__container {
+        padding: 0 1.5rem;
+    }
+
+    .cwc-key-testimonial__title h1,
+    .cwc-key-testimonial__title h2,
+    .cwc-key-testimonial__title h3,
+    .cwc-key-testimonial__title p {
+        font-size: 1.4rem;
+    }
+
+    .cwc-key-testimonial__text {
+        font-size: 0.9375rem;
+    }
+
+    .cwc-key-testimonial {
+        padding-top: var(--padding-top-mobile);
+        padding-bottom: var(--padding-bottom-mobile);
+    }
+}

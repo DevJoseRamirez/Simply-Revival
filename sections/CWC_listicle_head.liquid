@@ -45,6 +45,8 @@
                     src="{{ block.settings.author_image | image_url: width: 48 }}"
                     alt="Author"
                     loading="lazy"
+                    height="{{ block.settings.author_image.height }}"
+                    width="{{ block.settings.author_image.width }}"
                   >
                 </div>
               {% endif %}

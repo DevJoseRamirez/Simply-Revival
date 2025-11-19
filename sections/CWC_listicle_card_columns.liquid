@@ -1,0 +1,151 @@
+{% style %}
+  #CWC_listicle_card_columns-{{ section.id }} {
+    --section-bg: {{ section.settings.bg_color | default: '#ffffff' }};
+    --card-bg: {{ section.settings.card_bg_color | default: '#f0fdf4' }};
+    --card-bg-border: {{ section.settings.card_bg_color | color_darken: 6 }};
+    --text-color: {{ section.settings.text_color | default: '#111111' }};
+    --padding-top: {{ section.settings.padding_top | default: 60 }}px;
+    --padding-bottom: {{ section.settings.padding_bottom | default: 60 }}px;
+    --padding-top-mobile: {{ section.settings.padding_top | times: 0.5 }}px;
+    --padding-bottom-mobile: {{ section.settings.padding_bottom | times: 0.5 }}px;
+  }
+{% endstyle %}
+
+{{ 'CWC_listicle_card_columns.css' | asset_url | stylesheet_tag }}
+
+<section
+  id="CWC_listicle_card_columns-{{ section.id }}"
+  class="cwc-card-columns"
+>
+  <div class="cwc-card-columns__container">
+    <div class="cwc-card-columns__card">
+      {% if section.blocks.size > 0 %}
+        <div class="cwc-card-columns__grid cwc-card-columns__grid--{{ section.blocks.size }}">
+          {% for block in section.blocks %}
+            <div class="cwc-card-columns__item" {{ block.shopify_attributes }}>
+              {% if block.settings.image != blank %}
+                <div class="cwc-card-columns__image-wrapper">
+                  {{
+                    block.settings.image
+                    | image_url: width: 200
+                    | image_tag: loading: 'lazy', sizes: '100px', widths: '100, 200'
+                  }}
+                </div>
+              {% elsif block.settings.icon_text != blank %}
+                <div class="cwc-card-columns__icon">
+                  {{ block.settings.icon_text }}
+                </div>
+              {% endif %}
+
+              {% if block.settings.title != blank %}
+                <div class="cwc-card-columns__title rte">
+                  {{ block.settings.title }}
+                </div>
+              {% endif %}
+
+              {% if block.settings.text != blank %}
+                <div class="cwc-card-columns__text rte">
+                  {{ block.settings.text }}
+                </div>
+              {% endif %}
+            </div>
+            {% unless forloop.last %}
+              <div class="cwc-card-columns__separator">
+                {% comment %} Arrow or separator from image reference {% endcomment %}
+                {% comment %} → {% endcomment %}
+                {% render 'icon-arrow' %}
+              </div>
+            {% endunless %}
+          {% endfor %}
+        </div>
+      {% endif %}
+    </div>
+  </div>
+</section>
+
+{% schema %}
+{
+  "name": "Listicle Card Columns",
+  "tag": "section",
+  "class": "section",
+  "settings": [
+    {
+      "type": "color",
+      "id": "bg_color",
+      "label": "Section Background color",
+      "default": "#ffffff"
+    },
+    {
+      "type": "color",
+      "id": "card_bg_color",
+      "label": "Card Background color",
+      "default": "#f0fdf4"
+    },
+    {
+      "type": "color",
+      "id": "text_color",
+      "label": "Text color",
+      "default": "#111111"
+    },
+    {
+      "type": "range",
+      "id": "padding_top",
+      "min": 0,
+      "max": 100,
+      "step": 10,
+      "unit": "px",
+      "label": "Padding top",
+      "default": 60
+    },
+    {
+      "type": "range",
+      "id": "padding_bottom",
+      "min": 0,
+      "max": 100,
+      "step": 10,
+      "unit": "px",
+      "label": "Padding bottom",
+      "default": 60
+    }
+  ],
+  "blocks": [
+    {
+      "type": "column",
+      "name": "Column",
+      "settings": [
+        {
+          "type": "image_picker",
+          "id": "image",
+          "label": "Image"
+        },
+        {
+          "type": "text",
+          "id": "icon_text",
+          "label": "Icon/Emoji (Fallback if no image)",
+          "default": "👶"
+        },
+        {
+          "type": "richtext",
+          "id": "title",
+          "label": "Title",
+          "default": "<p>Postpartum</p>"
+        },
+        {
+          "type": "richtext",
+          "id": "text",
+          "label": "Text",
+          "default": "<p>Estrogen Drop</p>"
+        }
+      ]
+    }
+  ],
+  "max_blocks": 3,
+  "presets": [
+    {
+      "name": "Listicle Card Columns",
+      "category": "Listicle",
+      "blocks": [{ "type": "column" }, { "type": "column" }, { "type": "column" }]
+    }
+  ]
+}
+{% endschema %}

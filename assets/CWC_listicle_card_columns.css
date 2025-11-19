@@ -1,0 +1,163 @@
+/* ================================
+   CWC Listicle Card Columns Styles
+   ================================ */
+
+.cwc-card-columns {
+    background: var(--section-bg);
+    color: var(--text-color);
+    padding-top: var(--padding-top);
+    padding-bottom: var(--padding-bottom);
+}
+
+.cwc-card-columns__container {
+    max-width: 1000px;
+    margin: 0 auto;
+    padding: 0 2rem;
+    box-sizing: border-box;
+}
+
+/* ================================
+   Card
+   ================================ */
+
+.cwc-card-columns__card {
+    background: var(--card-bg);
+    border-radius: 12px;
+    padding: 3rem 2rem;
+    box-sizing: border-box;
+    text-align: center;
+    border: var(--card-bg-border) solid .5px;
+}
+
+/* ================================
+   Grid Layout
+   ================================ */
+
+.cwc-card-columns__grid {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 1rem;
+}
+
+.cwc-card-columns__grid--1 .cwc-card-columns__item {
+    width: 100%;
+}
+
+.cwc-card-columns__grid--2 .cwc-card-columns__item {
+    flex: 1 1 45%;
+}
+
+.cwc-card-columns__grid--3 .cwc-card-columns__item {
+    flex: 1 1 30%;
+}
+
+.cwc-card-columns__separator {
+    font-size: 2rem;
+    color: #9ca3af;
+    /* Gray color for separator */
+    line-height: 1;
+    flex-shrink: 0;
+    font-size: 4rem;
+    color: #9ca3af;
+    color: black;
+    color: var(--text-color);
+    line-height: 1;
+    flex-shrink: 0;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding: 1rem;
+}
+
+.cwc-card-columns__separator svg {
+    width: 2rem;
+    height: auto;
+}
+
+/* ================================
+   Column Item
+   ================================ */
+
+.cwc-card-columns__image-wrapper {
+    margin-bottom: 1rem;
+}
+
+.cwc-card-columns__image-wrapper img {
+    max-width: 80px;
+    height: auto;
+    display: block;
+    margin: 0 auto;
+}
+
+.cwc-card-columns__icon {
+    font-size: 3rem;
+    line-height: 1;
+    margin-bottom: 1rem;
+}
+
+.cwc-card-columns__title {
+    font-size: 1.125rem;
+    font-weight: 700;
+    line-height: 1.3;
+    margin-bottom: 0.5rem;
+    margin-bottom: 4px;
+}
+
+.cwc-card-columns__title p {
+    margin: 0;
+    line-height: normal;
+}
+
+.cwc-card-columns__text {
+    font-size: 0.875rem;
+    line-height: 1.5;
+}
+
+.cwc-card-columns__text p {
+    margin: 0;
+}
+
+/* ================================
+   Mobile Responsive (Stack Vertically)
+   ================================ */
+
+@media (max-width: 768px) {
+
+    .cwc-card-columns__separator svg {
+        width: 1.8rem;
+        height: auto;
+    }
+
+    .cwc-card-columns__container {
+        padding: 0 1.5rem;
+    }
+
+    .cwc-card-columns__card {
+        padding: 2rem 1.5rem;
+    }
+
+    .cwc-card-columns__grid {
+        flex-direction: column;
+        gap: .5rem;
+    }
+
+    .cwc-card-columns__grid--2 .cwc-card-columns__item,
+    .cwc-card-columns__grid--3 .cwc-card-columns__item {
+        flex: 1 1 100%;
+    }
+
+    .cwc-card-columns__separator {
+        transform: rotate(90deg);
+        margin: 0.5rem 0;
+    }
+
+    .cwc-card-columns__separator:last-of-type {
+        display: none;
+    }
+
+    .cwc-card-columns {
+        padding-top: var(--padding-top-mobile);
+        padding-bottom: var(--padding-bottom-mobile);
+    }
+}

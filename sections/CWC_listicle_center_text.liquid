@@ -5,6 +5,8 @@
     --padding-top: {{ section.settings.padding_top | default: 60 }}px;
     --padding-bottom: {{ section.settings.padding_bottom | default: 60 }}px;
     --padding-top-mobile: {{ section.settings.padding_top | times: 0.5 }}px;
+    --text-align: {{ section.settings.text_align | default: 'center' }};
+    --max-width: {{ section.settings.max_width | default: 1000 }}px;
     --padding-bottom-mobile: {{ section.settings.padding_bottom | times: 0.5 }}px;
   }
 {% endstyle %}
@@ -53,6 +55,27 @@
       "id": "text_color",
       "label": "Text color",
       "default": "#111111"
+    },
+    {
+      "type": "select",
+      "id": "text_align",
+      "label": "Text alignment",
+      "options": [
+        { "value": "left", "label": "Left" },
+        { "value": "center", "label": "Center" },
+        { "value": "right", "label": "Right" }
+      ],
+      "default": "center"
+    },
+    {
+      "type": "range",
+      "id": "max_width",
+      "min": 800,
+      "max": 1400,
+      "step": 100,
+      "unit": "px",
+      "label": "Content max width",
+      "default": 1000
     },
     {
       "type": "range",

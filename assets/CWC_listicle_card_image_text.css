@@ -10,8 +10,9 @@
 }
 
 .cwc-card-image-text__container {
-    max-width: 1200px;
     max-width: 1000px;
+    max-width: calc(1000px + 2rem);
+    max-width: 1200px;
     margin: 0 auto;
     padding: 0 2rem;
     box-sizing: border-box;
@@ -25,6 +26,7 @@
     background: var(--card-bg);
     border-radius: 12px;
     padding: 3rem;
+    padding: 2rem;
     box-sizing: border-box;
     position: relative;
 }
@@ -37,6 +39,7 @@
     display: grid;
     grid-template-columns: 1fr 1fr;
     gap: 3rem;
+    gap: 2rem;
     align-items: center;
 }
 
@@ -105,13 +108,15 @@
     right: 1rem;
     background: var(--badge-bg);
     color: var(--badge-text);
-    padding: 0.5rem 0.75rem;
-    border-radius: 8px;
+    padding: 1rem;
+    border-radius: 3rem;
     font-size: 1.5rem;
     line-height: 1;
     z-index: 10;
     width: fit-content;
     font-size: 1rem;
+    font-weight: 600;
+    margin-top: 1rem;
 }
 
 /* ================================
@@ -136,7 +141,7 @@
 .cwc-card-image-text__title h1,
 .cwc-card-image-text__title h2,
 .cwc-card-image-text__title h3 {
-    font-size: 2rem;
+    /* font-size: 2rem; */
     font-weight: 700;
     line-height: 1.2;
     margin: 0;
@@ -145,7 +150,14 @@
 .cwc-card-image-text__text {
     font-size: 1rem;
     line-height: 1.6;
+    /* line-height: normal; */
 }
+
+.cwc-card-image-text__text p {
+    font-size: 1.15rem;
+    /* line-height: inherit; */
+}
+
 
 .cwc-card-image-text__text p {
     margin: 0 0 1rem 0;
