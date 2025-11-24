@@ -5,9 +5,9 @@
 .cwc-video-testimonials {
     padding-top: var(--padding-top);
     padding-bottom: var(--padding-bottom);
-    background-color: var(--bg-color);
     color: var(--text-color);
     text-align: center;
+    background-color: var(--section-bg);
 }
 
 
@@ -34,12 +34,13 @@
 
 .cwc-video-testimonials__heading>* {
     font-weight: 600;
-    line-height: 1;
+    /* line-height: 1; */
     font-weight: 600;
-    font-size: 31px;
-    line-height: 100%;
+    /* line-height: 100%; */
     letter-spacing: 0;
     text-align: center;
+    /* font-size: 31px; */
+
 }
 
 .cwc-video-testimonials__heading strong {
@@ -71,10 +72,15 @@
     font-weight: 400;
     font-size: 17px;
     font-size: 1rem;
-    line-height: 19px;
+    /* line-height: 19px; */
     letter-spacing: 0;
     text-align: center;
 }
+
+.cwc-video-testimonials__text>p {
+    font-size: 1.15rem;
+}
+
 
 /* Carousel */
 .cwc-video-testimonials__carousel {
@@ -127,7 +133,7 @@
     padding: 0 1rem;
     padding: 10px 10px 13px;
     margin-top: 8px;
-
+    background: #fff;
 
 }
 
@@ -243,7 +249,7 @@
 /* video */
 
 .cwc-video-testimonials__video-card {
-    background: #fff;
+    /* background: #fff; */
     border-radius: 12px;
     padding: 0 0 1rem;
     height: 100%;

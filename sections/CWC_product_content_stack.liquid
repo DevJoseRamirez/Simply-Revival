@@ -1,0 +1,260 @@
+{% style %}
+  #CWC_product_content_stack-{{ section.id }} {
+    --section-bg: {{ section.settings.bg_color | default: '#ffffff' }};
+    --text-color: {{ section.settings.text_color | default: '#111111' }};
+    --button-bg: {{ section.settings.button_color | default: '#000000' }};
+    --button-text: {{ section.settings.button_text_color | default: '#ffffff' }};
+    --padding-top: {{ section.settings.padding_top | default: 60 }}px;
+    --padding-bottom: {{ section.settings.padding_bottom | default: 60 }}px;
+    --padding-top-mobile: {{ section.settings.padding_top | times: 0.5 }}px;
+    --padding-bottom-mobile: {{ section.settings.padding_bottom | times: 0.5 }}px;
+  }
+{% endstyle %}
+
+{{ 'CWC_product_content_stack.css' | asset_url | stylesheet_tag }}
+{{ 'CWC_product_content_stack.js' | asset_url | script_tag }}
+
+{% liquid
+  assign selected_product = section.settings.product
+  assign section_id = section.id
+%}
+
+{% comment %} Developer Mode - Show Variant IDs (for setup) -UTILITY{% endcomment %}
+{% if section.settings.show_variant_ids and selected_product %}
+  <div style="background: #fef3c7; border: 2px solid #f59e0b; padding: 20px; margin: 20px; border-radius: 8px;">
+    <h3 style="margin: 0 0 10px 0; color: #92400e;">🔧 Developer Mode - Copy Variant IDs:</h3>
+    {% for variant in selected_product.variants %}
+      <p style="margin: 5px 0; font-family: monospace; color: #78350f;">
+        <strong>{{ variant.title }}</strong>:
+        <code style="background: #fff; padding: 2px 6px; border-radius: 3px;">{{ variant.id }}</code>
+      </p>
+    {% endfor %}
+    <p style="margin: 10px 0 0 0; font-size: 14px; color: #92400e;">
+      ℹ️ Copy the variant ID and paste it into the corresponding block's "Variant ID" field below. Then disable this
+      toggle.
+    </p>
+  </div>
+{% endif %}
+
+{% liquid
+  assign variant_id_setting = section.settings.variant_id | times: 1
+  assign target_variant = null
+
+  if selected_product
+    if variant_id_setting > 0
+      assign target_variant = selected_product.variants | where: 'id', variant_id_setting | first
+    else
+      assign target_variant = selected_product.selected_or_first_available_variant
+    endif
+  endif
+
+  # Determine which image to use
+  assign display_image = section.settings.image
+
+  if display_image == blank and selected_product
+    # Try to get variant image first, then product featured image
+    if target_variant and target_variant.featured_image
+      assign display_image = target_variant.featured_image
+    elsif selected_product.featured_image
+      assign display_image = selected_product.featured_image
+    endif
+  endif
+%}
+
+<section
+  id="CWC_product_content_stack-{{ section_id }}"
+  class="cwc-product-content-stack"
+  data-section-id="{{ section_id }}"
+  {% if target_variant %}
+    data-target-variant-id="{{ target_variant.id }}"
+  {% endif %}
+  {% if selected_product %}
+    data-product-id="{{ selected_product.id }}"
+  {% endif %}
+>
+  <div class="cwc-product-content-stack__container">
+    {% if display_image != blank %}
+      <div class="cwc-product-content-stack__image">
+        <img
+          src="{{ display_image | image_url: width: 600 }}"
+          alt="{{ display_image.alt | default: selected_product.title | default: 'Content image' }}"
+          loading="lazy"
+          height="{{ display_image.height }}"
+          width="{{ display_image.width }}"
+        >
+      </div>
+    {% endif %}
+
+    {% if section.settings.title != blank %}
+      <div class="cwc-product-content-stack__title rte">
+        {{ section.settings.title }}
+      </div>
+    {% endif %}
+
+    {% if section.settings.subtext != blank %}
+      <div class="cwc-product-content-stack__subtext rte">
+        {{ section.settings.subtext }}
+      </div>
+    {% endif %}
+
+    {% if section.settings.subtext_2 != blank %}
+      <div class="cwc-product-content-stack__subtext-2 rte">
+        {{ section.settings.subtext_2 }}
+      </div>
+    {% endif %}
+
+    {% if target_variant and target_variant.available %}
+      <form
+        action="/cart/add"
+        method="post"
+        enctype="multipart/form-data"
+        class="cwc-product-content-stack__form"
+        id="product-form-{{ section_id }}"
+      >
+        <input
+          type="hidden"
+          name="id"
+          value="{{ target_variant.id }}"
+          class="variant-id-input"
+        >
+        <input type="hidden" name="quantity" value="1">
+
+        <button
+          type="button"
+          class="cwc-product-content-stack__button"
+          data-variant-id="{{ target_variant.id }}"
+        >
+          {{ section.settings.button_text | default: 'Add to Cart' }}
+        </button>
+      </form>
+    {% elsif target_variant %}
+      <button
+        type="button"
+        class="cwc-product-content-stack__button"
+        disabled
+      >
+        Sold Out
+      </button>
+    {% endif %}
+  </div>
+</section>
+
+{% schema %}
+{
+  "name": "Product Content Stack",
+  "tag": "section",
+  "class": "section",
+  "settings": [
+    {
+      "type": "header",
+      "content": "Product & Variant"
+    },
+    {
+      "type": "product",
+      "id": "product",
+      "label": "Select Product",
+      "info": "The product to be added to the cart."
+    },
+    {
+      "type": "text",
+      "id": "variant_id",
+      "label": "Specific Variant ID (Optional)",
+      "info": "Leave blank to use the first available variant."
+    },
+    {
+      "type": "checkbox",
+      "id": "show_variant_ids",
+      "label": "🔧 Show Variant IDs (Developer Mode)",
+      "info": "Enable this to see variant IDs, copy them to blocks, then disable",
+      "default": false
+    },
+    {
+      "type": "header",
+      "content": "Content"
+    },
+    {
+      "type": "image_picker",
+      "id": "image",
+      "label": "Custom Image (Optional)",
+      "info": "Leave blank to use the product or variant image automatically"
+    },
+    {
+      "type": "richtext",
+      "id": "title",
+      "label": "Title",
+      "default": "<h2>Introducing Simply Revival: The Natural DHT Blocker That's Changing the Game</h2>"
+    },
+    {
+      "type": "richtext",
+      "id": "subtext",
+      "label": "Subtext 1",
+      "default": "<p>An all-natural supplement that targets DHT at the source, combining 10 powerful herbs to help block DHT, reduce shedding, and support new hair growth.</p>"
+    },
+    {
+      "type": "richtext",
+      "id": "subtext_2",
+      "label": "Subtext 2 (Optional)"
+    },
+    {
+      "type": "text",
+      "id": "button_text",
+      "label": "Button Text",
+      "default": "get this deal"
+    },
+    {
+      "type": "header",
+      "content": "Colors & Spacing"
+    },
+    {
+      "type": "color",
+      "id": "bg_color",
+      "label": "Background color",
+      "default": "#ffffff"
+    },
+    {
+      "type": "color",
+      "id": "text_color",
+      "label": "Text color",
+      "default": "#111111"
+    },
+    {
+      "type": "color",
+      "id": "button_color",
+      "label": "Button background color",
+      "default": "#000000"
+    },
+    {
+      "type": "color",
+      "id": "button_text_color",
+      "label": "Button text color",
+      "default": "#ffffff"
+    },
+    {
+      "type": "range",
+      "id": "padding_top",
+      "min": 0,
+      "max": 100,
+      "step": 10,
+      "unit": "px",
+      "label": "Padding top",
+      "default": 60
+    },
+    {
+      "type": "range",
+      "id": "padding_bottom",
+      "min": 0,
+      "max": 100,
+      "step": 10,
+      "unit": "px",
+      "label": "Padding bottom",
+      "default": 60
+    }
+  ],
+  "presets": [
+    {
+      "name": "Product Content Stack",
+      "category": "Custom"
+    }
+  ]
+}
+{% endschema %}

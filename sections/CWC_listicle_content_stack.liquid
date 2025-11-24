@@ -40,6 +40,8 @@
           src="{{ section.settings.image | image_url: width: 800 }}"
           alt="Content image"
           loading="lazy"
+          height="{{ section.settings.image.height }}"
+          width="{{ section.settings.image.width }}"
         >
       </div>
     {% endif %}

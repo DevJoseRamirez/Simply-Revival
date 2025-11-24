@@ -15,6 +15,10 @@
         padding-top: var(--padding-top-mobile);
         padding-bottom: var(--padding-bottom-mobile);
     }
+
+    .cwc-social-proof__text>p {
+        padding: 0 1.25rem;
+    }
 }
 
 /* Stars */
@@ -70,7 +74,14 @@
 
 .cwc-social-proof__text>* {
     margin-bottom: 0rem;
+    font-size: 1rem;
 }
+
+.cwc-social-proof__text>p {
+
+    font-size: 1.15rem;
+}
+
 
 /* Carousel wrapper */
 .cwc_social-proof-carousel {

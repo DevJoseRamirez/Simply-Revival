@@ -96,12 +96,22 @@
 
 @media (max-width: 768px) {
 
+    .cwc-center-text__text p {
+        /* font-size: 1rem; */
+    }
+
     .cwc-center-text__title {
-        /* margin: 0 0 1rem 0; */
+
+        margin: 0 0 1rem 0;
+        margin: 0 0 .5rem 0;
     }
 
     .cwc-center-text__container {
         padding: 0 1.5rem;
+    }
+
+    .cwc-center-text__text p {
+        margin-bottom: .5rem;
     }
 
     .cwc-center-text__title h1,
@@ -109,6 +119,7 @@
     .cwc-center-text__title h3,
     .cwc-center-text__title p {
         /* font-size: 1.5rem; */
+        /* margin-bottom: .5rem; */
         font-size: 2rem;
     }
 

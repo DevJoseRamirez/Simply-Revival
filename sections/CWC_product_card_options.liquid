@@ -45,6 +45,7 @@
   data-product-id="{{ selected_product.id }}"
   data-variants="{{ selected_product.variants | json | escape }}"
 >
+  <div id="cwc-product-cards--anchor"></div>
   <div class="cwc-product-cards__container">
     {% if section.settings.section_title != blank %}
       <div class="cwc-product-cards__section-title rte">
@@ -59,108 +60,123 @@
     {% endif %}
 
     {% if selected_product and section.blocks.size > 0 %}
-      <div class="cwc-product-cards__grid cwc-product-cards__grid--{{ section.blocks.size }}">
-        {% for block in section.blocks %}
-          {% liquid
-            assign block_variant_id = block.settings.variant_id | times: 1
-            assign variant = selected_product.variants | where: 'id', block_variant_id | first
-          %}
+      <form
+        action="/cart/add"
+        method="post"
+        enctype="multipart/form-data"
+        class="cwc-product-cards__section__form"
+        id="cwc-product-cards__section-{{ section.id }}"
+      >
+        <input
+          type="hidden"
+          name="id"
+          value="{{ product.selected_or_first_available_variant.id }}"
+          class="variant-id-input"
+        >
+        <div class="cwc-product-cards__grid cwc-product-cards__grid--{{ section.blocks.size }}">
+          {% for block in section.blocks %}
+            {% liquid
+              assign block_variant_id = block.settings.variant_id | times: 1
+              assign variant = selected_product.variants | where: 'id', block_variant_id | first
+            %}
 
-          {% if variant %}
-            <div
-              class="cwc-product-card" 
-              data-variant-id="{{ variant.id }}"
-              data-available="{{ variant.available }}"
-              {{ block.shopify_attributes }}
-            >
-              {% comment %} Badge from block {% endcomment %}
-              {% if block.settings.badge != blank %}
+            {% if variant %}
+              {% comment %} Badge text {% endcomment %}
+              {% comment %}
                 <div class="cwc-product-card__badge">
-                  {{ block.settings.badge }}
+                  {% if forloop.index0 == 1 %}
+                    {{ forloop.index0 }}
+
+                  {% elsif forloop.index0 == 2 %}
+                    {{ forloop.index0 }}
+                  {% endif %}
                 </div>
-              {% endif %}
+              {% endcomment %}
 
-              {% comment %} Title from block or variant {% endcomment %}
-              <div class="cwc-product-card__title">
-                {% if block.settings.title != blank %}
-                  {{ block.settings.title }}
-                {% else %}
-                  {{ variant.title }}
+              <div
+                class="cwc-product-card"
+                data-variant-id="{{ variant.id }}"
+                data-available="{{ variant.available }}"
+                {{ block.shopify_attributes }}
+              >
+                {% comment %} Badge from block {% endcomment %}
+                {% if block.settings.badge != blank %}
+                  <div class="cwc-product-card__badge">
+                    {{ block.settings.badge }}
+                  </div>
                 {% endif %}
-              </div>
 
-              {% comment %} Pricing from Shopify {% endcomment %}
-              <div class="cwc-product-card__pricing">
-                {% if variant.compare_at_price > variant.price %}
-                  <span class="cwc-product-card__compare-price">
-                    {{ variant.compare_at_price | money }}
+                {% comment %} Title from block or variant {% endcomment %}
+                <div class="cwc-product-card__title">
+                  {% if block.settings.title != blank %}
+                    {{ block.settings.title }}
+                  {% else %}
+                    {{ variant.title }}
+                  {% endif %}
+                </div>
+
+                {% comment %} Pricing from Shopify {% endcomment %}
+                <div class="cwc-product-card__pricing">
+                  {% if variant.compare_at_price > variant.price %}
+                    <span class="cwc-product-card__compare-price">
+                      {{ variant.compare_at_price | money }}
+                    </span>
+                  {% endif %}
+                  <span class="cwc-product-card__price">
+                    {{ variant.price | money }}
                   </span>
-                {% endif %}
-                <span class="cwc-product-card__price">
-                  {{ variant.price | money }}
-                </span>
 
-                {% comment %} Calculate savings {% endcomment %}
-                {% if variant.compare_at_price > variant.price %}
-                  {% assign savings = variant.compare_at_price | minus: variant.price %}
-                  {% assign savings_percent = savings | times: 100.0 | divided_by: variant.compare_at_price | round %}
-                  <span class="cwc-product-card__savings"> Save {{ savings_percent }}% </span>
+                  {% comment %} Calculate savings {% endcomment %}
+                  {% if variant.compare_at_price > variant.price %}
+                    {% assign savings = variant.compare_at_price | minus: variant.price %}
+                    {% assign savings_percent = savings | times: 100.0 | divided_by: variant.compare_at_price | round %}
+                    <span class="cwc-product-card__savings"> Save {{ savings_percent }}% </span>
+                  {% endif %}
+                </div>
+
+                {% comment %} Bullets {% endcomment %}
+                {% liquid
+                  assign has_bullets = false
+                  if block.settings.bullet_1 != blank or block.settings.bullet_2 != blank or block.settings.bullet_3 != blank or block.settings.bullet_4 != blank or block.settings.bullet_5 != blank
+                    assign has_bullets = true
+                  endif
+                %}
+
+                {% if has_bullets %}
+                  <ul class="cwc-product-card__bullets">
+                    {% if block.settings.bullet_1 != blank %}
+                      <li class="cwc-product-card__bullet rte">{{ block.settings.bullet_1 }}</li>
+                    {% endif %}
+                    {% if block.settings.bullet_2 != blank %}
+                      <li class="cwc-product-card__bullet rte">{{ block.settings.bullet_2 }}</li>
+                    {% endif %}
+                    {% if block.settings.bullet_3 != blank %}
+                      <li class="cwc-product-card__bullet rte">{{ block.settings.bullet_3 }}</li>
+                    {% endif %}
+                    {% if block.settings.bullet_4 != blank %}
+                      <li class="cwc-product-card__bullet rte">{{ block.settings.bullet_4 }}</li>
+                    {% endif %}
+                    {% if block.settings.bullet_5 != blank %}
+                      <li class="cwc-product-card__bullet rte">{{ block.settings.bullet_5 }}</li>
+                    {% endif %}
+                  </ul>
+                {% endif %}
+
+                {% comment %} Button - uses variant URL as fallback for add-to-cart {% endcomment %}
+                {% if block.settings.button_text != blank %}
+                  <button
+                    type="button"
+                    class="cwc-product-card__button"
+                    data-variant-id="{{ variant.id }}"
+                  >
+                    {{ block.settings.button_text }}
+                  </button>
                 {% endif %}
               </div>
-
-              {% comment %} Bullets {% endcomment %}
-              {% liquid
-                assign has_bullets = false
-                if block.settings.bullet_1 != blank or block.settings.bullet_2 != blank or block.settings.bullet_3 != blank or block.settings.bullet_4 != blank or block.settings.bullet_5 != blank
-                  assign has_bullets = true
-                endif
-              %}
-
-              {% if has_bullets %}
-                <ul class="cwc-product-card__bullets">
-                  {% if block.settings.bullet_1 != blank %}
-                    <li class="rte">{{ block.settings.bullet_1 }}</li>
-                  {% endif %}
-                  {% if block.settings.bullet_2 != blank %}
-                    <li class="rte">{{ block.settings.bullet_2 }}</li>
-                  {% endif %}
-                  {% if block.settings.bullet_3 != blank %}
-                    <li class="rte">{{ block.settings.bullet_3 }}</li>
-                  {% endif %}
-                  {% if block.settings.bullet_4 != blank %}
-                    <li class="rte">{{ block.settings.bullet_4 }}</li>
-                  {% endif %}
-                  {% if block.settings.bullet_5 != blank %}
-                    <li class="rte">{{ block.settings.bullet_5 }}</li>
-                  {% endif %}
-                </ul>
-              {% endif %}
-
-              {% comment %} Button - uses variant URL as fallback for add-to-cart {% endcomment %}
-              {% if block.settings.button_text != blank %}
-                <a
-                  href="{{ block.settings.button_link | default: variant.url }}"
-                  class="cwc-product-card__button"
-                  data-variant-id="{{ variant.id }}"
-                  data-button-link="{{ block.settings.button_link }}"
-                >
-                  {{ block.settings.button_text }}
-                </a>
-              {% endif %}
-            </div>
-          {% endif %}
-        {% endfor %}
-      </div>
-
-      {% comment %} Hidden form for add-to-cart functionality via JS {% endcomment %}
-
-      {% comment %}
-        {% form 'product', selected_product, id: "product-form-" | append: section_id, class: "cwc-product-cards__form" %}
-          <input type="hidden" name="id" value="" class="variant-id-input">
-          <input type="hidden" name="quantity" value="1">
-          <button type="submit" style="display: none;"></button>
-        {% endform %}
-      {% endcomment %}
+            {% endif %}
+          {% endfor %}
+        </div>
+      </form>
 
     {% else %}
       <p style="text-align: center; padding: 40px;">
@@ -324,12 +340,6 @@
           "id": "button_text",
           "label": "Button Text",
           "default": "Get This Deal"
-        },
-        {
-          "type": "url",
-          "id": "button_link",
-          "label": "Button Link",
-          "info": "If provided, the button will navigate to this URL instead of adding to cart."
         }
       ]
     }

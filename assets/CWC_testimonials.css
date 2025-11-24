@@ -311,11 +311,12 @@
     }
 
     .cwc-testimonials__testimonial-title {
-        font-size: 1.1rem;
+        font-size: 1.2rem;
     }
 
     .cwc-testimonials__testimonial-text {
         font-size: 0.95rem;
+        line-height: normal;
     }
 
     .cwc-testimonials__carousel {

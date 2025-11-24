@@ -124,6 +124,12 @@
 
 @media (max-width: 768px) {
 
+    .cwc-card-columns__text p {
+        margin: auto;
+        font-size: 1rem;
+        max-width: 80%;
+    }
+
     .cwc-card-columns__separator svg {
         width: 1.8rem;
         height: auto;

@@ -1,0 +1,157 @@
+/* ================================
+   CWC Product Content Stack Styles
+   ================================ */
+
+.cwc-product-content-stack {
+    background: var(--section-bg);
+    color: var(--text-color);
+    padding-top: var(--padding-top);
+    padding-bottom: var(--padding-bottom);
+    text-align: center;
+}
+
+.cwc-product-content-stack__container {
+    max-width: 800px;
+    /* Adjusted for centered content stack */
+    max-width: 1000px;
+    margin: 0 auto;
+    padding: 0 2rem;
+    box-sizing: border-box;
+}
+
+/* ================================
+   Image
+   ================================ */
+
+.cwc-product-content-stack__image {
+    margin-bottom: 2rem;
+    display: flex;
+    justify-content: center;
+}
+
+.cwc-product-content-stack__image img {
+    max-width: 100%;
+    max-width: 100%;
+    width: auto;
+    height: auto;
+    display: block;
+}
+
+/* ================================
+   Text Content
+   ================================ */
+
+.cwc-product-content-stack__title {
+    margin-bottom: 1rem;
+}
+
+.cwc-product-content-stack__title h1,
+.cwc-product-content-stack__title h2,
+.cwc-product-content-stack__title h3,
+.cwc-product-content-stack__title p {
+    font-size: 2.5rem;
+    font-weight: 700;
+    line-height: 1.2;
+    margin: 0;
+    color: inherit;
+}
+
+.cwc-product-content-stack__subtext {
+    margin-bottom: 1.5rem;
+    font-size: 1.125rem;
+    line-height: 1.5;
+}
+
+.cwc-product-content-stack__subtext p {
+    margin: 0;
+    font-size: 1.15rem;
+}
+
+.cwc-product-content-stack__subtext-2 {
+    margin-bottom: 2rem;
+    font-size: 1rem;
+    line-height: 1.5;
+}
+
+.cwc-product-content-stack__subtext-2 p {
+    margin: 0;
+}
+
+/* ================================
+   Button
+   ================================ */
+
+.cwc-product-content-stack__button {
+    display: inline-block;
+    background: var(--button-bg);
+    color: var(--button-text);
+    padding: 1rem 2.5rem;
+    border-radius: 9999px;
+    /* Rounded button */
+    font-size: 1rem;
+    font-weight: 600;
+    text-decoration: none;
+    text-align: center;
+    border: none;
+    cursor: pointer;
+    transition: opacity 0.3s ease, transform 0.2s ease;
+    /* jtesting */
+    display: inline-block;
+    padding: 1rem 2rem;
+    font-weight: 600;
+    font-size: 1rem;
+    border-radius: 6px;
+    text-decoration: none;
+    transition: all .3s ease-in-out;
+    text-align: center;
+    border: 2px solid transparent;
+    padding: 1.02875rem;
+    line-height: 1.211875rem;
+    width: 100%;
+    max-width: 336px;
+}
+
+.cwc-product-content-stack__button:hover {
+    opacity: 0.9;
+    transform: translateY(-1px);
+    opacity: 0.9;
+    transform: translateY(-1px);
+    /* tessging */
+    border-color: #125657;
+    background-color: transparent !important;
+    color: #125657 !important;
+}
+
+
+
+
+/* ================================
+   Mobile Responsive
+   ================================ */
+
+@media (max-width: 768px) {
+    .cwc-product-content-stack {
+        padding-top: var(--padding-top-mobile);
+        padding-bottom: var(--padding-bottom-mobile);
+    }
+
+    .cwc-product-content-stack__container {
+        padding: 0 1.5rem;
+    }
+
+    .cwc-product-content-stack__title h1,
+    .cwc-product-content-stack__title h2,
+    .cwc-product-content-stack__title h3,
+    .cwc-product-content-stack__title p {
+        font-size: 1.75rem;
+    }
+
+    .cwc-product-content-stack__subtext {
+        font-size: 1rem;
+    }
+
+    .cwc-product-content-stack__button {
+        padding: 0.75rem 2rem;
+        font-size: 0.9rem;
+    }
+}
