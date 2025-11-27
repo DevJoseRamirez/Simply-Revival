@@ -1,0 +1,65 @@
+{% style %}
+  .cwc-bundle-product-template__review {
+    display: flex;
+    align-items: flex-start;
+    gap: 1rem;
+    /* margin-bottom: 1.25rem; */
+    max-width: 38rem;
+  }
+
+  .cwc-bundle-product-template__review-image {
+    width: 48px;
+    height: 48px;
+    width: 45px;
+    height: 45px;
+    flex-shrink: 0;
+    border-radius: 50%;
+    overflow: hidden;
+  }
+
+  .cwc-bundle-product-template__review-image img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    display: block;
+  }
+
+  .cwc-bundle-product-template__review-content {
+    line-height: 1.45;
+  }
+
+  .cwc-bundle-product-template__review-text {
+    font-size: 0.95rem;
+    font-size: 0.8rem;
+    color: #111827;
+    margin-bottom: 0.35rem;
+    font-style: italic;
+  }
+
+  .cwc-bundle-product-template__review-author {
+    font-size: 0.85rem;
+    font-size: 0.8rem;
+    color: #6b7280; /* grey subtitle */
+    font-weight: 500;
+  }
+{% endstyle %}
+
+<div class="cwc-bundle-product-template__review" {{ block.shopify_attributes }}>
+  {% if block.settings.image != blank %}
+    <div class="cwc-bundle-product-template__review-image">
+      <img src="{{ block.settings.image | img_url: '100x100' }}" alt="{{ block.settings.author }}">
+    </div>
+  {% endif %}
+
+  <div class="cwc-bundle-product-template__review-content">
+    {% if block.settings.text != blank %}
+      <div class="cwc-bundle-product-template__review-text rte">“{{ block.settings.text }}”</div>
+    {% endif %}
+
+    {% if block.settings.author != blank %}
+      <div class="cwc-bundle-product-template__review-author">
+        {{ block.settings.author }}
+      </div>
+    {% endif %}
+  </div>
+</div>

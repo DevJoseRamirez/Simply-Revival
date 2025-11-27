@@ -150,12 +150,127 @@
         "text_2": "<p>Simply Revival delivers the right doses in the right ratios — no guessing, no buying bottles separately. Men report less shedding, better texture, and visible improvements within just a few weeks<\/p>"
       }
     },
+    "cwc_featured_product_gtBbUa": {
+      "type": "CWC_featured_product",
+      "blocks": {
+        "product_image_zFpgpE": {
+          "type": "product_image",
+          "settings": {
+            "badge_text": "BestSeller",
+            "badge_text_color": "#fff",
+            "badge_bg_color": "#60a1a2",
+            "badge_sold_text": "50+ Sold Today",
+            "badge_sold_text_color": "#000",
+            "badge_sold_bg_color": "#fff"
+          }
+        },
+        "rating_tKTLM8": {
+          "type": "rating",
+          "settings": {
+            "text": "<p>Rated 4.9 Excellent | 323 Reviews<\/p>"
+          }
+        },
+        "text_Uap4Lc": {
+          "type": "text",
+          "settings": {
+            "content": ""
+          }
+        },
+        "benefits_dc6dd3": {
+          "type": "benefits",
+          "settings": {
+            "text1": "",
+            "text2": "",
+            "text3": "",
+            "text4": "",
+            "text5": "",
+            "text6": ""
+          }
+        },
+        "price_display_G4q4gR": {
+          "type": "price_display",
+          "settings": {}
+        },
+        "product_options_QPhNgU": {
+          "type": "product_options",
+          "settings": {}
+        },
+        "subscription_toggle_7Qtw6x": {
+          "type": "subscription_toggle",
+          "settings": {
+            "title": "Save 25% With Automatic Refills!",
+            "subtitle": "Zero Commitment | Exclusive Discounts | Cancel Anytime"
+          }
+        },
+        "delivery_estimate_nBJVkb": {
+          "type": "delivery_estimate",
+          "settings": {
+            "text": "Order now for delivery by",
+            "max_shipping_days": 7,
+            "text_color": "#125657",
+            "bg_color": "#D8FFF4"
+          }
+        },
+        "add_to_cart_z6HTqh": {
+          "type": "add_to_cart",
+          "settings": {
+            "button_text": "Add to Cart",
+            "button_bg_color": "#125657",
+            "button_text_color": "#ffffff"
+          }
+        },
+        "guarantee_text_miPHyB": {
+          "type": "guarantee_text",
+          "settings": {
+            "text": "365-day money back guarantee"
+          }
+        },
+        "faq_wVbp3E": {
+          "type": "faq",
+          "settings": {
+            "title": "Description",
+            "content": ""
+          }
+        },
+        "faq_pBygaC": {
+          "type": "faq",
+          "settings": {
+            "title": "Description",
+            "content": ""
+          }
+        }
+      },
+      "block_order": [
+        "product_image_zFpgpE",
+        "rating_tKTLM8",
+        "text_Uap4Lc",
+        "benefits_dc6dd3",
+        "price_display_G4q4gR",
+        "product_options_QPhNgU",
+        "subscription_toggle_7Qtw6x",
+        "delivery_estimate_nBJVkb",
+        "add_to_cart_z6HTqh",
+        "guarantee_text_miPHyB",
+        "faq_wVbp3E",
+        "faq_pBygaC"
+      ],
+      "disabled": true,
+      "name": "Featured Product",
+      "settings": {
+        "product": "simply®-dht-blocker",
+        "background_color": "#fff",
+        "padding_top": 60,
+        "padding_bottom": 60
+      }
+    },
     "cwc_listicle_center_text_GBwx6w": {
       "type": "CWC_listicle_center_text",
       "name": "Listicle Center Text",
       "settings": {
         "bg_color": "#fffee3",
         "text_color": "#111111",
+        "text_align": "center",
+        "max_width": 1000,
         "padding_top": 60,
         "padding_bottom": 0,
         "title": "<p>Why Simply Revival Is the #1 Choice for Natural Hair Recovery<\/p>",
@@ -170,6 +285,8 @@
       "settings": {
         "bg_color": "#ffffff",
         "text_color": "#111111",
+        "text_align": "center",
+        "max_width": 1000,
         "padding_top": 60,
         "padding_bottom": 60,
         "title": "<p>Why Simply Revival Is the #1 Choice for Natural Hair Recovery<\/p>",
@@ -199,6 +316,8 @@
       "settings": {
         "bg_color": "#fffee3",
         "text_color": "#111111",
+        "text_align": "center",
+        "max_width": 1000,
         "padding_top": 60,
         "padding_bottom": 0,
         "title": "<p>Why Simply Revival Is the #1 Choice for Natural Hair Recovery<\/p>",
@@ -248,7 +367,7 @@
         "floating_badge_text": "⚡ BLACK FRIDAY SPECIAL",
         "button_color": "#125657",
         "button_text_color": "#ffffff",
-        "button_text": "GET 60% OFF →",
+        "button_text": "GET 70% OFF →",
         "button_link": "shopify:\/\/pages\/black-friday-exclusive-offer",
         "subtext": "<p>Try it today with a 30-Day Money-Back Guarantee!<\/p>"
       }
@@ -310,6 +429,8 @@
       "settings": {
         "bg_color": "#ffffff",
         "text_color": "#111111",
+        "text_align": "center",
+        "max_width": 1000,
         "padding_top": 60,
         "padding_bottom": 0,
         "title": "<p>The Natural Approach Is Working—Here's the Proof<\/p>",
@@ -510,6 +631,7 @@
     "cwc_listicle_image_text_Www933",
     "cwc_listicle_image_text_gJVeBF",
     "cwc_listicle_image_text_MkQXDj",
+    "cwc_featured_product_gtBbUa",
     "cwc_listicle_center_text_GBwx6w",
     "cwc_listicle_center_text_7BTKPH",
     "cwc_listicle_content_stack_cLyKn4",

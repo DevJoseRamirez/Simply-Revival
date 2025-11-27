@@ -1,4 +1,5 @@
 {% style %}
+  .cwc-bundle-product-template__faq,
   .cwc_product-template__faq,
   .cwc-featured-product__faq {
     border-bottom: 1px solid #e5e5e5;
@@ -75,6 +76,7 @@
     /* overflow: hidden; */
   }
 
+  .cwc-bundle-product-template__faq.active .cwc-featured-product__faq-answer,
   .cwc_product-template__faq.active .cwc-featured-product__faq-answer,
   .cwc-featured-product__faq.active .cwc-featured-product__faq-answer {
     padding-bottom: 1.25rem; /* Add bottom padding when active */
@@ -100,22 +102,27 @@
   .cwc-featured-product__faq-answer li {
     margin-bottom: 0.5rem;
   }
+
+  .cwc-bundle-product-template__faq.desktop__only,
   .cwc_product-template__faq.desktop__only,
   .cwc-featured-product__faq.desktop__only {
     display: block;
   }
 
+  .cwc-bundle-product-template__faq.mobile__only,
   .cwc_product-template__faq.mobile__only,
   .cwc-featured-product__faq.mobile__only {
     display: none;
   }
 
   @media (max-width: 991px) {
+    .cwc-bundle-product-template__faq.desktop__only,
     .cwc_product-template__faq.desktop__only,
     .cwc-featured-product__faq.desktop__only {
       display: none;
     }
 
+    .cwc-bundle-product-template__faq.mobile__only,
     .cwc_product-template__faq.mobile__only,
     .cwc-featured-product__faq.mobile__only {
       display: block;
@@ -144,11 +151,13 @@
       line-height: 1.25rem; /* 20px */
     }
 
+    .cwc-bundle-product-template__faq.active .cwc-featured-product__faq-answer,
     .cwc_product-template__faq.active .cwc-featured-product__faq-answer,
     .cwc-featured-product__faq.active .cwc-featured-product__faq-answer {
       margin-bottom: 0.5rem;
       margin-bottom: 0rem;
     }
+
     .cwc-featured-product__faq-answer p,
     .cwc-featured-product__faq-answer ul {
       line-height: 1.6;

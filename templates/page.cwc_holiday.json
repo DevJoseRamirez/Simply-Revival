@@ -2,6 +2,7 @@
   "sections": {
     "cwc_listicle_promotion_banner_dx8htD": {
       "type": "CWC_listicle_promotion_banner",
+      "disabled": true,
       "name": "Listicle Promotion Banner",
       "settings": {
         "bg_color": "#000000",
@@ -304,8 +305,9 @@
         "background_color": "#d0f0f2",
         "text_color": "#222222",
         "image": "shopify:\/\/shop_images\/Simply_Revival___The_1_Natural_DHT_Blocker_for_Hair_Loss_-_Hero_Image_Mobile-min.png",
-        "alt_text": "",
         "image_position": "left",
+        "m_image_position": "top",
+        "alt_text": "",
         "padding_top": 40,
         "padding_bottom": 40
       }

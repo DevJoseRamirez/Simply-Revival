@@ -1,0 +1,101 @@
+{% style %}
+  /* ================================
+     Price Display
+     ================================ */
+
+  .cwc_product-template__price,
+  .cwc-bundle-product-template__price {
+    display: flex;
+    align-items: center;
+    justify-content: flex-start;
+    margin: 0rem 0 1rem 0;
+    border-top: 0.55px solid rgba(0, 0, 0, 0.2);
+    border-bottom: 0.55px solid rgba(0, 0, 0, 0.2);
+    font-size: 1.3125rem;
+    width: 100%;
+    gap: 3rem;
+    padding: 0.74rem 0rem;
+    padding: 0.7rem 0rem;
+  }
+
+  .cwc-bundle-product-template__price-current {
+    font-weight: 700;
+    color: #60a1a2;
+    font-size: 1.25rem;
+  }
+
+  .cwc-bundle-product-template__price-compare {
+    font-size: 1.25rem;
+    /* font-size: inherit; */
+    font-weight: 400;
+    color: #08122a;
+    text-decoration: line-through;
+  }
+
+  .cwc-bundle-product-template__price-save {
+    font-size: inherit;
+    display: flex;
+    font-size: 0.9rem;
+    font-weight: 600;
+    color: #fff;
+    padding: 0.13rem 0.95rem;
+    background: #60a1a2;
+    border-radius: 5px;
+    gap: 8px;
+  }
+  .cwc-bundle-product-template__price-save span {
+    font-size: inherit;
+    font-size: 0.9rem;
+  }
+  @media (max-width: 991px) {
+    .cwc-bundle-product-template__price-current,
+    .cwc-bundle-product-template__price-compare {
+      font-size: 1.125rem;
+    }
+    .cwc-bundle-product-template__price-save span {
+      font-size: 0.86rem;
+    }
+    .cwc_product-template__price,
+    .cwc-bundle-product-template__price {
+      gap: 2rem;
+    }
+  }
+  /* ================================
+   Mobile Responsive (max-width: 768px)
+   ================================ */
+  @media (max-width: 768px) {
+    .cwc_product-template__price,
+    .cwc-bundle-product-template__price {
+      display: flex;
+      align-items: center;
+      justify-content: flex-start;
+      margin: 0rem 0 1rem 0;
+      border-top: 0.55px solid rgba(0, 0, 0, 0.2);
+      border-bottom: 0.55px solid rgba(0, 0, 0, 0.2);
+      font-size: 1.3125rem;
+      width: 100%;
+      padding: 0.5rem 0rem;
+      gap: 1rem;
+      font-size: 1.3125rem;
+    }
+    .cwc-bundle-product-template__price-save {
+      line-height: normal;
+      font-size: 0.86rem;
+    }
+  }
+{% endstyle %}
+
+<span class="cwc-bundle-product-template__price-current" id="current-price-{{ section_id }}">
+  {{ product.price | money }}
+</span>
+{% if product.compare_at_price > product.price %}
+  <span class="cwc-bundle-product-template__price-compare" id="compare-price-{{ section_id }}">
+    {{ product.compare_at_price | money }}
+  </span>
+  <div class="cwc-bundle-product-template__price-save" id="save-amount-{{ section_id }}">
+    <span>Save</span>
+    <span>
+      {{ product.compare_at_price | minus: product.price | money }}
+    </span>
+  </div>
+{% endif %}

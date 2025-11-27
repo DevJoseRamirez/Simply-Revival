@@ -1,0 +1,828 @@
+{% style %}
+  #CWC_bundle_product_template-{{ section.id }} {
+    --section-bg: {{ section.settings.background_color }};
+    --padding-top: {{ section.settings.padding_top }}px;
+    --padding-bottom: {{ section.settings.padding_bottom }}px;
+    --padding-top-mobile: {{ section.settings.padding_top | times: 0.5 }}px;
+    --padding-bottom-mobile: {{ section.settings.padding_bottom | times: 0.5 }}px;
+  }
+{% endstyle %}
+
+{{ 'CWC_bundle_product_template.css' | asset_url | stylesheet_tag }}
+{{ 'swiper-bundle.min.css' | asset_url | stylesheet_tag }}
+
+{% if section.settings.product != blank %}
+  {% assign product = section.settings.product %}
+{% endif %}
+
+<div id="cwc-bundle-product-template--anchor"></div>
+<section
+  id="CWC_bundle_product_template-{{ section.id }}"
+  class="cwc-bundle-product-template"
+  data-section-id="{{ section.id }}"
+  data-product-id="{{ product.id }}"
+  data-variants="{{ product.variants | json | escape }}"
+  data-selling-plans="{{ product.selling_plan_groups | json | escape }}"
+>
+  <div class="cwc-bundle-product-template__wrapper">
+    <div class="cwc-bundle-product-template__grid">
+      <!-- Left Column -->
+      <div class="cwc-bundle-product-template__left">
+        {% for block in section.blocks %}
+          {% case block.type %}
+            {% when 'product_image' %}
+              <div class="cwc-bundle-product-template__image" {{ block.shopify_attributes }}>
+                {% render 'CWC_product_image', product: product, section_id: section.id, block: block %}
+              </div>
+
+            {% when 'image_carousel' %}
+              <div class="cwc-bundle-product-template__image_carousel" {{ block.shopify_attributes }}>
+                {% render 'CWC_product_image_carousel', product: product, section_id: section.id, block: block %}
+              </div>
+
+            {% when 'faq' %}
+              <div class="cwc-bundle-product-template__faq desktop__only" {{ block.shopify_attributes }}>
+                {% render 'CWC_faq_blocks', product: product, section_id: section.id, block: block %}
+              </div>
+          {% endcase %}
+        {% endfor %}
+      </div>
+
+      <!-- Right Column -->
+      <div class="cwc-bundle-product-template__right">
+        {% assign product = section.settings.product %}
+        {% if product %}
+          <form
+            action="/cart/add"
+            method="post"
+            enctype="multipart/form-data"
+            class="cwc-bundle-product-template__form"
+            id="product-form-{{ section.id }}"
+          >
+            <input
+              type="hidden"
+              name="id"
+              value="{{ product.selected_or_first_available_variant.id }}"
+              class="variant-id-input"
+            >
+            <input
+              type="hidden"
+              value=""
+              name="selling_plan"
+              class="selling-plan-input"
+            >
+
+            {% for block in section.blocks %}
+              {% case block.type %}
+                {% when 'rating' %}
+                  <div class="cwc-bundle-product-template__rating" {{ block.shopify_attributes }}>
+                    {% render 'CWC_prod_rating', product: product, section_id: section.id, block: block %}
+                  </div>
+
+                {% when 'vendor' %}
+                  <div class="cwc-bundle-product-template__vendor" {{ block.shopify_attributes }}>
+                    {% if block.settings.vendor != blank %}
+                      {{ block.settings.vendor }}
+                    {% else %}
+                      {{ product.vendor }}
+                    {% endif %}
+                  </div>
+
+                {% when 'bundle-content' %}
+                  <div class="cwc-bundle-product-template__content" {{ block.shopify_attributes }}>
+                    {% render 'CWC_bundle_content', product: product, section_id: section.id, block: block %}
+                  </div>
+
+                {% when 'refund' %}
+                  <div class="cwc-bundle-product-template__refund" {{ block.shopify_attributes }}>
+                    {% render 'CWC_refund_bar', product: product, section_id: section.id, block: block %}
+                  </div>
+
+                {% when 'review' %}
+                  <div class="cwc-bundle-product-template__review" {{ block.shopify_attributes }}>
+                    {% render 'CWC_review_block', product: product, section_id: section.id, block: block %}
+                  </div>
+
+                {% when 'refund-progress-bar' %}
+                  <div class="cwc-bundle-product-template__refund-bar" {{ block.shopify_attributes }}>
+                    {% render 'CWC_refund_bar', product: product, section_id: section.id, block: block %}
+                  </div>
+
+                {% when 'bullet-icon' %}
+                  <div class="cwc-bundle-product-template__bullet-icon" {{ block.shopify_attributes }}>
+                    {% render 'CWC_bullet-icon', product: product, section_id: section.id, block: block %}
+                  </div>
+
+                {% when 'disclaimer' %}
+                  <div class="cwc-bundle-product-template__disclaimer" {{ block.shopify_attributes }}>
+                    {{ block.settings.text }}
+                  </div>
+
+                {% when 'bundle_price_display' %}
+                  <div class="cwc-bundle-product-template__price" {{ block.shopify_attributes }}>
+                    {% render 'CWC_bundle_price_display', product: product, section_id: section.id, block: block %}
+                  </div>
+
+                {% when 'bundle-button' %}
+                  <div class="cwc-bundle-product-template__button" {{ block.shopify_attributes }}>
+                    {% render 'CWC_bundle_add_to_cart', product: product, section_id: section.id, block: block %}
+                  </div>
+
+                  {% comment %}  {% endcomment %}
+                  {% comment %}  {% endcomment %}
+                  {% comment %}  {% endcomment %}
+                  {% comment %}  {% endcomment %}
+
+                {% when 'title' %}
+                  <div class="cwc-bundle-product-template__title" {{ block.shopify_attributes }}>
+                    {{ block.settings.title }}
+                  </div>
+
+                {% when 'desc' %}
+                  <div class="cwc-bundle-product-template__desc" {{ block.shopify_attributes }}>
+                    {% if block.settings.desc != blank %}
+                      {{ block.settings.desc }}
+                    {% else %}
+                      {{ product.description }}
+                    {% endif %}
+                  </div>
+
+                {% when 'text' %}
+                  <div class="cwc-bundle-product-template__text" {{ block.shopify_attributes }}>
+                    {{ block.settings.content }}
+                  </div>
+
+                {% when 'benefits' %}
+                  <div class="cwc-bundle-product-template__benefits" {{ block.shopify_attributes }}>
+                    {% render 'CWC_benefits', product: product, section_id: section.id, block: block %}
+                  </div>
+
+                {% when 'price_display' %}
+                  <div class="cwc-bundle-product-template__price" {{ block.shopify_attributes }}>
+                    {% render 'CWC_price_display', product: product, section_id: section.id, block: block %}
+                  </div>
+
+                  {% comment %}
+                    {% when 'product_options' %}
+                      {% if product.variants.size > 1 %}
+                        <div class="cwc-bundle-product-template__options" {{ block.shopify_attributes }}>
+                          {% render 'CWC_product_options', product: product, section_id: section.id, block: block %}
+                        </div>
+                      {% endif %}
+                  {% endcomment %}
+
+                  {% comment %}
+                    {% when 'subscription_toggle' %}
+                      {% if product.selling_plan_groups.size > 0 %}
+                        <div class="cwc-bundle-product-template__subscription" {{ block.shopify_attributes }}>
+                          {% render 'CWC_product_selling_plans', product: product, section_id: section.id, block: block %}
+                        </div>
+                      {% endif %}
+                  {% endcomment %}
+
+                {% when 'delivery_estimate' %}
+                  <div class="cwc-bundle-product-template__delivery" {{ block.shopify_attributes }}>
+                    {% render 'CWC_delivery_estimate', product: product, section_id: section.id, block: block %}
+                  </div>
+
+                {% when 'add_to_cart' %}
+                  <div class="cwc-bundle-product-template__add_to_cart" {{ block.shopify_attributes }}>
+                    {% render 'CWC_add_to_cart', product: product, section_id: section.id, block: block %}
+                  </div>
+
+                {% when 'guarantee_text' %}
+                  <div class="cwc-bundle-product-template__guarantee_text" {{ block.shopify_attributes }}>
+                    {% render 'CWC_guarantee_text', product: product, section_id: section.id, block: block %}
+                  </div>
+
+                {% when 'faq' %}
+                  <div class="cwc-bundle-product-template__faq mobile__only" {{ block.shopify_attributes }}>
+                    {% render 'CWC_faq_blocks', product: product, section_id: section.id, block: block %}
+                  </div>
+              {% endcase %}
+            {% endfor %}
+          </form>
+
+          {{ 'CWC_bundle_product_template.js' | asset_url | script_tag }}
+        {% endif %}
+      </div>
+    </div>
+  </div>
+</section>
+
+{% schema %}
+{
+  "name": "CWC Bundle Product",
+  "tag": "section",
+  "settings": [
+    {
+      "type": "product",
+      "id": "product",
+      "label": "Product"
+    },
+    {
+      "type": "color",
+      "id": "background_color",
+      "label": "Background Color",
+      "default": "#fff"
+    },
+    {
+      "type": "range",
+      "id": "padding_top",
+      "label": "Padding Top",
+      "default": 60,
+      "min": 0,
+      "max": 200,
+      "step": 5,
+      "unit": "px"
+    },
+    {
+      "type": "range",
+      "id": "padding_bottom",
+      "label": "Padding Bottom",
+      "default": 60,
+      "min": 0,
+      "max": 200,
+      "step": 5,
+      "unit": "px"
+    }
+  ],
+  "blocks": [
+    {
+      "type": "@app"
+    },
+    {
+      "type": "product_image",
+      "name": "Product Image",
+      "settings": [
+        {
+          "type": "image_picker",
+          "id": "image",
+          "label": "Image"
+        },
+        {
+          "type": "text",
+          "id": "badge_text",
+          "label": "Image Badge Text",
+          "default": "BestSeller"
+        },
+        {
+          "type": "color",
+          "id": "badge_text_color",
+          "label": "Badge text Color",
+          "default": "#fff"
+        },
+        {
+          "type": "color",
+          "id": "badge_bg_color",
+          "label": "Badge Background Color",
+          "default": "#60a1a2"
+        },
+
+        {
+          "type": "text",
+          "id": "badge_sold_text",
+          "label": "Sold Badge Text",
+          "default": "50+ Sold Today"
+        },
+        {
+          "type": "color",
+          "id": "badge_sold_text_color",
+          "label": "Sold Badge text Color",
+          "default": "#000"
+        },
+        {
+          "type": "color",
+          "id": "badge_sold_bg_color",
+          "label": "Sold Badge Background Color",
+          "default": "#fff"
+        }
+      ]
+    },
+
+    {
+      "type": "image_carousel",
+      "name": "Image Carousel",
+      "settings": [
+        {
+          "type": "text",
+          "id": "badge_text",
+          "label": "Image Badge Text",
+          "default": "BestSeller"
+        },
+        {
+          "type": "color",
+          "id": "badge_text_color",
+          "label": "Badge text Color",
+          "default": "#fff"
+        },
+        {
+          "type": "color",
+          "id": "badge_bg_color",
+          "label": "Badge Background Color",
+          "default": "#60a1a2"
+        },
+
+        {
+          "type": "text",
+          "id": "badge_sold_text",
+          "label": "Sold Badge Text",
+          "default": "50+ Sold Today"
+        },
+        {
+          "type": "color",
+          "id": "badge_sold_text_color",
+          "label": "Sold Badge text Color",
+          "default": "#000"
+        },
+        {
+          "type": "color",
+          "id": "badge_sold_bg_color",
+          "label": "Sold Badge Background Color",
+          "default": "#fff"
+        }
+      ]
+    },
+
+    {
+      "type": "faq",
+      "name": "FAQ",
+      "settings": [
+        {
+          "type": "text",
+          "id": "title",
+          "label": "Question",
+          "default": "Description"
+        },
+        {
+          "type": "richtext",
+          "id": "content",
+          "label": "Answer"
+        }
+      ]
+    },
+    {
+      "type": "rating",
+      "name": "Star Rating",
+      "settings": [
+        {
+          "type": "richtext",
+          "id": "text",
+          "label": "Rating Text",
+          "default": "<p>Rated 4.9 Excellent | 323 Reviews</p>"
+        }
+      ]
+    },
+    {
+      "type": "vendor",
+      "name": "Vendor",
+      "settings": [
+        {
+          "type": "richtext",
+          "id": "vendor",
+          "label": "Vendor",
+          "default": "<p>Simply Revival®</p>"
+        }
+      ]
+    },
+    {
+      "type": "bundle-content",
+      "name": "Bundle Content",
+      "settings": [
+        {
+          "type": "richtext",
+          "id": "title",
+          "label": "Title",
+          "default": "<h3>Bundle Title</h3>"
+        },
+        {
+          "type": "richtext",
+          "id": "prod_text",
+          "label": "Text",
+          "default": "<p>{{ product.title }}</p>"
+        },
+        {
+          "type": "richtext",
+          "id": "text",
+          "label": "Text",
+          "default": "<p>Your main content goes here.</p>"
+        },
+        {
+          "type": "richtext",
+          "id": "subtext",
+          "label": "Subtext",
+          "default": "<p>Additional information or disclaimer.</p>"
+        },
+        {
+          "type": "color",
+          "id": "title_color",
+          "label": "Title Color",
+          "default": "#4f46e5"
+        },
+        {
+          "type": "color",
+          "id": "text_color",
+          "label": "Body Text Color",
+          "default": "#111827"
+        }
+      ]
+    },
+    {
+      "type": "review",
+      "name": "Review Block",
+      "settings": [
+        {
+          "type": "image_picker",
+          "id": "image",
+          "label": "Reviewer Image"
+        },
+        {
+          "type": "text",
+          "id": "text",
+          "label": "Review Text",
+          "default": "It has definitely changed my gut health for the better. I have had bad heartburn for years and have noticed a HUGE difference"
+        },
+        {
+          "type": "text",
+          "id": "author",
+          "label": "Author Name",
+          "default": "Mariah P."
+        }
+      ]
+    },
+    {
+      "type": "refund-progress-bar",
+      "name": "Refund Progress Bar",
+      "settings": [
+        {
+          "type": "text",
+          "id": "text",
+          "label": "Label Text",
+          "default": "💸 77 Winners Fully Refunded For Their Order!"
+        },
+        {
+          "type": "range",
+          "id": "progress",
+          "label": "Progress (%)",
+          "min": 0,
+          "max": 100,
+          "step": 1,
+          "default": 70
+        },
+        {
+          "type": "color",
+          "id": "bar_color",
+          "label": "Bar Fill Color",
+          "default": "#EF4444"
+        },
+        {
+          "type": "color",
+          "id": "bg_color",
+          "label": "Background Bar Color",
+          "default": "#e5e7eb"
+        }
+      ]
+    },
+    {
+      "type": "bullet-icon",
+      "name": "Bullet Benefits (Icons)",
+      "settings": [
+        {
+          "type": "image_picker",
+          "id": "icon_1",
+          "label": "Icon 1"
+        },
+        {
+          "type": "richtext",
+          "id": "text_1",
+          "label": "Text 1",
+          "default": "<p>$36 Refill ships in 30 days</p>"
+        },
+        {
+          "type": "image_picker",
+          "id": "icon_2",
+          "label": "Icon 2"
+        },
+        {
+          "type": "richtext",
+          "id": "text_2",
+          "label": "Text 2",
+          "default": "<p>Skip, pause or cancel anytime</p>"
+        },
+        {
+          "type": "image_picker",
+          "id": "icon_3",
+          "label": "Icon 3"
+        },
+        {
+          "type": "richtext",
+          "id": "text_3",
+          "label": "Text 3",
+          "default": "<p>FREE avg 3-day shipping today</p>"
+        }
+      ]
+    },
+    {
+      "type": "disclaimer",
+      "name": "Disclaimer Text",
+      "settings": [
+        {
+          "type": "text",
+          "id": "text",
+          "label": "Disclaimer",
+          "default": "Disclaimer text"
+        }
+      ]
+    },
+    {
+      "type": "title",
+      "name": "Title",
+      "settings": [
+        {
+          "type": "richtext",
+          "id": "title",
+          "label": "Title",
+          "default": "<h3>Natural DHT Blocker</h3>"
+        }
+      ]
+    },
+    {
+      "type": "desc",
+      "name": "Desc",
+      "settings": [
+        {
+          "type": "richtext",
+          "id": "desc",
+          "label": "Descriptoin"
+        }
+      ]
+    },
+    {
+      "type": "text",
+      "name": "Text",
+      "settings": [
+        {
+          "type": "richtext",
+          "id": "content",
+          "label": "Content"
+        }
+      ]
+    },
+    {
+      "type": "benefits",
+      "name": "Benefits",
+      "settings": [
+        {
+          "type": "image_picker",
+          "id": "icon1",
+          "label": "Icon 1"
+        },
+        {
+          "type": "text",
+          "id": "text1",
+          "label": "Text 1"
+        },
+        {
+          "type": "image_picker",
+          "id": "icon2",
+          "label": "Icon 2"
+        },
+        {
+          "type": "text",
+          "id": "text2",
+          "label": "Text 2"
+        },
+        {
+          "type": "image_picker",
+          "id": "icon3",
+          "label": "Icon 3"
+        },
+        {
+          "type": "text",
+          "id": "text3",
+          "label": "Text 3"
+        },
+        {
+          "type": "image_picker",
+          "id": "icon4",
+          "label": "Icon 4"
+        },
+        {
+          "type": "text",
+          "id": "text4",
+          "label": "Text 4"
+        },
+        {
+          "type": "image_picker",
+          "id": "icon5",
+          "label": "Icon 5"
+        },
+        {
+          "type": "text",
+          "id": "text5",
+          "label": "Text 5"
+        },
+        {
+          "type": "image_picker",
+          "id": "icon6",
+          "label": "Icon 6"
+        },
+        {
+          "type": "text",
+          "id": "text6",
+          "label": "Text 6"
+        }
+      ]
+    },
+    {
+      "type": "price_display",
+      "name": "Price Display",
+      "settings": []
+    },
+    {
+      "type": "bundle_price_display",
+      "name": "Bundle Price Display",
+      "settings": []
+    },
+    {
+      "type": "product_options",
+      "name": "Product Options",
+      "settings": [
+        {
+          "type": "image_picker",
+          "id": "image1",
+          "label": "Options Image 1"
+        },
+        {
+          "type": "image_picker",
+          "id": "image2",
+          "label": "Options Image 2"
+        },
+        {
+          "type": "image_picker",
+          "id": "image3",
+          "label": "Options Image 3"
+        }
+      ]
+    },
+    {
+      "type": "subscription_toggle",
+      "name": "Subscription Toggle",
+      "settings": [
+        {
+          "type": "text",
+          "id": "title",
+          "label": "Title",
+          "default": "Save 25% With Automatic Refills!"
+        },
+        {
+          "type": "text",
+          "id": "subtitle",
+          "label": "Subtitle",
+          "default": "Zero Commitment | Exclusive Discounts | Cancel Anytime"
+        }
+      ]
+    },
+    {
+      "type": "delivery_estimate",
+      "name": "Delivery Estimate",
+      "settings": [
+        {
+          "type": "text",
+          "id": "text",
+          "label": "Estimate Text",
+          "default": "Order now for delivery by"
+        },
+        {
+          "type": "number",
+          "id": "max_shipping_days",
+          "label": "Max shipping days",
+          "info": "Effect the estimate date display",
+          "default": 7
+        },
+        {
+          "type": "color",
+          "id": "text_color",
+          "label": "Text color",
+          "default": "#125657"
+        },
+        {
+          "type": "color",
+          "id": "bg_color",
+          "label": "Background color",
+          "default": "#D8FFF4"
+        }
+      ]
+    },
+    {
+      "type": "add_to_cart",
+      "name": "Add to Cart Button",
+      "settings": [
+        {
+          "type": "text",
+          "id": "button_text",
+          "label": "Button Text",
+          "default": "Add to Cart"
+        },
+        {
+          "type": "color",
+          "id": "button_bg_color",
+          "label": "Button Background Color",
+          "default": "#125657"
+        },
+        {
+          "type": "color",
+          "id": "button_text_color",
+          "label": "Button Text Color",
+          "default": "#ffffff"
+        }
+      ]
+    },
+    {
+      "type": "bundle_button",
+      "name": "Bundle Add to Cart Button",
+      "settings": [
+        {
+          "type": "text",
+          "id": "button_text",
+          "label": "Button Text",
+          "default": "Add to Cart"
+        },
+        {
+          "type": "color",
+          "id": "button_bg_color",
+          "label": "Button Background Color",
+          "default": "#125657"
+        },
+        {
+          "type": "color",
+          "id": "button_text_color",
+          "label": "Button Text Color",
+          "default": "#ffffff"
+        }
+      ]
+    },
+    {
+      "type": "guarantee_text",
+      "name": "Guarantee Text",
+      "settings": [
+        {
+          "type": "text",
+          "id": "text",
+          "label": "Text",
+          "default": "365-day money back guarantee"
+        },
+        {
+          "type": "image_picker",
+          "id": "icon",
+          "label": "Icon"
+        }
+      ]
+    }
+  ],
+  "presets": [
+    {
+      "name": "Bundle Product",
+      "category": "Custom",
+      "blocks": [
+        {
+          "type": "product_image"
+        },
+        {
+          "type": "rating"
+        },
+        {
+          "type": "text"
+        },
+        {
+          "type": "benefits"
+        },
+        {
+          "type": "price_display"
+        },
+        {
+          "type": "product_options"
+        },
+        {
+          "type": "subscription_toggle"
+        },
+        {
+          "type": "delivery_estimate"
+        },
+        {
+          "type": "add_to_cart"
+        },
+        {
+          "type": "guarantee_text"
+        },
+        {
+          "type": "faq"
+        },
+        {
+          "type": "faq"
+        }
+      ]
+    }
+  ]
+}
+{% endschema %}

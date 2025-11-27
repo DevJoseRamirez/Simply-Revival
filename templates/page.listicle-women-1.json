@@ -1,0 +1,500 @@
+{
+  "sections": {
+    "cwc_listicle_promotion_banner_849zYy": {
+      "type": "CWC_listicle_promotion_banner",
+      "name": "Listicle Promotion Banner",
+      "settings": {
+        "bg_color": "#222222",
+        "text_color": "#ffffff",
+        "padding_top": 5,
+        "padding_bottom": 5,
+        "top_text": "<p><strong>⚡ BLACK FRIDAY SPECIAL<\/strong><\/p>",
+        "bottom_text": "<p><strong>UP TO 70% OFF + 2 MONTHS FREE<\/strong><\/p>",
+        "show_timer": true,
+        "min_hours": 3,
+        "max_hours": 6
+      }
+    },
+    "main": {
+      "type": "main-page",
+      "disabled": true,
+      "settings": {}
+    },
+    "cwc_listicle_center_text_NE8Ngn": {
+      "type": "CWC_listicle_center_text",
+      "name": "Listicle Center Text",
+      "settings": {
+        "bg_color": "#ffffff",
+        "text_color": "#111111",
+        "text_align": "center",
+        "max_width": 1000,
+        "padding_top": 60,
+        "padding_bottom": 60,
+        "title": "<h1>5 Natural Ways Women Are Reversing Postpartum Hair Loss — Without Hormones or Harsh Drugs<\/h1>",
+        "text": "<p>Post-baby shedding is normal — but you can help your hair bounce back faster, naturally.<\/p>",
+        "text_2": ""
+      }
+    },
+    "cwc_listicle_head_pqPHzT": {
+      "type": "CWC_listicle_head",
+      "blocks": {
+        "heading_eePYET": {
+          "type": "heading",
+          "disabled": true,
+          "settings": {
+            "heading": "<h1>Your Listicle Title Goes Here<\/h1>"
+          }
+        },
+        "author_hKcBRM": {
+          "type": "author",
+          "settings": {
+            "author_image": "shopify:\/\/shop_images\/Sophia_Carter-min_1.png",
+            "author_text": "<p>By Sophia Carter, Women's Wellness Writer<\/p>",
+            "author_date": "Last Updated Nov 02, 2025"
+          }
+        },
+        "summary_iTjrNr": {
+          "type": "summary",
+          "settings": {
+            "summary": "<p><strong>Summary: <\/strong>After giving birth, your body goes through massive hormonal shifts that can trigger temporary hair loss. But thousands of women are speeding up their recovery with these 5 natural methods—no harsh chemicals, no hormones, just plant-based support that works.<\/p>",
+            "bold_color": "#8b5fbf"
+          }
+        }
+      },
+      "block_order": [
+        "heading_eePYET",
+        "author_hKcBRM",
+        "summary_iTjrNr"
+      ],
+      "name": "Listicle Head",
+      "settings": {
+        "bg_color": "#ffffff",
+        "text_color": "#111111",
+        "padding_top": 0,
+        "padding_bottom": 0
+      }
+    },
+    "cwc_listicle_center_text_ffGngz": {
+      "type": "CWC_listicle_center_text",
+      "name": "Listicle Center Text",
+      "settings": {
+        "bg_color": "#ffffff",
+        "text_color": "#111111",
+        "text_align": "left",
+        "max_width": 1000,
+        "padding_top": 40,
+        "padding_bottom": 40,
+        "title": "",
+        "text": "<p>After giving birth, you expect sleepless nights, diaper changes, and a learning curve with your new baby. What you don't expect? Handfuls of hair in the shower, a thinning hairline, or that sinking feeling every time you look in the mirror.<\/p><p>Postpartum hair loss is one of those things no one warns you about—but it's incredibly common. Around 3-6 months after delivery, many women experience excessive shedding as their hormones readjust. The good news? It's temporary. The even better news? You can help your hair recover faster with the right natural support.<\/p><p>Here are the 5 natural ways women are reversing postpartum hair loss and getting their confidence back.<\/p>",
+        "text_2": ""
+      }
+    },
+    "cwc_listicle_center_text_XpPLkt": {
+      "type": "CWC_listicle_center_text",
+      "name": "Listicle Center Text",
+      "settings": {
+        "bg_color": "#ffffff",
+        "text_color": "#111111",
+        "text_align": "center",
+        "max_width": 1000,
+        "padding_top": 60,
+        "padding_bottom": 60,
+        "title": "<h2>Why Postpartum Hair Loss Happens<br\/>(And Why It's Temporary)<\/h2>",
+        "text": "",
+        "text_2": ""
+      }
+    },
+    "cwc_listicle_card_columns_Uj6BHz": {
+      "type": "CWC_listicle_card_columns",
+      "blocks": {
+        "column_QYFYpf": {
+          "type": "column",
+          "settings": {
+            "icon_text": "🤰",
+            "title": "<p><strong>Pregnancy<\/strong><\/p>",
+            "text": "<p>High Estrogen<\/p>"
+          }
+        },
+        "column_dwgXme": {
+          "type": "column",
+          "settings": {
+            "icon_text": "👶",
+            "title": "<p><strong>Postpartum<\/strong><\/p>",
+            "text": "<p>Estrogen Drop<\/p>"
+          }
+        },
+        "column_rWjf6b": {
+          "type": "column",
+          "settings": {
+            "icon_text": "✨",
+            "title": "<p><strong>Recovery<\/strong><\/p>",
+            "text": "<p>Balance Restored<\/p>"
+          }
+        }
+      },
+      "block_order": [
+        "column_QYFYpf",
+        "column_dwgXme",
+        "column_rWjf6b"
+      ],
+      "name": "Listicle Card Columns",
+      "settings": {
+        "bg_color": "#ffffff",
+        "card_bg_color": "#faf8f3",
+        "text_color": "#111111",
+        "padding_top": 0,
+        "padding_bottom": 0
+      }
+    },
+    "cwc_listicle_center_text_RmnRmk": {
+      "type": "CWC_listicle_center_text",
+      "name": "Listicle Center Text",
+      "settings": {
+        "bg_color": "#ffffff",
+        "text_color": "#111111",
+        "text_align": "center",
+        "max_width": 1000,
+        "padding_top": 60,
+        "padding_bottom": 60,
+        "title": "",
+        "text": "<p>During pregnancy, elevated estrogen levels keep your hair in a prolonged growth phase. You might have even noticed your hair looking thicker and fuller than ever. But after delivery, estrogen levels drop suddenly, and all that hair that was \"held\" in the growth phase starts shedding at once.<\/p><p>Add to that the nutrient depletion from pregnancy and breastfeeding, the stress of new motherhood, and a slight increase in androgen sensitivity (including DHT), and you have the perfect storm for temporary hair loss. The key word? Temporary. Your body is just recalibrating. With the right support, you can speed up the recovery process and help your hair return to its pre-pregnancy fullness—or even better.<\/p>",
+        "text_2": ""
+      }
+    },
+    "cwc_listicle_card_image_text_fcWkjC": {
+      "type": "CWC_listicle_card_image_text",
+      "name": "Listicle Card Image Text",
+      "settings": {
+        "bg_color": "#faf8f3",
+        "card_bg_color": "#e6d9f5",
+        "text_color": "#111111",
+        "padding_top": 40,
+        "padding_bottom": 40,
+        "image_first": true,
+        "image": "shopify:\/\/shop_images\/5_Natural_Ways_Women_Are_Reversing_Postpartum_Hair_Loss_Without_Hormones_or_Harsh_Drugs_01-min.png",
+        "number_text": "01",
+        "title": "<h2>Re-balance Hormones Naturally<\/h2>",
+        "text": "<p>After childbirth, your estrogen levels plummet while androgens (including DHT) can temporarily spike. This hormonal shift is the primary trigger for postpartum shedding. Natural hormone-balancing herbs like Saw Palmetto and Stinging Nettle help stabilize this transition by gently supporting healthy estrogen levels and blocking excess DHT .<\/p>",
+        "badge_text": "Hormone Balance",
+        "badge_bg_color": "#8b5fbf"
+      }
+    },
+    "cwc_listicle_card_image_text_XwA6GL": {
+      "type": "CWC_listicle_card_image_text",
+      "name": "Listicle Card Image Text",
+      "settings": {
+        "bg_color": "#ffffff",
+        "card_bg_color": "#f0fdf4",
+        "text_color": "#111111",
+        "padding_top": 40,
+        "padding_bottom": 40,
+        "image_first": false,
+        "image": "shopify:\/\/shop_images\/5_Natural_Ways_Women_Are_Reversing_Postpartum_Hair_Loss_Without_Hormones_or_Harsh_Drugs_06-min.png",
+        "number_text": "02",
+        "title": "<h2>Support Scalp Circulation<\/h2>",
+        "text": "<p>Healthy hair growth depends on good blood flow to the scalp. When circulation is poor, your follicles don't get enough oxygen and nutrients to produce strong, thick hair. Ingredients like Ginkgo Biloba and Rosemary Extract are known for improving microcirculation to the scalp, ensuring your follicles get the fuel they need.<\/p><p><a href=\"#CWC_listicle_buy_box--anchor\" title=\"#CWC_listicle_buy_box--anchor\"><em><strong>Support healthy follicle flow <\/strong><\/em><\/a><\/p>",
+        "badge_text": "Scalp Health",
+        "badge_bg_color": "#6f9c6f"
+      }
+    },
+    "cwc_listicle_card_image_text_rGfacm": {
+      "type": "CWC_listicle_card_image_text",
+      "name": "Listicle Card Image Text",
+      "settings": {
+        "bg_color": "#faf8f3",
+        "card_bg_color": "#e6d9f5",
+        "text_color": "#111111",
+        "padding_top": 40,
+        "padding_bottom": 40,
+        "image_first": true,
+        "image": "shopify:\/\/shop_images\/5_Natural_Ways_Women_Are_Reversing_Postpartum_Hair_Loss_Without_Hormones_or_Harsh_Drugs_05-min.png",
+        "number_text": "03",
+        "title": "<h2>Replenish Nutrients<\/h2>",
+        "text": "<p>Pregnancy and breastfeeding are incredibly demanding on your body's nutrient stores. Iron, Biotin, Zinc, and B-Vitamins are often depleted during this time—and all of them are essential for healthy hair growth. Replenishing these nutrients is one of the fastest ways to support hair recovery.<\/p><p><a href=\"#CWC_listicle_buy_box--anchor\" title=\"#CWC_listicle_buy_box--anchor\"><em><strong>Give your hair the minerals it needs<\/strong><\/em><\/a><\/p>",
+        "badge_text": "Nutrient Boost",
+        "badge_bg_color": "#8b5fbf"
+      }
+    },
+    "cwc_listicle_card_image_text_eHkaw9": {
+      "type": "CWC_listicle_card_image_text",
+      "name": "Listicle Card Image Text",
+      "settings": {
+        "bg_color": "#ffffff",
+        "card_bg_color": "#f0fdf4",
+        "text_color": "#111111",
+        "padding_top": 40,
+        "padding_bottom": 40,
+        "image_first": false,
+        "image": "shopify:\/\/shop_images\/5_Natural_Ways_Women_Are_Reversing_Postpartum_Hair_Loss_Without_Hormones_or_Harsh_Drugs_04-min_dabd1325-d764-4a3e-a541-f3749d3889ca.png",
+        "number_text": "04",
+        "title": "<h2>Manage Stress & Sleep<\/h2>",
+        "text": "<p>New motherhood is stressful—there’s no way around it. But chronic stress and sleepless nights can prolong postpartum shedding by keeping your body out of balance. Gentle botanical and nutritional support can help your body manage stress more effectively while supporting healthier cortisol rhythms.<\/p><p><a href=\"#CWC_listicle_buy_box--anchor\" title=\"#CWC_listicle_buy_box--anchor\"><em><strong>Help your body re-balance naturally<\/strong><\/em><\/a><\/p>",
+        "badge_text": "Stress Support",
+        "badge_bg_color": "#6f9c6f"
+      }
+    },
+    "cwc_listicle_card_image_text_craHyP": {
+      "type": "CWC_listicle_card_image_text",
+      "name": "Listicle Card Image Text",
+      "settings": {
+        "bg_color": "#faf8f3",
+        "card_bg_color": "#e6d9f5",
+        "text_color": "#111111",
+        "padding_top": 40,
+        "padding_bottom": 40,
+        "image_first": true,
+        "image": "shopify:\/\/shop_images\/5_Natural_Ways_Women_Are_Reversing_Postpartum_Hair_Loss_Without_Hormones_or_Harsh_Drugs_03-min.png",
+        "number_text": "05",
+        "title": "<h2>Use a Plant-Based Hair Support Formula<\/h2>",
+        "text": "<p>Each of these natural methods works on its own, but they work exponentially better together. The challenge? Sourcing high-quality ingredients, figuring out the right dosages, and taking multiple supplements every day. That's why thousands of women are turning to Simply Revival—a single, plant-based formula that combines all 5 of these approaches into one easy daily capsule.<\/p>",
+        "badge_text": "Complete System",
+        "badge_bg_color": "#8b5fbf"
+      }
+    },
+    "cwc_listicle_center_text_4rb3tL": {
+      "type": "CWC_listicle_center_text",
+      "disabled": true,
+      "name": "Listicle Center Text",
+      "settings": {
+        "bg_color": "#ffffff",
+        "text_color": "#111111",
+        "text_align": "center",
+        "max_width": 900,
+        "padding_top": 60,
+        "padding_bottom": 60,
+        "title": "<h2>You're Not Losing Your Hair — It's Just Getting Ready to Grow Back Stronger<\/h2>",
+        "text": "<p>Postpartum hair loss can feel overwhelming, but it's important to remember: this is your body's natural way of resetting after pregnancy. With the right support, you can shorten the shedding phase, nourish your follicles, and help your hair come back thicker and healthier than before.<\/p><p>Thousands of women are already seeing results with these natural methods. If you're ready to speed up your recovery and feel like yourself again, now is the time.<\/p>",
+        "text_2": ""
+      }
+    },
+    "cwc_listicle_card_summary_QUWc8L": {
+      "type": "CWC_listicle_card_summary",
+      "name": "Listicle Card Summary",
+      "settings": {
+        "bg_color": "#ffffff",
+        "card_bg_color": "#f0fdf4",
+        "text_color": "#34804b",
+        "padding_top": 60,
+        "padding_bottom": 60,
+        "title": "<h3>The Bottom Line<\/h3>",
+        "text": "<p>Postpartum hair loss can feel overwhelming, but it's important to remember: this is your body's natural way of resetting after pregnancy. With the right support, you can shorten the shedding phase, nourish your follicles, and help your hair come back thicker and healthier than before.<\/p><p>Thousands of women are already seeing results with these natural methods. If you're ready to speed up your recovery and feel like yourself again, now is the time.<\/p>",
+        "text_2": ""
+      }
+    },
+    "cwc_listicle_center_text_LptwYW": {
+      "type": "CWC_listicle_center_text",
+      "name": "Listicle Center Text",
+      "settings": {
+        "bg_color": "#faf8f3",
+        "text_color": "#111111",
+        "text_align": "center",
+        "max_width": 1000,
+        "padding_top": 60,
+        "padding_bottom": 0,
+        "title": "<h2>Why Simply Revival Is the #1 Choice for Postpartum Hair Recovery<\/h2>",
+        "text": "",
+        "text_2": ""
+      }
+    },
+    "cwc_listicle_buy_box_aWGq78": {
+      "type": "CWC_listicle_buy_box",
+      "blocks": {
+        "timer_hqgyyg": {
+          "type": "timer",
+          "settings": {
+            "use_synced_timer": true,
+            "synced_timer_section_id": "global_promo_timer"
+          }
+        },
+        "offer_c43iiH": {
+          "type": "offer",
+          "disabled": true,
+          "settings": {
+            "title": "<h4>Limited Time Offer!<\/h4>",
+            "text": "<p>This is a special, time-sensitive offer.<\/p>",
+            "subtext": "<p>Risk: High | Free Shipping<\/p>",
+            "button_text": "Claim Offer",
+            "button_link": "",
+            "button_bg_color": "",
+            "button_text_color": ""
+          }
+        }
+      },
+      "block_order": [
+        "timer_hqgyyg",
+        "offer_c43iiH"
+      ],
+      "name": "Listicle Buy Box",
+      "settings": {
+        "bg_color": "#faf8f3",
+        "card_bg_color": "#ffffff",
+        "text_color": "#111111",
+        "bold_color": "#ff9500",
+        "padding_top": 80,
+        "padding_bottom": 60,
+        "image": "shopify:\/\/shop_images\/hair_support-1-min.png",
+        "sub_head": "<p>🎁 +2 Months Free On Select options<\/p>",
+        "title": "<h3><strong>UP TO 70% OFF <\/strong>FOR A LIMITED TIME ONLY!<\/h3>",
+        "sub_text": "<p>This limited-time deal is in high demand and stock keeps selling out<\/p>",
+        "floating_badge_text": "⚡ BLACK FRIDAY SPECIAL",
+        "button_color": "#8b5fbf",
+        "button_text_color": "#ffffff",
+        "button_text": "GET 70% OFF",
+        "button_link": "shopify:\/\/pages\/postpartum-black-friday-exclusive-offer",
+        "subtext": "<p>Try it today with a 30-Day Money-Back Guarantee!<\/p>"
+      }
+    },
+    "cwc_listicle_columns_R4Jxqb": {
+      "type": "CWC_listicle_columns",
+      "blocks": {
+        "column_Q7hckE": {
+          "type": "column",
+          "settings": {
+            "title": "✅ Hormone-Balancing Support",
+            "text": "<p>Combines Saw Palmetto and Stinging Nettle to help stabilize estrogen and block excess DHT—addressing the root hormonal cause of postpartum shedding.<\/p>"
+          }
+        },
+        "column_AinpR3": {
+          "type": "column",
+          "settings": {
+            "title": "✅ Nutrient Replenishment",
+            "text": "<p>Delivers clinical-strength doses of Biotin, Iron, Zinc, and B-Vitamins to rebuild your nutrient stores and support strong, healthy hair growth.<\/p>"
+          }
+        },
+        "column_tpNj7b": {
+          "type": "column",
+          "settings": {
+            "title": "✅ 100% Plant-Based & Drug-Free",
+            "text": "<p>No synthetic hormones, no harsh chemicals, no side effects. Just clean, plant-based ingredients that are safe for breastfeeding moms.<\/p>"
+          }
+        },
+        "column_LaXMQB": {
+          "type": "column",
+          "settings": {
+            "title": "✅ Real Results",
+            "text": "<p>Thousands of women are seeing less shedding, thicker hair, and renewed confidence within 30-90 days. It's the easiest way to support your hair recovery naturally.<\/p>"
+          }
+        }
+      },
+      "block_order": [
+        "column_Q7hckE",
+        "column_AinpR3",
+        "column_tpNj7b",
+        "column_LaXMQB"
+      ],
+      "name": "Listicle Columns",
+      "settings": {
+        "bg_color": "#faf8f3",
+        "text_color": "#343a40",
+        "card_bg_color": "#ffffff",
+        "padding_top": 0,
+        "padding_bottom": 60,
+        "title": "",
+        "text": "",
+        "text_2": ""
+      }
+    },
+    "cwc_listicle_key_testimonial_BeBd93": {
+      "type": "CWC_listicle_key_testimonial",
+      "name": "Listicle Key Testimonial",
+      "settings": {
+        "bg_color": "#f8f4ff",
+        "text_color": "#111111",
+        "star_color": "#ffc107",
+        "padding_top": 60,
+        "padding_bottom": 80,
+        "image": "shopify:\/\/shop_images\/emma_1_-min.png",
+        "testimonial_author": "<p>Emma<\/p>",
+        "title": "<h2>\"I Didn't Realize How Much Hair I Was Losing Until It Finally Stopped.\"<\/h2>",
+        "text": "<p>I was losing so much hair after my daughter was born—it was everywhere. I started Simply Revival at 4 months postpartum and within a month, the shedding slowed down. Now at 7 months, my hair is growing back and I feel like myself again.<\/p>",
+        "author": "<p>— Emma R., Verified Customer<\/p>"
+      }
+    },
+    "cwc_listicle_key_reviews_AyJnGF": {
+      "type": "CWC_listicle_key_reviews",
+      "blocks": {
+        "review_eknDTH": {
+          "type": "review",
+          "settings": {
+            "author_image": "shopify:\/\/shop_images\/key_review_03.png",
+            "review_text": "<p>\"I didn't want to take anything harsh while breastfeeding, so Simply Revival was perfect. It's all-natural, and it actually works. My hairline is filling back in and I'm not finding clumps of hair in the shower anymore.\"<\/p>",
+            "author_name": "<p>Olivia T.<\/p>"
+          }
+        },
+        "review_TxhwgJ": {
+          "type": "review",
+          "settings": {
+            "author_image": "shopify:\/\/shop_images\/key_review_02.png",
+            "review_text": "<p>\"Postpartum hair loss hit me hard around 5 months. I tried biotin alone but it wasn't enough. Simply Revival has everything I needed in one capsule—my hair is thicker, the shedding stopped, and I finally feel confident again.\"<\/p>",
+            "author_name": "<p>Maya S.<\/p>"
+          }
+        },
+        "review_FxwVdJ": {
+          "type": "review",
+          "settings": {
+            "author_image": "shopify:\/\/shop_images\/key_review_01.png",
+            "review_text": "<p>\"After my second baby, the hair loss was worse than the first time. Simply Revival helped me get my hair back faster than I expected. The natural ingredients gave me peace of mind while nursing.\"<\/p>",
+            "author_name": "<p>Sarah K.<\/p>"
+          }
+        }
+      },
+      "block_order": [
+        "review_eknDTH",
+        "review_TxhwgJ",
+        "review_FxwVdJ"
+      ],
+      "name": "Listicle Key Reviews",
+      "settings": {
+        "bg_color": "#ffffff",
+        "card_bg_color": "#faf8f3",
+        "text_color": "#111111",
+        "star_color": "#ffc107",
+        "padding_top": 60,
+        "padding_bottom": 60,
+        "section_title": "<h2>What Moms Are Saying:<\/h2>"
+      }
+    },
+    "cwc_listicle_offer_box_deaBDt": {
+      "type": "CWC_listicle_offer_box",
+      "name": "Listicle Offer Box",
+      "settings": {
+        "bg_color": "#ffffff",
+        "card_bg_color": "#e6d9f5",
+        "text_color": "#111111",
+        "button_color": "#8b5fbf",
+        "button_text_color": "#ffffff",
+        "padding_top": 40,
+        "padding_bottom": 60,
+        "title": "<h2>Start Your Postpartum Hair Recovery — Naturally<\/h2>",
+        "text": "<p>Your body just went through one of the most incredible transformations possible. Now it's time to help it find balance again—and get your hair back in the process.<\/p>",
+        "text_2": "",
+        "button_text": "Try Simply Revival Risk-Free",
+        "button_link": "shopify:\/\/pages\/black-friday-exclusive-offer",
+        "subtext": "<p>Made in the USA | Third-Party Tested | 365-Day Money-Back Guarantee<\/p>"
+      }
+    }
+  },
+  "order": [
+    "cwc_listicle_promotion_banner_849zYy",
+    "main",
+    "cwc_listicle_center_text_NE8Ngn",
+    "cwc_listicle_head_pqPHzT",
+    "cwc_listicle_center_text_ffGngz",
+    "cwc_listicle_center_text_XpPLkt",
+    "cwc_listicle_card_columns_Uj6BHz",
+    "cwc_listicle_center_text_RmnRmk",
+    "cwc_listicle_card_image_text_fcWkjC",
+    "cwc_listicle_card_image_text_XwA6GL",
+    "cwc_listicle_card_image_text_rGfacm",
+    "cwc_listicle_card_image_text_eHkaw9",
+    "cwc_listicle_card_image_text_craHyP",
+    "cwc_listicle_center_text_4rb3tL",
+    "cwc_listicle_card_summary_QUWc8L",
+    "cwc_listicle_center_text_LptwYW",
+    "cwc_listicle_buy_box_aWGq78",
+    "cwc_listicle_columns_R4Jxqb",
+    "cwc_listicle_key_testimonial_BeBd93",
+    "cwc_listicle_key_reviews_AyJnGF",
+    "cwc_listicle_offer_box_deaBDt"
+  ]
+}

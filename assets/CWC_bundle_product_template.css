@@ -1,0 +1,177 @@
+/* ================================
+   CWC Featured Product Styles
+   ================================ */
+
+.cwc-bundle-product-template {
+    background: var(--section-bg);
+    padding-top: var(--padding-top);
+    padding-bottom: var(--padding-bottom);
+}
+
+#cwc-bundle-product-template--anchor {
+    visibility: hidden;
+    position: relative;
+    top: -4rem;
+    height: 3px;
+    /* background: red; */
+    /* visibility: visible; */
+}
+
+.cwc-bundle-product-template__wrapper {
+    max-width: 1500px;
+    margin: 0 auto;
+    padding: 0 3rem;
+    padding: 0 3.125rem;
+}
+
+.cwc-bundle-product-template__grid {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    grid-template-columns: 49.5% 50.5%;
+    /* gap: 4rem; */
+    /* gap: 2.56rem; */
+    align-items: start;
+}
+
+/* ================================
+   Left Column
+   ================================ */
+
+.cwc-bundle-product-template__left {
+    display: flex;
+    flex-direction: column;
+    gap: 2rem;
+    gap: 0rem;
+}
+
+/* image carosel */
+.cwc-bundle-product-template__image_carousel {
+    margin-bottom: 1rem;
+
+}
+
+
+/* ================================
+   Right Column
+   ================================ */
+
+.cwc-bundle-product-template__right {
+    display: flex;
+    flex-direction: column;
+    gap: 1.5rem;
+    gap: 0rem;
+    padding-left: 2.5625rem;
+}
+
+.cwc-bundle-product-template__text {
+    font-size: 1rem;
+    line-height: 1.6;
+    color: #111111;
+
+    /* margin-bottom: 1rem; */
+}
+
+/* ================================
+   Benefits
+   ================================ */
+.cwc-bundle-product-template__title {
+    margin-bottom: 1rem;
+}
+
+
+
+/* ================================
+   Content
+   ================================ */
+
+.cwc-bundle-product-template__desc {
+    margin-bottom: 1rem;
+}
+
+
+/* ================================
+   Add to Cart Form & Button
+   ================================ */
+
+.cwc-bundle-product-template__form {
+    display: flex;
+    flex-direction: column;
+    gap: 1rem;
+    gap: 0rem;
+
+    /* testing */
+    padding: 1rem;
+    padding: 2rem 3rem;
+    background: grey;
+    border-radius: 6px;
+
+    border: 3px solid #0f92ae26;
+    background-color: #0f92ae26;
+    background-color: #0f92ae12;
+}
+
+
+
+@media (max-width: 991px) {
+    .cwc-bundle-product-template__grid {
+        grid-template-columns: 1fr;
+        gap: 2rem;
+        gap: 0rem;
+    }
+
+    .cwc-bundle-product-template__right {
+        padding-left: 0rem;
+    }
+
+    .cwc-bundle-product-template__wrapper {
+        padding: 0 1.25rem;
+    }
+
+
+    .cwc-bundle-product-template__image_carousel {
+        margin-bottom: .5rem;
+
+    }
+
+}
+
+
+/* ================================
+   Mobile Styles
+   ================================ */
+
+
+@media (max-width: 768px) {
+    .cwc-bundle-product-template {
+        padding-top: var(--padding-top-mobile);
+        padding-bottom: var(--padding-bottom-mobile);
+    }
+
+    .cwc-bundle-product-template__wrapper {
+        padding: 0 1rem;
+    }
+
+
+    .cwc-bundle-product-template__left {
+        gap: 1.5rem;
+    }
+
+    .cwc-bundle-product-template__right {
+        gap: 1.25rem;
+    }
+
+    .cwc-bundle-product-template__text h1,
+    .cwc-bundle-product-template__text h2 {
+        font-size: 1.75rem;
+    }
+
+    .cwc-bundle-product-template__price-current {
+        font-size: 1.75rem;
+
+    }
+
+
+
+
+
+}

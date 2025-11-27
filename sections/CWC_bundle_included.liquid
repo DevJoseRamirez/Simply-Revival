@@ -1,0 +1,238 @@
+{% style %}
+  #CWC_bundle_included-{{ section.id }} {
+    --section-bg: {{ section.settings.bg_color | default: '#ffffff' }};
+    --card-bg: {{ section.settings.card_bg_color | default: '#f9f9f9' }};
+    --text-color: {{ section.settings.text_color | default: '#111111' }};
+    --card-button-bg: {{ section.settings.card_value_button_color | default: '#ffffff' }};
+    --card-button-text: {{ section.settings.card_button_text_color | default: '#111111' }};
+    --section-button-bg: {{ section.settings.section_button_color | default: '#000000' }};
+    --section-button-text: {{ section.settings.section_button_text_color | default: '#ffffff' }};
+    --padding-top: {{ section.settings.padding_top | default: 60 }}px;
+    --padding-bottom: {{ section.settings.padding_bottom | default: 60 }}px;
+    --padding-top-mobile: {{ section.settings.padding_top | times: 0.5 }}px;
+    --padding-bottom-mobile: {{ section.settings.padding_bottom | times: 0.5 }}px;
+  }
+{% endstyle %}
+
+{{ 'CWC_bundle_included.css' | asset_url | stylesheet_tag }}
+
+<section
+  id="CWC_bundle_included-{{ section.id }}"
+  class="cwc-bundle-included"
+>
+  <div class="cwc-bundle-included__container">
+    {% comment %} Section Header {% endcomment %}
+    <div class="cwc-bundle-included__header">
+      {% if section.settings.subhead_value != blank %}
+        <div class="cwc-bundle-included__subhead-value rte">
+          {{ section.settings.subhead_value }}
+        </div>
+      {% endif %}
+
+      {% if section.settings.title != blank %}
+        <div class="cwc-bundle-included__title rte">
+          {{ section.settings.title }}
+        </div>
+      {% endif %}
+
+      {% if section.settings.text != blank %}
+        <div class="cwc-bundle-included__text rte">
+          {{ section.settings.text }}
+        </div>
+      {% endif %}
+    </div>
+
+    {% comment %} Item Grid {% endcomment %}
+    {% if section.blocks.size > 0 %}
+      <div class="cwc-bundle-included__grid cwc-bundle-included__grid--{{ section.blocks.size }}">
+        {% for block in section.blocks %}
+          <div class="cwc-bundle-included__card" {{ block.shopify_attributes }}>
+            {% if block.settings.image != blank %}
+              <div class="cwc-bundle-included__card-image">
+                {% render 'image', image: block.settings.image, sizes: '200px' %}
+              </div>
+            {% endif %}
+
+            <div class="cwc-bundle-included__card-content">
+              {% if block.settings.title != blank %}
+                <div class="cwc-bundle-included__card-title">
+                  {{ block.settings.title }}
+                </div>
+              {% endif %}
+
+              {% if block.settings.value_text != blank %}
+                <div class="cwc-bundle-included__card-value-button">
+                  {{ block.settings.value_text }}
+                </div>
+              {% endif %}
+            </div>
+          </div>
+        {% endfor %}
+      </div>
+    {% endif %}
+
+    {% comment %} Section Footer CTA {% endcomment %}
+    {% if section.settings.section_button_link != blank %}
+      <div class="cwc-bundle-included__footer">
+        <a
+          href="{{ section.settings.section_button_link }}"
+          class="cwc-bundle-included__section-button"
+        >
+          {{ section.settings.section_button_text | default: 'Shop Now' }}
+        </a>
+      </div>
+    {% endif %}
+  </div>
+</section>
+
+{% schema %}
+{
+  "name": "CWC Bundle Included",
+  "tag": "section",
+  "class": "section",
+  "settings": [
+    {
+      "type": "header",
+      "content": "Content"
+    },
+    {
+      "type": "richtext",
+      "id": "subhead_value",
+      "label": "Subhead Value",
+      "default": "<p>+$100 VALUE</p>"
+    },
+    {
+      "type": "richtext",
+      "id": "title",
+      "label": "Title",
+      "default": "<h2>CLAIM YOUR FREE STARTER KIT!</h2>"
+    },
+    {
+      "type": "richtext",
+      "id": "text",
+      "label": "Text",
+      "default": "<p>Your kit comes packed with everything you need to start your journey, plus a few extras on us!</p>"
+    },
+    {
+      "type": "header",
+      "content": "Section Button"
+    },
+    {
+      "type": "text",
+      "id": "section_button_text",
+      "label": "Button Text",
+      "default": "TRY DOSE TODAY"
+    },
+    {
+      "type": "url",
+      "id": "section_button_link",
+      "label": "Button Link"
+    },
+    {
+      "type": "header",
+      "content": "Colors & Spacing"
+    },
+    {
+      "type": "color",
+      "id": "bg_color",
+      "label": "Background color",
+      "default": "#ffffff"
+    },
+    {
+      "type": "color",
+      "id": "card_bg_color",
+      "label": "Card background color",
+      "default": "#f0f0ff"
+    },
+    {
+      "type": "color",
+      "id": "text_color",
+      "label": "Text color",
+      "default": "#111111"
+    },
+    {
+      "type": "color",
+      "id": "card_value_button_color",
+      "label": "Card Value Button Background Color",
+      "default": "#ffffff"
+    },
+    {
+      "type": "color",
+      "id": "card_button_text_color",
+      "label": "Card Value Button Text Color",
+      "default": "#111111"
+    },
+    {
+      "type": "color",
+      "id": "section_button_color",
+      "label": "Section Button Background Color",
+      "default": "#000000"
+    },
+    {
+      "type": "color",
+      "id": "section_button_text_color",
+      "label": "Section Button Text Color",
+      "default": "#ffffff"
+    },
+    {
+      "type": "range",
+      "id": "padding_top",
+      "min": 0,
+      "max": 100,
+      "step": 10,
+      "unit": "px",
+      "label": "Padding top",
+      "default": 60
+    },
+    {
+      "type": "range",
+      "id": "padding_bottom",
+      "min": 0,
+      "max": 100,
+      "step": 10,
+      "unit": "px",
+      "label": "Padding bottom",
+      "default": 60
+    }
+  ],
+  "blocks": [
+    {
+      "type": "card",
+      "name": "Included Item Card",
+      "settings": [
+        {
+          "type": "text",
+          "id": "title",
+          "label": "Title",
+          "default": "A2 PROBIOTIC CREAMER+"
+        },
+        {
+          "type": "text",
+          "id": "value_text",
+          "label": "Value Text",
+          "default": "$20 FREE"
+        },
+        {
+          "type": "image_picker",
+          "id": "image",
+          "label": "Image"
+        }
+      ]
+    }
+  ],
+  "presets": [
+    {
+      "name": "Bundle Included Items",
+      "category": "Custom",
+      "blocks": [
+        { "type": "card" },
+        { "type": "card" },
+        { "type": "card" },
+        { "type": "card" },
+        { "type": "card" },
+        { "type": "card" }
+      ]
+    }
+  ]
+}
+{% endschema %}

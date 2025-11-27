@@ -1,0 +1,551 @@
+{
+  "sections": {
+    "main": {
+      "type": "main-page",
+      "disabled": true,
+      "settings": {}
+    },
+    "cwc_listicle_promotion_banner_849zYy": {
+      "type": "CWC_listicle_promotion_banner",
+      "disabled": true,
+      "name": "Listicle Promotion Banner",
+      "settings": {
+        "bg_color": "#000000",
+        "text_color": "#ffffff",
+        "padding_top": 5,
+        "padding_bottom": 5,
+        "top_text": "<p><strong>⚡ BLACK FRIDAY SPECIAL<\/strong><\/p>",
+        "bottom_text": "<p><strong>UP TO 70% OFF + 2 MONTHS FREE<\/strong><\/p>",
+        "show_timer": true,
+        "min_hours": 2.5,
+        "max_hours": 5.5
+      }
+    },
+    "cwc_hero_banner_image_AqjawN": {
+      "type": "CWC_hero_banner_image",
+      "blocks": {
+        "review_tHEWjt": {
+          "type": "review",
+          "settings": {
+            "text": "<p><strong>Rated 4.8\/5<\/strong> | Trusted by 20,000+<\/p>"
+          }
+        },
+        "headline_xtHKYe": {
+          "type": "headline",
+          "settings": {
+            "text": "<h1><strong>Let’s Get Your Hair Back on Track<\/strong><\/h1>"
+          }
+        },
+        "subtext_pGtB6V": {
+          "type": "subtext",
+          "settings": {
+            "text": "<p>Life gets busy. Budgets shift. Results can feel slow. But most people stop right before progress actually begins.<\/p>"
+          }
+        },
+        "bullets_epFBqq": {
+          "type": "bullets",
+          "disabled": true,
+          "settings": {
+            "text_1": "Build Momentum",
+            "text_2": "Support Regrowth",
+            "text_3": "Stay Consistent"
+          }
+        },
+        "button_EWkDdC": {
+          "type": "button",
+          "settings": {
+            "text": "Keep My Hair on Track",
+            "link": "#cwc-product-cards--anchor",
+            "button_bg_color": "#125657",
+            "button_text_color": "#ffffff"
+          }
+        },
+        "note_xmY9z9": {
+          "type": "note",
+          "settings": {
+            "text": "<p>365-day money back guarantee<\/p>",
+            "icon": "shopify:\/\/shop_images\/Simply_Revival___Gurantee-min.png"
+          }
+        }
+      },
+      "block_order": [
+        "review_tHEWjt",
+        "headline_xtHKYe",
+        "subtext_pGtB6V",
+        "bullets_epFBqq",
+        "button_EWkDdC",
+        "note_xmY9z9"
+      ],
+      "disabled": true,
+      "name": "Hero Banner Image",
+      "settings": {
+        "background_color": "#ffffff",
+        "text_color": "#222222",
+        "image": "shopify:\/\/shop_images\/keep_going-min.png",
+        "image_position": "left",
+        "m_image_position": "top",
+        "alt_text": "",
+        "padding_top": 40,
+        "padding_bottom": 40
+      }
+    },
+    "cwc_hero_banner_image_CRtt7R": {
+      "type": "CWC_hero_banner_image",
+      "blocks": {
+        "review_xejW4n": {
+          "type": "review",
+          "settings": {
+            "text": "<p><strong>Rated 4.8\/5<\/strong> | Trusted by 20,000+<\/p>"
+          }
+        },
+        "headline_RhPwrC": {
+          "type": "headline",
+          "settings": {
+            "text": "<h1><strong>Keep Moving Toward Thicker, Healthier Hair<\/strong><\/h1>"
+          }
+        },
+        "subtext_3Mh9hy": {
+          "type": "subtext",
+          "settings": {
+            "text": "<p>Life gets busy. Budgets shift. Results can feel slow. But most people stop right before progress actually begins.<\/p>"
+          }
+        },
+        "bullets_N4wwHA": {
+          "type": "bullets",
+          "disabled": true,
+          "settings": {
+            "text_1": "Build Momentum",
+            "text_2": "Support Regrowth",
+            "text_3": "Stay Consistent"
+          }
+        },
+        "button_mQYFPY": {
+          "type": "button",
+          "settings": {
+            "text": "Keep My Hair on Track",
+            "link": "#cwc-product-cards--anchor",
+            "button_bg_color": "#125657",
+            "button_text_color": "#ffffff"
+          }
+        },
+        "note_F4VRDX": {
+          "type": "note",
+          "settings": {
+            "text": "<p>365-day money back guarantee<\/p>",
+            "icon": "shopify:\/\/shop_images\/Simply_Revival___Gurantee-min.png"
+          }
+        }
+      },
+      "block_order": [
+        "review_xejW4n",
+        "headline_RhPwrC",
+        "subtext_3Mh9hy",
+        "bullets_N4wwHA",
+        "button_mQYFPY",
+        "note_F4VRDX"
+      ],
+      "name": "Hero Banner Image",
+      "settings": {
+        "background_color": "#ffffff",
+        "text_color": "#222222",
+        "image": "shopify:\/\/shop_images\/keep_going-1-min.png",
+        "image_position": "left",
+        "image_mobile": "shopify:\/\/shop_images\/keep_going-1-min.png",
+        "m_image_position": "bottom",
+        "alt_text": "",
+        "padding_top": 40,
+        "padding_bottom": 60
+      }
+    },
+    "cwc_listicle_center_text_j4rVzf": {
+      "type": "CWC_listicle_center_text",
+      "name": "Listicle Center Text",
+      "settings": {
+        "bg_color": "#ffffff",
+        "text_color": "#111111",
+        "text_align": "center",
+        "max_width": 1000,
+        "padding_top": 60,
+        "padding_bottom": 0,
+        "title": "<h3>Consistency Makes All the Difference<\/h3>",
+        "text": "<p>Hair health isn’t built in a day — it’s built in the decisions you make daily.<\/p><p>When you stay consistent, your follicles stay nourished, shedding calms, and new growth strengthens over time.<\/p>",
+        "text_2": ""
+      }
+    },
+    "cwc_listicle_card_columns_ndUUyE": {
+      "type": "CWC_listicle_card_columns",
+      "blocks": {
+        "column_6afqfd": {
+          "type": "column",
+          "settings": {
+            "icon_text": "💪",
+            "title": "<p><strong>Consistency<\/strong><\/p>",
+            "text": "<p>Small daily actions that build long-term results.<\/p>"
+          }
+        },
+        "column_WLGtcn": {
+          "type": "column",
+          "settings": {
+            "icon_text": "📈",
+            "title": "<p><strong>Progress<\/strong><\/p>",
+            "text": "<p>Your follicles respond best to steady support<\/p>"
+          }
+        },
+        "column_iE3hEC": {
+          "type": "column",
+          "settings": {
+            "icon_text": "😎",
+            "title": "<p><strong>Confidence<\/strong><\/p>",
+            "text": "<p>Fuller, healthier-looking hair that shows.<\/p>"
+          }
+        }
+      },
+      "block_order": [
+        "column_6afqfd",
+        "column_WLGtcn",
+        "column_iE3hEC"
+      ],
+      "name": "Listicle Card Columns",
+      "settings": {
+        "bg_color": "#ffffff",
+        "card_bg_color": "#faf8f3",
+        "text_color": "#111111",
+        "padding_top": 30,
+        "padding_bottom": 30
+      }
+    },
+    "cwc_product_card_options_AiE7kM": {
+      "type": "CWC_product_card_options",
+      "blocks": {
+        "product_option_UNViTn": {
+          "type": "product_option",
+          "settings": {
+            "variant_id": "50987460559129",
+            "badge": "",
+            "title": "<h3><strong>Keep Going With 1 Bottle<\/strong><\/h3>",
+            "bullet_1": "<p><strong>1-Month Supply<\/strong><\/p>",
+            "bullet_2": "<p>A simple way to stay on track<\/p>",
+            "bullet_3": "<p>Maintain daily support<\/p>",
+            "bullet_4": "<p>Free shipping<\/p>",
+            "bullet_5": "<p>365-day guarantee<\/p>",
+            "button_text": "Keep My Hair on Track"
+          }
+        },
+        "product_option_iC9JjF": {
+          "type": "product_option",
+          "settings": {
+            "variant_id": "50987460591897",
+            "badge": "best value",
+            "title": "<h3><strong>3-Month Regrowth Pack<\/strong><\/h3>",
+            "bullet_1": "<p><strong>Buy 2, Get 1 FREE<\/strong><\/p>",
+            "bullet_2": "<p>Lock in 90 days of DHT blocking<\/p>",
+            "bullet_3": "<p>Ideal for visible regrowth<\/p>",
+            "bullet_4": "<p>Free shipping<\/p>",
+            "bullet_5": "<p>365-day guarantee<\/p>",
+            "button_text": "Keep My Hair on Track"
+          }
+        },
+        "product_option_DheQQb": {
+          "type": "product_option",
+          "settings": {
+            "variant_id": "50987460624665",
+            "badge": "Most Popular",
+            "title": "<h3><strong>Full Growth Bundle<\/strong><\/h3>",
+            "bullet_1": "<p><strong>Buy 3, Get 2 FREE<\/strong><\/p>",
+            "bullet_2": "<p>Full 5-month transformation<\/p>",
+            "bullet_3": "<p>Maximum consistency, maximum results<\/p>",
+            "bullet_4": "<p>Free shipping<\/p>",
+            "bullet_5": "<p>365-day guarantee<\/p>",
+            "button_text": "Keep My Hair on Track"
+          }
+        }
+      },
+      "block_order": [
+        "product_option_UNViTn",
+        "product_option_iC9JjF",
+        "product_option_DheQQb"
+      ],
+      "name": "Product Card Options",
+      "settings": {
+        "product": "simply®-dht-blocker",
+        "show_variant_ids": false,
+        "section_title": "<h2>Choose the Plan That Helps You Stay Consistent<\/h2>",
+        "section_subtitle": "<p>Small daily actions create long-term change. Keep giving your hair the steady support it needs.<\/p><p><\/p>",
+        "bg_color": "#ffffff",
+        "card_bg_color": "#faf8f3",
+        "price_color": "#60a1a2",
+        "text_color": "#111111",
+        "button_color": "#125657",
+        "button_text_color": "#ffffff",
+        "padding_top": 60,
+        "padding_bottom": 60
+      }
+    },
+    "cwc_video_testimonials_WA6Xrc": {
+      "type": "CWC_video_testimonials",
+      "blocks": {
+        "testimonial_mCmQTJ": {
+          "type": "testimonial",
+          "settings": {
+            "video_url": "",
+            "author_name": "Customer Name"
+          }
+        },
+        "testimonial_RXw88H": {
+          "type": "testimonial",
+          "settings": {
+            "video_url": "",
+            "author_name": "Customer Name"
+          }
+        },
+        "testimonial_F9xPcx": {
+          "type": "testimonial",
+          "settings": {
+            "video_url": "",
+            "author_name": "Customer Name"
+          }
+        },
+        "button_VhTP4d": {
+          "type": "button",
+          "disabled": true,
+          "settings": {
+            "text": "Try Risk-Free Today",
+            "link": "shopify:\/\/pages\/black-friday-exclusive-offer",
+            "button_bg_color": "#125657",
+            "button_text_color": "#ffffff"
+          }
+        },
+        "guarantee_text_fATMQH": {
+          "type": "guarantee_text",
+          "disabled": true,
+          "settings": {
+            "text": "365-day money back guarantee",
+            "icon": "shopify:\/\/shop_images\/Simply_Revival___Gurantee-min.png"
+          }
+        }
+      },
+      "block_order": [
+        "testimonial_mCmQTJ",
+        "testimonial_RXw88H",
+        "testimonial_F9xPcx",
+        "button_VhTP4d",
+        "guarantee_text_fATMQH"
+      ],
+      "name": "Video Testimonials",
+      "settings": {
+        "video_testimonials_collection": "video-testimonial-list-lnxzuxpg",
+        "heading": "<h3>Real Stories, <strong>Real Momentum<\/strong><\/h3>",
+        "bold_color": "#125657",
+        "text": "<p>See how Simply Revival helped others who stayed consistent — and what restarting can do for you too.<\/p>",
+        "bg_color": "#faf8f3",
+        "text_color": "#111111",
+        "button_bg": "#125657",
+        "button_text": "#ffffff",
+        "padding_top": 60,
+        "padding_bottom": 60
+      }
+    },
+    "cwc_listicle_head_9BLiKF": {
+      "type": "CWC_listicle_head",
+      "blocks": {
+        "heading_M9x96z": {
+          "type": "heading",
+          "settings": {
+            "heading": "<h1>3 Common Hair Loss Myths That Are Costing You Your Hair<\/h1>"
+          }
+        },
+        "subtext_zgicqf": {
+          "type": "subtext",
+          "settings": {
+            "subtext": "<p>What you don't know about hair loss could be making it worse—here's the truth.<\/p>"
+          }
+        },
+        "author_eVXder": {
+          "type": "author",
+          "settings": {
+            "author_image": "shopify:\/\/shop_images\/Marcus_-_author-min.png",
+            "author_text": "<p>By Marcus Rivera, Men's Health Writer<\/p>",
+            "author_date": "Last Updated Oct 08, 2025"
+          }
+        },
+        "summary_THNYCd": {
+          "type": "summary",
+          "settings": {
+            "summary": "<p><strong>Summary:<\/strong> Most men are unknowingly making their hair loss worse by believing outdated myths. These 3 common misconceptions are preventing thousands from getting real results—and it's time to set the record straight.<\/p>",
+            "bold_color": "#009370"
+          }
+        }
+      },
+      "block_order": [
+        "heading_M9x96z",
+        "subtext_zgicqf",
+        "author_eVXder",
+        "summary_THNYCd"
+      ],
+      "disabled": true,
+      "name": "Listicle Head",
+      "settings": {
+        "bg_color": "#ffffff",
+        "text_color": "#111111",
+        "padding_top": 60,
+        "padding_bottom": 60
+      }
+    },
+    "cwc_listicle_image_text_Www933": {
+      "type": "CWC_listicle_image_text",
+      "disabled": true,
+      "name": "Listicle Image Text",
+      "settings": {
+        "bg_color": "#ffffff",
+        "text_color": "#111111",
+        "pill_color": "#60a1a2",
+        "padding_top": 40,
+        "padding_bottom": 50,
+        "image_position": true,
+        "image": "shopify:\/\/shop_images\/3_Common_Hair_Loss_Myths_That_Are_Costing_You_Your_Hair_01-min.png",
+        "pill_text": "Root Cause",
+        "title": "<h3>3️⃣ Hair Products and Shampoos Can Fix Hair Loss<\/h3>",
+        "text": "<p><strong>The Truth:<\/strong><br\/>Shampoos and topical treatments can't address the root cause of hair loss—excess DHT inside your body. They treat the symptom (thin hair) but ignore the problem (the hormone attacking your follicles). If you're not blocking DHT from the inside, no amount of expensive shampoo will stop the shedding. Real hair recovery starts internally, not externally.<\/p><p><a href=\"#CWC_listicle_buy_box--anchor\" title=\"#CWC_listicle_buy_box--anchor\">Learn Why Hair Recovery Starts on the Inside<\/a><\/p>",
+        "text_2": ""
+      }
+    },
+    "cwc_social_proof_yt3UT8": {
+      "type": "CWC_social_proof",
+      "blocks": {
+        "image_9ECnz3": {
+          "type": "image",
+          "settings": {}
+        },
+        "image_ABBmE7": {
+          "type": "image",
+          "settings": {}
+        }
+      },
+      "block_order": [
+        "image_9ECnz3",
+        "image_ABBmE7"
+      ],
+      "name": "Social Proof",
+      "settings": {
+        "social_proof_image_list": "social-proof-image-list-o5xpgpmm",
+        "show_stars": true,
+        "star_link": "",
+        "heading": "<h3>Real Stories, <strong>Real Results<\/strong><\/h3>",
+        "bold_color": "#125657",
+        "text": "<p>See how Simply Revival helped others who stayed consistent — and what restarting can do for you too.<\/p>",
+        "bg_color": "#ffffff",
+        "text_color": "#111111",
+        "padding_top": 40,
+        "padding_bottom": 20
+      }
+    },
+    "cwc_testimonials_CQHBKE": {
+      "type": "CWC_testimonials",
+      "blocks": {
+        "testimonial_wNycg4": {
+          "type": "testimonial",
+          "settings": {
+            "star_rating": "4.9",
+            "title": "Amazing product!",
+            "text": "This product completely exceeded my expectations...",
+            "author_name": "Jane D.",
+            "feature_one": "Eco-friendly",
+            "feature_two": "Durable"
+          }
+        },
+        "testimonial_KwHMTi": {
+          "type": "testimonial",
+          "settings": {
+            "star_rating": "4.9",
+            "title": "Amazing product!",
+            "text": "This product completely exceeded my expectations...",
+            "author_name": "Jane D.",
+            "feature_one": "Eco-friendly",
+            "feature_two": "Durable"
+          }
+        },
+        "testimonial_6hefyf": {
+          "type": "testimonial",
+          "settings": {
+            "star_rating": "4.9",
+            "title": "Amazing product!",
+            "text": "This product completely exceeded my expectations...",
+            "author_name": "Jane D.",
+            "feature_one": "Eco-friendly",
+            "feature_two": "Durable"
+          }
+        }
+      },
+      "block_order": [
+        "testimonial_wNycg4",
+        "testimonial_KwHMTi",
+        "testimonial_6hefyf"
+      ],
+      "name": "Testimonials",
+      "settings": {
+        "testimonials_collection": "main-testimonial",
+        "bg_color": "#ffffff",
+        "text_color": "#111111",
+        "card_bg": "#ffffff",
+        "highlight_color": "#009370",
+        "padding_top": 20,
+        "padding_bottom": 40
+      }
+    },
+    "cwc_listicle_offer_box_deaBDt": {
+      "type": "CWC_listicle_offer_box",
+      "disabled": true,
+      "name": "Listicle Offer Box",
+      "settings": {
+        "bg_color": "#ffffff",
+        "card_bg_color": "#d0f0f2",
+        "text_color": "#111111",
+        "button_color": "#125657",
+        "button_text_color": "#ffffff",
+        "padding_top": 40,
+        "padding_bottom": 60,
+        "title": "<h2>Ready to Stop DHT Before It's Too Late?<\/h2>",
+        "text": "<p>Due to high demand, Simply Revival can be hard to find in stock. But right now, a new batch is available.<\/p><p>If you recognized 3 or more of the signs above, this is your chance to fight back—naturally, safely, and effectively.<\/p>",
+        "text_2": "",
+        "button_text": "Check Availability Now",
+        "button_link": "shopify:\/\/pages\/black-friday-exclusive-offer",
+        "subtext": "<p>Made in the USA | Third-Party Tested | 365-Day Money-Back Guarantee<\/p>"
+      }
+    },
+    "cwc_product_content_stack_bcJ4Ud": {
+      "type": "CWC_product_content_stack",
+      "name": "Product Content Stack",
+      "settings": {
+        "product": "simply®-dht-blocker",
+        "variant_id": "50987460559129",
+        "show_variant_ids": false,
+        "title": "<h2>Stay Committed to Your Results — Up to 60% Off<\/h2>",
+        "subtext": "<p>An all-natural supplement that targets DHT at the source, combining 10 powerful herbs to help block DHT, reduce shedding, and support new hair growth.<\/p>",
+        "subtext_2": "",
+        "button_text": "Keep My Hair on Track",
+        "bg_color": "#ffffff",
+        "text_color": "#111111",
+        "button_color": "#125657",
+        "button_text_color": "#ffffff",
+        "padding_top": 60,
+        "padding_bottom": 60
+      }
+    }
+  },
+  "order": [
+    "main",
+    "cwc_listicle_promotion_banner_849zYy",
+    "cwc_hero_banner_image_AqjawN",
+    "cwc_hero_banner_image_CRtt7R",
+    "cwc_listicle_center_text_j4rVzf",
+    "cwc_listicle_card_columns_ndUUyE",
+    "cwc_product_card_options_AiE7kM",
+    "cwc_video_testimonials_WA6Xrc",
+    "cwc_listicle_head_9BLiKF",
+    "cwc_listicle_image_text_Www933",
+    "cwc_social_proof_yt3UT8",
+    "cwc_testimonials_CQHBKE",
+    "cwc_listicle_offer_box_deaBDt",
+    "cwc_product_content_stack_bcJ4Ud"
+  ]
+}

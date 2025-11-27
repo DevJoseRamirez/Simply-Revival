@@ -1,0 +1,94 @@
+{% style %}
+  .cwc-bundle-product-template__bullet-icon {
+    margin: 0.75rem 0;
+  }
+
+  .cwc-bundle-product-template__bullet-icon-list {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 0.5rem 1.5rem;
+    font-size: 0.9rem;
+  }
+
+  .cwc-bundle-product-template__bullet-icon-item {
+    display: flex;
+    align-items: center;
+    gap: 0.35rem;
+    color: #4b5563; /* text gray */
+  }
+
+  .cwc-bundle-product-template__bullet-icon-img {
+    width: 16px;
+    height: 16px;
+    flex-shrink: 0;
+  }
+
+  .cwc-bundle-product-template__bullet-icon-img img {
+    width: 100%;
+    height: 100%;
+    display: block;
+    object-fit: contain;
+  }
+
+  .cwc-bundle-product-template__bullet-icon-text {
+    line-height: 1.4;
+  }
+{% endstyle %}
+
+<div class="cwc-bundle-product-template__bullet-icon" {{ block.shopify_attributes }}>
+  <div class="cwc-bundle-product-template__bullet-icon-list">
+    {% if block.settings.icon_1 != blank or block.settings.text_1 != blank %}
+      <div class="cwc-bundle-product-template__bullet-icon-item">
+        {% if block.settings.icon_1 != blank %}
+          <span class="cwc-bundle-product-template__bullet-icon-img">
+            <img
+              src="{{ block.settings.icon_1 | img_url: '32x32' }}"
+              alt="{{ block.settings.text_1 | strip_html | escape }}"
+            >
+          </span>
+        {% endif %}
+        {% if block.settings.text_1 != blank %}
+          <span class="cwc-bundle-product-template__bullet-icon-text rte">
+            {{ block.settings.text_1 }}
+          </span>
+        {% endif %}
+      </div>
+    {% endif %}
+
+    {% if block.settings.icon_2 != blank or block.settings.text_2 != blank %}
+      <div class="cwc-bundle-product-template__bullet-icon-item">
+        {% if block.settings.icon_2 != blank %}
+          <span class="cwc-bundle-product-template__bullet-icon-img">
+            <img
+              src="{{ block.settings.icon_2 | img_url: '32x32' }}"
+              alt="{{ block.settings.text_2 | strip_html | escape }}"
+            >
+          </span>
+        {% endif %}
+        {% if block.settings.text_2 != blank %}
+          <span class="cwc-bundle-product-template__bullet-icon-text rte">
+            {{ block.settings.text_2 }}
+          </span>
+        {% endif %}
+      </div>
+    {% endif %}
+
+    {% if block.settings.icon_3 != blank or block.settings.text_3 != blank %}
+      <div class="cwc-bundle-product-template__bullet-icon-item">
+        {% if block.settings.icon_3 != blank %}
+          <span class="cwc-bundle-product-template__bullet-icon-img">
+            <img
+              src="{{ block.settings.icon_3 | img_url: '32x32' }}"
+              alt="{{ block.settings.text_3 | strip_html | escape }}"
+            >
+          </span>
+        {% endif %}
+        {% if block.settings.text_3 != blank %}
+          <span class="cwc-bundle-product-template__bullet-icon-text rte">
+            {{ block.settings.text_3 }}
+          </span>
+        {% endif %}
+      </div>
+    {% endif %}
+  </div>
+</div>

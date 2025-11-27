@@ -191,6 +191,10 @@
             "title": "<h3>Natural DHT Support Hair Care Blend<\/h3>"
           }
         },
+        "areviews_reviews_importer_areviews_title_rating_4CDD56": {
+          "type": "shopify:\/\/apps\/areviews-reviews-importer\/blocks\/AreviewsTitleRating\/ab0ec5fe-c95b-4fd6-bfb8-db2a30d0756f",
+          "settings": {}
+        },
         "desc_jFWt9g": {
           "type": "desc",
           "settings": {
@@ -214,6 +218,10 @@
         },
         "price_display_4QHJGW": {
           "type": "price_display",
+          "settings": {}
+        },
+        "loop_subscriptions_loop_widget_DzXpNa": {
+          "type": "shopify:\/\/apps\/loop-subscriptions\/blocks\/loop_widget\/267a7c64-5cb3-4552-b817-5485165f0a0b",
           "settings": {}
         },
         "product_options_nPiXV8": {
@@ -289,10 +297,6 @@
             "title": "Do you have a guarantee?",
             "content": "<p>Yes, all orders are backed by our 365-day money-back guarantee. If you’re not happy, we’ll make it right.<\/p>"
           }
-        },
-        "areviews_reviews_importer_areviews_title_rating_4CDD56": {
-          "type": "shopify:\/\/apps\/areviews-reviews-importer\/blocks\/AreviewsTitleRating\/ab0ec5fe-c95b-4fd6-bfb8-db2a30d0756f",
-          "settings": {}
         }
       },
       "block_order": [
@@ -304,6 +308,7 @@
         "desc_jFWt9g",
         "benefits_p34Qab",
         "price_display_4QHJGW",
+        "loop_subscriptions_loop_widget_DzXpNa",
         "product_options_nPiXV8",
         "subscription_toggle_pXPczQ",
         "delivery_estimate_HyL64n",
@@ -443,6 +448,7 @@
       ],
       "name": "Social Proof",
       "settings": {
+        "social_proof_image_list": "",
         "show_stars": true,
         "star_link": "#az_reviews",
         "heading": "<h3>Real Stories, <strong>Real Experiences<\/strong><\/h3>",
@@ -1443,7 +1449,15 @@
       "block_order": [
         "areviews_reviews_importer_areviews_display_reviews_6296A2"
       ],
-      "settings": {}
+      "settings": {
+        "animation": "",
+        "setwidth": "container",
+        "paddingsection": "0px 0px 0px 0px",
+        "paddingmobile": "60px 0px 60px 0px",
+        "marginsection": "0px 0px 0px 0px",
+        "marginmobile": "0px 0px 0px 0px",
+        "bgsection": "#ffffff"
+      }
     }
   },
   "order": [
