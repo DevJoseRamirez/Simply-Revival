@@ -1,5 +1,3 @@
-{% comment %} NOT IN USE {% endcomment %}
-
 {% style %}
   .cwc-bundle-product-template__content {
   margin-bottom: 1.5rem;
@@ -9,20 +7,20 @@
   --text-color: {{ block.settings.text_color }};
   }
 
-  .cwc-bundle-product-template__content .bundle-content {
+  .cwc-bundle-product-template__content .bundle-content-bottom {
   max-width: 34rem;
   }
 
   /* Title */
-  .cwc-bundle-product-template__content .bundle-content__title {
+  .cwc-bundle-product-template__content .bundle-content-bottom__title {
   margin-bottom: 0.25rem;
   }
 
-  .cwc-bundle-product-template__content .bundle-content__title h1,
-  .cwc-bundle-product-template__content .bundle-content__title h2,
-  .cwc-bundle-product-template__content .bundle-content__title h3,
-  .cwc-bundle-product-template__content .bundle-content__title h4,
-  .cwc-bundle-product-template__content .bundle-content__title p {
+  .cwc-bundle-product-template__content .bundle-content-bottom__title h1,
+  .cwc-bundle-product-template__content .bundle-content-bottom__title h2,
+  .cwc-bundle-product-template__content .bundle-content-bottom__title h3,
+  .cwc-bundle-product-template__content .bundle-content-bottom__title h4,
+  .cwc-bundle-product-template__content .bundle-content-bottom__title p {
   margin: 0;
   /* font-weight: 800; */
   /* font-weight: 800; */
@@ -37,11 +35,11 @@
   }
 
   /* Main bold text */
-  .cwc-bundle-product-template__content .bundle-content__text {
+  .cwc-bundle-product-template__content .bundle-content-bottom__text {
   margin-bottom: 0.25rem;
   }
 
-  .cwc-bundle-product-template__content .bundle-content__text p {
+  .cwc-bundle-product-template__content .bundle-content-bottom__text p {
   margin: 0;
   font-size: 1.25rem;
   font-weight: 600;
@@ -54,7 +52,7 @@
   }
 
   /* Subtext */
-  .cwc-bundle-product-template__content .bundle-content__subtext p {
+  .cwc-bundle-product-template__content .bundle-content-bottom__subtext p {
   margin: 0;
   font-size: 1.25rem;
   line-height: 1.4;
@@ -66,11 +64,11 @@
       margin-bottom: 1rem;
   }
 
-  .bundle-content__prod_title {
+  .bundle-content-bottom__prod_title {
       margin-bottom: .8rem;
 
   }
-  .bundle-content__prod_title > *{
+  .bundle-content-bottom__prod_title > *{
   /* font-weight: 700; */
   font-size: 2.8125rem;
   line-height: normal
@@ -84,27 +82,15 @@
   }
 {% endstyle %}
 
-<div class="bundle-content" {{ block.shopify_attributes }}>
-  {% if block.settings.title != blank %}
-    <div class="bundle-content__title rte">
-      {{ block.settings.title }}
-    </div>
-  {% endif %}
-
-  <div class="bundle-content__prod_title">
-    {% if block.settings.prod_title != blank %}
-      {{ block.settings.prod_title }}
-    {% endif %}
-  </div>
-
+<div class="bundle-content-bottom" {{ block.shopify_attributes }}>
   {% if block.settings.text != blank %}
-    <div class="bundle-content__text rte">
+    <div class="bundle-content-bottom__text rte">
       {{ block.settings.text }}
     </div>
   {% endif %}
 
   {% if block.settings.subtext != blank %}
-    <div class="bundle-content__subtext rte">
+    <div class="bundle-content-bottom__subtext rte">
       {{ block.settings.subtext }}
     </div>
   {% endif %}

@@ -30,6 +30,11 @@
       <div class="cwc-bundle-product-template__left">
         {% for block in section.blocks %}
           {% case block.type %}
+            {% when 'bundle-content-top' %}
+              <div class="cwc-bundle-product-template__content" {{ block.shopify_attributes }}>
+                {% render 'CWC_bundle_content_top', product: product, section_id: section.id, block: block %}
+              </div>
+
             {% when 'product_image' %}
               <div class="cwc-bundle-product-template__image" {{ block.shopify_attributes }}>
                 {% render 'CWC_product_image', product: product, section_id: section.id, block: block %}
@@ -88,9 +93,14 @@
                     {% endif %}
                   </div>
 
-                {% when 'bundle-content' %}
-                  <div class="cwc-bundle-product-template__content" {{ block.shopify_attributes }}>
-                    {% render 'CWC_bundle_content', product: product, section_id: section.id, block: block %}
+                {% when 'bundle-content_top' %}
+                  <div class="cwc-bundle-product-template__content-top" {{ block.shopify_attributes }}>
+                    {% render 'CWC_bundle_content_top', product: product, section_id: section.id, block: block %}
+                  </div>
+
+                {% when 'bundle-content_bottom' %}
+                  <div class="cwc-bundle-product-template__content- bottom  " {{ block.shopify_attributes }}>
+                    {% render 'CWC_bundle_content_bottom', product: product, section_id: section.id, block: block %}
                   </div>
 
                 {% when 'refund' %}
@@ -386,8 +396,8 @@
       ]
     },
     {
-      "type": "bundle-content",
-      "name": "Bundle Content",
+      "type": "bundle-content_top",
+      "name": "Bundle Content Top",
       "settings": [
         {
           "type": "richtext",
@@ -402,18 +412,6 @@
           "default": "<p>Product title</p>"
         },
         {
-          "type": "richtext",
-          "id": "text",
-          "label": "Text",
-          "default": "<p>Your main content goes here.</p>"
-        },
-        {
-          "type": "richtext",
-          "id": "subtext",
-          "label": "Subtext",
-          "default": "<p>Additional information or disclaimer.</p>"
-        },
-        {
           "type": "color",
           "id": "title_color",
           "label": "Title Color",
@@ -424,6 +422,24 @@
           "id": "text_color",
           "label": "Body Text Color",
           "default": "#111827"
+        }
+      ]
+    },
+    {
+      "type": "bundle-content_bottom",
+      "name": "Bundle Content Bottom",
+      "settings": [
+        {
+          "type": "richtext",
+          "id": "text",
+          "label": "Text",
+          "default": "<p>Your main content goes here.</p>"
+        },
+        {
+          "type": "richtext",
+          "id": "subtext",
+          "label": "Subtext",
+          "default": "<p>Additional information or disclaimer.</p>"
         }
       ]
     },
