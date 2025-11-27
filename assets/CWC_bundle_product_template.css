@@ -61,6 +61,7 @@
     gap: 1.5rem;
     gap: 0rem;
     padding-left: 2.5625rem;
+    padding-left: 2rem;
 }
 
 .cwc-bundle-product-template__text {
@@ -101,9 +102,9 @@
 
     /* testing */
     padding: 1rem;
-    padding: 2rem 3rem;
+    padding: 1.5rem 3rem;
     background: grey;
-    border-radius: 6px;
+    border-radius: 10px;
 
     border: 3px solid #0f92ae26;
     background-color: #0f92ae26;
@@ -113,6 +114,11 @@
 
 
 @media (max-width: 991px) {
+    .cwc-bundle-product-template__form {
+        padding: 1rem 2rem;
+
+    }
+
     .cwc-bundle-product-template__grid {
         grid-template-columns: 1fr;
         gap: 2rem;
@@ -142,6 +148,11 @@
 
 
 @media (max-width: 768px) {
+    .cwc-bundle-product-template__form {
+        padding: 1rem 1rem;
+
+    }
+
     .cwc-bundle-product-template {
         padding-top: var(--padding-top-mobile);
         padding-bottom: var(--padding-bottom-mobile);

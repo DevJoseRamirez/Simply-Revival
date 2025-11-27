@@ -1,19 +1,19 @@
 {% style %}
   .cwc-bundle-product-template__content {
-    margin-bottom: 1.5rem;
+  margin-bottom: 1.5rem;
 
-    /* Inject dynamic colors */
-    --title-color: {{ block.settings.title_color }};
-    --text-color: {{ block.settings.text_color }};
+  /* Inject dynamic colors */
+  --title-color: {{ block.settings.title_color }};
+  --text-color: {{ block.settings.text_color }};
   }
 
   .cwc-bundle-product-template__content .bundle-content {
-    max-width: 34rem;
+  max-width: 34rem;
   }
 
   /* Title */
   .cwc-bundle-product-template__content .bundle-content__title {
-    margin-bottom: 0.25rem;
+  margin-bottom: 0.25rem;
   }
 
   .cwc-bundle-product-template__content .bundle-content__title h1,
@@ -21,61 +21,89 @@
   .cwc-bundle-product-template__content .bundle-content__title h3,
   .cwc-bundle-product-template__content .bundle-content__title h4,
   .cwc-bundle-product-template__content .bundle-content__title p {
-    margin: 0;
-    /* font-weight: 800; */
-    /* font-weight: 800; */
-    text-transform: uppercase;
-    letter-spacing: 0.02em;
-    color: var(--title-color);
-    font-size: 2em;
+  margin: 0;
+  /* font-weight: 800; */
+  /* font-weight: 800; */
+  text-transform: uppercase;
+  letter-spacing: 0.02em;
+  color: var(--title-color);
+  font-weight: 700;
+  font-size: 2em;
+  font-size: 1.4rem;
+  font-size: 1.4rem;
+  line-height: normal;
   }
 
   /* Main bold text */
   .cwc-bundle-product-template__content .bundle-content__text {
-    margin-bottom: 0.25rem;
+  margin-bottom: 0.25rem;
   }
 
   .cwc-bundle-product-template__content .bundle-content__text p {
-    margin: 0;
-    font-size: 0.95rem;
-    font-weight: 700;
-    line-height: 1.4;
-    color: var(--text-color);
+  margin: 0;
+  font-size: 1.25rem;
+  font-weight: 600;
+  line-height: 1.4;
+  color: var(--text-color);
+  font-size: 1rem;
+  font-size: 1.2rem;
+
+  /* line-height: normal; */
   }
 
   /* Subtext */
   .cwc-bundle-product-template__content .bundle-content__subtext p {
-    margin: 0;
-    font-size: 0.9rem;
-    line-height: 1.5;
-    color: var(--text-color);
+  margin: 0;
+  font-size: 1.25rem;
+  line-height: 1.4;
+  /* line-height: normal; */
+  color: var(--text-color);
+  font-size: 1rem;
+  font-size: 1.05rem;
+  margin-bottom: .5rem;
+      margin-bottom: 1rem;
+  }
+
+  .bundle-content__prod_title {
+      margin-bottom: .8rem;
+
+  }
+  .bundle-content__prod_title > *{
+  /* font-weight: 700; */
+  font-size: 2.8125rem;
+  line-height: normal
+
+  }
+
+  @media (max-width: 991px) {
+
+
+
   }
 {% endstyle %}
 
-{% if block.settings.title != blank or block.settings.text != blank or block.settings.subtext != blank %}
-  <div class="bundle-content" {{ block.shopify_attributes }}>
-    {% if block.settings.title != blank %}
-      <div class="bundle-content__title rte">
-        {{ block.settings.title }}
-      </div>
-    {% endif %}
+<div class="bundle-content" {{ block.shopify_attributes }}>
+  {% if block.settings.title != blank %}
+    <div class="bundle-content__title rte">
+      {{ block.settings.title }}
+    </div>
+  {% endif %}
 
+  <div class="bundle-content__prod_title">
     {% if block.settings.prod_title != blank %}
-      <div class="bundle-content__prod_title rte">
-        {{ block.settings.prod_title }}
-      </div>
-    {% endif %}
-
-    {% if block.settings.text != blank %}
-      <div class="bundle-content__text rte">
-        {{ block.settings.text }}
-      </div>
-    {% endif %}
-
-    {% if block.settings.subtext != blank %}
-      <div class="bundle-content__subtext rte">
-        {{ block.settings.subtext }}
-      </div>
+      {{ block.settings.prod_title }}
     {% endif %}
   </div>
-{% endif %}
+
+  {% if block.settings.text != blank %}
+    <div class="bundle-content__text rte">
+      {{ block.settings.text }}
+    </div>
+  {% endif %}
+
+  {% if block.settings.subtext != blank %}
+    <div class="bundle-content__subtext rte">
+      {{ block.settings.subtext }}
+    </div>
+  {% endif %}
+</div>
