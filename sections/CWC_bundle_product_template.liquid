@@ -31,7 +31,7 @@
         {% for block in section.blocks %}
           {% case block.type %}
             {% when 'bundle-content_top' %}
-              <div class="cwc-bundle-product-template__content-top" {{ block.shopify_attributes }}>
+              <div class="cwc-bundle-product-template__content-top mobile__only" {{ block.shopify_attributes }}>
                 {% render 'CWC_bundle_content_top', product: product, section_id: section.id, block: block %}
               </div>
 
@@ -94,7 +94,7 @@
                   </div>
 
                 {% when 'bundle-content_top' %}
-                  <div class="cwc-bundle-product-template__content-top" {{ block.shopify_attributes }}>
+                  <div class="cwc-bundle-product-template__content-top desktop__only" {{ block.shopify_attributes }}>
                     {% render 'CWC_bundle_content_top', product: product, section_id: section.id, block: block %}
                   </div>
 
@@ -133,7 +133,7 @@
                     {% render 'CWC_bundle_price_display', product: product, section_id: section.id, block: block %}
                   </div>
 
-                {% when 'bundle-button' %}
+                {% when 'bundle_button' %}
                   <div class="cwc-bundle-product-template__button" {{ block.shopify_attributes }}>
                     {% render 'CWC_bundle_add_to_cart', product: product, section_id: section.id, block: block %}
                   </div>
@@ -169,37 +169,9 @@
                     {% render 'CWC_benefits', product: product, section_id: section.id, block: block %}
                   </div>
 
-                {% when 'price_display' %}
-                  <div class="cwc-bundle-product-template__price" {{ block.shopify_attributes }}>
-                    {% render 'CWC_price_display', product: product, section_id: section.id, block: block %}
-                  </div>
-
-                  {% comment %}
-                    {% when 'product_options' %}
-                      {% if product.variants.size > 1 %}
-                        <div class="cwc-bundle-product-template__options" {{ block.shopify_attributes }}>
-                          {% render 'CWC_product_options', product: product, section_id: section.id, block: block %}
-                        </div>
-                      {% endif %}
-                  {% endcomment %}
-
-                  {% comment %}
-                    {% when 'subscription_toggle' %}
-                      {% if product.selling_plan_groups.size > 0 %}
-                        <div class="cwc-bundle-product-template__subscription" {{ block.shopify_attributes }}>
-                          {% render 'CWC_product_selling_plans', product: product, section_id: section.id, block: block %}
-                        </div>
-                      {% endif %}
-                  {% endcomment %}
-
                 {% when 'delivery_estimate' %}
                   <div class="cwc-bundle-product-template__delivery" {{ block.shopify_attributes }}>
                     {% render 'CWC_delivery_estimate', product: product, section_id: section.id, block: block %}
-                  </div>
-
-                {% when 'add_to_cart' %}
-                  <div class="cwc-bundle-product-template__add_to_cart" {{ block.shopify_attributes }}>
-                    {% render 'CWC_add_to_cart', product: product, section_id: section.id, block: block %}
                   </div>
 
                 {% when 'guarantee_text' %}
@@ -382,6 +354,11 @@
           "id": "text",
           "label": "Rating Text",
           "default": "<p>Rated 4.9 Excellent | 323 Reviews</p>"
+        },
+        {
+          "type": "color",
+          "id": "star_color",
+          "label": "Star Color"
         }
       ]
     },
@@ -652,52 +629,39 @@
         }
       ]
     },
-    {
-      "type": "price_display",
-      "name": "Price Display",
-      "settings": []
-    },
+
     {
       "type": "bundle_price_display",
       "name": "Bundle Price Display",
-      "settings": []
-    },
-    {
-      "type": "product_options",
-      "name": "Product Options",
       "settings": [
         {
-          "type": "image_picker",
-          "id": "image1",
-          "label": "Options Image 1"
+          "type": "number",
+          "id": "price",
+          "label": "Display price",
+          "default": 25
         },
         {
-          "type": "image_picker",
-          "id": "image2",
-          "label": "Options Image 2"
-        },
-        {
-          "type": "image_picker",
-          "id": "image3",
-          "label": "Options Image 3"
-        }
-      ]
-    },
-    {
-      "type": "subscription_toggle",
-      "name": "Subscription Toggle",
-      "settings": [
-        {
-          "type": "text",
-          "id": "title",
-          "label": "Title",
-          "default": "Save 25% With Automatic Refills!"
+          "type": "number",
+          "id": "compare_price",
+          "label": "Display compare-at price",
+          "default": 179
         },
         {
           "type": "text",
-          "id": "subtitle",
-          "label": "Subtitle",
-          "default": "Zero Commitment | Exclusive Discounts | Cancel Anytime"
+          "id": "currency_symbol",
+          "label": "Currency symbol",
+          "default": "$"
+        },
+        {
+          "type": "image_picker",
+          "id": "image",
+          "label": "Underline Image"
+        },
+        {
+          "type": "text",
+          "id": "per_serving_text",
+          "label": "Per serving text",
+          "default": "$0.84 Per Serving!"
         }
       ]
     },
@@ -733,30 +697,6 @@
       ]
     },
     {
-      "type": "add_to_cart",
-      "name": "Add to Cart Button",
-      "settings": [
-        {
-          "type": "text",
-          "id": "button_text",
-          "label": "Button Text",
-          "default": "Add to Cart"
-        },
-        {
-          "type": "color",
-          "id": "button_bg_color",
-          "label": "Button Background Color",
-          "default": "#125657"
-        },
-        {
-          "type": "color",
-          "id": "button_text_color",
-          "label": "Button Text Color",
-          "default": "#ffffff"
-        }
-      ]
-    },
-    {
       "type": "bundle_button",
       "name": "Bundle Add to Cart Button",
       "settings": [
@@ -764,7 +704,7 @@
           "type": "text",
           "id": "button_text",
           "label": "Button Text",
-          "default": "Add to Cart"
+          "default": "Add Bundle to Cart"
         },
         {
           "type": "color",
@@ -777,6 +717,30 @@
           "id": "button_text_color",
           "label": "Button Text Color",
           "default": "#ffffff"
+        },
+        {
+          "type": "header",
+          "content": "Bundle Items"
+        },
+        {
+          "type": "product",
+          "id": "bundle_product_1",
+          "label": "Product 1"
+        },
+        {
+          "type": "product",
+          "id": "bundle_product_2",
+          "label": "Product 2"
+        },
+        {
+          "type": "product",
+          "id": "bundle_product_3",
+          "label": "Product 3"
+        },
+        {
+          "type": "product",
+          "id": "bundle_product_4",
+          "label": "Product 4"
         }
       ]
     },
@@ -804,7 +768,7 @@
       "category": "Custom",
       "blocks": [
         {
-          "type": "product_image"
+          "type": "image_carousel"
         },
         {
           "type": "rating"
@@ -816,20 +780,13 @@
           "type": "benefits"
         },
         {
-          "type": "price_display"
+          "type": "bundle_price_display"
         },
-        {
-          "type": "product_options"
-        },
-        {
-          "type": "subscription_toggle"
-        },
+
         {
           "type": "delivery_estimate"
         },
-        {
-          "type": "add_to_cart"
-        },
+
         {
           "type": "guarantee_text"
         },

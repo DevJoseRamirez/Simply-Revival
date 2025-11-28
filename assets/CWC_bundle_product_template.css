@@ -23,7 +23,6 @@
     padding: 0 3rem;
     padding: 0 3.125rem;
     max-width: 1300px;
-
 }
 
 .cwc-bundle-product-template__grid {
@@ -49,9 +48,7 @@
 /* image carosel */
 .cwc-bundle-product-template__image_carousel {
     margin-bottom: 1rem;
-
 }
-
 
 /* ================================
    Right Column
@@ -81,8 +78,6 @@
     margin-bottom: 1rem;
 }
 
-
-
 /* ================================
    Content
    ================================ */
@@ -90,7 +85,6 @@
 .cwc-bundle-product-template__desc {
     margin-bottom: 1rem;
 }
-
 
 /* ================================
    Add to Cart Form & Button
@@ -114,22 +108,33 @@
 }
 
 .cwc-bundle-product-template__disclaimer {
-    font-size: .7rem;
+    font-size: 0.7rem;
+    font-size: 0.65rem;
     font-style: italic;
-    opacity: .8;
+    opacity: 0.8;
     font-weight: 400;
     line-height: normal;
 }
-
 
 .cwc-bundle-product-template .cwc-featured-product__rating_stars {
     height: 1.2rem;
 }
 
+.desktop__only {
+    display: flex;
+}
+
+.mobile__only {
+    display: none;
+}
+
+.cwc-bundle-product-template__button {
+    margin-bottom: 1rem;
+}
+
 @media (max-width: 991px) {
     .cwc-bundle-product-template__form {
         padding: 1rem 2rem;
-
     }
 
     .cwc-bundle-product-template__grid {
@@ -146,24 +151,26 @@
         padding: 0 1.25rem;
     }
 
-
     .cwc-bundle-product-template__image_carousel {
-        margin-bottom: .5rem;
-
+        margin-bottom: 0.5rem;
     }
 
-}
+    .mobile__only {
+        display: flex;
+    }
 
+    .desktop__only {
+        display: none;
+    }
+}
 
 /* ================================
    Mobile Styles
    ================================ */
 
-
 @media (max-width: 768px) {
     .cwc-bundle-product-template__form {
         padding: 1rem 1rem;
-
     }
 
     .cwc-bundle-product-template {
@@ -174,7 +181,6 @@
     .cwc-bundle-product-template__wrapper {
         padding: 0 1rem;
     }
-
 
     .cwc-bundle-product-template__left {
         gap: 1.5rem;
@@ -191,11 +197,5 @@
 
     .cwc-bundle-product-template__price-current {
         font-size: 1.75rem;
-
     }
-
-
-
-
-
 }

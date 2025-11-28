@@ -1,101 +1,144 @@
-{% style %}
-  /* ================================
-     Price Display
-     ================================ */
+{% liquid
+  assign price = block.settings.price | default: 0
+  assign compare = block.settings.compare_price | default: 0
+  assign currency = block.settings.currency_symbol | default: '$'
+  assign discount_pct = 0
 
-  .cwc_product-template__price,
+  if compare > price and compare > 0
+    assign diff = compare | minus: price
+
+    assign numerator = diff | times: 100
+
+    assign numerator = numerator | plus: compare | minus: 1
+    assign discount_pct = numerator | divided_by: compare
+  endif
+%}
+
+{% style %}
   .cwc-bundle-product-template__price {
+    margin-bottom: 1.5rem;
+  }
+
+  .cwc-bundle-product-template__price .bundle-price {
     display: flex;
+    flex-direction: column;
+  }
+
+  .cwc-bundle-product-template__price .bundle-price__row {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 0.4rem;
     align-items: center;
     justify-content: flex-start;
-    margin: 0rem 0 1rem 0;
-    border-top: 0.55px solid rgba(0, 0, 0, 0.2);
-    border-bottom: 0.55px solid rgba(0, 0, 0, 0.2);
-    font-size: 1.3125rem;
-    width: 100%;
-    gap: 3rem;
-    padding: 0.74rem 0rem;
-    padding: 0.7rem 0rem;
   }
 
-  .cwc-bundle-product-template__price-current {
+  .cwc-bundle-product-template__price .bundle-price__current {
+    font-size: 2rem;
+    font-weight: 800;
     font-weight: 700;
-    color: #60a1a2;
-    font-size: 1.25rem;
+    color: #4f46e5; /* purple price */
+    color: #413d84;
   }
 
-  .cwc-bundle-product-template__price-compare {
-    font-size: 1.25rem;
-    /* font-size: inherit; */
-    font-weight: 400;
-    color: #08122a;
+  .cwc-bundle-product-template__price .bundle-price__compare {
+    font-size: 1.1rem;
+    font-size: 2rem;
+
+    color: #9ca3af; /* grey */
     text-decoration: line-through;
+    margin-left: 0.25rem;
   }
 
-  .cwc-bundle-product-template__price-save {
-    font-size: inherit;
+  .cwc-bundle-product-template__price .bundle-price__discount-wrap {
     display: flex;
-    font-size: 0.9rem;
-    font-weight: 600;
-    color: #fff;
-    padding: 0.13rem 0.95rem;
-    background: #60a1a2;
-    border-radius: 5px;
-    gap: 8px;
+    flex-direction: column;
+    align-items: flex-start;
+    margin-left: 0.75rem;
+    margin-left: 1rem;
+    margin-top: 1.2rem;
   }
-  .cwc-bundle-product-template__price-save span {
-    font-size: inherit;
-    font-size: 0.9rem;
+
+  .cwc-bundle-product-template__price .bundle-price__discount {
+    font-size: 0.95rem;
+    font-size: 1.2rem;
+    font-weight: 800;
+    text-transform: uppercase;
+    letter-spacing: 0.03em;
+    color: #4f46e5;
+    line-height: 100%;
   }
-  @media (max-width: 991px) {
-    .cwc-bundle-product-template__price-current,
-    .cwc-bundle-product-template__price-compare {
-      font-size: 1.125rem;
-    }
-    .cwc-bundle-product-template__price-save span {
-      font-size: 0.86rem;
-    }
-    .cwc_product-template__price,
-    .cwc-bundle-product-template__price {
-      gap: 2rem;
-    }
+
+  .cwc-bundle-product-template__price .bundle-price__underline {
+    display: flex;
+    height: max-content;
+    width: 100%;
   }
-  /* ================================
-   Mobile Responsive (max-width: 768px)
-   ================================ */
+  .cwc-bundle-product-template__price .bundle-price__underline img {
+    width: 100%;
+    height: auto;
+  }
+
+  .cwc-bundle-product-template__price .bundle-price__serving {
+    margin-top: 0.35rem;
+    margin-top: 0rem;
+    font-size: 0.85rem;
+    font-size: 0.89rem;
+    font-weight: 700;
+    color: #4f46e5;
+  }
+
   @media (max-width: 768px) {
-    .cwc_product-template__price,
-    .cwc-bundle-product-template__price {
-      display: flex;
-      align-items: center;
-      justify-content: flex-start;
-      margin: 0rem 0 1rem 0;
-      border-top: 0.55px solid rgba(0, 0, 0, 0.2);
-      border-bottom: 0.55px solid rgba(0, 0, 0, 0.2);
-      font-size: 1.3125rem;
-      width: 100%;
-      padding: 0.5rem 0rem;
-      gap: 1rem;
-      font-size: 1.3125rem;
+    .cwc-bundle-product-template__price .bundle-price__current {
+      font-size: 1.6rem;
     }
-    .cwc-bundle-product-template__price-save {
-      line-height: normal;
-      font-size: 0.86rem;
+    .cwc-bundle-product-template__price .bundle-price__compare {
+      font-size: 1rem;
+    }
+    .cwc-bundle-product-template__price .bundle-price__discount {
+      font-size: 0.9rem;
     }
   }
 {% endstyle %}
 
-<span class="cwc-bundle-product-template__price-current" id="current-price-{{ section_id }}">
-  {{ product.price | money }}
-</span>
-{% if product.compare_at_price > product.price %}
-  <span class="cwc-bundle-product-template__price-compare" id="compare-price-{{ section_id }}">
-    {{ product.compare_at_price | money }}
-  </span>
-  <div class="cwc-bundle-product-template__price-save" id="save-amount-{{ section_id }}">
-    <span>Save</span>
-    <span>
-      {{ product.compare_at_price | minus: product.price | money }}
-    </span>
+<div class="bundle-price" {{ block.shopify_attributes }}>
+  <div class="bundle-price__row">
+    {% if price > 0 %}
+      <span class="bundle-price__current">
+        {{ currency -}}
+        {{- price }}
+      </span>
+    {% endif %}
+
+    {% if compare > price and compare > 0 %}
+      <span class="bundle-price__compare">
+        {{ currency -}}
+        {{- compare }}
+      </span>
+    {% endif %}
+
+    {% if discount_pct > 0 %}
+      <div class="bundle-price__discount-wrap">
+        <span class="bundle-price__discount"> {{ discount_pct }}% OFF TODAY </span>
+
+        {% if block.settings.image != blank %}
+          <span class="bundle-price__underline">
+            <img
+              src="{{ block.settings.image | image_url: width: 150 }}"
+              alt="{{ block.settings.image.alt }}"
+              width="{{ block.settings.image.width }}"
+              height="{{ block.settings.image.height }}"
+              fetchpriority="meduim"
+              loading="lazy"
+            >
+          </span>
+        {% endif %}
+      </div>
+    {% endif %}
   </div>
-{% endif %}
+
+  {% if block.settings.per_serving_text != blank %}
+    <div class="bundle-price__serving">
+      {{ block.settings.per_serving_text }}
+    </div>
+  {% endif %}
+</div>

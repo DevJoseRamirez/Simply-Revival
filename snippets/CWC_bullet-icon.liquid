@@ -6,8 +6,9 @@
   .cwc-bundle-product-template__bullet-icon-list {
     display: flex;
     flex-wrap: wrap;
-    gap: 0.5rem 1.5rem;
+    gap: 0.5rem 1rem;
     font-size: 0.9rem;
+    font-size: 0.85rem;
   }
 
   .cwc-bundle-product-template__bullet-icon-item {
@@ -36,63 +37,62 @@
   }
   .cwc-bundle-product-template__bullet-icon-text > * {
     font-size: 0.8rem;
+    line-height: normal;
   }
 {% endstyle %}
 
-<div class="cwc-bundle-product-template__bullet-icon" {{ block.shopify_attributes }}>
-  <div class="cwc-bundle-product-template__bullet-icon-list">
-    {% if block.settings.icon_1 != blank or block.settings.text_1 != blank %}
-      <div class="cwc-bundle-product-template__bullet-icon-item">
-        {% if block.settings.icon_1 != blank %}
-          <span class="cwc-bundle-product-template__bullet-icon-img">
-            <img
-              src="{{ block.settings.icon_1 | img_url: '32x32' }}"
-              alt="{{ block.settings.text_1 | strip_html | escape }}"
-            >
-          </span>
-        {% endif %}
-        {% if block.settings.text_1 != blank %}
-          <span class="cwc-bundle-product-template__bullet-icon-text rte">
-            {{ block.settings.text_1 }}
-          </span>
-        {% endif %}
-      </div>
-    {% endif %}
+<div class="cwc-bundle-product-template__bullet-icon-list">
+  {% if block.settings.icon_1 != blank or block.settings.text_1 != blank %}
+    <div class="cwc-bundle-product-template__bullet-icon-item">
+      {% if block.settings.icon_1 != blank %}
+        <span class="cwc-bundle-product-template__bullet-icon-img">
+          <img
+            src="{{ block.settings.icon_1 | img_url: '32x32' }}"
+            alt="{{ block.settings.text_1 | strip_html | escape }}"
+          >
+        </span>
+      {% endif %}
+      {% if block.settings.text_1 != blank %}
+        <span class="cwc-bundle-product-template__bullet-icon-text rte">
+          {{ block.settings.text_1 }}
+        </span>
+      {% endif %}
+    </div>
+  {% endif %}
 
-    {% if block.settings.icon_2 != blank or block.settings.text_2 != blank %}
-      <div class="cwc-bundle-product-template__bullet-icon-item">
-        {% if block.settings.icon_2 != blank %}
-          <span class="cwc-bundle-product-template__bullet-icon-img">
-            <img
-              src="{{ block.settings.icon_2 | img_url: '32x32' }}"
-              alt="{{ block.settings.text_2 | strip_html | escape }}"
-            >
-          </span>
-        {% endif %}
-        {% if block.settings.text_2 != blank %}
-          <span class="cwc-bundle-product-template__bullet-icon-text rte">
-            {{ block.settings.text_2 }}
-          </span>
-        {% endif %}
-      </div>
-    {% endif %}
+  {% if block.settings.icon_2 != blank or block.settings.text_2 != blank %}
+    <div class="cwc-bundle-product-template__bullet-icon-item">
+      {% if block.settings.icon_2 != blank %}
+        <span class="cwc-bundle-product-template__bullet-icon-img">
+          <img
+            src="{{ block.settings.icon_2 | img_url: '32x32' }}"
+            alt="{{ block.settings.text_2 | strip_html | escape }}"
+          >
+        </span>
+      {% endif %}
+      {% if block.settings.text_2 != blank %}
+        <span class="cwc-bundle-product-template__bullet-icon-text rte">
+          {{ block.settings.text_2 }}
+        </span>
+      {% endif %}
+    </div>
+  {% endif %}
 
-    {% if block.settings.icon_3 != blank or block.settings.text_3 != blank %}
-      <div class="cwc-bundle-product-template__bullet-icon-item">
-        {% if block.settings.icon_3 != blank %}
-          <span class="cwc-bundle-product-template__bullet-icon-img">
-            <img
-              src="{{ block.settings.icon_3 | img_url: '32x32' }}"
-              alt="{{ block.settings.text_3 | strip_html | escape }}"
-            >
-          </span>
-        {% endif %}
-        {% if block.settings.text_3 != blank %}
-          <span class="cwc-bundle-product-template__bullet-icon-text rte">
-            {{ block.settings.text_3 }}
-          </span>
-        {% endif %}
-      </div>
-    {% endif %}
-  </div>
+  {% if block.settings.icon_3 != blank or block.settings.text_3 != blank %}
+    <div class="cwc-bundle-product-template__bullet-icon-item">
+      {% if block.settings.icon_3 != blank %}
+        <span class="cwc-bundle-product-template__bullet-icon-img">
+          <img
+            src="{{ block.settings.icon_3 | img_url: '32x32' }}"
+            alt="{{ block.settings.text_3 | strip_html | escape }}"
+          >
+        </span>
+      {% endif %}
+      {% if block.settings.text_3 != blank %}
+        <span class="cwc-bundle-product-template__bullet-icon-text rte">
+          {{ block.settings.text_3 }}
+        </span>
+      {% endif %}
+    </div>
+  {% endif %}
 </div>
