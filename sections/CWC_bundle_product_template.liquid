@@ -30,8 +30,8 @@
       <div class="cwc-bundle-product-template__left">
         {% for block in section.blocks %}
           {% case block.type %}
-            {% when 'bundle-content-top' %}
-              <div class="cwc-bundle-product-template__content" {{ block.shopify_attributes }}>
+            {% when 'bundle-content_top' %}
+              <div class="cwc-bundle-product-template__content-top" {{ block.shopify_attributes }}>
                 {% render 'CWC_bundle_content_top', product: product, section_id: section.id, block: block %}
               </div>
 
@@ -99,7 +99,7 @@
                   </div>
 
                 {% when 'bundle-content_bottom' %}
-                  <div class="cwc-bundle-product-template__content- bottom  " {{ block.shopify_attributes }}>
+                  <div class="cwc-bundle-product-template__content-bottom  " {{ block.shopify_attributes }}>
                     {% render 'CWC_bundle_content_bottom', product: product, section_id: section.id, block: block %}
                   </div>
 
@@ -138,6 +138,8 @@
                     {% render 'CWC_bundle_add_to_cart', product: product, section_id: section.id, block: block %}
                   </div>
 
+                  {% comment %}  {% endcomment %}
+                  {% comment %}  {% endcomment %}
                   {% comment %}  {% endcomment %}
                   {% comment %}  {% endcomment %}
                   {% comment %}  {% endcomment %}

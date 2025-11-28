@@ -37,7 +37,13 @@
   /* Main bold text */
   .cwc-bundle-product-template__content .bundle-content-bottom__text {
   margin-bottom: 0.25rem;
+  margin-bottom: 0rem;
   }
+
+  .cwc-bundle-product-template__content .bundle-content-bottom__text > * {
+  font-weight: 600;
+  }
+
 
   .cwc-bundle-product-template__content .bundle-content-bottom__text p {
   margin: 0;
@@ -61,11 +67,12 @@
   font-size: 1rem;
   font-size: 1.05rem;
   margin-bottom: .5rem;
-      margin-bottom: 1rem;
+  margin-bottom: 1rem;
   }
 
+
   .bundle-content-bottom__prod_title {
-      margin-bottom: .8rem;
+  margin-bottom: .8rem;
 
   }
   .bundle-content-bottom__prod_title > *{
@@ -73,7 +80,27 @@
   font-size: 2.8125rem;
   line-height: normal
 
+
+
   }
+
+  .bundle-content-bottom__text>* {
+  font-weight: 700;
+  font-size: 1.05rem;
+  line-height: normal;
+  line-height: 135%;
+  }
+
+  .bundle-content-bottom__subtext {
+  font-size: 1.05rem;
+  margin-bottom: 1rem;
+  }
+
+  .bundle-content-bottom__subtext >*{
+  font-size: 1.05rem;
+  line-height: normal;
+  line-height: 135%;
+    }
 
   @media (max-width: 991px) {
 
@@ -84,13 +111,13 @@
 
 <div class="bundle-content-bottom" {{ block.shopify_attributes }}>
   {% if block.settings.text != blank %}
-    <div class="bundle-content-bottom__text rte">
+    <div class="bundle-content-bottom__text">
       {{ block.settings.text }}
     </div>
   {% endif %}
 
   {% if block.settings.subtext != blank %}
-    <div class="bundle-content-bottom__subtext rte">
+    <div class="bundle-content-bottom__subtext">
       {{ block.settings.subtext }}
     </div>
   {% endif %}

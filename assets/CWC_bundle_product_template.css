@@ -122,6 +122,9 @@
 }
 
 
+.cwc-bundle-product-template .cwc-featured-product__rating_stars {
+    height: 1.2rem;
+}
 
 @media (max-width: 991px) {
     .cwc-bundle-product-template__form {
