@@ -35,6 +35,11 @@
                 {% render 'CWC_bundle_content_top', product: product, section_id: section.id, block: block %}
               </div>
 
+            {% when 'rating' %}
+              <div class="cwc-bundle-product-template__rating mobile__only" {{ block.shopify_attributes }}>
+                {% render 'CWC_prod_rating', product: product, section_id: section.id, block: block %}
+              </div>
+
             {% when 'product_image' %}
               <div class="cwc-bundle-product-template__image" {{ block.shopify_attributes }}>
                 {% render 'CWC_product_image', product: product, section_id: section.id, block: block %}
@@ -80,7 +85,7 @@
             {% for block in section.blocks %}
               {% case block.type %}
                 {% when 'rating' %}
-                  <div class="cwc-bundle-product-template__rating" {{ block.shopify_attributes }}>
+                  <div class="cwc-bundle-product-template__rating desktop__only" {{ block.shopify_attributes }}>
                     {% render 'CWC_prod_rating', product: product, section_id: section.id, block: block %}
                   </div>
 
@@ -99,7 +104,7 @@
                   </div>
 
                 {% when 'bundle-content_bottom' %}
-                  <div class="cwc-bundle-product-template__content-bottom  " {{ block.shopify_attributes }}>
+                  <div class="cwc-bundle-product-template__content-bottom" {{ block.shopify_attributes }}>
                     {% render 'CWC_bundle_content_bottom', product: product, section_id: section.id, block: block %}
                   </div>
 

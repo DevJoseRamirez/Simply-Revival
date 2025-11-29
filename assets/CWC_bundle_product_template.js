@@ -347,14 +347,15 @@ function initFeaturedProduct(section, sectionId, variants, sellingPlanGroups) {
      BUNDLE ADD TO CART FUNCTIONALITY
 ----------------------------------------------------- */
 
-  console.log(addToCartButton);
-
   addToCartButton.addEventListener("click", function () {
     if (!variantIdInput || !variantIdInput.value) return;
 
     const mainVariantId = Number(variantIdInput.value);
+    if (!Number.isFinite(mainVariantId)) {
+      console.warn("Bundle: invalid main variant id:", variantIdInput.value);
+      return;
+    }
 
-    // 🔑 Always read from finalSellingPlanInput
     const sellingPlanInputEl = finalSellingPlanInput;
     const sellingPlanId =
       sellingPlanInputEl && sellingPlanInputEl.value
@@ -362,7 +363,7 @@ function initFeaturedProduct(section, sectionId, variants, sellingPlanGroups) {
         : null;
 
     // 🔒 Enforce subscription-only main product
-    if (!sellingPlanId) {
+    if (!Number.isFinite(sellingPlanId)) {
       console.warn("Bundle: no selling plan selected for main product.");
       alert("Please select the subscription option to add this bundle.");
       return;
@@ -370,31 +371,38 @@ function initFeaturedProduct(section, sectionId, variants, sellingPlanGroups) {
 
     const items = [];
 
-    // 🔁 Add bundle products from data attributes
+    // 2️⃣ Bundle products from data- attributes
     console.log("Bundle button dataset:", addToCartButton.dataset);
 
-    // Loop through all dataset entries
     for (const key in addToCartButton.dataset) {
-      const value = addToCartButton.dataset[key];
+      // Only consider bundleVariant* keys
+      if (!key.startsWith("bundleVariant")) continue;
 
-      console.log(value);
-      if (value && !isNaN(value)) {
-        items.push({
-          id: Number(value),
-          quantity: 1,
-        });
-      }
+      const value = addToCartButton.dataset[key];
+      if (!value || isNaN(value)) continue;
+
+      items.push({
+        id: Number(value),
+        quantity: 1,
+      });
     }
 
+    // 1️⃣ Main product (sub-only)
     const mainItem = {
       id: mainVariantId,
       quantity: 1,
-      selling_plan: sellingPlanId, // main sub-only product
+      selling_plan: sellingPlanId,
     };
     items.push(mainItem);
 
     console.log("Final items payload:", items);
 
+    if (!items.length) {
+      console.warn("Bundle: no items to send to /cart/add.js");
+      return;
+    }
+
+    addToCartButton.disabled = true;
     addToCartButton.classList.add("loading_hk");
 
     fetch("/cart/add.js", {
@@ -403,18 +411,17 @@ function initFeaturedProduct(section, sectionId, variants, sellingPlanGroups) {
         "Content-Type": "application/json",
         Accept: "application/json",
       },
-      body: JSON.stringify({ items: items }),
+      body: JSON.stringify({ items }),
     })
       .then((res) => {
         if (!res.ok) throw new Error("Failed to add bundle to cart");
         return res.json();
       })
       .then((data) => {
-        addToCartButton.classList.remove("loading_hk");
-
         const btnText = addToCartButton.querySelector(".cwc-button-text");
         const originalText =
           btnText?.dataset.originalText || "Add Bundle to Cart";
+
         if (btnText) {
           if (!btnText.dataset.originalText) {
             btnText.dataset.originalText = btnText.textContent;
@@ -436,10 +443,13 @@ function initFeaturedProduct(section, sectionId, variants, sellingPlanGroups) {
       })
       .catch((err) => {
         console.error(err);
-        addToCartButton.classList.remove("loading_hk");
         alert(
           "There was an issue adding the bundle to your cart. Please try again."
         );
+      })
+      .finally(() => {
+        addToCartButton.disabled = false;
+        addToCartButton.classList.remove("loading_hk");
       });
   });
 
