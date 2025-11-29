@@ -140,7 +140,25 @@
 }
 
 
+.cwc-bundle-product-template__content-top.mobile__only {
+    display: none;
+
+}
+
+.cwc-bundle-product-template__rating.mobile__only {
+    display: none;
+}
+
 @media (max-width: 991px) {
+    .cwc-bundle-product-template__content-top.mobile__only {
+        display: flex;
+
+    }
+
+    .cwc-bundle-product-template__rating.mobile__only {
+        display: flex;
+    }
+
     .cwc-bundle-product-template__form {
         padding: 1rem 2rem;
     }
@@ -190,6 +208,8 @@
     .cwc-bundle-product-template__faq.mobile__only {
         display: none !important;
     }
+
+
 }
 
 /* ================================
@@ -197,6 +217,15 @@
    ================================ */
 
 @media (max-width: 768px) {
+
+    .cwc-bundle-product-template__rating.mobile__only .cwc-featured-product__rating_text>* {
+        font-size: 1rem;
+    }
+
+    .cwc-featured-product__rating_text>* {
+        font-size: .9rem;
+    }
+
     .cwc-bundle-product-template__form {
         padding: 1rem 1rem;
     }
