@@ -1,0 +1,105 @@
+/* ================================
+   CWC Holiday Banner Styles
+   ================================ */
+
+.cwc-holiday-banner {
+    background: var(--section-bg);
+    color: var(--text-color);
+    padding-top: var(--padding-top);
+    padding-bottom: var(--padding-bottom);
+    overflow: hidden;
+    /* Hide the overflow for the scrolling effect */
+    white-space: nowrap;
+    /* Prevent text from wrapping */
+    box-sizing: border-box;
+
+    /* testing */
+    background: linear-gradient(90deg, #D0F0E8 0%, #E6E0FA 29%, #E3F6F9 40%, #F7EEC5 70%, #D0F0E8 100%);
+    /* border-color: black; */
+    /* color: black; */
+}
+
+.cwc-holiday-banner__container {
+    /* On desktop, the container will be the same width as the text,
+       making the scroller static and centered. */
+    max-width: fit-content;
+    margin: 0 auto;
+}
+
+.cwc-holiday-banner__scroller {
+    display: inline-flex;
+    /* Allow content to be wider than the container */
+    animation: none;
+    /* Default to no animation on desktop */
+}
+
+.cwc-holiday-banner__text-content {
+    display: inline-block;
+    padding-right: 2rem;
+    padding-right: 1rem;
+    /* Spacing between the original and clone text */
+    font-size: 1rem;
+    font-weight: 700;
+    line-height: 1.2;
+    text-transform: uppercase;
+    margin-bottom: 0rem;
+}
+
+.cwc-holiday-banner__text-content p {
+    margin: 0;
+    font-weight: 700;
+    font-size: 1rem;
+}
+
+.cwc-holiday-banner__text-content--clone {
+    display: none;
+    /* Hide clone on desktop */
+}
+
+/* ================================
+   Mobile Scrolling Animation
+   ================================ */
+@media (max-width: 768px) {}
+
+@media (max-width: 991px) {
+
+
+    .cwc-holiday-banner__text-content p {
+        font-size: 1rem;
+        font-size: .9rem;
+    }
+
+    .cwc-holiday-banner {
+        /* On mobile, the container takes full width, forcing the text to overflow */
+        max-width: 100%;
+        margin: 0;
+    }
+
+    .cwc-holiday-banner__container {
+        max-width: 100%;
+        margin: 0;
+    }
+
+    .cwc-holiday-banner__scroller {
+        /* Enable animation on mobile */
+        animation: scroll-left 25s linear infinite;
+        /* Adjust time for speed */
+    }
+
+    .cwc-holiday-banner__text-content--clone {
+        display: inline-block;
+        /* Show clone on mobile to create seamless loop */
+    }
+
+    /* Keyframe animation for continuous horizontal scrolling */
+    @keyframes scroll-left {
+        0% {
+            transform: translateX(0%);
+        }
+
+        100% {
+            /* Scroll the width of the original content + the padding */
+            transform: translateX(-50%);
+        }
+    }
+}

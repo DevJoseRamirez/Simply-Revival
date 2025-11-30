@@ -20,69 +20,110 @@
   id="CWC_bundle_included-{{ section.id }}"
   class="cwc-bundle-included"
 >
-  <div class="cwc-bundle-included__container">
-    {% comment %} Section Header {% endcomment %}
-    <div class="cwc-bundle-included__header">
-      {% if section.settings.subhead_value != blank %}
-        <div class="cwc-bundle-included__subhead-value rte">
-          {{ section.settings.subhead_value }}
-        </div>
-      {% endif %}
+  <div class="cwc-bundle-included__container_wrap">
+    <div class="cwc-bundle-included__container">
+      {% comment %} Section Header {% endcomment %}
+      <div class="cwc-bundle-included__header">
+        {% if section.settings.subhead_value != blank %}
+          <div class="cwc-bundle-included__subhead-value rte">
+            {{ section.settings.subhead_value }}
+          </div>
+        {% endif %}
 
-      {% if section.settings.title != blank %}
-        <div class="cwc-bundle-included__title rte">
-          {{ section.settings.title }}
-        </div>
-      {% endif %}
+        {% if section.settings.title != blank %}
+          <div class="cwc-bundle-included__title rte">
+            {{ section.settings.title }}
+          </div>
+        {% endif %}
 
-      {% if section.settings.text != blank %}
-        <div class="cwc-bundle-included__text rte">
-          {{ section.settings.text }}
+        {% if section.settings.text != blank %}
+          <div class="cwc-bundle-included__text rte">
+            {{ section.settings.text }}
+          </div>
+        {% endif %}
+      </div>
+
+      {% comment %} Item Grid {% endcomment %}
+      {% if section.blocks.size > 0 %}
+        <div class="cwc-bundle-included__grid cwc-bundle-included__grid--{{ section.blocks.size }}">
+          {% for block in section.blocks %}
+            <div class="cwc-bundle-included__card" {{ block.shopify_attributes }}>
+              {% if block.settings.image != blank or block.settings.product != blank %}
+                <div class="cwc-bundle-included__card-image">
+                  {% if block.settings.image %}
+                    <img
+                      loading="lazy"
+                      fetchpriority="medium"
+                      src="{{ block.settings.image | image_url: width: 180  }}"
+                      alt="{{ block.settings.image.alt }}"
+                      width="{{ block.settings.image.width }}"
+                      height="{{ block.settings.image.height }}"
+                    >
+                  {% elsif block.settings.product %}
+                    <img
+                      loading="lazy"
+                      fetchpriority="medium"
+                      src="{{ block.settings.product.featured_image | image_url: width: 180  }}"
+                      alt="{{ block.settings.product.featured_image.alt }}"
+                      width="{{ block.settings.product.featured_image.width }}"
+                      height="{{ block.settings.product.featured_image.height }}"
+                    >
+                  {% endif %}
+                </div>
+              {% endif %}
+
+              <div class="cwc-bundle-included__card-content">
+                {% if block.settings.title != blank %}
+                  <div class="cwc-bundle-included__card-title">
+                    {{ block.settings.title }}
+                  </div>
+                {% endif %}
+
+                {% if block.settings.value_text != blank %}
+                  <div class="cwc-bundle-included__card-value-button">
+                    <span class="cwc-bundle-included__card-value-button-num">
+                      {{ block.settings.value_num }}
+                    </span>
+                    <span class="cwc-bundle-included__card-value-button-text">
+                      {{ block.settings.value_text }}
+                    </span>
+                  </div>
+                {% endif %}
+              </div>
+            </div>
+          {% endfor %}
         </div>
       {% endif %}
     </div>
-
-    {% comment %} Item Grid {% endcomment %}
-    {% if section.blocks.size > 0 %}
-      <div class="cwc-bundle-included__grid cwc-bundle-included__grid--{{ section.blocks.size }}">
-        {% for block in section.blocks %}
-          <div class="cwc-bundle-included__card" {{ block.shopify_attributes }}>
-            {% if block.settings.image != blank %}
-              <div class="cwc-bundle-included__card-image">
-                {% render 'image', image: block.settings.image, sizes: '200px' %}
-              </div>
-            {% endif %}
-
-            <div class="cwc-bundle-included__card-content">
-              {% if block.settings.title != blank %}
-                <div class="cwc-bundle-included__card-title">
-                  {{ block.settings.title }}
-                </div>
-              {% endif %}
-
-              {% if block.settings.value_text != blank %}
-                <div class="cwc-bundle-included__card-value-button">
-                  {{ block.settings.value_text }}
-                </div>
-              {% endif %}
-            </div>
-          </div>
-        {% endfor %}
-      </div>
-    {% endif %}
-
-    {% comment %} Section Footer CTA {% endcomment %}
-    {% if section.settings.section_button_link != blank %}
-      <div class="cwc-bundle-included__footer">
-        <a
-          href="{{ section.settings.section_button_link }}"
-          class="cwc-bundle-included__section-button"
-        >
-          {{ section.settings.section_button_text | default: 'Shop Now' }}
-        </a>
-      </div>
-    {% endif %}
   </div>
+
+  {% comment %} Section Footer CTA {% endcomment %}
+  {% if section.settings.section_button_link != blank %}
+    <div class="cwc-bundle-included__footer">
+      <a
+        href="{{ section.settings.section_button_link }}"
+        class="cwc-bundle-included__section-button"
+      >
+        {{ section.settings.section_button_text | default: 'Shop Now' }}
+        <svg xmlns="http://www.w3.org/2000/svg" width="10" height="8" viewBox="0 0 10 8" fill="none">
+          <path d="M9.35355 4.03568C9.54882 3.84042 9.54882 3.52384 9.35355 3.32858L6.17157 0.146595C5.97631 -0.0486671 5.65973 -0.0486671 5.46447 0.146595C5.2692 0.341857 5.2692 0.65844 5.46447 0.853702L8.29289 3.68213L5.46447 6.51056C5.2692 6.70582 5.2692 7.0224 5.46447 7.21766C5.65973 7.41292 5.97631 7.41292 6.17157 7.21766L9.35355 4.03568ZM0 3.68213V4.18213H9V3.68213V3.18213H0V3.68213Z" fill="black"></path>
+        </svg>
+      </a>
+    </div>
+
+  {% else %}
+    <div id="bundle-add-to-cart-{{ section.id }}" class="cwc-bundle-included__footer">
+      <button
+        type="button"
+        class="cwc-bundle-included__section-button"
+      >
+        {{ section.settings.section_button_text | default: 'Shop Now' }}
+        <svg xmlns="http://www.w3.org/2000/svg" width="10" height="8" viewBox="0 0 10 8" fill="none">
+          <path d="M9.35355 4.03568C9.54882 3.84042 9.54882 3.52384 9.35355 3.32858L6.17157 0.146595C5.97631 -0.0486671 5.65973 -0.0486671 5.46447 0.146595C5.2692 0.341857 5.2692 0.65844 5.46447 0.853702L8.29289 3.68213L5.46447 6.51056C5.2692 6.70582 5.2692 7.0224 5.46447 7.21766C5.65973 7.41292 5.97631 7.41292 6.17157 7.21766L9.35355 4.03568ZM0 3.68213V4.18213H9V3.68213V3.18213H0V3.68213Z" fill="black"></path>
+        </svg>
+      </button>
+    </div>
+  {% endif %}
 </section>
 
 {% schema %}
@@ -121,7 +162,7 @@
       "type": "text",
       "id": "section_button_text",
       "label": "Button Text",
-      "default": "TRY DOSE TODAY"
+      "default": "TRY SIMPLY TODAY"
     },
     {
       "type": "url",
@@ -208,9 +249,20 @@
         },
         {
           "type": "text",
+          "id": "value_num",
+          "label": "Value Numbaer",
+          "default": "$20"
+        },
+        {
+          "type": "text",
           "id": "value_text",
           "label": "Value Text",
-          "default": "$20 FREE"
+          "default": "FREE"
+        },
+        {
+          "type": "product",
+          "id": "product",
+          "label": "product"
         },
         {
           "type": "image_picker",

@@ -1,0 +1,101 @@
+{% style %}
+  #CWC_holiday_banner-{{ section.id }} {
+    --section-bg: {{ section.settings.bg_color | default: '#ffffff' }};
+    --text-color: {{ section.settings.text_color | default: '#111111' }};
+    --padding-top: {{ section.settings.padding_top | default: 10 }}px;
+    --padding-bottom: {{ section.settings.padding_bottom | default: 10 }}px;
+  }
+{% endstyle %}
+
+{{ 'CWC_holiday_banner.css' | asset_url | stylesheet_tag }}
+
+<section
+  id="CWC_holiday_banner-{{ section.id }}"
+  class="cwc-holiday-banner"
+>
+  {% if section.settings.holiday_text != blank %}
+    <div class="cwc-holiday-banner__container">
+      <div class="cwc-holiday-banner__scroller">
+        <a
+          class="cwc-holiday-banner-link"
+          href="{{ section.settings.link }}"
+        >
+          <div class="cwc-holiday-banner__text-content rte">
+            {{ section.settings.holiday_text }}
+          </div>
+          <div class="cwc-holiday-banner__text-content cwc-holiday-banner__text-content--clone rte">
+            {{ section.settings.holiday_text }}
+          </div>
+        </a>
+      </div>
+    </div>
+  {% endif %}
+</section>
+
+{% schema %}
+{
+  "name": "Holiday Banner",
+  "tag": "section",
+  "class": "section",
+  "settings": [
+    {
+      "type": "header",
+      "content": "Content"
+    },
+    {
+      "type": "richtext",
+      "id": "holiday_text",
+      "label": "Holiday Text",
+      "default": "<p>BLACK FRIDAY - 61% OFF + FREE GIFTS + FREE A2 PROBIOTIC CREAMER + 30 CASH WINNERS + 100 ORDERS REFUNDED</p>",
+      "info": "The text that will be displayed and scroll on mobile."
+    },
+    {
+      "type": "header",
+      "content": "Colors & Spacing"
+    },
+    {
+      "type": "color",
+      "id": "bg_color",
+      "label": "Background color",
+      "default": "#ffffff"
+    },
+    {
+      "type":.cwc-holiday-banner__text-content p "url",
+      "id": "link",
+      "label": "link"
+    },
+    {
+      "type": "color",
+      "id": "text_color",
+      "label": "Text color",
+      "default": "#111111"
+    },
+    {
+      "type": "range",
+      "id": "padding_top",
+      "min": 0,
+      "max": 50,
+      "step": 5,
+      "unit": "px",
+      "label": "Padding top",
+      "default": 10
+    },
+    {
+      "type": "range",
+      "id": "padding_bottom",
+      "min": 0,
+      "max": 50,
+      "step": 5,
+      "unit": "px",
+      "label": "Padding bottom",
+      "default": 10
+    }
+  ],
+  "presets": [
+    {
+      "name": "Holiday Banner",
+      "category": "Custom"
+    }
+  ]
+}
+{% endschema %}

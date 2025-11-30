@@ -6,6 +6,9 @@
     --padding-top-mobile: {{ section.settings.padding_top | times: 0.5 }}px;
     --padding-bottom-mobile: {{ section.settings.padding_bottom | times: 0.5 }}px;
   }
+  .announcement-bar-carousel {
+    display: none !important;
+  }
 {% endstyle %}
 
 {{ 'CWC_bundle_product_template.css' | asset_url | stylesheet_tag }}
