@@ -72,6 +72,255 @@
         "padding_bottom": 4
       }
     },
+    "cwc_bundle_product_template_QnLmMb": {
+      "type": "CWC_bundle_product_template",
+      "blocks": {
+        "bundle_content_top_FRtX6x": {
+          "type": "bundle-content_top",
+          "settings": {
+            "title": "<p>Holiday Sale Live!<\/p>",
+            "prod_title": "<p>DHT Blocker Bundle<\/p>",
+            "title_color": "#4f46e5",
+            "text_color": "#111827"
+          }
+        },
+        "rating_BPiRPy": {
+          "type": "rating",
+          "settings": {
+            "text": "<p><strong>24,133 Reviews<\/strong><\/p>",
+            "star_color": "#4f46e5"
+          }
+        },
+        "bundle_content_bottom_qg3e8B": {
+          "type": "bundle-content_bottom",
+          "settings": {
+            "text": "<p>Get our Natural DHT Blocker, a Free Topical Serum, Bonus Gift, Plus a chance to have your order fully refunded<\/p>",
+            "subtext": "<p>Simply Revival delivers a dual oral + topical approach that helps block DHT, stop hair loss, and reactivate new, healthy hair growth.<\/p>"
+          }
+        },
+        "bundle_price_display_FAAMW7": {
+          "type": "bundle_price_display",
+          "settings": {
+            "price": 34,
+            "compare_price": 89,
+            "currency_symbol": "$",
+            "image": "shopify:\/\/shop_images\/Clip_path_group.png",
+            "per_serving_text": "$1.34 Per Serving!"
+          }
+        },
+        "bundle_button_AwUErV": {
+          "type": "bundle_button",
+          "settings": {
+            "button_text": "Try Simply Today",
+            "button_bg_color": "#125657",
+            "button_text_color": "#ffffff",
+            "bundle_product_1": "shipping-protection-free-gift",
+            "bundle_product_2": "topical-dht-blocker-bundle",
+            "bundle_product_3": "",
+            "bundle_product_4": ""
+          }
+        },
+        "review_w3YReh": {
+          "type": "review",
+          "settings": {
+            "image": "shopify:\/\/shop_images\/Marcus_-_author-min.png",
+            "text": "It has definitely changed my hair for the better. I’ve struggled with genetic hair loss for years and this is the only thing that’s stopped it.",
+            "author": "Mariah P."
+          }
+        },
+        "refund_progress_bar_bb9Aq6": {
+          "type": "refund-progress-bar",
+          "settings": {
+            "text": "💸 79 Winners Fully Refunded For Their Order!",
+            "progress": 79,
+            "bar_color": "#ef4444",
+            "bg_color": "#e5e7eb"
+          }
+        },
+        "bullet_icon_KVJPDa": {
+          "type": "bullet-icon",
+          "settings": {
+            "text_1": "<p>$49 Refill ships in 30 days<\/p>",
+            "text_2": "<p>Skip, pause or cancel anytime<\/p>",
+            "text_3": "<p>Free shipping protection<\/p>"
+          }
+        },
+        "image_carousel_rj6Qdc": {
+          "type": "image_carousel",
+          "settings": {
+            "badge_text": "BestSeller",
+            "badge_text_color": "#ffffff",
+            "badge_bg_color": "#60a1a2",
+            "badge_sold_text": "50+ Sold Today",
+            "badge_sold_text_color": "#000000",
+            "badge_sold_bg_color": "#ffffff"
+          }
+        },
+        "disclaimer_KCi4Vh": {
+          "type": "disclaimer",
+          "settings": {
+            "text": "3 days before your next shipment is set to go through, we will email you a reminder. By default, it will be another 30 servings delivered to you, and you can easily adjust or cancel at anytime."
+          }
+        },
+        "benefits_jJTCFQ": {
+          "type": "benefits",
+          "disabled": true,
+          "settings": {
+            "text1": "dfafdsf",
+            "text2": "asdfasdf",
+            "text3": "",
+            "text4": "",
+            "text5": "",
+            "text6": ""
+          }
+        },
+        "delivery_estimate_4TMeLr": {
+          "type": "delivery_estimate",
+          "disabled": true,
+          "settings": {
+            "text": "Order now for delivery by",
+            "max_shipping_days": 7,
+            "text_color": "#125657",
+            "bg_color": "#d8fff4"
+          }
+        },
+        "guarantee_text_TBjrAC": {
+          "type": "guarantee_text",
+          "disabled": true,
+          "settings": {
+            "text": "365-day money back guarantee"
+          }
+        },
+        "faq_jAPdPq": {
+          "type": "faq",
+          "settings": {
+            "title": "What is Simply Revival?",
+            "content": "<p>Simply revival is a wellness brand focused on natural plant based supplements to support your hair health, immune system, and overall health - without synthetic ingredients or harsh side effects.<\/p>"
+          }
+        },
+        "faq_Jm47GX": {
+          "type": "faq",
+          "settings": {
+            "title": "Is Simply Revival® suitable for all hair types?",
+            "content": "<p>Yes, the formula is designed to to support hair heath for all types of hair.<\/p>"
+          }
+        }
+      },
+      "block_order": [
+        "bundle_content_top_FRtX6x",
+        "rating_BPiRPy",
+        "bundle_content_bottom_qg3e8B",
+        "bundle_price_display_FAAMW7",
+        "bundle_button_AwUErV",
+        "review_w3YReh",
+        "refund_progress_bar_bb9Aq6",
+        "bullet_icon_KVJPDa",
+        "image_carousel_rj6Qdc",
+        "disclaimer_KCi4Vh",
+        "benefits_jJTCFQ",
+        "delivery_estimate_4TMeLr",
+        "guarantee_text_TBjrAC",
+        "faq_jAPdPq",
+        "faq_Jm47GX"
+      ],
+      "name": "Bundle Product",
+      "settings": {
+        "product": "natural-dht-blocker-bundle",
+        "background_color": "#ffffff",
+        "padding_top": 25,
+        "padding_bottom": 25
+      }
+    },
+    "cwc_bundle_included_jNrPfa": {
+      "type": "CWC_bundle_included",
+      "blocks": {
+        "card_HTwxJn": {
+          "type": "card",
+          "settings": {
+            "title": "Topical DHT Blocker Serum",
+            "value_num": "$60",
+            "value_text": "FREE",
+            "product": "",
+            "image": "shopify:\/\/shop_images\/Mask_group_a96dce34-45a4-4ad5-a900-479e1893876b.png"
+          }
+        },
+        "card_wkQyzQ": {
+          "type": "card",
+          "settings": {
+            "title": "Shipping Protection",
+            "value_num": "$15",
+            "value_text": "FREE",
+            "product": "",
+            "image": "shopify:\/\/shop_images\/Mask_group-2.png"
+          }
+        },
+        "card_VDbW98": {
+          "type": "card",
+          "settings": {
+            "title": "Chance to win Full Refund",
+            "value_num": "$50",
+            "value_text": "FREE",
+            "product": "",
+            "image": "shopify:\/\/shop_images\/Mask_group-1.png"
+          }
+        },
+        "card_bnEeWm": {
+          "type": "card",
+          "disabled": true,
+          "settings": {
+            "title": "A2 PROBIOTIC CREAMER+",
+            "value_num": "$20",
+            "value_text": "$20 FREE",
+            "product": ""
+          }
+        },
+        "card_j6DJK6": {
+          "type": "card",
+          "disabled": true,
+          "settings": {
+            "title": "A2 PROBIOTIC CREAMER+",
+            "value_num": "$20",
+            "value_text": "$20 FREE",
+            "product": ""
+          }
+        },
+        "card_Aagbx9": {
+          "type": "card",
+          "disabled": true,
+          "settings": {
+            "title": "A2 PROBIOTIC CREAMER+",
+            "value_num": "$20",
+            "value_text": "$20 FREE",
+            "product": ""
+          }
+        }
+      },
+      "block_order": [
+        "card_HTwxJn",
+        "card_wkQyzQ",
+        "card_VDbW98",
+        "card_bnEeWm",
+        "card_j6DJK6",
+        "card_Aagbx9"
+      ],
+      "name": "Bundle Included Items",
+      "settings": {
+        "subhead_value": "<p>+$100 VALUE<\/p>",
+        "title": "<h3>CLAIM YOUR FREE STARTER KIT!<\/h3>",
+        "text": "<p>Your kit comes with everything you need to start your hair loss journey, plus a few extras on us!<\/p>",
+        "section_button_text": "TRY SIMPLY TODAY",
+        "section_button_link": "",
+        "bg_color": "#0f92ae",
+        "card_bg_color": "#f0f0ff",
+        "text_color": "#111111",
+        "card_value_button_color": "#ffffff",
+        "card_button_text_color": "#111111",
+        "section_button_color": "#125657",
+        "section_button_text_color": "#ffffff",
+        "padding_top": 30,
+        "padding_bottom": 60
+      }
+    },
     "cwc_featured_product_pKwzFB": {
       "type": "CWC_featured_product",
       "blocks": {
@@ -223,9 +472,10 @@
         "faq_9cNCjj",
         "faq_64zEFc"
       ],
+      "disabled": true,
       "name": "Featured Product",
       "settings": {
-        "product": "simply®-dht-blocker",
+        "product": "natural-dht-blocker-bundle",
         "background_color": "#ffffff",
         "padding_top": 40,
         "padding_bottom": 10
@@ -351,6 +601,7 @@
         "usp_LyWink",
         "usp_EUTfND"
       ],
+      "disabled": true,
       "name": "USP Columns",
       "settings": {
         "background_color": "#125657",
@@ -523,7 +774,7 @@
       ],
       "name": "Image Benefits",
       "settings": {
-        "featured_image": "shopify:\/\/shop_images\/adult-male-looking-at-his-hair-min.png",
+        "featured_image": "shopify:\/\/shop_images\/Simply_Revival_DHT__The_Hidden_Hormone_Behind_Hair_Loss-min.png",
         "reverse_layout": false,
         "section_title": "<h3><strong>DHT: The Hidden Hormone Behind Hair Loss<\/strong><\/h3>",
         "section_caption": "We stop it naturally.",
@@ -773,7 +1024,7 @@
           "type": "button",
           "settings": {
             "text": "Try Risk-Free Today",
-            "link": "#cwc-featured-product--anchor",
+            "link": "#cwc-bundle-product-template--anchor",
             "button_bg_color": "#125657",
             "button_text_color": "#ffffff"
           }
@@ -834,7 +1085,7 @@
           "type": "button",
           "settings": {
             "text": "Try Risk-Free Today",
-            "link": "#cwc-featured-product--anchor",
+            "link": "#cwc-bundle-product-template--anchor",
             "button_bg_color": "#125657",
             "button_text_color": "#ffffff"
           }
@@ -1082,7 +1333,7 @@
           "type": "button",
           "settings": {
             "button_text": "Try Risk-Free Today",
-            "button_link": "#cwc-featured-product--anchor",
+            "button_link": "#cwc-bundle-product-template--anchor",
             "button_bg_color": "#ffffff",
             "button_text_color": "#125657",
             "button_note": "365-day money back guarantee"
@@ -1161,7 +1412,7 @@
           "type": "button",
           "settings": {
             "text": "Try Risk-Free Today",
-            "link": "#cwc-featured-product--anchor",
+            "link": "#cwc-bundle-product-template--anchor",
             "button_bg_color": "#125657",
             "button_text_color": "#ffffff"
           }
@@ -1266,6 +1517,8 @@
   "order": [
     "cwc_listicle_promotion_banner_dx8htD",
     "cwc_scrolling_banner_NcFH4N",
+    "cwc_bundle_product_template_QnLmMb",
+    "cwc_bundle_included_jNrPfa",
     "cwc_featured_product_pKwzFB",
     "main",
     "cwc_hero_banner_image_McmF3N",

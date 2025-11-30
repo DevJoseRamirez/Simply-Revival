@@ -2,6 +2,18 @@
   "type": "header",
   "name": "Header Group",
   "sections": {
+    "cwc_holiday_banner_Y8KniG": {
+      "type": "CWC_holiday_banner",
+      "name": "Holiday Banner",
+      "settings": {
+        "holiday_text": "<p>BLACK FRIDAY - 62% OFF Natural DHT Blocker + FREE Topical DHT Blocker + FREE Gift + 100 Orders Refunded<\/p>",
+        "bg_color": "#ffffff",
+        "link": "shopify:\/\/pages\/holiday-sale",
+        "text_color": "#111111",
+        "padding_top": 10,
+        "padding_bottom": 10
+      }
+    },
     "announcement-bar-slide": {
       "type": "announcement-bar-slide",
       "blocks": {
@@ -180,6 +192,7 @@
     }
   },
   "order": [
+    "cwc_holiday_banner_Y8KniG",
     "announcement-bar-slide",
     "header",
     "store-messages",
