@@ -128,6 +128,9 @@
     disabled
   {% endunless %}
 
+  {% comment %} *THIS LIKE HERE {% endcomment %}
+  data-skip-cart="{{ block.settings.skip_cart }}"
+
   {%- if bundle_product_1 != blank -%}
     data-bundle-variant1="{{ bundle_product_1.selected_or_first_available_variant.id }}"
   {%- endif -%}

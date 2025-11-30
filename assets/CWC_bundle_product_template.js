@@ -350,6 +350,10 @@ function initFeaturedProduct(section, sectionId, variants, sellingPlanGroups) {
     if (!variantIdInput || !variantIdInput.value) return;
 
     const mainVariantId = Number(variantIdInput.value);
+
+    // 👇 New: read skip-cart flag from the main bundle button
+    const skipCart = addToCartButton.dataset.skipCart === "true";
+
     if (!Number.isFinite(mainVariantId)) {
       console.warn("Bundle: invalid main variant id:", variantIdInput.value);
       return;
@@ -419,7 +423,11 @@ function initFeaturedProduct(section, sectionId, variants, sellingPlanGroups) {
         const btnText = addToCartButton.querySelector(".cwc-button-text");
         const originalText =
           btnText?.dataset.originalText || "Add Bundle to Cart";
-
+        // 🔀 If this button is configured to skip cart, go straight to checkout
+        if (skipCart) {
+          window.location.href = "/checkout";
+          return;
+        }
         if (btnText) {
           if (!btnText.dataset.originalText) {
             btnText.dataset.originalText = btnText.textContent;
