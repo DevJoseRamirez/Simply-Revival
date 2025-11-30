@@ -247,9 +247,11 @@
     font-weight: 700;
     text-decoration: none;
     text-align: center;
-    transition: opacity 0.3s ease, transform 0.2s ease;
+    /* transition: opacity 0.3s ease, transform 0.2s ease; */
     border: none;
     cursor: pointer;
+    transition: all .3s ease-in-out;
+
 }
 
 .cwc-bundle-included__section-button:hover {
@@ -304,6 +306,8 @@
     /* var(--section-button-text) */
     /* color: var(--section-button-bg); */
     /* border-color: var(--section-button-bg); */
+    background: linear-gradient(-90deg, #D0F0E8 0%, #E6E0FA 29%, #E3F6F9 40%, #F7EEC5 70%, #D0F0E8 100%);
+
 }
 
 
