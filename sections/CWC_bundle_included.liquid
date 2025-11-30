@@ -123,6 +123,24 @@
         </svg>
       </button>
     </div>
+
+    <script>
+      document.addEventListener('DOMContentLoaded', function () {
+        const wrapper = document.getElementById('bundle-add-to-cart-{{ section.id }}');
+        if (!wrapper) return;
+
+        const triggerBtn = wrapper.querySelector('.cwc-bundle-included__section-button');
+        if (!triggerBtn) return;
+
+        triggerBtn.addEventListener('click', function () {
+          if (typeof window.CWCBundleAddToCart === 'function') {
+            window.CWCBundleAddToCart();
+          } else {
+            console.warn('CWCBundleAddToCart not available yet.');
+          }
+        });
+      });
+    </script>
   {% endif %}
 </section>
 

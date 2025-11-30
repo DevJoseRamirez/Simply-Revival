@@ -342,12 +342,11 @@ function initFeaturedProduct(section, sectionId, variants, sellingPlanGroups) {
   /* =====================================================
      EVENT LISTENERS SETUP
      ===================================================== */
-
   /* -----------------------------------------------------
      BUNDLE ADD TO CART FUNCTIONALITY
------------------------------------------------------ */
+     ----------------------------------------------------- */
 
-  addToCartButton.addEventListener("click", function () {
+  function handleBundleAddToCart() {
     if (!variantIdInput || !variantIdInput.value) return;
 
     const mainVariantId = Number(variantIdInput.value);
@@ -371,11 +370,10 @@ function initFeaturedProduct(section, sectionId, variants, sellingPlanGroups) {
 
     const items = [];
 
-    // 2️⃣ Bundle products from data- attributes
+    // 1️⃣ Bundle products from data- attributes
     console.log("Bundle button dataset:", addToCartButton.dataset);
 
     for (const key in addToCartButton.dataset) {
-      // Only consider bundleVariant* keys
       if (!key.startsWith("bundleVariant")) continue;
 
       const value = addToCartButton.dataset[key];
@@ -387,7 +385,7 @@ function initFeaturedProduct(section, sectionId, variants, sellingPlanGroups) {
       });
     }
 
-    // 1️⃣ Main product (sub-only)
+    // 2️⃣ Main product (sub-only)
     const mainItem = {
       id: mainVariantId,
       quantity: 1,
@@ -451,7 +449,13 @@ function initFeaturedProduct(section, sectionId, variants, sellingPlanGroups) {
         addToCartButton.disabled = false;
         addToCartButton.classList.remove("loading_hk");
       });
-  });
+  }
+
+  // Hook up the *local* bundle button
+  addToCartButton.addEventListener("click", handleBundleAddToCart);
+
+  // Expose a single global handler (only 1 bundle on page)
+  window.CWCBundleAddToCart = handleBundleAddToCart;
 
   /* =====================================================
      FAQ FUNCTIONALITY
