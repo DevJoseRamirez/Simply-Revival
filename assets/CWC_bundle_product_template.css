@@ -114,6 +114,13 @@
     opacity: 0.8;
     font-weight: 400;
     line-height: normal;
+    /* tesgin */
+    margin: 0 auto;
+    font-weight: 500;
+    line-height: 115%;
+    /* text-wrap: balance; */
+    font-size: 10px;
+    font-size: 0.625rem;
 }
 
 .cwc-bundle-product-template .cwc-featured-product__rating_stars {

@@ -60,6 +60,7 @@
     padding: .1rem 0.75rem;
     border-radius: 4px;
     background: #4f46e5;
+    background: #036661;
     margin-bottom: 1rem;
     margin-bottom: 0.5rem;
 }
@@ -111,34 +112,34 @@
     margin-bottom: 3rem;
     margin-bottom: 1rem;
     /* tesgin */
-    display: flex;
+    /* display: flex; */
     align-items: center;
     justify-content: center;
 }
 
 /* Handle different block counts for better layout */
 .cwc-bundle-included__grid--1 {
-    /* grid-template-columns: 1fr; */
+    grid-template-columns: 1fr;
 }
 
 .cwc-bundle-included__grid--2 {
-    /* grid-template-columns: repeat(2, 1fr); */
+    grid-template-columns: repeat(2, 1fr);
 }
 
 .cwc-bundle-included__grid--3 {
-    /* grid-template-columns: repeat(3, 1fr); */
+    grid-template-columns: repeat(3, 1fr);
 }
 
 .cwc-bundle-included__grid--4 {
-    /* grid-template-columns: repeat(4, 1fr); */
+    grid-template-columns: repeat(4, 1fr);
 }
 
 .cwc-bundle-included__grid--5 {
-    /* grid-template-columns: repeat(5, 1fr); */
+    grid-template-columns: repeat(5, 1fr);
 }
 
 .cwc-bundle-included__grid--6 {
-    /* grid-template-columns: repeat(6, 1fr); */
+    grid-template-columns: repeat(6, 1fr);
 }
 
 
@@ -168,6 +169,7 @@
     max-width: 200px;
 
 
+    flex: 1;
     border-color: black;
     /* color: black; */
     border: 1px rgb(187, 187, 187) solid;
@@ -188,6 +190,7 @@
     height: auto;
     display: block;
     object-fit: contain;
+    width: auto;
 }
 
 .cwc-bundle-included__card-content {
@@ -326,11 +329,16 @@
    Mobile Responsive
    ================================ */
 
-@media (max-width: 1200px) {
+
+
+
+@media (max-width: 991px) {
     .cwc-bundle-included__grid {
-        grid-template-columns: repeat(3, 1fr);
+        gap: .75rem;
     }
+
 }
+
 
 @media (max-width: 768px) {
     .cwc-bundle-included {
@@ -343,7 +351,7 @@
     }
 
     .cwc-bundle-included__grid {
-        grid-template-columns: repeat(2, 1fr);
+        grid-template-columns: repeat(3, 1fr);
         /* 2 columns on mobile */
         gap: 0.75rem;
     }
@@ -381,18 +389,29 @@
 }
 
 @media (max-width: 480px) {
+
+    .cwc-bundle-included__container {
+        padding: 0 1.25rem;
+
+    }
+
     .cwc-bundle-included__grid {
         grid-template-columns: repeat(3, 1fr);
         /* 2 columns on mobile */
         gap: 0.75rem;
         display: grid;
+        justify-content: center;
+        place-items: center;
+
         /* display: grid; */
         /* grid-template-columns: 1fr; */
         /* Stack vertically on very small screens */
     }
 
     .cwc-bundle-included__card {
-        justify-content: flex-start;
+        /* justify-content: flex-start; */
+        justify-content: center;
+
         height: 100%;
         padding: .5rem .5rem 0rem;
     }
@@ -405,6 +424,7 @@
     .cwc-bundle-included__card {
         flex: 1;
     }
+
 }
 
 @media (max-width: 400px) {
@@ -414,4 +434,101 @@
         display: grid;
     }
 
+}
+
+/* ================================
+   Grid Layout - Centered Last Row
+   ================================ */
+
+.cwc-bundle-included__grid {
+    display: grid;
+    grid-template-columns: repeat(6, 1fr);
+    gap: 2.5rem;
+    margin-bottom: 1rem;
+    align-items: center;
+    justify-content: center;
+
+    /* Center incomplete rows */
+    justify-items: center;
+}
+
+/* Alternative approach using flexbox for better centering */
+.cwc-bundle-included__grid {
+    display: flex;
+    /* flex-wrap: wrap; */
+    gap: 2rem;
+    margin-bottom: 1rem;
+    align-items: center;
+    justify-content: center;
+    /* This centers the entire row including incomplete ones */
+}
+
+.cwc-bundle-included__card {
+    background: white;
+    border-radius: 8px;
+    padding-bottom: 0rem;
+    max-width: 180px;
+
+    /* Flexbox approach - set fixed width */
+    width: 200px;
+    flex: 0 1 auto;
+    /* Don't grow or shrink */
+
+    display: flex;
+    flex-direction: column-reverse;
+    align-items: center;
+    justify-content: center;
+
+    border: 1px rgb(187, 187, 187) solid;
+}
+
+/* ================================
+   Mobile Responsive
+   ================================ */
+
+@media (max-width: 991px) {
+    .cwc-bundle-included__grid {
+        gap: 0.75rem;
+        flex-wrap: wrap;
+    }
+}
+
+@media (max-width: 768px) {
+    .cwc-bundle-included__grid {
+        /* 3 columns on tablet */
+        gap: 0.75rem;
+    }
+
+    .cwc-bundle-included__card {
+        width: calc(33.333% - 0.5rem);
+        max-width: 200px;
+        max-width: 180px;
+        /* min-width: 180px; */
+    }
+}
+
+@media (max-width: 480px) {
+    .cwc-bundle-included__grid {
+        gap: 0.75rem;
+        justify-content: center;
+    }
+
+    .cwc-bundle-included__card {
+        width: calc(33.333% - 0.5rem);
+        max-width: none;
+        height: 100%;
+        padding: 0.5rem 0.5rem 0rem;
+        justify-content: center;
+    }
+}
+
+@media (max-width: 400px) {
+    .cwc-bundle-included__grid {
+        gap: 0.75rem;
+    }
+
+    .cwc-bundle-included__card {
+        width: calc(50% - 0.375rem);
+        max-width: none;
+    }
 }
