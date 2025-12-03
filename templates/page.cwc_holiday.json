@@ -80,21 +80,21 @@
           "settings": {
             "title": "<p>Holiday Sale Live!<\/p>",
             "prod_title": "<p>DHT Blocker Bundle<\/p>",
-            "title_color": "#4f46e5",
+            "title_color": "#036661",
             "text_color": "#111827"
           }
         },
         "rating_BPiRPy": {
           "type": "rating",
           "settings": {
-            "text": "<p><strong>24,133 Reviews<\/strong><\/p>",
-            "star_color": "#4f46e5"
+            "text": "<p><strong>25,593 Reviews<\/strong><\/p>",
+            "star_color": "#036661"
           }
         },
         "bundle_content_bottom_qg3e8B": {
           "type": "bundle-content_bottom",
           "settings": {
-            "text": "<p>Get our Natural DHT Blocker, a Free Topical Serum, Bonus Gift, Plus a chance to have your order fully refunded<\/p>",
+            "text": "<p>Get our Natural DHT Blocker, a Free Topical Serum, 4 Bonus Gifts, Plus a Chance To Have Your Order Fully Refunded<\/p>",
             "subtext": "<p>Simply Revival delivers a dual oral + topical approach that helps block DHT, stop hair loss, and reactivate new, healthy hair growth.<\/p>"
           }
         },
@@ -104,7 +104,7 @@
             "price": 34,
             "compare_price": 89,
             "currency_symbol": "$",
-            "image": "shopify:\/\/shop_images\/Clip_path_group.png",
+            "image": "shopify:\/\/shop_images\/Clip_path_group-min.png",
             "per_serving_text": "$1.34 Per Serving!"
           }
         },
@@ -114,10 +114,11 @@
             "button_text": "Try Simply Today",
             "button_bg_color": "#125657",
             "button_text_color": "#ffffff",
-            "bundle_product_1": "shipping-protection-free-gift",
-            "bundle_product_2": "topical-dht-blocker-bundle",
-            "bundle_product_3": "",
-            "bundle_product_4": ""
+            "skip_cart": true,
+            "bundle_product_1": "topical-dht-blocker-bundle",
+            "bundle_product_2": "25-gift-card",
+            "bundle_product_3": "shipping-protection-free-gift",
+            "bundle_product_4": "free-365-day-guarantee"
           }
         },
         "review_w3YReh": {
@@ -125,13 +126,13 @@
           "settings": {
             "image": "shopify:\/\/shop_images\/Marcus_-_author-min.png",
             "text": "It has definitely changed my hair for the better. I’ve struggled with genetic hair loss for years and this is the only thing that’s stopped it.",
-            "author": "Mariah P."
+            "author": "Jason M."
           }
         },
         "refund_progress_bar_bb9Aq6": {
           "type": "refund-progress-bar",
           "settings": {
-            "text": "💸 79 Winners Fully Refunded For Their Order!",
+            "text": "💸 78 Winners Fully Refunded For Their Order!",
             "progress": 79,
             "bar_color": "#ef4444",
             "bg_color": "#e5e7eb"
@@ -148,10 +149,10 @@
         "image_carousel_rj6Qdc": {
           "type": "image_carousel",
           "settings": {
-            "badge_text": "BestSeller",
+            "badge_text": "",
             "badge_text_color": "#ffffff",
             "badge_bg_color": "#60a1a2",
-            "badge_sold_text": "50+ Sold Today",
+            "badge_sold_text": "",
             "badge_sold_text_color": "#000000",
             "badge_sold_bg_color": "#ffffff"
           }
@@ -159,7 +160,7 @@
         "disclaimer_KCi4Vh": {
           "type": "disclaimer",
           "settings": {
-            "text": "3 days before your next shipment is set to go through, we will email you a reminder. By default, it will be another 30 servings delivered to you, and you can easily adjust or cancel at anytime."
+            "text": "By default, it will be another 30 servings delivered to you, and you can easily adjust or cancel at anytime."
           }
         },
         "benefits_jJTCFQ": {
@@ -194,15 +195,15 @@
         "faq_jAPdPq": {
           "type": "faq",
           "settings": {
-            "title": "What is Simply Revival?",
-            "content": "<p>Simply revival is a wellness brand focused on natural plant based supplements to support your hair health, immune system, and overall health - without synthetic ingredients or harsh side effects.<\/p>"
+            "title": "WHAT IS SIMPLY REVIVAL?",
+            "content": "<p><strong>Simply revival is a wellness brand<\/strong> focused on natural plant based supplements to support your hair health, immune system, and overall health - without synthetic ingredients or harsh side effects.<\/p>"
           }
         },
         "faq_Jm47GX": {
           "type": "faq",
           "settings": {
-            "title": "Is Simply Revival® suitable for all hair types?",
-            "content": "<p>Yes, the formula is designed to to support hair heath for all types of hair.<\/p>"
+            "title": "INGREDIENTS & BENEFITS",
+            "content": "<ul><li><strong>Saw Palmetto <\/strong>→ Helps block DHT to reduce thinning and protect the hairline.<\/li><li><strong>Stinging Nettle <\/strong>→ Supports healthy DHT balance and promotes stronger follicles.<\/li><li><strong>Bamboo Extract (Silica) <\/strong>→ Boosts hair strength, thickness, and natural shine.<\/li><li><strong>Biotin <\/strong>→ Essential nutrient for healthy hair growth and reduced shedding.<\/li><li><strong>Horsetail <\/strong>→ Rich in minerals that support scalp health and long-term hair density.<\/li><\/ul><p><strong>In short: <\/strong>hair loss prevention + stronger roots + thicker growth = all in one formula.<br\/><\/p>"
           }
         }
       },
@@ -244,6 +245,16 @@
             "image": "shopify:\/\/shop_images\/Mask_group_a96dce34-45a4-4ad5-a900-479e1893876b.png"
           }
         },
+        "card_HkfBgR": {
+          "type": "card",
+          "settings": {
+            "title": "$20 dollar gift card",
+            "value_num": "$20",
+            "value_text": "FREE",
+            "product": "25-gift-card",
+            "image": "shopify:\/\/shop_images\/gift_card_bundle-min_b0dd10be-8a3f-4931-8cac-41f5cc19e81a.png"
+          }
+        },
         "card_wkQyzQ": {
           "type": "card",
           "settings": {
@@ -251,7 +262,7 @@
             "value_num": "$15",
             "value_text": "FREE",
             "product": "",
-            "image": "shopify:\/\/shop_images\/Mask_group-2.png"
+            "image": "shopify:\/\/shop_images\/shipping_protection_bundle-1-min.png"
           }
         },
         "card_VDbW98": {
@@ -264,44 +275,23 @@
             "image": "shopify:\/\/shop_images\/Mask_group-1.png"
           }
         },
-        "card_bnEeWm": {
+        "card_H3CKpV": {
           "type": "card",
-          "disabled": true,
           "settings": {
-            "title": "A2 PROBIOTIC CREAMER+",
-            "value_num": "$20",
-            "value_text": "$20 FREE",
-            "product": ""
-          }
-        },
-        "card_j6DJK6": {
-          "type": "card",
-          "disabled": true,
-          "settings": {
-            "title": "A2 PROBIOTIC CREAMER+",
-            "value_num": "$20",
-            "value_text": "$20 FREE",
-            "product": ""
-          }
-        },
-        "card_Aagbx9": {
-          "type": "card",
-          "disabled": true,
-          "settings": {
-            "title": "A2 PROBIOTIC CREAMER+",
-            "value_num": "$20",
-            "value_text": "$20 FREE",
-            "product": ""
+            "title": "365 day guarantee",
+            "value_num": "50",
+            "value_text": "FREE",
+            "product": "free-365-day-guarantee",
+            "image": "shopify:\/\/shop_images\/guarantee_bundle-1-min_04b26d13-2f2c-4634-8606-32334ecf6605.png"
           }
         }
       },
       "block_order": [
         "card_HTwxJn",
+        "card_HkfBgR",
         "card_wkQyzQ",
         "card_VDbW98",
-        "card_bnEeWm",
-        "card_j6DJK6",
-        "card_Aagbx9"
+        "card_H3CKpV"
       ],
       "name": "Bundle Included Items",
       "settings": {
@@ -852,7 +842,7 @@
       "name": "Testimonial Images",
       "settings": {
         "testimonial_list": "image-testimonial-list-et8lvccj",
-        "section_title": "<h3>10,000+ <strong>Happy Customers<\/strong><\/h3>",
+        "section_title": "<h3>25,000+ <strong>Happy Customers<\/strong><\/h3>",
         "bold_color": "#125657",
         "section_subtitle": "",
         "bg_color": "#fffee3",
@@ -1405,7 +1395,7 @@
         "subtext_pChdU9": {
           "type": "subtext",
           "settings": {
-            "text": "<p>If you don’t experience noticeable improvements within 90 days, simply return your order for a full refund—no questions asked.<\/p>"
+            "text": "<p>If you don’t experience noticeable improvements within 365 days, simply return your order for a full refund—no questions asked.<\/p>"
           }
         },
         "button_cyPhXR": {

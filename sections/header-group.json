@@ -2,13 +2,18 @@
   "type": "header",
   "name": "Header Group",
   "sections": {
-    "cwc_holiday_banner_Y8KniG": {
-      "type": "CWC_holiday_banner",
-      "name": "Holiday Banner",
+    "cwc_holiday_timer_banner_CAeh7Q": {
+      "type": "CWC_holiday_timer_banner",
+      "name": "Holiday Timer Banner",
       "settings": {
-        "holiday_text": "<p>BLACK FRIDAY - 62% OFF Natural DHT Blocker + FREE Topical DHT Blocker + FREE Gift + 100 Orders Refunded<\/p>",
+        "main_title": "<p>⚡️NEW! HOLIDAY SALE! ⚡️<\/p>",
+        "subtext": "<p>62% Off Starter Kit + FREE Serum + 4 FREE gifts<\/p>",
+        "text": "",
+        "link": "",
+        "show_timer": true,
+        "min_hours": 7,
+        "max_hours": 10,
         "bg_color": "#ffffff",
-        "link": "shopify:\/\/pages\/holiday-sale",
         "text_color": "#111111",
         "padding_top": 10,
         "padding_bottom": 10
@@ -20,7 +25,7 @@
         "item_CAgTzF": {
           "type": "Item",
           "settings": {
-            "code": "BLACK FRIDAY MEGA SALE -  Up To 70% Off!",
+            "code": "HOLIDAY SALE -  70% OFF + 2 MONTHS FREE",
             "button_text": "",
             "button_link": ""
           }
@@ -192,7 +197,7 @@
     }
   },
   "order": [
-    "cwc_holiday_banner_Y8KniG",
+    "cwc_holiday_timer_banner_CAeh7Q",
     "announcement-bar-slide",
     "header",
     "store-messages",
