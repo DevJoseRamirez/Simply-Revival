@@ -249,7 +249,12 @@
           "settings": {
             "button_text": "Add to Cart",
             "button_bg_color": "#125657",
-            "button_text_color": "#ffffff"
+            "button_text_color": "#ffffff",
+            "bundle_product_1": "25-gift-card",
+            "bundle_product_2": "shipping-protection-free-gift",
+            "bundle_product_3": "free-365-day-guarantee",
+            "bundle_product_4": "",
+            "skip_cart": false
           }
         },
         "guarantee_text_cjAzqP": {
@@ -594,7 +599,7 @@
         "card_bg": "#ffffff",
         "highlight_color": "#009370",
         "padding_top": 20,
-        "padding_bottom": 40
+        "padding_bottom": 20
       }
     },
     "cwc_product_highlight_rows_EUh8KV": {
@@ -641,8 +646,8 @@
         "title_color": "#000000",
         "caption_color": "#ffffff",
         "caption_bg": "#60a1a2",
-        "padding_top": 60,
-        "padding_bottom": 60
+        "padding_top": 32,
+        "padding_bottom": 32
       }
     },
     "cwc_testimonial_images_CxCPAz": {
@@ -717,13 +722,13 @@
       "name": "Testimonial Images",
       "settings": {
         "testimonial_list": "",
-        "section_title": "<h3>25,000+ <strong>Hair Transformations<\/strong><\/h3>",
+        "section_title": "<h2>25,000+ <strong>Hair Transformations<\/strong><\/h2>",
         "bold_color": "#125657",
         "section_subtitle": "",
         "bg_color": "#fffee3",
         "text_color": "#111111",
-        "padding_top": 40,
-        "padding_bottom": 40
+        "padding_top": 32,
+        "padding_bottom": 32
       }
     },
     "cwc_background_features_fzEHDf": {
@@ -808,8 +813,8 @@
         "bg_color": "#125657",
         "bg_image": "shopify:\/\/shop_images\/Simply_Revival___Why_Trust_Simply_Revival_vs_Standard_Prescriptions-min.png",
         "text_color": "#ffffff",
-        "padding_top": 60,
-        "padding_bottom": 60
+        "padding_top": 30,
+        "padding_bottom": 30
       }
     },
     "cwc_reasons_raQjiN": {
@@ -1019,8 +1024,8 @@
         "text_color": "#111111",
         "button_bg": "#125657",
         "button_text": "#ffffff",
-        "padding_top": 60,
-        "padding_bottom": 60
+        "padding_top": 32,
+        "padding_bottom": 32
       }
     },
     "cwc_problem_solution_3rW9Gt": {
@@ -1393,8 +1398,8 @@
         "heading": "<h3><strong>Frequently Asked Questions<\/strong><\/h3>",
         "text": "",
         "faq_bg_color": "#ffffff",
-        "padding_top": 80,
-        "padding_bottom": 80
+        "padding_top": 32,
+        "padding_bottom": 32
       }
     },
     "1629746450643786911": {

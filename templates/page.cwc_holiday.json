@@ -726,7 +726,7 @@
         "card_bg": "#ffffff",
         "highlight_color": "#009370",
         "padding_top": 20,
-        "padding_bottom": 40
+        "padding_bottom": 32
       }
     },
     "cwc_product_highlight_rows_pJC7Tb": {
@@ -773,8 +773,8 @@
         "title_color": "#000000",
         "caption_color": "#ffffff",
         "caption_bg": "#60a1a2",
-        "padding_top": 60,
-        "padding_bottom": 60
+        "padding_top": 32,
+        "padding_bottom": 32
       }
     },
     "cwc_testimonial_images_T87JHr": {
@@ -842,13 +842,13 @@
       "name": "Testimonial Images",
       "settings": {
         "testimonial_list": "image-testimonial-list-et8lvccj",
-        "section_title": "<h3>25,000+ <strong>Happy Customers<\/strong><\/h3>",
+        "section_title": "<h2>25,000+ <strong>Happy Customers<\/strong><\/h2>",
         "bold_color": "#125657",
         "section_subtitle": "",
         "bg_color": "#fffee3",
         "text_color": "#111111",
-        "padding_top": 40,
-        "padding_bottom": 40
+        "padding_top": 32,
+        "padding_bottom": 32
       }
     },
     "cwc_background_features_LtxHrj": {
@@ -933,8 +933,8 @@
         "bg_color": "#125657",
         "bg_image": "shopify:\/\/shop_images\/Simply_Revival___Why_Trust_Simply_Revival_vs_Standard_Prescriptions-min.png",
         "text_color": "#ffffff",
-        "padding_top": 60,
-        "padding_bottom": 60
+        "padding_top": 30,
+        "padding_bottom": 30
       }
     },
     "cwc_reasons_pHJPxW": {
@@ -1043,8 +1043,8 @@
         "card_bg": "#ffffff",
         "card_text": "#222222",
         "section_bg": "#fffee3",
-        "padding_top": 40,
-        "padding_bottom": 40
+        "padding_top": 32,
+        "padding_bottom": 32
       }
     },
     "cwc_video_testimonials_JNizXH": {
@@ -1105,8 +1105,8 @@
         "text_color": "#111111",
         "button_bg": "#125657",
         "button_text": "#ffffff",
-        "padding_top": 60,
-        "padding_bottom": 60
+        "padding_top": 32,
+        "padding_bottom": 32
       }
     },
     "cwc_problem_solution_rhM8jg": {
@@ -1490,8 +1490,8 @@
         "heading": "<h3><strong>Frequently Asked Questions<\/strong><\/h3>",
         "text": "",
         "faq_bg_color": "#ffffff",
-        "padding_top": 60,
-        "padding_bottom": 60
+        "padding_top": 32,
+        "padding_bottom": 32
       }
     },
     "cwc_areviews_widget_pYjxk9": {
