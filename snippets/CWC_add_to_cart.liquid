@@ -82,6 +82,15 @@
       }
 {% endstyle %}
 
+{% assign main_product = product %}
+
+{% liquid
+  assign bundle_product_4 = block.settings.bundle_product_1
+  assign bundle_product_3 = block.settings.bundle_product_2
+  assign bundle_product_2 = block.settings.bundle_product_3
+  assign bundle_product_1 = block.settings.bundle_product_4
+%}
+
 <button
   type="button"
   class="cwc-featured-product__button"
@@ -89,6 +98,23 @@
   {% unless product.available %}
     disabled
   {% endunless %}
+
+
+    {% comment %} *THIS LIKE HERE {% endcomment %}
+  data-skip-cart="{{ block.settings.skip_cart }}"
+
+  {%- if bundle_product_1 != blank -%}
+    data-bundle-variant1="{{ bundle_product_1.selected_or_first_available_variant.id }}"
+  {%- endif -%}
+  {%- if bundle_product_2 != blank -%}
+    data-bundle-variant2="{{ bundle_product_2.selected_or_first_available_variant.id }}"
+  {%- endif -%}
+  {%- if bundle_product_3 != blank -%}
+    data-bundle-variant3="{{ bundle_product_3.selected_or_first_available_variant.id }}"
+  {%- endif -%}
+  {%- if bundle_product_4 != blank -%}
+    data-bundle-variant4="{{ bundle_product_4.selected_or_first_available_variant.id }}"
+  {%- endif -%}
 >
   <div class="cwc-featured-product__add_to_cart-content">
     {% if product.available %}

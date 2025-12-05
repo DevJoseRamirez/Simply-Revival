@@ -292,10 +292,6 @@ function initFeaturedProduct(section, sectionId, variants, sellingPlanGroups) {
 
     if (buttonCurrentPriceEl) {
       buttonCurrentPriceEl.textContent = formatPrice(displayPrice);
-      console.log(
-        "Updated button current price to:",
-        formatPrice(displayPrice)
-      );
     }
 
     if (displayComparePrice && displayComparePrice > displayPrice) {
@@ -476,21 +472,181 @@ function initFeaturedProduct(section, sectionId, variants, sellingPlanGroups) {
     });
   }
 
-  /* -----------------------------------------------------
-     ADD TO CART BUTTON SETUP
-     ----------------------------------------------------- */
-  // Store original button text for later use
-  const buttonText = addToCartButton.querySelector(".cwc-button-text");
-  if (buttonText && !buttonText.dataset.originalText) {
-    buttonText.dataset.originalText = buttonText.textContent;
-  }
+  /* =====================================================
+   BUNDLE & STANDARD ADD TO CART - UPDATED SECTION ONLY
+   =====================================================
+   Replace the add-to-cart section in CWC_product_template.js
+   ===================================================== */
 
   /* -----------------------------------------------------
-     ADD TO CART FUNCTIONALITY
+     BUNDLE MODE DETECTION
      ----------------------------------------------------- */
-  addToCartButton.addEventListener("click", function () {
+  const isBundleMode =
+    addToCartButton &&
+    (addToCartButton.dataset.bundleVariant1 ||
+      addToCartButton.dataset.bundleVariant2 ||
+      addToCartButton.dataset.bundleVariant3 ||
+      addToCartButton.dataset.bundleVariant4);
+
+  console.log("Bundle mode detected:", isBundleMode);
+  if (isBundleMode) {
+    console.log("Bundle variants:", {
+      v1: addToCartButton.dataset.bundleVariant1,
+      v2: addToCartButton.dataset.bundleVariant2,
+      v3: addToCartButton.dataset.bundleVariant3,
+      v4: addToCartButton.dataset.bundleVariant4,
+    });
+  }
+
+  /* =====================================================
+     BUNDLE ADD TO CART FUNCTIONALITY
+     ===================================================== */
+  function handleBundleAddToCart() {
+    console.log("=== Bundle Add to Cart Started ===");
+
+    if (!variantIdInput || !variantIdInput.value) {
+      console.warn("Bundle: No main variant ID");
+      return;
+    }
+
+    const mainVariantId = Number(variantIdInput.value);
+    const skipCart = addToCartButton.dataset.skipCart === "true";
+
+    console.log("Main variant ID:", mainVariantId);
+    console.log("Skip cart mode:", skipCart);
+
+    if (!Number.isFinite(mainVariantId)) {
+      console.warn("Bundle: Invalid main variant ID:", variantIdInput.value);
+      return;
+    }
+
+    // Get selling plan ID
+    const sellingPlanId =
+      finalSellingPlanInput && finalSellingPlanInput.value
+        ? Number(finalSellingPlanInput.value)
+        : null;
+
+    console.log("Selling plan ID:", sellingPlanId);
+
+    // Enforce subscription-only for bundle (optional - remove if not needed)
+    // if (!Number.isFinite(sellingPlanId)) {
+    //   console.warn("Bundle: No selling plan selected");
+    //   alert("Please select the subscription option to add this bundle.");
+    //   return;
+    // }
+
+    const items = [];
+
+    // Collect bundle products from data attributes
+    // Check for bundleVariant1, bundleVariant2, bundleVariant3, bundleVariant4
+    [
+      "bundleVariant1",
+      "bundleVariant2",
+      "bundleVariant3",
+      "bundleVariant4",
+    ].forEach((key) => {
+      const value = addToCartButton.dataset[key];
+      if (value && !isNaN(value)) {
+        items.push({
+          id: Number(value),
+          quantity: 1,
+        });
+        console.log(`Added ${key}:`, value);
+      }
+    });
+
+    // Add main product with subscription
+    const mainItem = {
+      id: mainVariantId,
+      quantity: 1,
+      selling_plan: sellingPlanId,
+    };
+
+    items.push(mainItem);
+    console.log("Main product added:", mainItem);
+
+    console.log("Final items payload:", items);
+
+    if (!items.length) {
+      console.warn("Bundle: No items to add to cart");
+      return;
+    }
+
+    // Show loading state
+    addToCartButton.disabled = true;
+    addToCartButton.classList.add("loading_hk");
+
+    // Send to Shopify cart API
+    fetch("/cart/add.js", {
+      method: "POST",
+      headers: {
+        "Content-Type": "application/json",
+        Accept: "application/json",
+      },
+      body: JSON.stringify({ items }),
+    })
+      .then((res) => {
+        if (!res.ok) throw new Error("Failed to add bundle to cart");
+        return res.json();
+      })
+      .then((data) => {
+        console.log("Bundle added successfully:", data);
+
+        const btnText = addToCartButton.querySelector(".cwc-button-text");
+        const originalText =
+          btnText?.dataset.originalText || "Add Bundle to Cart";
+
+        // If skip-cart mode, redirect to checkout
+        if (skipCart) {
+          console.log("Redirecting to checkout...");
+          window.location.href = "/checkout";
+          return;
+        }
+
+        // Show success message
+        if (btnText) {
+          if (!btnText.dataset.originalText) {
+            btnText.dataset.originalText = btnText.textContent;
+          }
+          btnText.textContent = "Bundle Added!";
+          setTimeout(() => {
+            btnText.textContent = originalText;
+          }, 2000);
+        }
+
+        // Dispatch custom event
+        document.dispatchEvent(
+          new CustomEvent("cwc:item-added-to-cart", {
+            detail: {
+              items,
+              sectionId,
+              isBundle: true,
+            },
+          })
+        );
+      })
+      .catch((err) => {
+        console.error("Bundle add-to-cart error:", err);
+        alert(
+          "There was an issue adding the bundle to your cart. Please try again."
+        );
+      })
+      .finally(() => {
+        addToCartButton.disabled = false;
+        addToCartButton.classList.remove("loading_hk");
+      });
+  }
+
+  /* =====================================================
+     STANDARD ADD TO CART FUNCTIONALITY
+     ===================================================== */
+  function handleStandardAddToCart() {
+    console.log("=== Standard Add to Cart Started ===");
+
     const selectedVariantId = variantIdInput.value;
-    const sellingPlanId = finalSellingPlanInput.value;
+    const sellingPlanId = finalSellingPlanInput
+      ? finalSellingPlanInput.value
+      : "";
     const variant = findVariantById(selectedVariantId);
 
     console.log("Add to cart clicked:", {
@@ -515,13 +671,13 @@ function initFeaturedProduct(section, sectionId, variants, sellingPlanGroups) {
     // Show loading state
     addToCartButton.classList.add("loading_hk");
 
-    // Build cart data from hidden inputs
+    // Build cart data
     const data = {
       quantity: 1,
       id: selectedVariantId,
     };
 
-    // Add selling plan if checkbox is checked and selling plan exists
+    // Add selling plan if subscription is selected
     if (sellingPlanId) {
       data.selling_plan = sellingPlanId;
       console.log("Adding with selling plan:", sellingPlanId);
@@ -568,7 +724,28 @@ function initFeaturedProduct(section, sectionId, variants, sellingPlanGroups) {
           "An error occurred while processing your request. Please try again."
         );
       });
-  });
+  }
+
+  /* -----------------------------------------------------
+     ADD TO CART BUTTON SETUP & EVENT LISTENER
+     ----------------------------------------------------- */
+  // Store original button text for later use
+  const buttonText = addToCartButton.querySelector(".cwc-button-text");
+  if (buttonText && !buttonText.dataset.originalText) {
+    buttonText.dataset.originalText = buttonText.textContent;
+  }
+
+  // Attach the correct handler based on mode
+  if (isBundleMode) {
+    console.log("Attaching BUNDLE add-to-cart handler");
+    addToCartButton.addEventListener("click", handleBundleAddToCart);
+
+    // Expose global handler for external triggers (like CWC_bundle_included section)
+    window.CWCBundleAddToCart = handleBundleAddToCart;
+  } else {
+    console.log("Attaching STANDARD add-to-cart handler");
+    addToCartButton.addEventListener("click", handleStandardAddToCart);
+  }
 
   /* =====================================================
      FAQ FUNCTIONALITY
