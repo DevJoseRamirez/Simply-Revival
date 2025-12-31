@@ -13,7 +13,7 @@
         "text_color": "#ffffff",
         "padding_top": 5,
         "padding_bottom": 5,
-        "top_text": "<p><strong>⚡NEW HOLIDAY SALE<\/strong><\/p>",
+        "top_text": "<p><strong>⚡NEW YEAR NEW YOU SALE<\/strong><\/p>",
         "bottom_text": "<p><strong>62% OFF + 4 FREE GIFTS + FREE  SERUM<\/strong><\/p>",
         "show_timer": true,
         "min_hours": 2.5,
@@ -216,7 +216,12 @@
           "settings": {
             "button_text": "Add to Cart",
             "button_bg_color": "#125657",
-            "button_text_color": "#ffffff"
+            "button_text_color": "#ffffff",
+            "bundle_product_1": "",
+            "bundle_product_2": "",
+            "bundle_product_3": "",
+            "bundle_product_4": "",
+            "skip_cart": false
           }
         },
         "guarantee_text_miPHyB": {
@@ -364,7 +369,7 @@
         "sub_head": "<p>🎁 + 4 FREE GIFTS + FREE TOPICAL SERUM<\/p>",
         "title": "<h3><strong>62% OFF <\/strong>FOR A LIMITED TIME ONLY!<\/h3>",
         "sub_text": "<p>This limited-time deal is in high demand and stock keeps selling out<\/p>",
-        "floating_badge_text": "⚡ HOLIDAY SPECIAL",
+        "floating_badge_text": "⚡ NEW YEAR, NEW YOU SALE",
         "button_color": "#125657",
         "button_text_color": "#ffffff",
         "button_text": "GET 62% OFF →",

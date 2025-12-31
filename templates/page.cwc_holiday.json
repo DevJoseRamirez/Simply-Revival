@@ -78,8 +78,8 @@
         "bundle_content_top_FRtX6x": {
           "type": "bundle-content_top",
           "settings": {
-            "title": "<p>Holiday Sale Live!<\/p>",
-            "prod_title": "<p>DHT Blocker Bundle<\/p>",
+            "title": "<p>New Year, New You Sale!<\/p>",
+            "prod_title": "<p>30 DAY REVIVAL SYSTEM+<\/p>",
             "title_color": "#036661",
             "text_color": "#111827"
           }
@@ -94,8 +94,8 @@
         "bundle_content_bottom_qg3e8B": {
           "type": "bundle-content_bottom",
           "settings": {
-            "text": "<p>Get our Natural DHT Blocker, a Free Topical Serum, 4 Bonus Gifts, Plus a Chance To Have Your Order Fully Refunded<\/p>",
-            "subtext": "<p>Simply Revival delivers a dual oral + topical approach that helps block DHT, stop hair loss, and reactivate new, healthy hair growth.<\/p>"
+            "text": "<p>Get our Natural DHT Blocker, a <strong>Free Topical DHT Blocker Serum <\/strong>+ 3 Bonus Gifts.<\/p>",
+            "subtext": "<p>Simply Revival delivers a dual oral + topical approach that helps block DHT, stop hair loss, and reactivate new, healthy hair growth in just 30 days.<\/p>"
           }
         },
         "bundle_price_display_FAAMW7": {
@@ -132,8 +132,8 @@
         "refund_progress_bar_bb9Aq6": {
           "type": "refund-progress-bar",
           "settings": {
-            "text": "💸 78 Winners Fully Refunded For Their Order!",
-            "progress": 79,
+            "text": "💸 47 Winners Fully Refunded For Their Order!",
+            "progress": 47,
             "bar_color": "#ef4444",
             "bg_color": "#e5e7eb"
           }
@@ -397,7 +397,12 @@
           "settings": {
             "button_text": "Add to Cart",
             "button_bg_color": "#125657",
-            "button_text_color": "#ffffff"
+            "button_text_color": "#ffffff",
+            "bundle_product_1": "",
+            "bundle_product_2": "",
+            "bundle_product_3": "",
+            "bundle_product_4": "",
+            "skip_cart": false
           }
         },
         "guarantee_text_dfTDaP": {

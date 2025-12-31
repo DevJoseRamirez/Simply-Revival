@@ -6,7 +6,7 @@
       "type": "CWC_holiday_timer_banner",
       "name": "Holiday Timer Banner",
       "settings": {
-        "main_title": "<p>⚡️NEW! HOLIDAY SALE! ⚡️<\/p>",
+        "main_title": "<p>⚡️NEW YEAR, NEW YOU SALE ⚡️<\/p>",
         "subtext": "<p>62% Off Starter Kit + FREE Serum + 4 FREE gifts<\/p>",
         "text": "",
         "link": "",
@@ -25,7 +25,7 @@
         "item_CAgTzF": {
           "type": "Item",
           "settings": {
-            "code": "HOLIDAY SALE -  70% OFF + 2 MONTHS FREE",
+            "code": "NEW YEAR SALE - 50% OFF + 4 FREE GIFTS!",
             "button_text": "",
             "button_link": ""
           }
