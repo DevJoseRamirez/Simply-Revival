@@ -9,50 +9,69 @@
 {% endstyle %}
 
 {{ 'CWC_featured_product.css' | asset_url | stylesheet_tag }}
-
 {{ 'swiper-bundle.min.css' | asset_url | stylesheet_tag }}
 
-{% if section.settings.product != blank %}
-  {% assign product = section.settings.product %}
-{% endif %}
+{% comment %}
+  Product Context Logic:
+  1. If section settings has a product selected, use that (allows override)
+  2. Else if template context has product (e.g., product page), use that
+  3. Else no product available
+{% endcomment %}
+{% liquid
+  if section.settings.product != blank
+    assign current_product = section.settings.product
+  elsif product != blank
+    assign current_product = product
+  else
+    assign current_product = null
+  endif
+%}
 
-<div id="cwc-featured-product--anchor"></div>
-<section
-  id="CWC_featured_product-{{ section.id }}"
-  class="cwc-featured-product"
-  data-section-id="{{ section.id }}"
-  data-product-id="{{ product.id }}"
-  data-variants="{{ product.variants | json | escape }}"
-  data-selling-plans="{{ product.selling_plan_groups | json | escape }}"
->
-  <div class="cwc-featured-product__wrapper">
-    <div class="cwc-featured-product__grid">
-      <!-- Left Column -->
-      <div class="cwc-featured-product__left">
-        {% for block in section.blocks %}
-          {% case block.type %}
-            {% when 'product_image' %}
-              <div class="cwc-featured-product__image" {{ block.shopify_attributes }}>
-                {% render 'CWC_product_image', product: product, section_id: section.id, block: block %}
-              </div>
+{% if current_product %}
+  <div id="cwc-featured-product--anchor"></div>
+  <section
+    id="CWC_featured_product-{{ section.id }}"
+    class="cwc-featured-product"
+    data-section-id="{{ section.id }}"
+    data-product-id="{{ current_product.id }}"
+    data-variants="{{ current_product.variants | json | escape }}"
+    data-selling-plans="{{ current_product.selling_plan_groups | json | escape }}"
+  >
+    <div class="cwc-featured-product__wrapper">
+      <div class="cwc-featured-product__grid">
+        <!-- Left Column -->
+        <div class="cwc-featured-product__left">
+          {% for block in section.blocks %}
+            {% case block.type %}
+              {% when 'product_image' %}
+                <div class="cwc-featured-product__image" {{ block.shopify_attributes }}>
+                  {% render 'CWC_product_image', product: current_product, section_id: section.id, block: block %}
+                </div>
 
-            {% when 'image_carousel' %}
-              <div class="cwc-featured-product__image_carousel" {{ block.shopify_attributes }}>
-                {% render 'CWC_product_image_carousel', product: product, section_id: section.id, block: block %}
-              </div>
+              {% when 'image_carousel' %}
+                <div class="cwc-featured-product__image_carousel" {{ block.shopify_attributes }}>
+                  {% render 'CWC_product_image_carousel',
+                    product: current_product,
+                    section_id: section.id,
+                    block: block
+                  %}
+                </div>
 
-            {% when 'faq' %}
-              <div class="cwc-featured-product__faq desktop__only" {{ block.shopify_attributes }}>
-                {% render 'CWC_faq_blocks', product: product, section_id: section.id, block: block %}
-              </div>
-          {% endcase %}
-        {% endfor %}
-      </div>
+              {% when 'faq' %}
+                <div class="cwc-featured-product__faq desktop__only" {{ block.shopify_attributes }}>
+                  {% render 'CWC_faq_blocks', product: current_product, section_id: section.id, block: block %}
+                </div>
 
-      <!-- Right Column -->
-      <div class="cwc-featured-product__right">
-        {% assign product = section.settings.product %}
-        {% if product %}
+              {% when 'value_props' %}
+                <div class="cwc-featured-product__value_props desktop__only" {{ block.shopify_attributes }}>
+                  {% render 'CWC_block__value_props', product: current_product, section_id: section.id, block: block %}
+                </div>
+            {% endcase %}
+          {% endfor %}
+        </div>
+
+        <!-- Right Column -->
+        <div class="cwc-featured-product__right">
           <form
             action="/cart/add"
             method="post"
@@ -63,7 +82,7 @@
             <input
               type="hidden"
               name="id"
-              value="{{ product.selected_or_first_available_variant.id }}"
+              value="{{ current_product.selected_or_first_available_variant.id }}"
               class="variant-id-input"
             >
             <input
@@ -77,7 +96,7 @@
               {% case block.type %}
                 {% when 'rating' %}
                   <div class="cwc-featured-product__rating" {{ block.shopify_attributes }}>
-                    {% render 'CWC_prod_rating', product: product, section_id: section.id, block: block %}
+                    {% render 'CWC_prod_rating', product: current_product, section_id: section.id, block: block %}
                   </div>
 
                 {% when 'vendor' %}
@@ -85,13 +104,17 @@
                     {% if block.settings.vendor != blank %}
                       {{ block.settings.vendor }}
                     {% else %}
-                      {{ product.vendor }}
+                      {{ current_product.vendor }}
                     {% endif %}
                   </div>
 
                 {% when 'title' %}
                   <div class="cwc-featured-product__title" {{ block.shopify_attributes }}>
-                    {{ block.settings.title }}
+                    {% if block.settings.title != blank %}
+                      {{ block.settings.title }}
+                    {% else %}
+                      {{ current_product.title }}
+                    {% endif %}
                   </div>
 
                 {% when 'desc' %}
@@ -99,7 +122,7 @@
                     {% if block.settings.desc != blank %}
                       {{ block.settings.desc }}
                     {% else %}
-                      {{ product.description }}
+                      {{ current_product.description }}
                     {% endif %}
                   </div>
 
@@ -110,62 +133,84 @@
 
                 {% when 'benefits' %}
                   <div class="cwc-featured-product__benefits" {{ block.shopify_attributes }}>
-                    {% render 'CWC_benefits', product: product, section_id: section.id, block: block %}
+                    {% render 'CWC_benefits', product: current_product, section_id: section.id, block: block %}
                   </div>
 
                 {% when 'price_display' %}
                   <div class="cwc-featured-product__price" {{ block.shopify_attributes }}>
-                    {% render 'CWC_price_display', product: product, section_id: section.id, block: block %}
+                    {% render 'CWC_price_display', product: current_product, section_id: section.id, block: block %}
                   </div>
 
                 {% when 'product_options' %}
-                  {% if product.variants.size > 1 %}
+                  {% if current_product.variants.size > 1 %}
                     <div class="cwc-featured-product__options" {{ block.shopify_attributes }}>
-                      {% render 'CWC_product_options', product: product, section_id: section.id, block: block %}
+                      {% render 'CWC_product_options', product: current_product, section_id: section.id, block: block %}
                     </div>
                   {% endif %}
 
                 {% when 'subscription_toggle' %}
-                  {% if product.selling_plan_groups.size > 0 %}
+                  {% if current_product.selling_plan_groups.size > 0 %}
                     <div class="cwc-featured-product__subscription" {{ block.shopify_attributes }}>
-                      {% render 'CWC_product_selling_plans', product: product, section_id: section.id, block: block %}
+                      {% render 'CWC_product_selling_plans',
+                        product: current_product,
+                        section_id: section.id,
+                        block: block
+                      %}
                     </div>
                   {% endif %}
 
                 {% when 'delivery_estimate' %}
                   <div class="cwc-featured-product__delivery" {{ block.shopify_attributes }}>
-                    {% render 'CWC_delivery_estimate', product: product, section_id: section.id, block: block %}
+                    {% render 'CWC_delivery_estimate', product: current_product, section_id: section.id, block: block %}
                   </div>
 
                 {% when 'add_to_cart' %}
                   <div class="cwc-featured-product__add_to_cart" {{ block.shopify_attributes }}>
-                    {% render 'CWC_add_to_cart', product: product, section_id: section.id, block: block %}
+                    {% render 'CWC_add_to_cart', product: current_product, section_id: section.id, block: block %}
                   </div>
 
                 {% when 'guarantee_text' %}
                   <div class="cwc-featured-product__guarantee_text" {{ block.shopify_attributes }}>
-                    {% render 'CWC_guarantee_text', product: product, section_id: section.id, block: block %}
+                    {% render 'CWC_guarantee_text', product: current_product, section_id: section.id, block: block %}
                   </div>
 
                 {% when 'faq' %}
                   <div class="cwc-featured-product__faq mobile__only" {{ block.shopify_attributes }}>
-                    {% render 'CWC_faq_blocks', product: product, section_id: section.id, block: block %}
+                    {% render 'CWC_faq_blocks', product: current_product, section_id: section.id, block: block %}
                   </div>
 
                 {% when 'value_props' %}
                   <div class="cwc-featured-product__value_props mobile__only" {{ block.shopify_attributes }}>
-                    {% render 'CWC_block__value_props', product: product, section_id: section.id, block: block %}
+                    {% render 'CWC_block__value_props',
+                      product: current_product,
+                      section_id: section.id,
+                      block: block
+                    %}
                   </div>
               {% endcase %}
             {% endfor %}
           </form>
 
           {{ 'CWC_featured_product.js' | asset_url | script_tag }}
-        {% endif %}
+        </div>
       </div>
     </div>
-  </div>
-</section>
+  </section>
+{% else %}
+  {% comment %} No product available - show placeholder in editor {% endcomment %}
+  {% if request.design_mode %}
+    <section id="CWC_featured_product-{{ section.id }}" class="cwc-featured-product">
+      <div class="cwc-featured-product__wrapper">
+        <div style="padding: 2rem; text-align: center; background: #f5f5f5; border: 2px dashed #ccc; border-radius: 8px;">
+          <p style="margin: 0; color: #666;">
+            <strong>CWC Featured Product</strong><br>
+            Select a product in section settings, or use this section on a product page template.
+          </p>
+        </div>
+      </div>
+    </section>
+  {% endif %}
+{% endif %}
 
 {% schema %}
 {
@@ -175,7 +220,8 @@
     {
       "type": "product",
       "id": "product",
-      "label": "Product"
+      "label": "Product",
+      "info": "Optional: Leave blank to use product from page context (e.g., on product pages)"
     },
     {
       "type": "color",
@@ -235,7 +281,6 @@
           "label": "Badge Background Color",
           "default": "#60a1a2"
         },
-
         {
           "type": "text",
           "id": "badge_sold_text",
@@ -256,7 +301,6 @@
         }
       ]
     },
-
     {
       "type": "image_carousel",
       "name": "Image Carousel",
@@ -279,7 +323,6 @@
           "label": "Badge Background Color",
           "default": "#60a1a2"
         },
-
         {
           "type": "text",
           "id": "badge_sold_text",
@@ -300,7 +343,6 @@
         }
       ]
     },
-
     {
       "type": "faq",
       "name": "FAQ",
@@ -315,6 +357,160 @@
           "type": "richtext",
           "id": "content",
           "label": "Answer"
+        }
+      ]
+    },
+    {
+      "type": "value_props",
+      "name": "Value Props Grid",
+      "settings": [
+        {
+          "type": "header",
+          "content": "Card 1"
+        },
+        {
+          "type": "image_picker",
+          "id": "icon_1",
+          "label": "Icon 1"
+        },
+        {
+          "type": "text",
+          "id": "title_1",
+          "label": "Title 1",
+          "default": "$20 Gift Card"
+        },
+        {
+          "type": "text",
+          "id": "desc_1",
+          "label": "Description 1",
+          "default": "Get $20 back!"
+        },
+        {
+          "type": "text",
+          "id": "price_1",
+          "label": "Original Price 1",
+          "default": "$20.00"
+        },
+        {
+          "type": "header",
+          "content": "Card 2"
+        },
+        {
+          "type": "image_picker",
+          "id": "icon_2",
+          "label": "Icon 2"
+        },
+        {
+          "type": "text",
+          "id": "title_2",
+          "label": "Title 2",
+          "default": "Shipping Protection"
+        },
+        {
+          "type": "text",
+          "id": "desc_2",
+          "label": "Description 2",
+          "default": "Lost or damaged? We replace it."
+        },
+        {
+          "type": "text",
+          "id": "price_2",
+          "label": "Original Price 2",
+          "default": "$9.99"
+        },
+        {
+          "type": "header",
+          "content": "Card 3"
+        },
+        {
+          "type": "image_picker",
+          "id": "icon_3",
+          "label": "Icon 3"
+        },
+        {
+          "type": "text",
+          "id": "title_3",
+          "label": "Title 3",
+          "default": "365-Day Guarantee"
+        },
+        {
+          "type": "text",
+          "id": "desc_3",
+          "label": "Description 3",
+          "default": "Full year money back guarantee."
+        },
+        {
+          "type": "text",
+          "id": "price_3",
+          "label": "Original Price 3",
+          "default": "$29.99"
+        },
+        {
+          "type": "header",
+          "content": "Card 4"
+        },
+        {
+          "type": "image_picker",
+          "id": "icon_4",
+          "label": "Icon 4"
+        },
+        {
+          "type": "text",
+          "id": "title_4",
+          "label": "Title 4",
+          "default": "Free Returns"
+        },
+        {
+          "type": "text",
+          "id": "desc_4",
+          "label": "Description 4",
+          "default": "Don't love it? Money back."
+        },
+        {
+          "type": "text",
+          "id": "price_4",
+          "label": "Original Price 4",
+          "default": "$14.99"
+        },
+        {
+          "type": "header",
+          "content": "Styling"
+        },
+        {
+          "type": "color",
+          "id": "border_color",
+          "label": "Card Border Color",
+          "default": "#E07C3E"
+        },
+        {
+          "type": "color",
+          "id": "card_bg_color",
+          "label": "Card Background Color",
+          "default": "#ffffff"
+        },
+        {
+          "type": "color",
+          "id": "title_color",
+          "label": "Title Color",
+          "default": "#111111"
+        },
+        {
+          "type": "color",
+          "id": "desc_color",
+          "label": "Description Color",
+          "default": "#555555"
+        },
+        {
+          "type": "color",
+          "id": "free_color",
+          "label": "FREE Text Color",
+          "default": "#E07C3E"
+        },
+        {
+          "type": "color",
+          "id": "checkmark_bg_color",
+          "label": "Checkmark Background",
+          "default": "#22C55E"
         }
       ]
     },
@@ -361,7 +557,7 @@
         {
           "type": "richtext",
           "id": "desc",
-          "label": "Descriptoin"
+          "label": "Description"
         }
       ]
     },

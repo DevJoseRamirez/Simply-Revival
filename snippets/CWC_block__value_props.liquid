@@ -1,0 +1,351 @@
+{% style %}
+      .cwc-value-props {
+      --card-border-color: {{ block.settings.border_color | default: '#E07C3E' }};
+      --card-bg-color: {{ block.settings.card_bg_color | default: '#ffffff' }};
+      --title-color: {{ block.settings.title_color | default: '#111111' }};
+      --desc-color: {{ block.settings.desc_color | default: '#555555' }};
+      --free-color: {{ block.settings.free_color | default: '#E07C3E' }};
+      --checkmark-bg: {{ block.settings.checkmark_bg_color | default: '#22C55E' }};
+      }
+
+      .cwc-featured-product__value_props.desktop__only {
+      display: block;
+      }
+      .cwc-featured-product__value_props.mobile__only {
+      display: none;
+      }
+
+
+
+      .cwc-value-props__grid {
+      display: grid;
+      grid-template-columns: repeat(2, 1fr);
+      gap: 0.75rem;
+      width: 100%;
+      box-sizing: border-box;
+      }
+
+      .cwc-value-props__card {
+      display: flex;
+      flex-direction: column;
+      align-items: flex-start;
+      gap: 0.625rem;
+      gap: .5rem;
+      padding: 0.75rem;
+      background: var(--card-bg-color);
+      /* border: 2px solid var(--card-border-color); */
+      border: 1px solid var(--card-border-color);
+      border-radius: 0.5rem;
+      position: relative;
+      box-sizing: border-box;
+          /* background: #0f92ae26; */
+
+      }
+
+      .cwc-value-props__checkmark {
+      /* position: absolute;
+      top: -0.5rem;
+      left: -0.5rem; */
+      width: 1.25rem;
+      height: 1.25rem;
+      /* background: var(--checkmark-bg); */
+      /* border-radius: 50%; */
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      }
+
+      .cwc-value-props__checkmark svg {
+       width: 1.25rem;
+      height: 1.25rem;
+      fill: #ffffff;
+      }
+
+      .cwc-value-props__icon {
+      flex-shrink: 0;
+      max-width: 4rem;
+      max-height: 3rem;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      }
+
+      .cwc-value-props__icon img {
+      width: 100%;
+      /* height: 100%; */
+      object-fit: contain;
+      aspect-ratio: 3/4;
+      }
+
+      .cwc-value-props__content {
+      flex: 1;
+      min-width: 0;
+      gap: 8px;
+          display: flex;
+    align-items: center;
+    justify-content: flex-start;
+      }
+
+      .cwc-value-props__title {
+      font-size: 0.8125rem;
+      font-weight: 700;
+      color: var(--title-color);
+      line-height: 1.2;
+      margin-bottom: 0.125rem;
+      margin-bottom: 0rem;
+      }
+
+      .cwc-value-props__desc {
+      font-size: 0.6875rem;
+      color: var(--desc-color);
+      line-height: 1.3;
+      margin-bottom: 0.25rem;
+      }
+
+      .cwc-value-props__pricing {
+      display: flex;
+      align-items: center;
+      gap: 0.375rem;
+      }
+
+      .cwc-value-props__original-price {
+      font-size: 0.6875rem;
+      color: #999999;
+      text-decoration: line-through;
+      }
+
+      .cwc-value-props__free {
+      font-size: 0.875rem;
+      font-weight: 700;
+      color: var(--free-color);
+      }
+
+      @media (max-width: 991px) {
+      .cwc-value-props__grid {
+      gap: 0.5rem;
+      }
+
+      .cwc-value-props__card {
+      padding: 0.625rem;
+      gap: 0.5rem;
+      }
+
+      .cwc-value-props__icon {
+      width: 2.25rem;
+      height: 2.25rem;
+      }
+
+      .cwc-value-props__title {
+      font-size: 0.75rem;
+      }
+
+      .cwc-value-props__desc {
+      font-size: 0.625rem;
+      }
+
+      .cwc-value-props__original-price {
+      font-size: 0.625rem;
+      }
+
+      .cwc-value-props__free {
+      font-size: 0.75rem;
+      }
+
+      .cwc-value-props__checkmark {
+      width: 1rem;
+      height: 1rem;
+      top: -0.375rem;
+      left: -0.375rem;
+      }
+
+      .cwc-value-props__checkmark svg {
+      width: 0.625rem;
+      height: 0.625rem;
+      }
+      }
+      @media (max-width: 768px) {
+      .cwc-featured-product__value_props.desktop__only {
+          display: none;
+    }
+    .cwc-featured-product__value_props.mobile__only {
+        display: block;
+      }
+      }
+  /* testing */
+      .cwc-value-props__text-content {
+          display flex;
+          flex-direction: column;
+      }
+      .cwc-value-props__content {
+        display: flex;
+      }
+      .cwc-value-props__card-head-content {
+        display: flex;
+        gap: 6px;
+
+      }
+{% endstyle %}
+
+<div class="cwc-value-props">
+  <div class="cwc-value-props__grid">
+    {% comment %} Card 1 {% endcomment %}
+    {% if block.settings.title_1 != blank %}
+      <div class="cwc-value-props__card">
+        {% comment %} icon and title {% endcomment %}
+        <div class="cwc-value-props__card-head-content">
+          <div class="cwc-value-props__checkmark">
+            {% render 'CWC_icon-check_fill', fill_color: block.settings.checkmark_bg_color %}
+          </div>
+          <div class="cwc-value-props__title">{{ block.settings.title_1 }}</div>
+        </div>
+
+        {% comment %} image and descriptoin {% endcomment %}
+        <div class="cwc-value-props__content">
+          {% if block.settings.icon_1 != blank %}
+            <div class="cwc-value-props__icon">
+              <img
+                src="{{ block.settings.icon_1 | image_url: width: 200 }}"
+                alt="{{ block.settings.title_1 }}"
+                loading="lazy"
+                height="{{ block.settings.icon_1.height }}"
+                width="{{ block.settings.icon_1.width }}"
+              >
+            </div>
+          {% endif %}
+          {% comment %} text content {% endcomment %}
+          <div class="cwc-value-props__text-content">
+            {% if block.settings.desc_1 != blank %}
+              <div class="cwc-value-props__desc">{{ block.settings.desc_1 }}</div>
+            {% endif %}
+            {% if block.settings.price_1 != blank %}
+              <div class="cwc-value-props__pricing">
+                <span class="cwc-value-props__original-price">{{ block.settings.price_1 }}</span>
+                <span class="cwc-value-props__free">FREE</span>
+              </div>
+            {% endif %}
+          </div>
+        </div>
+      </div>
+    {% endif %}
+
+    {% comment %} Card 2 {% endcomment %}
+    {% if block.settings.title_2 != blank %}
+      <div class="cwc-value-props__card">
+        {% comment %} icon and title {% endcomment %}
+        <div class="cwc-value-props__card-head-content">
+          <div class="cwc-value-props__checkmark">
+            {% render 'CWC_icon-check_fill', fill_color: block.settings.checkmark_bg_color %}
+          </div>
+          <div class="cwc-value-props__title">{{ block.settings.title_2 }}</div>
+        </div>
+
+        {% comment %} image and description {% endcomment %}
+        <div class="cwc-value-props__content">
+          {% if block.settings.icon_2 != blank %}
+            <div class="cwc-value-props__icon">
+              <img
+                src="{{ block.settings.icon_2 | image_url: width: 200 }}"
+                alt="{{ block.settings.title_2 }}"
+                loading="lazy"
+                height="{{ block.settings.icon_2.height }}"
+                width="{{ block.settings.icon_2.width }}"
+              >
+            </div>
+          {% endif %}
+          {% comment %} text content {% endcomment %}
+          <div class="cwc-value-props__text-content">
+            {% if block.settings.desc_2 != blank %}
+              <div class="cwc-value-props__desc">{{ block.settings.desc_2 }}</div>
+            {% endif %}
+            {% if block.settings.price_2 != blank %}
+              <div class="cwc-value-props__pricing">
+                <span class="cwc-value-props__original-price">{{ block.settings.price_2 }}</span>
+                <span class="cwc-value-props__free">FREE</span>
+              </div>
+            {% endif %}
+          </div>
+        </div>
+      </div>
+    {% endif %}
+
+    {% comment %} Card 3 {% endcomment %}
+    {% if block.settings.title_3 != blank %}
+      <div class="cwc-value-props__card">
+        {% comment %} icon and title {% endcomment %}
+        <div class="cwc-value-props__card-head-content">
+          <div class="cwc-value-props__checkmark">
+            {% render 'CWC_icon-check_fill', fill_color: block.settings.checkmark_bg_color %}
+          </div>
+          <div class="cwc-value-props__title">{{ block.settings.title_3 }}</div>
+        </div>
+
+        {% comment %} image and description {% endcomment %}
+        <div class="cwc-value-props__content">
+          {% if block.settings.icon_3 != blank %}
+            <div class="cwc-value-props__icon">
+              <img
+                src="{{ block.settings.icon_3 | image_url: width: 200 }}"
+                alt="{{ block.settings.title_3 }}"
+                loading="lazy"
+                height="{{ block.settings.icon_3.height }}"
+                width="{{ block.settings.icon_3.width }}"
+              >
+            </div>
+          {% endif %}
+          {% comment %} text content {% endcomment %}
+          <div class="cwc-value-props__text-content">
+            {% if block.settings.desc_3 != blank %}
+              <div class="cwc-value-props__desc">{{ block.settings.desc_3 }}</div>
+            {% endif %}
+            {% if block.settings.price_3 != blank %}
+              <div class="cwc-value-props__pricing">
+                <span class="cwc-value-props__original-price">{{ block.settings.price_3 }}</span>
+                <span class="cwc-value-props__free">FREE</span>
+              </div>
+            {% endif %}
+          </div>
+        </div>
+      </div>
+    {% endif %}
+
+    {% comment %} Card 4 {% endcomment %}
+    {% if block.settings.title_4 != blank %}
+      <div class="cwc-value-props__card">
+        {% comment %} icon and title {% endcomment %}
+        <div class="cwc-value-props__card-head-content">
+          <div class="cwc-value-props__checkmark">
+            {% render 'CWC_icon-check_fill', fill_color: block.settings.checkmark_bg_color %}
+          </div>
+          <div class="cwc-value-props__title">{{ block.settings.title_4 }}</div>
+        </div>
+
+        {% comment %} image and description {% endcomment %}
+        <div class="cwc-value-props__content">
+          {% if block.settings.icon_4 != blank %}
+            <div class="cwc-value-props__icon">
+              <img
+                src="{{ block.settings.icon_4 | image_url: width: 200 }}"
+                alt="{{ block.settings.title_4 }}"
+                loading="lazy"
+                height="{{ block.settings.icon_4.height }}"
+                width="{{ block.settings.icon_4.width }}"
+              >
+            </div>
+          {% endif %}
+          {% comment %} text content {% endcomment %}
+          <div class="cwc-value-props__text-content">
+            {% if block.settings.desc_4 != blank %}
+              <div class="cwc-value-props__desc">{{ block.settings.desc_4 }}</div>
+            {% endif %}
+            {% if block.settings.price_4 != blank %}
+              <div class="cwc-value-props__pricing">
+                <span class="cwc-value-props__original-price">{{ block.settings.price_4 }}</span>
+                <span class="cwc-value-props__free">FREE</span>
+              </div>
+            {% endif %}
+          </div>
+        </div>
+      </div>
+    {% endif %}
+  </div>
+</div>
