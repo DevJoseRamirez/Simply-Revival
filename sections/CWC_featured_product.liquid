@@ -151,6 +151,11 @@
                   <div class="cwc-featured-product__faq mobile__only" {{ block.shopify_attributes }}>
                     {% render 'CWC_faq_blocks', product: product, section_id: section.id, block: block %}
                   </div>
+
+                {% when 'value_props' %}
+                  <div class="cwc-featured-product__value_props mobile__only" {{ block.shopify_attributes }}>
+                    {% render 'CWC_block__value_props', product: product, section_id: section.id, block: block %}
+                  </div>
               {% endcase %}
             {% endfor %}
           </form>

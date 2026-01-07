@@ -205,13 +205,13 @@
           "type": "benefits",
           "settings": {
             "icon1": "shopify:\/\/shop_images\/Simply_Revival___Strengthens_hair_follicles_helps_prevent_hair_loss-min_5e9aa147-53e9-4dd5-abd0-3271e31cb4b7.png",
-            "text1": "Strengthens hair follicles & helps prevent hair loss",
+            "text1": "Strengthens follicles to help prevent hair loss",
             "icon2": "shopify:\/\/shop_images\/Simply_Revival___Deeply_hydrates_scalp_Repairs_damaged_hair_fibers-min_62adfec7-0fca-4c4b-8103-500a718ca1ce.png",
-            "text2": "Deeply hydrates scalp & Repairs damaged hair fibers",
+            "text2": "Hydrates Scalp & Repairs Damaged Hair",
             "icon3": "shopify:\/\/shop_images\/Simply_Revival___Reduces_shedding_while_promoting_thicker_fuller_growth-min_69b2e63b-b83a-4f0e-bc4e-cb7d8a8fd8c3.png",
-            "text3": "Reduces shedding, while promoting thicker, fuller growth",
+            "text3": "Reduces shedding for thicker, fuller hair",
             "icon4": "shopify:\/\/shop_images\/Simply_Revival___9_premium_oils_to_boost_circulation_and_restore_shine.-min_363002cf-ebff-4873-a3f4-597084723ae6.png",
-            "text4": "9 premium oils to boost circulation and restore shine.",
+            "text4": "9 premium oils boost circulation and shine",
             "text5": "",
             "text6": ""
           }
@@ -266,6 +266,7 @@
         },
         "faq_7YcCid": {
           "type": "faq",
+          "disabled": true,
           "settings": {
             "title": "What is Simply Revival?",
             "content": "<p>Simply revival is a wellness brand focused on natural plant based supplements to support your hair health, immune system, and overall health - without synthetic ingredients or harsh side effects. <\/p>"
@@ -273,6 +274,7 @@
         },
         "faq_AD8NBA": {
           "type": "faq",
+          "disabled": true,
           "settings": {
             "title": "Is Simply revival safe to use?",
             "content": "<p>Yes, our formulas are crafted to be the safest on the market and still provide powerful results. <\/p>"
@@ -280,6 +282,7 @@
         },
         "faq_8NkFB8": {
           "type": "faq",
+          "disabled": true,
           "settings": {
             "title": "How long does it take to see results?",
             "content": "<p>Most users reported noticing less hair loss in 3-6 weeks and new growth after 6-12 weeks. <\/p>"
@@ -287,6 +290,7 @@
         },
         "faq_R4hrL7": {
           "type": "faq",
+          "disabled": true,
           "settings": {
             "title": "Is simply revival suitable for all hair types?",
             "content": "<p>Yes, the formula is designed to to support hair heath for all types of hair. <\/p>"
@@ -294,6 +298,7 @@
         },
         "faq_wHxCrf": {
           "type": "faq",
+          "disabled": true,
           "settings": {
             "title": "Do you have a guarantee?",
             "content": "<p>Yes, All orders are backed by our 365 day money back guarantee. If you’re not happy, we will make it right!<\/p>"
@@ -930,10 +935,18 @@
     "cwc_video_testimonials_eKGcNw": {
       "type": "CWC_video_testimonials",
       "blocks": {
-        "testimonial_gAB3Pi": {
+        "testimonial_YUfUyU": {
           "type": "testimonial",
           "settings": {
-            "video_file": "shopify:\/\/files\/videos\/Simply Revival | Real People Real Results - lukefinds.mp4",
+            "video_file": "shopify:\/\/files\/videos\/Simply Revival | Real People Real Results - Marc_20Malcolm_20.mp4",
+            "video_url": "",
+            "author_name": "Customer Name"
+          }
+        },
+        "testimonial_LbgUCx": {
+          "type": "testimonial",
+          "settings": {
+            "video_file": "shopify:\/\/files\/videos\/Simply Revival | Real People Real Results - kwakusella.mp4",
             "video_url": "",
             "author_name": "Customer Name"
           }
@@ -962,10 +975,10 @@
             "author_name": "Customer Name"
           }
         },
-        "testimonial_LbgUCx": {
+        "testimonial_gAB3Pi": {
           "type": "testimonial",
           "settings": {
-            "video_file": "shopify:\/\/files\/videos\/Simply Revival | Real People Real Results - kwakusella.mp4",
+            "video_file": "shopify:\/\/files\/videos\/Simply Revival | Real People Real Results - lukefinds.mp4",
             "video_url": "",
             "author_name": "Customer Name"
           }
@@ -974,14 +987,6 @@
           "type": "testimonial",
           "settings": {
             "video_file": "shopify:\/\/files\/videos\/Simply Revival | Real People Real Results - Anakin.mp4",
-            "video_url": "",
-            "author_name": "Customer Name"
-          }
-        },
-        "testimonial_YUfUyU": {
-          "type": "testimonial",
-          "settings": {
-            "video_file": "shopify:\/\/files\/videos\/Simply Revival | Real People Real Results - Marc_20Malcolm_20.mp4",
             "video_url": "",
             "author_name": "Customer Name"
           }
@@ -1004,13 +1009,13 @@
         }
       },
       "block_order": [
-        "testimonial_gAB3Pi",
+        "testimonial_YUfUyU",
+        "testimonial_LbgUCx",
         "testimonial_JKCwDW",
         "testimonial_imEa7a",
         "testimonial_CEbkbp",
-        "testimonial_LbgUCx",
+        "testimonial_gAB3Pi",
         "testimonial_cUnGVh",
-        "testimonial_YUfUyU",
         "button_Ydqp9F",
         "guarantee_text_TtNrBf"
       ],
