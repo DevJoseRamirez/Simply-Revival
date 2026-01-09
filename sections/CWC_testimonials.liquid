@@ -24,6 +24,7 @@
   {% assign customer_testimonial_list = section.blocks %}
 {% endif %}
 
+{% comment %} {{ customer_testimonial_list | json }} {% endcomment %}
 <section id="CWC_testimonials-{{ section.id }}" class="cwc-testimonials">
   <div class="cwc-testimonials__wrapper">
     <div class="swiper cwc-testimonials__carousel">
@@ -44,7 +45,6 @@
             {% assign img_value = customer_testimonial.profile_image %}
             {% assign img_url = customer_testimonial.profile_image | image_url: width: 36 %}
 
-            {% comment %} {{ customer_testimonial_list | json }} {% endcomment %}
           {% else %}
             {% comment %} Block source {% endcomment %}
             {% assign rating = customer_testimonial.settings.star_rating %}
