@@ -1,0 +1,141 @@
+{% style %}
+  #CWC_footer_credits-{{ section.id }} {
+    --section-bg: {{ section.settings.bg_color | default: '#ffffff' }};
+    --text-color: {{ section.settings.text_color | default: '#111111' }};
+    --link-color: {{ section.settings.link_color | default: '#111111' }};
+    --link-hover-color: {{ section.settings.link_hover_color | default: '#555555' }};
+    --padding-top: {{ section.settings.padding_top | default: 20 }}px;
+    --padding-bottom: {{ section.settings.padding_bottom | default: 20 }}px;
+    --padding-top-mobile: {{ section.settings.padding_top | times: 0.5 }}px;
+    --padding-bottom-mobile: {{ section.settings.padding_bottom | times: 0.5 }}px;
+  }
+{% endstyle %}
+
+{{ 'CWC_footer_credits.css' | asset_url | stylesheet_tag }}
+
+<section id="CWC_footer_credits-{{ section.id }}" class="cwc-footer-credits">
+  <div class="cwc-footer-credits__wrapper">
+    <div class="cwc-footer-credits__content">
+      {% comment %} Policy Links - Menu or Default Policies {% endcomment %}
+      <nav class="cwc-footer-credits__links">
+        {% if section.settings.menu != blank %}
+          {% comment %} Use selected menu {% endcomment %}
+          {% for link in section.settings.menu.links %}
+            <a href="{{ link.url }}" class="cwc-footer-credits__link">
+              {{ link.title }}
+            </a>
+          {% endfor %}
+        {% else %}
+          {% comment %} Default: Show store policies {% endcomment %}
+          {% if shop.privacy_policy %}
+            <a href="{{ shop.privacy_policy.url }}" class="cwc-footer-credits__link">
+              {{ shop.privacy_policy.title }}
+            </a>
+          {% endif %}
+
+          {% if shop.terms_of_service %}
+            <a href="{{ shop.terms_of_service.url }}" class="cwc-footer-credits__link">
+              {{ shop.terms_of_service.title }}
+            </a>
+          {% endif %}
+
+          {% if shop.refund_policy %}
+            <a href="{{ shop.refund_policy.url }}" class="cwc-footer-credits__link">
+              {{ shop.refund_policy.title }}
+            </a>
+          {% endif %}
+
+          {% if shop.shipping_policy %}
+            <a href="{{ shop.shipping_policy.url }}" class="cwc-footer-credits__link">
+              {{ shop.shipping_policy.title }}
+            </a>
+          {% endif %}
+
+          {% if shop.subscription_policy %}
+            <a href="{{ shop.subscription_policy.url }}" class="cwc-footer-credits__link">
+              {{ shop.subscription_policy.title }}
+            </a>
+          {% endif %}
+        {% endif %}
+      </nav>
+
+      {% comment %} Copyright {% endcomment %}
+      <div class="cwc-footer-credits__copyright">
+        <span class="cwc_copyright">&copy;</span> {{ 'now' | date: '%Y' }}, {{ shop.name }}
+      </div>
+    </div>
+  </div>
+</section>
+
+{% schema %}
+{
+  "name": "CWC Footer Credits",
+  "tag": "section",
+  "settings": [
+    {
+      "type": "link_list",
+      "id": "menu",
+      "label": "Menu",
+      "info": "Optional: Select a menu to display. Leave blank to show store policies."
+    },
+    {
+      "type": "header",
+      "content": "Colors"
+    },
+    {
+      "type": "color",
+      "id": "bg_color",
+      "label": "Background Color",
+      "default": "#ffffff"
+    },
+    {
+      "type": "color",
+      "id": "text_color",
+      "label": "Text Color",
+      "default": "#111111"
+    },
+    {
+      "type": "color",
+      "id": "link_color",
+      "label": "Link Color",
+      "default": "#111111"
+    },
+    {
+      "type": "color",
+      "id": "link_hover_color",
+      "label": "Link Hover Color",
+      "default": "#555555"
+    },
+    {
+      "type": "header",
+      "content": "Spacing"
+    },
+    {
+      "type": "range",
+      "id": "padding_top",
+      "label": "Padding Top",
+      "default": 20,
+      "min": 0,
+      "max": 100,
+      "step": 5,
+      "unit": "px"
+    },
+    {
+      "type": "range",
+      "id": "padding_bottom",
+      "label": "Padding Bottom",
+      "default": 20,
+      "min": 0,
+      "max": 100,
+      "step": 5,
+      "unit": "px"
+    }
+  ],
+  "presets": [
+    {
+      "name": "Footer Credits",
+      "category": "Custom"
+    }
+  ]
+}
+{% endschema %}

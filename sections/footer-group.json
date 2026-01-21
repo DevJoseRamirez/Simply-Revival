@@ -2,71 +2,6 @@
   "type": "footer",
   "name": "Footer group",
   "sections": {
-    "0e1d6853-0bb9-4de3-bd6e-7d204b51d5af": {
-      "type": "scrolling-text",
-      "blocks": {
-        "0fa1b3ad-5be6-430c-b8a4-d6adb672759d": {
-          "type": "item",
-          "settings": {
-            "code": ""
-          }
-        },
-        "14cae5b6-b46f-4d26-b9e4-034acac8e7ff": {
-          "type": "item",
-          "settings": {
-            "code": ""
-          }
-        },
-        "sections--20775029342528__0e1d6853-0bb9-4de3-bd6e-7d204b51d5af-item-1": {
-          "type": "item",
-          "settings": {
-            "code": ""
-          }
-        },
-        "fdcba1f0-da16-4f7a-bb9e-640154e8180e": {
-          "type": "item",
-          "settings": {
-            "code": ""
-          }
-        },
-        "9c56bbc9-fd40-4490-8340-75ab62af64e9": {
-          "type": "item",
-          "settings": {
-            "code": ""
-          }
-        },
-        "83f725aa-7335-4277-b6ec-4d12d71ece82": {
-          "type": "item",
-          "settings": {
-            "code": ""
-          }
-        }
-      },
-      "block_order": [
-        "0fa1b3ad-5be6-430c-b8a4-d6adb672759d",
-        "14cae5b6-b46f-4d26-b9e4-034acac8e7ff",
-        "sections--20775029342528__0e1d6853-0bb9-4de3-bd6e-7d204b51d5af-item-1",
-        "fdcba1f0-da16-4f7a-bb9e-640154e8180e",
-        "9c56bbc9-fd40-4490-8340-75ab62af64e9",
-        "83f725aa-7335-4277-b6ec-4d12d71ece82"
-      ],
-      "disabled": true,
-      "settings": {
-        "animation": "",
-        "size_text": "h3",
-        "text_style": "solid",
-        "size_icon": 100,
-        "speed": 20,
-        "scroll_type": "from-right",
-        "background": "#1d4d41",
-        "gradient_bg": "",
-        "text": "#ffffff",
-        "paddingsection": "40px 0px 40px 0px",
-        "paddingmobile": "40px 0px 40px 0px",
-        "marginsection": "0px 0px 0px 0px",
-        "marginmobile": "0px 0px 0px 0px"
-      }
-    },
     "newsletter-footer": {
       "type": "newsletter-footer",
       "disabled": true,
@@ -164,45 +99,64 @@
         "payment_info": "svg",
         "copyright": false,
         "link_list_bottom": "",
-        "customcopyright": "© 2024 Simply Revival. All rights reserved",
+        "customcopyright": "",
         "padding_top": 64,
         "padding_bottom": 40,
         "m_padding_top": 32,
         "m_padding_bottom": 0
       }
     },
-    "areviews_one_product_MCVjGG": {
-      "type": "areviews_one_product",
-      "disabled": true,
+    "1768577742edd1c9e9": {
+      "type": "_blocks",
+      "settings": {}
+    },
+    "cwc_footer_credits_zqiTYX": {
+      "type": "CWC_footer_credits",
+      "name": "Footer Credits",
       "settings": {
-        "areviews_one_product": "simply®-dht-blocker"
+        "menu": "",
+        "bg_color": "#ffffff",
+        "text_color": "#111111",
+        "link_color": "#111111",
+        "link_hover_color": "#555555",
+        "padding_top": 0,
+        "padding_bottom": 20
       }
     },
-    "rich_text_CxcPjA": {
-      "type": "rich-text",
-      "name": "Rich text",
+    "cwc_rich_text_xbezFV": {
+      "type": "CWC_rich_text",
+      "blocks": {
+        "text_PxpBYc": {
+          "type": "text",
+          "settings": {
+            "text": "<p><em>For cosmetic and nutritional support purposes only. Not intended to diagnose, treat, cure, or prevent any condition.<\/em><\/p>"
+          }
+        }
+      },
+      "block_order": [
+        "text_PxpBYc"
+      ],
+      "name": "Rich Text Block",
       "settings": {
-        "animation": "",
-        "setwidth": "full",
-        "bgsection": "#ffffff",
-        "gradient_bg": "",
-        "title_color": "transparent",
-        "title_top": "",
-        "title": "",
-        "text": "<p><em>For cosmetic and nutritional support purposes only. Not intended to diagnose, treat, cure, or prevent any condition.<\/em><\/p>",
-        "align-heading": "center",
-        "paddingsection": "12px 0px 12px 0px",
-        "paddingmobile": "40px 0px 40px 0px",
-        "marginsection": "0px 0px 0px 0px",
-        "marginmobile": "0px 0px 0px 0px"
+        "content_position": "center",
+        "text_alignment": "center",
+        "content_width": 1600,
+        "bg_color": "#ffffff",
+        "text_color": "#111111",
+        "heading_color": "#111111",
+        "highlight_color": "#60a1a2",
+        "caption_bg": "#60a1a2",
+        "caption_text_color": "#ffffff",
+        "padding_top": 40,
+        "padding_bottom": 30
       }
     }
   },
   "order": [
-    "0e1d6853-0bb9-4de3-bd6e-7d204b51d5af",
     "newsletter-footer",
     "footer",
-    "areviews_one_product_MCVjGG",
-    "rich_text_CxcPjA"
+    "1768577742edd1c9e9",
+    "cwc_footer_credits_zqiTYX",
+    "cwc_rich_text_xbezFV"
   ]
 }

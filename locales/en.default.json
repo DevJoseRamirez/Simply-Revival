@@ -510,5 +510,14 @@
     "language_label": "Language",
     "update_language": "Update language",
     "update_country": "Update country\/region"
+  },
+  "shopify": {
+    "checkout": {
+      "contact": {
+        "phone_label": "Phone - Receive offers and shopping cart reminders via text message",
+        "optional_phone_label": "Phone - Receive offers and shopping cart reminders via text message",
+        "phone_tooltip": "Msg and data rates may apply. Msg frequency varies. Text 'STOP' to Stop. "
+      }
+    }
   }
 }

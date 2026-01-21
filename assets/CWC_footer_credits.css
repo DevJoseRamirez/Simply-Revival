@@ -1,0 +1,91 @@
+/* ==========================================================================
+   CWC_footer_credits.css
+   
+   Footer credits section with policy links and copyright.
+   Horizontal layout on desktop, vertical stack on mobile.
+   ========================================================================== */
+
+/* === Section Base === */
+.cwc-footer-credits {
+  background-color: var(--section-bg);
+  color: var(--text-color);
+  padding-top: var(--padding-top);
+  padding-bottom: var(--padding-bottom);
+}
+
+/* === Wrapper === */
+.cwc-footer-credits__wrapper {
+  max-width: 1200px;
+  max-width: 1600px;
+  margin: 0 auto;
+  padding: 0 2rem;
+}
+
+/* === Content Container === */
+.cwc-footer-credits__content {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  gap: 2rem;
+}
+
+/* === Links Navigation === */
+.cwc-footer-credits__links {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  gap: 1.5rem;
+}
+
+.cwc-footer-credits__link {
+  color: var(--link-color);
+  text-decoration: underline;
+  font-size: .9rem;
+  transition: color 0.2s ease;
+}
+
+.cwc-footer-credits__link:hover {
+  color: var(--link-hover-color);
+}
+
+/* === Copyright === */
+.cwc-footer-credits__copyright {
+  font-size: .9rem;
+  color: var(--text-color);
+  white-space: nowrap;
+}
+.cwc_copyright {
+  font-size: 1rem;
+}
+
+/* === Mobile Responsive === */
+@media (max-width: 768px) {
+  .cwc-footer-credits {
+    padding-top: var(--padding-top-mobile);
+    padding-bottom: var(--padding-bottom-mobile);
+  }
+
+  .cwc-footer-credits__wrapper {
+    padding: 0 1rem;
+  }
+
+  .cwc-footer-credits__content {
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
+    gap: 1rem;
+  }
+
+  .cwc-footer-credits__links {
+    justify-content: center;
+    gap: 1rem;
+  }
+
+  .cwc-footer-credits__link {
+    font-size: .9rem;
+  }
+
+  .cwc-footer-credits__copyright {
+    font-size: .9rem;
+  }
+}

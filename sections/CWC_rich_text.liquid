@@ -1,0 +1,486 @@
+{% style %}
+  #CWC_rich_text-{{ section.id }} {
+    /* Core Colors */
+    --section-bg: {{ section.settings.bg_color | default: '#ffffff' }};
+    --text-color: {{ section.settings.text_color | default: '#111111' }};
+    --heading-color: {{ section.settings.heading_color | default: '#111111' }};
+    --highlight-color: {{ section.settings.highlight_color | default: '#60A1A2' }};
+    --caption-bg: {{ section.settings.caption_bg | default: '#60A1A2' }};
+    --caption-color: {{ section.settings.caption_text_color | default: '#ffffff' }};
+
+    /* Spacing */
+    --padding-top: {{ section.settings.padding_top | default: 60 }}px;
+    --padding-bottom: {{ section.settings.padding_bottom | default: 60 }}px;
+    --padding-top-mobile: {{ section.settings.padding_top | times: 0.6 }}px;
+    --padding-bottom-mobile: {{ section.settings.padding_bottom | times: 0.6 }}px;
+
+    /* Content Width */
+    --content-max-width: {{ section.settings.content_width | default: 800 }}px;
+  }
+{% endstyle %}
+
+{{ 'CWC_rich_text.css' | asset_url | stylesheet_tag }}
+
+<section
+  id="CWC_rich_text-{{ section.id }}"
+  class="cwc-rich-text"
+>
+  <div class="cwc-rich-text__container">
+    <div class="cwc-rich-text__wrapper cwc-rich-text__wrapper--{{ section.settings.content_position }}">
+      <div class="cwc-rich-text__content cwc-rich-text__content--{{ section.settings.text_alignment }}">
+        {% for block in section.blocks %}
+          {% case block.type %}
+              {% comment %} Caption Block {% endcomment %}
+            {% when 'caption' %}
+              {% if block.settings.text != blank %}
+                <p
+                  class="cwc-rich-text__caption"
+                  style="
+                    background-color: {{ block.settings.caption_bg | default: section.settings.caption_bg }};
+                    color: {{ block.settings.caption_color | default: section.settings.caption_text_color }};
+                  "
+                  {{ block.shopify_attributes }}
+                >
+                  {{ block.settings.text }}
+                </p>
+              {% endif %}
+
+            {% when 'review' %}
+              {% if block.settings.text != blank %}
+                <div class="cwc-rich-text__review" {{ block.shopify_attributes }}>
+                  <div class="cwc-rich-text__review-stars">
+                    {% render 'CWC_trust_stars' %}
+                    {% comment %} {% render 'CWC_icon__trust_stars-one' %} {% endcomment %}
+                  </div>
+                  <div class="cwc-rich-text__review-text rte">
+                    {{ block.settings.text }}
+                  </div>
+                </div>
+              {% endif %}
+
+              {% comment %} Heading Block {% endcomment %}
+            {% when 'heading' %}
+              {% if block.settings.text != blank %}
+                <div
+                  class="cwc-rich-text__heading cwc-rich-text__heading--{{ block.settings.heading_size }} rte"
+                  {{ block.shopify_attributes }}
+                >
+                  {{ block.settings.text }}
+                </div>
+              {% endif %}
+
+              {% comment %} Text Block {% endcomment %}
+            {% when 'text' %}
+              {% if block.settings.text != blank %}
+                <div
+                  class="cwc-rich-text__text rte"
+                  {{ block.shopify_attributes }}
+                >
+                  {{ block.settings.text }}
+                </div>
+              {% endif %}
+
+              {% comment %} Divider Block {% endcomment %}
+            {% when 'divider' %}
+              <hr
+                class="cwc-rich-text__divider"
+                style="
+                  border-color: {{ block.settings.divider_color | default: '#E5E7EB' }};
+                  max-width: {{ block.settings.divider_width | default: 100 }}%;
+                "
+                {{ block.shopify_attributes }}
+              >
+
+              {% comment %} Image Block {% endcomment %}
+            {% when 'image' %}
+              {% if block.settings.image != blank %}
+                <div
+                  class="cwc-rich-text__image"
+                  style="max-width: {{ block.settings.image_width | default: 100 }}%;"
+                  {{ block.shopify_attributes }}
+                >
+                  <img
+                    src="{{ block.settings.image | image_url: width: 1200 }}"
+                    alt="{{ block.settings.image.alt | default: 'Section image' }}"
+                    width="{{ block.settings.image.width }}"
+                    height="{{ block.settings.image.height }}"
+                    loading="lazy"
+                  >
+                </div>
+              {% endif %}
+
+              {% comment %} Button Block {% endcomment %}
+            {% when 'button' %}
+              {% if block.settings.text != blank %}
+                <div class="cwc-rich-text__buttons" {{ block.shopify_attributes }}>
+                  <a
+                    {% if block.settings.link != blank %}
+                      href="{{ block.settings.link }}"
+                    {% else %}
+                      role="link" aria-disabled="true"
+                    {% endif %}
+                    class="cwc-rich-text__button"
+                    style="
+                      background-color: {{ block.settings.button_bg_color | default: '#125657' }};
+                      color: {{ block.settings.button_text_color | default: '#ffffff' }};
+                      --button-hover-bg: {{ block.settings.button_text_color | default: '#ffffff' }};
+                      --button-hover-text: {{ block.settings.button_bg_color | default: '#125657' }};
+                    "
+                  >
+                    {{ block.settings.text }}
+                  </a>
+
+                  {% if block.settings.text_2 != blank %}
+                    <a
+                      {% if block.settings.link_2 != blank %}
+                        href="{{ block.settings.link_2 }}"
+                      {% else %}
+                        role="link" aria-disabled="true"
+                      {% endif %}
+                      class="cwc-rich-text__button cwc-rich-text__button--secondary"
+                      style="
+                        background-color: {{ block.settings.button_bg_color_2 | default: 'transparent' }};
+                        color: {{ block.settings.button_text_color_2 | default: '#125657' }};
+                        border-color: {{ block.settings.button_text_color_2 | default: '#125657' }};
+                        --button-hover-bg: {{ block.settings.button_text_color_2 | default: '#125657' }};
+                        --button-hover-text: {{ block.settings.button_bg_color_2 | default: '#ffffff' }};
+                      "
+                    >
+                      {{ block.settings.text_2 }}
+                    </a>
+                  {% endif %}
+                </div>
+              {% endif %}
+
+              {% comment %} Spacer Block {% endcomment %}
+            {% when 'spacer' %}
+              <div
+                class="cwc-rich-text__spacer"
+                style="height: {{ block.settings.space_height | default: 20 }}px;"
+                {{ block.shopify_attributes }}
+              ></div>
+          {% endcase %}
+        {% endfor %}
+      </div>
+    </div>
+  </div>
+</section>
+
+{% schema %}
+{
+  "name": "Rich Text Block",
+  "tag": "section",
+  "settings": [
+    {
+      "type": "header",
+      "content": "Layout"
+    },
+    {
+      "type": "select",
+      "id": "content_position",
+      "label": "Content Position",
+      "options": [
+        { "value": "left", "label": "Left" },
+        { "value": "center", "label": "Center" },
+        { "value": "right", "label": "Right" }
+      ],
+      "default": "center"
+    },
+    {
+      "type": "select",
+      "id": "text_alignment",
+      "label": "Text Alignment",
+      "options": [
+        { "value": "left", "label": "Left" },
+        { "value": "center", "label": "Center" },
+        { "value": "right", "label": "Right" }
+      ],
+      "default": "center"
+    },
+    {
+      "type": "range",
+      "id": "content_width",
+      "label": "Content Max Width",
+      "min": 400,
+      "max": 1600,
+      "step": 50,
+      "unit": "px",
+      "default": 800
+    },
+    {
+      "type": "header",
+      "content": "Colors"
+    },
+    {
+      "type": "color",
+      "id": "bg_color",
+      "label": "Background Color",
+      "default": "#FAF9F6"
+    },
+    {
+      "type": "color",
+      "id": "text_color",
+      "label": "Text Color",
+      "default": "#111111"
+    },
+    {
+      "type": "color",
+      "id": "heading_color",
+      "label": "Heading Color",
+      "default": "#111111"
+    },
+    {
+      "type": "color",
+      "id": "highlight_color",
+      "label": "Highlight Color (for bold/strong text)",
+      "default": "#60A1A2"
+    },
+    {
+      "type": "color",
+      "id": "caption_bg",
+      "label": "Caption Background (default)",
+      "default": "#60A1A2"
+    },
+    {
+      "type": "color",
+      "id": "caption_text_color",
+      "label": "Caption Text Color (default)",
+      "default": "#ffffff"
+    },
+    {
+      "type": "header",
+      "content": "Spacing"
+    },
+    {
+      "type": "range",
+      "id": "padding_top",
+      "label": "Padding Top",
+      "min": 0,
+      "max": 100,
+      "step": 10,
+      "unit": "px",
+      "default": 60
+    },
+    {
+      "type": "range",
+      "id": "padding_bottom",
+      "label": "Padding Bottom",
+      "min": 0,
+      "max": 100,
+      "step": 10,
+      "unit": "px",
+      "default": 60
+    }
+  ],
+  "blocks": [
+    {
+      "type": "caption",
+      "name": "Caption",
+      "settings": [
+        {
+          "type": "text",
+          "id": "text",
+          "label": "Caption Text",
+          "default": "Featured"
+        },
+        {
+          "type": "color",
+          "id": "caption_bg",
+          "label": "Background Color"
+        },
+        {
+          "type": "color",
+          "id": "caption_color",
+          "label": "Text Color"
+        }
+      ]
+    },
+    {
+      "type": "heading",
+      "name": "Heading",
+      "settings": [
+        {
+          "type": "richtext",
+          "id": "text",
+          "label": "Heading",
+          "default": "<h2>Talk about your brand</h2>"
+        },
+        {
+          "type": "select",
+          "id": "heading_size",
+          "label": "Heading Size",
+          "options": [
+            { "value": "small", "label": "Small" },
+            { "value": "medium", "label": "Medium" },
+            { "value": "large", "label": "Large" },
+            { "value": "xlarge", "label": "Extra Large" }
+          ],
+          "default": "medium"
+        }
+      ]
+    },
+    {
+      "type": "review",
+      "name": "Review Text",
+      "settings": [
+        {
+          "type": "richtext",
+          "id": "text",
+          "label": "Review Content",
+          "default": "<p>Rated 4.9/5 <strong> | 50,000+ Happy Smiles+</strong></p>"
+        }
+      ]
+    },
+    {
+      "type": "text",
+      "name": "Text",
+      "settings": [
+        {
+          "type": "richtext",
+          "id": "text",
+          "label": "Text",
+          "default": "<p>Share information about your brand with your customers. Describe a product, make announcements, or welcome customers to your store.</p>"
+        }
+      ]
+    },
+    {
+      "type": "button",
+      "name": "Button(s)",
+      "settings": [
+        {
+          "type": "header",
+          "content": "Primary Button"
+        },
+        {
+          "type": "text",
+          "id": "text",
+          "label": "Button Text",
+          "default": "Learn More"
+        },
+        {
+          "type": "url",
+          "id": "link",
+          "label": "Button Link"
+        },
+        {
+          "type": "color",
+          "id": "button_bg_color",
+          "label": "Background Color",
+          "default": "#125657"
+        },
+        {
+          "type": "color",
+          "id": "button_text_color",
+          "label": "Text Color",
+          "default": "#ffffff"
+        },
+        {
+          "type": "header",
+          "content": "Secondary Button (Optional)"
+        },
+        {
+          "type": "text",
+          "id": "text_2",
+          "label": "Button Text"
+        },
+        {
+          "type": "url",
+          "id": "link_2",
+          "label": "Button Link"
+        },
+        {
+          "type": "color",
+          "id": "button_bg_color_2",
+          "label": "Background Color",
+          "default": "#ffffff"
+        },
+        {
+          "type": "color",
+          "id": "button_text_color_2",
+          "label": "Text Color / Border Color",
+          "default": "#125657"
+        }
+      ]
+    },
+    {
+      "type": "image",
+      "name": "Image",
+      "settings": [
+        {
+          "type": "image_picker",
+          "id": "image",
+          "label": "Image"
+        },
+        {
+          "type": "range",
+          "id": "image_width",
+          "label": "Image Width",
+          "min": 20,
+          "max": 100,
+          "step": 5,
+          "unit": "%",
+          "default": 100
+        }
+      ]
+    },
+    {
+      "type": "divider",
+      "name": "Divider",
+      "settings": [
+        {
+          "type": "color",
+          "id": "divider_color",
+          "label": "Divider Color",
+          "default": "#E5E7EB"
+        },
+        {
+          "type": "range",
+          "id": "divider_width",
+          "label": "Divider Width",
+          "min": 10,
+          "max": 100,
+          "step": 5,
+          "unit": "%",
+          "default": 100
+        }
+      ]
+    },
+    {
+      "type": "spacer",
+      "name": "Spacer",
+      "settings": [
+        {
+          "type": "range",
+          "id": "space_height",
+          "label": "Space Height",
+          "min": 10,
+          "max": 100,
+          "step": 5,
+          "unit": "px",
+          "default": 20
+        }
+      ]
+    }
+  ],
+  "presets": [
+    {
+      "name": "Rich Text Block",
+      "category": "CWC Custom",
+      "blocks": [
+        {
+          "type": "caption"
+        },
+        {
+          "type": "heading"
+        },
+        {
+          "type": "text"
+        },
+        {
+          "type": "button"
+        }
+      ]
+    }
+  ]
+}
+{% endschema %}

@@ -159,6 +159,176 @@
         "padding_bottom": 32
       }
     },
+    "cwc_featured_product_B7WhGk": {
+      "type": "CWC_featured_product",
+      "blocks": {
+        "image_carousel_jFp4EA": {
+          "type": "image_carousel",
+          "settings": {
+            "badge_text": "",
+            "badge_text_color": "#ffffff",
+            "badge_bg_color": "#60a1a2",
+            "badge_sold_text": "",
+            "badge_sold_text_color": "#000000",
+            "badge_sold_bg_color": "#ffffff"
+          }
+        },
+        "rating_j6tWzb": {
+          "type": "rating",
+          "settings": {
+            "text": "<p>Rated <strong>4.8 Excellent <\/strong>| <a href=\"#az_reviews\" title=\"#az_reviews\"><span style=\"text-decoration:underline\">25,593 Reviews<\/span><\/a><\/p>"
+          }
+        },
+        "vendor_g4GeAp": {
+          "type": "vendor",
+          "settings": {
+            "vendor": "<p>Simply Revival®<\/p>"
+          }
+        },
+        "title_iKGYG9": {
+          "type": "title",
+          "settings": {
+            "title": "<h3>Natural DHT Blocker<\/h3>"
+          }
+        },
+        "desc_aVrjLU": {
+          "type": "desc",
+          "settings": {
+            "desc": "<p>Thicker, fuller hair in 30 days - This natural formula contains a blend of 10 ancient herbs designed to stop hair loss & stimulate new growth.<\/p>"
+          }
+        },
+        "benefits_XqmTFX": {
+          "type": "benefits",
+          "settings": {
+            "icon1": "shopify:\/\/shop_images\/bullet_icon_04-min.png",
+            "text1": "Supports Blocking DHT To Prevent Hair Loss",
+            "icon2": "shopify:\/\/shop_images\/bullet_icon_02-min.png",
+            "text2": "Strengthens Hair & Promotes New Growth",
+            "icon3": "shopify:\/\/shop_images\/bullet_icon_03-min.png",
+            "text3": "Restores Balance & Gut Health",
+            "icon4": "shopify:\/\/shop_images\/bullet_icon_01-min.png",
+            "text4": "Nutrient-rich For Natural Healing",
+            "text5": "",
+            "text6": ""
+          }
+        },
+        "price_display_8LMwX6": {
+          "type": "price_display",
+          "settings": {}
+        },
+        "product_options_K4yi8r": {
+          "type": "product_options",
+          "settings": {
+            "image1": "shopify:\/\/shop_images\/Simply_Revival___Natural_Hair_Support_Blend___Buy_One-min.png",
+            "image2": "shopify:\/\/shop_images\/Simply_Revival___Natural_Hair_Support_Blend___Buy_2_-_Get_1_FREE-min.png",
+            "image3": "shopify:\/\/shop_images\/Simply_Revival___Natural_Hair_Support_Blend___Buy_3_-_Get_2_FREE-min.png"
+          }
+        },
+        "subscription_toggle_ArNDfx": {
+          "type": "subscription_toggle",
+          "settings": {
+            "title": "Save 25% With Automatic Refills!",
+            "subtitle": "Zero Commitment | Exclusive Discounts | Cancel Anytime"
+          }
+        },
+        "delivery_estimate_g6E4Az": {
+          "type": "delivery_estimate",
+          "settings": {
+            "text": "Order now for delivery by",
+            "max_shipping_days": 7,
+            "text_color": "#125657",
+            "bg_color": "#d8fff4"
+          }
+        },
+        "add_to_cart_7gampa": {
+          "type": "add_to_cart",
+          "settings": {
+            "button_text": "Add to Cart",
+            "button_bg_color": "#125657",
+            "button_text_color": "#ffffff",
+            "bundle_product_1": "25-gift-card",
+            "bundle_product_2": "shipping-protection-free-gift",
+            "bundle_product_3": "free-365-day-guarantee",
+            "bundle_product_4": "",
+            "skip_cart": false
+          }
+        },
+        "guarantee_text_pAEtjq": {
+          "type": "guarantee_text",
+          "settings": {
+            "text": "365-day money back guarantee",
+            "icon": "shopify:\/\/shop_images\/Simply_Revival___Gurantee-min.png"
+          }
+        },
+        "faq_x8mxYm": {
+          "type": "faq",
+          "disabled": true,
+          "settings": {
+            "title": "Description",
+            "content": ""
+          }
+        },
+        "faq_rgfywq": {
+          "type": "faq",
+          "disabled": true,
+          "settings": {
+            "title": "Description",
+            "content": ""
+          }
+        },
+        "value_props_x9niBd": {
+          "type": "value_props",
+          "settings": {
+            "icon_1": "shopify:\/\/shop_images\/icon_prop_01.png",
+            "title_1": "365 Day Guarantee",
+            "desc_1": "If you don’t love it, money back.",
+            "price_1": "$50.00",
+            "icon_2": "shopify:\/\/shop_images\/icon_prop_03.png",
+            "title_2": "Shipping Protection",
+            "desc_2": "Lost or damaged? We replace it.",
+            "price_2": "$15.00",
+            "icon_3": "shopify:\/\/shop_images\/bundle_and_save_dht_1.png",
+            "title_3": "Up To 2 Bottles Free",
+            "desc_3": "Bundle & Save",
+            "price_3": "$79.99",
+            "icon_4": "shopify:\/\/shop_images\/icon_prop_02.png",
+            "title_4": "$20 Gift Card",
+            "desc_4": "Get $20 back!",
+            "price_4": "$20.00",
+            "border_color": "#60a1a2",
+            "card_bg_color": "#ffffff",
+            "title_color": "#111111",
+            "desc_color": "#555555",
+            "free_color": "#60a1a2",
+            "checkmark_bg_color": "#60a1a2"
+          }
+        }
+      },
+      "block_order": [
+        "image_carousel_jFp4EA",
+        "rating_j6tWzb",
+        "vendor_g4GeAp",
+        "title_iKGYG9",
+        "desc_aVrjLU",
+        "benefits_XqmTFX",
+        "price_display_8LMwX6",
+        "product_options_K4yi8r",
+        "subscription_toggle_ArNDfx",
+        "delivery_estimate_g6E4Az",
+        "add_to_cart_7gampa",
+        "guarantee_text_pAEtjq",
+        "faq_x8mxYm",
+        "faq_rgfywq",
+        "value_props_x9niBd"
+      ],
+      "name": "Featured Product",
+      "settings": {
+        "product": "",
+        "background_color": "#ffffff",
+        "padding_top": 40,
+        "padding_bottom": 40
+      }
+    },
     "cwc_product_template_eC4DbX": {
       "type": "CWC_product_template",
       "blocks": {
@@ -320,6 +490,7 @@
         "faq_ppfPCd",
         "faq_Nm9pcE"
       ],
+      "disabled": true,
       "name": "Product Template",
       "settings": {
         "background_color": "#ffffff",
@@ -1444,6 +1615,7 @@
     "product-requently",
     "product-recent",
     "product-recommendations",
+    "cwc_featured_product_B7WhGk",
     "cwc_product_template_eC4DbX",
     "cwc_usp_columns_NPgtAB",
     "cwc_social_proof_VhXP3J",
