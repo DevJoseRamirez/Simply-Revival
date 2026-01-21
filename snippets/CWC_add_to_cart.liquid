@@ -1,89 +1,262 @@
+{% comment %}
+  CWC_add_to_cart.liquid
+  Add to Cart button with optional sticky/floating bar
+
+  Accepts:
+  - product: The product object
+  - section_id: The parent section ID
+  - block: The block object containing settings
+{% endcomment %}
+
 {% style %}
-    .cwc_product-template__add_to_cart,
-      .cwc-featured-product__add_to_cart{}
+  /* ================================
+     Static Add to Cart Button
+     ================================ */
+  .cwc_product-template__add_to_cart,
+  .cwc-featured-product__add_to_cart {}
 
+  .cwc-featured-product__button {
+    padding: 1rem 2rem;
+    font-weight: 700;
+    font-size: 1.058rem;
+    border-radius: 6px;
+    border: 2px solid transparent;
+    text-decoration: none;
+    transition: all 0.3s ease-in-out;
+    text-align: center;
+    text-transform: capitalize;
+    font-weight: 400;
+    cursor: pointer;
+    width: 100%;
+    background-color: {{ block.settings.button_bg_color }};
+    color: {{ block.settings.button_text_color }};
+    -webkit-tap-highlight-color: transparent;
+  }
 
-      .cwc-featured-product__button {
-      padding: 1rem 2rem;
-      font-weight: 700;
-      font-size: 1.058rem;
-      border-radius: 6px;
-      border: 2px solid transparent;
-      text-decoration: none;
-      transition: all 0.3s ease-in-out;
-      text-align: center;
-      text-transform: uppercase;
-      text-transform: capitalize;
+  .cwc-featured-product__button:hover {
+    border-color: {{ block.settings.button_bg_color }};
+    background-color: {{ block.settings.button_text_color }};
+    color: {{ block.settings.button_bg_color }};
+  }
 
-      font-weight: 400;
-      cursor: pointer;
-      width: 100%;
-      background-color: {{ block.settings.button_bg_color }};
-      color: {{ block.settings.button_text_color }};
-      -webkit-tap-highlight-color: transparent;
+  .cwc-featured-product__button:active {
+    outline: none;
+    -webkit-tap-highlight-color: transparent;
+    box-shadow: none;
+  }
 
-      }
+  .cwc-featured-product__button:disabled {
+    opacity: 0.6;
+    cursor: not-allowed;
+  }
 
-      .cwc-featured-product__button:hover {
-      border-color: {{ block.settings.button_bg_color }};
-      background-color: {{ block.settings.button_text_color }};
-      color: {{ block.settings.button_bg_color }};
-      }
+  .cwc-featured-product__button .cwc-featured-product__price-current {
+    font-size: inherit;
+    color: inherit;
+  }
 
+  .cwc-featured-product__button .cwc-featured-product__price-compare {
+    opacity: 0.6;
+    color: inherit;
+    font-size: inherit;
+  }
 
-      .cwc-featured-product__button:active {
-            outline: none;
-      -webkit-tap-highlight-color: transparent;
-      box-shadow: none;
-      }
+  .cwc-featured-product__button .cwc-featured-product__price-save {
+    display: none;
+  }
 
-
-      .cwc-featured-product__button:disabled {
-      opacity: 0.6;
-      cursor: not-allowed;
-      }
-
-      .cwc-featured-product__button .cwc-featured-product__price-current {
-      }
-
-      .cwc-featured-product__button .cwc-featured-product__price-current {
-      font-size: inherit;
-      color: inherit;
-      }
-
-      .cwc-featured-product__button .cwc-featured-product__price-compare {
-      opacity: 0.6;
-      color: inherit;
-      font-size: inherit;
-      }
-
-      .cwc-featured-product__button .cwc-featured-product__price-save {
-      display: none;
-
-      }
-      .cwc-featured-product__add_to_cart-content {
-      display: flex;
-      align-items: center;
-      justify-content: center;
-      gap: 4px;
-      }
-
+  .cwc-featured-product__add_to_cart-content {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 4px;
+  }
 
   @media (max-width: 991px) {
-
-      .cwc-featured-product__button {
-        border-radius: 4px;
-    font-size: 0.9375rem;
-    line-height: 16px;
-    height: 56px;
-      }
+    .cwc-featured-product__button {
+      border-radius: 4px;
+      font-size: 0.9375rem;
+      line-height: 16px;
+      height: 56px;
+    }
   }
-      @media (max-width: 768px) {
-      }
+
+  /* ================================
+     Sticky Add to Cart Bar
+     ================================ */
+  .cwc-sticky-atc {
+    --sticky-bg: {{ block.settings.sticky_bg_color | default: '#ffffff' }};
+    --sticky-shadow: 0 -2px 10px rgba(0, 0, 0, 0.1);
+
+    position: fixed;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    z-index: 999;
+    background-color: var(--sticky-bg);
+    box-shadow: var(--sticky-shadow);
+    transform: translateY(100%);
+    transition: transform 0.3s ease-in-out;
+    padding: 0.75rem 1rem;
+    /* Safe area for iPhone home indicator */
+    padding-bottom: calc(0.75rem + env(safe-area-inset-bottom, 0px));
+  }
+
+  .cwc-sticky-atc.is-visible {
+    transform: translateY(0);
+  }
+
+  .cwc-sticky-atc__wrapper {
+    max-width: 1200px;
+    margin: 0 auto;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 1rem;
+  }
+
+  /* Product Info (Left Side) */
+  .cwc-sticky-atc__product-info {
+    display: flex;
+    align-items: center;
+    gap: 0.75rem;
+    flex: 1;
+    min-width: 0;
+  }
+
+  .cwc-sticky-atc__thumbnail {
+    width: 50px;
+    height: 50px;
+    flex-shrink: 0;
+    border-radius: 6px;
+    overflow: hidden;
+    background: #f5f5f5;
+  }
+
+  .cwc-sticky-atc__thumbnail img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+  }
+
+  .cwc-sticky-atc__details {
+    display: flex;
+    flex-direction: column;
+    gap: 0.125rem;
+    min-width: 0;
+  }
+
+  .cwc-sticky-atc__title {
+    font-size: 0.875rem;
+    font-weight: 600;
+    color: #111111;
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    line-height: 1.3;
+  }
+
+  .cwc-sticky-atc__price {
+    display: flex;
+    align-items: center;
+    gap: 0.5rem;
+    font-size: 0.875rem;
+  }
+
+  .cwc-sticky-atc__price-current {
+    font-weight: 600;
+    color: #111111;
+  }
+
+  .cwc-sticky-atc__price-compare {
+    text-decoration: line-through;
+    color: #888888;
+    font-size: 0.8125rem;
+  }
+
+  /* Button (Right Side) */
+  .cwc-sticky-atc__button-wrapper {
+    flex-shrink: 0;
+  }
+
+  .cwc-sticky-atc__button {
+    padding: 0.75rem 1.5rem;
+    font-weight: 600;
+    font-size: 0.9375rem;
+    border-radius: 6px;
+    border: 2px solid transparent;
+    text-decoration: none;
+    transition: all 0.3s ease-in-out;
+    text-align: center;
+    text-transform: capitalize;
+    cursor: pointer;
+    background-color: {{ block.settings.button_bg_color }};
+    color: {{ block.settings.button_text_color }};
+    -webkit-tap-highlight-color: transparent;
+    white-space: nowrap;
+  }
+
+  .cwc-sticky-atc__button:hover {
+    border-color: {{ block.settings.button_bg_color }};
+    background-color: {{ block.settings.button_text_color }};
+    color: {{ block.settings.button_bg_color }};
+  }
+
+  .cwc-sticky-atc__button:disabled {
+    opacity: 0.6;
+    cursor: not-allowed;
+  }
+
+  /* Mobile Adjustments */
+  @media (max-width: 768px) {
+    .cwc-sticky-atc {
+      padding: 0.625rem 0.75rem;
+      padding-bottom: calc(0.625rem + env(safe-area-inset-bottom, 0px));
+    }
+
+    .cwc-sticky-atc__wrapper {
+      gap: 0.75rem;
+    }
+
+    .cwc-sticky-atc__thumbnail {
+      width: 44px;
+      height: 44px;
+      border-radius: 4px;
+    }
+
+    .cwc-sticky-atc__title {
+      font-size: 0.8125rem;
+      max-width: 120px;
+    }
+
+    .cwc-sticky-atc__price {
+      font-size: 0.8125rem;
+    }
+
+    .cwc-sticky-atc__price-compare {
+      font-size: 0.75rem;
+    }
+
+    .cwc-sticky-atc__button {
+      padding: 0.625rem 1rem;
+      font-size: 0.875rem;
+      border-radius: 4px;
+    }
+  }
+
+  /* Very small screens */
+  @media (max-width: 380px) {
+    .cwc-sticky-atc__title {
+      max-width: 90px;
+    }
+
+    .cwc-sticky-atc__button {
+      padding: 0.625rem 0.75rem;
+    }
+  }
 {% endstyle %}
 
-{% assign main_product = product %}
-
+{% comment %} Assign bundle products {% endcomment %}
 {% liquid
   assign bundle_product_4 = block.settings.bundle_product_1
   assign bundle_product_3 = block.settings.bundle_product_2
@@ -91,18 +264,20 @@
   assign bundle_product_1 = block.settings.bundle_product_4
 %}
 
+{% comment %}
+  ================================
+  Static Add to Cart Button
+  ================================
+{% endcomment %}
 <button
   type="button"
   class="cwc-featured-product__button"
   id="add-to-cart-{{ section_id }}"
+  data-static-atc
   {% unless product.available %}
     disabled
   {% endunless %}
-
-
-    {% comment %} *THIS LIKE HERE {% endcomment %}
   data-skip-cart="{{ block.settings.skip_cart }}"
-
   {%- if bundle_product_1 != blank -%}
     data-bundle-variant1="{{ bundle_product_1.selected_or_first_available_variant.id }}"
   {%- endif -%}
@@ -134,3 +309,68 @@
     {% endif %}
   </div>
 </button>
+
+{% comment %}
+  ================================
+  Sticky Add to Cart Bar
+  ================================
+{% endcomment %}
+{% if block.settings.enable_sticky_atc %}
+  <div
+    class="cwc-sticky-atc"
+    data-sticky-atc
+    data-observe-target="add-to-cart-{{ section_id }}"
+  >
+    <div class="cwc-sticky-atc__wrapper">
+      {% comment %} Product Info {% endcomment %}
+      <div class="cwc-sticky-atc__product-info">
+        {% comment %} Thumbnail {% endcomment %}
+        <div class="cwc-sticky-atc__thumbnail">
+          {% if product.featured_image %}
+            <img
+              src="{{ product.featured_image | image_url: width: 100 }}"
+              alt="{{ product.title | escape }}"
+              loading="lazy"
+            >
+          {% endif %}
+        </div>
+
+        {% comment %} Title & Price {% endcomment %}
+        <div class="cwc-sticky-atc__details">
+          <div class="cwc-sticky-atc__title">{{ product.title }}</div>
+          <div class="cwc-sticky-atc__price">
+            <span class="cwc-sticky-atc__price-current" data-sticky-price-current>
+              {{ product.price | money }}
+            </span>
+            {% if product.compare_at_price > product.price %}
+              <span class="cwc-sticky-atc__price-compare" data-sticky-price-compare>
+                {{ product.compare_at_price | money }}
+              </span>
+            {% endif %}
+          </div>
+        </div>
+      </div>
+
+      {% comment %} Sticky Button {% endcomment %}
+      <div class="cwc-sticky-atc__button-wrapper">
+        <button
+          type="button"
+          class="cwc-sticky-atc__button"
+          data-sticky-atc-button
+          {% unless product.available %}
+            disabled
+          {% endunless %}
+        >
+          {% if product.available %}
+            {{ block.settings.sticky_button_text | default: block.settings.button_text | default: 'Add to Cart' }}
+          {% else %}
+            Sold Out
+          {% endif %}
+        </button>
+      </div>
+    </div>
+  </div>
+
+  {% comment %} Load sticky ATC script {% endcomment %}
+  {{ 'CWC_sticky_atc.js' | asset_url | script_tag }}
+{% endif %}
