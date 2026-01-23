@@ -1,7 +1,7 @@
 {% comment %}
   CWC_add_to_cart.liquid
   Add to Cart button with optional sticky/floating bar
-
+  
   Accepts:
   - product: The product object
   - section_id: The parent section ID
@@ -87,7 +87,7 @@
   .cwc-sticky-atc {
     --sticky-bg: {{ block.settings.sticky_bg_color | default: '#ffffff' }};
     --sticky-shadow: 0 -2px 10px rgba(0, 0, 0, 0.1);
-
+    
     position: fixed;
     bottom: 0;
     left: 0;
@@ -144,6 +144,7 @@
     flex-direction: column;
     gap: 0.125rem;
     min-width: 0;
+    width: 100%;
   }
 
   .cwc-sticky-atc__title {
@@ -226,7 +227,7 @@
 
     .cwc-sticky-atc__title {
       font-size: 0.8125rem;
-      max-width: 120px;
+      max-width: 100%;
     }
 
     .cwc-sticky-atc__price {
@@ -247,7 +248,7 @@
   /* Very small screens */
   @media (max-width: 380px) {
     .cwc-sticky-atc__title {
-      max-width: 90px;
+      max-width: 100%;
     }
 
     .cwc-sticky-atc__button {
@@ -264,19 +265,15 @@
   assign bundle_product_1 = block.settings.bundle_product_4
 %}
 
-{% comment %}
-  ================================
-  Static Add to Cart Button
-  ================================
-{% endcomment %}
+{% comment %} ================================
+   Static Add to Cart Button
+   ================================ {% endcomment %}
 <button
   type="button"
   class="cwc-featured-product__button"
   id="add-to-cart-{{ section_id }}"
   data-static-atc
-  {% unless product.available %}
-    disabled
-  {% endunless %}
+  {% unless product.available %}disabled{% endunless %}
   data-skip-cart="{{ block.settings.skip_cart }}"
   {%- if bundle_product_1 != blank -%}
     data-bundle-variant1="{{ bundle_product_1.selected_or_first_available_variant.id }}"
@@ -310,14 +307,12 @@
   </div>
 </button>
 
-{% comment %}
-  ================================
-  Sticky Add to Cart Bar
-  ================================
-{% endcomment %}
+{% comment %} ================================
+   Sticky Add to Cart Bar
+   ================================ {% endcomment %}
 {% if block.settings.enable_sticky_atc %}
-  <div
-    class="cwc-sticky-atc"
+  <div 
+    class="cwc-sticky-atc" 
     data-sticky-atc
     data-observe-target="add-to-cart-{{ section_id }}"
   >
@@ -327,8 +322,8 @@
         {% comment %} Thumbnail {% endcomment %}
         <div class="cwc-sticky-atc__thumbnail">
           {% if product.featured_image %}
-            <img
-              src="{{ product.featured_image | image_url: width: 100 }}"
+            <img 
+              src="{{ product.featured_image | image_url: width: 100 }}" 
               alt="{{ product.title | escape }}"
               loading="lazy"
             >
@@ -342,11 +337,14 @@
             <span class="cwc-sticky-atc__price-current" data-sticky-price-current>
               {{ product.price | money }}
             </span>
-            {% if product.compare_at_price > product.price %}
-              <span class="cwc-sticky-atc__price-compare" data-sticky-price-compare>
-                {{ product.compare_at_price | money }}
-              </span>
-            {% endif %}
+            {% comment %} Always render compare price element, hide via CSS when empty {% endcomment %}
+            <span 
+              class="cwc-sticky-atc__price-compare" 
+              data-sticky-price-compare
+              {% unless product.compare_at_price > product.price %}style="display: none;"{% endunless %}
+            >
+              {{ product.compare_at_price | money }}
+            </span>
           </div>
         </div>
       </div>
@@ -357,9 +355,7 @@
           type="button"
           class="cwc-sticky-atc__button"
           data-sticky-atc-button
-          {% unless product.available %}
-            disabled
-          {% endunless %}
+          {% unless product.available %}disabled{% endunless %}
         >
           {% if product.available %}
             {{ block.settings.sticky_button_text | default: block.settings.button_text | default: 'Add to Cart' }}

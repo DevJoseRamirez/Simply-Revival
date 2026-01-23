@@ -1,5 +1,13 @@
 <style>
+.progress-wrap,
+  .progress-wrap.active-progress {
+    display: none !important;
+visibility:hidden !important;
+opacity:0 !important;
+  }
   .progress-wrap {
+{% comment %} temp style {% endcomment %}
+
     position: fixed;
     right: 2rem;
     bottom: 1rem;
@@ -19,7 +27,7 @@
   }
   @media (max-width:990px){
     .template-product .progress-wrap {
-      bottom: 4rem;
+      bottom: 5rem;
       right: 0.5rem;
     }
     .progress-wrap {
