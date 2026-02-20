@@ -542,64 +542,71 @@
     "cwc_social_proof_VhXP3J": {
       "type": "CWC_social_proof",
       "blocks": {
-        "image_wqM7jj": {
-          "type": "image",
-          "settings": {
-            "image": "shopify:\/\/shop_images\/Simply_Revival___Customer_Reviews_-_04-min.png"
-          }
-        },
-        "image_pFM3iM": {
-          "type": "image",
-          "settings": {
-            "image": "shopify:\/\/shop_images\/Simply_Revival___Customer_Reviews_-_05-min.png"
-          }
-        },
-        "image_XPQPhJ": {
-          "type": "image",
-          "settings": {
-            "image": "shopify:\/\/shop_images\/Simply_Revival___Customer_Reviews_-_02-min.png"
-          }
-        },
-        "image_MdYyhM": {
-          "type": "image",
-          "settings": {
-            "image": "shopify:\/\/shop_images\/Simply_Revival___Customer_Reviews_-_07-min.png"
-          }
-        },
-        "image_NbX4VW": {
-          "type": "image",
-          "settings": {
-            "image": "shopify:\/\/shop_images\/Simply_Revival___Customer_Reviews_-_01-min.png"
-          }
-        },
-        "image_iyhDpy": {
-          "type": "image",
-          "settings": {
-            "image": "shopify:\/\/shop_images\/Simply_Revival___Customer_Reviews_-_06-min.png"
-          }
-        },
-        "image_eJVmTb": {
-          "type": "image",
-          "settings": {
-            "image": "shopify:\/\/shop_images\/Simply_Revival___Customer_Reviews_-_03-min.png"
-          }
-        },
         "image_FLwXV7": {
           "type": "image",
           "settings": {
-            "image": "shopify:\/\/shop_images\/Simply_Revival___Customer_Reviews_-_08-min.png"
+            "image": "shopify:\/\/shop_images\/hf_20260212_200808_7c05b4f2-fbdb-4b94-8a77-65d9398a61a6.png"
+          }
+        },
+        "image_gBnQrP": {
+          "type": "image",
+          "settings": {
+            "image": "shopify:\/\/shop_images\/women_carousel_image_02.png"
+          }
+        },
+        "image_9WPwMb": {
+          "type": "image",
+          "settings": {
+            "image": "shopify:\/\/shop_images\/hf_20260212_201940_f04db56d-4985-4165-97df-2a1f394bbef1.jpg"
+          }
+        },
+        "image_zLmDgt": {
+          "type": "image",
+          "settings": {
+            "image": "shopify:\/\/shop_images\/women_carousel_image_03.png"
+          }
+        },
+        "image_6eQ7Vk": {
+          "type": "image",
+          "settings": {
+            "image": "shopify:\/\/shop_images\/hf_20260212_201120_db09f505-6428-451a-a7bc-5f97cfb5cec6.png"
+          }
+        },
+        "image_YpNMm9": {
+          "type": "image",
+          "settings": {
+            "image": "shopify:\/\/shop_images\/hf_20260212_202752_8ee46f77-c131-4f84-a98f-f0c32bc79514.jpg"
+          }
+        },
+        "image_z4Ectr": {
+          "type": "image",
+          "settings": {
+            "image": "shopify:\/\/shop_images\/hf_20260212_203601_49c25a3e-c4c4-41b5-a64d-b7520e5f3beb.png"
+          }
+        },
+        "image_6gDhx6": {
+          "type": "image",
+          "settings": {
+            "image": "shopify:\/\/shop_images\/hf_20260212_204121_1bd53877-9ada-44ca-a4be-96cf3cd7fe25.jpg"
+          }
+        },
+        "image_jLqFrp": {
+          "type": "image",
+          "settings": {
+            "image": "shopify:\/\/shop_images\/hf_20260212_204832_b2279810-da78-43a5-8f4d-5258574def51.png"
           }
         }
       },
       "block_order": [
-        "image_wqM7jj",
-        "image_pFM3iM",
-        "image_XPQPhJ",
-        "image_MdYyhM",
-        "image_NbX4VW",
-        "image_iyhDpy",
-        "image_eJVmTb",
-        "image_FLwXV7"
+        "image_FLwXV7",
+        "image_gBnQrP",
+        "image_9WPwMb",
+        "image_zLmDgt",
+        "image_6eQ7Vk",
+        "image_YpNMm9",
+        "image_z4Ectr",
+        "image_6gDhx6",
+        "image_jLqFrp"
       ],
       "name": "Social Proof",
       "settings": {
@@ -767,7 +774,7 @@
       ],
       "name": "Testimonials",
       "settings": {
-        "testimonials_collection": "main-testimonial",
+        "testimonials_collection": "women-blocker",
         "bg_color": "#fffee3",
         "text_color": "#111111",
         "card_bg": "#ffffff",
@@ -827,71 +834,71 @@
     "cwc_testimonial_images_CxCPAz": {
       "type": "CWC_testimonial_images",
       "blocks": {
-        "testimonial_image_6qDttd": {
-          "type": "testimonial_image",
-          "settings": {
-            "image": "shopify:\/\/shop_images\/Simply_Revival___Transformation_-_I_have_baby_hairs_growing_where_nothing_used_to_be.png"
-          }
-        },
-        "testimonial_image_pa8Gnf": {
-          "type": "testimonial_image",
-          "settings": {
-            "image": "shopify:\/\/shop_images\/Simply_Revival___Transformation_-_noticeable_difference.png"
-          }
-        },
-        "testimonial_image_hcBdwz": {
-          "type": "testimonial_image",
-          "settings": {
-            "image": "shopify:\/\/shop_images\/Simply_Revival___Transformation_-_notice_a_tremendous_improvement_in_my_hairline.png"
-          }
-        },
-        "testimonial_image_bxmCkR": {
-          "type": "testimonial_image",
-          "settings": {
-            "image": "shopify:\/\/shop_images\/Simply_Revival___Transformation_-_Definitely_see_my_results.png"
-          }
-        },
-        "testimonial_image_MKgwLU": {
-          "type": "testimonial_image",
-          "settings": {
-            "image": "shopify:\/\/shop_images\/Simply_Revival___Transformation_-_I_m_on_my_4th_bottle_I_gained_all_my_hair_back_I_m_super_happy.png"
-          }
-        },
-        "testimonial_image_A4pmd6": {
-          "type": "testimonial_image",
-          "settings": {
-            "image": "shopify:\/\/shop_images\/Simply_Revival___Transformation_-_Look_y_all_this_product_works..png"
-          }
-        },
-        "testimonial_image_6RhbHL": {
-          "type": "testimonial_image",
-          "settings": {
-            "image": "shopify:\/\/shop_images\/Simply_Revival___Transformation_-_It_s_a_process_but_so_far_it_has_been_good.png"
-          }
-        },
-        "testimonial_image_Lh6WnE": {
-          "type": "testimonial_image",
-          "settings": {
-            "image": "shopify:\/\/shop_images\/Simply_Revival___Transformation_-_My_bald_spot_on_my_crown_is_gone_and_my_hairline_is_so_thick_now..png"
-          }
-        },
         "testimonial_image_aJW8C7": {
           "type": "testimonial_image",
           "settings": {
-            "image": "shopify:\/\/shop_images\/Simply_Revival___Transformation_-_started_seeing_results_after_21_days.png"
+            "image": "shopify:\/\/shop_images\/review_image_women_01.png"
+          }
+        },
+        "testimonial_image_U8iQVt": {
+          "type": "testimonial_image",
+          "settings": {
+            "image": "shopify:\/\/shop_images\/review_image_women_05.png"
+          }
+        },
+        "testimonial_image_VVHUjP": {
+          "type": "testimonial_image",
+          "settings": {
+            "image": "shopify:\/\/shop_images\/review_image_women_02.png"
+          }
+        },
+        "testimonial_image_Xyji4M": {
+          "type": "testimonial_image",
+          "settings": {
+            "image": "shopify:\/\/shop_images\/review_image_women_03.png"
+          }
+        },
+        "testimonial_image_DyiQN7": {
+          "type": "testimonial_image",
+          "settings": {
+            "image": "shopify:\/\/shop_images\/review_image_women_04.png"
+          }
+        },
+        "testimonial_image_djddP4": {
+          "type": "testimonial_image",
+          "settings": {
+            "image": "shopify:\/\/shop_images\/review_image_women_06.png"
+          }
+        },
+        "testimonial_image_jCHT4i": {
+          "type": "testimonial_image",
+          "settings": {
+            "image": "shopify:\/\/shop_images\/review_image_women_07.png"
+          }
+        },
+        "testimonial_image_Jg4c96": {
+          "type": "testimonial_image",
+          "settings": {
+            "image": "shopify:\/\/shop_images\/review_image_women_08.png"
+          }
+        },
+        "testimonial_image_TdUEqW": {
+          "type": "testimonial_image",
+          "settings": {
+            "image": "shopify:\/\/shop_images\/review_image_women_09.png"
           }
         }
       },
       "block_order": [
-        "testimonial_image_6qDttd",
-        "testimonial_image_pa8Gnf",
-        "testimonial_image_hcBdwz",
-        "testimonial_image_bxmCkR",
-        "testimonial_image_MKgwLU",
-        "testimonial_image_A4pmd6",
-        "testimonial_image_6RhbHL",
-        "testimonial_image_Lh6WnE",
-        "testimonial_image_aJW8C7"
+        "testimonial_image_aJW8C7",
+        "testimonial_image_U8iQVt",
+        "testimonial_image_VVHUjP",
+        "testimonial_image_Xyji4M",
+        "testimonial_image_DyiQN7",
+        "testimonial_image_djddP4",
+        "testimonial_image_jCHT4i",
+        "testimonial_image_Jg4c96",
+        "testimonial_image_TdUEqW"
       ],
       "name": "Testimonial Images",
       "settings": {
@@ -1023,7 +1030,7 @@
         "reason_TKEJHx": {
           "type": "reason",
           "settings": {
-            "img": "shopify:\/\/shop_images\/Simply_Revival___Reason_2_-_10_Legendary_Herbs._One_formula-min_1.png",
+            "img": "shopify:\/\/shop_images\/Simply_Revival___Reason_2_-_10_Legendary_Herbs._One_formula-min.png",
             "badge": "Reason 2",
             "badge_bg": "#60a1a2",
             "badge_color": "#ffffff",
@@ -1190,7 +1197,7 @@
       ],
       "name": "Video Testimonials",
       "settings": {
-        "video_testimonials_collection": "video-testimonial-list-lnxzuxpg",
+        "video_testimonials_collection": "women-only",
         "heading": "<h3>Real People, <strong>Real Results<\/strong><\/h3>",
         "bold_color": "#125657",
         "text": "<p>See why thousands of people love our products<\/p>",
@@ -1252,10 +1259,10 @@
         "image_row_Bdgqed": {
           "type": "image_row",
           "settings": {
-            "bf_image": "shopify:\/\/shop_images\/Simply_Revival___DHT_Blocker_-_Before_Transformatoin-min.png",
+            "bf_image": "shopify:\/\/shop_images\/womens_natural_dht_blocker_01.png",
             "text": "Withing",
             "hi_text": "90 Days",
-            "af_image": "shopify:\/\/shop_images\/Simply_Revival___The_1_Natural_DHT_Blocker_for_Hair_Loss___Trasformatoin_-_After-min.png",
+            "af_image": "shopify:\/\/shop_images\/womens_natural_dht_blocker_02.png",
             "show_subtext": false,
             "text_color": "#faf9f6"
           }
@@ -1492,7 +1499,7 @@
       "settings": {
         "background_color": "#fffee3",
         "text_color": "#000000",
-        "image": "shopify:\/\/shop_images\/Simply_Revival___365_Day_Money_Back_Guarantee___Natural_DHT_Blocker-min_43ea7fa5-0dde-4ff0-b910-cc4b0d0aab12.png",
+        "image": "shopify:\/\/shop_images\/women_guarantee_1.png",
         "alt_text": "",
         "image_position": "left",
         "padding_top": 24,
@@ -1591,7 +1598,6 @@
       "blocks": {
         "areviews_reviews_importer_areviews_display_reviews_DF56F8": {
           "type": "shopify:\/\/apps\/areviews-reviews-importer\/blocks\/AreviewsDisplayReviews\/ab0ec5fe-c95b-4fd6-bfb8-db2a30d0756f",
-          "disabled": true,
           "settings": {
             "hide_areviews_title_rating": false,
             "areviews_theme_font": "inherit",
@@ -1614,11 +1620,11 @@
         "bgsection": "#ffffff"
       }
     },
-    "cwc_areviews_widget_8WXrDw": {
+    "cwc_areviews_widget_zGhKeh": {
       "type": "CWC_areviews_widget",
       "name": "Areviews Wdget",
       "settings": {
-        "product": "simply®-dht-blocker",
+        "product": "natural-dht-blocker-women",
         "padding_top": 60,
         "padding_bottom": 60
       }
@@ -1647,6 +1653,6 @@
     "cwc_faqs_gzUrmK",
     "1629746450643786911",
     "areviews_1763084574_a82078",
-    "cwc_areviews_widget_8WXrDw"
+    "cwc_areviews_widget_zGhKeh"
   ]
 }

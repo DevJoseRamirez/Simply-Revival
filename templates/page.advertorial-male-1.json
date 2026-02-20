@@ -5,23 +5,6 @@
       "disabled": true,
       "settings": {}
     },
-    "cwc_article_navigation_Cgpaqk": {
-      "type": "CWC_article_navigation",
-      "name": "Article Navigation",
-      "settings": {
-        "logo": "shopify:\/\/shop_images\/Simply_Revival_Logo_white_text-min.png",
-        "link1_label": "Order",
-        "link1_url": "",
-        "link2_label": "About",
-        "link2_url": "",
-        "link3_label": "Contact",
-        "link3_url": "",
-        "bg_color": "#45b5b7",
-        "bg_color_end": "#1e6c7a",
-        "padding_top": 16,
-        "padding_bottom": 16
-      }
-    },
     "cwc_article_head_bNc8pX": {
       "type": "CWC_article_head",
       "blocks": {
@@ -123,7 +106,7 @@
           "settings": {
             "title": "<h2>Why Men Are Losing Hair Younger Than Ever — And The Natural Fix Changing Thousands of Lives<\/h2>",
             "show_stars": true,
-            "date": "2025-01-10"
+            "date": "2026-01-10"
           }
         },
         "image_a8rGE6": {
@@ -138,10 +121,6 @@
             "content_1": "<p>For most of my twenties, I ignored it.<\/p><p>A few extra hairs on the pillow. A receding spot near my temples that I only noticed under harsh bathroom lighting.<\/p><p>I told myself it was just stress from work, or maybe just my genetics kicking in. Nothing I could really control, right?<\/p><p>But after my 30th birthday, I looked around and realized something strange… nearly every guy I knew was dealing with the same thing. Even my friends who ate clean, hit the gym, and did everything \"right\" were seeing their hairlines retreat.<\/p><p>It felt like we were all on a fast track to the same destination, and it was deeply unsettling.<\/p>",
             "content_2": ""
           }
-        },
-        "spacer_cBL4yB": {
-          "type": "spacer",
-          "settings": {}
         },
         "divider_pjDxWz": {
           "type": "divider",
@@ -173,10 +152,6 @@
           "settings": {
             "quote_text": "“When men start losing hair, they often think it’s purely genetics,” says Dr. Jonathan Reeves, a naturopathic physician specializing in men’s hormonal balance.\n“In reality, it’s often linked to DHT buildup and inflammation in the scalp. The exciting thing is that certain herbs — like saw palmetto and bamboo extract — can help naturally support healthy hair growth by addressing the root cause.”"
           }
-        },
-        "spacer_krDdGx": {
-          "type": "spacer",
-          "settings": {}
         },
         "content_FYzYpx": {
           "type": "content",
@@ -211,10 +186,6 @@
             "review_title": "Derek B. Verified Biuyer",
             "review_text": "<p>I've been struggling with hair loss for about 3 years and tried everything. Simply Revival's DHT blocker has been a game changer - I'm seeing new growth after just 2 months of consistent use. The capsules are easy to take and no side effects!<\/p>"
           }
-        },
-        "spacer_f9bph8": {
-          "type": "spacer",
-          "settings": {}
         },
         "content_A8zTWL": {
           "type": "content",
@@ -251,10 +222,6 @@
             "content_1": "<p>This powerful combination of DHT-blocking and hair-nourishing ingredients is what makes Simply Revival a true alternative to harsh prescriptions. It's made in the USA, third-party tested, and contains no GMOs, fillers, or harsh chemicals.<\/p>",
             "content_2": ""
           }
-        },
-        "spacer_t9CkmQ": {
-          "type": "spacer",
-          "settings": {}
         },
         "center_text_TYbzFY": {
           "type": "center_text",
@@ -299,14 +266,14 @@
         "content_aebUxN": {
           "type": "content",
           "settings": {
-            "content_1": "<h4><strong>LIMITED TIME: <\/strong><a href=\"\/pages\/black-friday-exclusive-offer\" title=\"Black Friday Exclusive Offer\"><strong>CLICK HERE FOR OUR 70% OFF EXCLUSIVE LINK<\/strong><\/a><\/h4>",
+            "content_1": "<h4><a href=\"\/products\/natural-dht-blocker-67-off\" title=\"Natural DHT Blocker\"><strong>LIMITED TIME: CLICK HERE FOR OUR 67% OFF EXCLUSIVE LINK<\/strong><\/a><\/h4>",
             "content_2": ""
           }
         },
         "button_KwJ6q3": {
           "type": "button",
           "settings": {
-            "button_link": "shopify:\/\/pages\/black-friday-exclusive-offer",
+            "button_link": "shopify:\/\/products\/natural-dht-blocker-67-off",
             "button_text": "CHECK CURRENT AVAILABILITY >",
             "button_bg_color": "#009370",
             "button_text_color": "#ffffff"
@@ -331,7 +298,7 @@
         "button_LJJwax": {
           "type": "button",
           "settings": {
-            "button_link": "shopify:\/\/pages\/black-friday-exclusive-offer",
+            "button_link": "shopify:\/\/products\/natural-dht-blocker-67-off",
             "button_text": "Click Here For More Information >",
             "button_bg_color": "#009370",
             "button_text_color": "#ffffff"
@@ -349,24 +316,20 @@
         "title_and_stars_4VnRrc",
         "image_a8rGE6",
         "content_JHNrqf",
-        "spacer_cBL4yB",
         "divider_pjDxWz",
         "content_Bdk48F",
         "image_JrH6TK",
         "content_yjBwmq",
         "quote_RfVNTR",
-        "spacer_krDdGx",
         "content_FYzYpx",
         "image_MTedwB",
         "content_EgmXbE",
         "star_review_JLniMD",
         "star_review_6GDiP8",
-        "spacer_f9bph8",
         "content_A8zTWL",
         "image_cTUBPg",
         "columns_DdgXJL",
         "content_MTa9g4",
-        "spacer_t9CkmQ",
         "center_text_TYbzFY",
         "image_mdyXhX",
         "content_bkD6p4",
@@ -389,7 +352,7 @@
         "sidebar_heading": "<p>The #1 Natural DHT Blocker for Hair Loss<\/p>",
         "sidebar_product_image": "shopify:\/\/shop_images\/hair_support-1-min_a9e5ebe1-cc58-4013-8bc1-710f3aa1cf23.png",
         "sidebar_text": "<p><em>Reduce shedding, support regrowth, and improve hair strength naturally<\/em><\/p>",
-        "sidebar_button_link": "shopify:\/\/pages\/black-friday-exclusive-offer",
+        "sidebar_button_link": "shopify:\/\/products\/natural-dht-blocker-67-off",
         "sidebar_button_text": "Learn More >",
         "sidebar_button_bg": "#1e6c7a",
         "sidebar_button_text_color": "#ffffff"
@@ -398,7 +361,6 @@
   },
   "order": [
     "main",
-    "cwc_article_navigation_Cgpaqk",
     "cwc_article_head_bNc8pX",
     "cwc_article_rich_text_YWWXeM",
     "cwc_article_util_6HYCbh"

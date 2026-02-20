@@ -1,10 +1,25 @@
 {% comment %}
   cwc-featured-product__options with custom block images
 {% endcomment %}
+{% style %}
+  #CWC_featured-product__options-{{ block.id }} {
+    {% if block.settings.badge_text_1 != blank %}--badge_text-1: "{{ block.settings.badge_text_1 | escape }}";{% endif %}
+    {% if block.settings.badge_text_2 != blank %}--badge_text-2: "{{ block.settings.badge_text_2 | escape }}";{% endif %}
+    {% if block.settings.badge_text_3 != blank %}--badge_text-3: "{{ block.settings.badge_text_3 | escape }}";{% endif %}
+  }
+{% endstyle %}
 
 {{ 'CWC_product_options.css' | asset_url | stylesheet_tag }}
 
-{% assign sel = product.selected_or_first_available_variant %}
+{% comment %}
+  Use default_variant passed from section if available,
+  otherwise fall back to selected_or_first_available_variant
+{% endcomment %}
+{% if default_variant %}
+  {% assign sel = default_variant %}
+{% else %}
+  {% assign sel = product.selected_or_first_available_variant %}
+{% endif %}
 
 {% for option in product.options_with_values %}
   <div class="cwc-featured-product__option">
@@ -49,13 +64,46 @@
           {%- assign is_selected = true %}
         {% endif %}
 
-        {%- comment -%} price / savings {%- endcomment -%}
+        {%- comment -%}
+          =====================================================
+          PRICE / SAVINGS CALCULATION
+          =====================================================
+          Since subscription toggle is ON by default:
+          - display_price: subscription_price (or candidate.price if no subscription)
+          - compare_price: ALWAYS candidate.compare_at_price
+          =====================================================
+        {%- endcomment -%}
         {% assign show_compare = false %}
         {% assign save_money = 0 %}
         {% assign save_pct = 0 %}
-        {% if candidate and candidate.compare_at_price and candidate.compare_at_price > candidate.price %}
+        {% assign display_price = candidate.price %}
+
+        {%- comment -%}
+          =====================================================
+          SELLING PLAN DATA (Variant-level subscriptions)
+          =====================================================
+          selling_plan_allocation object has:
+          - .price = discounted price (pre-calculated)
+          - .compare_at_price = compare price for subscription
+          - .selling_plan.id = the selling plan ID
+          =====================================================
+        {%- endcomment -%}
+        {% assign variant_selling_plan_id = null %}
+        {% assign subscription_price = null %}
+
+        {% if candidate and candidate.selling_plan_allocations.size > 0 %}
+          {% assign allocation = candidate.selling_plan_allocations[0] %}
+          {% assign variant_selling_plan_id = allocation.selling_plan.id %}
+          {% assign subscription_price = allocation.price %}
+
+          {% comment %} Subscription is ON by default, so use subscription price as initial display {% endcomment %}
+          {% assign display_price = subscription_price %}
+        {% endif %}
+
+        {% comment %} Calculate savings: compare_at_price vs display_price {% endcomment %}
+        {% if candidate and candidate.compare_at_price and candidate.compare_at_price > display_price %}
           {% assign show_compare = true %}
-          {% assign save_money = candidate.compare_at_price | minus: candidate.price %}
+          {% assign save_money = candidate.compare_at_price | minus: display_price %}
           {% assign save_pct = save_money | times: 100 | divided_by: candidate.compare_at_price %}
         {% endif %}
 
@@ -95,60 +143,150 @@
           ======================
         {% endcomment %}
 
-        <button
-          type="button"
-          class="cwc-featured-product__option_button{% if is_selected %} selected{% endif %}{% unless candidate and candidate.available %} disabled{% endunless %}"
-          data-option-index="{{ option.position | minus: 1 }}"
-          data-option-name="{{ option.name | escape }}"
-          data-value="{{ value | escape }}"
-          {% if candidate %}
-            data-variant-id="{{ candidate.id }}"
-          {% endif %}
-          {% if candidate %}
-            data-price="{{ candidate.price }}"
-          {% endif %}
-          {% if candidate %}
-            data-compare="{{ candidate.compare_at_price | default: 0 }}"
-          {% endif %}
-          {% comment %} Remove all carousel-related data attributes {% endcomment %}
-          {% if thumb_url %}
-            data-thumb="{{ thumb_url }}"
-          {% endif %}
-          {% unless candidate and candidate.available %}
-            disabled aria-disabled="true"
-          {% endunless %}
-        >
-          {% if thumb_url %}
-            <span class="cwc-featured-product__option_button_thumb-wrap">
-              <img
-                class="cwc-featured-product__option_button_thumb"
-                src="{{ thumb_url }}"
-                alt="{{ candidate.title | escape }}"
-              >
-            </span>
-          {% endif %}
+        {% comment %} fot badge here {% endcomment %}
+        <div class="cwc-featured-product__option_button__wrap">
+          <button
+            type="button"
+            class="cwc-featured-product__option_button{% if is_selected %} selected{% endif %}{% unless candidate and candidate.available %} disabled{% endunless %}"
+            data-option-index="{{ option.position | minus: 1 }}"
+            data-option-name="{{ option.name | escape }}"
+            data-value="{{ value | escape }}"
+            {% if candidate %}
+              data-variant-id="{{ candidate.id }}"
+              data-price="{{ candidate.price }}"
+              data-compare="{{ candidate.compare_at_price | default: 0 }}"
+            {% endif %}
+            {% comment %} Selling plan data (variant-level subscriptions) {% endcomment %}
+            {% if variant_selling_plan_id %}
+              data-selling-plan-id="{{ variant_selling_plan_id }}"
+            {% endif %}
+            {% if subscription_price %}
+              data-subscription-price="{{ subscription_price }}"
+            {% endif %}
+            {% if subscription_compare %}
+              data-subscription-compare="{{ subscription_compare }}"
+            {% endif %}
+            {% if thumb_url %}
+              data-thumb="{{ thumb_url }}"
+            {% endif %}
+            {% unless candidate and candidate.available %}
+              disabled aria-disabled="true"
+            {% endunless %}
+          >
+            {% if thumb_url %}
+              <span class="cwc-featured-product__option_button_thumb-wrap">
+                <img
+                  class="cwc-featured-product__option_button_thumb"
+                  src="{{ thumb_url }}"
+                  alt="{{ candidate.title | escape }}"
+                >
+              </span>
+            {% endif %}
 
-          <div class="cwc-featured-product__option_button_value_wrap">
-            <span class="cwc-featured-product__option_button_value">{{ value }}</span>
-            <span class="cwc-featured-product__option_button_save_perc">You Save {{ save_pct }}%</span>
-          </div>
+            {%- assign servings_text = blank -%}
+            {%- if option_index == 0 -%}
+              {%- assign servings_text = block.settings.servings_text_1 -%}
+              {%- assign badge_text = block.settings.badge_text_1 -%}
+            {%- elsif option_index == 1 -%}
+              {%- assign servings_text = block.settings.servings_text_2 -%}
+              {%- assign badge_text = block.settings.badge_text_2 -%}
+            {%- elsif option_index == 2 -%}
+              {%- assign servings_text = block.settings.servings_text_3 -%}
+              {%- assign badge_text = block.settings.badge_text_3 -%}
+            {%- endif -%}
+            <div class="cwc-featured-product__option_button_value_wrap">
+              <span class="cwc-featured-product__option_button_value">{{ value }}</span>
+              {% comment %} for showing saving in % - script already linked {% endcomment %}
 
-          {% if candidate %}
-            <span class="cwc-featured-product__option_button_prices">
-              <span class="cwc-featured-product__option_button_price">{{ candidate.price | money }}</span>
-              {% if show_compare %}
-                <span class="cwc-featured-product__option_button_compare_price">
-                  {{- candidate.compare_at_price | money -}}
-                </span>
-                {% comment %} <span class="cwc-ob__save">Save {{ save_money | money }} ({{ save_pct }}%)</span> {% endcomment %}
+              <span class="cwc-featured-product__option_button_save_perc">You Save {{ save_pct }}%</span>
+              {% if block.settings.show_save == true %}
               {% endif %}
-            </span>
-          {% else %}
-            <span class="cwc-featured-product__option_button_prices">
-              <span class="cwc-featured-product__option_button_unavalible">Unavailable</span>
-            </span>
+              {% comment %} <span class="cwc-featured-product__option_badge_text">{{ badge_text }}</span> {% endcomment %}
+
+              {% if servings_text != blank %}
+                <span class="cwc-featured-product__option_button_servings">{{ servings_text }}</span>
+              {% endif %}
+            </div>
+
+            {% if candidate %}
+              <span class="cwc-featured-product__option_button_prices">
+                <span class="cwc-featured-product__option_button_price">{{ display_price | money }}</span>
+                {% if show_compare %}
+                  <span class="cwc-featured-product__option_button_compare_price">
+                    {{- candidate.compare_at_price | money -}}
+                  </span>
+                  {% comment %} <span class="cwc-ob__save">Save {{ save_money | money }} ({{ save_pct }}%)</span> {% endcomment %}
+                {% endif %}
+              </span>
+            {% else %}
+              <span class="cwc-featured-product__option_button_prices">
+                <span class="cwc-featured-product__option_button_unavalible">Unavailable</span>
+              </span>
+            {% endif %}
+
+            <span class="cwc-featured-product__option_badge_text-floating">{{ badge_text }}</span>
+          </button>
+          {% comment %}
+            =====================================================
+            BONUS ITEMS (displayed below button)
+            =====================================================
+            Up to 2 bonus items per option (image + text)
+          {% endcomment %}
+          {% assign bonus_image_1 = null %}
+          {% assign bonus_text_1 = null %}
+          {% assign bonus_image_2 = null %}
+          {% assign bonus_text_2 = null %}
+
+          {% if option_index == 0 %}
+            {% assign bonus_image_1 = block.settings.bonus_image_1_opt1 %}
+            {% assign bonus_text_1 = block.settings.bonus_text_1_opt1 %}
+            {% assign bonus_image_2 = block.settings.bonus_image_2_opt1 %}
+            {% assign bonus_text_2 = block.settings.bonus_text_2_opt1 %}
+          {% elsif option_index == 1 %}
+            {% assign bonus_image_1 = block.settings.bonus_image_1_opt2 %}
+            {% assign bonus_text_1 = block.settings.bonus_text_1_opt2 %}
+            {% assign bonus_image_2 = block.settings.bonus_image_2_opt2 %}
+            {% assign bonus_text_2 = block.settings.bonus_text_2_opt2 %}
+          {% elsif option_index == 2 %}
+            {% assign bonus_image_1 = block.settings.bonus_image_1_opt3 %}
+            {% assign bonus_text_1 = block.settings.bonus_text_1_opt3 %}
+            {% assign bonus_image_2 = block.settings.bonus_image_2_opt3 %}
+            {% assign bonus_text_2 = block.settings.bonus_text_2_opt3 %}
           {% endif %}
-        </button>
+
+          {% if bonus_text_1 != blank or bonus_text_2 != blank %}
+            <div class="cwc-featured-product__option_bonus-items">
+              {% if bonus_text_1 != blank %}
+                <div class="cwc-featured-product__option_bonus-item">
+                  {% if bonus_image_1 != blank %}
+                    <img
+                      class="cwc-featured-product__option_bonus-icon"
+                      src="{{ bonus_image_1 | image_url: width: 40 }}"
+                      alt=""
+                      width="40"
+                      height="40"
+                    >
+                  {% endif %}
+                  <span class="cwc-featured-product__option_bonus-text">{{ bonus_text_1 }}</span>
+                </div>
+              {% endif %}
+              {% if bonus_text_2 != blank %}
+                <div class="cwc-featured-product__option_bonus-item">
+                  {% if bonus_image_2 != blank %}
+                    <img
+                      class="cwc-featured-product__option_bonus-icon"
+                      src="{{ bonus_image_2 | image_url: width: 40 }}"
+                      alt=""
+                      width="40"
+                      height="40"
+                    >
+                  {% endif %}
+                  <span class="cwc-featured-product__option_bonus-text">{{ bonus_text_2 }}</span>
+                </div>
+              {% endif %}
+            </div>
+          {% endif %}
+        </div>
       {% endfor %}
     </div>
 

@@ -72,6 +72,19 @@
 
         <!-- Right Column -->
         <div class="cwc-featured-product__right">
+          {% comment %}
+            Default Variant Selection:
+            Use 2nd variant (index 1) as default if available,
+            otherwise fall back to selected_or_first_available_variant
+          {% endcomment %}
+          {%- liquid
+            if current_product.variants.size > 1 and current_product.variants[1].available
+              assign default_variant = current_product.variants[1]
+            else
+              assign default_variant = current_product.selected_or_first_available_variant
+            endif
+          -%}
+
           <form
             action="/cart/add"
             method="post"
@@ -82,7 +95,7 @@
             <input
               type="hidden"
               name="id"
-              value="{{ current_product.selected_or_first_available_variant.id }}"
+              value="{{ default_variant.id }}"
               class="variant-id-input"
             >
             <input
@@ -138,13 +151,27 @@
 
                 {% when 'price_display' %}
                   <div class="cwc-featured-product__price" {{ block.shopify_attributes }}>
-                    {% render 'CWC_price_display', product: current_product, section_id: section.id, block: block %}
+                    {% render 'CWC_price_display',
+                      product: current_product,
+                      section_id: section.id,
+                      block: block,
+                      default_variant: default_variant
+                    %}
                   </div>
 
                 {% when 'product_options' %}
                   {% if current_product.variants.size > 1 %}
-                    <div class="cwc-featured-product__options" {{ block.shopify_attributes }}>
-                      {% render 'CWC_product_options', product: current_product, section_id: section.id, block: block %}
+                    <div
+                      id="CWC_featured-product__options-{{ block.id }}"
+                      class="cwc-featured-product__options"
+                      {{ block.shopify_attributes }}
+                    >
+                      {% render 'CWC_product_options',
+                        product: current_product,
+                        section_id: section.id,
+                        block: block,
+                        default_variant: default_variant
+                      %}
                     </div>
                   {% endif %}
 
@@ -191,7 +218,8 @@
             {% endfor %}
           </form>
 
-          {{ 'CWC_featured_product.js' | asset_url | script_tag }}
+          {{ 'CWC_featured_product__core.js' | asset_url | script_tag }}
+          {{ 'CWC_featured_product__ui.js' | asset_url | script_tag }}
         </div>
       </div>
     </div>
@@ -649,19 +677,138 @@
       "name": "Product Options",
       "settings": [
         {
+          "type": "header",
+          "content": "Option 1"
+        },
+        {
           "type": "image_picker",
           "id": "image1",
-          "label": "Options Image 1"
+          "label": "Thumbnail Image"
+        },
+        {
+          "type": "text",
+          "id": "badge_text_1",
+          "label": "Badge Text"
+        },
+        {
+          "type": "text",
+          "id": "servings_text_1",
+          "label": "Servings Text"
+        },
+        {
+          "type": "header",
+          "content": "Option 1 - Bonus Items"
+        },
+        {
+          "type": "image_picker",
+          "id": "bonus_image_1_opt1",
+          "label": "Bonus Item 1 - Icon"
+        },
+        {
+          "type": "text",
+          "id": "bonus_text_1_opt1",
+          "label": "Bonus Item 1 - Text"
+        },
+        {
+          "type": "image_picker",
+          "id": "bonus_image_2_opt1",
+          "label": "Bonus Item 2 - Icon"
+        },
+        {
+          "type": "text",
+          "id": "bonus_text_2_opt1",
+          "label": "Bonus Item 2 - Text"
+        },
+        {
+          "type": "header",
+          "content": "Option 2"
         },
         {
           "type": "image_picker",
           "id": "image2",
-          "label": "Options Image 2"
+          "label": "Thumbnail Image"
+        },
+        {
+          "type": "text",
+          "id": "badge_text_2",
+          "label": "Badge Text",
+          "default": "Most Popular"
+        },
+        {
+          "type": "text",
+          "id": "servings_text_2",
+          "label": "Servings Text"
+        },
+        {
+          "type": "header",
+          "content": "Option 2 - Bonus Items"
+        },
+        {
+          "type": "image_picker",
+          "id": "bonus_image_1_opt2",
+          "label": "Bonus Item 1 - Icon"
+        },
+        {
+          "type": "text",
+          "id": "bonus_text_1_opt2",
+          "label": "Bonus Item 1 - Text",
+          "info": "+ FREE 365 Day Guarantee"
+        },
+        {
+          "type": "image_picker",
+          "id": "bonus_image_2_opt2",
+          "label": "Bonus Item 2 - Icon"
+        },
+        {
+          "type": "text",
+          "id": "bonus_text_2_opt2",
+          "label": "Bonus Item 2 - Text"
+        },
+        {
+          "type": "header",
+          "content": "Option 3"
         },
         {
           "type": "image_picker",
           "id": "image3",
-          "label": "Options Image 3"
+          "label": "Thumbnail Image"
+        },
+        {
+          "type": "text",
+          "id": "badge_text_3",
+          "label": "Badge Text",
+          "default": "Best Value"
+        },
+        {
+          "type": "text",
+          "id": "servings_text_3",
+          "label": "Servings Text"
+        },
+        {
+          "type": "header",
+          "content": "Option 3 - Bonus Items"
+        },
+        {
+          "type": "image_picker",
+          "id": "bonus_image_1_opt3",
+          "label": "Bonus Item 1 - Icon"
+        },
+        {
+          "type": "text",
+          "id": "bonus_text_1_opt3",
+          "label": "Bonus Item 1 - Text",
+          "info": "+ FREE 365 Day Guarantee"
+        },
+        {
+          "type": "image_picker",
+          "id": "bonus_image_2_opt3",
+          "label": "Bonus Item 2 - Icon"
+        },
+        {
+          "type": "text",
+          "id": "bonus_text_2_opt3",
+          "label": "Bonus Item 2 - Text",
+          "info": "+ FREE $20 Gift Card"
         }
       ]
     },
@@ -714,92 +861,92 @@
         }
       ]
     },
-{
-  "type": "add_to_cart",
-  "name": "Add to Cart Button",
-  "settings": [
     {
-      "type": "header",
-      "content": "Button Settings"
+      "type": "add_to_cart",
+      "name": "Add to Cart Button",
+      "settings": [
+        {
+          "type": "header",
+          "content": "Button Settings"
+        },
+        {
+          "type": "text",
+          "id": "button_text",
+          "label": "Button Text",
+          "default": "Add to Cart"
+        },
+        {
+          "type": "color",
+          "id": "button_bg_color",
+          "label": "Button Background Color",
+          "default": "#125657"
+        },
+        {
+          "type": "color",
+          "id": "button_text_color",
+          "label": "Button Text Color",
+          "default": "#ffffff"
+        },
+        {
+          "type": "header",
+          "content": "Sticky Add to Cart"
+        },
+        {
+          "type": "checkbox",
+          "id": "enable_sticky_atc",
+          "label": "Enable Sticky Add to Cart",
+          "info": "Shows a floating bar at the bottom when user scrolls past the main button",
+          "default": false
+        },
+        {
+          "type": "text",
+          "id": "sticky_button_text",
+          "label": "Sticky Button Text",
+          "info": "Leave blank to use main button text",
+          "default": "Add to Cart"
+        },
+        {
+          "type": "color",
+          "id": "sticky_bg_color",
+          "label": "Sticky Bar Background",
+          "default": "#ffffff"
+        },
+        {
+          "type": "header",
+          "content": "Bundle Products"
+        },
+        {
+          "type": "product",
+          "id": "bundle_product_1",
+          "label": "Product 1"
+        },
+        {
+          "type": "product",
+          "id": "bundle_product_2",
+          "label": "Product 2"
+        },
+        {
+          "type": "product",
+          "id": "bundle_product_3",
+          "label": "Product 3"
+        },
+        {
+          "type": "product",
+          "id": "bundle_product_4",
+          "label": "Product 4"
+        },
+        {
+          "type": "header",
+          "content": "Checkout Behavior"
+        },
+        {
+          "type": "checkbox",
+          "id": "skip_cart",
+          "label": "Skip cart & send to checkout",
+          "default": false
+        }
+      ]
     },
-    {
-      "type": "text",
-      "id": "button_text",
-      "label": "Button Text",
-      "default": "Add to Cart"
-    },
-    {
-      "type": "color",
-      "id": "button_bg_color",
-      "label": "Button Background Color",
-      "default": "#125657"
-    },
-    {
-      "type": "color",
-      "id": "button_text_color",
-      "label": "Button Text Color",
-      "default": "#ffffff"
-    },
-    {
-      "type": "header",
-      "content": "Sticky Add to Cart"
-    },
-    {
-      "type": "checkbox",
-      "id": "enable_sticky_atc",
-      "label": "Enable Sticky Add to Cart",
-      "info": "Shows a floating bar at the bottom when user scrolls past the main button",
-      "default": false
-    },
-    {
-      "type": "text",
-      "id": "sticky_button_text",
-      "label": "Sticky Button Text",
-      "info": "Leave blank to use main button text",
-      "default": "Add to Cart"
-    },
-    {
-      "type": "color",
-      "id": "sticky_bg_color",
-      "label": "Sticky Bar Background",
-      "default": "#ffffff"
-    },
-    {
-      "type": "header",
-      "content": "Bundle Products"
-    },
-    {
-      "type": "product",
-      "id": "bundle_product_1",
-      "label": "Product 1"
-    },
-    {
-      "type": "product",
-      "id": "bundle_product_2",
-      "label": "Product 2"
-    },
-    {
-      "type": "product",
-      "id": "bundle_product_3",
-      "label": "Product 3"
-    },
-    {
-      "type": "product",
-      "id": "bundle_product_4",
-      "label": "Product 4"
-    },
-    {
-      "type": "header",
-      "content": "Checkout Behavior"
-    },
-    {
-      "type": "checkbox",
-      "id": "skip_cart",
-      "label": "Skip cart & send to checkout",
-      "default": false
-    }
-  ]
-},
     {
       "type": "guarantee_text",
       "name": "Guarantee Text",

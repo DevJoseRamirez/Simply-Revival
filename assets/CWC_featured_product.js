@@ -38,10 +38,10 @@ function initFeaturedProduct(section, sectionId, variants, sellingPlanGroups) {
 
   // Product option controls (buttons and inputs)
   const optionButtons = section.querySelectorAll(
-    ".cwc-featured-product__option_button"
+    ".cwc-featured-product__option_button",
   );
   const optionInputs = section.querySelectorAll(
-    ".cwc-featured-product__option-input"
+    ".cwc-featured-product__option-input",
   ); // These are <input name="options[...]">
 
   // Cart and pricing elements
@@ -64,7 +64,7 @@ function initFeaturedProduct(section, sectionId, variants, sellingPlanGroups) {
     newSellingPlanInput.className = "selling-plan-input";
     newSellingPlanInput.value = ""; // Empty by default
     form.appendChild(newSellingPlanInput);
-    console.log("Created selling plan input");
+    // console.log("Created selling plan input");
   }
 
   const finalSellingPlanInput =
@@ -77,7 +77,7 @@ function initFeaturedProduct(section, sectionId, variants, sellingPlanGroups) {
   if (!form || !addToCartButton || !variantIdInput) {
     console.warn(
       "CWC Featured Product: Required elements not found for section",
-      sectionId
+      sectionId,
     );
     console.warn("Missing:", {
       form: !form,
@@ -112,20 +112,127 @@ function initFeaturedProduct(section, sectionId, variants, sellingPlanGroups) {
   /* -----------------------------------------------------
      SELLING PLAN MANAGEMENT
      ----------------------------------------------------- */
+  /**
+   * =====================================================
+   * SELLING PLAN SCENARIOS
+   * =====================================================
+   *
+   * SCENARIO 1: Product-level selling plan
+   * - ONE selling plan applies to ALL variants
+   * - sellingPlanGroups has data
+   * - Variant buttons do NOT have data-selling-plan-id attribute
+   * - Use: sellingPlanGroups[0].selling_plans[0].id for all variants
+   *
+   * SCENARIO 2: Variant-level selling plans
+   * - EACH variant has its own selling plan
+   * - Variants have selling_plan_allocations
+   * - Variant buttons HAVE data-selling-plan-id attribute (unique per variant)
+   * - Use: the specific selling plan ID from the selected button
+   *
+   * NOTE: Only ONE scenario exists at any given time per product
+   * =====================================================
+   */
+
+  /**
+   * Determine if we're using variant-level selling plans
+   * (at least one button has data-selling-plan-id)
+   * @returns {boolean}
+   */
+  function isVariantLevelSellingPlans() {
+    const buttonWithSellingPlan = section.querySelector(
+      ".cwc-featured-product__option_button[data-selling-plan-id]",
+    );
+    return !!buttonWithSellingPlan;
+  }
+
+  /**
+   * Get the selling plan ID for the currently selected variant.
+   *
+   * SCENARIO 1 (Product-level): Returns product's first selling plan ID
+   * SCENARIO 2 (Variant-level): Returns selected button's selling plan ID
+   *
+   * @returns {string|null} The selling plan ID or null
+   */
+  function getVariantSellingPlanId() {
+    // Check if we're in variant-level mode
+    if (isVariantLevelSellingPlans()) {
+      // SCENARIO 2: Get from selected button's data attribute
+      const selectedButton = section.querySelector(
+        ".cwc-featured-product__option_button.selected",
+      );
+
+      if (selectedButton && selectedButton.dataset.sellingPlanId) {
+        return selectedButton.dataset.sellingPlanId;
+      }
+
+      // Variant-level mode but no selection yet - return null
+      return null;
+    }
+
+    // SCENARIO 1: Product-level selling plan
+    if (sellingPlanGroups.length > 0) {
+      return sellingPlanGroups[0]?.selling_plans?.[0]?.id || null;
+    }
+
+    return null;
+  }
+
+  /**
+   * Check if subscription is available for current product/variant
+   * @returns {boolean}
+   */
+  function hasSellingPlanAvailable() {
+    // Variant-level: check if any buttons have selling plan
+    if (isVariantLevelSellingPlans()) {
+      const selectedButton = section.querySelector(
+        ".cwc-featured-product__option_button.selected",
+      );
+      return !!(selectedButton && selectedButton.dataset.sellingPlanId);
+    }
+
+    // Product-level: check if product has selling plans
+    return sellingPlanGroups.length > 0;
+  }
+
+  /**
+   * Get selling plan details by ID (for price calculations)
+   * Works for both scenarios since selling plan details are in sellingPlanGroups
+   * @param {string} sellingPlanId
+   * @returns {object|null}
+   */
+  function getSellingPlanById(sellingPlanId) {
+    if (!sellingPlanId) return null;
+
+    for (const group of sellingPlanGroups) {
+      const found = group.selling_plans?.find(
+        (plan) => String(plan.id) === String(sellingPlanId),
+      );
+      if (found) {
+        return found;
+      }
+    }
+    return null;
+  }
+
   function updateSellingPlan() {
     // Update the selling plan input based on subscription checkbox state
     const isAutoRefill = autoRefillCheckbox && autoRefillCheckbox.checked;
 
-    if (isAutoRefill && sellingPlanGroups.length > 0) {
-      const sellingPlanId = sellingPlanGroups[0]?.selling_plans?.[0]?.id;
+    if (isAutoRefill && hasSellingPlanAvailable()) {
+      const sellingPlanId = getVariantSellingPlanId();
       if (sellingPlanId && finalSellingPlanInput) {
         finalSellingPlanInput.value = sellingPlanId;
-        console.log("Set selling plan input to:", sellingPlanId);
+        // console.log("Set selling plan input to:", sellingPlanId);
+      } else {
+        // No selling plan available for this variant
+        if (finalSellingPlanInput) {
+          finalSellingPlanInput.value = "";
+        }
       }
     } else {
       if (finalSellingPlanInput) {
         finalSellingPlanInput.value = "";
-        console.log("Cleared selling plan input");
+        // console.log("Cleared selling plan input");
       }
     }
   }
@@ -147,14 +254,16 @@ function initFeaturedProduct(section, sectionId, variants, sellingPlanGroups) {
   function updateAllButtonPrices(isAutoRefill) {
     // Get all option buttons and update their prices based on subscription state
     const allButtons = section.querySelectorAll(
-      ".cwc-featured-product__option_button"
+      ".cwc-featured-product__option_button",
     );
+
+    const usingVariantLevel = isVariantLevelSellingPlans();
 
     allButtons.forEach((button) => {
       const variantId = button.getAttribute("data-variant-id");
       const originalPrice = parseInt(button.getAttribute("data-price"));
       const originalComparePrice = parseInt(
-        button.getAttribute("data-compare")
+        button.getAttribute("data-compare"),
       );
 
       if (!variantId || !originalPrice) return;
@@ -162,9 +271,23 @@ function initFeaturedProduct(section, sectionId, variants, sellingPlanGroups) {
       let displayPrice = originalPrice;
       let displayComparePrice = originalComparePrice;
 
-      // Apply subscription discount if needed
-      if (isAutoRefill && sellingPlanGroups.length > 0) {
-        const sellingPlan = sellingPlanGroups[0]?.selling_plans?.[0];
+      // Apply subscription discount if enabled
+      if (isAutoRefill) {
+        let sellingPlan = null;
+
+        if (usingVariantLevel) {
+          // SCENARIO 2: Variant-level - get this button's specific selling plan
+          const buttonSellingPlanId = button.dataset.sellingPlanId;
+          if (buttonSellingPlanId) {
+            sellingPlan = getSellingPlanById(buttonSellingPlanId);
+          }
+          // If this variant has no selling plan, no discount applied
+        } else {
+          // SCENARIO 1: Product-level - same selling plan for all
+          sellingPlan = sellingPlanGroups[0]?.selling_plans?.[0] || null;
+        }
+
+        // Apply discount if we found a selling plan
         if (sellingPlan && sellingPlan.price_adjustments?.[0]) {
           const adjustment = sellingPlan.price_adjustments[0];
           if (adjustment.value_type === "percentage") {
@@ -178,13 +301,13 @@ function initFeaturedProduct(section, sectionId, variants, sellingPlanGroups) {
 
       // Update button price elements
       const priceEl = button.querySelector(
-        ".cwc-featured-product__option_button_price"
+        ".cwc-featured-product__option_button_price",
       );
       const compareEl = button.querySelector(
-        ".cwc-featured-product__option_button_compare_price"
+        ".cwc-featured-product__option_button_compare_price",
       );
       const saveEl = button.querySelector(
-        ".cwc-featured-product__option_button_save_perc"
+        ".cwc-featured-product__option_button_save_perc",
       );
 
       if (priceEl) {
@@ -209,7 +332,7 @@ function initFeaturedProduct(section, sectionId, variants, sellingPlanGroups) {
       }
     });
 
-    console.log("Updated all button prices, subscription mode:", isAutoRefill);
+    // console.log("Updated all button prices, subscription mode:", isAutoRefill, "variant-level:", usingVariantLevel);
   }
 
   /* =====================================================
@@ -221,7 +344,7 @@ function initFeaturedProduct(section, sectionId, variants, sellingPlanGroups) {
     // If no variant passed, try to find it from selected options
     if (!variant) {
       const selectedOptions = Array.from(optionInputs).map(
-        (input) => input.value
+        (input) => input.value,
       );
       variant = findVariant(selectedOptions);
     }
@@ -233,7 +356,7 @@ function initFeaturedProduct(section, sectionId, variants, sellingPlanGroups) {
       return;
     }
 
-    console.log("Updating to variant:", variant.id, "Price:", variant.price);
+    // console.log("Updating to variant:", variant.id, "Price:", variant.price);
 
     /* -----------------------------------------------------
        UPDATE FORM INPUTS
@@ -253,9 +376,11 @@ function initFeaturedProduct(section, sectionId, variants, sellingPlanGroups) {
     let displayPrice = variant.price;
     let displayComparePrice = variant.compare_at_price;
 
-    if (isAutoRefill && sellingPlanGroups.length > 0) {
-      // Find subscription price - typically discounted
-      const sellingPlan = sellingPlanGroups[0]?.selling_plans?.[0];
+    if (isAutoRefill && hasSellingPlanAvailable()) {
+      // Get the correct selling plan ID for this variant/product
+      const sellingPlanId = getVariantSellingPlanId();
+      const sellingPlan = getSellingPlanById(sellingPlanId);
+
       if (sellingPlan && sellingPlan.price_adjustments?.[0]) {
         const adjustment = sellingPlan.price_adjustments[0];
         if (adjustment.value_type === "percentage") {
@@ -277,17 +402,17 @@ function initFeaturedProduct(section, sectionId, variants, sellingPlanGroups) {
 
     if (priceElement) {
       priceElement.textContent = formatPrice(displayPrice);
-      console.log("Updated price element to:", formatPrice(displayPrice));
+      // console.log("Updated price element to:", formatPrice(displayPrice));
     }
 
     /* -----------------------------------------------------
        UPDATE BUTTON PRICE DISPLAY
        ----------------------------------------------------- */
     const buttonCurrentPriceEl = section.querySelector(
-      `#current-price-button-${sectionId}`
+      `#current-price-button-${sectionId}`,
     );
     const buttonComparePriceEl = section.querySelector(
-      `#compare-price-button-${sectionId}`
+      `#compare-price-button-${sectionId}`,
     );
 
     if (buttonCurrentPriceEl) {
@@ -390,50 +515,50 @@ function initFeaturedProduct(section, sectionId, variants, sellingPlanGroups) {
   /* -----------------------------------------------------
      OPTION BUTTON CLICK HANDLERS
      ----------------------------------------------------- */
-  console.log(
-    "CWC Debug - Setting up option button listeners:",
-    optionButtons.length
-  );
+  // console.log(
+  //   "CWC Debug - Setting up option button listeners:",
+  //   optionButtons.length
+  // );
 
   optionButtons.forEach((button, index) => {
     button.addEventListener("click", function () {
-      console.log("CWC Debug - Button clicked!");
+      // console.log("CWC Debug - Button clicked!");
 
       const optionIndex = this.getAttribute("data-option-index");
       const value = this.getAttribute("data-value");
       const variantId = this.getAttribute("data-variant-id");
 
-      console.log("Button data:", { optionIndex, value, variantId });
+      // console.log("Button data:", { optionIndex, value, variantId });
 
       // Update visual selection state
       const siblings = this.parentNode.querySelectorAll(
-        ".cwc-featured-product__option_button"
+        ".cwc-featured-product__option_button",
       );
       siblings.forEach((sibling) => sibling.classList.remove("selected"));
       this.classList.add("selected");
 
       // Update the option's hidden input (for form submission)
       const hiddenInput = section.querySelector(
-        `input[data-option-index="${optionIndex}"]`
+        `input[data-option-index="${optionIndex}"]`,
       );
       if (hiddenInput) {
-        console.log(
-          "Updating option input from",
-          hiddenInput.value,
-          "to",
-          value
-        );
+        // console.log(
+        //   "Updating option input from",
+        //   hiddenInput.value,
+        //   "to",
+        //   value
+        // );
         hiddenInput.value = value;
       }
 
       // IMPORTANT: Update the main variant ID hidden input
       if (variantId && variantIdInput) {
-        console.log(
-          "Updating main variant input from",
-          variantIdInput.value,
-          "to",
-          variantId
-        );
+        // console.log(
+        //   "Updating main variant input from",
+        //   variantIdInput.value,
+        //   "to",
+        //   variantId
+        // );
         variantIdInput.value = variantId;
       }
 
@@ -441,7 +566,7 @@ function initFeaturedProduct(section, sectionId, variants, sellingPlanGroups) {
       if (variantId) {
         const variant = findVariantById(variantId);
         if (variant) {
-          console.log("Found variant by ID:", variant);
+          // console.log("Found variant by ID:", variant);
           updateVariant(variant);
         } else {
           console.warn("Variant not found for ID:", variantId);
@@ -467,7 +592,7 @@ function initFeaturedProduct(section, sectionId, variants, sellingPlanGroups) {
     }
 
     autoRefillCheckbox.addEventListener("change", function () {
-      console.log("Subscription checkbox changed:", this.checked);
+      // console.log("Subscription checkbox changed:", this.checked);
       updateVariant(); // Recalculate all prices based on new subscription state
     });
   }
@@ -488,14 +613,14 @@ function initFeaturedProduct(section, sectionId, variants, sellingPlanGroups) {
       addToCartButton.dataset.bundleVariant3 ||
       addToCartButton.dataset.bundleVariant4);
 
-  console.log("Bundle mode detected:", isBundleMode);
+  // console.log("Bundle mode detected:", isBundleMode);
   if (isBundleMode) {
-    console.log("Bundle variants:", {
-      v1: addToCartButton.dataset.bundleVariant1,
-      v2: addToCartButton.dataset.bundleVariant2,
-      v3: addToCartButton.dataset.bundleVariant3,
-      v4: addToCartButton.dataset.bundleVariant4,
-    });
+    // console.log("Bundle variants:", {
+    //   v1: addToCartButton.dataset.bundleVariant1,
+    //   v2: addToCartButton.dataset.bundleVariant2,
+    //   v3: addToCartButton.dataset.bundleVariant3,
+    //   v4: addToCartButton.dataset.bundleVariant4,
+    // });
   }
 
   /* =====================================================
@@ -512,8 +637,8 @@ function initFeaturedProduct(section, sectionId, variants, sellingPlanGroups) {
     const mainVariantId = Number(variantIdInput.value);
     const skipCart = addToCartButton.dataset.skipCart === "true";
 
-    console.log("Main variant ID:", mainVariantId);
-    console.log("Skip cart mode:", skipCart);
+    // console.log("Main variant ID:", mainVariantId);
+    // console.log("Skip cart mode:", skipCart);
 
     if (!Number.isFinite(mainVariantId)) {
       console.warn("Bundle: Invalid main variant ID:", variantIdInput.value);
@@ -526,7 +651,7 @@ function initFeaturedProduct(section, sectionId, variants, sellingPlanGroups) {
         ? Number(finalSellingPlanInput.value)
         : null;
 
-    console.log("Selling plan ID:", sellingPlanId);
+    // console.log("Selling plan ID:", sellingPlanId);
 
     // Enforce subscription-only for bundle (optional - remove if not needed)
     // if (!Number.isFinite(sellingPlanId)) {
@@ -551,7 +676,7 @@ function initFeaturedProduct(section, sectionId, variants, sellingPlanGroups) {
           id: Number(value),
           quantity: 1,
         });
-        console.log(`Added ${key}:`, value);
+        // console.log(`Added ${key}:`, value);
       }
     });
 
@@ -563,9 +688,9 @@ function initFeaturedProduct(section, sectionId, variants, sellingPlanGroups) {
     };
 
     items.push(mainItem);
-    console.log("Main product added:", mainItem);
+    // console.log("Main product added:", mainItem);
 
-    console.log("Final items payload:", items);
+    // console.log("Final items payload:", items);
 
     if (!items.length) {
       console.warn("Bundle: No items to add to cart");
@@ -590,7 +715,7 @@ function initFeaturedProduct(section, sectionId, variants, sellingPlanGroups) {
         return res.json();
       })
       .then((data) => {
-        console.log("Bundle added successfully:", data);
+        // console.log("Bundle added successfully:", data);
 
         const btnText = addToCartButton.querySelector(".cwc-button-text");
         const originalText =
@@ -598,7 +723,7 @@ function initFeaturedProduct(section, sectionId, variants, sellingPlanGroups) {
 
         // If skip-cart mode, redirect to checkout
         if (skipCart) {
-          console.log("Redirecting to checkout...");
+          // console.log("Redirecting to checkout...");
           window.location.href = "/checkout";
           return;
         }
@@ -622,13 +747,13 @@ function initFeaturedProduct(section, sectionId, variants, sellingPlanGroups) {
               sectionId,
               isBundle: true,
             },
-          })
+          }),
         );
       })
       .catch((err) => {
         console.error("Bundle add-to-cart error:", err);
         alert(
-          "There was an issue adding the bundle to your cart. Please try again."
+          "There was an issue adding the bundle to your cart. Please try again.",
         );
       })
       .finally(() => {
@@ -641,7 +766,7 @@ function initFeaturedProduct(section, sectionId, variants, sellingPlanGroups) {
      STANDARD ADD TO CART FUNCTIONALITY
      ===================================================== */
   function handleStandardAddToCart() {
-    console.log("=== Standard Add to Cart Started ===");
+    // console.log("=== Standard Add to Cart Started ===");
 
     const selectedVariantId = variantIdInput.value;
     const sellingPlanId = finalSellingPlanInput
@@ -649,13 +774,13 @@ function initFeaturedProduct(section, sectionId, variants, sellingPlanGroups) {
       : "";
     const variant = findVariantById(selectedVariantId);
 
-    console.log("Add to cart clicked:", {
-      selectedVariantId,
-      sellingPlanId,
-      variant: variant
-        ? { id: variant.id, available: variant.available }
-        : null,
-    });
+    // console.log("Add to cart clicked:", {
+    //   selectedVariantId,
+    //   sellingPlanId,
+    //   variant: variant
+    //     ? { id: variant.id, available: variant.available }
+    //     : null,
+    // });
 
     // Validation
     if (!variant) {
@@ -680,9 +805,9 @@ function initFeaturedProduct(section, sectionId, variants, sellingPlanGroups) {
     // Add selling plan if subscription is selected
     if (sellingPlanId) {
       data.selling_plan = sellingPlanId;
-      console.log("Adding with selling plan:", sellingPlanId);
+      // console.log("Adding with selling plan:", sellingPlanId);
     } else {
-      console.log("Adding as regular purchase (no selling plan)");
+      // console.log("Adding as regular purchase (no selling plan)");
     }
 
     // Make the request to Shopify's cart API
@@ -708,20 +833,20 @@ function initFeaturedProduct(section, sectionId, variants, sellingPlanGroups) {
           }, 2000);
         }
 
-        console.log("Item added to cart:", data);
+        // console.log("Item added to cart:", data);
 
         // Dispatch custom event for other scripts to listen
         document.dispatchEvent(
           new CustomEvent("cwc:item-added-to-cart", {
             detail: { variant, sellingPlanId, sectionId },
-          })
+          }),
         );
       })
       .catch((error) => {
         console.error("Error:", error);
         addToCartButton.classList.remove("loading_hk");
         alert(
-          "An error occurred while processing your request. Please try again."
+          "An error occurred while processing your request. Please try again.",
         );
       });
   }
@@ -737,13 +862,13 @@ function initFeaturedProduct(section, sectionId, variants, sellingPlanGroups) {
 
   // Attach the correct handler based on mode
   if (isBundleMode) {
-    console.log("Attaching BUNDLE add-to-cart handler");
+    // console.log("Attaching BUNDLE add-to-cart handler");
     addToCartButton.addEventListener("click", handleBundleAddToCart);
 
     // Expose global handler for external triggers (like CWC_bundle_included section)
     window.CWCBundleAddToCart = handleBundleAddToCart;
   } else {
-    console.log("Attaching STANDARD add-to-cart handler");
+    // console.log("Attaching STANDARD add-to-cart handler");
     addToCartButton.addEventListener("click", handleStandardAddToCart);
   }
 
@@ -754,11 +879,11 @@ function initFeaturedProduct(section, sectionId, variants, sellingPlanGroups) {
     // Initialize FAQ accordion functionality
     const faqItems = section.querySelectorAll(".cwc-featured-product__faq");
 
-    console.log(`Section ${sectionId}: Found ${faqItems.length} FAQ items`);
+    // console.log(`Section ${sectionId}: Found ${faqItems.length} FAQ items`);
 
     faqItems.forEach((item, index) => {
       const question = item.querySelector(
-        ".cwc-featured-product__faq-question"
+        ".cwc-featured-product__faq-question",
       );
       const answer = item.querySelector(".cwc-featured-product__faq-answer");
       const icon = item.querySelector(".cwc-featured-product__faq-icon");
@@ -766,24 +891,24 @@ function initFeaturedProduct(section, sectionId, variants, sellingPlanGroups) {
       if (!question || !answer) return;
 
       question.addEventListener("click", () => {
-        console.log(`Clicked FAQ ${index} in section ${sectionId}`);
-        console.log(
-          `Current state: ${
-            item.classList.contains("active") ? "active" : "inactive"
-          }`
-        );
+        // console.log(`Clicked FAQ ${index} in section ${sectionId}`);
+        // console.log(
+        //   `Current state: ${
+        //     item.classList.contains("active") ? "active" : "inactive"
+        //   }`
+        // );
 
         const isCurrentlyActive = item.classList.contains("active");
 
         // Close all others first - BUT ONLY IN THIS SECTION
         faqItems.forEach((other, otherIndex) => {
           if (other !== item && other.classList.contains("active")) {
-            console.log(`Closing FAQ ${otherIndex} in section ${sectionId}`);
+            // console.log(`Closing FAQ ${otherIndex} in section ${sectionId}`);
             const otherAnswer = other.querySelector(
-              ".cwc-featured-product__faq-answer"
+              ".cwc-featured-product__faq-answer",
             );
             const otherIcon = other.querySelector(
-              ".cwc-featured-product__faq-icon"
+              ".cwc-featured-product__faq-icon",
             );
 
             // Start closing animation
@@ -799,7 +924,7 @@ function initFeaturedProduct(section, sectionId, variants, sellingPlanGroups) {
         // Small delay to let others start closing, then toggle this one
         setTimeout(() => {
           if (isCurrentlyActive) {
-            console.log(`Closing clicked FAQ ${index}`);
+            // console.log(`Closing clicked FAQ ${index}`);
             // Close this FAQ
             answer.style.maxHeight = answer.scrollHeight + "px";
             setTimeout(() => {
@@ -808,7 +933,7 @@ function initFeaturedProduct(section, sectionId, variants, sellingPlanGroups) {
               if (icon) icon.textContent = "+";
             }, 10);
           } else {
-            console.log(`Opening clicked FAQ ${index}`);
+            // console.log(`Opening clicked FAQ ${index}`);
             // Open this FAQ
             item.classList.add("active");
             if (icon) icon.textContent = "−";
@@ -822,7 +947,7 @@ function initFeaturedProduct(section, sectionId, variants, sellingPlanGroups) {
                   answer.style.maxHeight = "none";
                 }
               },
-              { once: true }
+              { once: true },
             );
           }
         }, 50);
@@ -844,7 +969,7 @@ function initFeaturedProduct(section, sectionId, variants, sellingPlanGroups) {
   window.CWCFeaturedProduct = window.CWCFeaturedProduct || {};
   window.CWCFeaturedProduct.testUpdate = function (testSection) {
     if (testSection === section) {
-      console.log("Testing updateVariant for section:", sectionId);
+      // console.log("Testing updateVariant for section:", sectionId);
       updateVariant();
     }
   };

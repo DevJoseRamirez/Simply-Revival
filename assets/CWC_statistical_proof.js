@@ -35,8 +35,8 @@ document.addEventListener("DOMContentLoaded", function () {
         // Fill progress bar
         progressEl.style.transition = "width 1.5s ease";
         progressEl.style.width = target + "%";
-        console.log(progressEl)
-        console.log(progressEl.style.width)
+        // console.log(progressEl)
+        // console.log(progressEl.style.width)
       }
     });
   }

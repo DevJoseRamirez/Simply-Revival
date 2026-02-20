@@ -1,8 +1,8 @@
 /* SALES NOTIFICATION STYLES */
 #sales-notifications {
-    visibility: hidden !important;
-    opacity: 0 !important;
-    display: none !important;
+    /* visibility: hidden !important; */
+    /* opacity: 0 !important; */
+    /* display: none !important; */
 }
 
 .notification-preview__content>div {

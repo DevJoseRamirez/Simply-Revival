@@ -250,8 +250,8 @@
             "sticky_button_text": "Add to Cart",
             "sticky_bg_color": "#ffffff",
             "bundle_product_1": "25-gift-card",
-            "bundle_product_2": "shipping-protection-free-gift",
-            "bundle_product_3": "free-365-day-guarantee",
+            "bundle_product_2": "",
+            "bundle_product_3": "",
             "bundle_product_4": "",
             "skip_cart": false
           }

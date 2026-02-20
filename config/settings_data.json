@@ -2636,13 +2636,13 @@
         "disabled": true,
         "settings": {}
       },
-      "14575892982612462877": {
-        "type": "shopify:\/\/apps\/sp-sales-pop-up-social-proof\/blocks\/salesnotifications\/cdeb6f15-7a6b-4d2a-8158-55cae076aabd",
+      "17368511000352060744": {
+        "type": "shopify:\/\/apps\/goaffpro-affiliate-marketing\/blocks\/goaffpro-embedded-pixel\/2f4d802b-86c2-47e4-8096-ae1aa3efbab2",
         "disabled": false,
         "settings": {}
       },
-      "17368511000352060744": {
-        "type": "shopify:\/\/apps\/goaffpro-affiliate-marketing\/blocks\/goaffpro-embedded-pixel\/2f4d802b-86c2-47e4-8096-ae1aa3efbab2",
+      "10840395464443086010": {
+        "type": "shopify:\/\/apps\/alia\/blocks\/customer-app-frame\/51f1d398-3e41-44da-b81e-defd5804b292",
         "disabled": false,
         "settings": {}
       }

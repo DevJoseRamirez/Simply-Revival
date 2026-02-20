@@ -30,6 +30,8 @@
     font-weight: 400;
     color: #08122a;
     text-decoration: line-through;
+    /*  */
+    opacity: 0.7;
   }
 
   .cwc-featured-product__price-save {
@@ -85,17 +87,48 @@
   }
 {% endstyle %}
 
+{% comment %}
+  =====================================================
+  PRICE DISPLAY
+  =====================================================
+  Uses default_variant passed from section for initial display.
+  JS will update these elements when variant/subscription changes.
+
+  PRICING LOGIC:
+  - compare_price: ALWAYS variant.compare_at_price (strikeout price)
+  - display_price: subscription price if available, else variant.price
+  - savings: compare_price - display_price
+  =====================================================
+{% endcomment %}
+
+{% liquid
+  assign variant = default_variant | default: product.selected_or_first_available_variant
+
+  assign compare_price = variant.compare_at_price
+  assign display_price = variant.price
+
+  comment
+    If variant has subscription and checkbox is checked by default,
+    use the subscription price for display (but keep compare as variant.compare_at_price)
+  endcomment
+  if variant.selling_plan_allocations.size > 0
+    assign allocation = variant.selling_plan_allocations[0]
+    assign display_price = allocation.price
+  endif
+%}
+
 <span class="cwc-featured-product__price-current" id="current-price-{{ section_id }}">
-  {{ product.price | money }}
+  {{ display_price | money }}
 </span>
-{% if product.compare_at_price > product.price %}
+
+{% if compare_price and compare_price > display_price %}
   <span class="cwc-featured-product__price-compare" id="compare-price-{{ section_id }}">
-    {{ product.compare_at_price | money }}
+    {{ compare_price | money }}
   </span>
   <div class="cwc-featured-product__price-save" id="save-amount-{{ section_id }}">
     <span>Save</span>
     <span>
-      {{ product.compare_at_price | minus: product.price | money }}
+      {{ compare_price | minus: display_price | money }}
     </span>
   </div>
 {% endif %}

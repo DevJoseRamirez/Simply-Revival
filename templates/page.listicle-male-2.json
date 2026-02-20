@@ -13,8 +13,8 @@
         "text_color": "#ffffff",
         "padding_top": 5,
         "padding_bottom": 5,
-        "top_text": "<p><strong>⚡ BLACK FRIDAY SPECIAL<\/strong><\/p>",
-        "bottom_text": "<p><strong>UP TO 70% OFF + 2 MONTHS FREE<\/strong><\/p>",
+        "top_text": "<p><strong>⚡ NEW YEAR SPECIAL<\/strong><\/p>",
+        "bottom_text": "<p><strong>50% OFF + UP TO 2 MONTHS FREE<\/strong><\/p>",
         "show_timer": true,
         "min_hours": 2.5,
         "max_hours": 5.5
@@ -39,8 +39,8 @@
           "type": "author",
           "settings": {
             "author_image": "shopify:\/\/shop_images\/Marcus_-_author-min.png",
-            "author_text": "<p>By Marcus Rivera, Men's Health Writer<\/p>",
-            "author_date": "Last Updated Oct 08, 2025"
+            "author_text": "<p>By Marcus Rivera, Holistic Health Writer<\/p>",
+            "author_date": "Last Updated Jan 08, 2026"
           }
         },
         "summary_THNYCd": {
@@ -215,13 +215,13 @@
         "padding_bottom": 60,
         "image": "shopify:\/\/shop_images\/hair_support-1-min.png",
         "sub_head": "<p>🎁 +2 Months Free On Select options<\/p>",
-        "title": "<h3><strong>UP TO 70% OFF <\/strong>FOR A LIMITED TIME ONLY!<\/h3>",
-        "sub_text": "<p>This limited-time deal is in high demand and stock keeps selling out<\/p>",
-        "floating_badge_text": "⚡ BLACK FRIDAY SPECIAL",
+        "title": "<h2>LAST DAY FOR<strong> 50% OFF!<\/strong><\/h2>",
+        "sub_text": "<p>SOLD OUT 4 TIMES LAST YEAR!<\/p>",
+        "floating_badge_text": "⚡ NEW YEAR SPECIAL",
         "button_color": "#125657",
         "button_text_color": "#ffffff",
-        "button_text": "GET 70% OFF →",
-        "button_link": "shopify:\/\/pages\/black-friday-exclusive-offer",
+        "button_text": "GET 50% OFF →",
+        "button_link": "shopify:\/\/products\/simply®-dht-blocker",
         "subtext": "<p>Try it today with a 30-Day Money-Back Guarantee!<\/p>"
       }
     },
@@ -408,7 +408,7 @@
         "text": "<p>Due to high demand, Simply Revival can be hard to find in stock. But right now, a new batch is available.<\/p><p>If you recognized 3 or more of the signs above, this is your chance to fight back—naturally, safely, and effectively.<\/p>",
         "text_2": "",
         "button_text": "Check Availability Now",
-        "button_link": "shopify:\/\/pages\/black-friday-exclusive-offer",
+        "button_link": "shopify:\/\/products\/simply®-dht-blocker",
         "subtext": "<p>Made in the USA | Third-Party Tested | 365-Day Money-Back Guarantee<\/p>"
       }
     },
@@ -440,7 +440,7 @@
           "type": "button",
           "settings": {
             "text": "Try Risk-Free Today",
-            "link": "shopify:\/\/pages\/black-friday-exclusive-offer",
+            "link": "shopify:\/\/products\/simply®-dht-blocker",
             "button_bg_color": "#125657",
             "button_text_color": "#ffffff"
           }
