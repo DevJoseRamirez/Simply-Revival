@@ -56,7 +56,10 @@
     box-shadow: none;
     -webkit-tap-highlight-color: transparent;
     /* For iOS Safari */
-
+    min-height: 90px;
+    height: auto;
+    width: 100%;
+    box-sizing: border-box;
 }
 
 
@@ -215,7 +218,7 @@
     height: 54px;
     height: 3.375rem;
     height: 100%;
-    width: 80%;
+    width: 100%;
     max-height: 60px;
 }
 
@@ -352,6 +355,11 @@
    Mobile Responsive (max-width: 768px)
    ================================ */
 @media (max-width: 768px) {
+
+    .cwc-featured-product__option_buttons .cwc-featured-product__option_button:nth-child(1) .cwc-featured-product__option_button_thumb {
+        width: 80%;
+    }
+
     .cwc-featured-product__option_button {
         padding: 0.875rem 0.875rem 0.75rem 0.5625rem;
         /* padding: 0px; */
