@@ -219,21 +219,30 @@
         "product_options_K4yi8r": {
           "type": "product_options",
           "settings": {
-            "image1": "shopify:\/\/shop_images\/Simply_Revival___Natural_Hair_Support_Blend___Buy_One-min.png",
+            "image1": "shopify:\/\/shop_images\/Buy_1_-_Get_1_EXTRA_FREE.png",
             "badge_text_1": "",
-            "servings_text_1": "1 Months Supply",
-            "image2": "shopify:\/\/shop_images\/Simply_Revival___Natural_Hair_Support_Blend___Buy_2_-_Get_1_FREE-min.png",
+            "servings_text_1": "2 Month Supply · 60 Servings",
+            "bonus_text_1_opt1": "",
+            "bonus_text_2_opt1": "",
+            "image2": "shopify:\/\/shop_images\/Buy_2_-_Get_2_EXTRA_FREE.png",
             "badge_text_2": "Most Popular + Free Shipping",
-            "servings_text_2": "2 Months Supply",
-            "image3": "shopify:\/\/shop_images\/Simply_Revival___Natural_Hair_Support_Blend___Buy_3_-_Get_2_FREE-min.png",
+            "servings_text_2": "4 Month Supply · 120 Servings",
+            "bonus_image_1_opt2": "shopify:\/\/shop_images\/icon_prop_01.png",
+            "bonus_text_1_opt2": "+ FREE 365 Day Guarantee",
+            "bonus_text_2_opt2": "",
+            "image3": "shopify:\/\/shop_images\/Buy_3_-_Get_3_EXTRA_FREE_70eb29f2-096a-4a8d-9e67-bd983df10f05.png",
             "badge_text_3": "Best Value + Free $20 Gift Card",
-            "servings_text_3": "3 Months Supply"
+            "servings_text_3": "6 Month Supply · 180 Servings",
+            "bonus_image_1_opt3": "shopify:\/\/shop_images\/icon_prop_01.png",
+            "bonus_text_1_opt3": "+ FREE 365 Day Guarantee",
+            "bonus_image_2_opt3": "shopify:\/\/shop_images\/icon_prop_02.png",
+            "bonus_text_2_opt3": "+ FREE $20 Gift Card"
           }
         },
         "subscription_toggle_ArNDfx": {
           "type": "subscription_toggle",
           "settings": {
-            "title": "Save 25% With Automatic Refills!",
+            "title": "Save With Automatic Refills!",
             "subtitle": "Zero Commitment | Exclusive Discounts | Cancel Anytime"
           }
         },
@@ -256,7 +265,7 @@
             "sticky_button_text": "Add to Cart",
             "sticky_bg_color": "#ffffff",
             "bundle_product_1": "25-gift-card",
-            "bundle_product_2": "",
+            "bundle_product_2": "free-365-day-guarantee",
             "bundle_product_3": "",
             "bundle_product_4": "",
             "skip_cart": false
@@ -296,8 +305,8 @@
             "title_2": "Shipping Protection",
             "desc_2": "Lost or damaged? We replace it.",
             "price_2": "$15.00",
-            "icon_3": "shopify:\/\/shop_images\/bundle_and_save_dht_1.png",
-            "title_3": "Up To 2 Bottles Free",
+            "icon_3": "shopify:\/\/shop_images\/Up_to_3.png",
+            "title_3": "Up To 3 Bottles Free",
             "desc_3": "Bundle & Save",
             "price_3": "$79.99",
             "icon_4": "shopify:\/\/shop_images\/icon_prop_02.png",

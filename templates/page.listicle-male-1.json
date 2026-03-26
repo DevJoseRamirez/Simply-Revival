@@ -13,8 +13,8 @@
         "text_color": "#ffffff",
         "padding_top": 5,
         "padding_bottom": 5,
-        "top_text": "<p><strong>⚡NEW YEAR NEW YOU SALE<\/strong><\/p>",
-        "bottom_text": "<p><strong>62% OFF + 4 FREE GIFTS + FREE  SERUM<\/strong><\/p>",
+        "top_text": "<p><strong>⚡SPRING SALE<\/strong><\/p>",
+        "bottom_text": "<p><strong>67% OFF + 1 MONTH SUPPLY FREE<\/strong><\/p>",
         "show_timer": true,
         "min_hours": 2.5,
         "max_hours": 5.5
@@ -40,7 +40,7 @@
           "settings": {
             "author_image": "shopify:\/\/shop_images\/Marcus_-_author-min.png",
             "author_text": "<p>By Marcus Rivera, Holistic Health Expert<\/p>",
-            "author_date": "Last Updated Nov 10, 2025"
+            "author_date": "Last Updated Jan 10, 2026"
           }
         },
         "summary_THNYCd": {
@@ -112,7 +112,7 @@
         "image": "shopify:\/\/shop_images\/natural_hair_support-min_6b97019d-d592-4bbe-8c94-75865a9267cf.png",
         "pill_text": "Thicker Hair",
         "title": "<h3>3️⃣ Rebuild Hair Structure with Biotin<\/h3>",
-        "text": "<p>Biotin (Vitamin B7) is the building block of keratin—the protein that makes up your hair. When your body has enough biotin, it can produce stronger, thicker hair that's less prone to breakage and shedding.<\/p><p><a href=\"\/pages\/holiday-sale\" title=\"Holiday Sale\">See How Men And Women Are Strengthening Hair Naturally<\/a><\/p>",
+        "text": "<p>Biotin (Vitamin B7) is the building block of keratin—the protein that makes up your hair. When your body has enough biotin, it can produce stronger, thicker hair that's less prone to breakage and shedding.<\/p><p><a href=\"\/products\/natural-dht-blocker-67-off\" title=\"Natural DHT Blocker\">See How Men And Women Are Strengthening Hair Naturally<\/a><\/p>",
         "text_2": "<p>Biotin deficiency is surprisingly common, especially in men and women with high-stress lifestyles. Supplementing with biotin ensures your body has the raw materials it needs to build healthy hair from the inside out. Within 4-6 weeks, most men report noticeable improvements in hair texture and thickness.<\/p>"
       }
     },
@@ -129,7 +129,7 @@
         "image": "shopify:\/\/shop_images\/natural_hair_support-4-min.png",
         "pill_text": "Healthy Scalp",
         "title": "<h3>4️⃣ Support Scalp Health with Zinc and Selenium<\/h3>",
-        "text": "<p>Zinc and Selenium are trace minerals that play a crucial role in hair growth and scalp health. Zinc helps regulate oil production and supports the hair growth cycle, while Selenium protects follicles from oxidative stress and inflammation.<\/p><p><a href=\"\/pages\/holiday-sale\" title=\"Holiday Sale\">See How These Minerals Support Stronger Growth<\/a><\/p>",
+        "text": "<p>Zinc and Selenium are trace minerals that play a crucial role in hair growth and scalp health. Zinc helps regulate oil production and supports the hair growth cycle, while Selenium protects follicles from oxidative stress and inflammation.<\/p><p><a href=\"\/products\/natural-dht-blocker-67-off\" title=\"Natural DHT Blocker\">See How These Minerals Support Stronger Growth<\/a><\/p>",
         "text_2": "<p>A healthy scalp is the foundation for healthy hair. When your scalp is inflamed or clogged, even the best DHT blockers can't do their job. Zinc and Selenium create the optimal environment for hair growth, ensuring your follicles stay open, nourished, and active.<\/p>"
       }
     },
@@ -146,7 +146,7 @@
         "image": "shopify:\/\/shop_images\/natural_hair_support-1-min.png",
         "pill_text": "Maximum Results",
         "title": "<h3>5️⃣ Combine Them All in One Simple Daily Routine<\/h3>",
-        "text": "<p>Each method works on its own — but they work even better together. Instead of buying multiple supplements, thousands of men and women use Simply Revival, a single formula that combines all 5 key ingredients (plus 5 more botanicals) into one daily capsule.<\/p><p><a href=\"\/pages\/holiday-sale\" title=\"Holiday Sale\"><span style=\"text-decoration:underline\">See the Simple Daily Routine Thousands Are Using <\/span><\/a><\/p>",
+        "text": "<p>Each method works on its own — but they work even better together. Instead of buying multiple supplements, thousands of men and women use Simply Revival, a single formula that combines all 5 key ingredients (plus 5 more botanicals) into one daily capsule.<\/p><p><a href=\"\/products\/natural-dht-blocker-67-off\" title=\"Natural DHT Blocker\"><span style=\"text-decoration:underline\">See the Simple Daily Routine Thousands Are Using <\/span><\/a><\/p>",
         "text_2": "<p>Simply Revival delivers the right doses in the right ratios — no guessing, no buying bottles separately. Men and women report less shedding, better texture, and visible improvements within just a few weeks<\/p>"
       }
     },
@@ -193,7 +193,20 @@
         },
         "product_options_QPhNgU": {
           "type": "product_options",
-          "settings": {}
+          "settings": {
+            "badge_text_1": "",
+            "servings_text_1": "",
+            "bonus_text_1_opt1": "",
+            "bonus_text_2_opt1": "",
+            "badge_text_2": "Most Popular",
+            "servings_text_2": "",
+            "bonus_text_1_opt2": "",
+            "bonus_text_2_opt2": "",
+            "badge_text_3": "Free Shipping",
+            "servings_text_3": "",
+            "bonus_text_1_opt3": "",
+            "bonus_text_2_opt3": ""
+          }
         },
         "subscription_toggle_7Qtw6x": {
           "type": "subscription_toggle",
@@ -217,6 +230,9 @@
             "button_text": "Add to Cart",
             "button_bg_color": "#125657",
             "button_text_color": "#ffffff",
+            "enable_sticky_atc": false,
+            "sticky_button_text": "Add to Cart",
+            "sticky_bg_color": "#ffffff",
             "bundle_product_1": "",
             "bundle_product_2": "",
             "bundle_product_3": "",
@@ -366,14 +382,14 @@
         "padding_top": 80,
         "padding_bottom": 60,
         "image": "shopify:\/\/shop_images\/hair_support-1-min.png",
-        "sub_head": "<p>🎁 + 4 FREE GIFTS + FREE TOPICAL SERUM<\/p>",
-        "title": "<h3><strong>62% OFF <\/strong>FOR A LIMITED TIME ONLY!<\/h3>",
+        "sub_head": "<p>🎁 + 1 MONTH SUPPLY FREE<\/p>",
+        "title": "<h3><strong>67% OFF <\/strong>FOR A LIMITED TIME ONLY!<\/h3>",
         "sub_text": "<p>This limited-time deal is in high demand and stock keeps selling out<\/p>",
-        "floating_badge_text": "⚡ NEW YEAR, NEW YOU SALE",
+        "floating_badge_text": "⚡ SPRING SALE",
         "button_color": "#125657",
         "button_text_color": "#ffffff",
-        "button_text": "GET 62% OFF →",
-        "button_link": "shopify:\/\/pages\/holiday-sale",
+        "button_text": "GET 67% OFF →",
+        "button_link": "shopify:\/\/products\/natural-dht-blocker-67-off",
         "subtext": "<p>Try it today with a 30-Day Money-Back Guarantee!<\/p>"
       }
     },
@@ -560,7 +576,7 @@
         "text": "<p>Due to high demand, Simply Revival can be hard to find in stock. But right now, a new batch is available.<\/p><p>If you recognized 3 or more of the signs above, this is your chance to fight back—naturally, safely, and effectively.<\/p>",
         "text_2": "",
         "button_text": "Check Availability Now",
-        "button_link": "shopify:\/\/pages\/holiday-sale",
+        "button_link": "shopify:\/\/products\/natural-dht-blocker-67-off",
         "subtext": "<p>Made in the USA | Third-Party Tested | 365-Day Money-Back Guarantee<\/p>"
       }
     },
@@ -592,7 +608,7 @@
           "type": "button",
           "settings": {
             "text": "Try Risk-Free Today",
-            "link": "shopify:\/\/pages\/holiday-sale",
+            "link": "shopify:\/\/products\/natural-dht-blocker-67-off",
             "button_bg_color": "#125657",
             "button_text_color": "#ffffff"
           }

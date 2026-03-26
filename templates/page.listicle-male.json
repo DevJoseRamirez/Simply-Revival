@@ -13,8 +13,8 @@
         "text_color": "#ffffff",
         "padding_top": 5,
         "padding_bottom": 5,
-        "top_text": "<p><strong>⚡ NEW YEAR SALE<\/strong><\/p>",
-        "bottom_text": "<p><strong>UP TO 70% OFF + 2 MONTHS FREE<\/strong><\/p>",
+        "top_text": "<p><strong>⚡ SPRING SALE<\/strong><\/p>",
+        "bottom_text": "<p><strong>67% OFF + 1 MONTH SUPPLY FREE<\/strong><\/p>",
         "show_timer": true,
         "min_hours": 3,
         "max_hours": 6
@@ -173,7 +173,7 @@
         "image": "shopify:\/\/shop_images\/lplist-male_hair_support_01-min.png",
         "pill_text": "Visible Scalp",
         "title": "<h2>🪞 Sign #7: Your Scalp Shows Through<\/h2>",
-        "text": "<p><strong>What's Happening:<\/strong> Bright overhead lights, bathroom mirrors, photos from above—you've started to avoid them. You can see your scalp through your hair, and it's making you self-conscious.<\/p><p><a href=\"\/pages\/black-friday-exclusive-offer\" title=\"Black Friday Exclusive Offer\">Discover the Natural Formula Helping Men Regain Confidence<\/a><\/p>",
+        "text": "<p><strong>What's Happening:<\/strong> Bright overhead lights, bathroom mirrors, photos from above—you've started to avoid them. You can see your scalp through your hair, and it's making you self-conscious.<\/p><p><a href=\"\/products\/natural-dht-blocker-67-off\" title=\"Natural DHT Blocker\">Discover the Natural Formula Helping Men Regain Confidence<\/a><\/p>",
         "text_2": "<p><strong>Why It's DHT:<\/strong> This is the stage where hair density has noticeably decreased. The good news? If you can still see hair (even if it's thin), those follicles can often be revived.<\/p>"
       }
     },
@@ -229,13 +229,13 @@
         "padding_top": 80,
         "padding_bottom": 60,
         "image": "shopify:\/\/shop_images\/hair_support-1-min.png",
-        "sub_head": "<p>🎁 +2 Months Free On Select options<\/p>",
-        "title": "<h3><strong>UP TO 70% OFF <\/strong>FOR THE NEXT 24 HOURS!<\/h3>",
+        "sub_head": "<p>🎁 +1 MONTH SUPPLY FREE<\/p>",
+        "title": "<h3><strong>67% OFF <\/strong>FOR THE NEXT 24 HOURS!<\/h3>",
         "sub_text": "<p>Sold out 7 times in 2025!<\/p>",
-        "floating_badge_text": "⚡ NEW YEAR SALE",
+        "floating_badge_text": "⚡ SPRING SALE",
         "button_color": "#125657",
         "button_text_color": "#ffffff",
-        "button_text": "GET 70% OFF",
+        "button_text": "GET 67% OFF",
         "button_link": "shopify:\/\/products\/simply®-dht-blocker",
         "subtext": "<p>Try it today with a 30-Day Money-Back Guarantee!<\/p>"
       }
