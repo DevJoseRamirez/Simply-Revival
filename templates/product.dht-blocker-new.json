@@ -1,3 +1,12 @@
+/*
+ * ------------------------------------------------------------
+ * IMPORTANT: The contents of this file are auto-generated.
+ *
+ * This file may be updated by the Shopify admin theme editor
+ * or related systems. Please exercise caution as any changes
+ * made to this file may be overwritten.
+ * ------------------------------------------------------------
+ */
 {
   "sections": {
     "main": {
@@ -6,13 +15,13 @@
         "custom_liquid_xtYHp7": {
           "type": "custom_liquid",
           "settings": {
-            "custom_liquid": "<div class=\"rating-section\" style=\"display: flex; align-items: center; font-family: Arial, sans-serif; color: #000;\">\n    <span class=\"stars\" style=\"margin-right: 8px; display: flex;\">\n        {% for i in (1..5) %}\n            <svg xmlns=\"http:\/\/www.w3.org\/2000\/svg\" viewBox=\"0 0 24 24\" width=\"16\" height=\"16\" style=\"margin-right: 3px; fill: #FF9500;\">\n                <path d=\"M12 17.27L18.18 21l-1.64-7.03L22 9.24l-7.19-.61L12 2 9.19 8.63 2 9.24l5.46 4.73L5.82 21z\" stroke-linejoin=\"round\" stroke-linecap=\"round\"\/>\n            <\/svg>\n        {% endfor %}\n    <\/span>\n    <span class=\"rating-text\">\n        <strong style=\"font-weight: 700; margin-right: 5px;\">4.8\/5<\/strong>\n        Endorsed by 20,000+ health enthusiasts\n    <\/span>\n<\/div>\n\n<style>\n    \n    @media only screen and (max-width: 767px) {\n        .rating-text {\n            font-size: 11px;\n        }\n        .stars svg {\n            width: 12px;\n            height: 12px;\n        }\n    }\n\n    \n    @media only screen and (min-width: 768px) {\n        .rating-text {\n            font-size: 13px;\n        }\n        .stars svg {\n            width: 16px;\n            height: 16px;\n        }\n    }\n<\/style>"
+            "custom_liquid": "<div class=\"rating-section\" style=\"display: flex; align-items: center; font-family: Arial, sans-serif; color: #000;\">\n    <span class=\"stars\" style=\"margin-right: 8px; display: flex;\">\n        {% for i in (1..5) %}\n            <svg xmlns=\"http://www.w3.org/2000/svg\" viewBox=\"0 0 24 24\" width=\"16\" height=\"16\" style=\"margin-right: 3px; fill: #FF9500;\">\n                <path d=\"M12 17.27L18.18 21l-1.64-7.03L22 9.24l-7.19-.61L12 2 9.19 8.63 2 9.24l5.46 4.73L5.82 21z\" stroke-linejoin=\"round\" stroke-linecap=\"round\"/>\n            </svg>\n        {% endfor %}\n    </span>\n    <span class=\"rating-text\">\n        <strong style=\"font-weight: 700; margin-right: 5px;\">4.8/5</strong>\n        Endorsed by 20,000+ health enthusiasts\n    </span>\n</div>\n\n<style>\n    \n    @media only screen and (max-width: 767px) {\n        .rating-text {\n            font-size: 11px;\n        }\n        .stars svg {\n            width: 12px;\n            height: 12px;\n        }\n    }\n\n    \n    @media only screen and (min-width: 768px) {\n        .rating-text {\n            font-size: 13px;\n        }\n        .stars svg {\n            width: 16px;\n            height: 16px;\n        }\n    }\n</style>"
           }
         },
         "custom_liquid_Nw74QN": {
           "type": "custom_liquid",
           "settings": {
-            "custom_liquid": "<div class=\"custom-margin\" style=\"display: flex; align-items: center;\"> <\/div>\n\n<style>\n    .custom-margin {\n        margin-bottom: -20px;\n    }\n\n    \n    @media (min-width: 768px) {\n        .custom-margin {\n            margin-bottom: -40px;\n        }\n    }\n<\/style>"
+            "custom_liquid": "<div class=\"custom-margin\" style=\"display: flex; align-items: center;\"> </div>\n\n<style>\n    .custom-margin {\n        margin-bottom: -20px;\n    }\n\n    \n    @media (min-width: 768px) {\n        .custom-margin {\n            margin-bottom: -40px;\n        }\n    }\n</style>"
           }
         },
         "989bce2f-7961-4267-8e6c-40ff4bb0ed64": {
@@ -24,7 +33,7 @@
         "custom_liquid_pdFpqL": {
           "type": "custom_liquid",
           "settings": {
-            "custom_liquid": "<div style=\"display: flex; align-items: center; margin-top: -20px; margin-bottom: px;\"> <\/div>"
+            "custom_liquid": "<div style=\"display: flex; align-items: center; margin-top: -20px; margin-bottom: px;\"> </div>"
           }
         },
         "c5c11045-e3b5-47e4-80d1-25e86ec844cc": {
@@ -34,26 +43,26 @@
         "custom_liquid_74AyWE": {
           "type": "custom_liquid",
           "settings": {
-            "custom_liquid": "<div class=\"product-descriptions\">\n{{ product.description }}\n<\/div>"
+            "custom_liquid": "<div class=\"product-descriptions\">\n{{ product.description }}\n</div>"
           }
         },
         "custom_liquid_WMYgrd": {
           "type": "custom_liquid",
           "disabled": true,
           "settings": {
-            "custom_liquid": "<div class=\"product-description\">\n  <p class=\"product-title\">Unlock Beautiful Hair & Radiant Skin:\n<\/p>\n  \n  <ul class=\"product-benefits\">\n    <li>Promotes Healthy Hair Growth &amp; Helps Prevent Hair Loss<\/li>\n    <li>Combats Excessive Shedding &amp; Enhances Hair Regrowth<\/li>\n    <li>Supports Clear, Acne-Free Skin &amp; Reduces Inflammation<\/li>\n    <li>Rich in Vitamins &amp; Minerals to Boost Immune System &amp; Natural Healing<\/li>\n  <\/ul>\n<\/div>\n\n<style>\n  .product-description {\n    margin-top: -15px;\n  }\n\n  \n  @media (min-width: 768px) {\n    .product-title {\n      font-size: 16px;\n      font-weight: bold;\n    }\n    .product-benefits {\n      margin-top: 7px;\n      padding-left: 15px;\n      list-style-type: disc;\n    }\n    .product-benefits li {\n      margin-bottom: 5px;\n      font-size: 15px;\n    }\n    .product-features {\n      margin-top: 10px;\n      font-size: 14px;\n      color: #666;\n    }\n  }\n\n  \n  @media (max-width: 767px) {\n    .product-title {\n      font-size: 13px;\n      font-weight: bold;\n    }\n    .product-benefits {\n      margin-top: 10px;\n      padding-left: 12px;\n      list-style-type: disc;\n    }\n    .product-benefits li {\n      margin-bottom: 5px;\n      font-size: 12px;\n    }\n    .product-features {\n      margin-top: 15px;\n      font-size: 12px;\n      color: #666;\n    }\n  }\n<\/style>"
+            "custom_liquid": "<div class=\"product-description\">\n  <p class=\"product-title\">Unlock Beautiful Hair & Radiant Skin:\n</p>\n  \n  <ul class=\"product-benefits\">\n    <li>Promotes Healthy Hair Growth &amp; Helps Prevent Hair Loss</li>\n    <li>Combats Excessive Shedding &amp; Enhances Hair Regrowth</li>\n    <li>Supports Clear, Acne-Free Skin &amp; Reduces Inflammation</li>\n    <li>Rich in Vitamins &amp; Minerals to Boost Immune System &amp; Natural Healing</li>\n  </ul>\n</div>\n\n<style>\n  .product-description {\n    margin-top: -15px;\n  }\n\n  \n  @media (min-width: 768px) {\n    .product-title {\n      font-size: 16px;\n      font-weight: bold;\n    }\n    .product-benefits {\n      margin-top: 7px;\n      padding-left: 15px;\n      list-style-type: disc;\n    }\n    .product-benefits li {\n      margin-bottom: 5px;\n      font-size: 15px;\n    }\n    .product-features {\n      margin-top: 10px;\n      font-size: 14px;\n      color: #666;\n    }\n  }\n\n  \n  @media (max-width: 767px) {\n    .product-title {\n      font-size: 13px;\n      font-weight: bold;\n    }\n    .product-benefits {\n      margin-top: 10px;\n      padding-left: 12px;\n      list-style-type: disc;\n    }\n    .product-benefits li {\n      margin-bottom: 5px;\n      font-size: 12px;\n    }\n    .product-features {\n      margin-top: 15px;\n      font-size: 12px;\n      color: #666;\n    }\n  }\n</style>"
           }
         },
         "custom_liquid_fLffYz": {
           "type": "custom_liquid",
           "settings": {
-            "custom_liquid": "<div class=\"result-box\">\n  <img src=\"https:\/\/cdn.shopify.com\/s\/files\/1\/0880\/6173\/9289\/files\/calendar.svg?v=1729021145\" class=\"calendar-icon\" alt=\"Calendar icon\">\n  <span class=\"result-text\">Best results seen after <strong>a few months<\/strong> of consistent use<\/span>\n<\/div>\n\n<style>\n  .result-box {\n    display: flex;\n    align-items: center;\n    padding: 10px 15px;\n    background-color: #fff6e0;\n    border-radius: 12px;\n    font-family: Arial, sans-serif;\n    font-size: 14px;\n  }\n  \n  .calendar-icon {\n    width: 14px;\n    height: 14px;\n    margin-right: 10px;\n  }\n\n  .result-text {\n    color: #000;\n  }\n\n  \n  @media (min-width: 768px) {\n    .result-box {\n      font-size: 16px;\n    }\n  }\n\n  \n  @media (max-width: 767px) {\n    .result-box {\n      font-size: 12px;\n    }\n    .calendar-icon {\n      width: 12px;\n      height: 12px;\n    }\n  }\n<\/style>"
+            "custom_liquid": "<div class=\"result-box\">\n  <img src=\"https://cdn.shopify.com/s/files/1/0880/6173/9289/files/calendar.svg?v=1729021145\" class=\"calendar-icon\" alt=\"Calendar icon\">\n  <span class=\"result-text\">Best results seen after <strong>a few months</strong> of consistent use</span>\n</div>\n\n<style>\n  .result-box {\n    display: flex;\n    align-items: center;\n    padding: 10px 15px;\n    background-color: #fff6e0;\n    border-radius: 12px;\n    font-family: Arial, sans-serif;\n    font-size: 14px;\n  }\n  \n  .calendar-icon {\n    width: 14px;\n    height: 14px;\n    margin-right: 10px;\n  }\n\n  .result-text {\n    color: #000;\n  }\n\n  \n  @media (min-width: 768px) {\n    .result-box {\n      font-size: 16px;\n    }\n  }\n\n  \n  @media (max-width: 767px) {\n    .result-box {\n      font-size: 12px;\n    }\n    .calendar-icon {\n      width: 12px;\n      height: 12px;\n    }\n  }\n</style>"
           }
         },
         "custom_liquid_Wx93Dr": {
           "type": "custom_liquid",
           "settings": {
-            "custom_liquid": "<style>\n@keyframes gradientShift {\n  0% {\n    background-position: 0% 50%;\n  }\n  50% {\n    background-position: 100% 50%;\n  }\n  100% {\n    background-position: 0% 50%;\n  }\n}\n\n.countdown-container {\n  display: flex;\n  align-items: center;\n  justify-content: center;\n  padding: 1px 16px;\n  background: linear-gradient(270deg, #ffb347, #ff8c00, #ff6700, #ffa500);\n  background-size: 400% 400%;\n  animation: gradientShift 8s ease infinite;\n  border-radius: 20px;\n  margin-bottom: 0px; \n}\n\n.countdown-text {\n  font-size: 14px;\n  font-weight: bold;\n  color: #ffffff; \n}\n\n.timer {\n  font-size: 14px;\n  font-weight: bold;\n  color: #ffffff; \n  margin-left: 10px; \n}\n<\/style>\n\n<div class=\"countdown-container\">\n  <span class=\"countdown-text\">SALE ENDS TODAY<\/span>\n  <span id=\"countdown\" class=\"timer\"><\/span>\n<\/div>\n\n<script>\n\/\/ Countdown Timer Function\nfunction startCountdown() {\n  var now = new Date();\n  var tomorrow = new Date();\n  tomorrow.setHours(24, 0, 0, 0); \/\/ Set the time to midnight\n  \n  var timeRemaining = tomorrow - now;\n\n  var hours = Math.floor((timeRemaining % (1000 * 60 * 60 * 24)) \/ (1000 * 60 * 60));\n  var minutes = Math.floor((timeRemaining % (1000 * 60 * 60)) \/ (1000 * 60));\n  var seconds = Math.floor((timeRemaining % (1000 * 60)) \/ 1000);\n\n  \/\/ Update the countdown text\n  document.getElementById('countdown').textContent = hours + \"h \" + minutes + \"m \" + seconds + \"s\";\n\n  \/\/ If the countdown is over, reset it\n  if (timeRemaining < 0) {\n    document.getElementById('countdown').textContent = \"0h 0m 0s\";\n  }\n\n  \/\/ Update the timer every second\n  setTimeout(startCountdown, 1000);\n}\n\n\/\/ Start the countdown when the page loads\ndocument.addEventListener(\"DOMContentLoaded\", startCountdown);\n<\/script>"
+            "custom_liquid": "<style>\n@keyframes gradientShift {\n  0% {\n    background-position: 0% 50%;\n  }\n  50% {\n    background-position: 100% 50%;\n  }\n  100% {\n    background-position: 0% 50%;\n  }\n}\n\n.countdown-container {\n  display: flex;\n  align-items: center;\n  justify-content: center;\n  padding: 1px 16px;\n  background: linear-gradient(270deg, #ffb347, #ff8c00, #ff6700, #ffa500);\n  background-size: 400% 400%;\n  animation: gradientShift 8s ease infinite;\n  border-radius: 20px;\n  margin-bottom: 0px; \n}\n\n.countdown-text {\n  font-size: 14px;\n  font-weight: bold;\n  color: #ffffff; \n}\n\n.timer {\n  font-size: 14px;\n  font-weight: bold;\n  color: #ffffff; \n  margin-left: 10px; \n}\n</style>\n\n<div class=\"countdown-container\">\n  <span class=\"countdown-text\">SALE ENDS TODAY</span>\n  <span id=\"countdown\" class=\"timer\"></span>\n</div>\n\n<script>\n// Countdown Timer Function\nfunction startCountdown() {\n  var now = new Date();\n  var tomorrow = new Date();\n  tomorrow.setHours(24, 0, 0, 0); // Set the time to midnight\n  \n  var timeRemaining = tomorrow - now;\n\n  var hours = Math.floor((timeRemaining % (1000 * 60 * 60 * 24)) / (1000 * 60 * 60));\n  var minutes = Math.floor((timeRemaining % (1000 * 60 * 60)) / (1000 * 60));\n  var seconds = Math.floor((timeRemaining % (1000 * 60)) / 1000);\n\n  // Update the countdown text\n  document.getElementById('countdown').textContent = hours + \"h \" + minutes + \"m \" + seconds + \"s\";\n\n  // If the countdown is over, reset it\n  if (timeRemaining < 0) {\n    document.getElementById('countdown').textContent = \"0h 0m 0s\";\n  }\n\n  // Update the timer every second\n  setTimeout(startCountdown, 1000);\n}\n\n// Start the countdown when the page loads\ndocument.addEventListener(\"DOMContentLoaded\", startCountdown);\n</script>"
           }
         },
         "8288910a-1ad6-47df-b127-118bc1d2ce24": {
@@ -72,25 +81,25 @@
         "custom_liquid_y68gbA": {
           "type": "custom_liquid",
           "settings": {
-            "custom_liquid": "<!-- HTML -->\n<div class=\"customer-rating\">\n<span class=\"stars\">\n★★★★★\n<\/span>\n<span class=\"text\">\nRated by 2,036+ Happy Customers\n<\/span>\n<\/div>\n\n<!-- CSS -->\n<style>\n\n.customer-rating {\ndisplay: flex;\nalign-items: center;\njustify-content: center;\nbackground-color: #fff6e0; \npadding: 10px 20px;\nborder-radius: 25px; \nfont-family: Arial, sans-serif;\ncolor: #000; \nmax-width: fit-content;\nmargin: -40px auto 50px;\n}\n\n\n.stars {\ncolor: #FF9500; \nfont-size: 18px; \nmargin-right: 10px; \n}\n\n\n.text {\nfont-size: 16px;\nfont-weight: 600; \n}\n@media(max-width: 767px){\n.customer-rating span.text {\n    font-size: 12px;\n}\n}\n<\/style>"
+            "custom_liquid": "<!-- HTML -->\n<div class=\"customer-rating\">\n<span class=\"stars\">\n★★★★★\n</span>\n<span class=\"text\">\nRated by 2,036+ Happy Customers\n</span>\n</div>\n\n<!-- CSS -->\n<style>\n\n.customer-rating {\ndisplay: flex;\nalign-items: center;\njustify-content: center;\nbackground-color: #fff6e0; \npadding: 10px 20px;\nborder-radius: 25px; \nfont-family: Arial, sans-serif;\ncolor: #000; \nmax-width: fit-content;\nmargin: -40px auto 50px;\n}\n\n\n.stars {\ncolor: #FF9500; \nfont-size: 18px; \nmargin-right: 10px; \n}\n\n\n.text {\nfont-size: 16px;\nfont-weight: 600; \n}\n@media(max-width: 767px){\n.customer-rating span.text {\n    font-size: 12px;\n}\n}\n</style>"
           }
         },
         "custom_liquid_3x4CT9": {
           "type": "custom_liquid",
           "settings": {
-            "custom_liquid": "<div style=\"display: flex; align-items: center; margin-top: -25px; margin-bottom: -30px;\"> <\/div>"
+            "custom_liquid": "<div style=\"display: flex; align-items: center; margin-top: -25px; margin-bottom: -30px;\"> </div>"
           }
         },
         "custom_liquid_wTg3AN": {
           "type": "custom_liquid",
           "settings": {
-            "custom_liquid": "<style>\n.custom-shipping-container {\n    display: flex;\n    padding: 6px 16px;\n    justify-content: space-between;\n    align-items: center;\n    align-self: stretch;\n    background-color: #f6f6f6;\n    border-radius: 20px;\n}\n\n.custom-shipping-item {\n    display: flex;\n    align-items: center;\n    gap: 6px;\n}\n\n.text-block-shipping {\n    font-size: 12px;\n    color: #000;\n}\n\n.shipping-date {\n    font-weight: bold;\n}\n\n.free-shipping {\n    font-weight: bold;\n}\n\n.green-circle {\n    animation: fade 1s ease-in-out infinite;\n}\n\n@keyframes fade {\n    0%, 100% { opacity: 1; }\n    50% { opacity: 0.5; }\n}\n\n.custom-icon {\n    width: 16px; \n    height: auto; \n}\n<\/style>\n\n<script>\ndocument.addEventListener(\"DOMContentLoaded\", function() {\n    var daysAfterToday = 2; \/\/ Set this to the number of days after today that the item will ship to the customer\n    var today = new Date();\n    var shipDate = new Date(today.setDate(today.getDate() + daysAfterToday));\n    var options = { weekday: 'short', month: 'long', day: 'numeric' };\n    var formattedDate = shipDate.toLocaleDateString('en-US', options);\n    document.getElementById('shipping-date').textContent = formattedDate;\n});\n<\/script>\n\n<div class=\"custom-shipping-container\">\n    <div class=\"custom-shipping-item\">\n        <svg class=\"green-circle\" xmlns=\"http:\/\/www.w3.org\/2000\/svg\" width=\"12\" height=\"13\" viewBox=\"0 0 12 13\" fill=\"none\">\n            <circle cx=\"6\" cy=\"6.5\" r=\"6\" fill=\"#137333\"\/>\n        <\/svg>\n        <div class=\"text-block-shipping\">Ships by <span id=\"shipping-date\" class=\"shipping-date\"><\/span><\/div>\n    <\/div>\n    <div class=\"custom-shipping-item\">\n        <img src=\"https:\/\/cdn.shopify.com\/s\/files\/1\/0880\/6173\/9289\/files\/delivery-truck-icon_1.svg?v=1731104717\" loading=\"lazy\" alt=\"USA flag\" class=\"custom-icon\">\n        <div class=\"text-block-shipping\"><span class=\"free-shipping\">TRACKED <\/span>Shipping<\/div> \n    <\/div>\n<\/div>"
+            "custom_liquid": "<style>\n.custom-shipping-container {\n    display: flex;\n    padding: 6px 16px;\n    justify-content: space-between;\n    align-items: center;\n    align-self: stretch;\n    background-color: #f6f6f6;\n    border-radius: 20px;\n}\n\n.custom-shipping-item {\n    display: flex;\n    align-items: center;\n    gap: 6px;\n}\n\n.text-block-shipping {\n    font-size: 12px;\n    color: #000;\n}\n\n.shipping-date {\n    font-weight: bold;\n}\n\n.free-shipping {\n    font-weight: bold;\n}\n\n.green-circle {\n    animation: fade 1s ease-in-out infinite;\n}\n\n@keyframes fade {\n    0%, 100% { opacity: 1; }\n    50% { opacity: 0.5; }\n}\n\n.custom-icon {\n    width: 16px; \n    height: auto; \n}\n</style>\n\n<script>\ndocument.addEventListener(\"DOMContentLoaded\", function() {\n    var daysAfterToday = 2; // Set this to the number of days after today that the item will ship to the customer\n    var today = new Date();\n    var shipDate = new Date(today.setDate(today.getDate() + daysAfterToday));\n    var options = { weekday: 'short', month: 'long', day: 'numeric' };\n    var formattedDate = shipDate.toLocaleDateString('en-US', options);\n    document.getElementById('shipping-date').textContent = formattedDate;\n});\n</script>\n\n<div class=\"custom-shipping-container\">\n    <div class=\"custom-shipping-item\">\n        <svg class=\"green-circle\" xmlns=\"http://www.w3.org/2000/svg\" width=\"12\" height=\"13\" viewBox=\"0 0 12 13\" fill=\"none\">\n            <circle cx=\"6\" cy=\"6.5\" r=\"6\" fill=\"#137333\"/>\n        </svg>\n        <div class=\"text-block-shipping\">Ships by <span id=\"shipping-date\" class=\"shipping-date\"></span></div>\n    </div>\n    <div class=\"custom-shipping-item\">\n        <img src=\"https://cdn.shopify.com/s/files/1/0880/6173/9289/files/delivery-truck-icon_1.svg?v=1731104717\" loading=\"lazy\" alt=\"USA flag\" class=\"custom-icon\">\n        <div class=\"text-block-shipping\"><span class=\"free-shipping\">TRACKED </span>Shipping</div> \n    </div>\n</div>"
           }
         },
         "custom_liquid_R3CzNj": {
           "type": "custom_liquid",
           "settings": {
-            "custom_liquid": "<div class=\"refund-box\">\n  <img src=\"https:\/\/cdn.shopify.com\/s\/files\/1\/0880\/6173\/9289\/files\/money-back-guarantee-icon.svg?v=1730323628\" class=\"refund-icon\" alt=\"Money-back guarantee icon\">\n  <div class=\"refund-text\">\n    <strong class=\"refund-title\">Feel better or it's free!<\/strong>\n    <p class=\"refund-description\">If you don't notice a health boost, we'll refund you within <strong>30 days<\/strong> of the product being delivered to you.<\/p>\n  <\/div>\n<\/div>\n\n<style>\n  .refund-box {\n    display: flex;\n    align-items: center;\n    padding: 15px 20px;\n    background-color: #fff6e0;\n    border-radius: 12px;\n    font-family: Arial, sans-serif;\n    \n    margin: auto;\n  }\n\n  .refund-icon {\n    width: 60px;\n    height: 60px;\n    margin-right: 20px;\n  }\n\n  .refund-text {\n    color: #2b2b2b;\n  }\n\n  .refund-title {\n    font-size: 20px;\n    font-weight: bold;\n    color: #2b2b2b;\n    margin: 0 0 5px;\n  }\n\n  .refund-description {\n    font-size: 16px;\n    color: #d29154;\n    margin: 0;\n  }\n\n  .refund-description strong {\n    font-weight: bold;\n    color: #d29154;\n  }\n\n  \n  @media (min-width: 768px) {\n    .refund-box {\n      padding: 20px 25px;\n    }\n    .refund-icon {\n      width: 70px;\n      height: 70px;\n    }\n    .refund-title {\n      font-size: 24px;\n    }\n    .refund-description {\n      font-size: 18px;\n    }\n  }\n\n  \n  @media (max-width: 767px) {\n    .refund-box {\n      padding: 10px 15px;\n      flex-direction: row;\n      align-items: center;\n    }\n    .refund-icon {\n      width: 50px;\n      height: 50px;\n      margin-right: 15px;\n    }\n    .refund-title {\n      font-size: 18px;\n    }\n    .refund-description {\n      font-size: 14px;\n    }\n  }\n<\/style>"
+            "custom_liquid": "<div class=\"refund-box\">\n  <img src=\"https://cdn.shopify.com/s/files/1/0880/6173/9289/files/money-back-guarantee-icon.svg?v=1730323628\" class=\"refund-icon\" alt=\"Money-back guarantee icon\">\n  <div class=\"refund-text\">\n    <strong class=\"refund-title\">Feel better or it's free!</strong>\n    <p class=\"refund-description\">If you don't notice a health boost, we'll refund you within <strong>30 days</strong> of the product being delivered to you.</p>\n  </div>\n</div>\n\n<style>\n  .refund-box {\n    display: flex;\n    align-items: center;\n    padding: 15px 20px;\n    background-color: #fff6e0;\n    border-radius: 12px;\n    font-family: Arial, sans-serif;\n    \n    margin: auto;\n  }\n\n  .refund-icon {\n    width: 60px;\n    height: 60px;\n    margin-right: 20px;\n  }\n\n  .refund-text {\n    color: #2b2b2b;\n  }\n\n  .refund-title {\n    font-size: 20px;\n    font-weight: bold;\n    color: #2b2b2b;\n    margin: 0 0 5px;\n  }\n\n  .refund-description {\n    font-size: 16px;\n    color: #d29154;\n    margin: 0;\n  }\n\n  .refund-description strong {\n    font-weight: bold;\n    color: #d29154;\n  }\n\n  \n  @media (min-width: 768px) {\n    .refund-box {\n      padding: 20px 25px;\n    }\n    .refund-icon {\n      width: 70px;\n      height: 70px;\n    }\n    .refund-title {\n      font-size: 24px;\n    }\n    .refund-description {\n      font-size: 18px;\n    }\n  }\n\n  \n  @media (max-width: 767px) {\n    .refund-box {\n      padding: 10px 15px;\n      flex-direction: row;\n      align-items: center;\n    }\n    .refund-icon {\n      width: 50px;\n      height: 50px;\n      margin-right: 15px;\n    }\n    .refund-title {\n      font-size: 18px;\n    }\n    .refund-description {\n      font-size: 14px;\n    }\n  }\n</style>"
           }
         },
         "tabcustom_4eUcTG": {
@@ -98,7 +107,7 @@
           "settings": {
             "title_tab": "Directions to Use",
             "icon": "checkmark",
-            "answer_content": "<p><strong>Directions for Use - Simply DHT Blocker:<\/strong><\/p><p>● <strong>Daily Dosage:<\/strong> Take two capsules per day with water.<\/p><p>● <strong>Time of Day:<\/strong> For best results, take one capsule in the morning and one in the evening.<\/p><p>● <strong>With or Without Food:<\/strong> The supplement can be taken with or without food, depending on your preference.<\/p><p>● <strong>Stay Consistent:<\/strong> Consistency is key. Make sure to take the capsules daily for optimal results.<\/p><p>● <strong>Storage:<\/strong> Store in a cool, dry place away from direct sunlight.<\/p><p>Always consult with a healthcare professional before starting any new supplement, especially if you are pregnant, nursing, or have a medical condition.<\/p>",
+            "answer_content": "<p><strong>Directions for Use - Simply DHT Blocker:</strong></p><p>● <strong>Daily Dosage:</strong> Take two capsules per day with water.</p><p>● <strong>Time of Day:</strong> For best results, take one capsule in the morning and one in the evening.</p><p>● <strong>With or Without Food:</strong> The supplement can be taken with or without food, depending on your preference.</p><p>● <strong>Stay Consistent:</strong> Consistency is key. Make sure to take the capsules daily for optimal results.</p><p>● <strong>Storage:</strong> Store in a cool, dry place away from direct sunlight.</p><p>Always consult with a healthcare professional before starting any new supplement, especially if you are pregnant, nursing, or have a medical condition.</p>",
             "page": ""
           }
         },
@@ -107,7 +116,7 @@
           "settings": {
             "title_tab": "Ingredients",
             "icon": "leaf",
-            "answer_content": "<p><strong>Ingredients in Simply DHT Blocker:<\/strong><\/p><p>● <strong>Saw Palmetto:<\/strong> A natural DHT blocker that helps prevent hair loss and supports healthy hair growth.<\/p><p>● <strong>Horsetail Extract:<\/strong> Promotes collagen production, reduces inflammation, and supports skin health.<\/p><p>● <strong>Bamboo Extract:<\/strong> Improves the appearance of skin discoloration and enhances skin elasticity.<\/p><p>● <strong>Stinging Nettle:<\/strong> Contains natural astringent properties that help treat skin conditions and acts as a DHT blocker for hair health.<\/p><p>● <strong>Spirulina:<\/strong> Rich in vitamins and minerals, fights bacteria, reduces inflammation, and supports skin clarity.<\/p><p>● <strong>Alfalfa:<\/strong> Contains antioxidants and essential nutrients like vitamin K, copper, and magnesium, which promote healthy hair and skin.<\/p>",
+            "answer_content": "<p><strong>Ingredients in Simply DHT Blocker:</strong></p><p>● <strong>Saw Palmetto:</strong> A natural DHT blocker that helps prevent hair loss and supports healthy hair growth.</p><p>● <strong>Horsetail Extract:</strong> Promotes collagen production, reduces inflammation, and supports skin health.</p><p>● <strong>Bamboo Extract:</strong> Improves the appearance of skin discoloration and enhances skin elasticity.</p><p>● <strong>Stinging Nettle:</strong> Contains natural astringent properties that help treat skin conditions and acts as a DHT blocker for hair health.</p><p>● <strong>Spirulina:</strong> Rich in vitamins and minerals, fights bacteria, reduces inflammation, and supports skin clarity.</p><p>● <strong>Alfalfa:</strong> Contains antioxidants and essential nutrients like vitamin K, copper, and magnesium, which promote healthy hair and skin.</p>",
             "page": ""
           }
         },
@@ -116,12 +125,12 @@
           "settings": {
             "title_tab": "Shipping information",
             "icon": "truck",
-            "answer_content": "<p><strong>Standard Shipping:<\/strong> Shipping costs are calculated at checkout for individual products. We aim to process and ship all orders within 1-3 business days. Delivery typically takes 3-7 business days after dispatch, depending on your location.<\/p><p><strong>Free Shipping:<\/strong> Enjoy free shipping when you spend over $70.<\/p><p><strong>Tracking Information:<\/strong> Once your order is shipped, a tracking number will be sent to your email for real-time updates.<\/p><p><strong>International Shipping:<\/strong> We now offer international shipping!<\/p>",
+            "answer_content": "<p><strong>Standard Shipping:</strong> Shipping costs are calculated at checkout for individual products. We aim to process and ship all orders within 1-3 business days. Delivery typically takes 3-7 business days after dispatch, depending on your location.</p><p><strong>Free Shipping:</strong> Enjoy free shipping when you spend over $70.</p><p><strong>Tracking Information:</strong> Once your order is shipped, a tracking number will be sent to your email for real-time updates.</p><p><strong>International Shipping:</strong> We now offer international shipping!</p>",
             "page": ""
           }
         },
         "areviews_reviews_importer_areviews_title_rating_89429B": {
-          "type": "shopify:\/\/apps\/areviews-reviews-importer\/blocks\/AreviewsTitleRating\/ab0ec5fe-c95b-4fd6-bfb8-db2a30d0756f",
+          "type": "shopify://apps/areviews-reviews-importer/blocks/AreviewsTitleRating/ab0ec5fe-c95b-4fd6-bfb8-db2a30d0756f",
           "settings": {}
         }
       },
@@ -202,7 +211,7 @@
           "type": "content",
           "settings": {
             "title_tab": "Material",
-            "answer_content": "<p>Use collapsible tabs for more detailed information that will help customers make a purchasing decision.<\/p><p>Ex: Shipping and return policies, size guides, and other common questions.<\/p>",
+            "answer_content": "<p>Use collapsible tabs for more detailed information that will help customers make a purchasing decision.</p><p>Ex: Shipping and return policies, size guides, and other common questions.</p>",
             "page": "material"
           }
         },
@@ -251,7 +260,7 @@
         "paragraph_TaqXFc": {
           "type": "paragraph",
           "settings": {
-            "subtext": "<h2 style=\"text-align: center; color: white; font-weight: bold;\">\n    <span style=\"color: #FF9500;\">Natural Support<\/span> Inside and Out\n<\/h2>"
+            "subtext": "<h2 style=\"text-align: center; color: white; font-weight: bold;\">\n    <span style=\"color: #FF9500;\">Natural Support</span> Inside and Out\n</h2>"
           }
         }
       },
@@ -267,7 +276,7 @@
         "title_color": "#ffffff",
         "title_top": "Sub Title Top",
         "title": "Talk about your brand",
-        "text": "<p>Use this text to share information about your brand with your customers. Describe a product, share announcements, or welcome customers to your store.<\/p>",
+        "text": "<p>Use this text to share information about your brand with your customers. Describe a product, share announcements, or welcome customers to your store.</p>",
         "align-heading": "center",
         "paddingsection": "30px 0px 10px 0px",
         "paddingmobile": "20px 0px 5px 0px",
@@ -282,28 +291,28 @@
           "type": "text_icon",
           "settings": {
             "block_title": "Powerful Hair Support",
-            "block_des": "<p>Promotes hair growth and prevents hair thinning with natural DHT blockers like Saw Palmetto and Stinging Nettle.<\/p>"
+            "block_des": "<p>Promotes hair growth and prevents hair thinning with natural DHT blockers like Saw Palmetto and Stinging Nettle.</p>"
           }
         },
         "template--19541120287040__b01596d8-87db-4853-92d9-23e7da360734-text_icon-2": {
           "type": "text_icon",
           "settings": {
-            "block_title": "<b> Radiant Skin<\/b>",
-            "block_des": "<p>Packed with Bamboo and Horsetail extracts to help clear acne, reduce blemishes, and enhance your skin’s glow.<\/p>"
+            "block_title": "<b> Radiant Skin</b>",
+            "block_des": "<p>Packed with Bamboo and Horsetail extracts to help clear acne, reduce blemishes, and enhance your skin’s glow.</p>"
           }
         },
         "template--19541120287040__b01596d8-87db-4853-92d9-23e7da360734-text_icon-3": {
           "type": "text_icon",
           "settings": {
-            "block_title": "<b> Stronger Nails<\/b>",
-            "block_des": "<p>Essential vitamins and minerals, including Spirulina and Alfalfa, for healthier, stronger nails that resist breakage.<\/p>"
+            "block_title": "<b> Stronger Nails</b>",
+            "block_des": "<p>Essential vitamins and minerals, including Spirulina and Alfalfa, for healthier, stronger nails that resist breakage.</p>"
           }
         },
         "template--19541120287040__b01596d8-87db-4853-92d9-23e7da360734-text_icon-4": {
           "type": "text_icon",
           "settings": {
             "block_title": "Natural & Clean",
-            "block_des": "<p>Non-GMO, gluten-free, sugar-free, and preservative-free formula that’s gentle on your body.<\/p>"
+            "block_des": "<p>Non-GMO, gluten-free, sugar-free, and preservative-free formula that’s gentle on your body.</p>"
           }
         }
       },
@@ -318,7 +327,7 @@
         "animation": "",
         "section_css_class": "",
         "setwidth": "full",
-        "section_image": "shopify:\/\/shop_images\/DHT_IN_HAND.png",
+        "section_image": "shopify://shop_images/DHT_IN_HAND.png",
         "block_text_color": "#ffffff",
         "block_text_bg": "#035057",
         "paddingsection": "0px 0px 0px 0px",
@@ -333,36 +342,36 @@
         "item_LWDAPD": {
           "type": "item",
           "settings": {
-            "code": "<b>No Preservatives<\/b>",
-            "image": "shopify:\/\/shop_images\/no_p.svg"
+            "code": "<b>No Preservatives</b>",
+            "image": "shopify://shop_images/no_p.svg"
           }
         },
         "item_iCJ7cr": {
           "type": "item",
           "settings": {
-            "code": "<b>Beauty Backed by Science<\/b>",
-            "image": "shopify:\/\/shop_images\/Test_Tube.svg"
+            "code": "<b>Beauty Backed by Science</b>",
+            "image": "shopify://shop_images/Test_Tube.svg"
           }
         },
         "item_hqE4nQ": {
           "type": "item",
           "settings": {
-            "code": "<b>Proudly 3rd Party Quality Tested<\/b>",
-            "image": "shopify:\/\/shop_images\/Checked_14352391-7e04-448c-8145-02125ac808b4.svg"
+            "code": "<b>Proudly 3rd Party Quality Tested</b>",
+            "image": "shopify://shop_images/Checked_14352391-7e04-448c-8145-02125ac808b4.svg"
           }
         },
         "item_GcEQt8": {
           "type": "item",
           "settings": {
-            "code": "<b>ZERO Nasty Additives<\/b>",
-            "image": "shopify:\/\/shop_images\/Unavailable.svg"
+            "code": "<b>ZERO Nasty Additives</b>",
+            "image": "shopify://shop_images/Unavailable.svg"
           }
         },
         "item_JtcAmT": {
           "type": "item",
           "settings": {
-            "code": "<b>Blocks DHT Naturally\n<\/b>",
-            "image": "shopify:\/\/shop_images\/Psychiatry--Streamline-Rounded----Material-Symbols.svg"
+            "code": "<b>Blocks DHT Naturally\n</b>",
+            "image": "shopify://shop_images/Psychiatry--Streamline-Rounded----Material-Symbols.svg"
           }
         }
       },
@@ -406,11 +415,11 @@
             "subtitle": "",
             "title": "",
             "size_text": "h3",
-            "text": "<h2 style=\"text-align: center; color: white; font-weight: bold;\">\n    What is <span style=\"color: #FF9500;\">DHT?<\/span>\n<\/h2>",
-            "answer_content": "<p><strong>“Dihydrotestosterone (DHT) is a hormone derived from testosterone, which can contribute to hair loss and acne by shrinking hair follicles and stimulating excessive sebum production in the skin. This occurs because DHT binds to androgen receptors in the scalp and sebaceous glands.<br\/> <br\/><\/strong><\/p><p><strong>Our DHT blocker uses a combination of vitamins, herbs, and botanical extracts, including saw palmetto and stinging nettle which support blocking the production of DHT.<br\/><br\/>This DHT blocking formula is rich in antioxidants, supports immune function, gut health, and overall body vitality. <\/strong><\/p>",
+            "text": "<h2 style=\"text-align: center; color: white; font-weight: bold;\">\n    What is <span style=\"color: #FF9500;\">DHT?</span>\n</h2>",
+            "answer_content": "<p><strong>“Dihydrotestosterone (DHT) is a hormone derived from testosterone, which can contribute to hair loss and acne by shrinking hair follicles and stimulating excessive sebum production in the skin. This occurs because DHT binds to androgen receptors in the scalp and sebaceous glands.<br/> <br/></strong></p><p><strong>Our DHT blocker uses a combination of vitamins, herbs, and botanical extracts, including saw palmetto and stinging nettle which support blocking the production of DHT.<br/><br/>This DHT blocking formula is rich in antioxidants, supports immune function, gut health, and overall body vitality. </strong></p>",
             "style_btn": "btn-theme",
             "button": "BUY NOW AND SAVE 40%",
-            "link": "shopify:\/\/products\/dht-blocker",
+            "link": "shopify://products/dht-blocker",
             "enable_padding": true,
             "align": "center"
           }
@@ -419,7 +428,7 @@
           "type": "image_block",
           "disabled": true,
           "settings": {
-            "image": "shopify:\/\/shop_images\/dht_sitting_in_sand.png"
+            "image": "shopify://shop_images/dht_sitting_in_sand.png"
           }
         }
       },
@@ -448,36 +457,36 @@
         "item_hppdH4": {
           "type": "item",
           "settings": {
-            "code": "<b>No Preservatives<\/b>",
-            "image": "shopify:\/\/shop_images\/no_p.svg"
+            "code": "<b>No Preservatives</b>",
+            "image": "shopify://shop_images/no_p.svg"
           }
         },
         "item_4WCGmP": {
           "type": "item",
           "settings": {
-            "code": "<b>Beauty Backed by Science<\/b>",
-            "image": "shopify:\/\/shop_images\/Test_Tube.svg"
+            "code": "<b>Beauty Backed by Science</b>",
+            "image": "shopify://shop_images/Test_Tube.svg"
           }
         },
         "item_mkm8F8": {
           "type": "item",
           "settings": {
-            "code": "<b>Proudly 3rd Party Quality Tested<\/b>",
-            "image": "shopify:\/\/shop_images\/Checked_14352391-7e04-448c-8145-02125ac808b4.svg"
+            "code": "<b>Proudly 3rd Party Quality Tested</b>",
+            "image": "shopify://shop_images/Checked_14352391-7e04-448c-8145-02125ac808b4.svg"
           }
         },
         "item_ibfzfz": {
           "type": "item",
           "settings": {
-            "code": "<b>ZERO Nasty Additives<\/b>",
-            "image": "shopify:\/\/shop_images\/Unavailable.svg"
+            "code": "<b>ZERO Nasty Additives</b>",
+            "image": "shopify://shop_images/Unavailable.svg"
           }
         },
         "item_RFpFfa": {
           "type": "item",
           "settings": {
-            "code": "<b>Blocks DHT Naturally\n<\/b>",
-            "image": "shopify:\/\/shop_images\/Psychiatry--Streamline-Rounded----Material-Symbols.svg"
+            "code": "<b>Blocks DHT Naturally\n</b>",
+            "image": "shopify://shop_images/Psychiatry--Streamline-Rounded----Material-Symbols.svg"
           }
         }
       },
@@ -515,29 +524,29 @@
         "video_block_xK7FAy": {
           "type": "video_block",
           "settings": {
-            "video_url": "https:\/\/cdn.shopify.com\/videos\/c\/o\/v\/3f6f16265fd64b4f83f19ba98723c94a.mp4",
-            "overlay_image": "shopify:\/\/shop_images\/2025-06-06_19-55-47.png"
+            "video_url": "https://cdn.shopify.com/videos/c/o/v/3f6f16265fd64b4f83f19ba98723c94a.mp4",
+            "overlay_image": "shopify://shop_images/2025-06-06_19-55-47.png"
           }
         },
         "video_block_dPwcyU": {
           "type": "video_block",
           "settings": {
-            "video_url": "https:\/\/cdn.shopify.com\/videos\/c\/o\/v\/f16dcdc26a48481ca0eaf6d9a7e079c6.mp4",
-            "overlay_image": "shopify:\/\/shop_images\/2025-06-06_22-19-58.png"
+            "video_url": "https://cdn.shopify.com/videos/c/o/v/f16dcdc26a48481ca0eaf6d9a7e079c6.mp4",
+            "overlay_image": "shopify://shop_images/2025-06-06_22-19-58.png"
           }
         },
         "video_block_wkbxLE": {
           "type": "video_block",
           "settings": {
-            "video_url": "https:\/\/cdn.shopify.com\/videos\/c\/o\/v\/305c57cd232d41c9a812c8abdaab8617.mp4",
-            "overlay_image": "shopify:\/\/shop_images\/image3.png"
+            "video_url": "https://cdn.shopify.com/videos/c/o/v/305c57cd232d41c9a812c8abdaab8617.mp4",
+            "overlay_image": "shopify://shop_images/image3.png"
           }
         },
         "video_block_aBMhPX": {
           "type": "video_block",
           "settings": {
-            "video_url": "https:\/\/cdn.shopify.com\/videos\/c\/o\/v\/40016beb75d0460182f4b5413d80d37f.mp4",
-            "overlay_image": "shopify:\/\/shop_images\/image4.png"
+            "video_url": "https://cdn.shopify.com/videos/c/o/v/40016beb75d0460182f4b5413d80d37f.mp4",
+            "overlay_image": "shopify://shop_images/image4.png"
           }
         }
       },
@@ -549,7 +558,7 @@
       ],
       "name": "Video slider",
       "settings": {
-        "title": "<strong>1,000+<\/strong> Testimonials From Happy Customers"
+        "title": "<strong>1,000+</strong> Testimonials From Happy Customers"
       }
     },
     "rich_text_Um7JVD": {
@@ -576,7 +585,7 @@
         "title_color": "#212b36",
         "title_top": "Sub Title Top",
         "title": "Talk about your brand",
-        "text": "<p>Use this text to share information about your brand with your customers. Describe a product, share announcements, or welcome customers to your store.<\/p>",
+        "text": "<p>Use this text to share information about your brand with your customers. Describe a product, share announcements, or welcome customers to your store.</p>",
         "align-heading": "center",
         "paddingsection": "10px 0px 20px 0px",
         "paddingmobile": "0px 0px 30px 0px",
@@ -608,7 +617,7 @@
         "title_color": "#212b36",
         "title_top": "Sub Title Top",
         "title": "Talk about your brand",
-        "text": "<p>Use this text to share information about your brand with your customers. Describe a product, share announcements, or welcome customers to your store.<\/p>",
+        "text": "<p>Use this text to share information about your brand with your customers. Describe a product, share announcements, or welcome customers to your store.</p>",
         "align-heading": "center",
         "paddingsection": "0px 0px 20px 0px",
         "paddingmobile": "0px 0px 30px 0px",
@@ -622,7 +631,7 @@
         "image_block_9p6JdE": {
           "type": "image_block",
           "settings": {
-            "image": "shopify:\/\/shop_images\/ChatGPT_Image_Apr_15_2025_04_15_16_PM.png"
+            "image": "shopify://shop_images/ChatGPT_Image_Apr_15_2025_04_15_16_PM.png"
           }
         },
         "text_block_gYXWC8": {
@@ -634,11 +643,11 @@
             "subtitle": "",
             "title": "",
             "size_text": "h3",
-            "text": "<div class=\"review-stars\" style=\"display: flex; justify-content: center; margin-bottom: 8px;\">\n    <svg xmlns=\"http:\/\/www.w3.org\/2000\/svg\" viewbox=\"0 0 24 24\" width=\"16\" height=\"16\" style=\"margin-right: 3px; fill: #FF9500;\">\n      <path d=\"M12 17.27L18.18 21l-1.64-7.03L22 9.24l-7.19-.61L12 2 9.19 8.63 2 9.24l5.46 4.73L5.82 21z\" stroke-linejoin=\"round\" stroke-linecap=\"round\"><\/path>\n    <\/svg>\n    <svg xmlns=\"http:\/\/www.w3.org\/2000\/svg\" viewbox=\"0 0 24 24\" width=\"16\" height=\"16\" style=\"margin-right: 3px; fill: #FF9500;\">\n      <path d=\"M12 17.27L18.18 21l-1.64-7.03L22 9.24l-7.19-.61L12 2 9.19 8.63 2 9.24l5.46 4.73L5.82 21z\" stroke-linejoin=\"round\" stroke-linecap=\"round\"><\/path>\n    <\/svg>\n    <svg xmlns=\"http:\/\/www.w3.org\/2000\/svg\" viewbox=\"0 0 24 24\" width=\"16\" height=\"16\" style=\"margin-right: 3px; fill: #FF9500;\">\n      <path d=\"M12 17.27L18.18 21l-1.64-7.03L22 9.24l-7.19-.61L12 2 9.19 8.63 2 9.24l5.46 4.73L5.82 21z\" stroke-linejoin=\"round\" stroke-linecap=\"round\"><\/path>\n    <\/svg>\n    <svg xmlns=\"http:\/\/www.w3.org\/2000\/svg\" viewbox=\"0 0 24 24\" width=\"16\" height=\"16\" style=\"margin-right: 3px; fill: #FF9500;\">\n      <path d=\"M12 17.27L18.18 21l-1.64-7.03L22 9.24l-7.19-.61L12 2 9.19 8.63 2 9.24l5.46 4.73L5.82 21z\" stroke-linejoin=\"round\" stroke-linecap=\"round\"><\/path>\n    <\/svg>\n    <svg xmlns=\"http:\/\/www.w3.org\/2000\/svg\" viewbox=\"0 0 24 24\" width=\"16\" height=\"16\" style=\"fill: #FF9500;\">\n      <path d=\"M12 17.27L18.18 21l-1.64-7.03L22 9.24l-7.19-.61L12 2 9.19 8.63 2 9.24l5.46 4.73L5.82 21z\" stroke-linejoin=\"round\" stroke-linecap=\"round\"><\/path>\n    <\/svg>\n  <\/div>\n\n<h3 style=\"text-align: center; color: black; font-weight: bold;\">\n    My Hair Has Never <span style=\"color: #FF9500;\">Looked Better<\/span>!\n<\/h3>",
-            "answer_content": "<p>This DHT Blocker has changed my life! 12 months in and my hair transformation has been insane. I've been using this formula and the topical serum and it's worked wonders. - Dan<\/p>",
+            "text": "<div class=\"review-stars\" style=\"display: flex; justify-content: center; margin-bottom: 8px;\">\n    <svg xmlns=\"http://www.w3.org/2000/svg\" viewbox=\"0 0 24 24\" width=\"16\" height=\"16\" style=\"margin-right: 3px; fill: #FF9500;\">\n      <path d=\"M12 17.27L18.18 21l-1.64-7.03L22 9.24l-7.19-.61L12 2 9.19 8.63 2 9.24l5.46 4.73L5.82 21z\" stroke-linejoin=\"round\" stroke-linecap=\"round\"></path>\n    </svg>\n    <svg xmlns=\"http://www.w3.org/2000/svg\" viewbox=\"0 0 24 24\" width=\"16\" height=\"16\" style=\"margin-right: 3px; fill: #FF9500;\">\n      <path d=\"M12 17.27L18.18 21l-1.64-7.03L22 9.24l-7.19-.61L12 2 9.19 8.63 2 9.24l5.46 4.73L5.82 21z\" stroke-linejoin=\"round\" stroke-linecap=\"round\"></path>\n    </svg>\n    <svg xmlns=\"http://www.w3.org/2000/svg\" viewbox=\"0 0 24 24\" width=\"16\" height=\"16\" style=\"margin-right: 3px; fill: #FF9500;\">\n      <path d=\"M12 17.27L18.18 21l-1.64-7.03L22 9.24l-7.19-.61L12 2 9.19 8.63 2 9.24l5.46 4.73L5.82 21z\" stroke-linejoin=\"round\" stroke-linecap=\"round\"></path>\n    </svg>\n    <svg xmlns=\"http://www.w3.org/2000/svg\" viewbox=\"0 0 24 24\" width=\"16\" height=\"16\" style=\"margin-right: 3px; fill: #FF9500;\">\n      <path d=\"M12 17.27L18.18 21l-1.64-7.03L22 9.24l-7.19-.61L12 2 9.19 8.63 2 9.24l5.46 4.73L5.82 21z\" stroke-linejoin=\"round\" stroke-linecap=\"round\"></path>\n    </svg>\n    <svg xmlns=\"http://www.w3.org/2000/svg\" viewbox=\"0 0 24 24\" width=\"16\" height=\"16\" style=\"fill: #FF9500;\">\n      <path d=\"M12 17.27L18.18 21l-1.64-7.03L22 9.24l-7.19-.61L12 2 9.19 8.63 2 9.24l5.46 4.73L5.82 21z\" stroke-linejoin=\"round\" stroke-linecap=\"round\"></path>\n    </svg>\n  </div>\n\n<h3 style=\"text-align: center; color: black; font-weight: bold;\">\n    My Hair Has Never <span style=\"color: #FF9500;\">Looked Better</span>!\n</h3>",
+            "answer_content": "<p>This DHT Blocker has changed my life! 12 months in and my hair transformation has been insane. I've been using this formula and the topical serum and it's worked wonders. - Dan</p>",
             "style_btn": "btn-theme",
             "button": "BUY NOW AND SAVE 40%",
-            "link": "shopify:\/\/products\/dht-blocker",
+            "link": "shopify://products/dht-blocker",
             "enable_padding": true,
             "align": "center"
           }
@@ -670,7 +679,7 @@
           "type": "quote",
           "settings": {
             "title": "LIFE CHANGING 😭",
-            "avatar": "shopify:\/\/shop_images\/IMG_8329.jpg",
+            "avatar": "shopify://shop_images/IMG_8329.jpg",
             "author": "Julian",
             "info": "",
             "rate": 5,
@@ -681,7 +690,7 @@
           "type": "quote",
           "settings": {
             "title": "Love the Natural Ingredients!",
-            "avatar": "shopify:\/\/shop_images\/IMG_8332.jpg",
+            "avatar": "shopify://shop_images/IMG_8332.jpg",
             "author": "Kendra",
             "info": "",
             "rate": 5,
@@ -692,7 +701,7 @@
           "type": "quote",
           "settings": {
             "title": "Noticeable Improvement",
-            "avatar": "shopify:\/\/shop_images\/4cc3e37596ca439bba6974da1a6e35ca_tplv-omjb5zjo8w-resize-jpeg_350_350_1.jpg",
+            "avatar": "shopify://shop_images/4cc3e37596ca439bba6974da1a6e35ca_tplv-omjb5zjo8w-resize-jpeg_350_350_1.jpg",
             "author": "Peter",
             "info": "",
             "rate": 5,
@@ -711,7 +720,7 @@
         "bgsection": "#f1f5f4",
         "title_top": "",
         "title": "",
-        "des": "<h2 style=\"text-align: center; color: black; font-weight: bold;\">\n    <span style=\"color: #FF9500;\">10,245+<\/span> People Are Already Thriving With Simply\n<\/h2>",
+        "des": "<h2 style=\"text-align: center; color: black; font-weight: bold;\">\n    <span style=\"color: #FF9500;\">10,245+</span> People Are Already Thriving With Simply\n</h2>",
         "align-heading": "center",
         "aligntext": "text-center",
         "style": "style-2",
@@ -738,7 +747,7 @@
         "image_block_KCKfq9": {
           "type": "image_block",
           "settings": {
-            "image": "shopify:\/\/shop_images\/dht_sitting_in_sand.png"
+            "image": "shopify://shop_images/dht_sitting_in_sand.png"
           }
         },
         "text_block_ciGPCr": {
@@ -750,11 +759,11 @@
             "subtitle": "",
             "title": "",
             "size_text": "h3",
-            "text": "<h2 style=\"text-align: center; color: black; font-weight: bold;\">\n    We're Simply <span style=\"color: #FF9500;\">Simple<\/span>.\n<\/h2>",
-            "answer_content": "<p>Simply's DHT Blocker is a powerful blend of natural ingredients like Saw Palmetto, Horsetail, and Spirulina. This formula promotes hair growth and improves skin radiance by blocking DHT. <\/p><p>Rooted in natural health traditions, our complex targets hair loss, acne, and skin texture. Packed with antioxidants and anti-inflammatory benefits, it’s your go-to for enhancing beauty from the inside out.<\/p>",
+            "text": "<h2 style=\"text-align: center; color: black; font-weight: bold;\">\n    We're Simply <span style=\"color: #FF9500;\">Simple</span>.\n</h2>",
+            "answer_content": "<p>Simply's DHT Blocker is a powerful blend of natural ingredients like Saw Palmetto, Horsetail, and Spirulina. This formula promotes hair growth and improves skin radiance by blocking DHT. </p><p>Rooted in natural health traditions, our complex targets hair loss, acne, and skin texture. Packed with antioxidants and anti-inflammatory benefits, it’s your go-to for enhancing beauty from the inside out.</p>",
             "style_btn": "btn-theme",
             "button": "BUY NOW AND SAVE 40%",
-            "link": "shopify:\/\/products\/dht-blocker",
+            "link": "shopify://products/dht-blocker",
             "enable_padding": true,
             "align": "center"
           }
@@ -785,7 +794,7 @@
         "video_qfpHVN": {
           "type": "video",
           "settings": {
-            "video_url": "https:\/\/cdn.shopify.com\/videos\/c\/o\/v\/f2d8eaf22f9a40078e4388d0bda87ac9.mov",
+            "video_url": "https://cdn.shopify.com/videos/c/o/v/f2d8eaf22f9a40078e4388d0bda87ac9.mov",
             "image_link": "#t543tt4t",
             "enable_play_video": true
           }
@@ -793,7 +802,7 @@
         "video_BAWp9d": {
           "type": "video",
           "settings": {
-            "video_url": "https:\/\/cdn.shopify.com\/videos\/c\/o\/v\/61dedbdfe9244293a32485960604bb1b.mp4",
+            "video_url": "https://cdn.shopify.com/videos/c/o/v/61dedbdfe9244293a32485960604bb1b.mp4",
             "image_link": "#fwg",
             "enable_play_video": true
           }
@@ -801,7 +810,7 @@
         "video_hThaDz": {
           "type": "video",
           "settings": {
-            "video_url": "https:\/\/cdn.shopify.com\/videos\/c\/o\/v\/09cae636c9cd4790850175cf28d83cb9.mov",
+            "video_url": "https://cdn.shopify.com/videos/c/o/v/09cae636c9cd4790850175cf28d83cb9.mov",
             "image_link": "#ewfwef",
             "enable_play_video": true
           }
@@ -819,7 +828,7 @@
         "bgsection": "#ffffff",
         "title_top": "Sub Title Top",
         "title": "Instagram Customize",
-        "des": "<h2 style=\"text-align: center; color: black; font-weight: bold;\">\n    Let's see what all the <span style=\"color: #FF9500;\">hype<\/span> is about.\n<\/h2>",
+        "des": "<h2 style=\"text-align: center; color: black; font-weight: bold;\">\n    Let's see what all the <span style=\"color: #FF9500;\">hype</span> is about.\n</h2>",
         "align-heading": "center",
         "image_size": "portrait",
         "arrows": false,
@@ -844,9 +853,9 @@
             "paddingblock": "0px 0px 0px 0px",
             "border_banner": "rgba(0,0,0,0)",
             "bg_banner": "rgba(0,0,0,0)",
-            "image": "shopify:\/\/shop_images\/DOUBLE.png",
+            "image": "shopify://shop_images/DOUBLE.png",
             "width": "4",
-            "description": "<p><b>Double the Defense<\/b><\/p>\n<h3 class=\"mb-2\">2 MONTH PACK <\/h3>",
+            "description": "<p><b>Double the Defense</b></p>\n<h3 class=\"mb-2\">2 MONTH PACK </h3>",
             "button_text": "BUY TWO - $49.99",
             "button_link": "",
             "style_btn": "btn-theme",
@@ -861,9 +870,9 @@
             "paddingblock": "0px 0px 0px 0px",
             "border_banner": "#ffffff",
             "bg_banner": "#ffffff",
-            "image": "shopify:\/\/shop_images\/SINGLE.png",
+            "image": "shopify://shop_images/SINGLE.png",
             "width": "4",
-            "description": "<p><b>Start Your Simple Journey<\/b><\/p>\n<h3 class=\"mb-2\">30 DAY TRIAL<\/h3>",
+            "description": "<p><b>Start Your Simple Journey</b></p>\n<h3 class=\"mb-2\">30 DAY TRIAL</h3>",
             "button_text": "BUY NOW - $29.99",
             "button_link": "",
             "style_btn": "btn-theme",
@@ -878,9 +887,9 @@
             "paddingblock": "0px 0px 0px 0px",
             "border_banner": "rgba(0,0,0,0)",
             "bg_banner": "rgba(0,0,0,0)",
-            "image": "shopify:\/\/shop_images\/TRIPLE.png",
+            "image": "shopify://shop_images/TRIPLE.png",
             "width": "4",
-            "description": "<p><b>Triple Boost Bundle<\/b><\/p>\n<h3 class=\"mb-2\">3 MONTH PACK<\/h3>",
+            "description": "<p><b>Triple Boost Bundle</b></p>\n<h3 class=\"mb-2\">3 MONTH PACK</h3>",
             "button_text": "BUY THREE - $69.99",
             "button_link": "",
             "style_btn": "btn-theme",
@@ -901,7 +910,7 @@
         "bgsection": "#ffffff",
         "title_top": "Sub Title Top",
         "title": "Grid banner Text",
-        "des": "<h2 style=\"text-align: center; color: black; font-weight: bold;\">\n    Transform Your Health For Only <span style=\"color: #FF9500;\">$0.99\/Day!<\/span>\n<\/h2>",
+        "des": "<h2 style=\"text-align: center; color: black; font-weight: bold;\">\n    Transform Your Health For Only <span style=\"color: #FF9500;\">$0.99/Day!</span>\n</h2>",
         "align-heading": "center",
         "no_gutter": false,
         "paddingsection": "0px 0px 0px 0px",
@@ -916,7 +925,7 @@
         "html_NmxJCJ": {
           "type": "html",
           "settings": {
-            "code": "<style>\n    .banner-image {\n        width: 100%;\n        height: auto;\n        display: block; \n    }\n\n    \n    .mobile-banner {\n        display: none;\n    }\n\n    \n    .desktop-banner {\n        display: block;\n    }\n\n    @media (max-width: 767px) {\n        \n        .mobile-banner {\n            display: block;\n            margin-bottom: -25px; \n        }\n        \n        .desktop-banner {\n            display: none;\n        }\n    }\n\n    \n    .banner-container {\n        margin: 0;\n        padding: 0;\n    }\n<\/style>\n\n<div class=\"banner-container\">\n    <!-- Desktop Banner -->\n    <a href=\"#shopify-section-template--23675444920601__main\" class=\"desktop-banner\">\n        <img src=\"https:\/\/cdn.shopify.com\/s\/files\/1\/0880\/6173\/9289\/files\/a.jpg?v=1731959056\" alt=\"Desktop Banner\" class=\"banner-image\">\n    <\/a>\n\n    <!-- Mobile Banner -->\n    <a href=\"#shopify-section-template--23675444920601__main\" class=\"mobile-banner\">\n        <img src=\"https:\/\/cdn.shopify.com\/s\/files\/1\/0880\/6173\/9289\/files\/d.jpg?v=1731962058\" alt=\"Mobile Banner\" class=\"banner-image\">\n    <\/a>\n<\/div>",
+            "code": "<style>\n    .banner-image {\n        width: 100%;\n        height: auto;\n        display: block; \n    }\n\n    \n    .mobile-banner {\n        display: none;\n    }\n\n    \n    .desktop-banner {\n        display: block;\n    }\n\n    @media (max-width: 767px) {\n        \n        .mobile-banner {\n            display: block;\n            margin-bottom: -25px; \n        }\n        \n        .desktop-banner {\n            display: none;\n        }\n    }\n\n    \n    .banner-container {\n        margin: 0;\n        padding: 0;\n    }\n</style>\n\n<div class=\"banner-container\">\n    <!-- Desktop Banner -->\n    <a href=\"#shopify-section-template--23675444920601__main\" class=\"desktop-banner\">\n        <img src=\"https://cdn.shopify.com/s/files/1/0880/6173/9289/files/a.jpg?v=1731959056\" alt=\"Desktop Banner\" class=\"banner-image\">\n    </a>\n\n    <!-- Mobile Banner -->\n    <a href=\"#shopify-section-template--23675444920601__main\" class=\"mobile-banner\">\n        <img src=\"https://cdn.shopify.com/s/files/1/0880/6173/9289/files/d.jpg?v=1731962058\" alt=\"Mobile Banner\" class=\"banner-image\">\n    </a>\n</div>",
             "width": "100%",
             "align": "center"
           }
@@ -964,56 +973,56 @@
           "type": "faq",
           "settings": {
             "faq_title": "What is Simply DHT Blocker?",
-            "faq_des": "<p>Simply DHT Blocker is a premium supplement designed to support hair growth, skin health, and nail strength. It contains a blend of vitamins, minerals, and natural herbs that work together to help prevent hair loss and promote a healthier appearance.<\/p>"
+            "faq_des": "<p>Simply DHT Blocker is a premium supplement designed to support hair growth, skin health, and nail strength. It contains a blend of vitamins, minerals, and natural herbs that work together to help prevent hair loss and promote a healthier appearance.</p>"
           }
         },
         "template--14684877652053__bcb1cba3-80fc-49a2-a033-40cf0618e9c8-16659371170e440ef7-1": {
           "type": "faq",
           "settings": {
             "faq_title": "How does Simply DHT Blocker help with hair loss?",
-            "faq_des": "<p>The supplement contains ingredients like Saw Palmetto and Stinging Nettle, which are known for their natural DHT-blocking properties. DHT is a hormone linked to hair loss, and blocking its effects may help reduce hair shedding and support healthy hair growth.<\/p>"
+            "faq_des": "<p>The supplement contains ingredients like Saw Palmetto and Stinging Nettle, which are known for their natural DHT-blocking properties. DHT is a hormone linked to hair loss, and blocking its effects may help reduce hair shedding and support healthy hair growth.</p>"
           }
         },
         "template--14684877652053__bcb1cba3-80fc-49a2-a033-40cf0618e9c8-16659371170e440ef7-2": {
           "type": "faq",
           "settings": {
             "faq_title": "Can Simply DHT Blocker improve skin health?",
-            "faq_des": "<p>Yes, the formula includes ingredients like Horsetail Extract and Bamboo Extract, which are known to support skin elasticity, reduce inflammation, and promote a clear complexion.<\/p>"
+            "faq_des": "<p>Yes, the formula includes ingredients like Horsetail Extract and Bamboo Extract, which are known to support skin elasticity, reduce inflammation, and promote a clear complexion.</p>"
           }
         },
         "faq_j7jRxM": {
           "type": "faq",
           "settings": {
             "faq_title": "Is Simply DHT Blocker safe to use?",
-            "faq_des": "<p>Yes, Simply DHT Blocker is formulated with natural ingredients and is free from harmful additives. It is non-GMO, gluten-free, and made in an FDA-approved facility.<\/p><p><\/p>"
+            "faq_des": "<p>Yes, Simply DHT Blocker is formulated with natural ingredients and is free from harmful additives. It is non-GMO, gluten-free, and made in an FDA-approved facility.</p><p></p>"
           }
         },
         "faq_Pc9BiM": {
           "type": "faq",
           "settings": {
             "faq_title": "How long does it take to see results?",
-            "faq_des": "<p>Answer Results may vary, but most users notice improvements in hair and skin health within 4-6 weeks of consistent use.<\/p>"
+            "faq_des": "<p>Answer Results may vary, but most users notice improvements in hair and skin health within 4-6 weeks of consistent use.</p>"
           }
         },
         "faq_C3HeAN": {
           "type": "faq",
           "settings": {
             "faq_title": "Can I take Simply DHT Blocker with other supplements?",
-            "faq_des": "<p>While Simply DHT Blocker is designed to be compatible with most supplements, it's best to consult with a healthcare professional if you’re taking other medications or supplements.<\/p>"
+            "faq_des": "<p>While Simply DHT Blocker is designed to be compatible with most supplements, it's best to consult with a healthcare professional if you’re taking other medications or supplements.</p>"
           }
         },
         "faq_6xH9fg": {
           "type": "faq",
           "settings": {
             "faq_title": "Is Simply DHT Blocker suitable for all hair types?",
-            "faq_des": "<p>Yes, the formula is designed to support hair health for all hair types, including straight, wavy, curly, and coily textures.<\/p><p><\/p>"
+            "faq_des": "<p>Yes, the formula is designed to support hair health for all hair types, including straight, wavy, curly, and coily textures.</p><p></p>"
           }
         },
         "faq_PVaYLz": {
           "type": "faq",
           "settings": {
             "faq_title": "What is the recommended dosage?",
-            "faq_des": "<p>The suggested dosage is two capsules daily, preferably with a meal.<\/p>"
+            "faq_des": "<p>The suggested dosage is two capsules daily, preferably with a meal.</p>"
           }
         }
       },
@@ -1104,7 +1113,7 @@
       "type": "apps",
       "blocks": {
         "areviews_reviews_importer_areviews_display_reviews_9DE0AC": {
-          "type": "shopify:\/\/apps\/areviews-reviews-importer\/blocks\/AreviewsDisplayReviews\/ab0ec5fe-c95b-4fd6-bfb8-db2a30d0756f",
+          "type": "shopify://apps/areviews-reviews-importer/blocks/AreviewsDisplayReviews/ab0ec5fe-c95b-4fd6-bfb8-db2a30d0756f",
           "settings": {
             "hide_areviews_title_rating": false,
             "areviews_theme_font": "inherit",

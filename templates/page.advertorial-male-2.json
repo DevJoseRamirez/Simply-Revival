@@ -1,3 +1,12 @@
+/*
+ * ------------------------------------------------------------
+ * IMPORTANT: The contents of this file are auto-generated.
+ *
+ * This file may be updated by the Shopify admin theme editor
+ * or related systems. Please exercise caution as any changes
+ * made to this file may be overwritten.
+ * ------------------------------------------------------------
+ */
 {
   "sections": {
     "main": {
@@ -9,7 +18,7 @@
       "type": "CWC_article_navigation",
       "name": "Article Navigation",
       "settings": {
-        "logo": "shopify:\/\/shop_images\/Simply_Revival_Logo_white_text-min.png",
+        "logo": "shopify://shop_images/Simply_Revival_Logo_white_text-min.png",
         "link1_label": "Order",
         "link1_url": "",
         "link2_label": "About",
@@ -28,7 +37,7 @@
         "heading_fm7gXq": {
           "type": "heading",
           "settings": {
-            "text": "<p>This 2-Minute Healthy Habit Helps Ensure Great Health…Daily<\/p>",
+            "text": "<p>This 2-Minute Healthy Habit Helps Ensure Great Health…Daily</p>",
             "alignment": "left",
             "text_color": "#000000"
           }
@@ -40,13 +49,13 @@
         "title_a6B9LH": {
           "type": "title",
           "settings": {
-            "text": "<p>Yo Fruits Yo Veggies<\/p>"
+            "text": "<p>Yo Fruits Yo Veggies</p>"
           }
         },
         "text_xFctjJ": {
           "type": "text",
           "settings": {
-            "text": "<p>Your simple solution to a healthier diet – and a healthier lifestyle!&nbsp;<\/p>"
+            "text": "<p>Your simple solution to a healthier diet – and a healthier lifestyle!&nbsp;</p>"
           }
         }
       },
@@ -61,8 +70,8 @@
       "settings": {
         "offer_bg": "#fdf7eb",
         "card_link": "",
-        "heading": "<p>Transformations you get<\/p>",
-        "text": "<p>Description Here<\/p>",
+        "heading": "<p>Transformations you get</p>",
+        "text": "<p>Description Here</p>",
         "button_bg": "#000000",
         "button_text": "#ffffff",
         "button_label": "Shop Now",
@@ -78,7 +87,7 @@
         "heading_F74czU": {
           "type": "heading",
           "settings": {
-            "text": "<p>This 2-Minute Healthy Habit Helps Ensure Great Health…Daily<\/p>",
+            "text": "<p>This 2-Minute Healthy Habit Helps Ensure Great Health…Daily</p>",
             "alignment": "left",
             "text_color": "#000000"
           }
@@ -90,13 +99,13 @@
         "title_ftBRNa": {
           "type": "title",
           "settings": {
-            "text": "<p>Yo Fruits Yo Veggies<\/p>"
+            "text": "<p>Yo Fruits Yo Veggies</p>"
           }
         },
         "text_d9gke3": {
           "type": "text",
           "settings": {
-            "text": "<p>Your simple solution to a healthier diet – and a healthier lifestyle! <\/p>"
+            "text": "<p>Your simple solution to a healthier diet – and a healthier lifestyle! </p>"
           }
         }
       },
@@ -121,7 +130,7 @@
         "title_and_stars_4VnRrc": {
           "type": "title_and_stars",
           "settings": {
-            "title": "<h2>Why Men Are Losing Hair Younger Than Ever — And The Natural Fix Changing Thousands of Lives<\/h2>",
+            "title": "<h2>Why Men Are Losing Hair Younger Than Ever — And The Natural Fix Changing Thousands of Lives</h2>",
             "show_stars": true,
             "date": "2025-01-10"
           }
@@ -129,13 +138,13 @@
         "image_a8rGE6": {
           "type": "image",
           "settings": {
-            "image": "shopify:\/\/shop_images\/lpad-male_natural_hair_support_03-min.png"
+            "image": "shopify://shop_images/lpad-male_natural_hair_support_03-min.png"
           }
         },
         "content_JHNrqf": {
           "type": "content",
           "settings": {
-            "content_1": "<p>For most of my twenties, I ignored it.<\/p><p>A few extra hairs on the pillow. A receding spot near my temples that I only noticed under harsh bathroom lighting.<\/p><p>I told myself it was just stress from work, or maybe just my genetics kicking in. Nothing I could really control, right?<\/p><p>But after my 30th birthday, I looked around and realized something strange… nearly every guy I knew was dealing with the same thing. Even my friends who ate clean, hit the gym, and did everything \"right\" were seeing their hairlines retreat.<\/p><p>It felt like we were all on a fast track to the same destination, and it was deeply unsettling.<\/p>",
+            "content_1": "<p>For most of my twenties, I ignored it.</p><p>A few extra hairs on the pillow. A receding spot near my temples that I only noticed under harsh bathroom lighting.</p><p>I told myself it was just stress from work, or maybe just my genetics kicking in. Nothing I could really control, right?</p><p>But after my 30th birthday, I looked around and realized something strange… nearly every guy I knew was dealing with the same thing. Even my friends who ate clean, hit the gym, and did everything \"right\" were seeing their hairlines retreat.</p><p>It felt like we were all on a fast track to the same destination, and it was deeply unsettling.</p>",
             "content_2": ""
           }
         },
@@ -151,20 +160,20 @@
         "content_Bdk48F": {
           "type": "content",
           "settings": {
-            "content_1": "<h2>The Hidden Saboteur Wreaking Havoc on Your Scalp<\/h2><p>That's when I stumbled upon a hidden truth most of us never learn: our hair loss has less to do with age, and more to do with one powerful hormone quietly sabotaging our scalps: <strong>DHT<\/strong>.<\/p><p>DHT, or Dihydrotestosterone, is a natural hormone in the male body. In normal amounts, it's fine. But as we get older, or due to genetics, our bodies can produce too much of it.<\/p><p>When that happens, DHT attaches to the hair follicles on your scalp and slowly strangles them.<\/p>",
+            "content_1": "<h2>The Hidden Saboteur Wreaking Havoc on Your Scalp</h2><p>That's when I stumbled upon a hidden truth most of us never learn: our hair loss has less to do with age, and more to do with one powerful hormone quietly sabotaging our scalps: <strong>DHT</strong>.</p><p>DHT, or Dihydrotestosterone, is a natural hormone in the male body. In normal amounts, it's fine. But as we get older, or due to genetics, our bodies can produce too much of it.</p><p>When that happens, DHT attaches to the hair follicles on your scalp and slowly strangles them.</p>",
             "content_2": ""
           }
         },
         "image_JrH6TK": {
           "type": "image",
           "settings": {
-            "image": "shopify:\/\/shop_images\/lpad-male_natural_hair_support_04-min.png"
+            "image": "shopify://shop_images/lpad-male_natural_hair_support_04-min.png"
           }
         },
         "content_yjBwmq": {
           "type": "content",
           "settings": {
-            "content_1": "<p>It's a gradual, frustrating process:<\/p><p>1. First, your hair starts to grow back thinner and weaker.<\/p><p>2. Then, the shedding increases—in the shower, on your brush, on your pillow.<\/p><p>3. Eventually, the follicle just gives up and stops producing hair altogether.<\/p><p>This is what causes the classic receding hairline and thinning crown that chips away at our confidence day after day. For years, the only options were expensive, chemical-based prescriptions that came with a laundry list of scary side effects. Many of us felt we had to choose between our hair and our health.<\/p><p>But what if there was another way?<\/p>",
+            "content_1": "<p>It's a gradual, frustrating process:</p><p>1. First, your hair starts to grow back thinner and weaker.</p><p>2. Then, the shedding increases—in the shower, on your brush, on your pillow.</p><p>3. Eventually, the follicle just gives up and stops producing hair altogether.</p><p>This is what causes the classic receding hairline and thinning crown that chips away at our confidence day after day. For years, the only options were expensive, chemical-based prescriptions that came with a laundry list of scary side effects. Many of us felt we had to choose between our hair and our health.</p><p>But what if there was another way?</p>",
             "content_2": ""
           }
         },
@@ -181,20 +190,20 @@
         "content_FYzYpx": {
           "type": "content",
           "settings": {
-            "content_1": "<h2>A Turning Point: The Natural Discovery That's Helping Men Reclaim Their Hair<\/h2><p>Frustrated with the lack of safe options, a team of wellness experts went back to the source: nature. They researched ancient herbs and botanicals that have been used for centuries to support men's health.<\/p><p>They found that certain powerful plant extracts could naturally help balance DHT levels, without the harsh side effects of prescriptions.<\/p><p>After years of research, they combined <strong>10 Legendary Herbs<\/strong> into one simple, potent formula.<\/p><p>They called it <strong>Simply Revival<\/strong>.<\/p>",
+            "content_1": "<h2>A Turning Point: The Natural Discovery That's Helping Men Reclaim Their Hair</h2><p>Frustrated with the lack of safe options, a team of wellness experts went back to the source: nature. They researched ancient herbs and botanicals that have been used for centuries to support men's health.</p><p>They found that certain powerful plant extracts could naturally help balance DHT levels, without the harsh side effects of prescriptions.</p><p>After years of research, they combined <strong>10 Legendary Herbs</strong> into one simple, potent formula.</p><p>They called it <strong>Simply Revival</strong>.</p>",
             "content_2": ""
           }
         },
         "image_MTedwB": {
           "type": "image",
           "settings": {
-            "image": "shopify:\/\/shop_images\/lpad-male_natural_hair_support_01-min.png"
+            "image": "shopify://shop_images/lpad-male_natural_hair_support_01-min.png"
           }
         },
         "content_EgmXbE": {
           "type": "content",
           "settings": {
-            "content_1": "<p>Simply Revival is a new, all-natural supplement that gets to the root cause of hair loss by helping to block excess DHT. It's a clean, plant-based formula designed to:<\/p><p><strong>Reduce Shedding:<\/strong> By lowering DHT, it helps stop your follicles from shrinking, so you keep the hair you have.<\/p><p><strong>Support New Growth:<\/strong> It nourishes the scalp and creates the perfect environment for dormant follicles to start producing hair again.<\/p><p><strong>Improve Hair Quality:<\/strong> The formula is packed with nutrients that help your hair grow back thicker, stronger, and healthier from the inside out.<\/p>",
+            "content_1": "<p>Simply Revival is a new, all-natural supplement that gets to the root cause of hair loss by helping to block excess DHT. It's a clean, plant-based formula designed to:</p><p><strong>Reduce Shedding:</strong> By lowering DHT, it helps stop your follicles from shrinking, so you keep the hair you have.</p><p><strong>Support New Growth:</strong> It nourishes the scalp and creates the perfect environment for dormant follicles to start producing hair again.</p><p><strong>Improve Hair Quality:</strong> The formula is packed with nutrients that help your hair grow back thicker, stronger, and healthier from the inside out.</p>",
             "content_2": ""
           }
         },
@@ -202,14 +211,14 @@
           "type": "star_review",
           "settings": {
             "review_title": "Joseph R. Verified Buyer",
-            "review_text": "<p>My crown was getting pretty thin and obvious. After 3 months on Simply Revival, the area is definitely filling back in. My barber even commented on how much better my hair looks now. Worth every penny for my confidence!<\/p>"
+            "review_text": "<p>My crown was getting pretty thin and obvious. After 3 months on Simply Revival, the area is definitely filling back in. My barber even commented on how much better my hair looks now. Worth every penny for my confidence!</p>"
           }
         },
         "star_review_6GDiP8": {
           "type": "star_review",
           "settings": {
             "review_title": "Derek B. Verified Biuyer",
-            "review_text": "<p>I've been struggling with hair loss for about 3 years and tried everything. Simply Revival's DHT blocker has been a game changer - I'm seeing new growth after just 2 months of consistent use. The capsules are easy to take and no side effects!<\/p>"
+            "review_text": "<p>I've been struggling with hair loss for about 3 years and tried everything. Simply Revival's DHT blocker has been a game changer - I'm seeing new growth after just 2 months of consistent use. The capsules are easy to take and no side effects!</p>"
           }
         },
         "spacer_f9bph8": {
@@ -219,14 +228,14 @@
         "content_A8zTWL": {
           "type": "content",
           "settings": {
-            "content_1": "<h2>The Science Behind the 10 Legendary Herbs<\/h2><p>Simply Revival isn't just a random mix of vitamins. It's a clinically-focused blend of 10 powerful botanicals, each chosen for its proven ability to combat the effects of DHT and nourish the hair follicle. This is the difference between a generic supplement and a targeted solution.<\/p><p>Here are three of the most critical ingredients and how they work:<\/p>",
+            "content_1": "<h2>The Science Behind the 10 Legendary Herbs</h2><p>Simply Revival isn't just a random mix of vitamins. It's a clinically-focused blend of 10 powerful botanicals, each chosen for its proven ability to combat the effects of DHT and nourish the hair follicle. This is the difference between a generic supplement and a targeted solution.</p><p>Here are three of the most critical ingredients and how they work:</p>",
             "content_2": ""
           }
         },
         "image_cTUBPg": {
           "type": "image",
           "settings": {
-            "image": "shopify:\/\/shop_images\/lpad-male_natural_hair_support_02-min.png"
+            "image": "shopify://shop_images/lpad-male_natural_hair_support_02-min.png"
           }
         },
         "columns_DdgXJL": {
@@ -236,19 +245,19 @@
             "title_color": "#009370",
             "column_title_1": "1. Saw Palmetto",
             "column_subtext_1": "The Natural DHT Blocker",
-            "column_text_1": "<p>Studies show that the fatty acids in Saw Palmetto berries can inhibit the 5-alpha-reductase enzyme, which is responsible for converting testosterone into DHT. By helping to block this conversion, Saw Palmetto effectively protects your follicles from shrinking.<\/p>",
+            "column_text_1": "<p>Studies show that the fatty acids in Saw Palmetto berries can inhibit the 5-alpha-reductase enzyme, which is responsible for converting testosterone into DHT. By helping to block this conversion, Saw Palmetto effectively protects your follicles from shrinking.</p>",
             "column_title_2": "2. Stinging Nettle",
             "column_subtext_2": "The Follicle Nourisher",
-            "column_text_2": "<p>Works synergistically with Saw Palmetto to block DHT while providing essential vitamins and minerals like iron, magnesium, and Vitamin C. These nutrients strengthen the hair shaft, reduce breakage, and stimulate scalp circulation.<\/p>",
+            "column_text_2": "<p>Works synergistically with Saw Palmetto to block DHT while providing essential vitamins and minerals like iron, magnesium, and Vitamin C. These nutrients strengthen the hair shaft, reduce breakage, and stimulate scalp circulation.</p>",
             "column_title_3": "3. Bamboo Extract",
             "column_subtext_3": "The Hair Thickener",
-            "column_text_3": "<p>Bamboo is one of nature's richest sources of silica, a trace mineral that's essential for hair strength and elasticity. Silica works by delivering vital nutrients directly to the hair follicles and strengthening the connective tissues in your scalp. This helps improve hair thickness, adds natural shine, and reinforces each strand from root to tip.<\/p>"
+            "column_text_3": "<p>Bamboo is one of nature's richest sources of silica, a trace mineral that's essential for hair strength and elasticity. Silica works by delivering vital nutrients directly to the hair follicles and strengthening the connective tissues in your scalp. This helps improve hair thickness, adds natural shine, and reinforces each strand from root to tip.</p>"
           }
         },
         "content_MTa9g4": {
           "type": "content",
           "settings": {
-            "content_1": "<p>This powerful combination of DHT-blocking and hair-nourishing ingredients is what makes Simply Revival a true alternative to harsh prescriptions. It's made in the USA, third-party tested, and contains no GMOs, fillers, or harsh chemicals.<\/p>",
+            "content_1": "<p>This powerful combination of DHT-blocking and hair-nourishing ingredients is what makes Simply Revival a true alternative to harsh prescriptions. It's made in the USA, third-party tested, and contains no GMOs, fillers, or harsh chemicals.</p>",
             "content_2": ""
           }
         },
@@ -259,54 +268,54 @@
         "center_text_TYbzFY": {
           "type": "center_text",
           "settings": {
-            "text": "<h2>Thousands Are Already Seeing the Difference<\/h2><p>The response has been incredible. Men who thought their only option was to watch their hair disappear are now seeing real, visible changes.<\/p>"
+            "text": "<h2>Thousands Are Already Seeing the Difference</h2><p>The response has been incredible. Men who thought their only option was to watch their hair disappear are now seeing real, visible changes.</p>"
           }
         },
         "image_mdyXhX": {
           "type": "image",
           "settings": {
-            "image": "shopify:\/\/shop_images\/lpad-male_natural_hair_support_06-min.png"
+            "image": "shopify://shop_images/lpad-male_natural_hair_support_06-min.png"
           }
         },
         "content_bkD6p4": {
           "type": "content",
           "settings": {
-            "content_1": "<p>This powerful combination of DHT-blocking and hair-nourishing ingredients is what makes Simply Revival a true alternative to harsh prescriptions. It's made in the USA, third-party tested, and contains no GMOs, fillers, or harsh chemicals.<\/p>",
+            "content_1": "<p>This powerful combination of DHT-blocking and hair-nourishing ingredients is what makes Simply Revival a true alternative to harsh prescriptions. It's made in the USA, third-party tested, and contains no GMOs, fillers, or harsh chemicals.</p>",
             "content_2": ""
           }
         },
         "faq_RQhC3X": {
           "type": "faq",
           "settings": {
-            "faq_title": "<h4><strong>How long does it take to see results?<\/strong><\/h4>",
-            "faq_text": "<p>Most users reported noticing less hair loss in 3-6 weeks and new growth after 6-12 weeks.<\/p>"
+            "faq_title": "<h4><strong>How long does it take to see results?</strong></h4>",
+            "faq_text": "<p>Most users reported noticing less hair loss in 3-6 weeks and new growth after 6-12 weeks.</p>"
           }
         },
         "faq_WkYF8c": {
           "type": "faq",
           "settings": {
-            "faq_title": "<h4><strong>Is Simply Revival® suitable for all hair types?<\/strong><\/h4>",
-            "faq_text": "<p>Yes, the formula is designed to to support hair heath for all types of hair.<\/p>"
+            "faq_title": "<h4><strong>Is Simply Revival® suitable for all hair types?</strong></h4>",
+            "faq_text": "<p>Yes, the formula is designed to to support hair heath for all types of hair.</p>"
           }
         },
         "faq_tKxERJ": {
           "type": "faq",
           "settings": {
-            "faq_title": "<h4><strong>Is Simply revival safe to use?<\/strong><\/h4>",
-            "faq_text": "<p>Yes, our formulas are crafted to be the safest on the market and still provide powerful results.<\/p>"
+            "faq_title": "<h4><strong>Is Simply revival safe to use?</strong></h4>",
+            "faq_text": "<p>Yes, our formulas are crafted to be the safest on the market and still provide powerful results.</p>"
           }
         },
         "content_aebUxN": {
           "type": "content",
           "settings": {
-            "content_1": "<h4><strong>LIMITED TIME: <\/strong><a href=\"\/pages\/black-friday-exclusive-offer\" title=\"Black Friday Exclusive Offer\"><strong>CLICK HERE FOR OUR 70% OFF EXCLUSIVE LINK<\/strong><\/a><\/h4>",
+            "content_1": "<h4><strong>LIMITED TIME: </strong><a href=\"/pages/black-friday-exclusive-offer\" title=\"Black Friday Exclusive Offer\"><strong>CLICK HERE FOR OUR 70% OFF EXCLUSIVE LINK</strong></a></h4>",
             "content_2": ""
           }
         },
         "button_KwJ6q3": {
           "type": "button",
           "settings": {
-            "button_link": "shopify:\/\/pages\/black-friday-exclusive-offer",
+            "button_link": "shopify://pages/black-friday-exclusive-offer",
             "button_text": "CHECK CURRENT AVAILABILITY >",
             "button_bg_color": "#009370",
             "button_text_color": "#ffffff"
@@ -317,21 +326,21 @@
           "settings": {
             "block_title": "Customer Reviews:",
             "review_title_1": "Derek J.",
-            "review_text_1": "<p>My temples were pretty far gone but Simply Revival is bringing them back. It's slow but steady progress. After 6 months I can see actual hair where there was just scalp before.<\/p>",
+            "review_text_1": "<p>My temples were pretty far gone but Simply Revival is bringing them back. It's slow but steady progress. After 6 months I can see actual hair where there was just scalp before.</p>",
             "review_title_2": "Travis S.",
-            "review_text_2": "<p>Didn't want to deal with prescription drugs and their side effects. Simply Revival gives me natural DHT blocking with ingredients I can actually pronounce. Results speak for themselves.<\/p>",
+            "review_text_2": "<p>Didn't want to deal with prescription drugs and their side effects. Simply Revival gives me natural DHT blocking with ingredients I can actually pronounce. Results speak for themselves.</p>",
             "review_title_3": "Ryan M.",
-            "review_text_3": "<p>My crown was getting pretty thin and obvious. After 3 months on Simply Revival, the area is definitely filling back in. My barber even commented on how much better my hair looks now.<\/p>",
+            "review_text_3": "<p>My crown was getting pretty thin and obvious. After 3 months on Simply Revival, the area is definitely filling back in. My barber even commented on how much better my hair looks now.</p>",
             "review_title_4": "Alex T.",
-            "review_text_4": "<p>Tried finasteride but the side effects scared me off. Simply Revival gives me the DHT blocking I need without any harsh chemicals or scary side effects. Natural approach that actually works<\/p>",
+            "review_text_4": "<p>Tried finasteride but the side effects scared me off. Simply Revival gives me the DHT blocking I need without any harsh chemicals or scary side effects. Natural approach that actually works</p>",
             "review_title_5": "Jason R.",
-            "review_text_5": "<p>Started losing hair at 25 which destroyed my confidence. Simply Revival has been a lifesaver - my hair is thicker, stronger, and I'm not shedding nearly as much. Wish I found this sooner!<\/p>"
+            "review_text_5": "<p>Started losing hair at 25 which destroyed my confidence. Simply Revival has been a lifesaver - my hair is thicker, stronger, and I'm not shedding nearly as much. Wish I found this sooner!</p>"
           }
         },
         "button_LJJwax": {
           "type": "button",
           "settings": {
-            "button_link": "shopify:\/\/pages\/black-friday-exclusive-offer",
+            "button_link": "shopify://pages/black-friday-exclusive-offer",
             "button_text": "Click Here For More Information >",
             "button_bg_color": "#009370",
             "button_text_color": "#ffffff"
@@ -386,10 +395,10 @@
         "padding_top": 60,
         "padding_bottom": 60,
         "show_sidebar": true,
-        "sidebar_heading": "<p>The #1 Natural DHT Blocker for Hair Loss<\/p>",
-        "sidebar_product_image": "shopify:\/\/shop_images\/hair_support-1-min_a9e5ebe1-cc58-4013-8bc1-710f3aa1cf23.png",
-        "sidebar_text": "<p><em>Reduce shedding, support regrowth, and improve hair strength naturally<\/em><\/p>",
-        "sidebar_button_link": "shopify:\/\/pages\/black-friday-exclusive-offer",
+        "sidebar_heading": "<p>The #1 Natural DHT Blocker for Hair Loss</p>",
+        "sidebar_product_image": "shopify://shop_images/hair_support-1-min_a9e5ebe1-cc58-4013-8bc1-710f3aa1cf23.png",
+        "sidebar_text": "<p><em>Reduce shedding, support regrowth, and improve hair strength naturally</em></p>",
+        "sidebar_button_link": "shopify://pages/black-friday-exclusive-offer",
         "sidebar_button_text": "Learn More >",
         "sidebar_button_bg": "#1e6c7a",
         "sidebar_button_text_color": "#ffffff"

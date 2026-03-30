@@ -1,3 +1,12 @@
+/*
+ * ------------------------------------------------------------
+ * IMPORTANT: The contents of this file are auto-generated.
+ *
+ * This file may be updated by the Shopify admin theme editor
+ * or related systems. Please exercise caution as any changes
+ * made to this file may be overwritten.
+ * ------------------------------------------------------------
+ */
 {
   "sections": {
     "main": {
@@ -63,7 +72,7 @@
           "settings": {
             "banner_text": "Rewards",
             "banner_des": "Join to earn 84 points from this item",
-            "banner_icon_svg": "<svg width=\"24\" height=\"24\" viewbox=\"0 0 24 24\" fill=\"none\" xmlns=\"http:\/\/www.w3.org\/2000\/svg\">     <path d=\"M21.7727 18.8659H2.22729C2.14549 18.8659 2.06992 18.8218 2.02956 18.7506C1.98921 18.6794 1.9903 18.5918 2.03237 18.5217L2.62727 17.5301L2.03237 16.5386C1.98921 16.4666 1.98921 16.3767 2.03237 16.3047L2.62727 15.3131L2.03237 14.3215C1.98921 14.2495 1.98921 14.1596 2.03237 14.0876L2.62727 13.096L2.03237 12.1044C1.98921 12.0324 1.98921 11.9425 2.03237 11.8706L2.62727 10.879L2.03237 9.88737C1.98921 9.81538 1.98921 9.72548 2.03237 9.65349L2.62727 8.6619L2.03237 7.67123C1.9903 7.60095 1.98921 7.51354 2.02956 7.44233C2.06992 7.37112 2.14549 7.32703 2.22729 7.32703H21.7727C21.8547 7.32703 21.9301 7.37113 21.9704 7.44233C22.0108 7.51354 22.0097 7.60095 21.9676 7.67123L21.3727 8.66282L21.9676 9.65441C22.0108 9.72639 22.0108 9.8163 21.9676 9.88829L21.3727 10.8799L21.9676 11.8715C22.0108 11.9435 22.0108 12.0334 21.9676 12.1053L21.3727 13.0969L21.9676 14.0885C22.0108 14.1605 22.0108 14.2504 21.9676 14.3224L21.3727 15.314L21.9676 16.3056C22.0108 16.3776 22.0108 16.4675 21.9676 16.5395L21.3727 17.5311L21.9676 18.5227C22.0097 18.5929 22.0108 18.6803 21.9704 18.7515C21.9301 18.822 21.8547 18.8659 21.7727 18.8659ZM2.62857 18.4116H21.3714L20.9129 17.6473C20.8697 17.5753 20.8697 17.4854 20.9129 17.4134L21.5078 16.4218L20.9129 15.4302C20.8697 15.3582 20.8697 15.2683 20.9129 15.1964L21.5078 14.2048L20.9129 13.2132C20.8697 13.1412 20.8697 13.0513 20.9129 12.9793L21.5078 11.9877L20.9129 10.9961C20.8697 10.9241 20.8697 10.8342 20.9129 10.7622L21.5078 9.77064L20.9129 8.77905C20.8697 8.70706 20.8697 8.61716 20.9129 8.54517L21.3714 7.7809L2.62857 7.78137L3.08713 8.54564C3.13029 8.61762 3.13029 8.70753 3.08713 8.77952L2.49223 9.77111L3.08713 10.7627C3.13029 10.8347 3.13029 10.9246 3.08713 10.9966L2.49223 11.988L3.08713 12.9796C3.13029 13.0516 3.13029 13.1415 3.08713 13.2135L2.49223 14.2051L3.08713 15.1967C3.13029 15.2686 3.13029 15.3586 3.08713 15.4305L2.49223 16.4221L3.08713 17.4137C3.13029 17.4857 3.13029 17.5756 3.08713 17.6476L2.62857 18.4116Z\" fill=\"currentColor\"><\/path>     <path d=\"M5.86194 10.2532C5.8194 10.2532 5.77624 10.2412 5.73791 10.2163C5.63289 10.1477 5.60328 10.007 5.67169 9.90182C5.67901 9.8906 6.40775 8.76124 6.62295 7.51552C6.6443 7.3918 6.76163 7.30891 6.8855 7.33026C7.00921 7.35161 7.09211 7.46925 7.07076 7.59281C6.83906 8.93342 6.08431 10.1011 6.05236 10.15C6.00889 10.217 5.9361 10.2532 5.86194 10.2532Z\" fill=\"currentColor\"><\/path>     <path d=\"M7.99639 10.2532C7.92222 10.2532 7.84961 10.2169 7.80598 10.1502C7.77388 10.1011 7.01866 8.93342 6.78743 7.59281C6.76608 7.46909 6.84913 7.35161 6.97269 7.33026C7.09625 7.30876 7.21389 7.39196 7.23524 7.51552C7.4501 8.76124 8.17916 9.89045 8.1865 9.90182C8.25506 10.007 8.22545 10.1477 8.12028 10.2163C8.0821 10.2413 8.03892 10.2532 7.99639 10.2532Z\" fill=\"currentColor\"><\/path>     <path d=\"M14.8656 15.0462C14.8271 15.0462 14.788 15.0364 14.7522 15.0157C14.6434 14.9529 14.6062 14.814 14.669 14.7053L16.6579 11.2604C16.7206 11.1518 16.8595 11.1144 16.9683 11.1772C17.0771 11.24 17.1143 11.3788 17.0515 11.4876L15.0625 14.9325C15.0206 15.0055 14.9443 15.0462 14.8656 15.0462Z\" fill=\"currentColor\"><\/path>     <path d=\"M14.8233 12.7745C14.3746 12.7745 14.0095 12.4095 14.0095 11.9607C14.0095 11.512 14.3746 11.1469 14.8233 11.1469C15.2721 11.1469 15.6371 11.512 15.6371 11.9607C15.6373 12.4095 15.2722 12.7745 14.8233 12.7745ZM14.8233 11.6013C14.6251 11.6013 14.4639 11.7625 14.4639 11.9607C14.4639 12.1589 14.6251 12.3202 14.8233 12.3202C15.0215 12.3202 15.1828 12.1589 15.1828 11.9607C15.1828 11.7625 15.0215 11.6013 14.8233 11.6013Z\" fill=\"currentColor\"><\/path>     <path d=\"M16.8975 15.0462C16.4488 15.0462 16.0837 14.6811 16.0837 14.2324C16.0837 13.7837 16.4488 13.4186 16.8975 13.4186C17.3463 13.4186 17.7113 13.7837 17.7113 14.2324C17.7115 14.6811 17.3463 15.0462 16.8975 15.0462ZM16.8975 13.8729C16.6993 13.8729 16.5381 14.0342 16.5381 14.2324C16.5381 14.4306 16.6993 14.5918 16.8975 14.5918C17.0957 14.5918 17.257 14.4306 17.257 14.2324C17.257 14.0342 17.0957 13.8729 16.8975 13.8729Z\" fill=\"currentColor\"><\/path>     <path d=\"M15.8608 16.9756C13.7216 16.9756 11.9813 15.2353 11.9813 13.0961C11.9813 10.9569 13.7216 9.21663 15.8608 9.21663C18 9.21663 19.7403 10.9569 19.7403 13.0961C19.7403 15.2353 17.9998 16.9756 15.8608 16.9756ZM15.8608 9.6712C13.9722 9.6712 12.4357 11.2077 12.4357 13.0963C12.4357 14.9849 13.9722 16.5214 15.8608 16.5214C17.7493 16.5214 19.2858 14.9849 19.2858 13.0963C19.2858 11.2078 17.7493 9.6712 15.8608 9.6712Z\" fill=\"currentColor\"><\/path>     <path d=\"M10.5385 11.333H4.43074C4.30531 11.333 4.20356 11.2312 4.20356 11.1058C4.20356 10.9804 4.30531 10.8786 4.43074 10.8786H10.5385C10.6639 10.8786 10.7657 10.9804 10.7657 11.1058C10.7657 11.2312 10.6639 11.333 10.5385 11.333Z\" fill=\"currentColor\"><\/path>     <path d=\"M10.5385 13.3234H4.43074C4.30531 13.3234 4.20356 13.2217 4.20356 13.0962C4.20356 12.9706 4.30531 12.869 4.43074 12.869H10.5385C10.6639 12.869 10.7657 12.9708 10.7657 13.0962C10.7657 13.2218 10.6639 13.3234 10.5385 13.3234Z\" fill=\"currentColor\"><\/path>     <path d=\"M10.5385 15.3138H4.43074C4.30531 15.3138 4.20356 15.2121 4.20356 15.0867C4.20356 14.9611 4.30531 14.8595 4.43074 14.8595H10.5385C10.6639 14.8595 10.7657 14.9612 10.7657 15.0867C10.7657 15.2123 10.6639 15.3138 10.5385 15.3138Z\" fill=\"currentColor\"><\/path>     <path d=\"M9.25687 7.78128C9.15325 7.78128 9.05961 7.70992 9.03561 7.60459C9.00772 7.48227 9.08422 7.36043 9.20654 7.33238C9.35067 7.2995 9.47438 7.25775 9.57395 7.20851C10.0306 6.98211 10.2181 6.42601 9.99154 5.96933C9.88185 5.74807 9.69253 5.5826 9.45851 5.50375C9.22448 5.4249 8.97363 5.44173 8.75252 5.55158C8.31048 5.77066 7.7017 6.47432 7.12395 7.43385C7.0395 7.57408 6.99182 7.6604 6.98979 7.66398C6.92903 7.77383 6.79082 7.81356 6.68097 7.75295C6.57112 7.69234 6.53123 7.55398 6.592 7.44413C6.59418 7.44023 6.64591 7.34675 6.73457 7.19934C7.10478 6.5845 7.83306 5.50001 8.55073 5.14428C8.88075 4.98052 9.25469 4.95528 9.60387 5.07307C9.9529 5.19071 10.2352 5.43737 10.3989 5.76738C10.7367 6.44875 10.4571 7.27784 9.77575 7.61565C9.64409 7.68094 9.48672 7.73454 9.30786 7.77552C9.29056 7.77941 9.27354 7.78128 9.25687 7.78128Z\" fill=\"currentColor\"><\/path>     <path d=\"M4.60146 7.78128C4.58463 7.78128 4.56765 7.77941 4.55067 7.77552C4.37179 7.7347 4.21442 7.68094 4.08289 7.61581C3.75272 7.45205 3.50606 7.16969 3.38843 6.82067C3.2708 6.47164 3.29603 6.09753 3.4598 5.76753C3.6234 5.43752 3.90575 5.19086 4.25478 5.07323C4.60396 4.95559 4.97792 4.98083 5.30792 5.14444C6.02543 5.50001 6.75372 6.58462 7.12393 7.19934C7.21274 7.3469 7.26447 7.44023 7.26649 7.44412C7.32711 7.55397 7.28737 7.69218 7.17752 7.75295C7.06767 7.81356 6.92946 7.77383 6.8687 7.66398C6.86667 7.66039 6.81899 7.57407 6.73454 7.43384C6.15663 6.47432 5.54785 5.77069 5.10597 5.55158C4.88471 5.44188 4.63385 5.4249 4.39982 5.50374C4.16579 5.58259 3.97648 5.74806 3.86679 5.96932C3.75694 6.19074 3.74011 6.44144 3.81895 6.67547C3.8978 6.9095 4.06327 7.09881 4.28453 7.20866C4.38394 7.2579 4.50766 7.29966 4.65179 7.33254C4.7741 7.36043 4.85061 7.48227 4.82272 7.60474C4.79872 7.70992 4.70508 7.78128 4.60146 7.78128Z\" fill=\"currentColor\"><\/path>     <\/svg>",
+            "banner_icon_svg": "<svg width=\"24\" height=\"24\" viewbox=\"0 0 24 24\" fill=\"none\" xmlns=\"http://www.w3.org/2000/svg\">     <path d=\"M21.7727 18.8659H2.22729C2.14549 18.8659 2.06992 18.8218 2.02956 18.7506C1.98921 18.6794 1.9903 18.5918 2.03237 18.5217L2.62727 17.5301L2.03237 16.5386C1.98921 16.4666 1.98921 16.3767 2.03237 16.3047L2.62727 15.3131L2.03237 14.3215C1.98921 14.2495 1.98921 14.1596 2.03237 14.0876L2.62727 13.096L2.03237 12.1044C1.98921 12.0324 1.98921 11.9425 2.03237 11.8706L2.62727 10.879L2.03237 9.88737C1.98921 9.81538 1.98921 9.72548 2.03237 9.65349L2.62727 8.6619L2.03237 7.67123C1.9903 7.60095 1.98921 7.51354 2.02956 7.44233C2.06992 7.37112 2.14549 7.32703 2.22729 7.32703H21.7727C21.8547 7.32703 21.9301 7.37113 21.9704 7.44233C22.0108 7.51354 22.0097 7.60095 21.9676 7.67123L21.3727 8.66282L21.9676 9.65441C22.0108 9.72639 22.0108 9.8163 21.9676 9.88829L21.3727 10.8799L21.9676 11.8715C22.0108 11.9435 22.0108 12.0334 21.9676 12.1053L21.3727 13.0969L21.9676 14.0885C22.0108 14.1605 22.0108 14.2504 21.9676 14.3224L21.3727 15.314L21.9676 16.3056C22.0108 16.3776 22.0108 16.4675 21.9676 16.5395L21.3727 17.5311L21.9676 18.5227C22.0097 18.5929 22.0108 18.6803 21.9704 18.7515C21.9301 18.822 21.8547 18.8659 21.7727 18.8659ZM2.62857 18.4116H21.3714L20.9129 17.6473C20.8697 17.5753 20.8697 17.4854 20.9129 17.4134L21.5078 16.4218L20.9129 15.4302C20.8697 15.3582 20.8697 15.2683 20.9129 15.1964L21.5078 14.2048L20.9129 13.2132C20.8697 13.1412 20.8697 13.0513 20.9129 12.9793L21.5078 11.9877L20.9129 10.9961C20.8697 10.9241 20.8697 10.8342 20.9129 10.7622L21.5078 9.77064L20.9129 8.77905C20.8697 8.70706 20.8697 8.61716 20.9129 8.54517L21.3714 7.7809L2.62857 7.78137L3.08713 8.54564C3.13029 8.61762 3.13029 8.70753 3.08713 8.77952L2.49223 9.77111L3.08713 10.7627C3.13029 10.8347 3.13029 10.9246 3.08713 10.9966L2.49223 11.988L3.08713 12.9796C3.13029 13.0516 3.13029 13.1415 3.08713 13.2135L2.49223 14.2051L3.08713 15.1967C3.13029 15.2686 3.13029 15.3586 3.08713 15.4305L2.49223 16.4221L3.08713 17.4137C3.13029 17.4857 3.13029 17.5756 3.08713 17.6476L2.62857 18.4116Z\" fill=\"currentColor\"></path>     <path d=\"M5.86194 10.2532C5.8194 10.2532 5.77624 10.2412 5.73791 10.2163C5.63289 10.1477 5.60328 10.007 5.67169 9.90182C5.67901 9.8906 6.40775 8.76124 6.62295 7.51552C6.6443 7.3918 6.76163 7.30891 6.8855 7.33026C7.00921 7.35161 7.09211 7.46925 7.07076 7.59281C6.83906 8.93342 6.08431 10.1011 6.05236 10.15C6.00889 10.217 5.9361 10.2532 5.86194 10.2532Z\" fill=\"currentColor\"></path>     <path d=\"M7.99639 10.2532C7.92222 10.2532 7.84961 10.2169 7.80598 10.1502C7.77388 10.1011 7.01866 8.93342 6.78743 7.59281C6.76608 7.46909 6.84913 7.35161 6.97269 7.33026C7.09625 7.30876 7.21389 7.39196 7.23524 7.51552C7.4501 8.76124 8.17916 9.89045 8.1865 9.90182C8.25506 10.007 8.22545 10.1477 8.12028 10.2163C8.0821 10.2413 8.03892 10.2532 7.99639 10.2532Z\" fill=\"currentColor\"></path>     <path d=\"M14.8656 15.0462C14.8271 15.0462 14.788 15.0364 14.7522 15.0157C14.6434 14.9529 14.6062 14.814 14.669 14.7053L16.6579 11.2604C16.7206 11.1518 16.8595 11.1144 16.9683 11.1772C17.0771 11.24 17.1143 11.3788 17.0515 11.4876L15.0625 14.9325C15.0206 15.0055 14.9443 15.0462 14.8656 15.0462Z\" fill=\"currentColor\"></path>     <path d=\"M14.8233 12.7745C14.3746 12.7745 14.0095 12.4095 14.0095 11.9607C14.0095 11.512 14.3746 11.1469 14.8233 11.1469C15.2721 11.1469 15.6371 11.512 15.6371 11.9607C15.6373 12.4095 15.2722 12.7745 14.8233 12.7745ZM14.8233 11.6013C14.6251 11.6013 14.4639 11.7625 14.4639 11.9607C14.4639 12.1589 14.6251 12.3202 14.8233 12.3202C15.0215 12.3202 15.1828 12.1589 15.1828 11.9607C15.1828 11.7625 15.0215 11.6013 14.8233 11.6013Z\" fill=\"currentColor\"></path>     <path d=\"M16.8975 15.0462C16.4488 15.0462 16.0837 14.6811 16.0837 14.2324C16.0837 13.7837 16.4488 13.4186 16.8975 13.4186C17.3463 13.4186 17.7113 13.7837 17.7113 14.2324C17.7115 14.6811 17.3463 15.0462 16.8975 15.0462ZM16.8975 13.8729C16.6993 13.8729 16.5381 14.0342 16.5381 14.2324C16.5381 14.4306 16.6993 14.5918 16.8975 14.5918C17.0957 14.5918 17.257 14.4306 17.257 14.2324C17.257 14.0342 17.0957 13.8729 16.8975 13.8729Z\" fill=\"currentColor\"></path>     <path d=\"M15.8608 16.9756C13.7216 16.9756 11.9813 15.2353 11.9813 13.0961C11.9813 10.9569 13.7216 9.21663 15.8608 9.21663C18 9.21663 19.7403 10.9569 19.7403 13.0961C19.7403 15.2353 17.9998 16.9756 15.8608 16.9756ZM15.8608 9.6712C13.9722 9.6712 12.4357 11.2077 12.4357 13.0963C12.4357 14.9849 13.9722 16.5214 15.8608 16.5214C17.7493 16.5214 19.2858 14.9849 19.2858 13.0963C19.2858 11.2078 17.7493 9.6712 15.8608 9.6712Z\" fill=\"currentColor\"></path>     <path d=\"M10.5385 11.333H4.43074C4.30531 11.333 4.20356 11.2312 4.20356 11.1058C4.20356 10.9804 4.30531 10.8786 4.43074 10.8786H10.5385C10.6639 10.8786 10.7657 10.9804 10.7657 11.1058C10.7657 11.2312 10.6639 11.333 10.5385 11.333Z\" fill=\"currentColor\"></path>     <path d=\"M10.5385 13.3234H4.43074C4.30531 13.3234 4.20356 13.2217 4.20356 13.0962C4.20356 12.9706 4.30531 12.869 4.43074 12.869H10.5385C10.6639 12.869 10.7657 12.9708 10.7657 13.0962C10.7657 13.2218 10.6639 13.3234 10.5385 13.3234Z\" fill=\"currentColor\"></path>     <path d=\"M10.5385 15.3138H4.43074C4.30531 15.3138 4.20356 15.2121 4.20356 15.0867C4.20356 14.9611 4.30531 14.8595 4.43074 14.8595H10.5385C10.6639 14.8595 10.7657 14.9612 10.7657 15.0867C10.7657 15.2123 10.6639 15.3138 10.5385 15.3138Z\" fill=\"currentColor\"></path>     <path d=\"M9.25687 7.78128C9.15325 7.78128 9.05961 7.70992 9.03561 7.60459C9.00772 7.48227 9.08422 7.36043 9.20654 7.33238C9.35067 7.2995 9.47438 7.25775 9.57395 7.20851C10.0306 6.98211 10.2181 6.42601 9.99154 5.96933C9.88185 5.74807 9.69253 5.5826 9.45851 5.50375C9.22448 5.4249 8.97363 5.44173 8.75252 5.55158C8.31048 5.77066 7.7017 6.47432 7.12395 7.43385C7.0395 7.57408 6.99182 7.6604 6.98979 7.66398C6.92903 7.77383 6.79082 7.81356 6.68097 7.75295C6.57112 7.69234 6.53123 7.55398 6.592 7.44413C6.59418 7.44023 6.64591 7.34675 6.73457 7.19934C7.10478 6.5845 7.83306 5.50001 8.55073 5.14428C8.88075 4.98052 9.25469 4.95528 9.60387 5.07307C9.9529 5.19071 10.2352 5.43737 10.3989 5.76738C10.7367 6.44875 10.4571 7.27784 9.77575 7.61565C9.64409 7.68094 9.48672 7.73454 9.30786 7.77552C9.29056 7.77941 9.27354 7.78128 9.25687 7.78128Z\" fill=\"currentColor\"></path>     <path d=\"M4.60146 7.78128C4.58463 7.78128 4.56765 7.77941 4.55067 7.77552C4.37179 7.7347 4.21442 7.68094 4.08289 7.61581C3.75272 7.45205 3.50606 7.16969 3.38843 6.82067C3.2708 6.47164 3.29603 6.09753 3.4598 5.76753C3.6234 5.43752 3.90575 5.19086 4.25478 5.07323C4.60396 4.95559 4.97792 4.98083 5.30792 5.14444C6.02543 5.50001 6.75372 6.58462 7.12393 7.19934C7.21274 7.3469 7.26447 7.44023 7.26649 7.44412C7.32711 7.55397 7.28737 7.69218 7.17752 7.75295C7.06767 7.81356 6.92946 7.77383 6.8687 7.66398C6.86667 7.66039 6.81899 7.57407 6.73454 7.43384C6.15663 6.47432 5.54785 5.77069 5.10597 5.55158C4.88471 5.44188 4.63385 5.4249 4.39982 5.50374C4.16579 5.58259 3.97648 5.74806 3.86679 5.96932C3.75694 6.19074 3.74011 6.44144 3.81895 6.67547C3.8978 6.9095 4.06327 7.09881 4.28453 7.20866C4.38394 7.2579 4.50766 7.29966 4.65179 7.33254C4.7741 7.36043 4.85061 7.48227 4.82272 7.60474C4.79872 7.70992 4.70508 7.78128 4.60146 7.78128Z\" fill=\"currentColor\"></path>     </svg>",
             "banner_txt_color": "#000000",
             "banner_bg_color": "linear-gradient(233deg, rgba(199, 255, 244, 1), rgba(248, 255, 174, 1) 100%)",
             "banner_radius": 6
@@ -109,7 +118,7 @@
           "settings": {
             "title_tab": "Shipping information",
             "icon": "truck",
-            "answer_content": "<p>- No EU import duties.<br\/>- Ships within 1-2 business days.<br\/>- Ships in our fully recyclable and biodegradable signature boxes.<\/p>"
+            "answer_content": "<p>- No EU import duties.<br/>- Ships within 1-2 business days.<br/>- Ships in our fully recyclable and biodegradable signature boxes.</p>"
           }
         },
         "0a71f30d-dba2-4bca-a64d-c3cc2ed17e7d": {
@@ -117,7 +126,7 @@
           "settings": {
             "title_tab": "Care Guide",
             "icon": "leaf",
-            "answer_content": "<p>Hand-wash warm. Tumble dry low. This product has been washed at the factory after sewing to minimize fabric shrinkage.<\/p>"
+            "answer_content": "<p>Hand-wash warm. Tumble dry low. This product has been washed at the factory after sewing to minimize fabric shrinkage.</p>"
           }
         },
         "8d4704f6-d81d-4390-9ec5-af58698bef51": {
@@ -176,7 +185,7 @@
           "type": "trust-badge",
           "settings": {
             "trust-heading": "Guarantee safe checkout",
-            "image": "shopify:\/\/shop_images\/checkout_1.png",
+            "image": "shopify://shop_images/checkout_1.png",
             "width_image": 66
           }
         },
@@ -192,7 +201,7 @@
             "gtab_review_enable": true,
             "gtab_review": "Review",
             "stab_title1": "Tab 1",
-            "stab_content1": "<p>111<\/p>"
+            "stab_content1": "<p>111</p>"
           }
         },
         "51f9d856-95f4-4741-bf4d-afe15438ff29": {
@@ -205,7 +214,7 @@
           }
         },
         "areviews_reviews_importer_areviews_title_rating_5ACD8E": {
-          "type": "shopify:\/\/apps\/areviews-reviews-importer\/blocks\/AreviewsTitleRating\/ab0ec5fe-c95b-4fd6-bfb8-db2a30d0756f",
+          "type": "shopify://apps/areviews-reviews-importer/blocks/AreviewsTitleRating/ab0ec5fe-c95b-4fd6-bfb8-db2a30d0756f",
           "settings": {}
         }
       },
@@ -332,33 +341,33 @@
         "template--19541120287040__b01596d8-87db-4853-92d9-23e7da360734-text_icon-1": {
           "type": "text_icon",
           "settings": {
-            "icon_image": "shopify:\/\/shop_images\/Recycle_Material.svg",
+            "icon_image": "shopify://shop_images/Recycle_Material.svg",
             "block_title": "RECYCLED",
-            "block_des": "<p>Environmentally conscious pieces sustainably crafted from recycled fabrics<\/p>"
+            "block_des": "<p>Environmentally conscious pieces sustainably crafted from recycled fabrics</p>"
           }
         },
         "template--19541120287040__b01596d8-87db-4853-92d9-23e7da360734-text_icon-2": {
           "type": "text_icon",
           "settings": {
-            "icon_image": "shopify:\/\/shop_images\/Iconscloud.svg",
+            "icon_image": "shopify://shop_images/Iconscloud.svg",
             "block_title": "LIGHTWEIGHT",
-            "block_des": "<p>Woven to feel light as air on your skin so that you never overheat<\/p>"
+            "block_des": "<p>Woven to feel light as air on your skin so that you never overheat</p>"
           }
         },
         "template--19541120287040__b01596d8-87db-4853-92d9-23e7da360734-text_icon-3": {
           "type": "text_icon",
           "settings": {
-            "icon_image": "shopify:\/\/shop_images\/breathabel.svg",
+            "icon_image": "shopify://shop_images/breathabel.svg",
             "block_title": "BREATHABLE",
-            "block_des": "<p>Made of fibers with a loose natural structure that allows for airflow<\/p>"
+            "block_des": "<p>Made of fibers with a loose natural structure that allows for airflow</p>"
           }
         },
         "template--19541120287040__b01596d8-87db-4853-92d9-23e7da360734-text_icon-4": {
           "type": "text_icon",
           "settings": {
-            "icon_image": "shopify:\/\/shop_images\/factory.svg",
+            "icon_image": "shopify://shop_images/factory.svg",
             "block_title": "RELAXED",
-            "block_des": "<p>A lived-in look with softness that only gets better over time<\/p>"
+            "block_des": "<p>A lived-in look with softness that only gets better over time</p>"
           }
         }
       },
@@ -371,7 +380,7 @@
       "settings": {
         "animation": "fade-up",
         "setwidth": "container-fluid",
-        "section_image": "shopify:\/\/shop_images\/56770832_264629704416314_5810502777385604896_n.jpg",
+        "section_image": "shopify://shop_images/56770832_264629704416314_5810502777385604896_n.jpg",
         "block_text_color": "#000000",
         "block_text_bg": "#EDF2EB",
         "paddingsection": "0px 0px 0px 0px",
@@ -387,7 +396,7 @@
           "type": "image",
           "settings": {
             "img-in-hero": 44,
-            "image": "shopify:\/\/shop_images\/timeless_design.svg"
+            "image": "shopify://shop_images/timeless_design.svg"
           }
         },
         "b103ea62-6bf1-49fd-ab23-3d4bb5dc1243": {
@@ -439,8 +448,8 @@
             "w_image": 40,
             "pos_image": 81,
             "e_image": "right",
-            "image": "shopify:\/\/shop_images\/Artifact-Mer-Mer-Monoi-Beauty-Flower-Close-Up.jpg",
-            "image2": "shopify:\/\/shop_images\/Artifact-Soleil-Travel-Paper-Pouch.jpg",
+            "image": "shopify://shop_images/Artifact-Mer-Mer-Monoi-Beauty-Flower-Close-Up.jpg",
+            "image2": "shopify://shop_images/Artifact-Soleil-Travel-Paper-Pouch.jpg",
             "text_circle": "Fashion2 style store"
           }
         },
@@ -451,7 +460,7 @@
             "subtitle": "MATCH COLORS",
             "title": "Hyper Wearable  Fashion",
             "size_text": "h2",
-            "answer_content": "<p>Pair large text with an image to give focus to your chosen product, collection, or blog post. Add details on availability, style, or even provide a review.<\/p>",
+            "answer_content": "<p>Pair large text with an image to give focus to your chosen product, collection, or blog post. Add details on availability, style, or even provide a review.</p>",
             "button": "discover now",
             "style_btn": "btn-outline",
             "align": "left"
@@ -507,7 +516,7 @@
         "animation": "fade",
         "setwidth": "full",
         "bgsection": "#ffffff",
-        "image": "shopify:\/\/shop_images\/Artifact-Parcel-1-Masque-Duo-Kit-open.jpg",
+        "image": "shopify://shop_images/Artifact-Parcel-1-Masque-Duo-Kit-open.jpg",
         "height_section": "550",
         "height_section_mobile": "450",
         "align": "center",
@@ -527,30 +536,30 @@
           "type": "quote",
           "settings": {
             "title": "Wonderful !",
-            "quote": "<h4>“Absolutely loved it. The fit, the quality and the color. This is a slim fit jean like none other and the only one I will buy.”<\/h4>",
+            "quote": "<h4>“Absolutely loved it. The fit, the quality and the color. This is a slim fit jean like none other and the only one I will buy.”</h4>",
             "rate": 5,
             "author": "— Susan P.",
-            "avatar": "shopify:\/\/shop_images\/280385646_1915125505358368_1742113574796324864_n.jpg"
+            "avatar": "shopify://shop_images/280385646_1915125505358368_1742113574796324864_n.jpg"
           }
         },
         "template--14684877652053__70b7f2d2-4c12-4305-88bd-da89e2d18d5b-1665853262e19e6bf8-1": {
           "type": "quote",
           "settings": {
             "title": "perfect !",
-            "quote": "<h4>“ The most comfortable shoes ever!! I have them in 3 colors. And I am not done. \"<\/h4>",
+            "quote": "<h4>“ The most comfortable shoes ever!! I have them in 3 colors. And I am not done. \"</h4>",
             "rate": 5,
             "author": "—  Jaycie Glove",
-            "avatar": "shopify:\/\/shop_images\/346861523_623644909656006_3530097502547374068_n.jpg"
+            "avatar": "shopify://shop_images/346861523_623644909656006_3530097502547374068_n.jpg"
           }
         },
         "template--14684877652053__70b7f2d2-4c12-4305-88bd-da89e2d18d5b-1665853262e19e6bf8-2": {
           "type": "quote",
           "settings": {
             "title": "Awesome",
-            "quote": "<h4>\" I love Lola! They're one of my favorite brands. Customer service is excellent. I have only returned items once and it was so easy. \" <\/h4>",
+            "quote": "<h4>\" I love Lola! They're one of my favorite brands. Customer service is excellent. I have only returned items once and it was so easy. \" </h4>",
             "rate": 5,
             "author": "—  Kai Felix",
-            "avatar": "shopify:\/\/shop_images\/56770832_264629704416314_5810502777385604896_n.jpg"
+            "avatar": "shopify://shop_images/56770832_264629704416314_5810502777385604896_n.jpg"
           }
         }
       },
@@ -585,7 +594,7 @@
             "bgblock": "rgba(0,0,0,0)",
             "title": "Free Shipping",
             "description": "From all orders over $100",
-            "icon": "<svg aria-hidden=\"true\" focusable=\"false\" role=\"presentation\" class=\"icon icon-truck\" viewbox=\"0 0 82 82\"><path d=\"M7.238 68.717H1.867V2.12H58.4v16.736h3.886c9.755 0 17.663 7.908 17.663 17.663v32.199h-5.917M55.781 68.717H25.487\"><\/path><path d=\"M58.334 42.124h15.068v-4.27c0-6.82-5.53-12.35-12.351-12.35h-2.718v16.62M73.909 70.236a9.125 9.125 0 1 0-18.013-2.931 9.125 9.125 0 0 0 18.013 2.93ZM25.367 70.235a9.125 9.125 0 1 0-18.012-2.931 9.125 9.125 0 0 0 7.54 10.471 9.125 9.125 0 0 0 10.472-7.54Z\"><\/path><path d=\"M13.723 77.507c-3.966.658-7.937 1.51-11.857 2.593M60.373 76.736c-10.512-1.212-24.298-1.969-38.645-.451M79.768 80.121s-4.96-1.222-12.975-2.395\"><\/path><\/svg>"
+            "icon": "<svg aria-hidden=\"true\" focusable=\"false\" role=\"presentation\" class=\"icon icon-truck\" viewbox=\"0 0 82 82\"><path d=\"M7.238 68.717H1.867V2.12H58.4v16.736h3.886c9.755 0 17.663 7.908 17.663 17.663v32.199h-5.917M55.781 68.717H25.487\"></path><path d=\"M58.334 42.124h15.068v-4.27c0-6.82-5.53-12.35-12.351-12.35h-2.718v16.62M73.909 70.236a9.125 9.125 0 1 0-18.013-2.931 9.125 9.125 0 0 0 18.013 2.93ZM25.367 70.235a9.125 9.125 0 1 0-18.012-2.931 9.125 9.125 0 0 0 7.54 10.471 9.125 9.125 0 0 0 10.472-7.54Z\"></path><path d=\"M13.723 77.507c-3.966.658-7.937 1.51-11.857 2.593M60.373 76.736c-10.512-1.212-24.298-1.969-38.645-.451M79.768 80.121s-4.96-1.222-12.975-2.395\"></path></svg>"
           }
         },
         "template--14684877652053__c5690cdb-c04d-45fd-9c6c-cfee011363ca-166585292003960893-1": {
@@ -594,7 +603,7 @@
             "bgblock": "rgba(0,0,0,0)",
             "title": "The Beach Club",
             "description": "Be rewarded every time",
-            "icon": "<svg aria-hidden=\"true\" focusable=\"false\" role=\"presentation\" class=\"icon icon-plant-based\" viewbox=\"0 0 82 82\"><path d=\"M41 20.701V80M56.735 26.294c0 8.703-7.045 15.758-15.735 15.758s-15.735-7.055-15.735-15.758C25.265 14.719 41 2 41 2s15.735 12.719 15.735 24.294ZM30.479 46.972c6.145 6.154 6.145 16.132 0 22.285-6.145 6.154-16.107 6.154-22.252 0C.054 61.072 2.2 40.936 2.2 40.936s20.106-2.149 28.279 6.036Z\"><\/path><path d=\"M41 77.861S27.525 60.403 10.092 50.177M51.412 46.972c-6.145 6.154-6.145 16.132 0 22.285 6.145 6.153 16.107 6.154 22.252 0 8.173-8.185 6.027-28.321 6.027-28.321s-20.106-2.149-28.279 6.036Z\"><\/path><path d=\"M40.891 77.861s13.475-17.458 30.908-27.684\"><\/path><\/svg>"
+            "icon": "<svg aria-hidden=\"true\" focusable=\"false\" role=\"presentation\" class=\"icon icon-plant-based\" viewbox=\"0 0 82 82\"><path d=\"M41 20.701V80M56.735 26.294c0 8.703-7.045 15.758-15.735 15.758s-15.735-7.055-15.735-15.758C25.265 14.719 41 2 41 2s15.735 12.719 15.735 24.294ZM30.479 46.972c6.145 6.154 6.145 16.132 0 22.285-6.145 6.154-16.107 6.154-22.252 0C.054 61.072 2.2 40.936 2.2 40.936s20.106-2.149 28.279 6.036Z\"></path><path d=\"M41 77.861S27.525 60.403 10.092 50.177M51.412 46.972c-6.145 6.154-6.145 16.132 0 22.285 6.145 6.153 16.107 6.154 22.252 0 8.173-8.185 6.027-28.321 6.027-28.321s-20.106-2.149-28.279 6.036Z\"></path><path d=\"M40.891 77.861s13.475-17.458 30.908-27.684\"></path></svg>"
           }
         },
         "template--14684877652053__c5690cdb-c04d-45fd-9c6c-cfee011363ca-166585292003960893-2": {
@@ -603,7 +612,7 @@
             "bgblock": "rgba(0,0,0,0)",
             "title": "Instant Refunds",
             "description": "Return money within 30 days",
-            "icon": "<svg aria-hidden=\"true\" focusable=\"false\" role=\"presentation\" class=\"icon icon-package\" viewbox=\"0 0 82 82\"><path d=\"M80 21v39L41 80 2 60V21L41 2l39 19Z\"><\/path><path d=\"m2 21 39 20 38.571-19.807M41 41.478v38.338\"><\/path><path d=\"m27.715 8.643 38.409 19.473v17.543l-11.617 6.067V33.83L16.098 14.355\"><\/path><\/svg>"
+            "icon": "<svg aria-hidden=\"true\" focusable=\"false\" role=\"presentation\" class=\"icon icon-package\" viewbox=\"0 0 82 82\"><path d=\"M80 21v39L41 80 2 60V21L41 2l39 19Z\"></path><path d=\"m2 21 39 20 38.571-19.807M41 41.478v38.338\"></path><path d=\"m27.715 8.643 38.409 19.473v17.543l-11.617 6.067V33.83L16.098 14.355\"></path></svg>"
           }
         },
         "4273663e-a3ea-49a8-a7c1-c872309fc99c": {
@@ -612,7 +621,7 @@
             "bgblock": "rgba(0,0,0,0)",
             "title": "Wear Now",
             "description": "Pay in easy instalments.",
-            "icon": "<svg aria-hidden=\"true\" focusable=\"false\" role=\"presentation\" class=\"icon icon-shield\" viewbox=\"0 0 64 64\"><defs><style>.a{fill:none;stroke:#000;stroke-width:2px}<\/style><\/defs><path class=\"a\" d=\"M21.18 31.69L28.54 39l15.91-15.88\"><\/path><path class=\"a\" d=\"M53 12.54v15.24a31.41 31.41 0 0 1-3.7 14.95A25.46 25.46 0 0 1 32 56a25.46 25.46 0 0 1-17.3-13.27A31.41 31.41 0 0 1 11 27.78V12.54C24.88 13.67 32 8 32 8s7.12 5.67 21 4.54z\"><\/path><\/svg>"
+            "icon": "<svg aria-hidden=\"true\" focusable=\"false\" role=\"presentation\" class=\"icon icon-shield\" viewbox=\"0 0 64 64\"><defs><style>.a{fill:none;stroke:#000;stroke-width:2px}</style></defs><path class=\"a\" d=\"M21.18 31.69L28.54 39l15.91-15.88\"></path><path class=\"a\" d=\"M53 12.54v15.24a31.41 31.41 0 0 1-3.7 14.95A25.46 25.46 0 0 1 32 56a25.46 25.46 0 0 1-17.3-13.27A31.41 31.41 0 0 1 11 27.78V12.54C24.88 13.67 32 8 32 8s7.12 5.67 21 4.54z\"></path></svg>"
           }
         }
       },
@@ -650,21 +659,21 @@
           "type": "faq",
           "settings": {
             "faq_title": "Is the shipping free?",
-            "faq_des": "<p>Yes. Worldwide shipping is already included in the price. We use DHL express with 3 days delivery time.<\/p>"
+            "faq_des": "<p>Yes. Worldwide shipping is already included in the price. We use DHL express with 3 days delivery time.</p>"
           }
         },
         "template--14684877652053__bcb1cba3-80fc-49a2-a033-40cf0618e9c8-16659371170e440ef7-1": {
           "type": "faq",
           "settings": {
             "faq_title": "When will I receive my item?",
-            "faq_des": "<p>When we have received your order, you will automatically receive an e-mail confirming your order. Orders made before 2 PM (CET) will be picked, packed and shipped the same day. Delivery time is usually 2-4 working days with DHL Express.<\/p>"
+            "faq_des": "<p>When we have received your order, you will automatically receive an e-mail confirming your order. Orders made before 2 PM (CET) will be picked, packed and shipped the same day. Delivery time is usually 2-4 working days with DHL Express.</p>"
           }
         },
         "template--14684877652053__bcb1cba3-80fc-49a2-a033-40cf0618e9c8-16659371170e440ef7-2": {
           "type": "faq",
           "settings": {
             "faq_title": "Can I change or return my item?",
-            "faq_des": "<p>If you want to change a product into another model, strap color etc., please contact us so we are able to reserve the new item in our stock immediately. You are always entitled to an exchange or refund within 30 days after you have received your package, as long as the item has not been used.<\/p>"
+            "faq_des": "<p>If you want to change a product into another model, strap color etc., please contact us so we are able to reserve the new item in our stock immediately. You are always entitled to an exchange or refund within 30 days after you have received your package, as long as the item has not been used.</p>"
           }
         }
       },
@@ -744,7 +753,7 @@
       "type": "apps",
       "blocks": {
         "areviews_reviews_importer_areviews_display_reviews_1043E4": {
-          "type": "shopify:\/\/apps\/areviews-reviews-importer\/blocks\/AreviewsDisplayReviews\/ab0ec5fe-c95b-4fd6-bfb8-db2a30d0756f",
+          "type": "shopify://apps/areviews-reviews-importer/blocks/AreviewsDisplayReviews/ab0ec5fe-c95b-4fd6-bfb8-db2a30d0756f",
           "settings": {
             "hide_areviews_title_rating": false,
             "areviews_theme_font": "inherit",

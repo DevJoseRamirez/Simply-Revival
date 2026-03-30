@@ -1,3 +1,12 @@
+/*
+ * ------------------------------------------------------------
+ * IMPORTANT: The contents of this file are auto-generated.
+ *
+ * This file may be updated by the Shopify admin language editor
+ * or related systems. Please exercise caution as any changes
+ * made to this file may be overwritten.
+ * ------------------------------------------------------------
+ */
 {
   "general": {
     "accessibility": {
@@ -28,7 +37,7 @@
       "login_form_submit": "Enter",
       "signup_form_email_label": "Email",
       "signup_form_success": "We will send you an email right before we open!",
-      "admin_link_html": "Are you the store owner? <a href=\"\/admin\" class=\"text-link\">Log in here<\/a>",
+      "admin_link_html": "Are you the store owner? <a href=\"/admin\" class=\"text-link\">Log in here</a>",
       "password_link": "Enter using password",
       "powered_by_shopify_html": "This shop will be powered by {{ shopify }}"
     },
@@ -60,8 +69,8 @@
       "view_all": "View all",
       "no_result": "No results.",
       "results_count_html": {
-        "one": "{{ count }} match for <strong>{{ terms }}<\/strong>",
-        "other": "{{ count }} matches for <strong>{{ terms }}<\/strong>"
+        "one": "{{ count }} match for <strong>{{ terms }}</strong>",
+        "other": "{{ count }} matches for <strong>{{ terms }}</strong>"
       },
       "products": "Products",
       "pages_and_articles": "Pages and articles"
@@ -125,9 +134,9 @@
       "remove": "Remove",
       "note": "Special instructions for seller",
       "taxes_and_shipping_at_checkout": "Taxes and shipping calculated at checkout",
-      "taxes_and_shipping_policy_at_checkout_html": "Taxes and <a href=\"{{ link }}\">shipping<\/a> calculated at checkout",
+      "taxes_and_shipping_policy_at_checkout_html": "Taxes and <a href=\"{{ link }}\">shipping</a> calculated at checkout",
       "taxes_included_but_shipping_at_checkout": "Tax included and shipping calculated at checkout",
-      "taxes_included_and_shipping_policy_html": "Tax included. <a href=\"{{ link }}\">Shipping<\/a> calculated at checkout.",
+      "taxes_included_and_shipping_policy_html": "Tax included. <a href=\"{{ link }}\">Shipping</a> calculated at checkout.",
       "update": "Update Cart",
       "view": "View Cart",
       "and_more": "And more",
@@ -233,7 +242,7 @@
       "city": "City",
       "country": "Country",
       "province": "Province",
-      "zip": "Postal\/Zip Code",
+      "zip": "Postal/Zip Code",
       "phone": "Phone",
       "set_default": "Set as default address",
       "add": "Add Address",
@@ -315,7 +324,7 @@
       "previous_slide": "Previous slide",
       "pause_slideshow": "Pause slideshow",
       "play_slideshow": "Play slideshow",
-      "navigation_instructions": "Use left\/right arrows to navigate the slideshow or swipe left\/right if using a mobile device",
+      "navigation_instructions": "Use left/right arrows to navigate the slideshow or swipe left/right if using a mobile device",
       "slide_number": "Slide {{ slide_number }}, current"
     },
     "onboarding": {
@@ -360,7 +369,7 @@
       "on_sale_from_html": "On sale from {{ price }}",
       "from_text_html": "From {{ price }}",
       "include_taxes": "Tax included.",
-      "shipping_policy_html": "<a href=\"{{ link }}\">Shipping<\/a> calculated at checkout.",
+      "shipping_policy_html": "<a href=\"{{ link }}\">Shipping</a> calculated at checkout.",
       "quantity": "Quantity",
       "add_to_cart": "Add to Cart",
       "full_details": "Full details",
@@ -396,8 +405,8 @@
         "view_store_info": "View store information",
         "check_other_stores": "Check availability at other stores",
         "pick_up_available": "Pickup available",
-        "pick_up_available_at_html": "Pickup available at <span class=\"color-foreground\">{{ location_name }}<\/span>",
-        "pick_up_unavailable_at_html": "Pickup currently unavailable at <span class=\"color-foreground\">{{ location_name }}<\/span>",
+        "pick_up_available_at_html": "Pickup available at <span class=\"color-foreground\">{{ location_name }}</span>",
+        "pick_up_unavailable_at_html": "Pickup currently unavailable at <span class=\"color-foreground\">{{ location_name }}</span>",
         "unavailable": "Couldn't load pickup availability",
         "refresh": "Refresh"
       },
@@ -481,7 +490,7 @@
       "get_directions": "Get directions",
       "address_error": "Error looking up that address",
       "address_no_results": "No results for that address",
-      "address_query_limit_html": "You have exceeded the Google API usage limit. Consider upgrading to a <a href=\"https:\/\/developers.google.com\/maps\/premium\/usage-limits\">Premium Plan<\/a>.",
+      "address_query_limit_html": "You have exceeded the Google API usage limit. Consider upgrading to a <a href=\"https://developers.google.com/maps/premium/usage-limits\">Premium Plan</a>.",
       "auth_error_html": "There was a problem authenticating your Google Maps API Key."
     },
     "slideshow": {
@@ -490,12 +499,12 @@
       "pause_slideshow": "Pause slideshow",
       "rotate_slideshow": "Play slideshow",
       "load_slide": "Load slide {{ slide_number }}",
-      "navigation_instructions": "Use left\/right arrows to navigate the slideshow or swipe left\/right if using a mobile device"
+      "navigation_instructions": "Use left/right arrows to navigate the slideshow or swipe left/right if using a mobile device"
     },
     "collection_template": {
       "empty": "No products found",
       "title": "Collection",
-      "use_fewer_filters_html": "Use fewer filters or <a class=\"{{ class }}\" href=\"{{ link }}\">clear all<\/a>"
+      "use_fewer_filters_html": "Use fewer filters or <a class=\"{{ class }}\" href=\"{{ link }}\">clear all</a>"
     }
   },
   "video": {
@@ -506,10 +515,10 @@
     "product_title": "Example product title"
   },
   "localization": {
-    "country_label": "Country\/region",
+    "country_label": "Country/region",
     "language_label": "Language",
     "update_language": "Update language",
-    "update_country": "Update country\/region"
+    "update_country": "Update country/region"
   },
   "shopify": {
     "checkout": {

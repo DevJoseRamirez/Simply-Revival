@@ -1,3 +1,12 @@
+/*
+ * ------------------------------------------------------------
+ * IMPORTANT: The contents of this file are auto-generated.
+ *
+ * This file may be updated by the Shopify admin theme editor
+ * or related systems. Please exercise caution as any changes
+ * made to this file may be overwritten.
+ * ------------------------------------------------------------
+ */
 {
   "sections": {
     "cwc_scrolling_banner_La4KMf": {
@@ -6,35 +15,35 @@
         "item_68PPYF": {
           "type": "item",
           "settings": {
-            "image": "shopify:\/\/shop_images\/Simply_Revival___356_Day_Guarantee_-_64px.png",
+            "image": "shopify://shop_images/Simply_Revival___356_Day_Guarantee_-_64px.png",
             "text": "356 Day Guarantee"
           }
         },
         "item_LfgeTX": {
           "type": "item",
           "settings": {
-            "image": "shopify:\/\/shop_images\/Simply_Revival___Tiktok_Viral_-_64px.png",
+            "image": "shopify://shop_images/Simply_Revival___Tiktok_Viral_-_64px.png",
             "text": "Tiktok Viral"
           }
         },
         "item_NaAtWt": {
           "type": "item",
           "settings": {
-            "image": "shopify:\/\/shop_images\/Simply_Revival___Number-1_Natural_64px-min.png",
+            "image": "shopify://shop_images/Simply_Revival___Number-1_Natural_64px-min.png",
             "text": "Top Rated"
           }
         },
         "item_VJqA6Y": {
           "type": "item",
           "settings": {
-            "image": "shopify:\/\/shop_images\/Simply_Revival___Safe_Formula_-_64px.png",
+            "image": "shopify://shop_images/Simply_Revival___Safe_Formula_-_64px.png",
             "text": "Safe Blend"
           }
         },
         "item_zQ7LtP": {
           "type": "item",
           "settings": {
-            "image": "shopify:\/\/shop_images\/Simply_Revival___All_Natural_-_64px.png",
+            "image": "shopify://shop_images/Simply_Revival___All_Natural_-_64px.png",
             "text": "All Natural"
           }
         }
@@ -68,7 +77,7 @@
           "type": "content",
           "settings": {
             "title_tab": "Material",
-            "answer_content": "<p>Use collapsible tabs for more detailed information that will help customers make a purchasing decision.<\/p><p>Ex: Shipping and return policies, size guides, and other common questions.<\/p>",
+            "answer_content": "<p>Use collapsible tabs for more detailed information that will help customers make a purchasing decision.</p><p>Ex: Shipping and return policies, size guides, and other common questions.</p>",
             "page": "material"
           }
         },
@@ -176,37 +185,37 @@
         "rating_efyjWb": {
           "type": "rating",
           "settings": {
-            "text": "<p>Rated <strong>4.9 Excellent <\/strong>| <a href=\"#az_reviews\" title=\"#az_reviews\"><span style=\"text-decoration:underline\">323 Reviews<\/span><\/a><\/p>"
+            "text": "<p>Rated <strong>4.9 Excellent </strong>| <a href=\"#az_reviews\" title=\"#az_reviews\"><span style=\"text-decoration:underline\">323 Reviews</span></a></p>"
           }
         },
         "vendor_7iLFXM": {
           "type": "vendor",
           "settings": {
-            "vendor": "<p>{{ product.vendor }}<\/p>"
+            "vendor": "<p>{{ product.vendor }}</p>"
           }
         },
         "title_AkTrAX": {
           "type": "title",
           "settings": {
-            "title": "<h3>Natural Hair Support Serum<\/h3>"
+            "title": "<h3>Natural Hair Support Serum</h3>"
           }
         },
         "desc_jFWt9g": {
           "type": "desc",
           "settings": {
-            "desc": "<p>A blend of 9 natural super-oils formulated to nourish the scalp, condition the hair, and support a fuller-looking appearance.<\/p>"
+            "desc": "<p>A blend of 9 natural super-oils formulated to nourish the scalp, condition the hair, and support a fuller-looking appearance.</p>"
           }
         },
         "benefits_p34Qab": {
           "type": "benefits",
           "settings": {
-            "icon1": "shopify:\/\/shop_images\/Natural_Hair_Support_Serum___Simply_Revival___Supports_stronger_healthier-looking_strands-min.png",
+            "icon1": "shopify://shop_images/Natural_Hair_Support_Serum___Simply_Revival___Supports_stronger_healthier-looking_strands-min.png",
             "text1": "Supports the appearance of stronger, healthier-looking strands",
-            "icon2": "shopify:\/\/shop_images\/Natural_Hair_Support_Serum___Simply_Revival___Deeply_hydrates_the_scalp_and_smooths_the_appearance_of_damaged_hair-min.png",
+            "icon2": "shopify://shop_images/Natural_Hair_Support_Serum___Simply_Revival___Deeply_hydrates_the_scalp_and_smooths_the_appearance_of_damaged_hair-min.png",
             "text2": "Deeply conditions and hydrates the scalp and hair",
-            "icon3": "shopify:\/\/shop_images\/Natural_Hair_Support_Serum___Simply_Revival___Helps_maintain_fuller-looking_hair_with_consistent_use-min.png",
+            "icon3": "shopify://shop_images/Natural_Hair_Support_Serum___Simply_Revival___Helps_maintain_fuller-looking_hair_with_consistent_use-min.png",
             "text3": "Helps maintain fuller, more voluminous look with consistent use",
-            "icon4": "shopify:\/\/shop_images\/Natural_Hair_Support_Serum___Simply_Revival___9_premium_oils_that_nurture_scalp_comfort_and_natural_shine.-min.png",
+            "icon4": "shopify://shop_images/Natural_Hair_Support_Serum___Simply_Revival___9_premium_oils_that_nurture_scalp_comfort_and_natural_shine.-min.png",
             "text4": "9 premium oils that enhance natural shine and smoothness",
             "text5": "",
             "text6": ""
@@ -219,9 +228,9 @@
         "product_options_nPiXV8": {
           "type": "product_options",
           "settings": {
-            "image1": "shopify:\/\/shop_images\/Simply_Revival___Natural_Hair_Support_Serum___Buy_One.png",
-            "image2": "shopify:\/\/shop_images\/Simply_Revival___Natural_Hair_Support_Serum___Buy_2_-_Get_1_FREE.png",
-            "image3": "shopify:\/\/shop_images\/Simply_Revival___Natural_Hair_Support_Serum___Buy_3_-_Get_2_FREE.png"
+            "image1": "shopify://shop_images/Simply_Revival___Natural_Hair_Support_Serum___Buy_One.png",
+            "image2": "shopify://shop_images/Simply_Revival___Natural_Hair_Support_Serum___Buy_2_-_Get_1_FREE.png",
+            "image3": "shopify://shop_images/Simply_Revival___Natural_Hair_Support_Serum___Buy_3_-_Get_2_FREE.png"
           }
         },
         "subscription_toggle_pXPczQ": {
@@ -252,46 +261,46 @@
           "type": "guarantee_text",
           "settings": {
             "text": "365-day money back guarantee",
-            "icon": "shopify:\/\/shop_images\/Simply_Revival___Gurantee-min.png"
+            "icon": "shopify://shop_images/Simply_Revival___Gurantee-min.png"
           }
         },
         "faq_7YcCid": {
           "type": "faq",
           "settings": {
             "title": "What is Simply Revival?",
-            "content": "<p>Simply Revival is a wellness brand focused on plant-based formulations that support healthy-looking hair and overall well-being — made without synthetic ingredients or harsh additives.<\/p>"
+            "content": "<p>Simply Revival is a wellness brand focused on plant-based formulations that support healthy-looking hair and overall well-being — made without synthetic ingredients or harsh additives.</p>"
           }
         },
         "faq_AD8NBA": {
           "type": "faq",
           "settings": {
             "title": "Is Simply revival safe to use?",
-            "content": "<p>Yes, our formulas are crafted with high-quality, plant-based ingredients and designed for everyday use.<\/p>"
+            "content": "<p>Yes, our formulas are crafted with high-quality, plant-based ingredients and designed for everyday use.</p>"
           }
         },
         "faq_8NkFB8": {
           "type": "faq",
           "settings": {
             "title": "When will I start noticing a difference?",
-            "content": "<p>Everyone’s routine is different, but many customers share that their hair feels healthier and stronger with consistent use.<\/p>"
+            "content": "<p>Everyone’s routine is different, but many customers share that their hair feels healthier and stronger with consistent use.</p>"
           }
         },
         "faq_R4hrL7": {
           "type": "faq",
           "settings": {
             "title": "Is simply revival suitable for all hair types?",
-            "content": "<p>Yes, the formula is designed to to support hair heath for all types of hair.<\/p>"
+            "content": "<p>Yes, the formula is designed to to support hair heath for all types of hair.</p>"
           }
         },
         "faq_wHxCrf": {
           "type": "faq",
           "settings": {
             "title": "Do you have a guarantee?",
-            "content": "<p>Yes, All orders are backed by our 365 day money back guarantee. If you’re not happy, we will make it right!<\/p>"
+            "content": "<p>Yes, All orders are backed by our 365 day money back guarantee. If you’re not happy, we will make it right!</p>"
           }
         },
         "areviews_reviews_importer_areviews_title_rating_73D146": {
-          "type": "shopify:\/\/apps\/areviews-reviews-importer\/blocks\/AreviewsTitleRating\/ab0ec5fe-c95b-4fd6-bfb8-db2a30d0756f",
+          "type": "shopify://apps/areviews-reviews-importer/blocks/AreviewsTitleRating/ab0ec5fe-c95b-4fd6-bfb8-db2a30d0756f",
           "settings": {}
         }
       },
@@ -328,21 +337,21 @@
         "usp_KnnY7q": {
           "type": "usp",
           "settings": {
-            "icon": "shopify:\/\/shop_images\/Simply_Revival___No_Harsh_Side_Effects_-_64.png",
+            "icon": "shopify://shop_images/Simply_Revival___No_Harsh_Side_Effects_-_64.png",
             "text": "Plant-Based"
           }
         },
         "usp_8UbLgM": {
           "type": "usp",
           "settings": {
-            "icon": "shopify:\/\/shop_images\/Simply_Revival___Third_Party_Tested_-_64.png",
+            "icon": "shopify://shop_images/Simply_Revival___Third_Party_Tested_-_64.png",
             "text": "THIRD PARTY TESTED"
           }
         },
         "usp_9H8LXQ": {
           "type": "usp",
           "settings": {
-            "icon": "shopify:\/\/shop_images\/Simply_Revival___Clean_Ingredients_-_64.png",
+            "icon": "shopify://shop_images/Simply_Revival___Clean_Ingredients_-_64.png",
             "text": "CLEAN INGREDIENT"
           }
         }
@@ -366,49 +375,49 @@
         "image_wqM7jj": {
           "type": "image",
           "settings": {
-            "image": "shopify:\/\/shop_images\/Simply_Revival___Customer_Reviews_-_04-min.png"
+            "image": "shopify://shop_images/Simply_Revival___Customer_Reviews_-_04-min.png"
           }
         },
         "image_pFM3iM": {
           "type": "image",
           "settings": {
-            "image": "shopify:\/\/shop_images\/Simply_Revival___Customer_Reviews_-_05-min.png"
+            "image": "shopify://shop_images/Simply_Revival___Customer_Reviews_-_05-min.png"
           }
         },
         "image_XPQPhJ": {
           "type": "image",
           "settings": {
-            "image": "shopify:\/\/shop_images\/Simply_Revival___Customer_Reviews_-_02-min.png"
+            "image": "shopify://shop_images/Simply_Revival___Customer_Reviews_-_02-min.png"
           }
         },
         "image_MdYyhM": {
           "type": "image",
           "settings": {
-            "image": "shopify:\/\/shop_images\/Simply_Revival___Customer_Reviews_-_07-min.png"
+            "image": "shopify://shop_images/Simply_Revival___Customer_Reviews_-_07-min.png"
           }
         },
         "image_NbX4VW": {
           "type": "image",
           "settings": {
-            "image": "shopify:\/\/shop_images\/Simply_Revival___Customer_Reviews_-_01-min.png"
+            "image": "shopify://shop_images/Simply_Revival___Customer_Reviews_-_01-min.png"
           }
         },
         "image_iyhDpy": {
           "type": "image",
           "settings": {
-            "image": "shopify:\/\/shop_images\/Simply_Revival___Customer_Reviews_-_06-min.png"
+            "image": "shopify://shop_images/Simply_Revival___Customer_Reviews_-_06-min.png"
           }
         },
         "image_eJVmTb": {
           "type": "image",
           "settings": {
-            "image": "shopify:\/\/shop_images\/Simply_Revival___Customer_Reviews_-_03-min.png"
+            "image": "shopify://shop_images/Simply_Revival___Customer_Reviews_-_03-min.png"
           }
         },
         "image_FLwXV7": {
           "type": "image",
           "settings": {
-            "image": "shopify:\/\/shop_images\/Simply_Revival___Customer_Reviews_-_08-min.png"
+            "image": "shopify://shop_images/Simply_Revival___Customer_Reviews_-_08-min.png"
           }
         }
       },
@@ -426,9 +435,9 @@
       "settings": {
         "show_stars": true,
         "star_link": "",
-        "heading": "<h3>Real Stories, <strong>Real Experiences<\/strong><\/h3>",
+        "heading": "<h3>Real Stories, <strong>Real Experiences</strong></h3>",
         "bold_color": "#125657",
-        "text": "<p>See What customer Are Saying About Simply Revival<\/p>",
+        "text": "<p>See What customer Are Saying About Simply Revival</p>",
         "bg_color": "#fffee3",
         "text_color": "#111111",
         "padding_top": 40,
@@ -603,7 +612,7 @@
           "type": "highlight_row",
           "settings": {
             "title": "🌿 Everyday Factors",
-            "text": "<p>Things like stress, environment, and daily care can all influence how your hair looks and feels.<br\/><\/p>",
+            "text": "<p>Things like stress, environment, and daily care can all influence how your hair looks and feels.<br/></p>",
             "text_color": ""
           }
         },
@@ -611,7 +620,7 @@
           "type": "highlight_row",
           "settings": {
             "title": "🍃 The Approach",
-            "text": "<p>Our formula combines nourishing oils, herbs, and vitamins to help support scalp hydration and overall hair wellness.<br\/><\/p>",
+            "text": "<p>Our formula combines nourishing oils, herbs, and vitamins to help support scalp hydration and overall hair wellness.<br/></p>",
             "text_color": ""
           }
         },
@@ -619,7 +628,7 @@
           "type": "highlight_row",
           "settings": {
             "title": "💪 The Result",
-            "text": "<p>With consistent use, hair looks smoother, shinier, and naturally fuller over time.<br\/><\/p>",
+            "text": "<p>With consistent use, hair looks smoother, shinier, and naturally fuller over time.<br/></p>",
             "text_color": ""
           }
         }
@@ -631,9 +640,9 @@
       ],
       "name": "Image Benefits",
       "settings": {
-        "featured_image": "shopify:\/\/shop_images\/Simply_Revival___Everyday_elements_can_affect_shine_fullness_and_scalp_comfort.-min.png",
+        "featured_image": "shopify://shop_images/Simply_Revival___Everyday_elements_can_affect_shine_fullness_and_scalp_comfort.-min.png",
         "reverse_layout": false,
-        "section_title": "<h3><strong>Everyday elements can affect shine, fullness, and scalp comfort.<\/strong><\/h3>",
+        "section_title": "<h3><strong>Everyday elements can affect shine, fullness, and scalp comfort.</strong></h3>",
         "section_caption": "Nourish your hair naturally.",
         "background_color": "#ffffff",
         "text_color": "#000000",
@@ -650,55 +659,55 @@
         "testimonial_image_6qDttd": {
           "type": "testimonial_image",
           "settings": {
-            "image": "shopify:\/\/shop_images\/Simply_Revival___Transformation_-_I_have_baby_hairs_growing_where_nothing_used_to_be.png"
+            "image": "shopify://shop_images/Simply_Revival___Transformation_-_I_have_baby_hairs_growing_where_nothing_used_to_be.png"
           }
         },
         "testimonial_image_pa8Gnf": {
           "type": "testimonial_image",
           "settings": {
-            "image": "shopify:\/\/shop_images\/Simply_Revival___Transformation_-_noticeable_difference.png"
+            "image": "shopify://shop_images/Simply_Revival___Transformation_-_noticeable_difference.png"
           }
         },
         "testimonial_image_hcBdwz": {
           "type": "testimonial_image",
           "settings": {
-            "image": "shopify:\/\/shop_images\/Simply_Revival___Transformation_-_notice_a_tremendous_improvement_in_my_hairline.png"
+            "image": "shopify://shop_images/Simply_Revival___Transformation_-_notice_a_tremendous_improvement_in_my_hairline.png"
           }
         },
         "testimonial_image_bxmCkR": {
           "type": "testimonial_image",
           "settings": {
-            "image": "shopify:\/\/shop_images\/Simply_Revival___Transformation_-_Definitely_see_my_results.png"
+            "image": "shopify://shop_images/Simply_Revival___Transformation_-_Definitely_see_my_results.png"
           }
         },
         "testimonial_image_MKgwLU": {
           "type": "testimonial_image",
           "settings": {
-            "image": "shopify:\/\/shop_images\/Simply_Revival___Transformation_-_I_m_on_my_4th_bottle_I_gained_all_my_hair_back_I_m_super_happy.png"
+            "image": "shopify://shop_images/Simply_Revival___Transformation_-_I_m_on_my_4th_bottle_I_gained_all_my_hair_back_I_m_super_happy.png"
           }
         },
         "testimonial_image_A4pmd6": {
           "type": "testimonial_image",
           "settings": {
-            "image": "shopify:\/\/shop_images\/Simply_Revival___Transformation_-_Look_y_all_this_product_works..png"
+            "image": "shopify://shop_images/Simply_Revival___Transformation_-_Look_y_all_this_product_works..png"
           }
         },
         "testimonial_image_6RhbHL": {
           "type": "testimonial_image",
           "settings": {
-            "image": "shopify:\/\/shop_images\/Simply_Revival___Transformation_-_It_s_a_process_but_so_far_it_has_been_good.png"
+            "image": "shopify://shop_images/Simply_Revival___Transformation_-_It_s_a_process_but_so_far_it_has_been_good.png"
           }
         },
         "testimonial_image_Lh6WnE": {
           "type": "testimonial_image",
           "settings": {
-            "image": "shopify:\/\/shop_images\/Simply_Revival___Transformation_-_My_bald_spot_on_my_crown_is_gone_and_my_hairline_is_so_thick_now..png"
+            "image": "shopify://shop_images/Simply_Revival___Transformation_-_My_bald_spot_on_my_crown_is_gone_and_my_hairline_is_so_thick_now..png"
           }
         },
         "testimonial_image_aJW8C7": {
           "type": "testimonial_image",
           "settings": {
-            "image": "shopify:\/\/shop_images\/Simply_Revival___Transformation_-_started_seeing_results_after_21_days.png"
+            "image": "shopify://shop_images/Simply_Revival___Transformation_-_started_seeing_results_after_21_days.png"
           }
         }
       },
@@ -716,7 +725,7 @@
       "name": "Testimonial Images",
       "settings": {
         "testimonial_list": "image-testimonial-list-et8lvccj",
-        "section_title": "<h3>10,000+ <strong>Happy Customers<\/strong><\/h3>",
+        "section_title": "<h3>10,000+ <strong>Happy Customers</strong></h3>",
         "bold_color": "#125657",
         "section_subtitle": "",
         "bg_color": "#fffee3",
@@ -806,7 +815,7 @@
       "settings": {
         "headline": "Why Choose Simply Revival® for Natural Hair Support?",
         "bg_color": "#125657",
-        "bg_image": "shopify:\/\/shop_images\/Simply_Revival___Why_Trust_Simply_Revival_vs_Standard_Prescriptions-min.png",
+        "bg_image": "shopify://shop_images/Simply_Revival___Why_Trust_Simply_Revival_vs_Standard_Prescriptions-min.png",
         "text_color": "#ffffff",
         "padding_top": 60,
         "padding_bottom": 60
@@ -826,63 +835,63 @@
         "heading_jGHhHk": {
           "type": "heading",
           "settings": {
-            "text": "<h3>We’re different from everything you’ve tried<\/h3>",
+            "text": "<h3>We’re different from everything you’ve tried</h3>",
             "heading_color": "#111111"
           }
         },
         "reason_UiAERk": {
           "type": "reason",
           "settings": {
-            "img": "shopify:\/\/shop_images\/Simply_Revival___Reason_1_-_Clinical_Strength.png",
+            "img": "shopify://shop_images/Simply_Revival___Reason_1_-_Clinical_Strength.png",
             "badge": "Reason 1",
             "badge_bg": "#60a1a2",
             "badge_color": "#ffffff",
             "title": "Advanced Quality Blend",
-            "text": "<p>Simply Revival® features 350mg+ of our proprietary blend of herbs including saw palmetto and stinging nettle.<\/p>"
+            "text": "<p>Simply Revival® features 350mg+ of our proprietary blend of herbs including saw palmetto and stinging nettle.</p>"
           }
         },
         "reason_TKEJHx": {
           "type": "reason",
           "settings": {
-            "img": "shopify:\/\/shop_images\/Simply_Revival___Reason_2_-_9_Legendary_Herbs._One_formula.png",
+            "img": "shopify://shop_images/Simply_Revival___Reason_2_-_9_Legendary_Herbs._One_formula.png",
             "badge": "Reason 2",
             "badge_bg": "#60a1a2",
             "badge_color": "#ffffff",
             "title": "9 Legendary Herbs. One Formula",
-            "text": "<p>We combine 9 renowned herbs into one balanced blend designed to help maintain scalp comfort and support the appearance of fuller-looking hair<\/p>"
+            "text": "<p>We combine 9 renowned herbs into one balanced blend designed to help maintain scalp comfort and support the appearance of fuller-looking hair</p>"
           }
         },
         "reason_YLnYnw": {
           "type": "reason",
           "settings": {
-            "img": "shopify:\/\/shop_images\/Simply_Revival___Reason_3_-_No_taste._No_hassle._Clean_and_Gentle.png",
+            "img": "shopify://shop_images/Simply_Revival___Reason_3_-_No_taste._No_hassle._Clean_and_Gentle.png",
             "badge": "Reason 3",
             "badge_bg": "#60a1a2",
             "badge_color": "#ffffff",
             "title": "No Taste. No Hassle. Clean and Gentle",
-            "text": "<p>Our plant-based capsules are easy to swallow, tasteless, and gentle on your body.<\/p>"
+            "text": "<p>Our plant-based capsules are easy to swallow, tasteless, and gentle on your body.</p>"
           }
         },
         "reason_xJhUca": {
           "type": "reason",
           "settings": {
-            "img": "shopify:\/\/shop_images\/Simply_Revival___Reason_4_-_Visible_Improvement_Over_Time.png",
+            "img": "shopify://shop_images/Simply_Revival___Reason_4_-_Visible_Improvement_Over_Time.png",
             "badge": "Reason 4",
             "badge_bg": "#60a1a2",
             "badge_color": "#ffffff",
             "title": "Visible difference over time",
-            "text": "<p>Users say their hair looks healthier and fuller — making it easy to feel good about their daily routine.<\/p>"
+            "text": "<p>Users say their hair looks healthier and fuller — making it easy to feel good about their daily routine.</p>"
           }
         },
         "reason_az3atk": {
           "type": "reason",
           "settings": {
-            "img": "shopify:\/\/shop_images\/Simply_Revival___Reason_5_-_Radical_Transparency.png",
+            "img": "shopify://shop_images/Simply_Revival___Reason_5_-_Radical_Transparency.png",
             "badge": "Reason 5",
             "badge_bg": "#60a1a2",
             "badge_color": "#ffffff",
             "title": "Radical Transparency",
-            "text": "<p>No fillers. No fluff. Just thoughtfully selected botanical ingredients.<\/p>"
+            "text": "<p>No fillers. No fluff. Just thoughtfully selected botanical ingredients.</p>"
           }
         },
         "button_wYqzHE": {
@@ -898,7 +907,7 @@
           "type": "guarantee_text",
           "settings": {
             "text": "365-day money back guarantee",
-            "icon": "shopify:\/\/shop_images\/Simply_Revival___Gurantee-min.png"
+            "icon": "shopify://shop_images/Simply_Revival___Gurantee-min.png"
           }
         }
       },
@@ -928,7 +937,7 @@
         "testimonial_gAB3Pi": {
           "type": "testimonial",
           "settings": {
-            "video_file": "shopify:\/\/files\/videos\/Simply Revival | Real People Real Results - lukefinds.mp4",
+            "video_file": "shopify://files/videos/Simply Revival | Real People Real Results - lukefinds.mp4",
             "video_url": "",
             "author_name": "Customer Name"
           }
@@ -936,7 +945,7 @@
         "testimonial_JKCwDW": {
           "type": "testimonial",
           "settings": {
-            "video_file": "shopify:\/\/files\/videos\/Simply Revival | Real People Real Results - TikTok-viral.mp4",
+            "video_file": "shopify://files/videos/Simply Revival | Real People Real Results - TikTok-viral.mp4",
             "video_url": "",
             "author_name": "Customer Name"
           }
@@ -944,7 +953,7 @@
         "testimonial_imEa7a": {
           "type": "testimonial",
           "settings": {
-            "video_file": "shopify:\/\/files\/videos\/Simply Revival | Real People Real Results - alexcozys.mp4",
+            "video_file": "shopify://files/videos/Simply Revival | Real People Real Results - alexcozys.mp4",
             "video_url": "",
             "author_name": "Customer Name"
           }
@@ -952,7 +961,7 @@
         "testimonial_CEbkbp": {
           "type": "testimonial",
           "settings": {
-            "video_file": "shopify:\/\/files\/videos\/Simply Revival | Real People Real Results - thehealthwealth.mp4",
+            "video_file": "shopify://files/videos/Simply Revival | Real People Real Results - thehealthwealth.mp4",
             "video_url": "",
             "author_name": "Customer Name"
           }
@@ -960,7 +969,7 @@
         "testimonial_LbgUCx": {
           "type": "testimonial",
           "settings": {
-            "video_file": "shopify:\/\/files\/videos\/Simply Revival | Real People Real Results - kwakusella.mp4",
+            "video_file": "shopify://files/videos/Simply Revival | Real People Real Results - kwakusella.mp4",
             "video_url": "",
             "author_name": "Customer Name"
           }
@@ -968,7 +977,7 @@
         "testimonial_cUnGVh": {
           "type": "testimonial",
           "settings": {
-            "video_file": "shopify:\/\/files\/videos\/Simply Revival | Real People Real Results - Anakin.mp4",
+            "video_file": "shopify://files/videos/Simply Revival | Real People Real Results - Anakin.mp4",
             "video_url": "",
             "author_name": "Customer Name"
           }
@@ -976,7 +985,7 @@
         "testimonial_YUfUyU": {
           "type": "testimonial",
           "settings": {
-            "video_file": "shopify:\/\/files\/videos\/Simply Revival | Real People Real Results - Marc_20Malcolm_20.mp4",
+            "video_file": "shopify://files/videos/Simply Revival | Real People Real Results - Marc_20Malcolm_20.mp4",
             "video_url": "",
             "author_name": "Customer Name"
           }
@@ -994,7 +1003,7 @@
           "type": "guarantee_text",
           "settings": {
             "text": "365-day money back guarantee",
-            "icon": "shopify:\/\/shop_images\/Simply_Revival___Gurantee-min.png"
+            "icon": "shopify://shop_images/Simply_Revival___Gurantee-min.png"
           }
         }
       },
@@ -1012,9 +1021,9 @@
       "name": "Video Testimonials",
       "settings": {
         "video_testimonials_collection": "video-testimonial-list-ebtdzf1k",
-        "heading": "<h3>Real People, <strong>Real Experiences<\/strong><\/h3>",
+        "heading": "<h3>Real People, <strong>Real Experiences</strong></h3>",
         "bold_color": "#125657",
-        "text": "<p>See why thousands of people love our products<\/p>",
+        "text": "<p>See why thousands of people love our products</p>",
         "bg_color": "#faf9f6",
         "text_color": "#111111",
         "button_bg": "#125657",
@@ -1037,7 +1046,7 @@
         "heading_NaQgDb": {
           "type": "heading",
           "settings": {
-            "heading": "<h3>From everyday care to<br\/><strong>Fuller Confidence<\/strong><\/h3><h2>💪<\/h2>",
+            "heading": "<h3>From everyday care to<br/><strong>Fuller Confidence</strong></h3><h2>💪</h2>",
             "text_color": "#ffffff",
             "bold_color": "#d0f0f2"
           }
@@ -1048,11 +1057,11 @@
             "title": "Your Goal",
             "bg_color": "#1c7779",
             "text_color": "#ffffff",
-            "icon1": "shopify:\/\/shop_images\/Simply_Revival___Noticing_changes_in_your_hairline_or_volume-min.png",
+            "icon1": "shopify://shop_images/Simply_Revival___Noticing_changes_in_your_hairline_or_volume-min.png",
             "text1": "Keep your hair looking thick and healthy",
-            "icon2": "shopify:\/\/shop_images\/Simply_Revival___Feeling_insecure_about_your_hair-min_d2e1d1dd-61fc-4757-add3-5f6bc0cae628.png",
+            "icon2": "shopify://shop_images/Simply_Revival___Feeling_insecure_about_your_hair-min_d2e1d1dd-61fc-4757-add3-5f6bc0cae628.png",
             "text2": "Use clean, plant-based care you can trust",
-            "icon3": "shopify:\/\/shop_images\/Simply_Revival___Looking_for_a_natural_alternative_you_can_feel_good_about-min.png",
+            "icon3": "shopify://shop_images/Simply_Revival___Looking_for_a_natural_alternative_you_can_feel_good_about-min.png",
             "text3": "Feel good about your daily routine"
           }
         },
@@ -1062,21 +1071,21 @@
             "title": "Our Support",
             "bg_color": "#72c9ca",
             "text_color": "#ffffff",
-            "icon1": "shopify:\/\/shop_images\/Simply_Revival___Hair_that_looks_fuller_and_healthier-min.png",
+            "icon1": "shopify://shop_images/Simply_Revival___Hair_that_looks_fuller_and_healthier-min.png",
             "text1": "Helps hair look fuller and well-nourished",
-            "icon2": "shopify:\/\/shop_images\/Simply_Revival___New_found_confidence-min_d4c42d74-8006-45e8-8e09-333e354c3687.png",
+            "icon2": "shopify://shop_images/Simply_Revival___New_found_confidence-min_d4c42d74-8006-45e8-8e09-333e354c3687.png",
             "text2": "Promotes natural shine and balance",
-            "icon3": "shopify:\/\/shop_images\/Simply_Revival___Formulated_with_clean_gentle_ingredients-min.png",
+            "icon3": "shopify://shop_images/Simply_Revival___Formulated_with_clean_gentle_ingredients-min.png",
             "text3": "Made without harsh additives"
           }
         },
         "image_row_Bdgqed": {
           "type": "image_row",
           "settings": {
-            "bf_image": "shopify:\/\/shop_images\/Simply_Revival___Natural_Hair_Support_Formula___Transformatoin-min.png",
+            "bf_image": "shopify://shop_images/Simply_Revival___Natural_Hair_Support_Formula___Transformatoin-min.png",
             "text": "With Regular",
             "hi_text": "USE",
-            "af_image": "shopify:\/\/shop_images\/Simply_Revival___Natural_Hair_Support_Serum___Consistent_Use-min.png",
+            "af_image": "shopify://shop_images/Simply_Revival___Natural_Hair_Support_Serum___Consistent_Use-min.png",
             "show_subtext": true,
             "text_color": "#faf9f6"
           }
@@ -1092,7 +1101,7 @@
       "name": "Problem Solution",
       "settings": {
         "subhead": "",
-        "heading": "<h3>From thinning & insecure to Full & Confident<\/h3>",
+        "heading": "<h3>From thinning & insecure to Full & Confident</h3>",
         "text": "",
         "background_color": "#125657",
         "padding_top": 40,
@@ -1105,7 +1114,7 @@
         "heading_GgbTzk": {
           "type": "heading",
           "settings": {
-            "heading": "<h3>Simply Revival® in Numbers –<\/h3><h3>What<strong> Customers Are Saying<\/strong><\/h3>",
+            "heading": "<h3>Simply Revival® in Numbers –</h3><h3>What<strong> Customers Are Saying</strong></h3>",
             "text_color": "#202020",
             "bold_color": "#60a1a2"
           }
@@ -1113,7 +1122,7 @@
         "text_DHUTee": {
           "type": "text",
           "settings": {
-            "text": "<p>When clean, plant-based ingredients meet quality formulation, customers notice the difference.<\/p>",
+            "text": "<p>When clean, plant-based ingredients meet quality formulation, customers notice the difference.</p>",
             "text_color": "#202020"
           }
         },
@@ -1121,32 +1130,32 @@
           "type": "stat",
           "settings": {
             "number": "93%",
-            "title": "<p>Said their hair looked healthier and felt stronger-looking.<\/p>",
-            "text": "<p>After consistent use of Simply Revival®<\/p>"
+            "title": "<p>Said their hair looked healthier and felt stronger-looking.</p>",
+            "text": "<p>After consistent use of Simply Revival®</p>"
           }
         },
         "stat_9rBk8h": {
           "type": "stat",
           "settings": {
             "number": "96%",
-            "title": "<p>Would recommend Simply Revival® to a friend  <br\/><\/p>",
-            "text": "<p>As a natural, plant-based formula for healthy-looking hair<br\/><\/p>"
+            "title": "<p>Would recommend Simply Revival® to a friend  <br/></p>",
+            "text": "<p>As a natural, plant-based formula for healthy-looking hair<br/></p>"
           }
         },
         "stat_U84iMg": {
           "type": "stat",
           "settings": {
             "number": "90%",
-            "title": "<p>Said their hair looked fuller and their skin appeared healthier  <br\/><\/p>",
-            "text": "<p>With consistent use over time<br\/><\/p>"
+            "title": "<p>Said their hair looked fuller and their skin appeared healthier  <br/></p>",
+            "text": "<p>With consistent use over time<br/></p>"
           }
         },
         "stat_Gax64r": {
           "type": "stat",
           "settings": {
             "number": "89%",
-            "title": "<p>Said they prefer Simply Revival®’s formula  <br\/><\/p>",
-            "text": "<p>Over other hair-care products they’ve tried<br\/><\/p>"
+            "title": "<p>Said they prefer Simply Revival®’s formula  <br/></p>",
+            "text": "<p>Over other hair-care products they’ve tried<br/></p>"
           }
         }
       },
@@ -1181,19 +1190,19 @@
         "brand_table_ziRYCm": {
           "type": "brand_table",
           "settings": {
-            "product_image": "shopify:\/\/shop_images\/Simply_Revival___Natural_Hair_Support_Serum___Buy_One.png",
+            "product_image": "shopify://shop_images/Simply_Revival___Natural_Hair_Support_Serum___Buy_One.png",
             "title": "Simply Revival®",
             "background_color": "#60a1a2",
             "text_color": "#ffffff",
-            "icon1": "shopify:\/\/shop_images\/Simply_Revival___No_harsh_side_effects-min_a3ac93f0-38c8-4903-88e4-7ddcc56efb4e.png",
+            "icon1": "shopify://shop_images/Simply_Revival___No_harsh_side_effects-min_a3ac93f0-38c8-4903-88e4-7ddcc56efb4e.png",
             "text1": "Clean, gentle formula",
-            "icon2": "shopify:\/\/shop_images\/Simply_Revival___All_Natural-min.png",
+            "icon2": "shopify://shop_images/Simply_Revival___All_Natural-min.png",
             "text2": "All Natural Formula",
-            "icon3": "shopify:\/\/shop_images\/Simply_Revival___Preservative_paraben_free-min.png",
+            "icon3": "shopify://shop_images/Simply_Revival___Preservative_paraben_free-min.png",
             "text3": "Preservative & paraben free",
-            "icon4": "shopify:\/\/shop_images\/Simply_Revival___No_Sugar_Gluten_Free-min.png",
+            "icon4": "shopify://shop_images/Simply_Revival___No_Sugar_Gluten_Free-min.png",
             "text4": "No Sugar & Gluten Free",
-            "icon5": "shopify:\/\/shop_images\/Simply_Revival___Made_in_the_USA-min.png",
+            "icon5": "shopify://shop_images/Simply_Revival___Made_in_the_USA-min.png",
             "text5": "Made in the USA"
           }
         },
@@ -1213,21 +1222,21 @@
         "bullet_tHDNbt": {
           "type": "bullet",
           "settings": {
-            "text": "<p><strong>Real feedback from customers<\/strong> – gentle on your scalp and supportive of healthy-looking hair.<\/p>",
+            "text": "<p><strong>Real feedback from customers</strong> – gentle on your scalp and supportive of healthy-looking hair.</p>",
             "text_color": "#ffffff"
           }
         },
         "bullet_HeMT46": {
           "type": "bullet",
           "settings": {
-            "text": "<p><strong>Simple for daily use <\/strong>– no hassle, just consistent hair care support.<\/p>",
+            "text": "<p><strong>Simple for daily use </strong>– no hassle, just consistent hair care support.</p>",
             "text_color": "#ffffff"
           }
         },
         "bullet_pAprff": {
           "type": "bullet",
           "settings": {
-            "text": "<p><strong>Quality Tested Ingredients<\/strong> – Crafted with thoughtfully formulated botanical blends<\/p>",
+            "text": "<p><strong>Quality Tested Ingredients</strong> – Crafted with thoughtfully formulated botanical blends</p>",
             "text_color": "#ffffff"
           }
         },
@@ -1267,7 +1276,7 @@
           "type": "badge",
           "settings": {
             "badge_number": "365",
-            "bg_image": "shopify:\/\/shop_images\/Simply_Revival___365_Day_Money_Back_Guarantee-min.png",
+            "bg_image": "shopify://shop_images/Simply_Revival___365_Day_Money_Back_Guarantee-min.png",
             "badge_text": "DAYS"
           }
         },
@@ -1287,7 +1296,7 @@
         "subtext_LixbJV": {
           "type": "subtext",
           "settings": {
-            "text": "<p>If you’re not completely happy with your purchase, simply return it within 365 days for a full refund.  <br\/><\/p>"
+            "text": "<p>If you’re not completely happy with your purchase, simply return it within 365 days for a full refund.  <br/></p>"
           }
         },
         "button_ezWWFE": {
@@ -1311,7 +1320,7 @@
       "settings": {
         "background_color": "#fffee3",
         "text_color": "#000000",
-        "image": "shopify:\/\/shop_images\/Simply_Revival___Natural_Hair_Support_Serum___Guarantee-min.png",
+        "image": "shopify://shop_images/Simply_Revival___Natural_Hair_Support_Serum___Guarantee-min.png",
         "alt_text": "",
         "image_position": "left",
         "padding_top": 24,
@@ -1324,44 +1333,44 @@
         "faq_PCeDn4": {
           "type": "faq",
           "settings": {
-            "title": "<p>What is Simply Revival?<\/p>",
-            "text": "<p>Simply Revival is a wellness brand focused on plant-based formulations that support healthy-looking hair and overall well-being — made without synthetic ingredients or harsh additives.<\/p>"
+            "title": "<p>What is Simply Revival?</p>",
+            "text": "<p>Simply Revival is a wellness brand focused on plant-based formulations that support healthy-looking hair and overall well-being — made without synthetic ingredients or harsh additives.</p>"
           }
         },
         "faq_xzkw93": {
           "type": "faq",
           "settings": {
-            "title": "<p>Is Simply revival safe to use?<\/p>",
-            "text": "<p>Yes, our formulas are crafted with high-quality, plant-based ingredients and designed for everyday use.<\/p>"
+            "title": "<p>Is Simply revival safe to use?</p>",
+            "text": "<p>Yes, our formulas are crafted with high-quality, plant-based ingredients and designed for everyday use.</p>"
           }
         },
         "faq_cXUTTa": {
           "type": "faq",
           "settings": {
-            "title": "<p>When will I start noticing a difference?<\/p>",
-            "text": "<p>Everyone’s routine is different, but many customers share that their hair feels healthier and stronger with consistent use.<\/p>"
+            "title": "<p>When will I start noticing a difference?</p>",
+            "text": "<p>Everyone’s routine is different, but many customers share that their hair feels healthier and stronger with consistent use.</p>"
           }
         },
         "faq_4RiGpg": {
           "type": "faq",
           "settings": {
-            "title": "<p>Is simply revival suitable for all hair types?<\/p>",
-            "text": "<p>Yes, the formula is designed to to support hair heath for all types of hair.<\/p>"
+            "title": "<p>Is simply revival suitable for all hair types?</p>",
+            "text": "<p>Yes, the formula is designed to to support hair heath for all types of hair.</p>"
           }
         },
         "faq_LaibHE": {
           "type": "faq",
           "settings": {
-            "title": "<p>Do you have a guarantee?<\/p>",
-            "text": "<p>Yes, All orders are backed by our 365 day money back guarantee. If you’re not happy, we will make it right!<\/p>"
+            "title": "<p>Do you have a guarantee?</p>",
+            "text": "<p>Yes, All orders are backed by our 365 day money back guarantee. If you’re not happy, we will make it right!</p>"
           }
         },
         "faq_DyxH8n": {
           "type": "faq",
           "disabled": true,
           "settings": {
-            "title": "<p>What is your return policy?<\/p>",
-            "text": "<p>We offer a 30-day return policy on all items.<\/p>"
+            "title": "<p>What is your return policy?</p>",
+            "text": "<p>We offer a 30-day return policy on all items.</p>"
           }
         },
         "button_a3wazk": {
@@ -1388,7 +1397,7 @@
       "settings": {
         "bg_color": "#125657",
         "text_color": "#ffffff",
-        "heading": "<h3><strong>Frequently Asked Questions<\/strong><\/h3>",
+        "heading": "<h3><strong>Frequently Asked Questions</strong></h3>",
         "text": "",
         "faq_bg_color": "#ffffff",
         "padding_top": 80,
@@ -1409,7 +1418,7 @@
       "type": "apps",
       "blocks": {
         "areviews_reviews_importer_areviews_display_reviews_C0B4F3": {
-          "type": "shopify:\/\/apps\/areviews-reviews-importer\/blocks\/AreviewsDisplayReviews\/ab0ec5fe-c95b-4fd6-bfb8-db2a30d0756f",
+          "type": "shopify://apps/areviews-reviews-importer/blocks/AreviewsDisplayReviews/ab0ec5fe-c95b-4fd6-bfb8-db2a30d0756f",
           "settings": {
             "hide_areviews_title_rating": false,
             "areviews_theme_font": "inherit",

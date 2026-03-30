@@ -1,3 +1,12 @@
+/*
+ * ------------------------------------------------------------
+ * IMPORTANT: The contents of this file are auto-generated.
+ *
+ * This file may be updated by the Shopify admin theme editor
+ * or related systems. Please exercise caution as any changes
+ * made to this file may be overwritten.
+ * ------------------------------------------------------------
+ */
 {
   "sections": {
     "main": {
@@ -11,7 +20,7 @@
         "template--16736981025086__e7285e43-2bb7-46e5-a5e4-538568d8723e-1666759876b5fa9979-0": {
           "type": "image_block",
           "settings": {
-            "image": "shopify:\/\/shop_images\/DHT_IN_HAND.png"
+            "image": "shopify://shop_images/DHT_IN_HAND.png"
           }
         },
         "template--16736981025086__e7285e43-2bb7-46e5-a5e4-538568d8723e-1666759876b5fa9979-1": {
@@ -24,7 +33,7 @@
             "title": "We're here to help!",
             "size_text": "h3",
             "text": "",
-            "answer_content": "<p>Shoot us a message and we'll get back to you! <\/p><p><strong>Return\/Refund Policy<\/strong><\/p><p>We have a 30 day return policy. If your product arrives damaged, shoot us a picture and we will send you a fresh bottle! <\/p><p><strong>Subscriptions<\/strong><\/p><p>Please do not message us about canceling subscriptions as we do not handle this manually. Subscriptions can be managed by each customer!<\/p><p>Subscription Management<\/p><p><a href=\"https:\/\/portal.subi.co\/login\/\">https:\/\/portal.subi.co\/login\/<\/a><\/p>",
+            "answer_content": "<p>Shoot us a message and we'll get back to you! </p><p><strong>Return/Refund Policy</strong></p><p>We have a 30 day return policy. If your product arrives damaged, shoot us a picture and we will send you a fresh bottle! </p><p><strong>Subscriptions</strong></p><p>Please do not message us about canceling subscriptions as we do not handle this manually. Subscriptions can be managed by each customer!</p><p>Subscription Management</p><p><a href=\"https://portal.subi.co/login/\">https://portal.subi.co/login/</a></p>",
             "style_btn": "btn-underline btn-underline-white",
             "button": "",
             "link": "",

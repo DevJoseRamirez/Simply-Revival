@@ -1,3 +1,12 @@
+/*
+ * ------------------------------------------------------------
+ * IMPORTANT: The contents of this file are auto-generated.
+ *
+ * This file may be updated by the Shopify admin theme editor
+ * or related systems. Please exercise caution as any changes
+ * made to this file may be overwritten.
+ * ------------------------------------------------------------
+ */
 {
   "sections": {
     "main": {
@@ -66,7 +75,7 @@
           "settings": {
             "title_tab": "Shipping information",
             "icon": "none",
-            "answer_content": "<p>- No EU import duties.<br\/>- Ships within 1-2 business days.<br\/>- Ships in our fully recyclable and biodegradable signature boxes.<\/p>"
+            "answer_content": "<p>- No EU import duties.<br/>- Ships within 1-2 business days.<br/>- Ships in our fully recyclable and biodegradable signature boxes.</p>"
           }
         },
         "0a71f30d-dba2-4bca-a64d-c3cc2ed17e7d": {
@@ -74,7 +83,7 @@
           "settings": {
             "title_tab": "Care Guide",
             "icon": "none",
-            "answer_content": "<p>Regular<em>care<\/em>. Use a slightly damp, soft and lint-free cloth for regular dust removal. Always clean in the direction of the grain.<\/p>"
+            "answer_content": "<p>Regular<em>care</em>. Use a slightly damp, soft and lint-free cloth for regular dust removal. Always clean in the direction of the grain.</p>"
           }
         },
         "8d4704f6-d81d-4390-9ec5-af58698bef51": {
@@ -144,7 +153,7 @@
             "gtab_review_enable": true,
             "gtab_review": "Review",
             "stab_title1": "Tab 1",
-            "stab_content1": "<p>111<\/p>"
+            "stab_content1": "<p>111</p>"
           }
         },
         "883720d7-3346-4495-85a0-add8b3d7a51f": {
@@ -155,7 +164,7 @@
           }
         },
         "areviews_reviews_importer_areviews_title_rating_BB1FBA": {
-          "type": "shopify:\/\/apps\/areviews-reviews-importer\/blocks\/AreviewsTitleRating\/ab0ec5fe-c95b-4fd6-bfb8-db2a30d0756f",
+          "type": "shopify://apps/areviews-reviews-importer/blocks/AreviewsTitleRating/ab0ec5fe-c95b-4fd6-bfb8-db2a30d0756f",
           "settings": {}
         }
       },
@@ -296,7 +305,7 @@
       "type": "apps",
       "blocks": {
         "areviews_reviews_importer_areviews_display_reviews_B5998E": {
-          "type": "shopify:\/\/apps\/areviews-reviews-importer\/blocks\/AreviewsDisplayReviews\/ab0ec5fe-c95b-4fd6-bfb8-db2a30d0756f",
+          "type": "shopify://apps/areviews-reviews-importer/blocks/AreviewsDisplayReviews/ab0ec5fe-c95b-4fd6-bfb8-db2a30d0756f",
           "settings": {
             "hide_areviews_title_rating": false,
             "areviews_theme_font": "inherit",

@@ -1,3 +1,12 @@
+/*
+ * ------------------------------------------------------------
+ * IMPORTANT: The contents of this file are auto-generated.
+ *
+ * This file may be updated by the Shopify admin theme editor
+ * or related systems. Please exercise caution as any changes
+ * made to this file may be overwritten.
+ * ------------------------------------------------------------
+ */
 {
   "sections": {
     "main": {
@@ -13,8 +22,8 @@
         "text_color": "#ffffff",
         "padding_top": 5,
         "padding_bottom": 5,
-        "top_text": "<p><strong>⚡ SPRING SALE<\/strong><\/p>",
-        "bottom_text": "<p><strong>67% OFF + 1 MONTH SUPPLY FREE<\/strong><\/p>",
+        "top_text": "<p><strong>⚡ SPRING SALE</strong></p>",
+        "bottom_text": "<p><strong>67% OFF + 1 MONTH SUPPLY FREE</strong></p>",
         "show_timer": true,
         "min_hours": 3,
         "max_hours": 6
@@ -26,21 +35,21 @@
         "heading_M9x96z": {
           "type": "heading",
           "settings": {
-            "heading": "<h1>7 Signs Your Hair Loss Is Actually DHT (And What To Do About It)<\/h1>"
+            "heading": "<h1>7 Signs Your Hair Loss Is Actually DHT (And What To Do About It)</h1>"
           }
         },
         "author_eVXder": {
           "type": "author",
           "settings": {
-            "author_image": "shopify:\/\/shop_images\/Sarah_author-min.png",
-            "author_text": "<p>By Sarah M. - Natural Wellness Author<\/p>",
+            "author_image": "shopify://shop_images/Sarah_author-min.png",
+            "author_text": "<p>By Sarah M. - Natural Wellness Author</p>",
             "author_date": "Last Updated Jan 15, 2026"
           }
         },
         "summary_THNYCd": {
           "type": "summary",
           "settings": {
-            "summary": "<p><strong>Summary:<\/strong> If you're losing more hair than usual, it might not be stress or aging—it could be DHT, a hormone that's sabotaging your follicles. Here are 7 telltale signs and what you can do about it naturally.<\/p>",
+            "summary": "<p><strong>Summary:</strong> If you're losing more hair than usual, it might not be stress or aging—it could be DHT, a hormone that's sabotaging your follicles. Here are 7 telltale signs and what you can do about it naturally.</p>",
             "bold_color": "#009370"
           }
         }
@@ -68,11 +77,11 @@
         "padding_top": 40,
         "padding_bottom": 50,
         "image_position": true,
-        "image": "shopify:\/\/shop_images\/lplist-male_hair_support_05-min.png",
+        "image": "shopify://shop_images/lplist-male_hair_support_05-min.png",
         "pill_text": "Excessive Shedding",
-        "title": "<h2>🚿 Sign #1: Your Shower Drain Clogs More Often<\/h2>",
-        "text": "<p><strong>What's Happening:<\/strong> If you're pulling clumps of hair out of the drain every week (or even daily), that's not normal shedding. Most people lose 50-100 hairs a day, but when DHT levels spike, that number can double or triple.<\/p>",
-        "text_2": "<p><strong>Why It's DHT:<\/strong> DHT attaches to your hair follicles and slowly shrinks them. The first sign? Excessive shedding. Your hair isn't just \"falling out\"—it's being pushed out by follicles that are literally suffocating.<\/p>"
+        "title": "<h2>🚿 Sign #1: Your Shower Drain Clogs More Often</h2>",
+        "text": "<p><strong>What's Happening:</strong> If you're pulling clumps of hair out of the drain every week (or even daily), that's not normal shedding. Most people lose 50-100 hairs a day, but when DHT levels spike, that number can double or triple.</p>",
+        "text_2": "<p><strong>Why It's DHT:</strong> DHT attaches to your hair follicles and slowly shrinks them. The first sign? Excessive shedding. Your hair isn't just \"falling out\"—it's being pushed out by follicles that are literally suffocating.</p>"
       }
     },
     "cwc_listicle_image_text_DQdfAB": {
@@ -85,11 +94,11 @@
         "padding_top": 40,
         "padding_bottom": 50,
         "image_position": false,
-        "image": "shopify:\/\/shop_images\/lplist-male_hair_support_07-min.png",
+        "image": "shopify://shop_images/lplist-male_hair_support_07-min.png",
         "pill_text": "Receding Hairline",
-        "title": "<h2>👀 Sign #2: Your Hairline Is Creeping Back<\/h2>",
-        "text": "<p><strong>What's Happening:<\/strong> You might not be \"bald\" yet, but you've noticed your forehead looks a bit bigger in photos. Or maybe your temples are forming that classic \"M\" shape. It starts subtle, but it's unmistakable once you see it.<\/p>",
-        "text_2": "<p><strong>Why It's DHT:<\/strong> The follicles at your hairline and crown are the most sensitive to DHT. When DHT levels rise, these areas are the first to thin. It's not bad luck or genetics alone—it's a hormonal attack on your most vulnerable follicles.<\/p>"
+        "title": "<h2>👀 Sign #2: Your Hairline Is Creeping Back</h2>",
+        "text": "<p><strong>What's Happening:</strong> You might not be \"bald\" yet, but you've noticed your forehead looks a bit bigger in photos. Or maybe your temples are forming that classic \"M\" shape. It starts subtle, but it's unmistakable once you see it.</p>",
+        "text_2": "<p><strong>Why It's DHT:</strong> The follicles at your hairline and crown are the most sensitive to DHT. When DHT levels rise, these areas are the first to thin. It's not bad luck or genetics alone—it's a hormonal attack on your most vulnerable follicles.</p>"
       }
     },
     "cwc_listicle_image_text_Www933": {
@@ -102,11 +111,11 @@
         "padding_top": 40,
         "padding_bottom": 50,
         "image_position": true,
-        "image": "shopify:\/\/shop_images\/lplist-male_hair_support_04-min.png",
+        "image": "shopify://shop_images/lplist-male_hair_support_04-min.png",
         "pill_text": "Hair Thinning",
-        "title": "<h2>🪮 Sign #3: Your Hair Feels Thinner and Weaker<\/h2>",
-        "text": "<p><strong>What's Happening:<\/strong> Your hair used to feel thick and full, but now it feels fine, almost fragile. When you run your fingers through it, there's less volume. It doesn't hold a style like it used to.<\/p>",
-        "text_2": "<p><strong>Why It's DHT:<\/strong> DHT doesn't just cause hair loss—it causes \"miniaturization.\" Your follicles shrink, and the hair they produce gets thinner and weaker with each growth cycle.<\/p>"
+        "title": "<h2>🪮 Sign #3: Your Hair Feels Thinner and Weaker</h2>",
+        "text": "<p><strong>What's Happening:</strong> Your hair used to feel thick and full, but now it feels fine, almost fragile. When you run your fingers through it, there's less volume. It doesn't hold a style like it used to.</p>",
+        "text_2": "<p><strong>Why It's DHT:</strong> DHT doesn't just cause hair loss—it causes \"miniaturization.\" Your follicles shrink, and the hair they produce gets thinner and weaker with each growth cycle.</p>"
       }
     },
     "cwc_listicle_image_text_gJVeBF": {
@@ -119,11 +128,11 @@
         "padding_top": 40,
         "padding_bottom": 50,
         "image_position": false,
-        "image": "shopify:\/\/shop_images\/lplist-male_hair_support_02-min.png",
+        "image": "shopify://shop_images/lplist-male_hair_support_02-min.png",
         "pill_text": "Morning Shedding",
-        "title": "<h2>🛏️ Sign #4: Hair on Your Pillow Every Morning<\/h2>",
-        "text": "<p><strong>What's Happening:<\/strong> You wake up and there are strands on your pillowcase. Not just one or two—enough that you notice it every single morning. It's becoming part of your routine, and it's unsettling.<\/p><p><a href=\"\/products\/simply®-dht-blocker\" title=\"Natural DHT Blocker\">See How Men Are Fighting Hair Loss Naturally <\/a><\/p>",
-        "text_2": "<p><strong>Why It's DHT:<\/strong> Hair that's affected by DHT has a shorter growth cycle. It falls out faster and grows back weaker (if at all). The pillow test is one of the earliest warning signs.<\/p>"
+        "title": "<h2>🛏️ Sign #4: Hair on Your Pillow Every Morning</h2>",
+        "text": "<p><strong>What's Happening:</strong> You wake up and there are strands on your pillowcase. Not just one or two—enough that you notice it every single morning. It's becoming part of your routine, and it's unsettling.</p><p><a href=\"/products/simply®-dht-blocker\" title=\"Natural DHT Blocker\">See How Men Are Fighting Hair Loss Naturally </a></p>",
+        "text_2": "<p><strong>Why It's DHT:</strong> Hair that's affected by DHT has a shorter growth cycle. It falls out faster and grows back weaker (if at all). The pillow test is one of the earliest warning signs.</p>"
       }
     },
     "cwc_listicle_image_text_6CkYXJ": {
@@ -136,11 +145,11 @@
         "padding_top": 40,
         "padding_bottom": 50,
         "image_position": true,
-        "image": "shopify:\/\/shop_images\/lplist-male_hair_support_03-min.png",
+        "image": "shopify://shop_images/lplist-male_hair_support_03-min.png",
         "pill_text": "Early Onset",
-        "title": "<h2>👨 Sign #5: You're Under 35, But Losing Hair Fast<\/h2>",
-        "text": "<p><strong>What's Happening:<\/strong> Hair loss used to be an \"old man\" problem, but now guys in their 20s and 30s are dealing with it. If you're noticing thinning earlier than your dad did, something's off.<\/p><p><a href=\"\/products\/simply®-dht-blocker\" title=\"Natural DHT Blocker\">Find Out How to Balance DHT Naturally<\/a><\/p>",
-        "text_2": "<p><strong>Why It's DHT:<\/strong> Modern factors—stress, diet, environmental toxins—can cause DHT levels to spike earlier in life. Your body is producing too much of this hormone too soon.<\/p>"
+        "title": "<h2>👨 Sign #5: You're Under 35, But Losing Hair Fast</h2>",
+        "text": "<p><strong>What's Happening:</strong> Hair loss used to be an \"old man\" problem, but now guys in their 20s and 30s are dealing with it. If you're noticing thinning earlier than your dad did, something's off.</p><p><a href=\"/products/simply®-dht-blocker\" title=\"Natural DHT Blocker\">Find Out How to Balance DHT Naturally</a></p>",
+        "text_2": "<p><strong>Why It's DHT:</strong> Modern factors—stress, diet, environmental toxins—can cause DHT levels to spike earlier in life. Your body is producing too much of this hormone too soon.</p>"
       }
     },
     "cwc_listicle_image_text_mweWnR": {
@@ -153,11 +162,11 @@
         "padding_top": 40,
         "padding_bottom": 50,
         "image_position": false,
-        "image": "shopify:\/\/shop_images\/lplist-male_hair_support_06-min.png",
+        "image": "shopify://shop_images/lplist-male_hair_support_06-min.png",
         "pill_text": "Treatment Failure",
-        "title": "<h2>🧴 Sign #6: Products Aren't Working Anymore<\/h2>",
-        "text": "<p><strong>What's Happening:<\/strong> You've tried thickening shampoos, scalp treatments, even expensive salon products. Nothing seems to help. The shedding continues, the thinning gets worse.<\/p><p><a href=\"\/products\/simply®-dht-blocker\" title=\"Natural DHT Blocker\">See How Simply Revival Targets the Root Cause<\/a><\/p>",
-        "text_2": "<p><strong>Why It's DHT:<\/strong> Most hair products treat the symptom (thin hair) but not the cause (excess DHT). If you're not addressing the hormone, no amount of topical treatments will stop the cycle.<\/p>"
+        "title": "<h2>🧴 Sign #6: Products Aren't Working Anymore</h2>",
+        "text": "<p><strong>What's Happening:</strong> You've tried thickening shampoos, scalp treatments, even expensive salon products. Nothing seems to help. The shedding continues, the thinning gets worse.</p><p><a href=\"/products/simply®-dht-blocker\" title=\"Natural DHT Blocker\">See How Simply Revival Targets the Root Cause</a></p>",
+        "text_2": "<p><strong>Why It's DHT:</strong> Most hair products treat the symptom (thin hair) but not the cause (excess DHT). If you're not addressing the hormone, no amount of topical treatments will stop the cycle.</p>"
       }
     },
     "cwc_listicle_image_text_BMCfpi": {
@@ -170,11 +179,11 @@
         "padding_top": 40,
         "padding_bottom": 50,
         "image_position": true,
-        "image": "shopify:\/\/shop_images\/lplist-male_hair_support_01-min.png",
+        "image": "shopify://shop_images/lplist-male_hair_support_01-min.png",
         "pill_text": "Visible Scalp",
-        "title": "<h2>🪞 Sign #7: Your Scalp Shows Through<\/h2>",
-        "text": "<p><strong>What's Happening:<\/strong> Bright overhead lights, bathroom mirrors, photos from above—you've started to avoid them. You can see your scalp through your hair, and it's making you self-conscious.<\/p><p><a href=\"\/products\/natural-dht-blocker-67-off\" title=\"Natural DHT Blocker\">Discover the Natural Formula Helping Men Regain Confidence<\/a><\/p>",
-        "text_2": "<p><strong>Why It's DHT:<\/strong> This is the stage where hair density has noticeably decreased. The good news? If you can still see hair (even if it's thin), those follicles can often be revived.<\/p>"
+        "title": "<h2>🪞 Sign #7: Your Scalp Shows Through</h2>",
+        "text": "<p><strong>What's Happening:</strong> Bright overhead lights, bathroom mirrors, photos from above—you've started to avoid them. You can see your scalp through your hair, and it's making you self-conscious.</p><p><a href=\"/products/natural-dht-blocker-67-off\" title=\"Natural DHT Blocker\">Discover the Natural Formula Helping Men Regain Confidence</a></p>",
+        "text_2": "<p><strong>Why It's DHT:</strong> This is the stage where hair density has noticeably decreased. The good news? If you can still see hair (even if it's thin), those follicles can often be revived.</p>"
       }
     },
     "cwc_listicle_center_text_4rb3tL": {
@@ -187,8 +196,8 @@
         "max_width": 1000,
         "padding_top": 60,
         "padding_bottom": 0,
-        "title": "<h2>If You Recognized 3 or More of These Signs, Here's What You Need to Know<\/h2>",
-        "text": "<p>DHT is the hidden culprit behind most male hair loss. It's not your fault, and it's not just \"genetics.\" But here's the truth: if you don't address the DHT, the shedding won't stop. The thinning will continue. And eventually, those follicles will shut down for good.<\/p><p>For years, the only option was prescription drugs with scary side effects. But there's a better way.<\/p>",
+        "title": "<h2>If You Recognized 3 or More of These Signs, Here's What You Need to Know</h2>",
+        "text": "<p>DHT is the hidden culprit behind most male hair loss. It's not your fault, and it's not just \"genetics.\" But here's the truth: if you don't address the DHT, the shedding won't stop. The thinning will continue. And eventually, those follicles will shut down for good.</p><p>For years, the only option was prescription drugs with scary side effects. But there's a better way.</p>",
         "text_2": ""
       }
     },
@@ -206,9 +215,9 @@
           "type": "offer",
           "disabled": true,
           "settings": {
-            "title": "<h4>Limited Time Offer!<\/h4>",
-            "text": "<p>This is a special, time-sensitive offer.<\/p>",
-            "subtext": "<p>Risk: High | Free Shipping<\/p>",
+            "title": "<h4>Limited Time Offer!</h4>",
+            "text": "<p>This is a special, time-sensitive offer.</p>",
+            "subtext": "<p>Risk: High | Free Shipping</p>",
             "button_text": "Claim Offer",
             "button_link": "",
             "button_bg_color": "",
@@ -228,16 +237,16 @@
         "bold_color": "#ef4444",
         "padding_top": 80,
         "padding_bottom": 60,
-        "image": "shopify:\/\/shop_images\/hair_support-1-min.png",
-        "sub_head": "<p>🎁 +1 MONTH SUPPLY FREE<\/p>",
-        "title": "<h3><strong>67% OFF <\/strong>FOR THE NEXT 24 HOURS!<\/h3>",
-        "sub_text": "<p>Sold out 7 times in 2025!<\/p>",
+        "image": "shopify://shop_images/hair_support-1-min.png",
+        "sub_head": "<p>🎁 +1 MONTH SUPPLY FREE</p>",
+        "title": "<h3><strong>67% OFF </strong>FOR THE NEXT 24 HOURS!</h3>",
+        "sub_text": "<p>Sold out 7 times in 2025!</p>",
         "floating_badge_text": "⚡ SPRING SALE",
         "button_color": "#125657",
         "button_text_color": "#ffffff",
         "button_text": "GET 67% OFF",
-        "button_link": "shopify:\/\/products\/simply®-dht-blocker",
-        "subtext": "<p>Try it today with a 30-Day Money-Back Guarantee!<\/p>"
+        "button_link": "shopify://products/simply®-dht-blocker",
+        "subtext": "<p>Try it today with a 30-Day Money-Back Guarantee!</p>"
       }
     },
     "cwc_listicle_center_text_KmMyTj": {
@@ -251,8 +260,8 @@
         "max_width": 1000,
         "padding_top": 60,
         "padding_bottom": 60,
-        "title": "<h2>If You Recognized 3 or More of These Signs, Here's What You Need to Know<\/h2>",
-        "text": "<p>DHT is the hidden culprit behind most male hair loss. It's not your fault, and it's not just \"genetics.\" But here's the truth: if you don't address the DHT, the shedding won't stop. The thinning will continue. And eventually, those follicles will shut down for good.<\/p><p>For years, the only option was prescription drugs with scary side effects. But there's a better way.<\/p>",
+        "title": "<h2>If You Recognized 3 or More of These Signs, Here's What You Need to Know</h2>",
+        "text": "<p>DHT is the hidden culprit behind most male hair loss. It's not your fault, and it's not just \"genetics.\" But here's the truth: if you don't address the DHT, the shedding won't stop. The thinning will continue. And eventually, those follicles will shut down for good.</p><p>For years, the only option was prescription drugs with scary side effects. But there's a better way.</p>",
         "text_2": ""
       }
     },
@@ -265,10 +274,10 @@
         "text_color": "#111111",
         "padding_top": 60,
         "padding_bottom": 60,
-        "title": "<h2>Introducing Simply Revival: The Natural DHT Blocker That's Changing the Game<\/h2>",
-        "text": "<p>An all-natural supplement that targets DHT at the source, combining 10 powerful herbs to help block DHT, reduce shedding, and support new hair growth.<\/p>",
+        "title": "<h2>Introducing Simply Revival: The Natural DHT Blocker That's Changing the Game</h2>",
+        "text": "<p>An all-natural supplement that targets DHT at the source, combining 10 powerful herbs to help block DHT, reduce shedding, and support new hair growth.</p>",
         "text_2": "",
-        "image": "shopify:\/\/shop_images\/Follicle-min.png"
+        "image": "shopify://shop_images/Follicle-min.png"
       }
     },
     "cwc_listicle_columns_R4Jxqb": {
@@ -278,28 +287,28 @@
           "type": "column",
           "settings": {
             "title": "✅ Blocks DHT Naturally",
-            "text": "<p>Saw Palmetto inhibits the enzyme that converts testosterone into DHT, protecting your follicles from shrinking.<\/p>"
+            "text": "<p>Saw Palmetto inhibits the enzyme that converts testosterone into DHT, protecting your follicles from shrinking.</p>"
           }
         },
         "column_AinpR3": {
           "type": "column",
           "settings": {
             "title": "✅ Nourishes Your Scalp",
-            "text": "<p>Stinging Nettle and other botanicals deliver essential vitamins and minerals that strengthen hair from the inside out.<\/p>"
+            "text": "<p>Stinging Nettle and other botanicals deliver essential vitamins and minerals that strengthen hair from the inside out.</p>"
           }
         },
         "column_tpNj7b": {
           "type": "column",
           "settings": {
             "title": "✅ No Harsh Side Effects",
-            "text": "<p>Unlike prescriptions, Simply Revival is made from clean, plant-based ingredients. No chemicals, no fillers, no scary fine print.<\/p>"
+            "text": "<p>Unlike prescriptions, Simply Revival is made from clean, plant-based ingredients. No chemicals, no fillers, no scary fine print.</p>"
           }
         },
         "column_LaXMQB": {
           "type": "column",
           "settings": {
             "title": "✅ Real Results",
-            "text": "<p>Thousands of men are seeing less shedding, thicker hair, and regrowth in areas they thought were gone for good.<\/p>"
+            "text": "<p>Thousands of men are seeing less shedding, thicker hair, and regrowth in areas they thought were gone for good.</p>"
           }
         }
       },
@@ -342,9 +351,9 @@
         "social_proof_image_list": "social-proof-image-list-o5xpgpmm",
         "show_stars": true,
         "star_link": "",
-        "heading": "<h3>Real Stories, <strong>Real Results<\/strong><\/h3>",
+        "heading": "<h3>Real Stories, <strong>Real Results</strong></h3>",
         "bold_color": "#125657",
-        "text": "<p>See What customer Are Saying About Simply Revival<\/p>",
+        "text": "<p>See What customer Are Saying About Simply Revival</p>",
         "bg_color": "#ffffff",
         "text_color": "#111111",
         "padding_top": 40,
@@ -415,10 +424,10 @@
         "padding_top": 60,
         "padding_bottom": 60,
         "image_first": false,
-        "image": "shopify:\/\/shop_images\/Follicle-min.png",
+        "image": "shopify://shop_images/Follicle-min.png",
         "number_text": "01",
-        "title": "<h2>Your Multivitamin Uses Cheap Forms Your Body Can't Absorb<\/h2>",
-        "text": "<p>Not all B12 is created equal. The cheap version in most drugstore vitamins is like giving your body instructions in a foreign language...<\/p>",
+        "title": "<h2>Your Multivitamin Uses Cheap Forms Your Body Can't Absorb</h2>",
+        "text": "<p>Not all B12 is created equal. The cheap version in most drugstore vitamins is like giving your body instructions in a foreign language...</p>",
         "badge_text": "Badge text",
         "badge_bg_color": "#34bf49"
       }
@@ -434,12 +443,12 @@
         "button_text_color": "#ffffff",
         "padding_top": 40,
         "padding_bottom": 60,
-        "title": "<h2>Ready to Stop DHT Before It's Too Late?<\/h2>",
-        "text": "<p>Due to high demand, Simply Revival can be hard to find in stock. But right now, a new batch is available.<\/p><p>If you recognized 3 or more of the signs above, this is your chance to fight back—naturally, safely, and effectively.<\/p>",
+        "title": "<h2>Ready to Stop DHT Before It's Too Late?</h2>",
+        "text": "<p>Due to high demand, Simply Revival can be hard to find in stock. But right now, a new batch is available.</p><p>If you recognized 3 or more of the signs above, this is your chance to fight back—naturally, safely, and effectively.</p>",
         "text_2": "",
         "button_text": "Check Availability Now",
-        "button_link": "shopify:\/\/products\/simply®-dht-blocker",
-        "subtext": "<p>Made in the USA | Third-Party Tested | 365-Day Money-Back Guarantee<\/p>"
+        "button_link": "shopify://products/simply®-dht-blocker",
+        "subtext": "<p>Made in the USA | Third-Party Tested | 365-Day Money-Back Guarantee</p>"
       }
     },
     "cwc_video_testimonials_WA6Xrc": {
@@ -470,7 +479,7 @@
           "type": "button",
           "settings": {
             "text": "Try Risk-Free Today",
-            "link": "shopify:\/\/products\/simply®-dht-blocker",
+            "link": "shopify://products/simply®-dht-blocker",
             "button_bg_color": "#125657",
             "button_text_color": "#ffffff"
           }
@@ -479,7 +488,7 @@
           "type": "guarantee_text",
           "settings": {
             "text": "365-day money back guarantee",
-            "icon": "shopify:\/\/shop_images\/Simply_Revival___Gurantee-min.png"
+            "icon": "shopify://shop_images/Simply_Revival___Gurantee-min.png"
           }
         }
       },
@@ -493,9 +502,9 @@
       "name": "Video Testimonials",
       "settings": {
         "video_testimonials_collection": "video-testimonial-list-lnxzuxpg",
-        "heading": "<h3>Real Stories, <strong>Real Results<\/strong><\/h3>",
+        "heading": "<h3>Real Stories, <strong>Real Results</strong></h3>",
         "bold_color": "#125657",
-        "text": "<p>See why thousands of people love our products<\/p>",
+        "text": "<p>See why thousands of people love our products</p>",
         "bg_color": "#faf9f6",
         "text_color": "#111111",
         "button_bg": "#125657",
