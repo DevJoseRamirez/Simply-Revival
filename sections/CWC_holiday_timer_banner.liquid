@@ -1,135 +1,130 @@
 {% style %}
   #CWC_holiday_timer_banner-{{ section.id }} {
-  --section-bg: {{ section.settings.bg_color | default: '#ffffff' }};
-  --text-color: {{ section.settings.text_color | default: '#111111' }};
-  --padding-top: {{ section.settings.padding_top | default: 10 }}px;
-  --padding-top-mobile: {{ section.settings.padding_top | times: 0.5 }}px;
-  --padding-bottom: {{ section.settings.padding_bottom | default: 10 }}px;
-  --padding-bottom-mobile: {{ section.settings.padding_bottom | times: 0.5 }}px;
+    --gradient-start: {{ section.settings.gradient_start | default: '#D0F0E8' }};
+    --gradient-end: {{ section.settings.gradient_end | default: '#E6E0FA' }};
+    --text-color: {{ section.settings.text_color | default: '#111111' }};
+    --padding-top: {{ section.settings.padding_top | default: 10 }}px;
+    --padding-top-mobile: {{ section.settings.padding_top | times: 0.5 }}px;
+    --padding-bottom: {{ section.settings.padding_bottom | default: 10 }}px;
+    --padding-bottom-mobile: {{ section.settings.padding_bottom | times: 0.5 }}px;
   }
 {% endstyle %}
 
-{% if template == 'page.cwc_holiday' %}
-  {{ 'CWC_holiday_timer_banner.css' | asset_url | stylesheet_tag }}
+{{ 'CWC_holiday_timer_banner.css' | asset_url | stylesheet_tag }}
 
-  {% if section.settings.main_title != blank or section.settings.show_timer %}
-    <section
-      id="CWC_holiday_timer_banner-{{ section.id }}"
-      class="cwc-holiday-timer-banner"
+{% if section.settings.main_title != blank or section.settings.show_timer %}
+  <section
+    id="CWC_holiday_timer_banner-{{ section.id }}"
+    class="cwc-holiday-timer-banner"
+  >
+    <a
+      class="cwc-holiday-timer-banner__container"
+      href="{{ section.settings.link }}"
     >
-      <a
-        class="cwc-holiday-timer-banner__container"
-        href="{{ section.settings.link }}"
-      >
-        <div class="cwc-holiday-timer-banner__content">
-          {% if section.settings.main_title != blank %}
-            <div class="cwc-holiday-timer-banner__main-title rte">
-              {{ section.settings.main_title }}
-            </div>
-          {% endif %}
-
-          {% if section.settings.subtext != blank %}
-            <div class="cwc-holiday-timer-banner__subtext rte">
-              {{ section.settings.subtext }}
-            </div>
-          {% endif %}
-
-          {% if section.settings.text != blank %}
-            <div class="cwc-holiday-timer-banner__text rte">
-              {{ section.settings.text }}
-            </div>
-          {% endif %}
-        </div>
-
-        {% if section.settings.show_timer %}
-          <div class="cwc-holiday-timer-banner__timer-wrapper">
-            <div id="timer-{{ section.id }}" class="cwc-holiday-timer-banner__timer">
-              <span class="cwc-holiday-timer-banner__time-unit cwc-holiday-timer-banner__time-unit--days">00</span>
-              <span class="cwc-holiday-timer-banner__separator">:</span>
-              <span class="cwc-holiday-timer-banner__time-unit cwc-holiday-timer-banner__time-unit--hours">00</span>
-              <span class="cwc-holiday-timer-banner__separator">:</span>
-              <span class="cwc-holiday-timer-banner__time-unit cwc-holiday-timer-banner__time-unit--minutes">00</span>
-              <span class="cwc-holiday-timer-banner__separator">:</span>
-              <span class="cwc-holiday-timer-banner__time-unit cwc-holiday-timer-banner__time-unit--seconds">00</span>
-            </div>
-            <div class="cwc-holiday-timer-banner__timer-labels">
-              <span class="cwc-holiday-timer-banner__label cwc-holiday-timer-banner__label--days">Days</span>
-              <span class="cwc-holiday-timer-banner__separator">:</span>
-              <span class="cwc-holiday-timer-banner__label cwc-holiday-timer-banner__label--hours">Hrs</span>
-              <span class="cwc-holiday-timer-banner__separator">:</span>
-              <span class="cwc-holiday-timer-banner__label cwc-holiday-timer-banner__label--minutes">Mins</span>
-              <span class="cwc-holiday-timer-banner__separator">:</span>
-              <span class="cwc-holiday-timer-banner__label cwc-holiday-timer-banner__label--seconds">Secs</span>
-            </div>
+      <div class="cwc-holiday-timer-banner__content">
+        {% if section.settings.main_title != blank %}
+          <div class="cwc-holiday-timer-banner__main-title rte">
+            {{ section.settings.main_title }}
           </div>
         {% endif %}
-      </a>
-    </section>
-  {% endif %}
 
-  {% if section.settings.show_timer %}
-    <script>
-      document.addEventListener('DOMContentLoaded', function() {
-        const sectionId = '{{ section.id }}';
-        const timerElement = document.getElementById('timer-' + sectionId);
-        if (!timerElement) return;
+        {% if section.settings.subtext != blank %}
+          <div class="cwc-holiday-timer-banner__subtext rte">
+            {{ section.settings.subtext }}
+          </div>
+        {% endif %}
 
-        const minHours = {{ section.settings.min_hours | times: 3600000 }}; // Convert hours to milliseconds
-        const maxHours = {{ section.settings.max_hours | times: 3600000 }}; // Convert hours to milliseconds
-        const localStorageKey = 'holidayTimerTarget-' + sectionId;
-        let targetTime = localStorage.getItem(localStorageKey);
+        {% if section.settings.text != blank %}
+          <div class="cwc-holiday-timer-banner__text rte">
+            {{ section.settings.text }}
+          </div>
+        {% endif %}
+      </div>
 
-        // Check if target time exists and is in the future
-        if (!targetTime || new Date().getTime() > parseInt(targetTime)) {
-          // Calculate a random offset between min and max hours
-          const randomOffset = Math.random() * (maxHours - minHours) + minHours;
-          targetTime = new Date().getTime() + randomOffset;
-          localStorage.setItem(localStorageKey, targetTime);
-        } else {
-          targetTime = parseInt(targetTime);
+      {% if section.settings.show_timer %}
+        <div class="cwc-holiday-timer-banner__timer-wrapper">
+          <div id="timer-{{ section.id }}" class="cwc-holiday-timer-banner__timer">
+            <span class="cwc-holiday-timer-banner__time-unit cwc-holiday-timer-banner__time-unit--hours">00</span>
+            <span class="cwc-holiday-timer-banner__separator">:</span>
+            <span class="cwc-holiday-timer-banner__time-unit cwc-holiday-timer-banner__time-unit--minutes">00</span>
+            <span class="cwc-holiday-timer-banner__separator">:</span>
+            <span class="cwc-holiday-timer-banner__time-unit cwc-holiday-timer-banner__time-unit--seconds">00</span>
+          </div>
+          <div class="cwc-holiday-timer-banner__timer-labels">
+            <span class="cwc-holiday-timer-banner__label cwc-holiday-timer-banner__label--hours">Hrs</span>
+            <span class="cwc-holiday-timer-banner__separator">:</span>
+            <span class="cwc-holiday-timer-banner__label cwc-holiday-timer-banner__label--minutes">Mins</span>
+            <span class="cwc-holiday-timer-banner__separator">:</span>
+            <span class="cwc-holiday-timer-banner__label cwc-holiday-timer-banner__label--seconds">Secs</span>
+          </div>
+        </div>
+      {% endif %}
+    </a>
+  </section>
+{% endif %}
+
+{% if section.settings.show_timer %}
+  <script>
+    'use strict';
+    (function() {
+      const sectionId = '{{ section.id }}';
+      const timerElement = document.getElementById('timer-' + sectionId);
+      if (!timerElement) return;
+
+      const minHours = {{ section.settings.min_hours | times: 3600000 }};
+      const maxHours = {{ section.settings.max_hours | times: 3600000 }};
+      const localStorageKey = 'holidayTimerTarget-' + sectionId;
+      let targetTime = localStorage.getItem(localStorageKey);
+
+      if (!targetTime || new Date().getTime() > parseInt(targetTime)) {
+        const randomOffset = Math.random() * (maxHours - minHours) + minHours;
+        targetTime = new Date().getTime() + randomOffset;
+        localStorage.setItem(localStorageKey, targetTime);
+      } else {
+        targetTime = parseInt(targetTime);
+      }
+
+      const hoursEl = timerElement.querySelector('.cwc-holiday-timer-banner__time-unit--hours');
+      const minutesEl = timerElement.querySelector('.cwc-holiday-timer-banner__time-unit--minutes');
+      const secondsEl = timerElement.querySelector('.cwc-holiday-timer-banner__time-unit--seconds');
+
+      function updateTimer() {
+        const now = new Date().getTime();
+        const distance = targetTime - now;
+
+        if (distance < 0) {
+          clearInterval(timerInterval);
+          timerElement.innerHTML = 'TIME IS UP!';
+          return;
         }
 
-        const daysEl = timerElement.querySelector('.cwc-holiday-timer-banner__time-unit--days');
-        const hoursEl = timerElement.querySelector('.cwc-holiday-timer-banner__time-unit--hours');
-        const minutesEl = timerElement.querySelector('.cwc-holiday-timer-banner__time-unit--minutes');
-        const secondsEl = timerElement.querySelector('.cwc-holiday-timer-banner__time-unit--seconds');
+        // Roll days into hours so display stays as HH:MM:SS
+        const totalHours = Math.floor(distance / (1000 * 60 * 60));
+        const minutes = Math.floor((distance % (1000 * 60 * 60)) / (1000 * 60));
+        const seconds = Math.floor((distance % (1000 * 60)) / 1000);
 
-        function updateTimer() {
-          const now = new Date().getTime();
-          const distance = targetTime - now;
+        hoursEl.textContent = String(totalHours).padStart(2, '0');
+        minutesEl.textContent = String(minutes).padStart(2, '0');
+        secondsEl.textContent = String(seconds).padStart(2, '0');
+      }
 
-          if (distance < 0) {
-            clearInterval(timerInterval);
-            timerElement.innerHTML = 'TIME IS UP!';
-            // Optional: Reset timer for next random period after it expires
-            // localStorage.removeItem(localStorageKey);
-            // setTimeout(() => { location.reload(); }, 5000);
-            return;
-          }
+      updateTimer();
+      const timerInterval = setInterval(updateTimer, 1000);
 
-          const days = Math.floor(distance / (1000 * 60 * 60 * 24));
-          const hours = Math.floor((distance % (1000 * 60 * 60 * 24)) / (1000 * 60 * 60));
-          const minutes = Math.floor((distance % (1000 * 60 * 60)) / (1000 * 60));
-          const seconds = Math.floor((distance % (1000 * 60)) / 1000);
-
-          daysEl.textContent = String(days).padStart(2, '0');
-          hoursEl.textContent = String(hours).padStart(2, '0');
-          minutesEl.textContent = String(minutes).padStart(2, '0');
-          secondsEl.textContent = String(seconds).padStart(2, '0');
+      document.addEventListener('shopify:section:load', function(e) {
+        if (e.detail.sectionId === sectionId) {
+          clearInterval(timerInterval);
+          updateTimer();
+          setInterval(updateTimer, 1000);
         }
-
-        updateTimer();
-        const timerInterval = setInterval(updateTimer, 1000);
       });
-    </script>
-  {% endif %}
+    })();
+  </script>
 {% endif %}
 
 {% schema %}
 {
   "name": "Holiday Timer Banner",
-  "tag": "section",
-  "class": "section",
   "settings": [
     {
       "type": "header",
@@ -155,7 +150,7 @@
     {
       "type": "url",
       "id": "link",
-      "label": "link"
+      "label": "Link"
     },
     {
       "type": "header",
@@ -185,23 +180,33 @@
       "step": 0.5,
       "unit": "hrs",
       "label": "Maximum Hours",
-      "default": 6
+      "default": 8
     },
     {
       "type": "header",
-      "content": "Colors & Spacing"
+      "content": "Colors"
     },
     {
       "type": "color",
-      "id": "bg_color",
-      "label": "Background color",
-      "default": "#ffffff"
+      "id": "gradient_start",
+      "label": "Gradient Start Color",
+      "default": "#1E6C7A"
+    },
+    {
+      "type": "color",
+      "id": "gradient_end",
+      "label": "Gradient End Color",
+      "default": "#E6E0FA"
     },
     {
       "type": "color",
       "id": "text_color",
-      "label": "Text color",
-      "default": "#111111"
+      "label": "Text Color",
+      "default": "#FFFFFF"
+    },
+    {
+      "type": "header",
+      "content": "Spacing"
     },
     {
       "type": "range",
@@ -210,7 +215,7 @@
       "max": 50,
       "step": 5,
       "unit": "px",
-      "label": "Padding top",
+      "label": "Padding Top",
       "default": 10
     },
     {
@@ -220,14 +225,14 @@
       "max": 50,
       "step": 5,
       "unit": "px",
-      "label": "Padding bottom",
+      "label": "Padding Bottom",
       "default": 10
     }
   ],
   "presets": [
     {
       "name": "Holiday Timer Banner",
-      "category": "Custom"
+      "category": "CWC Custom"
     }
   ]
 }

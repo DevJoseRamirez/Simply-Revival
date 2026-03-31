@@ -122,13 +122,40 @@
                   </div>
 
                 {% when 'title' %}
-                  <div class="cwc-featured-product__title" {{ block.shopify_attributes }}>
+                  {% style %}
+                    #block-{{ block.id }} {
+                      --text-color: {{ block.settings.text_color | default: '#282828' }};
+                      --highlight-color: {{ block.settings.highlight_color | default: '#1E6C7A' }};
+                    }
+                  {% endstyle %}
+                  <div id="block-{{ block.id }}" class="cwc-featured-product__title" {{ block.shopify_attributes }}>
                     {% if block.settings.title != blank %}
                       {{ block.settings.title }}
                     {% else %}
                       {{ current_product.title }}
                     {% endif %}
                   </div>
+                  {% style %}
+                    .cwc-featured-product__title > * {
+                      background: linear-gradient(
+                        90deg,
+                        var(--text-color, #282828) 0%,
+                        var(--highlight-color, #45b5b7) 45%,
+                        var(--text-color, #282828)
+                      );
+                      background: linear-gradient(90deg, #2d2d2d 0%, #45b5b7 52.4%, #2d2d2d 100%);
+                      -webkit-background-clip: text;
+                      -webkit-text-fill-color: transparent;
+                      background-clip: text;
+                      margin: 0;
+                      -webkit-background-clip: text;
+                      -webkit-text-fill-color: transparent;
+                      background-clip: text;
+                      font-weight: inherit;
+                      font-weight: bold;
+                      width: max-content;
+                    }
+                  {% endstyle %}
 
                 {% when 'desc' %}
                   <div class="cwc-featured-product__desc" {{ block.shopify_attributes }}>
@@ -548,6 +575,12 @@
       "name": "Star Rating",
       "settings": [
         {
+          "type": "color",
+          "id": "star_color",
+          "label": "Star Color",
+          "default": "#FFCC00"
+        },
+        {
           "type": "richtext",
           "id": "text",
           "label": "Rating Text",
@@ -574,8 +607,19 @@
         {
           "type": "richtext",
           "id": "title",
-          "label": "Title",
-          "default": "<h3>Natural DHT Blocker</h3>"
+          "label": "Title"
+        },
+        {
+          "type": "color",
+          "id": "text_color",
+          "label": "Text Color",
+          "default": "#282828"
+        },
+        {
+          "type": "color",
+          "id": "highlight_color",
+          "label": "Highlight Color",
+          "default": "#45b5b7"
         }
       ]
     },

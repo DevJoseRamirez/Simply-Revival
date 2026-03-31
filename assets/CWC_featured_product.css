@@ -112,6 +112,22 @@
 }
 
 
+.cwc-featured-product__title>* {
+    color: var(--text-color, #282828);
+    margin: 0;
+}
+
+/* ================================
+   Title
+   ================================ */
+
+.cwc-featured-product__title>* strong {
+    background: linear-gradient(90deg, var(--highlight-start, #1e6c7a), var(--highlight-end, #45b5b7));
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    background-clip: text;
+    font-weight: inherit;
+}
 
 /* ================================
    Content
@@ -199,6 +215,9 @@
 
     }
 
+    .cwc-featured-product__title {
+        margin-bottom: .5rem;
+    }
 
 
 
