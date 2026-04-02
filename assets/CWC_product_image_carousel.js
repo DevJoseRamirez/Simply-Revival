@@ -1,1 +1,1 @@
-console.log('image carosel')
+console.log("image carosel");

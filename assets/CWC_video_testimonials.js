@@ -28,7 +28,7 @@ document.addEventListener("DOMContentLoaded", function () {
     on: {
       slideChange(swiper) {
         const progressBar = document.querySelector(
-          ".cwc-video-testimonials__progress-bar"
+          ".cwc-video-testimonials__progress-bar",
         );
         if (progressBar) {
           const progress =
@@ -100,7 +100,7 @@ document.addEventListener("DOMContentLoaded", function () {
           e.preventDefault(); // requires passive:false
           e.stopPropagation();
         },
-        { passive: false }
+        { passive: false },
       );
 
       playBtn.addEventListener("pointermove", (e) => {
@@ -130,7 +130,7 @@ document.addEventListener("DOMContentLoaded", function () {
           }
           unlockDrag();
         },
-        { passive: false }
+        { passive: false },
       );
 
       playBtn.addEventListener("pointercancel", unlockDrag);
@@ -149,7 +149,7 @@ document.addEventListener("DOMContentLoaded", function () {
           vMoved = false;
           // DO NOT stopPropagation here—Swiper needs to see drags starting on video
         },
-        { passive: true }
+        { passive: true },
       );
 
       videoEl.addEventListener(
@@ -160,7 +160,7 @@ document.addEventListener("DOMContentLoaded", function () {
           const dy = Math.abs(e.clientY - vDownY);
           if (dx > TAP_MOVE_TOL || dy > TAP_MOVE_TOL) vMoved = true; // becomes a swipe
         },
-        { passive: true }
+        { passive: true },
       );
 
       videoEl.addEventListener(
@@ -176,7 +176,7 @@ document.addEventListener("DOMContentLoaded", function () {
           }
           // no stopPropagation; Swiper already handled swipes
         },
-        { passive: false }
+        { passive: false },
       );
 
       videoEl.addEventListener("play", updateBtn);

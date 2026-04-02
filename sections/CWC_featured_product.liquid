@@ -186,6 +186,21 @@
                     %}
                   </div>
 
+                {% when 'warning_notice' %}
+                  <div class="cwc-featured-product__warning-notice" {{ block.shopify_attributes }}>
+                    {% render 'CWC_warning_notice', block: block %}
+                  </div>
+
+                {% when 'low_stock' %}
+                  <div class="cwc-featured-product__low-stock" {{ block.shopify_attributes }}>
+                    {% render 'CWC_low_stock', block: block %}
+                  </div>
+
+                {% when 'trusted_by' %}
+                  <div class="cwc-featured-product__trusted-by" {{ block.shopify_attributes }}>
+                    {% render 'CWC_trusted_by', block: block %}
+                  </div>
+
                 {% when 'product_options' %}
                   {% if current_product.variants.size > 1 %}
                     <div
@@ -361,6 +376,15 @@
       "name": "Image Carousel",
       "settings": [
         {
+          "type": "range",
+          "id": "img_limit",
+          "label": "Image Limit",
+          "min": 1,
+          "max": 20,
+          "step": 1,
+          "default": 8
+        },
+        {
           "type": "text",
           "id": "badge_text",
           "label": "Image Badge Text",
@@ -395,6 +419,19 @@
           "id": "badge_sold_bg_color",
           "label": "Sold Badge Background Color",
           "default": "#fff"
+        },
+        {
+          "type": "checkbox",
+          "id": "mobile_thumbs",
+          "label": "Show thumbnails on mobile",
+          "default": true,
+          "info": "Display thumbnail navigation on mobile/tablet devices"
+        },
+        {
+          "type": "checkbox",
+          "id": "enable_zoom",
+          "label": "Enable Image Zoom",
+          "default": true
         }
       ]
     },
@@ -714,7 +751,70 @@
     {
       "type": "price_display",
       "name": "Price Display",
-      "settings": []
+      "settings": [
+        {
+          "type": "text",
+          "id": "save_label",
+          "label": "Save Label Text",
+          "default": "Save"
+        }
+      ]
+    },
+    {
+      "type": "low_stock",
+      "name": "Low Stock Notice",
+      "settings": [
+        {
+          "type": "text",
+          "id": "text_primary",
+          "label": "Primary Text",
+          "default": "Low Stock"
+        },
+        {
+          "type": "color",
+          "id": "text_primary_color",
+          "label": "Primary Text Color",
+          "default": "#9F3F3F "
+        },
+        {
+          "type": "text",
+          "id": "text_secondary",
+          "label": "Secondary Text",
+          "default": "Selling Fast"
+        },
+        {
+          "type": "color",
+          "id": "text_secondary_color",
+          "label": "Secondary Text Color",
+          "default": "#9F3F3F "
+        },
+        {
+          "type": "color",
+          "id": "line_color",
+          "label": "Line Color",
+          "default": "#9F3F3F "
+        },
+        {
+          "type": "range",
+          "id": "padding_top",
+          "min": 0,
+          "max": 40,
+          "step": 2,
+          "unit": "px",
+          "label": "Padding Top",
+          "default": 8
+        },
+        {
+          "type": "range",
+          "id": "padding_bottom",
+          "min": 0,
+          "max": 40,
+          "step": 2,
+          "unit": "px",
+          "label": "Padding Bottom",
+          "default": 8
+        }
+      ]
     },
     {
       "type": "product_options",
@@ -1005,6 +1105,137 @@
           "type": "image_picker",
           "id": "icon",
           "label": "Icon"
+        }
+      ]
+    },
+    {
+      "type": "trusted_by",
+      "name": "Trusted By",
+      "settings": [
+        {
+          "type": "header",
+          "content": "Images"
+        },
+        {
+          "type": "image_picker",
+          "id": "image_1",
+          "label": "Avatar Image 1"
+        },
+        {
+          "type": "image_picker",
+          "id": "image_2",
+          "label": "Avatar Image 2"
+        },
+        {
+          "type": "image_picker",
+          "id": "image_3",
+          "label": "Avatar Image 3"
+        },
+        {
+          "type": "header",
+          "content": "Content"
+        },
+        {
+          "type": "richtext",
+          "id": "title",
+          "label": "Title",
+          "default": "<p>Trusted by 100K+ customers</p>"
+        },
+        {
+          "type": "richtext",
+          "id": "subtext",
+          "label": "Subtext",
+          "default": "<p>who choose Resilia for consistent, long-term wellness support.</p>"
+        },
+        {
+          "type": "header",
+          "content": "Colors"
+        },
+        {
+          "type": "color",
+          "id": "bg_color",
+          "label": "Block Background Color",
+          "default": "#EFEFEF"
+        },
+        {
+          "type": "color",
+          "id": "text_color",
+          "label": "Text Color",
+          "default": "#282828"
+        }
+      ]
+    },
+    {
+      "type": "warning_notice",
+      "name": "Warning Notice",
+      "settings": [
+        {
+          "type": "header",
+          "content": "Content"
+        },
+        {
+          "type": "text",
+          "id": "title",
+          "label": "Title",
+          "default": "WARNING: Low Stock Notice"
+        },
+        {
+          "type": "richtext",
+          "id": "text",
+          "label": "Body Text",
+          "default": "<p>This product sold out 12 times last year. We encourage you to take advantage of the <strong>limited sale</strong> and buy now. Subscribing protects you against future stockouts.</p>"
+        },
+        {
+          "type": "header",
+          "content": "Colors"
+        },
+        {
+          "type": "color",
+          "id": "bg_color",
+          "label": "Background Color",
+          "default": "#fef2f2"
+        },
+        {
+          "type": "color",
+          "id": "border_color",
+          "label": "Border Color",
+          "default": "#fca5a5"
+        },
+        {
+          "type": "color",
+          "id": "title_color",
+          "label": "Title Color",
+          "default": "#9f3f3f"
+        },
+        {
+          "type": "color",
+          "id": "text_color",
+          "label": "Body Text Color",
+          "default": "#9f3f3f"
+        },
+        {
+          "type": "header",
+          "content": "Spacing"
+        },
+        {
+          "type": "range",
+          "id": "padding_top",
+          "min": 0,
+          "max": 40,
+          "step": 2,
+          "unit": "px",
+          "label": "Padding Top",
+          "default": 8
+        },
+        {
+          "type": "range",
+          "id": "padding_bottom",
+          "min": 0,
+          "max": 40,
+          "step": 2,
+          "unit": "px",
+          "label": "Padding Bottom",
+          "default": 8
         }
       ]
     }

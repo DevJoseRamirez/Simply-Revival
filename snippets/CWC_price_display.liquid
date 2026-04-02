@@ -44,6 +44,7 @@
     background: #60a1a2;
     border-radius: 5px;
     gap: 8px;
+    gap: 4px;
   }
   .cwc-featured-product__price-save span {
     font-size: inherit;
@@ -72,17 +73,34 @@
       align-items: center;
       justify-content: flex-start;
       margin: 0rem 0 1rem 0;
-      border-top: 0.55px solid rgba(0, 0, 0, 0.2);
-      border-bottom: 0.55px solid rgba(0, 0, 0, 0.2);
+      border-top: 0.55px solid rgba(0, 0, 0, 0.1);
+      border-bottom: 0.55px solid rgba(0, 0, 0, 0.1);
       font-size: 1.3125rem;
       width: 100%;
       padding: 0.5rem 0rem;
       gap: 1rem;
       font-size: 1.3125rem;
+      gap: 0rem;
+      justify-content: space-between;
     }
     .cwc-featured-product__price-save {
       line-height: normal;
       font-size: 0.86rem;
+    }
+    .cwc-featured-product__price-compare {
+      font-size: 1.1rem;
+      font-size: 1rem;
+      font-weight: 500;
+    }
+    .cwc-featured-product__price-save {
+      line-height: normal;
+      font-size: 0.86rem;
+      font-size: 0.8rem;
+      padding: 2px 4px;
+      padding: 2px 6px;
+      gap: 4px;
+      display: flex;
+      flex-wrap: wrap;
     }
   }
 {% endstyle %}
@@ -116,6 +134,14 @@
     assign display_price = allocation.price
   endif
 %}
+{% assign save_amount = compare_price | minus: display_price %}
+{% assign save_pct = save_amount | times: 100 | divided_by: compare_price | round %}
+
+{% assign save_amount_formatted = save_amount | money %}
+{% assign save_pct_formatted = save_pct | append: '%' %}
+
+{% comment %} {{ save_amount_formatted }} {% endcomment %}
+{% comment %} {{ save_pct_formatted }} {% endcomment %}
 
 <span class="cwc-featured-product__price-current" id="current-price-{{ section_id }}">
   {{ display_price | money }}
@@ -126,9 +152,11 @@
     {{ compare_price | money }}
   </span>
   <div class="cwc-featured-product__price-save" id="save-amount-{{ section_id }}">
-    <span>Save</span>
-    <span>
-      {{ compare_price | minus: display_price | money }}
+    {% comment %} <span>Save</span> {% endcomment %}
+    <span class="cwc-featured-product__price-save-label">{{ block.settings.save_label | default: 'Save' }}</span>
+
+    <span class="cwc-featured-product__price-save-amount">
+      {{ save_pct_formatted }}
     </span>
   </div>
 {% endif %}

@@ -52,7 +52,8 @@ function initFeaturedProductUI(section, sectionId) {
     if (!prices) return;
 
     const { price, comparePrice, savings } = prices;
-
+    console.log(savings);
+    console.log("savings");
     // Main price element
     const priceElement =
       currentPriceEl ||
@@ -72,19 +73,54 @@ function initFeaturedProductUI(section, sectionId) {
       saveAmountEl ||
       section.querySelector(".cwc-featured-product__price-save");
 
+    // const savings = comparePrice - price;
+    const savingsPct = Math.round((savings / comparePrice) * 100);
+
     if (comparePrice && comparePrice > price) {
       if (compareElement) {
         compareElement.textContent = formatPrice(comparePrice);
         compareElement.style.display = "inline";
       }
       if (saveElement) {
-        saveElement.innerHTML = `<span>Save</span> <span>${formatPrice(savings)}</span>`;
+        const saveAmountSpan = saveElement.querySelector(
+          ".cwc-featured-product__price-save-amount",
+        );
+        if (saveAmountSpan) saveAmountSpan.textContent = savingsPct + "%";
         saveElement.style.display = "flex";
       }
     } else {
       if (compareElement) compareElement.style.display = "none";
       if (saveElement) saveElement.style.display = "none";
     }
+    // if (comparePrice && comparePrice > price) {
+    //   if (compareElement) {
+    //     compareElement.textContent = formatPrice(comparePrice);
+    //     compareElement.style.display = "inline";
+    //   }
+    //   if (saveElement) {
+    //     const saveAmountSpan = saveElement.querySelector(
+    //       ".cwc-featured-product__price-save-amount",
+    //     );
+    //     if (saveAmountSpan) saveAmountSpan.textContent = formatPrice(savings);
+    //     saveElement.style.display = "flex";
+    //   }
+    // } else {
+    //   if (compareElement) compareElement.style.display = "none";
+    //   if (saveElement) saveElement.style.display = "none";
+    // }
+    // if (comparePrice && comparePrice > price) {
+    //   if (compareElement) {
+    //     compareElement.textContent = formatPrice(comparePrice);
+    //     compareElement.style.display = "inline";
+    //   }
+    //   if (saveElement) {
+    //     saveElement.innerHTML = `<span>Save</span> <span>${formatPrice(savings)}</span>`;
+    //     saveElement.style.display = "flex";
+    //   }
+    // } else {
+    //   if (compareElement) compareElement.style.display = "none";
+    //   if (saveElement) saveElement.style.display = "none";
+    // }
   }
 
   function updateButtonPriceDisplay(prices) {

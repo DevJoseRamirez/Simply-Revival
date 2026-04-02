@@ -174,17 +174,21 @@
         "image_carousel_jFp4EA": {
           "type": "image_carousel",
           "settings": {
+            "img_limit": 8,
             "badge_text": "",
             "badge_text_color": "#ffffff",
             "badge_bg_color": "#60a1a2",
             "badge_sold_text": "",
             "badge_sold_text_color": "#000000",
-            "badge_sold_bg_color": "#ffffff"
+            "badge_sold_bg_color": "#ffffff",
+            "mobile_thumbs": true,
+            "enable_zoom": true
           }
         },
         "rating_j6tWzb": {
           "type": "rating",
           "settings": {
+            "star_color": "#ffcc00",
             "text": "<p>Rated <strong>4.8 Excellent </strong>| <a href=\"#az_reviews\" title=\"#az_reviews\"><span style=\"text-decoration:underline\">25,593 Reviews</span></a></p>"
           }
         },
@@ -197,7 +201,9 @@
         "title_iKGYG9": {
           "type": "title",
           "settings": {
-            "title": "<h3>Natural DHT Blocker</h3>"
+            "title": "<h3>Natural DHT Blocker</h3>",
+            "text_color": "#282828",
+            "highlight_color": "#45b5b7"
           }
         },
         "desc_aVrjLU": {
@@ -223,7 +229,21 @@
         },
         "price_display_8LMwX6": {
           "type": "price_display",
-          "settings": {}
+          "settings": {
+            "save_label": "SPRING SALE - Save"
+          }
+        },
+        "low_stock_cJHgK9": {
+          "type": "low_stock",
+          "settings": {
+            "text_primary": "Low Stock",
+            "text_primary_color": "#125657",
+            "text_secondary": "Selling Fast",
+            "text_secondary_color": "#125657",
+            "line_color": "#125657",
+            "padding_top": 0,
+            "padding_bottom": 2
+          }
         },
         "product_options_K4yi8r": {
           "type": "product_options",
@@ -274,7 +294,7 @@
             "sticky_button_text": "Add to Cart",
             "sticky_bg_color": "#ffffff",
             "bundle_product_1": "25-gift-card",
-            "bundle_product_2": "free-365-day-guarantee",
+            "bundle_product_2": "",
             "bundle_product_3": "",
             "bundle_product_4": "",
             "skip_cart": false
@@ -285,6 +305,31 @@
           "settings": {
             "text": "365-day money back guarantee",
             "icon": "shopify://shop_images/Simply_Revival___Gurantee-min.png"
+          }
+        },
+        "trusted_by_RdR8pB": {
+          "type": "trusted_by",
+          "settings": {
+            "image_1": "shopify://shop_images/trusted_by_01.png",
+            "image_2": "shopify://shop_images/trusted_by_02.png",
+            "image_3": "shopify://shop_images/trusted_by_03.png",
+            "title": "<p>Trusted by 100K+ customers</p>",
+            "subtext": "<p>who choose Simply for consistent, long-term wellness support.</p>",
+            "bg_color": "#efefef",
+            "text_color": "#282828"
+          }
+        },
+        "warning_notice_bXNz4A": {
+          "type": "warning_notice",
+          "settings": {
+            "title": "WARNING: Low Stock Notice",
+            "text": "<p>This product sold out 12 times last year. We encourage you to take advantage of the <strong>limited sale</strong> and buy now. Subscribing protects you against future stockouts.</p>",
+            "bg_color": "#fef2f2",
+            "border_color": "#fca5a5",
+            "title_color": "#9f3f3f",
+            "text_color": "#9f3f3f",
+            "padding_top": 8,
+            "padding_bottom": 8
           }
         },
         "faq_x8mxYm": {
@@ -339,11 +384,14 @@
         "desc_aVrjLU",
         "benefits_XqmTFX",
         "price_display_8LMwX6",
+        "low_stock_cJHgK9",
         "product_options_K4yi8r",
         "subscription_toggle_ArNDfx",
         "delivery_estimate_g6E4Az",
         "add_to_cart_7gampa",
         "guarantee_text_pAEtjq",
+        "trusted_by_RdR8pB",
+        "warning_notice_bXNz4A",
         "faq_x8mxYm",
         "faq_rgfywq",
         "value_props_x9niBd"

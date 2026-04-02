@@ -1,0 +1,224 @@
+{% style %}
+  .cwc-trusted-by--{{ block.id }} {
+    --bg-color: {{ block.settings.bg_color | default: '#EFEFEF' }};
+    --text-color: {{ block.settings.text_color | default: '#282828' }};
+  }
+{% endstyle %}
+{% style %}
+  .cwc-trusted-by {
+    display: flex;
+    align-items: center;
+    /* gap: 0.875rem; */
+    width: fit-content;
+    max-width: 100%;
+    position: relative;
+    display: flex;
+    align-items: center;
+    /* gap: 0.875rem; */
+    width: 100%;
+    max-width: 100%;
+    position: relative;
+    justify-content: center;
+    padding: 0rem;
+    padding: 1rem 0rem;
+    padding-top: 0rem;
+  }
+  .cwc-trusted-by__avatars-wrap {
+    display: flex;
+    z-index: 9;
+    position: relative;
+  }
+  .cwc-trusted-by__avatars-wrap svg {
+    display: flex;
+    display: flex;
+    z-index: 9;
+    width: 19px;
+    height: auto;
+    width: 24px;
+    height: min-content;
+    background: white;
+    left: -3px;
+    position: relative;
+    border-radius: 999px;
+  }
+  .cwc-trusted-by__avatars {
+    display: flex;
+    align-items: center;
+    width: 100%;
+    /* flex-shrink: 0; */
+  }
+
+  .cwc-trusted-by__avatar {
+    width: 44px;
+    height: 44px;
+    border-radius: 50%;
+    overflow: hidden;
+    border: 2px solid #fff;
+    margin-right: -10px;
+    margin-right: -14px;
+    flex-shrink: 0;
+  }
+
+  .cwc-trusted-by__avatar img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    display: block;
+  }
+
+  .cwc-trusted-by__check {
+    margin-left: 14px;
+    flex-shrink: 0;
+    display: flex;
+    align-items: center;
+  }
+
+  .cwc-trusted-by__content {
+    color: var(--text-color, #282828);
+    background-color: var(--bg-color, #efefef);
+    border-radius: 999px;
+    padding: 0.6rem 1rem 0.6rem 3rem;
+    padding: 0.75rem 1rem 0.75rem 3rem;
+
+    padding-bottom: 3.8px;
+    padding-left: 41.8px;
+    padding-right: 13.3px;
+    padding-top: 3.8px;
+    padding-top: 6px;
+    padding-bottom: 6px;
+    /* max-width: 365px; */
+    /* margin-left: 72px; */
+    /* width: 100%; */
+    margin-left: -25.8px;
+    margin-left: -42.5px;
+
+    /* text stuff */
+    line-height: 1.3;
+
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    z-index: 2;
+
+    /* testing:  */
+
+    position: relative;
+    box-sizing: border-box;
+    display: flex;
+    flex-direction: column;
+    /* height: 39.7031px; */
+    justify-content: center;
+    min-height: 38px;
+
+    /* width: 383.469px; */
+    z-index: 1;
+
+    padding: 8px 13.3px 8px 41.8px;
+  }
+  .cwc-trusted-by__title.rte {
+    margin-bottom: 2px;
+  }
+  .cwc-trusted-by__title > * {
+    font-size: 0.83rem;
+    font-weight: 700;
+    font-weight: 500;
+    font-weight: 600;
+    line-height: 1.3;
+    line-height: normal;
+    line-height: 1.1;
+    /* font-weight: 600; */
+
+    margin: 0;
+    color: var(--text-color, #282828);
+  }
+  .cwc-trusted-by__title > * > strong {
+    font-weight: 600;
+  }
+
+  .cwc-trusted-by__subtext > * {
+    font-size: 0.7rem;
+    font-weight: 400;
+    line-height: 1.4;
+    margin: 0;
+    color: var(--text-color, #282828);
+  }
+
+  .cwc-trusted-by__container {
+    display: flex;
+    display: flex;
+    align-items: center;
+  }
+  /* mobile  */
+
+  @media (max-width: 768px) {
+    .cwc-trusted-by__avatar {
+      width: 44px;
+      height: 44px;
+    }
+    .cwc-trusted-by__title.rte {
+      /* font-size: 0.75rem; */
+    }
+    .cwc-trusted-by__subtext > * {
+      font-size: 0.7rem;
+    }
+    .cwc-trusted-by__content {
+      margin-left: -38.5px;
+      color: var(--text-color, #282828);
+      background-color: var(--bg-color, #efefef);
+      border-radius: 999px;
+      /* padding: 0.6rem 1rem 0.6rem 3rem; */
+      /* padding: 0.7rem 1rem 0.67rem 3rem; */
+    }
+  }
+{% endstyle %}
+
+<div class="cwc-trusted-by cwc-trusted-by--{{ block.id }}">
+  <div class="cwc-trusted-by__container">
+    <div class="cwc-trusted-by__avatars-wrap">
+      <div class="cwc-trusted-by__avatars">
+        {% if block.settings.image_1 != blank %}
+          <div class="cwc-trusted-by__avatar">
+            {{ block.settings.image_1 | image_url: width: 80 | image_tag: alt: 'Customer', loading: 'lazy' }}
+          </div>
+        {% endif %}
+        {% if block.settings.image_2 != blank %}
+          <div class="cwc-trusted-by__avatar">
+            {{ block.settings.image_2 | image_url: width: 80 | image_tag: alt: 'Customer', loading: 'lazy' }}
+          </div>
+        {% endif %}
+        {% if block.settings.image_3 != blank %}
+          <div class="cwc-trusted-by__avatar">
+            {{ block.settings.image_3 | image_url: width: 80 | image_tag: alt: 'Customer', loading: 'lazy' }}
+          </div>
+        {% endif %}
+      </div>
+
+      {% comment %}
+        <div class="cwc-trusted-by__check">
+          <svg width="28" height="28" viewBox="0 0 28 28" fill="none" xmlns="http://www.w3.org/2000/svg">
+            <circle cx="14" cy="14" r="14" fill="#34A853"/>
+            <path d="M8 14.5L12 18.5L20 10" stroke="white" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"/>
+          </svg>
+        </div>
+      {% endcomment %}
+      {% render 'CWC_icon-check_badge-fill', fill_color: '#125657' %}
+    </div>
+
+    <div class="cwc-trusted-by__content">
+      {% if block.settings.title != blank %}
+        <div class="cwc-trusted-by__title rte">
+          {{ block.settings.title }}
+        </div>
+      {% endif %}
+      {% if block.settings.subtext != blank %}
+        <div class="cwc-trusted-by__subtext rte">
+          {{ block.settings.subtext }}
+        </div>
+      {% endif %}
+    </div>
+  </div>
+</div>

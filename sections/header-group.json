@@ -16,14 +16,15 @@
       "name": "Holiday Timer Banner",
       "settings": {
         "main_title": "<p>SPRING SALE</p>",
-        "subtext": "<p>62% Off Starter Kit + FREE Serum + 4 FREE gifts</p>",
+        "subtext": "<p>67% OFF + 1 Month FREE</p>",
         "text": "",
-        "link": "",
+        "link": "shopify://products/simply®-dht-blocker",
         "show_timer": true,
-        "min_hours": 1,
+        "min_hours": 3,
         "max_hours": 2,
-        "bg_color": "#ffffff",
-        "text_color": "#111111",
+        "gradient_start": "#1e6c7a",
+        "gradient_end": "#45b5b7",
+        "text_color": "#ffffff",
         "padding_top": 10,
         "padding_bottom": 10
       }
@@ -43,6 +44,7 @@
       "block_order": [
         "item_CAgTzF"
       ],
+      "disabled": true,
       "custom_css": [],
       "settings": {
         "enable": true,

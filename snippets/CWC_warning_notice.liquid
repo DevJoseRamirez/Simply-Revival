@@ -1,0 +1,91 @@
+{% style %}
+    .cwc-warning-notice--{{ block.id }} {
+      --bg-color: {{ block.settings.bg_color | default: '#FFF0EE' }};
+      --border-color: {{ block.settings.border_color | default: '#E05A4E' }};
+      --title-color: {{ block.settings.title_color | default: '#C0392B' }};
+      --text-color: {{ block.settings.text_color | default: '#282828' }};
+      --padding-top: {{ block.settings.padding_top | default: 8 }}px;
+      --padding-bottom: {{ block.settings.padding_bottom | default: 8 }}px;
+      --border-color-alpha: {{ block.settings.border_color | default: '#fca5a5' | color_modify: 'alpha', 0.7 }};
+  }
+{% endstyle %}
+
+{% style %}
+  .cwc-warning-notice {
+    background-color: var(--bg-color, #fff0ee);
+    border: 2px dashed var(--border-color, #e05a4e);
+    border-radius: 8px;
+    padding: var(--padding-top, 8px) 1rem var(--padding-bottom, 8px) 1rem;
+    padding: 1rem;
+    /* margin: 1rem 0rem; */
+    /* margin: 0rem; */
+    margin-bottom: 1rem;
+  }
+
+  .cwc-warning-notice__title {
+    display: flex;
+    align-items: center;
+    gap: 0.4rem;
+    font-size: 0.7125rem;
+    /* font-weight: 700; */
+    font-weight: 500;
+    font-weight: 600;
+    color: var(--title-color, #c0392b);
+    margin-bottom: 0.5rem;
+    margin-bottom: 4px;
+    text-transform: none;
+    letter-spacing: 0.02em;
+    line-height: 1.1;
+  }
+  .cwc-warning-notice__title > * > strong,
+  .cwc-warning-notice__title > * {
+    font-weight: 600;
+  }
+
+  .cwc-warning-notice__icon {
+    display: flex;
+    align-items: center;
+    flex-shrink: 0;
+    color: var(--title-color, #c0392b);
+  }
+  .cwc-warning-notice__icon svg {
+    height: 14px;
+    width: 14px;
+  }
+  .cwc-warning-notice__text > * > strong,
+  .cwc-warning-notice__text > * {
+    font-size: 0.7125rem;
+    font-weight: 400;
+    line-height: 1.5;
+    color: var(--text-color, #282828);
+    margin: 0;
+  }
+
+  .cwc-warning-notice__text > * + * {
+    margin-top: 0.25rem;
+  }
+  .cwc-warning-notice {
+    border: 2px dashed var(--border-color-alpha);
+    padding: 0.75rem;
+  } 
+{% endstyle %}
+<div class="cwc-warning-notice cwc-warning-notice--{{ block.id }}">
+  {% if block.settings.title != blank %}
+    <div class="cwc-warning-notice__title">
+      <span class="cwc-warning-notice__icon" aria-hidden="true">
+        <svg width="16" height="16" viewBox="0 0 16 16" fill="none" xmlns="http://www.w3.org/2000/svg">
+          <circle cx="8" cy="8" r="8" fill="currentColor"/>
+          <rect x="7" y="3.5" width="2" height="5.5" rx="1" fill="white"/>
+          <rect x="7" y="10.5" width="2" height="2" rx="1" fill="white"/>
+        </svg>
+      </span>
+      {{ block.settings.title }}
+    </div>
+  {% endif %}
+
+  {% if block.settings.text != blank %}
+    <div class="cwc-warning-notice__text rte">
+      {{ block.settings.text }}
+    </div>
+  {% endif %}
+</div>
