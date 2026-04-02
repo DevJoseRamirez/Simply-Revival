@@ -570,107 +570,6 @@
         "padding_bottom": 40
       }
     },
-    "cwc_video_testimonials_eKGcNw": {
-      "type": "CWC_video_testimonials",
-      "blocks": {
-        "testimonial_gAB3Pi": {
-          "type": "testimonial",
-          "settings": {
-            "video_file": "shopify://files/videos/Simply Revival | Real People Real Results - lukefinds.mp4",
-            "video_url": "",
-            "author_name": "Customer Name"
-          }
-        },
-        "testimonial_JKCwDW": {
-          "type": "testimonial",
-          "settings": {
-            "video_file": "shopify://files/videos/Simply Revival | Real People Real Results - TikTok-viral.mp4",
-            "video_url": "",
-            "author_name": "Customer Name"
-          }
-        },
-        "testimonial_imEa7a": {
-          "type": "testimonial",
-          "settings": {
-            "video_file": "shopify://files/videos/Simply Revival | Real People Real Results - alexcozys.mp4",
-            "video_url": "",
-            "author_name": "Customer Name"
-          }
-        },
-        "testimonial_CEbkbp": {
-          "type": "testimonial",
-          "settings": {
-            "video_file": "shopify://files/videos/Simply Revival | Real People Real Results - thehealthwealth.mp4",
-            "video_url": "",
-            "author_name": "Customer Name"
-          }
-        },
-        "testimonial_LbgUCx": {
-          "type": "testimonial",
-          "settings": {
-            "video_file": "shopify://files/videos/Simply Revival | Real People Real Results - kwakusella.mp4",
-            "video_url": "",
-            "author_name": "Customer Name"
-          }
-        },
-        "testimonial_cUnGVh": {
-          "type": "testimonial",
-          "settings": {
-            "video_file": "shopify://files/videos/Simply Revival | Real People Real Results - Anakin.mp4",
-            "video_url": "",
-            "author_name": "Customer Name"
-          }
-        },
-        "testimonial_YUfUyU": {
-          "type": "testimonial",
-          "settings": {
-            "video_file": "shopify://files/videos/Simply Revival | Real People Real Results - Marc_20Malcolm_20.mp4",
-            "video_url": "",
-            "author_name": "Customer Name"
-          }
-        },
-        "button_Ydqp9F": {
-          "type": "button",
-          "settings": {
-            "text": "Try Risk-Free Today",
-            "link": "#cwc_product-template--anchor",
-            "button_bg_color": "#125657",
-            "button_text_color": "#ffffff"
-          }
-        },
-        "guarantee_text_TtNrBf": {
-          "type": "guarantee_text",
-          "settings": {
-            "text": "365-day money back guarantee",
-            "icon": "shopify://shop_images/Simply_Revival___Gurantee-min.png"
-          }
-        }
-      },
-      "block_order": [
-        "testimonial_gAB3Pi",
-        "testimonial_JKCwDW",
-        "testimonial_imEa7a",
-        "testimonial_CEbkbp",
-        "testimonial_LbgUCx",
-        "testimonial_cUnGVh",
-        "testimonial_YUfUyU",
-        "button_Ydqp9F",
-        "guarantee_text_TtNrBf"
-      ],
-      "name": "Video Testimonials",
-      "settings": {
-        "video_testimonials_collection": "video-testimonial-list-lnxzuxpg",
-        "heading": "<h3>Real People, <strong>Real Results</strong></h3>",
-        "bold_color": "#125657",
-        "text": "<p>See why thousands of people love our products</p>",
-        "bg_color": "#faf9f6",
-        "text_color": "#111111",
-        "button_bg": "#125657",
-        "button_text": "#ffffff",
-        "padding_top": 32,
-        "padding_bottom": 32
-      }
-    },
     "cwc_usp_columns_NPgtAB": {
       "type": "CWC_usp_columns",
       "blocks": {
@@ -1238,7 +1137,7 @@
           "type": "button",
           "settings": {
             "text": "Try Risk-Free Today",
-            "link": "#cwc_product-template--anchor",
+            "link": "#cwc-featured-product--anchor",
             "button_bg_color": "#125657",
             "button_text_color": "#ffffff"
           }
@@ -1269,6 +1168,107 @@
         "section_bg": "#fffee3",
         "padding_top": 40,
         "padding_bottom": 40
+      }
+    },
+    "cwc_video_testimonials_eKGcNw": {
+      "type": "CWC_video_testimonials",
+      "blocks": {
+        "testimonial_gAB3Pi": {
+          "type": "testimonial",
+          "settings": {
+            "video_file": "shopify://files/videos/Simply Revival | Real People Real Results - lukefinds.mp4",
+            "video_url": "",
+            "author_name": "Customer Name"
+          }
+        },
+        "testimonial_JKCwDW": {
+          "type": "testimonial",
+          "settings": {
+            "video_file": "shopify://files/videos/Simply Revival | Real People Real Results - TikTok-viral.mp4",
+            "video_url": "",
+            "author_name": "Customer Name"
+          }
+        },
+        "testimonial_imEa7a": {
+          "type": "testimonial",
+          "settings": {
+            "video_file": "shopify://files/videos/Simply Revival | Real People Real Results - alexcozys.mp4",
+            "video_url": "",
+            "author_name": "Customer Name"
+          }
+        },
+        "testimonial_CEbkbp": {
+          "type": "testimonial",
+          "settings": {
+            "video_file": "shopify://files/videos/Simply Revival | Real People Real Results - thehealthwealth.mp4",
+            "video_url": "",
+            "author_name": "Customer Name"
+          }
+        },
+        "testimonial_LbgUCx": {
+          "type": "testimonial",
+          "settings": {
+            "video_file": "shopify://files/videos/Simply Revival | Real People Real Results - kwakusella.mp4",
+            "video_url": "",
+            "author_name": "Customer Name"
+          }
+        },
+        "testimonial_cUnGVh": {
+          "type": "testimonial",
+          "settings": {
+            "video_file": "shopify://files/videos/Simply Revival | Real People Real Results - Anakin.mp4",
+            "video_url": "",
+            "author_name": "Customer Name"
+          }
+        },
+        "testimonial_YUfUyU": {
+          "type": "testimonial",
+          "settings": {
+            "video_file": "shopify://files/videos/Simply Revival | Real People Real Results - Marc_20Malcolm_20.mp4",
+            "video_url": "",
+            "author_name": "Customer Name"
+          }
+        },
+        "button_Ydqp9F": {
+          "type": "button",
+          "settings": {
+            "text": "Try Risk-Free Today",
+            "link": "#cwc-featured-product--anchor",
+            "button_bg_color": "#125657",
+            "button_text_color": "#ffffff"
+          }
+        },
+        "guarantee_text_TtNrBf": {
+          "type": "guarantee_text",
+          "settings": {
+            "text": "365-day money back guarantee",
+            "icon": "shopify://shop_images/Simply_Revival___Gurantee-min.png"
+          }
+        }
+      },
+      "block_order": [
+        "testimonial_gAB3Pi",
+        "testimonial_JKCwDW",
+        "testimonial_imEa7a",
+        "testimonial_CEbkbp",
+        "testimonial_LbgUCx",
+        "testimonial_cUnGVh",
+        "testimonial_YUfUyU",
+        "button_Ydqp9F",
+        "guarantee_text_TtNrBf"
+      ],
+      "name": "Video Testimonials",
+      "settings": {
+        "video_testimonials_collection": "video-testimonial-list-lnxzuxpg",
+        "heading": "<h3>Real People, <strong>Real Results</strong></h3>",
+        "bold_color": "#125657",
+        "text": "<p>See why thousands of people love our products</p>",
+        "bg_color": "#faf9f6",
+        "text_color": "#111111",
+        "button_bg": "#125657",
+        "button_text": "#ffffff",
+        "padding_top": 32,
+        "padding_bottom": 32
       }
     },
     "cwc_problem_solution_3rW9Gt": {
@@ -1485,7 +1485,7 @@
           "type": "button",
           "settings": {
             "button_text": "Try Risk-Free Today",
-            "button_link": "#cwc_product-template--anchor",
+            "button_link": "#cwc-featured-product--anchor",
             "button_bg_color": "#ffffff",
             "button_text_color": "#125657",
             "button_note": "365-day money back guarantee"
@@ -1544,7 +1544,7 @@
           "type": "button",
           "settings": {
             "text": "Try Risk-Free Today",
-            "link": "#cwc_product-template--anchor",
+            "link": "#cwc-featured-product--anchor",
             "button_bg_color": "#125657",
             "button_text_color": "#ffffff"
           }
@@ -1618,7 +1618,7 @@
           "type": "button",
           "settings": {
             "button_text": "Try Risk-Free Today",
-            "button_link": "#cwc_product-template--anchor",
+            "button_link": "#cwc-featured-product--anchor",
             "button_bg_color": "#d0f0f2",
             "button_text_color": "#125657",
             "button_note": "365-day money back guarantee"
@@ -1701,7 +1701,6 @@
     "product-recommendations",
     "cwc_featured_product_B7WhGk",
     "cwc_product_template_eC4DbX",
-    "cwc_video_testimonials_eKGcNw",
     "cwc_usp_columns_NPgtAB",
     "cwc_social_proof_VhXP3J",
     "cwc_testimonials_FPgtbf",
@@ -1709,6 +1708,7 @@
     "cwc_testimonial_images_CxCPAz",
     "cwc_background_features_fzEHDf",
     "cwc_reasons_raQjiN",
+    "cwc_video_testimonials_eKGcNw",
     "cwc_problem_solution_3rW9Gt",
     "cwc_statistical_proof_TyE7PV",
     "cwc_comparison_j8fkx6",

@@ -1140,7 +1140,7 @@
           "type": "button",
           "settings": {
             "text": "Try Risk-Free Today",
-            "link": "#cwc_product-template--anchor",
+            "link": "#cwc-featured-product--anchor",
             "button_bg_color": "#125657",
             "button_text_color": "#ffffff"
           }
@@ -1236,7 +1236,7 @@
           "type": "button",
           "settings": {
             "text": "Try Risk-Free Today",
-            "link": "#cwc_product-template--anchor",
+            "link": "#cwc-featured-product--anchor",
             "button_bg_color": "#125657",
             "button_text_color": "#ffffff"
           }
@@ -1488,7 +1488,7 @@
           "type": "button",
           "settings": {
             "button_text": "Try Risk-Free Today",
-            "button_link": "#cwc_product-template--anchor",
+            "button_link": "#cwc-featured-product--anchor",
             "button_bg_color": "#ffffff",
             "button_text_color": "#125657",
             "button_note": "365-day money back guarantee"
@@ -1547,7 +1547,7 @@
           "type": "button",
           "settings": {
             "text": "Try Risk-Free Today",
-            "link": "#cwc_product-template--anchor",
+            "link": "#cwc-featured-product--anchor",
             "button_bg_color": "#125657",
             "button_text_color": "#ffffff"
           }
@@ -1621,7 +1621,7 @@
           "type": "button",
           "settings": {
             "button_text": "Try Risk-Free Today",
-            "button_link": "#cwc_product-template--anchor",
+            "button_link": "#cwc-featured-product--anchor",
             "button_bg_color": "#d0f0f2",
             "button_text_color": "#125657",
             "button_note": "365-day money back guarantee"
