@@ -1,0 +1,266 @@
+{{ 'CWC_video_testimonials_block.css' | asset_url | stylesheet_tag }}
+{% comment %} {{ 'swiper-bundle.min.css' | asset_url | stylesheet_tag }} {% endcomment %}
+
+{% style %}
+  #cwc-block-{{ block.id }} {
+    --section-bg: {{ block.settings.bg_color | default: '#FAF9F6' }};
+    --text-color: {{ block.settings.text_color | default: '#111111' }};
+    --accent-color: {{ block.settings.accent_color | default: '#125657' }};
+    --padding-top: {{ block.settings.padding_top | default: 24 }}px;
+    --padding-bottom: {{ block.settings.padding_bottom | default: 24 }}px;
+  }
+{% endstyle %}
+
+<div id="cwc-block-{{ block.id }}" class="cwc-video-testimonials-block">
+  <div class="cwc-video-testimonials-block__container">
+    <div class="cwc-video-testimonials-block__wrapper">
+      {% if block.settings.heading != blank %}
+        <div class="cwc-video-testimonials-block__heading rte">
+          {{ block.settings.heading }}
+        </div>
+      {% endif %}
+
+      {% if block.settings.subtext != blank %}
+        <div class="cwc-video-testimonials-block__subtext rte">
+          {{ block.settings.subtext }}
+        </div>
+      {% endif %}
+
+      <div class="swiper cwc-video-testimonials-block__carousel cwc-video-testimonials-block__carousel--{{ block.id }}">
+        <div class="swiper-wrapper">
+          {% for i in (1..4) %}
+            {% assign vid_key = 'video_' | append: i %}
+            {% assign vid = block.settings[vid_key] %}
+            {% if vid != blank %}
+              {% assign mp4_source = vid.sources | where: 'format', 'mp4' | first %}
+              <div class="swiper-slide cwc-video-testimonials-block__slide">
+                <div class="cwc-video-testimonials-block__card">
+                  <div class="cwc-video-testimonials-block__video-wrapper">
+                    <video
+                      data-video-id="{{ block.id }}-{{ i }}"
+                      class="cwc-video-testimonials-block__video"
+                      playsinline
+                      preload="metadata"
+                      poster="{{ vid.preview_image | image_url: width: 300 }}"
+                      width="{{ vid.preview_image.width }}"
+                      height="{{ vid.preview_image.height }}"
+                    >
+                      {% if mp4_source %}
+                        <source src="{{ mp4_source.url }}" type="video/mp4">
+                      {% endif %}
+                    </video>
+
+                    <div class="cwc-video-testimonials-block__play-btn" aria-label="Play video">
+                      <svg width="44" height="44" viewBox="0 0 44 44" fill="none" xmlns="http://www.w3.org/2000/svg">
+                        <foreignObject x="-7.62703" y="-7.61355" width="59.9436" height="59.9436">
+                          <div xmlns="http://www.w3.org/1999/xhtml"
+                            style="backdrop-filter:blur(4.23px);clip-path:url(#bgblur_{{ block.id }}_{{ i }});height:100%;width:100%">
+                          </div>
+                        </foreignObject>
+                        <circle cx="22.3448" cy="22.3583" r="21.5069" fill="white" fill-opacity="0.2"></circle>
+                        <path d="M30.407 20.8061C31.6018 21.4959 31.6018 23.2205 30.407 23.9103L19.6535 30.1189C18.4587 30.8087 16.9652 29.9464 16.9652 28.5667L16.9652 16.1497C16.9652 14.77 18.4587 13.9077 19.6535 14.5976L30.407 20.8061Z" fill="white"></path>
+                        <defs>
+                          <clipPath id="bgblur_{{ block.id }}_{{ i }}" transform="translate(7.62703 7.61355)">
+                            <circle cx="22.3448" cy="22.3583" r="21.5069"></circle>
+                          </clipPath>
+                        </defs>
+                      </svg>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            {% endif %}
+          {% endfor %}
+        </div>
+      </div>
+
+      <div class="cwc-video-testimonials-block__progress">
+        <div
+          class="cwc-video-testimonials-block__progress-bar cwc-video-testimonials-block__progress-bar--{{ block.id }}"
+        ></div>
+      </div>
+
+      <div class="cwc-video-testimonials-block__controls">
+        <div
+          class="swiper-button-prev cwc-video-testimonials-block__prev cwc-video-testimonials-block__prev--{{ block.id }}"
+        ></div>
+        <div
+          class="swiper-button-next cwc-video-testimonials-block__next cwc-video-testimonials-block__next--{{ block.id }}"
+        ></div>
+      </div>
+    </div>
+  </div>
+</div>
+
+<script>
+  'use strict';
+  (function () {
+    const blockId = '{{ block.id }}';
+
+    function init() {
+      const carouselEl = document.querySelector('.cwc-video-testimonials-block__carousel--' + blockId);
+      if (!carouselEl) return;
+
+      const swiper = new Swiper(carouselEl, {
+        loop: true,
+        speed: 400,
+          loop: true,
+        slidesPerGroup: 1,  // always advance exactly one slide at a time
+        preventClicks: false,
+        preventClicksPropagation: false,
+        threshold: 8,
+        touchStartPreventDefault: false,
+        navigation: {
+          nextEl: '.cwc-video-testimonials-block__next--' + blockId,
+          prevEl: '.cwc-video-testimonials-block__prev--' + blockId,
+        },
+        breakpoints: {
+          0:   { slidesPerView: 2, spaceBetween: 10 },
+          768: { slidesPerView: 2.5,   spaceBetween: 10 },
+        },
+        on: {
+          {% comment %}
+          init: function () {
+            const blockRoot = document.getElementById('cwc-block-' + blockId);
+            if (blockRoot) blockRoot.classList.add('is-ready');
+          },
+          {% endcomment %}
+              init: function(s) {
+      s.update(); // force recalculate after reveal
+      const blockRoot = document.getElementById('cwc-block-' + blockId);
+      if (blockRoot) blockRoot.classList.add('is-ready');
+    },
+          slideChange: function (s) {
+            const bar = document.querySelector('.cwc-video-testimonials-block__progress-bar--' + blockId);
+            if (bar) bar.style.width = ((s.realIndex + 1) / s.slides.length) * 100 + '%';
+          },
+        },
+      });
+
+      const TAP_MOVE_TOL = 8;
+
+      function pauseOtherVideos(currentVideo) {
+        carouselEl.querySelectorAll('.cwc-video-testimonials-block__video').forEach(function (vid) {
+          if (vid.dataset.videoId !== currentVideo.dataset.videoId) {
+            vid.pause();
+            const btn = vid
+              .closest('.cwc-video-testimonials-block__video-wrapper')
+              ?.querySelector('.cwc-video-testimonials-block__play-btn');
+            if (btn) btn.style.display = 'block';
+          }
+        });
+      }
+
+      carouselEl.querySelectorAll('.swiper-slide').forEach(function (slide) {
+        const videoEl = slide.querySelector('.cwc-video-testimonials-block__video');
+        const playBtn = slide.querySelector('.cwc-video-testimonials-block__play-btn');
+        if (!videoEl || !playBtn) return;
+
+        const updateBtn = function () {
+          playBtn.style.display = videoEl.paused ? 'block' : 'none';
+        };
+
+        let downX = 0,
+          downY = 0,
+          moved = false;
+        const lockDrag = function () {
+          swiper.allowTouchMove = false;
+        };
+        const unlockDrag = function () {
+          swiper.allowTouchMove = true;
+        };
+
+        playBtn.addEventListener(
+          'pointerdown',
+          function (e) {
+            downX = e.clientX;
+            downY = e.clientY;
+            moved = false;
+            lockDrag();
+            e.preventDefault();
+            e.stopPropagation();
+          },
+          { passive: false }
+        );
+
+        playBtn.addEventListener('pointermove', function (e) {
+          if (moved) return;
+          if (Math.abs(e.clientX - downX) > TAP_MOVE_TOL || Math.abs(e.clientY - downY) > TAP_MOVE_TOL) {
+            moved = true;
+            unlockDrag();
+          }
+        });
+
+        playBtn.addEventListener(
+          'pointerup',
+          function (e) {
+            if (!moved) {
+              e.preventDefault();
+              e.stopPropagation();
+              pauseOtherVideos(videoEl);
+              requestAnimationFrame(function () {
+                videoEl.play().catch(function (err) {
+                  console.warn('play() blocked:', err);
+                });
+                updateBtn();
+              });
+            }
+            unlockDrag();
+          },
+          { passive: false }
+        );
+
+        playBtn.addEventListener('pointercancel', unlockDrag);
+        playBtn.addEventListener('pointerleave', unlockDrag);
+
+        let vDownX = 0,
+          vDownY = 0,
+          vMoved = false;
+        videoEl.addEventListener(
+          'pointerdown',
+          function (e) {
+            vDownX = e.clientX;
+            vDownY = e.clientY;
+            vMoved = false;
+          },
+          { passive: true }
+        );
+        videoEl.addEventListener(
+          'pointermove',
+          function (e) {
+            if (vMoved) return;
+            if (Math.abs(e.clientX - vDownX) > TAP_MOVE_TOL || Math.abs(e.clientY - vDownY) > TAP_MOVE_TOL)
+              vMoved = true;
+          },
+          { passive: true }
+        );
+        videoEl.addEventListener(
+          'pointerup',
+          function (e) {
+            if (!vMoved) {
+              e.preventDefault();
+              if (!videoEl.paused) {
+                videoEl.pause();
+                updateBtn();
+              }
+            }
+          },
+          { passive: false }
+        );
+
+        videoEl.addEventListener('play', updateBtn);
+        videoEl.addEventListener('pause', updateBtn);
+        videoEl.addEventListener('ended', updateBtn);
+        updateBtn();
+      });
+    }
+
+    if (document.readyState === 'loading') {
+      document.addEventListener('DOMContentLoaded', init);
+    } else {
+      init();
+    }
+
+    document.addEventListener('shopify:section:load', init);
+  })();
+</script>

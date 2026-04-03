@@ -204,6 +204,8 @@
 
       .cwc-featured-product__value_props.mobile__only {
           display: block;
+          margin-bottom: .75rem;
+          ;
       }
 
       .cwc-value-props__card {

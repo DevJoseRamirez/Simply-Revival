@@ -186,6 +186,11 @@
                     %}
                   </div>
 
+                {% when 'video_testimonials' %}
+                  <div class="cwc-featured-product__video-testimonials" {{ block.shopify_attributes }}>
+                    {% render 'CWC_video_testimonials_block', block: block, section_id: section.id %}
+                  </div>
+
                 {% when 'warning_notice' %}
                   <div class="cwc-featured-product__warning-notice" {{ block.shopify_attributes }}>
                     {% render 'CWC_warning_notice', block: block %}
@@ -1236,6 +1241,110 @@
           "unit": "px",
           "label": "Padding Bottom",
           "default": 8
+        }
+      ]
+    },
+    {
+      "type": "video_testimonials",
+      "name": "Video Testimonials",
+      "settings": [
+        {
+          "type": "header",
+          "content": "Content"
+        },
+        {
+          "type": "richtext",
+          "id": "heading",
+          "label": "Heading",
+          "default": "<h3>What our customers are saying:</h3>"
+        },
+        {
+          "type": "richtext",
+          "id": "subtext",
+          "label": "Subtext"
+        },
+        {
+          "type": "header",
+          "content": "Video 1"
+        },
+        {
+          "type": "video",
+          "id": "video_1",
+          "label": "Video 1"
+        },
+        {
+          "type": "header",
+          "content": "Video 2"
+        },
+        {
+          "type": "video",
+          "id": "video_2",
+          "label": "Video 2"
+        },
+
+        {
+          "type": "header",
+          "content": "Video 3"
+        },
+        {
+          "type": "video",
+          "id": "video_3",
+          "label": "Video 3"
+        },
+        {
+          "type": "header",
+          "content": "Video 4"
+        },
+        {
+          "type": "video",
+          "id": "video_4",
+          "label": "Video 4"
+        },
+        {
+          "type": "header",
+          "content": "Colors"
+        },
+        {
+          "type": "color",
+          "id": "bg_color",
+          "label": "Background Color",
+          "default": "#ffffff"
+        },
+        {
+          "type": "color",
+          "id": "text_color",
+          "label": "Text Color",
+          "default": "#111111"
+        },
+        {
+          "type": "color",
+          "id": "accent_color",
+          "label": "Accent / Bold Color",
+          "default": "#125657"
+        },
+        {
+          "type": "header",
+          "content": "Spacing"
+        },
+        {
+          "type": "range",
+          "id": "padding_top",
+          "min": 0,
+          "max": 80,
+          "step": 4,
+          "unit": "px",
+          "label": "Padding Top",
+          "default": 24
+        },
+        {
+          "type": "range",
+          "id": "padding_bottom",
+          "min": 0,
+          "max": 80,
+          "step": 4,
+          "unit": "px",
+          "label": "Padding Bottom",
+          "default": 24
         }
       ]
     }

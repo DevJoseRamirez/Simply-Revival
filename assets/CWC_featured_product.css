@@ -52,6 +52,7 @@
 
 .cwc-featured-product__wrapper {
     max-width: 1500px;
+    max-width: 1400px;
     margin: 0 auto;
     padding: 0 3rem;
     padding: 0 3.125rem;
@@ -109,6 +110,7 @@
    ================================ */
 .cwc-featured-product__title {
     margin-bottom: 1rem;
+    margin-bottom: 0.5rem;
 }
 
 
@@ -166,6 +168,7 @@
 
     .cwc-featured-product__right {
         padding-left: 0rem;
+        overflow: hidden;
     }
 
     .cwc-featured-product__wrapper {

@@ -1,0 +1,253 @@
+/* ================================
+   CWC Video Testimonials Block
+   ================================ */
+.cwc-featured-product__video-testimonials {
+    margin: 0 auto;
+    max-width: 100%;
+    overflow: hidden;
+    /* outline: red solid; */
+}
+
+.cwc-video-testimonials-block {
+    background-color: var(--section-bg, #FAF9F6);
+    color: var(--text-color, #111111);
+    padding-top: var(--padding-top);
+    padding-bottom: var(--padding-bottom);
+}
+
+.cwc-video-testimonials-block__container {
+    max-width: 100%;
+    margin: 0 auto;
+}
+
+.cwc-video-testimonials-block__wrapper {
+    width: 100%;
+}
+
+/* ================================
+   Heading & Subtext
+   ================================ */
+
+.cwc-video-testimonials-block__heading {
+    text-align: center;
+    margin-bottom: 0.5rem;
+    margin-bottom: 0.75rem;
+}
+
+.cwc-video-testimonials-block__heading>* {
+    font-weight: 600;
+    letter-spacing: 0;
+    text-align: center;
+}
+
+.cwc-video-testimonials-block__heading strong {
+    color: var(--accent-color, #125657);
+    font-weight: 600;
+}
+
+.cwc-video-testimonials-block__subtext {
+    text-align: center;
+    margin-bottom: 1.5rem;
+}
+
+.cwc-video-testimonials-block__subtext>* {
+    font-size: 1rem;
+    font-weight: 400;
+    text-align: center;
+    letter-spacing: 0;
+}
+
+/* ================================
+   Carousel
+   ================================ */
+
+.cwc-video-testimonials-block__carousel {
+    /* position: relative; */
+    /* overflow: hidden; */
+    /* width: 100%; */
+    /* margin-bottom: 1rem; */
+}
+
+.cwc-video-testimonials-block__slide {
+    height: auto;
+    width: calc(100% / 5);
+    max-width: 250px;
+}
+
+.cwc-video-testimonials-block__card {
+    border-radius: 12px;
+    overflow: hidden;
+    height: 100%;
+    /* testing */
+}
+
+/* ================================
+   Video
+   ================================ */
+
+.cwc-video-testimonials-block__video-wrapper {
+    position: relative;
+    width: 100%;
+    overflow: hidden;
+    border-radius: 10px;
+}
+
+.cwc-video-testimonials-block__video {
+    width: 100%;
+    height: auto;
+    display: block;
+    object-fit: cover;
+    border-radius: 10px;
+    -webkit-user-drag: none;
+    user-select: none;
+}
+
+/* ================================
+   Play Button
+   ================================ */
+
+.cwc-video-testimonials-block__play-btn {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    z-index: 2;
+    background: none;
+    border: none;
+    cursor: pointer;
+    border-radius: 50%;
+    height: max-content;
+    width: max-content;
+    touch-action: manipulation;
+}
+
+.cwc-video-testimonials-block__play-btn svg {
+    height: 43px;
+    width: 43px;
+    display: block;
+}
+
+/* ================================
+   Progress Bar
+   ================================ */
+
+.cwc-video-testimonials-block__progress {
+    height: 4px;
+    background: rgba(0, 0, 0, 0.1);
+    border-radius: 2px;
+    overflow: hidden;
+    max-width: 280px;
+    margin: 1rem auto 0;
+}
+
+.cwc-video-testimonials-block__progress-bar {
+    height: 100%;
+    width: 0%;
+    background: var(--accent-color, #125657);
+    transition: width 0.3s linear;
+}
+
+/* ================================
+   Controls
+   ================================ */
+
+.cwc-video-testimonials-block__controls {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 1rem;
+    margin-top: 1rem;
+    /* testing */
+    padding-bottom: .5rem;
+}
+
+.cwc-video-testimonials-block__prev,
+.cwc-video-testimonials-block__next {
+    position: static;
+}
+
+.cwc-video-testimonials-block__slide.swiper-slide {
+    width: auto;
+    max-width: 320px;
+    max-width: 250px;
+}
+
+.cwc-video-testimonials-block {
+    overflow: hidden;
+    /* contain the whole block */
+    max-width: 100%;
+}
+
+.cwc-video-testimonials-block__container {
+    overflow: hidden;
+    max-width: 100%;
+}
+
+.cwc-video-testimonials-block__carousel {
+    /* overflow: hidden; */
+    /* critical — Swiper needs this to clip slides */
+    /* width: 100%; */
+    /* max-width: 100%; */
+    /* position: relative; */
+}
+
+/* Let Swiper control slide width entirely via slidesPerView — no max-width override */
+.cwc-video-testimonials-block__slide.swiper-slide {
+    box-sizing: border-box;
+    flex-shrink: 0;
+}
+
+/* All Swiper internals scoped strictly to this block's carousel */
+
+.cwc-video-testimonials-block__carousel .swiper-wrapper {
+    display: flex;
+    flex-wrap: nowrap;
+    box-sizing: content-box;
+}
+
+.cwc-video-testimonials-block__carousel .swiper-slide {
+    box-sizing: border-box;
+    flex-shrink: 0;
+    width: 100%;
+    height: auto;
+    max-width: none;
+    /* let Swiper calculate from slidesPerView */
+    position: relative;
+    max-width: 280px;
+}
+
+.cwc-video-testimonials-block__carousel {
+    /* overflow: hidden;
+    width: 100%;
+    max-width: 100%;
+    position: relative; */
+}
+
+.cwc-video-testimonials-block {
+    overflow: hidden;
+    max-width: 100%;
+}
+
+
+.cwc-video-testimonials-block {
+    /* opacity: 0; */
+    /* transition: opacity 0.3s ease; */
+}
+
+.cwc-video-testimonials-block.is-ready {
+    /* opacity: 1; */
+}
+
+/* ================================
+   Mobile
+   ================================ */
+
+@media (max-width: 768px) {
+    .cwc-video-testimonials-block__heading>* {
+        font-size: 1.25rem;
+    }
+
+    .cwc-video-testimonials-block__subtext>* {
+        font-size: 0.9rem;
+    }
+}
