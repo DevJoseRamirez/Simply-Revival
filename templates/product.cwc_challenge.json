@@ -201,7 +201,7 @@
         "title_iKGYG9": {
           "type": "title",
           "settings": {
-            "title": "<h3>Women's Natural DHT Blocker</h3><h4>Stop Hair Loss & Start Regrowth</h4>",
+            "title": "<h3>Hair Regrowth Challenge </h3>",
             "text_color": "#282828",
             "highlight_color": "#45b5b7"
           }
@@ -209,7 +209,7 @@
         "desc_aVrjLU": {
           "type": "desc",
           "settings": {
-            "desc": "<p><strong>Less shedding in 14 days. Real, visible regrowth in 60 days — or we'll refund your entire order.</strong>A natural blend of 10 ancient herbs that block DHT (the #1 cause of hair loss) and reignite new growth, without harsh chemicals or side effects.</p>"
+            "desc": "<p><strong>Less shedding in 14 days. Real, visible regrowth in 60 days — or we'll refund your entire order.</strong> A natural blend of 10 ancient herbs that block DHT (the #1 cause of hair loss) and reignite new growth, without harsh chemicals or side effects.</p>"
           }
         },
         "benefits_XqmTFX": {
@@ -230,36 +230,48 @@
         "price_display_8LMwX6": {
           "type": "price_display",
           "settings": {
-            "save_label": "Save"
+            "save_label": "SPRING SALE - Save"
+          }
+        },
+        "low_stock_cJHgK9": {
+          "type": "low_stock",
+          "settings": {
+            "text_primary": "Low Stock",
+            "text_primary_color": "#125657",
+            "text_secondary": "Selling Fast",
+            "text_secondary_color": "#125657",
+            "line_color": "#125657",
+            "padding_top": 0,
+            "padding_bottom": 2
           }
         },
         "product_options_K4yi8r": {
           "type": "product_options",
           "settings": {
-            "image1": "shopify://shop_images/Simply_Revival___Natural_Hair_Support_Blend___Buy_One-min.png",
+            "image1": "shopify://shop_images/Buy_1_-_Get_1_EXTRA_FREE.png",
             "badge_text_1": "",
-            "servings_text_1": "1 Month Supply",
+            "servings_text_1": "2 Month Supply · 60 Servings",
             "bonus_text_1_opt1": "",
             "bonus_text_2_opt1": "",
-            "image2": "shopify://shop_images/Simply_Revival___Natural_Hair_Support_Blend___Buy_2_-_Get_1_FREE-min.png",
-            "badge_text_2": "Most Popular",
-            "servings_text_2": "3 Month Supply",
-            "bonus_image_1_opt2": "shopify://shop_images/icon_guarantee.png",
+            "image2": "shopify://shop_images/Buy_2_-_Get_2_EXTRA_FREE.png",
+            "badge_text_2": "Most Popular + Free Shipping",
+            "servings_text_2": "4 Month Supply · 120 Servings",
+            "bonus_image_1_opt2": "shopify://shop_images/icon_prop_01.png",
             "bonus_text_1_opt2": "+ FREE 365 Day Guarantee",
             "bonus_text_2_opt2": "",
-            "image3": "shopify://shop_images/Simply_Revival___Natural_Hair_Support_Blend___Buy_3_-_Get_2_FREE-min.png",
-            "badge_text_3": "Free Shipping",
-            "servings_text_3": "5 Month Supply",
-            "bonus_image_1_opt3": "shopify://shop_images/guaranteebundle-min_ae2f5d33-8b55-4192-9f4a-8670614449b7.png",
+            "image3": "shopify://shop_images/Buy_3_-_Get_3_EXTRA_FREE_70eb29f2-096a-4a8d-9e67-bd983df10f05.png",
+            "badge_text_3": "Best Value + Free $20 Gift Card",
+            "servings_text_3": "6 Month Supply · 180 Servings",
+            "bonus_image_1_opt3": "shopify://shop_images/icon_prop_01.png",
             "bonus_text_1_opt3": "+ FREE 365 Day Guarantee",
-            "bonus_image_2_opt3": "shopify://shop_images/icon_gift_card.png",
+            "bonus_image_2_opt3": "shopify://shop_images/icon_prop_02.png",
             "bonus_text_2_opt3": "+ FREE $20 Gift Card"
           }
         },
         "subscription_toggle_ArNDfx": {
           "type": "subscription_toggle",
           "settings": {
-            "title": "Save 25% With Automatic Refills!",
+            "title": "Save With Automatic Refills!",
             "subtitle": "Zero Commitment | Exclusive Discounts | Cancel Anytime"
           }
         },
@@ -282,8 +294,8 @@
             "sticky_button_text": "Add to Cart",
             "sticky_bg_color": "#ffffff",
             "bundle_product_1": "25-gift-card",
-            "bundle_product_2": "shipping-protection-free-gift",
-            "bundle_product_3": "free-365-day-guarantee",
+            "bundle_product_2": "",
+            "bundle_product_3": "",
             "bundle_product_4": "",
             "skip_cart": false
           }
@@ -293,6 +305,31 @@
           "settings": {
             "text": "365-day money back guarantee",
             "icon": "shopify://shop_images/Simply_Revival___Gurantee-min.png"
+          }
+        },
+        "trusted_by_RdR8pB": {
+          "type": "trusted_by",
+          "settings": {
+            "image_1": "shopify://shop_images/trusted_by_01.png",
+            "image_2": "shopify://shop_images/trusted_by_02.png",
+            "image_3": "shopify://shop_images/trusted_by_03.png",
+            "title": "<p>Trusted by 100K+ customers</p>",
+            "subtext": "<p>who choose Simply for consistent, long-term wellness support.</p>",
+            "bg_color": "#efefef",
+            "text_color": "#282828"
+          }
+        },
+        "warning_notice_bXNz4A": {
+          "type": "warning_notice",
+          "settings": {
+            "title": "WARNING: Low Stock Notice",
+            "text": "<p>This product sold out 12 times last year. We encourage you to take advantage of the <strong>limited sale</strong> and buy now. Subscribing protects you against future stockouts.</p>",
+            "bg_color": "#fef2f2",
+            "border_color": "#fca5a5",
+            "title_color": "#9f3f3f",
+            "text_color": "#9f3f3f",
+            "padding_top": 8,
+            "padding_bottom": 8
           }
         },
         "faq_x8mxYm": {
@@ -322,8 +359,8 @@
             "title_2": "Shipping Protection",
             "desc_2": "Lost or damaged? We replace it.",
             "price_2": "$15.00",
-            "icon_3": "shopify://shop_images/bundle_and_save_dht_1.png",
-            "title_3": "Up To 2 Bottles Free",
+            "icon_3": "shopify://shop_images/Up_to_3.png",
+            "title_3": "Up To 3 Bottles Free",
             "desc_3": "Bundle & Save",
             "price_3": "$79.99",
             "icon_4": "shopify://shop_images/icon_prop_02.png",
@@ -337,6 +374,22 @@
             "free_color": "#60a1a2",
             "checkmark_bg_color": "#60a1a2"
           }
+        },
+        "video_testimonials_KUAhG8": {
+          "type": "video_testimonials",
+          "settings": {
+            "heading": "<h4>What our customers are saying:</h4>",
+            "subtext": "",
+            "video_1": "shopify://files/videos/Simply Revival | Real People Real Results - Marc_20Malcolm_20.mp4",
+            "video_2": "shopify://files/videos/Simply Revival | Real People Real Results - lukefinds.mp4",
+            "video_3": "shopify://files/videos/Simply Revival | Real People Real Results - Anakin.mp4",
+            "video_4": "shopify://files/videos/Simply Revival | Real People Real Results - thehealthwealth.mp4",
+            "bg_color": "#ffffff",
+            "text_color": "#111111",
+            "accent_color": "#125657",
+            "padding_top": 4,
+            "padding_bottom": 8
+          }
         }
       },
       "block_order": [
@@ -347,14 +400,18 @@
         "desc_aVrjLU",
         "benefits_XqmTFX",
         "price_display_8LMwX6",
+        "low_stock_cJHgK9",
         "product_options_K4yi8r",
         "subscription_toggle_ArNDfx",
         "delivery_estimate_g6E4Az",
         "add_to_cart_7gampa",
         "guarantee_text_pAEtjq",
+        "trusted_by_RdR8pB",
+        "warning_notice_bXNz4A",
         "faq_x8mxYm",
         "faq_rgfywq",
-        "value_props_x9niBd"
+        "value_props_x9niBd",
+        "video_testimonials_KUAhG8"
       ],
       "name": "Featured Product",
       "settings": {
@@ -574,83 +631,76 @@
     "cwc_testimonial_images_CxCPAz": {
       "type": "CWC_testimonial_images",
       "blocks": {
+        "testimonial_image_6qDttd": {
+          "type": "testimonial_image",
+          "settings": {
+            "image": "shopify://shop_images/hf_20260323_221200_9afdc308-83ea-4c3d-beb2-3eb20873c673.png"
+          }
+        },
+        "testimonial_image_pa8Gnf": {
+          "type": "testimonial_image",
+          "settings": {
+            "image": "shopify://shop_images/hf_20260429_032730_5fcc04ad-a234-4f35-a8ff-7f18b6817ef9.png"
+          }
+        },
+        "testimonial_image_hcBdwz": {
+          "type": "testimonial_image",
+          "settings": {
+            "image": "shopify://shop_images/hf_20260409_135556_1d13c0e1-4be2-46cf-bcc0-ff062f832089.png"
+          }
+        },
+        "testimonial_image_bxmCkR": {
+          "type": "testimonial_image",
+          "settings": {
+            "image": "shopify://shop_images/hf_20260429_033456_ba9597cf-1185-492e-9b67-d3c1ab3216a7.png"
+          }
+        },
+        "testimonial_image_MKgwLU": {
+          "type": "testimonial_image",
+          "settings": {
+            "image": "shopify://shop_images/hf_20260323_221907_e89e7b56-f8f9-4023-9710-10d4b8d27860.png"
+          }
+        },
+        "testimonial_image_A4pmd6": {
+          "type": "testimonial_image",
+          "settings": {
+            "image": "shopify://shop_images/hf_20260429_032537_c543a716-70f9-45ce-8b8c-43f764f47000.png"
+          }
+        },
+        "testimonial_image_6RhbHL": {
+          "type": "testimonial_image",
+          "settings": {
+            "image": "shopify://shop_images/hf_20260409_142435_d9a5a5b6-91ba-43f1-8bef-f2f4f300e041.png"
+          }
+        },
+        "testimonial_image_Lh6WnE": {
+          "type": "testimonial_image",
+          "settings": {
+            "image": "shopify://shop_images/hf_20260429_033146_bc46e11b-916e-4616-95a4-919917a1215b.png"
+          }
+        },
         "testimonial_image_aJW8C7": {
           "type": "testimonial_image",
           "settings": {
-            "image": "shopify://shop_images/hf_20260501_151821_343e0507-698c-479d-ada1-3d2d26434ca4.png"
-          }
-        },
-        "testimonial_image_U8iQVt": {
-          "type": "testimonial_image",
-          "settings": {
-            "image": "shopify://shop_images/hf_20260501_151216_4645edc3-c52b-42f4-a141-6793a580e326.png"
-          }
-        },
-        "testimonial_image_VVHUjP": {
-          "type": "testimonial_image",
-          "settings": {
-            "image": "shopify://shop_images/hf_20260501_151556_d434473b-32a7-4c67-8a58-806193d560d0.png"
-          }
-        },
-        "testimonial_image_Xyji4M": {
-          "type": "testimonial_image",
-          "settings": {
-            "image": "shopify://shop_images/hf_20260501_150843_b7ba4162-5726-46ce-a8d7-d6e63337a55a.png"
-          }
-        },
-        "testimonial_image_DyiQN7": {
-          "type": "testimonial_image",
-          "settings": {
-            "image": "shopify://shop_images/hf_20260501_151443_a1089939-e32b-4e6a-b46f-a3775fd2f3c6.png"
-          }
-        },
-        "testimonial_image_djddP4": {
-          "type": "testimonial_image",
-          "settings": {
-            "image": "shopify://shop_images/hf_20260501_152419_911ea4b0-2561-4925-99dd-c6a596c132fd.png"
-          }
-        },
-        "testimonial_image_jCHT4i": {
-          "type": "testimonial_image",
-          "settings": {
-            "image": "shopify://shop_images/hf_20260501_150652_87df958b-3d1c-4f41-bdc0-f49d569b00c9.png"
-          }
-        },
-        "testimonial_image_Jg4c96": {
-          "type": "testimonial_image",
-          "settings": {
-            "image": "shopify://shop_images/hf_20260501_152228_5a49c9cd-9ed3-476c-878e-3ecef6012e58.png"
-          }
-        },
-        "testimonial_image_9pXftH": {
-          "type": "testimonial_image",
-          "settings": {
-            "image": "shopify://shop_images/hf_20260501_152029_e94f447f-3651-4cf1-b4f2-6b13344466a5.png"
-          }
-        },
-        "testimonial_image_TdUEqW": {
-          "type": "testimonial_image",
-          "settings": {
-            "image": "shopify://shop_images/hf_20260501_150957_0e625380-140f-4d52-a21a-bfdd1af32d0b.png"
+            "image": "shopify://shop_images/hf_20260412_012327_cc04f4ef-540a-4843-95ab-723239db2794.png"
           }
         }
       },
       "block_order": [
-        "testimonial_image_aJW8C7",
-        "testimonial_image_U8iQVt",
-        "testimonial_image_VVHUjP",
-        "testimonial_image_Xyji4M",
-        "testimonial_image_DyiQN7",
-        "testimonial_image_djddP4",
-        "testimonial_image_jCHT4i",
-        "testimonial_image_Jg4c96",
-        "testimonial_image_9pXftH",
-        "testimonial_image_TdUEqW"
+        "testimonial_image_6qDttd",
+        "testimonial_image_pa8Gnf",
+        "testimonial_image_hcBdwz",
+        "testimonial_image_bxmCkR",
+        "testimonial_image_MKgwLU",
+        "testimonial_image_A4pmd6",
+        "testimonial_image_6RhbHL",
+        "testimonial_image_Lh6WnE",
+        "testimonial_image_aJW8C7"
       ],
       "name": "Testimonial Images",
       "settings": {
         "testimonial_list": "",
-        "section_title": "<h2>REAL WOMEN <strong>REAL RESULTS!</strong></h2>",
+        "section_title": "<h2>Real Transformations from Real Men</h2>",
         "bold_color": "#125657",
         "section_subtitle": "",
         "bg_color": "#fffee3",
@@ -710,71 +760,64 @@
     "cwc_social_proof_VhXP3J": {
       "type": "CWC_social_proof",
       "blocks": {
+        "image_wqM7jj": {
+          "type": "image",
+          "settings": {
+            "image": "shopify://shop_images/Simply_Revival___Customer_Reviews_-_04-min.png"
+          }
+        },
+        "image_pFM3iM": {
+          "type": "image",
+          "settings": {
+            "image": "shopify://shop_images/Simply_Revival___Customer_Reviews_-_05-min.png"
+          }
+        },
+        "image_XPQPhJ": {
+          "type": "image",
+          "settings": {
+            "image": "shopify://shop_images/Simply_Revival___Customer_Reviews_-_02-min.png"
+          }
+        },
+        "image_MdYyhM": {
+          "type": "image",
+          "settings": {
+            "image": "shopify://shop_images/Simply_Revival___Customer_Reviews_-_07-min.png"
+          }
+        },
+        "image_NbX4VW": {
+          "type": "image",
+          "settings": {
+            "image": "shopify://shop_images/Simply_Revival___Customer_Reviews_-_01-min.png"
+          }
+        },
+        "image_iyhDpy": {
+          "type": "image",
+          "settings": {
+            "image": "shopify://shop_images/Simply_Revival___Customer_Reviews_-_06-min.png"
+          }
+        },
+        "image_eJVmTb": {
+          "type": "image",
+          "settings": {
+            "image": "shopify://shop_images/Simply_Revival___Customer_Reviews_-_03-min.png"
+          }
+        },
         "image_FLwXV7": {
           "type": "image",
           "settings": {
-            "image": "shopify://shop_images/hf_20260212_200808_7c05b4f2-fbdb-4b94-8a77-65d9398a61a6.png"
-          }
-        },
-        "image_gBnQrP": {
-          "type": "image",
-          "settings": {
-            "image": "shopify://shop_images/women_carousel_image_02.png"
-          }
-        },
-        "image_9WPwMb": {
-          "type": "image",
-          "settings": {
-            "image": "shopify://shop_images/hf_20260212_201940_f04db56d-4985-4165-97df-2a1f394bbef1.jpg"
-          }
-        },
-        "image_zLmDgt": {
-          "type": "image",
-          "settings": {
-            "image": "shopify://shop_images/women_carousel_image_03.png"
-          }
-        },
-        "image_6eQ7Vk": {
-          "type": "image",
-          "settings": {
-            "image": "shopify://shop_images/hf_20260212_201120_db09f505-6428-451a-a7bc-5f97cfb5cec6.png"
-          }
-        },
-        "image_YpNMm9": {
-          "type": "image",
-          "settings": {
-            "image": "shopify://shop_images/hf_20260212_202752_8ee46f77-c131-4f84-a98f-f0c32bc79514.jpg"
-          }
-        },
-        "image_z4Ectr": {
-          "type": "image",
-          "settings": {
-            "image": "shopify://shop_images/hf_20260212_203601_49c25a3e-c4c4-41b5-a64d-b7520e5f3beb.png"
-          }
-        },
-        "image_6gDhx6": {
-          "type": "image",
-          "settings": {
-            "image": "shopify://shop_images/hf_20260212_204121_1bd53877-9ada-44ca-a4be-96cf3cd7fe25.jpg"
-          }
-        },
-        "image_jLqFrp": {
-          "type": "image",
-          "settings": {
-            "image": "shopify://shop_images/hf_20260212_204832_b2279810-da78-43a5-8f4d-5258574def51.png"
+            "image": "shopify://shop_images/Simply_Revival___Customer_Reviews_-_08-min.png"
           }
         }
       },
       "block_order": [
-        "image_FLwXV7",
-        "image_gBnQrP",
-        "image_9WPwMb",
-        "image_zLmDgt",
-        "image_6eQ7Vk",
-        "image_YpNMm9",
-        "image_z4Ectr",
-        "image_6gDhx6",
-        "image_jLqFrp"
+        "image_wqM7jj",
+        "image_pFM3iM",
+        "image_XPQPhJ",
+        "image_MdYyhM",
+        "image_NbX4VW",
+        "image_iyhDpy",
+        "image_eJVmTb",
+        "image_FLwXV7"
       ],
       "name": "Social Proof",
       "settings": {
@@ -942,7 +985,7 @@
       ],
       "name": "Testimonials",
       "settings": {
-        "testimonials_collection": "women-blocker",
+        "testimonials_collection": "main-testimonial",
         "bg_color": "#fffee3",
         "text_color": "#111111",
         "card_bg": "#ffffff",
@@ -1069,7 +1112,7 @@
         "reason_TKEJHx": {
           "type": "reason",
           "settings": {
-            "img": "shopify://shop_images/Simply_Revival___Reason_2_-_10_Legendary_Herbs._One_formula-min.png",
+            "img": "shopify://shop_images/Simply_Revival___Reason_2_-_10_Legendary_Herbs._One_formula-min_1.png",
             "badge": "Reason 2",
             "badge_bg": "#60a1a2",
             "badge_color": "#ffffff",
@@ -1114,7 +1157,7 @@
           "type": "button",
           "settings": {
             "text": "Try Risk-Free Today",
-            "link": "#cwc_product-template--anchor",
+            "link": "#cwc-featured-product--anchor",
             "button_bg_color": "#125657",
             "button_text_color": "#ffffff"
           }
@@ -1210,7 +1253,7 @@
           "type": "button",
           "settings": {
             "text": "Try Risk-Free Today",
-            "link": "#cwc_product-template--anchor",
+            "link": "#cwc-featured-product--anchor",
             "button_bg_color": "#125657",
             "button_text_color": "#ffffff"
           }
@@ -1236,7 +1279,7 @@
       ],
       "name": "Video Testimonials",
       "settings": {
-        "video_testimonials_collection": "women-only",
+        "video_testimonials_collection": "video-testimonial-list-lnxzuxpg",
         "heading": "<h3>Real People, <strong>Real Results</strong></h3>",
         "bold_color": "#125657",
         "text": "<p>See why thousands of people love our products</p>",
@@ -1298,10 +1341,10 @@
         "image_row_Bdgqed": {
           "type": "image_row",
           "settings": {
-            "bf_image": "shopify://shop_images/womens_natural_dht_blocker_01.png",
+            "bf_image": "shopify://shop_images/Simply_Revival___DHT_Blocker_-_Before_Transformatoin-min.png",
             "text": "Withing",
             "hi_text": "90 Days",
-            "af_image": "shopify://shop_images/womens_natural_dht_blocker_02.png",
+            "af_image": "shopify://shop_images/Simply_Revival___The_1_Natural_DHT_Blocker_for_Hair_Loss___Trasformatoin_-_After-min.png",
             "show_subtext": false,
             "text_color": "#faf9f6"
           }
@@ -1462,7 +1505,7 @@
           "type": "button",
           "settings": {
             "button_text": "Try Risk-Free Today",
-            "button_link": "#cwc_product-template--anchor",
+            "button_link": "#cwc-featured-product--anchor",
             "button_bg_color": "#ffffff",
             "button_text_color": "#125657",
             "button_note": "365-day money back guarantee"
@@ -1521,7 +1564,7 @@
           "type": "button",
           "settings": {
             "text": "Try Risk-Free Today",
-            "link": "#cwc_product-template--anchor",
+            "link": "#cwc-featured-product--anchor",
             "button_bg_color": "#125657",
             "button_text_color": "#ffffff"
           }
@@ -1538,7 +1581,7 @@
       "settings": {
         "background_color": "#fffee3",
         "text_color": "#000000",
-        "image": "shopify://shop_images/women_guarantee_1.png",
+        "image": "shopify://shop_images/Simply_Revival___365_Day_Money_Back_Guarantee___Natural_DHT_Blocker-min_43ea7fa5-0dde-4ff0-b910-cc4b0d0aab12.png",
         "alt_text": "",
         "image_position": "left",
         "padding_top": 24,
@@ -1595,7 +1638,7 @@
           "type": "button",
           "settings": {
             "button_text": "Try Risk-Free Today",
-            "button_link": "#cwc_product-template--anchor",
+            "button_link": "#cwc-featured-product--anchor",
             "button_bg_color": "#d0f0f2",
             "button_text_color": "#125657",
             "button_note": "365-day money back guarantee"
@@ -1637,6 +1680,7 @@
       "blocks": {
         "areviews_reviews_importer_areviews_display_reviews_DF56F8": {
           "type": "shopify://apps/areviews-reviews-importer/blocks/AreviewsDisplayReviews/ab0ec5fe-c95b-4fd6-bfb8-db2a30d0756f",
+          "disabled": true,
           "settings": {
             "hide_areviews_title_rating": false,
             "areviews_theme_font": "inherit",
@@ -1659,11 +1703,11 @@
         "bgsection": "#ffffff"
       }
     },
-    "cwc_areviews_widget_zGhKeh": {
+    "cwc_areviews_widget_8WXrDw": {
       "type": "CWC_areviews_widget",
       "name": "Areviews Wdget",
       "settings": {
-        "product": "natural-dht-blocker-women",
+        "product": "simply®-dht-blocker",
         "padding_top": 60,
         "padding_bottom": 60
       }
@@ -1692,6 +1736,6 @@
     "cwc_faqs_gzUrmK",
     "1629746450643786911",
     "areviews_1763084574_a82078",
-    "cwc_areviews_widget_zGhKeh"
+    "cwc_areviews_widget_8WXrDw"
   ]
 }

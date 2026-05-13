@@ -1,0 +1,24 @@
+/*
+ * ------------------------------------------------------------
+ * IMPORTANT: The contents of this file are auto-generated.
+ *
+ * This file may be updated by the Shopify admin theme editor
+ * or related systems. Please exercise caution as any changes
+ * made to this file may be overwritten.
+ * ------------------------------------------------------------
+ */
+{
+  "sections": {
+    "gp_section_617237899775050731": {
+      "settings": {
+        "checksum": "28786dffeaa2fb189c235e32805dc1bbd6e5af83fb2557b79feae58feb0e12f7_1_1_1_0__1",
+        "section_preload": "true"
+      },
+      "type": "gp-section-617237899775050731"
+    }
+  },
+  "order": [
+    "gp_section_617237899775050731"
+  ],
+  "layout": "theme.gempages.blank"
+}

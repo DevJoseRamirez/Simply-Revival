@@ -1,0 +1,832 @@
+
+    
+    
+    <style {% if section.settings.section_preload == "false" %} class="gps-link gps-style" type="text/disabled-css" {% endif %}>.gps-614710286959510187.gps.gpsil [style*="--bg:"]{background:var(--bg)}.gps-614710286959510187.gps.gpsil [style*="--bga:"]{background-attachment:var(--bga)}.gps-614710286959510187.gps.gpsil [style*="--bgc:"]{background-color:var(--bgc)}.gps-614710286959510187.gps.gpsil [style*="--bgi:"]{background-image:var(--bgi)}.gps-614710286959510187.gps.gpsil [style*="--bgp:"]{background-position:var(--bgp)}.gps-614710286959510187.gps.gpsil [style*="--bgr:"]{background-repeat:var(--bgr)}.gps-614710286959510187.gps.gpsil [style*="--bgs:"]{background-size:var(--bgs)}.gps-614710286959510187.gps.gpsil [style*="--b:"]{border:var(--b)}.gps-614710286959510187.gps.gpsil [style*="--bb:"]{border-bottom:var(--bb)}.gps-614710286959510187.gps.gpsil [style*="--bc:"]{border-color:var(--bc)}.gps-614710286959510187.gps.gpsil [style*="--bblr:"]{border-bottom-left-radius:var(--bblr)}.gps-614710286959510187.gps.gpsil [style*="--bbrr:"]{border-bottom-right-radius:var(--bbrr)}.gps-614710286959510187.gps.gpsil [style*="--bl:"]{border-left:var(--bl)}.gps-614710286959510187.gps.gpsil [style*="--bs:"]{border-style:var(--bs)}.gps-614710286959510187.gps.gpsil [style*="--bt:"]{border-top:var(--bt)}.gps-614710286959510187.gps.gpsil [style*="--btlr:"]{border-top-left-radius:var(--btlr)}.gps-614710286959510187.gps.gpsil [style*="--btrr:"]{border-top-right-radius:var(--btrr)}.gps-614710286959510187.gps.gpsil [style*="--bw:"]{border-width:var(--bw)}.gps-614710286959510187.gps.gpsil [style*="--c:"]{color:var(--c)}.gps-614710286959510187.gps.gpsil [style*="--cg:"]{-moz-column-gap:var(--cg);column-gap:var(--cg)}.gps-614710286959510187.gps.gpsil [style*="--gtc:"]{grid-template-columns:var(--gtc)}.gps-614710286959510187.gps.gpsil [style*="--jc:"]{justify-content:var(--jc)}.gps-614710286959510187.gps.gpsil [style*="--op:"]{opacity:var(--op)}.gps-614710286959510187.gps.gpsil [style*="--o:"]{order:var(--o)}.gps-614710286959510187.gps.gpsil [style*="--pc:"]{place-content:var(--pc)}.gps-614710286959510187.gps.gpsil [style*="--p:"]{padding:var(--p)}.gps-614710286959510187.gps.gpsil [style*="--pb:"]{padding-bottom:var(--pb)}.gps-614710286959510187.gps.gpsil [style*="--pl:"]{padding-left:var(--pl)}.gps-614710286959510187.gps.gpsil [style*="--pr:"]{padding-right:var(--pr)}.gps-614710286959510187.gps.gpsil [style*="--pt:"]{padding-top:var(--pt)}.gps-614710286959510187.gps.gpsil [style*="--rg:"]{row-gap:var(--rg)}.gps-614710286959510187.gps.gpsil [style*="--ta:"]{text-align:var(--ta)}.gps-614710286959510187.gps.gpsil [style*="--t:"]{transform:var(--t)}.gps-614710286959510187.gps.gpsil [style*="--w:"]{width:var(--w)}@media only screen and (max-width:1024px){.gps-614710286959510187.gps.gpsil [style*="--pl-tablet:"]{padding-left:var(--pl-tablet)}.gps-614710286959510187.gps.gpsil [style*="--pr-tablet:"]{padding-right:var(--pr-tablet)}.gps-614710286959510187.gps.gpsil [style*="--w-tablet:"]{width:var(--w-tablet)}}@media only screen and (max-width:767px){.gps-614710286959510187.gps.gpsil [style*="--pl-mobile:"]{padding-left:var(--pl-mobile)}.gps-614710286959510187.gps.gpsil [style*="--pr-mobile:"]{padding-right:var(--pr-mobile)}.gps-614710286959510187.gps.gpsil [style*="--w-mobile:"]{width:var(--w-mobile)}}.gps-614710286959510187 .gp-relative{position:relative}.gps-614710286959510187 .gp-mx-auto{margin-left:auto;margin-right:auto}.gps-614710286959510187 .gp-mb-0{margin-bottom:0}.gps-614710286959510187 .gp-flex{display:flex}.gps-614710286959510187 .gp-grid{display:grid}.gps-614710286959510187 .\!gp-hidden{display:none!important}.gps-614710286959510187 .gp-hidden{display:none}.gps-614710286959510187 .gp-max-w-full{max-width:100%}.gps-614710286959510187 .gp-grid-rows-\[1fr\]{grid-template-rows:1fr}.gps-614710286959510187 .gp-flex-col{flex-direction:column}.gps-614710286959510187 .gp-transition-colors{transition-duration:.15s;transition-property:color,background-color,border-color,text-decoration-color,fill,stroke;transition-timing-function:cubic-bezier(.4,0,.2,1)}.gps-614710286959510187 .gp-duration-200{transition-duration:.2s}.gps-614710286959510187 .gp-ease-in-out{transition-timing-function:cubic-bezier(.4,0,.2,1)}@media (max-width:1024px){.gps-614710286959510187 .tablet\:\!gp-hidden{display:none!important}.gps-614710286959510187 .tablet\:gp-hidden{display:none}}@media (max-width:767px){.gps-614710286959510187 .mobile\:\!gp-hidden{display:none!important}.gps-614710286959510187 .mobile\:gp-hidden{display:none}}.gps-614710286959510187 .\[\&_\*\]\:gp-max-w-full *{max-width:100%}</style>
+    
+  
+    
+    
+    
+
+    {% assign locationOrigin = request.origin | append: routes.root_url | split: '/' | join: '/' %}
+
+    
+        <section
+          class="gp-mx-auto gp-max-w-full [&_*]:gp-max-w-full {% if section.settings.section_preload == "false" %}gps-lazy {% endif %}"
+          style="--w:100%;--w-tablet:calc(var(--g-ct-w, 100%) + 2 * var(--g-ct-p, 15px));--w-mobile:calc(var(--g-ct-w, 100%) + 2 * var(--g-ct-p, 15px));--pl:none;--pl-tablet:none;--pl-mobile:none;--pr:none;--pr-tablet:none;--pr-mobile:none"
+        >
+          
+    <gp-row gp-data='{"background":{"desktop":{"type":"color","color":"transparent","image":{"src":"","width":0,"height":0},"size":"cover","position":{"x":50,"y":50},"repeat":"no-repeat","attachment":"scroll"}},"uid":"gBzspkr8_7"}' data-id="gBzspkr8_7" id="gBzspkr8_7" data-same-height-subgrid-container class="gBzspkr8_7 gp-relative gp-mx-auto gp-mb-0 gp-grid gp-max-w-full gp-transition-colors gp-duration-200 gp-ease-in-out [&_*]:gp-max-w-full gp-grid-rows-[1fr]" style="--blockPadding:base;--pt:var(--g-s-2xl);--pb:var(--g-s-2xl);--d:grid;--d-tablet:grid;--d-mobile:grid;--bs:none;--bw:1px 1px 1px 1px;--bc:var(--g-c-line-3, line-3);--bblr:0px;--bbrr:0px;--btlr:0px;--btrr:0px;--op:100%;--cg:16px;--rg:0px;--gtc:minmax(0, 12fr);--w:100%;--bgc:transparent;--bgi:url();--bgp:50% 50%;--bgs:cover;--bgr:no-repeat;--bga:scroll;--pc:start">
+      
+
+      <div
+      data-same-height-display-contents
+      style="--jc:start"
+      class="gApRuDzrmT gp-relative gp-flex gp-flex-col"
+    >
+      
+  
+    <div
+      
+      style="--d:block;--d-tablet:block;--d-mobile:block;--bs:none;--bw:1px 1px 1px 1px;--bc:var(--g-c-line-3, line-3);--bblr:0px;--bbrr:0px;--btlr:0px;--btrr:0px;--op:100%;--ta:left;--bgc:transparent;--bgi:url();--bgp:50% 50%;--bgs:cover;--bgr:no-repeat;--bga:scroll"
+      data-keep-class="true"
+      class="ghIXZavaE4 gp-custom-code">
+      <div>
+    <!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<style>
+
+  * { box-sizing: border-box; margin: 0; padding: 0; }
+
+  body {
+    font-family: Georgia, 'Times New Roman', serif;
+    font-size: 18px;
+    line-height: 1.7;
+    color: #111;
+    background: #fff;
+  }
+
+  .page {
+    max-width: 1100px;
+    margin: 0 auto;
+    padding: 0px 16px;
+    display: flex;
+    gap: 32px;
+    align-items: flex-start;
+  }
+
+  .main {
+    flex: 1;
+    min-width: 0;
+  }
+
+  .top-headline {
+    font-family: Arial, sans-serif;
+    font-size: clamp(18px, 3vw, 24px);
+    font-weight: bold;
+    color: #cc0000;
+    text-align: center;
+    margin-bottom: 16px;
+    line-height: 1.3;
+  }
+
+  .main-headline {
+    font-family: Arial, sans-serif;
+    font-size: clamp(22px, 4vw, 32px);
+    font-weight: bold;
+    color: #111;
+    text-align: center;
+    margin-bottom: 14px;
+    line-height: 1.25;
+  }
+  .main-headline u { text-decoration: underline; }
+
+  .subhead {
+    font-family: Georgia, serif;
+    font-size: clamp(16px, 2.5vw, 20px);
+    font-style: italic;
+    color: #333;
+    text-align: center;
+    margin-bottom: 10px;
+  }
+
+  .byline {
+    font-family: Arial, sans-serif;
+    font-size: 13px;
+    color: #777;
+    margin-bottom: 20px;
+  }
+
+  .hero-grid {
+    display: flex;
+    gap: 12px;
+    margin-bottom: 24px;
+    align-items: flex-start;
+  }
+
+  .expert-photo {
+    width: 42%;
+    aspect-ratio: 3/4;
+    flex-shrink: 0;
+    overflow: hidden;
+  }
+
+  .before-after-grid {
+    flex: 1;
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 8px;
+  }
+
+  .ba-wrap {
+    position: relative;
+  }
+
+  .ba-label {
+    position: absolute;
+    bottom: 0;
+    left: 0; right: 0;
+    background: rgba(0,0,0,0.75);
+    color: #fff;
+    font-family: Arial, sans-serif;
+    font-size: 16px;
+    font-weight: bold;
+    text-align: center;
+    padding: 6px;
+    letter-spacing: 1px;
+  }
+
+  .body-text {
+    font-family: Georgia, serif;
+    font-size: 18px;
+    line-height: 1.75;
+    color: #111;
+    margin-bottom: 16px !important;
+    margin-top: 0 !important;
+  }
+
+  .yellow-highlight {
+    display: inline;
+    background: #ffe066;
+    font-weight: bold;
+    font-style: italic;
+    padding: 2px 4px;
+  }
+
+  .section-heading {
+    font-family: Arial, sans-serif;
+    font-size: clamp(20px, 3.5vw, 28px);
+    font-weight: bold;
+    text-align: center;
+    color: #111;
+    margin: 32px 0 16px;
+    line-height: 1.3;
+  }
+  .section-heading em { font-style: italic; }
+
+  .ba-pair {
+    display: flex;
+    gap: 0;
+    max-width: 560px;
+    margin: 20px auto 8px;
+  }
+  .ba-pair .ba-wrap { flex: 1; }
+
+  .ba-labels-row {
+    display: flex;
+    max-width: 560px;
+    margin: 0 auto 24px;
+  }
+  .ba-labels-row span {
+    flex: 1;
+    text-align: center;
+    font-family: Arial, sans-serif;
+    font-weight: bold;
+    font-size: 16px;
+    letter-spacing: 1px;
+    padding-top: 6px;
+  }
+
+  .quote-para {
+    font-family: Georgia, serif;
+    font-size: 18px;
+    line-height: 1.75;
+    color: #111;
+    margin-bottom: 16px !important;
+    margin-top: 0 !important;
+  }
+
+  @media (max-width: 700px) {
+    .page { flex-direction: column; }
+    .hero-grid { flex-direction: column; }
+    .expert-photo { width: 100%; aspect-ratio: 4/3; }
+  }
+
+
+  /* ── INGREDIENT SECTION ── */
+  .ingredient {
+    margin-bottom: 28px;
+    padding-bottom: 28px;
+    border-bottom: 1px solid #eee;
+  }
+  .ingredient:last-child { border-bottom: none; }
+  .ingredient h3 {
+    font-family: Arial, sans-serif;
+    font-size: 20px;
+    font-weight: bold;
+    margin-bottom: 6px;
+  }
+
+  /* ── TESTIMONIAL ── */
+  .testimonial {
+    margin: 24px 0;
+    padding: 0;
+  }
+  .testimonial h2 {
+    font-family: Arial, sans-serif;
+    font-size: clamp(20px, 3vw, 26px);
+    font-weight: bold;
+    text-align: center;
+    margin-bottom: 16px;
+  }
+
+  /* ── GUARANTEE ── */
+  .guarantee-box {
+    border: 2px solid #ccc;
+    padding: 24px;
+    margin: 32px 0;
+    display: flex;
+    gap: 20px;
+    align-items: center;
+    flex-wrap: wrap;
+  }
+  .guarantee-badge {
+    width: 100px; height: 100px;
+    border-radius: 50%;
+    border: 3px solid #2e7d32;
+    background: #f5f5f5;
+    flex-shrink: 0;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-direction: column;
+    text-align: center;
+    padding: 8px;
+  }
+  .guarantee-badge .days {
+    font-family: Arial, sans-serif;
+    font-size: 26px;
+    font-weight: bold;
+    color: #2e7d32;
+    line-height: 1;
+  }
+  .guarantee-badge .gtext {
+    font-family: Arial, sans-serif;
+    font-size: 9px;
+    color: #333;
+    text-transform: uppercase;
+    line-height: 1.3;
+    margin-top: 4px;
+  }
+  .guarantee-copy h3 {
+    font-family: Arial, sans-serif;
+    font-size: 20px;
+    font-weight: bold;
+    margin-bottom: 8px;
+  }
+  .guarantee-copy p {
+    font-family: Georgia, serif;
+    font-size: 16px;
+    color: #333;
+    line-height: 1.65;
+  }
+
+  /* ── BOTTOM CTA ── */
+  .bottom-cta {
+    text-align: center;
+    margin: 32px 0;
+  }
+  .bottom-cta p {
+    font-family: Georgia, serif;
+    font-size: 18px;
+    margin-bottom: 14px;
+    line-height: 1.65;
+  }
+  .big-cta-btn {
+    display: inline-block;
+    background: #2e7d32;
+    color: #fff;
+    font-family: Arial, sans-serif;
+    font-size: 20px;
+    font-weight: bold;
+    padding: 18px 36px;
+    text-decoration: none;
+    border-radius: 4px;
+    border: none;
+    cursor: pointer;
+    letter-spacing: 0.5px;
+  }
+  .big-cta-btn:hover { background: #1b5e20; }
+
+  /* ── PRODUCT BOTTOM CARD ── */
+  .product-bottom-card {
+    border: 1px solid #ccc;
+    padding: 24px;
+    margin: 32px 0;
+    text-align: center;
+  }
+  .product-bottom-card .rec { font-family: Arial, sans-serif; font-size: 14px; color: #555; margin-bottom: 4px; }
+  .product-bottom-card .pname { font-family: Arial, sans-serif; font-size: 22px; font-weight: bold; margin-bottom: 4px; }
+  .product-bottom-card .stars { color: #f5a623; font-size: 20px; margin-bottom: 4px; }
+  .product-bottom-card .rtext { font-family: Arial, sans-serif; font-size: 14px; color: #555; margin-bottom: 16px; }
+  .product-bottom-card .trust-list {
+    list-style: none;
+    text-align: left;
+    display: inline-block;
+    margin-bottom: 20px;
+  }
+  .product-bottom-card .trust-list li {
+    font-family: Arial, sans-serif;
+    font-size: 15px;
+    padding: 6px 0 6px 28px;
+    position: relative;
+    border-bottom: 1px solid #eee;
+  }
+  .product-bottom-card .trust-list li:last-child { border-bottom: none; }
+  .product-bottom-card .trust-list li::before {
+    content: '✔';
+    position: absolute; left: 0;
+    color: #2e7d32; font-size: 18px;
+  }
+
+  /* ── DISCLAIMER ── */
+  .disclaimer {
+    font-family: Arial, sans-serif;
+    font-size: 12px;
+    color: #888;
+    line-height: 1.6;
+    border-top: 1px solid #ddd;
+    padding-top: 20px;
+    margin-top: 40px;
+  }
+  .disclaimer p { margin-bottom: 8px; }
+</style>
+</head>
+<body>
+<div class="page" style="display:block;max-width:740px;margin:0 auto;padding:0 16px 0;">
+<div class="main">
+
+<!-- TOP RED HEADLINE -->
+    <div class="top-headline">
+      Black Women's Hair Loss Expert Finally Breaks Silence About The $50 Billion Hair Industry!
+    </div>
+
+    <!-- MAIN HEADLINE -->
+    <div class="main-headline">
+      <u>Dr. Maya Brooks Reveals:</u> A New Natural Breakthrough Formula
+      That May Help Black Women Fill In Thinning Hair &amp; Regrow Their Edges In 29 Days
+    </div>
+
+    <!-- ITALIC SUBHEAD -->
+    <div class="subhead">
+      WITHOUT Any Dangerous Drugs, Expensive Treatments or Risky Surgeries...
+    </div>
+
+    <!-- BYLINE -->
+    <div class="byline">
+      April 1st, 2026: Special Announcement by Dr. Maya Brooks
+    </div>
+
+    <!-- HERO IMAGE GRID: expert photo + before/after -->
+    <div class="hero-grid">
+
+      <div class="expert-photo" style="background:none;padding:0;border:none;">
+        <img src="https://cdn.shopify.com/s/files/1/0880/6173/9289/files/dr-maya-brooks-portrait.png?v=1775923865" style="width:100%;height:100%;object-fit:cover;">
+      </div>
+
+      <div class="before-after-grid">
+        <div class="ba-wrap">
+          <!-- REPLACE WITH CDN IMAGE -->
+          <img src="https://cdn.shopify.com/s/files/1/0880/6173/9289/files/women-before-1-top-left.png?v=1775923913" style="width:100%;aspect-ratio:1;object-fit:cover;">
+        </div>
+        <div class="ba-wrap">
+          <img src="https://cdn.shopify.com/s/files/1/0880/6173/9289/files/women-after-1-top-right.png?v=1775923948" style="width:100%;aspect-ratio:1;object-fit:cover;">
+        </div>
+        <div class="ba-wrap">
+          <img src="https://cdn.shopify.com/s/files/1/0880/6173/9289/files/women-before-2-bottom-left.png?v=1775924006" style="width:100%;aspect-ratio:1;object-fit:cover;">
+        </div>
+        <div class="ba-wrap">
+          <img src="https://cdn.shopify.com/s/files/1/0880/6173/9289/files/women-after-2-bottom-right.png?v=1775924063" style="width:100%;aspect-ratio:1;object-fit:cover;">
+        </div>
+      </div>
+
+    </div>
+
+    <!-- BODY COPY -->
+    <p class="body-text">
+      Do you know what may be the REAL reason Black women are losing their hair at alarming rates?
+    </p>
+
+    <p class="body-text">
+      <span class="yellow-highlight">(And it has nothing to do with your age, your genes, or how you style your hair)</span>
+    </p>
+
+    <p class="body-text">
+      The Big Hair Industry is PRAYING you never find out about this hushed-up natural hair loss remedy.
+    </p>
+
+    <p class="body-text">
+      They even tried to silence Dr. Brooks.<br>
+      But she refused to stop speaking out. "These women deserve the truth." - Black Women's Hair Loss Expert, Dr. Maya Brooks
+    </p>
+
+    <!-- SECTION HEADING -->
+    <div class="section-heading">
+      Why Are Big Hair Companies <em>TERRIFIED</em><br>Of This New Discovery?
+    </div>
+
+    <img src="https://cdn.shopify.com/s/files/1/0880/6173/9289/files/women-before-after-inline.png?v=1775924244" style="width:100%;max-width:560px;display:block;margin:20px auto 24px;">
+
+    <p class="body-text">
+      Dr. Maya Brooks is a renowned <strong>Black women's hair loss expert</strong>, has <strong>helped thousands of Black women stop their hair loss</strong> and reclaim their crowns — and she is an <strong>industry disruptor.</strong>
+    </p>
+
+    <p class="body-text">
+      In her recent interview, she shared that a <strong>new breakthrough solution</strong> has been developed — one that targets the <em>actual root cause</em> of Black women's hair thinning and loss.
+    </p>
+
+    <p class="body-text">
+      Which may <strong>effectively help stop hair loss and restore thickness, density, and edges</strong>... without any side effects of harmful pills, costly treatments, or risky procedures.
+    </p>
+
+    <p class="body-text">Here's what she told us:</p>
+
+    <p class="quote-para">
+      "For decades, I believe, the Big Hair Industry has been <strong>deliberately hiding</strong> this almost unknown condition — and its solution — from the public..."
+    </p>
+
+    <p class="quote-para">
+      "This condition is known as <strong>DHT Overload Syndrome</strong> — and it is destroying Black women's hair from the inside out."
+    </p>
+
+    <p class="quote-para">
+      "DHT Overload Syndrome may be the <strong>"hidden" reason</strong> why more and more Black women are suffering from severe thinning, receding edges, and bald patches — even though modern medicine has progressed massively in recent times."
+    </p>
+
+    <p class="body-text">And here's what makes it worse...</p>
+
+    <p class="quote-para">
+      "This condition is triggered — or made dramatically worse — by the hormonal changes most Black women go through at some point in their lives..."
+    </p>
+
+    <p class="quote-para">
+      "Whether it's <strong>menopause</strong>, where dropping estrogen causes DHT to go unchecked and devastate follicles..."
+    </p>
+
+    <p class="quote-para">
+      "Or <strong>postpartum hair loss</strong>, where the hormonal crash after pregnancy leaves hair follicles starved and shrinking..."
+    </p>
+
+    <p class="quote-para">
+      "Or even <strong>hair loss from GLP-1 medications</strong> like Ozempic and Wegovy — which many women are now reporting as a major side effect..."
+    </p>
+
+    <p class="quote-para">
+      "In every single one of these cases, the root driver is the same: <strong>DHT is rising, follicles are starving, and hair is falling out.</strong>"
+    </p>
+
+    <p class="body-text">What's more...</p>
+
+    <p class="quote-para">
+      "They were <strong>investing millions</strong> in keeping Black women focused on the wrong solutions — wigs, weaves, expensive salon treatments — anything to avoid talking about the real cause."
+    </p>
+
+    <p class="quote-para">
+      "So <strong>Black women keep spending</strong> on products that never address what's actually happening inside their bodies."
+    </p>
+
+    <p class="body-text">But that's not all...</p>
+
+    <p class="body-text">
+      They've also been trying to <strong>take down</strong> Dr. Brooks' <strong>drug-free, all-natural solution.</strong>
+    </p>
+
+    <p class="body-text">
+      She recently developed a new <strong>safe</strong>, <strong>effective</strong> and <strong>affordable</strong> natural formula — specifically for Black women.
+    </p>
+
+    <p class="body-text">
+      That may <strong>quickly help reduce DHT at the source</strong> while flooding hair follicles with the nutrients they need to grow again.
+    </p>
+
+    <p class="body-text">
+      So you can stop watching your hair disappear in the mirror — and start getting your confidence, your edges, and your crown back.
+    </p>
+
+    <img src="https://cdn.shopify.com/s/files/1/0880/6173/9289/files/dr-maya-interview-image.png?v=1775924190" style="width:100%;max-width:700px;display:block;margin:24px auto;">
+
+    <!-- DR. BROOKS TELLS IT AS IT IS -->
+    <div class="section-heading">Dr. Maya Brooks Tells It As It Is:</div>
+
+    <p class="quote-para">
+      "Up until now, the Big Hair Industry was <strong>paying massive fees</strong> to suppress this information..."
+    </p>
+
+    <p class="quote-para">
+      "To ensure that Black women <strong>could NOT access</strong> this incredibly effective natural hair restoration treatment."
+    </p>
+
+    <p class="body-text">The reason why?</p>
+
+    <p class="quote-para">
+      "So they can keep <strong>profiting</strong> from their insanely overpriced, ineffective products and <strong>risky chemical treatments</strong>..."
+    </p>
+
+    <p class="quote-para">
+      "A woman who grows her hair back <strong>is a customer they lose forever.</strong>" - Dr. Maya Brooks
+    </p>
+
+    <!-- SECTION: AFTER 8 YEARS -->
+    <div class="section-heading">
+      After 8 Years of Research, Dr. Maya Brooks Finally Breaks New Ground With a Simple New Formula to Naturally Help Black Women Restore Thinning Hair &amp; Reclaim Their Edges...
+    </div>
+
+    <img src="https://cdn.shopify.com/s/files/1/0880/6173/9289/files/dr-maya-research-image.png?v=1775924300" style="width:100%;max-width:680px;display:block;margin:20px auto 28px;">
+
+    <p class="body-text">
+      Luckily Dr. Brooks also shared her <strong>new discovery</strong>...
+    </p>
+
+    <p class="body-text">
+      She and a team of <strong>trichology and women's hormonal health scientists</strong> developed a <strong><a href="https://simplyrevival.com/products/natural-dht-blocker-women" style="color:#111;">breakthrough natural DHT-blocking formula specifically designed for Black women.</a></strong>
+    </p>
+
+    <p class="body-text">
+      Their formula was initially developed to help her clients who were losing hair from menopause, postpartum hormonal shifts, and GLP-1 medications — and had <strong>tried everything with no results.</strong>
+    </p>
+
+    <p class="body-text">
+      To help them significantly <strong>reduce their hair loss</strong>, <strong>restore density and thickness</strong> in thinning areas, and help them <strong>get their confidence back...</strong>
+    </p>
+
+    <p class="body-text">
+      While using <strong>100% all-natural</strong> and <strong>safe ingredients</strong>... without the unwanted side effects of prescriptions or chemical treatments.
+    </p>
+
+    <!-- SECTION: THE SECRET -->
+    <div class="section-heading">The Secret Behind This Breakthrough Natural DHT Blocking Formula?</div>
+
+    <img src="https://cdn.shopify.com/s/files/1/0880/6173/9289/files/dht-root-problem-women.png?v=1775924404" style="width:100%;max-width:680px;display:block;margin:20px auto 28px;">
+
+    <p class="body-text">
+      According to Dr. Brooks' groundbreaking research, most <strong>Black women's hair loss is a result of DHT overproduction combined with hormonal imbalance:</strong>
+    </p>
+
+    <p class="body-text">
+      "The No. 1 cause of accelerated hair loss in Black women is a condition in which DHT (Dihydrotestosterone) binds to hair follicles and causes them to shrink — leading to thinning, receding edges, and permanent hair loss."
+    </p>
+
+    <p class="body-text">In other words:</p>
+
+    <p class="body-text">
+      <strong>DHT levels spike in the scalp.</strong>
+    </p>
+
+    <p class="body-text">
+      Which <strong>strangles hair follicles and cuts off the nutrients</strong> they need to grow.
+    </p>
+
+    <p class="body-text">
+      And that <strong>causes the severe thinning and shedding</strong> so many Black women experience — but can never seem to stop.
+    </p>
+
+    <p class="body-text">
+      This is especially devastating during <strong>menopause</strong> (when estrogen drops and DHT goes unchecked), <strong>postpartum</strong> (when hormone levels crash suddenly after birth), and for women on <strong>GLP-1 medications</strong> (which can trigger rapid nutrient depletion and follicle stress).
+    </p>
+
+    <p class="body-text">
+      And this issue goes <strong>undiagnosed in over 90% of cases</strong>...
+    </p>
+
+    <p class="body-text">
+      <strong>Because most mainstream hair loss treatments were never designed with Black women's hair biology and hormonal health in mind.</strong>
+    </p>
+
+    <p class="body-text">
+      ...and that's why Black women's hair loss is so often treated incorrectly...
+    </p>
+
+    <p class="body-text">
+      And it's why so many popular remedies — biotin gummies, scalp serums, dermatologist visits, and even prescription drugs — often fail to stop Black women's hair loss!
+    </p>
+
+    <p class="body-text">
+      But fear no more, because Dr. Maya Brooks shared with me her...
+    </p>
+
+
+    <!-- PRODUCT REVEAL HEADING -->
+    <div class="section-heading">
+      Groundbreaking Natural DHT Blocker That Is Helping Thousands of Black Women Stop Their Hair Loss &amp; Restore Their Crown
+    </div>
+
+    <img src="https://cdn.shopify.com/s/files/1/0880/6173/9289/files/women-before-after-collage.png?v=1775924454" style="width:100%;max-width:680px;display:block;margin:20px auto 28px;">
+
+    <p class="body-text">
+      She told me that the <strong>ONLY way to stop Black women's severe hair loss and grow hair back is to block DHT production at the source and restore the nutrients that hair follicles need to survive.</strong>
+    </p>
+
+    <p class="body-text">
+      Because when you reduce the DHT that is strangling your hair follicles, <strong>you are making sure they get all the precious blood flow &amp; nutrients they need to grow.</strong>
+    </p>
+
+    <p class="body-text">
+      She showed me sisters who had suffered from severe thinning and hair loss for years — from menopause, postpartum shedding, GLP-1 medications, and general DHT overload — who used her method and <strong>filled in their thinning areas, got their edges back, and got their confidence back!</strong>
+    </p>
+
+    <p class="body-text">So I asked her <strong>"where can I get this natural hair loss treatment?"</strong></p>
+
+    <p class="body-text">And that's when she introduced me to...</p>
+
+    <div class="section-heading">
+      The First Natural DHT-Blocking Formula Made Specifically For Black Women!<br>
+      <span style="color:#2e7d32; font-size:0.85em;">Simply Revival Natural DHT Blocker™</span>
+    </div>
+
+    <!-- PRODUCT BOTTLE IMAGE -->
+    <div style="text-align:center; margin: 20px 0;">
+      <img src="https://cdn.shopify.com/s/files/1/0880/6173/9289/files/Product_bottle_photo.png?v=1775695100" style="width:220px;display:block;margin:0 auto;">
+    </div>
+
+    <p class="body-text">
+      Dr. Maya Brooks and her small team created <strong><a href="https://simplyrevival.com/products/natural-dht-blocker-women" style="color:#111;">the first ever natural DHT blocker specifically formulated to stop the root cause of Black women's hair loss!</a></strong>
+    </p>
+
+    <p class="body-text">She told me that no matter how bad your hair loss currently is...</p>
+    <p class="body-text">No matter how long you've had thinning patches or missing edges…</p>
+    <p class="body-text">No matter whether it's from menopause, postpartum, GLP-1 medications, or just years of DHT buildup…</p>
+
+    <p class="body-text">
+      Simply Revival DHT Blocker CAN work for you…
+    </p>
+
+    <p class="body-text">
+      Because <strong>it blocks DHT production and helps your hair follicles get the blood flow and nutrients they need to grow!</strong>
+    </p>
+
+    <!-- INGREDIENTS SECTION HEADING -->
+    <div class="section-heading">
+      Simply Revival DHT Blocker Contains Powerful Natural Ingredients That Work to Block DHT &amp; Stop Black Women's Hair Loss!
+    </div>
+
+    <!-- INGREDIENT: SAW PALMETTO -->
+    <div class="ingredient">
+      <img src="https://cdn.shopify.com/s/files/1/0880/6173/9289/files/Saw_Palmetto_photo.png?v=1775695174" style="width:100%;max-width:500px;display:block;margin:10px 0 14px;">
+      <h3>Saw Palmetto</h3>
+      <p class="body-text">
+        Studies show that Saw Palmetto is one of the most powerful natural DHT blockers available. It works by inhibiting the 5-alpha reductase enzyme that converts testosterone into hair-damaging DHT — the very same process that's behind most Black women's thinning, especially during menopause and postpartum recovery. When tested against popular prescription medications it shows comparable effectiveness at regrowing hair — without harmful side effects.
+      </p>
+    </div>
+
+    <!-- INGREDIENT: PYGEUM -->
+    <div class="ingredient">
+      <img src="https://cdn.shopify.com/s/files/1/0880/6173/9289/files/Pygeum_photo_berries_on_branch.png?v=1775695228" style="width:100%;max-width:500px;display:block;margin:10px 0 14px;">
+      <h3>Pygeum Africanum</h3>
+      <p class="body-text">
+        Sourced from African plum tree bark, Pygeum has been shown to reduce androgen receptor activity in hair follicles. It works synergistically with Saw Palmetto to create a dual-block on DHT — reducing both its production and its ability to bind to follicle receptors that trigger hair miniaturization. Especially beneficial for women whose DHT levels spike during hormonal transitions.
+      </p>
+    </div>
+
+    <!-- INGREDIENT: STINGING NETTLE -->
+    <div class="ingredient">
+      <img src="https://cdn.shopify.com/s/files/1/0880/6173/9289/files/Stinging_Nettle_photo.png?v=1775695293" style="width:100%;max-width:500px;display:block;margin:10px 0 14px;">
+      <h3>Stinging Nettle Root</h3>
+      <p class="body-text">
+        Studies show that this powerful herb drastically reduces the binding of DHT to hair follicle receptors — meaning even if DHT is present in the scalp, it's far less able to trigger the follicle shrinkage that leads to hair loss. It also provides anti-inflammatory benefits that support a healthier scalp environment, making it ideal for women dealing with postpartum inflammation or GLP-1 related scalp stress.
+      </p>
+    </div>
+
+    <!-- INGREDIENT: BIOTIN + ZINC -->
+    <div class="ingredient">
+      <img src="https://cdn.shopify.com/s/files/1/0880/6173/9289/files/Biotin_supplements_photo.png?v=1775695339" style="width:100%;max-width:500px;display:block;margin:10px 0 14px;">
+      <h3>Biotin + Zinc</h3>
+      <p class="body-text">
+        Biotin is a critical cofactor in the production of keratin — the protein your hair is made of. Women on GLP-1 medications often become rapidly depleted in both Biotin and Zinc due to reduced food intake, accelerating hair loss. Combined with Zinc, which directly inhibits 5-alpha reductase enzyme activity, these two nutrients work from the inside out to strengthen each strand while DHT production is being blocked at the source.
+      </p>
+    </div>
+
+    <p class="body-text">
+      <strong>+ Additional Natural Hair Rejuvenating Ingredients Like...</strong><br>
+      Vitamin D3, Fo-Ti Root, Green Tea Extract, Pumpkin Seed Oil, Horsetail Extract, Bamboo Silica, and more — all working together to restore what DHT, hormonal changes, and time have taken away.
+    </p>
+
+    <!-- SECTION: REAL RESULTS -->
+    <div class="section-heading">
+      Real Black Women. Real Results. Real Hair Back.
+    </div>
+
+    <!-- TESTIMONIAL 1 -->
+    <div class="testimonial">
+      <img src="https://cdn.shopify.com/s/files/1/0880/6173/9289/files/testimonial-tiffany.png?v=1775924519" style="width:100%;max-width:560px;display:block;margin:0 auto 16px;">
+      <p class="quote-para">
+        <strong>"I started losing my hair badly after having my baby. By 4 months postpartum my edges were almost completely gone and I was in tears every morning. I tried everything. Nothing worked until I found Simply Revival. Within 6 weeks my edges started coming back. By 3 months I had my hair back. I wish I had found this sooner."</strong>
+      </p>
+      <p class="body-text">— Tiffany M., Atlanta, GA</p>
+    </div>
+
+    <!-- TESTIMONIAL 2 -->
+    <div class="testimonial">
+      <img src="https://cdn.shopify.com/s/files/1/0880/6173/9289/files/testimonial-denise.png?v=1775924558" style="width:100%;max-width:560px;display:block;margin:0 auto 16px;">
+      <p class="quote-para">
+        <strong>"I'm 52 and menopause hit my hair HARD. My stylist even noticed how much thinner it had gotten. After 2 months on Simply Revival the shedding dramatically slowed down. My crown is filling back in. I feel like myself again."</strong>
+      </p>
+      <p class="body-text">— Denise R., Houston, TX</p>
+    </div>
+
+    <!-- TESTIMONIAL 3 -->
+    <div class="testimonial">
+      <img src="https://cdn.shopify.com/s/files/1/0880/6173/9289/files/testimonial-keisha.png?v=1775924591" style="width:100%;max-width:560px;display:block;margin:0 auto 16px;">
+      <p class="quote-para">
+        <strong>"I had been losing my hair for 6 years and tried everything. Within 30 days of taking my new formulation (Simply Revival DHT Blocker) the shedding slowed down dramatically and my thinning part filled back in."</strong>
+      </p>
+      <p class="body-text">— Maya Brooks (Me)</p>
+    </div>
+
+    <!-- DR. BROOKS CONFIDENCE SECTION -->
+    <div class="section-heading">
+      Dr. Maya Brooks Is So Confident You'll See Results That All Orders Come With a 365 Day "See Growth or Get Your Money Back" Guarantee!
+    </div>
+
+    <!-- GUARANTEE BOX -->
+    <div class="guarantee-box">
+      <img src="https://cdn.shopify.com/s/files/1/0880/6173/9289/files/365_guarantee_badge.png?v=1775695534" style="width:120px;display:block;margin:0 auto 16px;flex-shrink:0;">
+      <div class="guarantee-copy">
+        <h3>365-Day "See Growth or It's Free" Guarantee</h3>
+        <p>Dr. Brooks stands behind Simply Revival 100%. If you don't see a noticeable reduction in shedding and new hair growth within 365 days — for any reason — you get a full refund. No questions asked. No hassle. That's how confident she is that this formula will work for you.</p>
+      </div>
+    </div>
+
+    <!-- PRODUCT BOTTOM CARD -->
+    <div class="product-bottom-card">
+      <p class="rec">Dr. Maya Brooks' #1 Recommendation For Black Women's Hair Loss</p>
+      <p class="pname">Simply Revival Natural DHT Blocker™</p>
+      <div class="stars">★★★★★</div>
+      <p class="rtext">4.9/5 stars from 2,400+ verified reviews</p>
+
+      <img src="https://cdn.shopify.com/s/files/1/0880/6173/9289/files/Product_bottle_photo.png?v=1775695100" style="width:180px;display:block;margin:16px auto;">
+
+      <ul class="trust-list">
+        <li>Blocks DHT at the source — the #1 cause of Black women's hair loss</li>
+        <li>Supports recovery from menopause, postpartum &amp; GLP-1 related shedding</li>
+        <li>100% natural, drug-free formula with zero harmful side effects</li>
+        <li>Clinically studied ingredients backed by trichology research</li>
+        <li>365-Day money-back guarantee — no questions asked</li>
+        <li>Made in the USA in an FDA-registered, GMP-certified facility</li>
+      </ul>
+
+      <a href="https://simplyrevival.com/products/natural-dht-blocker-women" class="big-cta-btn">
+        YES — I Want My Hair Back! →
+      </a>
+
+      <p style="font-family:Arial;font-size:13px;color:#888;margin-top:12px;">
+        🔒 Secure Checkout &nbsp;|&nbsp; Free Shipping Available &nbsp;|&nbsp; 365-Day Guarantee
+      </p>
+    </div>
+
+    <!-- BOTTOM CTA SECTION -->
+    <div class="bottom-cta">
+      <p>
+        <strong>Don't wait.</strong> Every day you go without addressing DHT is another day your follicles are shrinking. The sooner you start, the better your results will be.
+      </p>
+      <p>
+        Thousands of Black women have already reclaimed their hair, their edges, and their confidence with Simply Revival. <strong>Now it's your turn.</strong>
+      </p>
+      <a href="https://simplyrevival.com/products/natural-dht-blocker-women" class="big-cta-btn">
+        Claim My Simply Revival DHT Blocker Now →
+      </a>
+      <p style="font-family:Arial;font-size:14px;color:#555;margin-top:14px;">
+        ✅ 365-Day Money-Back Guarantee &nbsp;|&nbsp; ✅ Free Shipping &nbsp;|&nbsp; ✅ Limited Time Offer
+      </p>
+    </div>
+
+    <!-- DISCLAIMER -->
+    <div class="disclaimer">
+      <p><strong>Editorial Disclosure:</strong> This article is sponsored content. The story, its characters, and the expert portrayed are presented for illustrative purposes. Results may vary. These statements have not been evaluated by the Food and Drug Administration. This product is not intended to diagnose, treat, cure, or prevent any disease.</p>
+      <p><strong>Results Disclaimer:</strong> Individual results will vary. The testimonials shown are real customers but results are not guaranteed and are not typical. Most customers who use Simply Revival as directed see results within 60–90 days.</p>
+      <p>© 2026 Simply Revival. All Rights Reserved. | <a href="#" style="color:#888;">Privacy Policy</a> | <a href="#" style="color:#888;">Terms of Service</a></p>
+    </div>
+
+</div>
+</div>
+
+
+</div>
+</div>
+</body>
+</html>
+    </div>
+    </div>
+  
+    </div>
+
+      
+    </gp-row>
+  
+        </section>
+      
+  
+    
+{% schema %}
+  {
+    
+    "name": "Section 1",
+    "tag": "section",
+    "class": "gps-614710286959510187 gps gpsil",
+    "settings": [{"type":"paragraph","content":"Section design by GemPages. [Click here to start design](https://admin.shopify.com/store/578352-0d/apps/gempages-cro/app/shopify/edit?pageType=GP_STATIC&editorId=614710222820213419&sectionId=614710286959510187)"},{"type":"select","label":"Section Preload","id":"section_preload","options":[{"label":"On","value":"true"},{"label":"Off","value":"false"},{"label":"Off Lazy Script","value":"off_lazy_script"}],"default":"false"},{"type":"text","label":"Checksum","id":"checksum"}],
+    "blocks": [{"type": "@app"}],
+    "locales": {}
+  }
+{% endschema %}

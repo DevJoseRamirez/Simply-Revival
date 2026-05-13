@@ -21,7 +21,7 @@
         "link": "shopify://products/simply®-dht-blocker",
         "show_timer": true,
         "min_hours": 2,
-        "max_hours": 2.5,
+        "max_hours": 2,
         "gradient_start": "#1e6c7a",
         "gradient_end": "#45b5b7",
         "text_color": "#ffffff",

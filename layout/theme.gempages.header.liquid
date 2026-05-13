@@ -1,0 +1,151 @@
+<!doctype html>
+<html class="no-js " lang="{{ shop.locale }}">
+  <head>
+<script>
+    ttq.track('AddToCart', {
+        content_id: '9537594261785',  // Dynamic Product ID
+        content_type: 'product'
+    });
+</script>
+
+<script>
+    ttq.track('InitiateCheckout', {
+        content_id: '9537594261785',  // Your specific product ID
+        content_type: 'product'
+    });
+</script>
+
+
+
+<!-- TikTok Pixel Code Start -->
+<script>
+!function (w, d, t) {
+  w.TiktokAnalyticsObject=t;var ttq=w[t]=w[t]||[];ttq.methods=["page","track","identify","instances","debug","on","off","once","ready","alias","group","enableCookie","disableCookie","holdConsent","revokeConsent","grantConsent"],ttq.setAndDefer=function(t,e){t[e]=function(){t.push([e].concat(Array.prototype.slice.call(arguments,0)))}};for(var i=0;i<ttq.methods.length;i++)ttq.setAndDefer(ttq,ttq.methods[i]);ttq.instance=function(t){for(
+var e=ttq._i[t]||[],n=0;n<ttq.methods.length;n++)ttq.setAndDefer(e,ttq.methods[n]);return e},ttq.load=function(e,n){var r="https://analytics.tiktok.com/i18n/pixel/events.js",o=n&&n.partner;ttq._i=ttq._i||{},ttq._i[e]=[],ttq._i[e]._u=r,ttq._t=ttq._t||{},ttq._t[e]=+new Date,ttq._o=ttq._o||{},ttq._o[e]=n||{};n=document.createElement("script")
+;n.type="text/javascript",n.async=!0,n.src=r+"?sdkid="+e+"&lib="+t;e=document.getElementsByTagName("script")[0];e.parentNode.insertBefore(n,e)};
+
+
+  ttq.load('CSL2B8BC77UAJKLLNRMG');
+  ttq.page();
+}(window, document, 'ttq');
+</script>
+<script>
+!function (w, d, t) {
+  w.TiktokAnalyticsObject=t;var ttq=w[t]=w[t]||[];ttq.methods=["page","track","identify","instances","debug","on","off","once","ready","alias","group","enableCookie","disableCookie"],ttq.setAndDefer=function(t,e,n){t[e]=function(){t.push([e].concat(Array.prototype.slice.call(arguments,0)))}},ttq.instance=function(e){for(var n="ttqx",a=0;a<ttq.methods.length;a++){var r=ttq.methods[a];ttq.setAndDefer(n,r)}};for(var e=0;e<ttq.methods.length;e++){var n=ttq.methods[e];ttq.setAndDefer(ttq,n)}ttq.instance(),ttq.ready(),ttq.page();
+  w[t]("identify");
+}(window, document, 'ttq');
+
+ttq('init', 'CSL2B8BC77UAJKLLNRMG');
+ttq('track', 'PageView');
+</script>
+
+<!-- Replace 'YOUR_TIKTOK_PIXEL_ID' with your actual TikTok Pixel ID -->
+
+<!-- TikTok Pixel Code End -->
+<!-- Google tag (gtag.js) -->
+<script async src="https://www.googletagmanager.com/gtag/js?id=AW-16759381247"></script>
+<script>
+  window.dataLayer = window.dataLayer || [];
+  function gtag(){dataLayer.push(arguments);}
+  gtag('js', new Date());
+
+  gtag('config', 'AW-16759381247');
+</script>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+    <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+    <meta name="theme-color" content="{{ settings.color_header_bg }}">
+    <link rel="preconnect" href="//cdn.shopify.com" crossorigin>
+    <link rel="dns-prefetch" href="//cdn.shopify.com">
+    <link rel="preconnect" href="//fonts.shopify.com" crossorigin>
+    <link rel="dns-prefetch" href="//fonts.shopify.com">
+    <link rel="canonical" href="{{ canonical_url }}">
+    <link rel="preconnect" href="https://fonts.shopifycdn.com" crossorigin>
+    {%- unless settings.font_family.system? -%}
+    <link rel="preload" as="font" href="{{ settings.font_family | font_url }}" type="font/woff2" crossorigin>
+    <link rel="preload" as="font" href="{{ settings.font_family | font_url: 'woff' }}" type="font/woff" crossorigin>
+  {%- endunless -%}
+  {%- if settings.font_family2.system? == false and settings.font_family2 != settings.font_family -%}
+    <link rel="preload" as="font" href="{{ settings.font_family2 | font_url }}" type="font/woff2" crossorigin>
+    <link rel="preload" as="font" href="{{ settings.font_family2 | font_url: 'woff' }}" type="font/woff" crossorigin>
+  {%- endif -%}
+    {%- if settings.favicon != blank -%}
+      <link rel="shortcut icon" href="{{ settings.favicon | image_url: width: 32, height: 32 }}" type="image/png">
+    {%- endif -%}
+
+    <title>
+      {{ page_title }}
+      {% if current_tags %}
+        {% assign meta_tags = current_tags | join: ', ' %}
+        &ndash;
+        {{ 'general.meta.tags' | t: tags: meta_tags }}
+      {% endif %}
+      {% if current_page != 1 %}
+        &ndash;
+        {{ 'general.meta.page' | t: page: current_page }}
+      {% endif %}
+      {% unless page_title contains shop.name %}
+        &ndash;
+        {{ shop.name }}
+      {% endunless %}
+    </title>
+   
+    {%- if page_description -%}
+      <meta name="description" content="{{ page_description | escape }}">
+      {% else %}
+      <meta name="description" content="{{ settings.meta_description | escape }}">
+    {%- endif -%}
+    
+    {%- render 'social-meta-tags' -%}
+    {%- render 'header-css' -%}
+      <script src="{{ 'global.js' | asset_url }}" defer="defer"></script>
+    {{ content_for_header }}
+    {% comment %} GMC Verification {% endcomment %}
+  <meta name="google-site-verification" content="0OZ7zxV3z34Zi-7Ypd0cssThp_SLksFBajLB0nKm8ow" />
+  </head>
+
+
+  <body class="template-{{ template | replace: '.', ' ' | truncatewords: 1, '' | handle }} body-theme {% if settings.productpage == 'product-2' or settings.productpage == 'product-6' or settings.productpage == 'product-7' %} product-hide-breadcrumb {% endif %}">
+   {% assign lazy = false %}
+    <img {% if lazy %} loading = "lazy" {% endif %} width="99998" height="99999" alt="index" style="pointer-events: none; position: absolute; top: 0; left: 0; width: 98vw; height: 99vh; max-width: 98vw; max-height: 99vh;" src="data:image/svg+xml;base64,PD94bWwgdmVyc2lvbj0iMS4wIiBlbmNvZGluZz0iVVRGLTgiPz48c3ZnIHdpZHRoPSI5OTk5OXB4IiBoZWlnaHQ9Ijk5OTk5cHgiIHZpZXdCb3g9IjAgMCA5OTk5OSA5OTk5OSIgdmVyc2lvbj0iMS4xIiB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHhtbG5zOnhsaW5rPSJodHRwOi8vd3d3LnczLm9yZy8xOTk5L3hsaW5rIj48ZyBzdHJva2U9Im5vbmUiIGZpbGw9Im5vbmUiIGZpbGwtb3BhY2l0eT0iMCI+PHJlY3QgeD0iMCIgeT0iMCIgd2lkdGg9Ijk5OTk5IiBoZWlnaHQ9Ijk5OTk5Ij48L3JlY3Q+IDwvZz4gPC9zdmc+">
+    {%- render 'loading' -%}
+
+
+{%- unless template contains 'listicle' or template contains 'advertorial' or template contains 'offer' or template contains 'black-friday'-%}
+  {%- sections 'header-group' -%}
+{%- endunless -%}
+
+
+    <div class="page-container page-element is-moved-by-drawer">
+      {%- render 'breadcrumb' -%}
+      <main class="main-content" id="MainContent" role="main">
+        {%- if settings.enable_animationscroll -%}
+          <div id="js-scroll">
+          {% endif %}
+          {%- if settings.enable_animationscroll -%}
+            <div data-scroll-section>
+            {% endif %}
+            {%- render 'slideshow' -%}
+            {%- if settings.enable_animationscroll -%}
+            </div>
+          {% endif %}
+          {{ content_for_layout }}
+          {%- if settings.enable_animationscroll -%}
+          </div>
+        {% endif %}
+      </main>
+
+
+
+{%- unless template contains 'listicle' or template contains 'advertorial' -%}
+    
+{%- endunless -%}
+
+
+     
+    </div>
+    
+    
+   
+  </body>
+</html>

@@ -303,17 +303,21 @@
         "image_carousel_JUkA37": {
           "type": "image_carousel",
           "settings": {
+            "img_limit": 8,
             "badge_text": "",
             "badge_text_color": "#ffffff",
             "badge_bg_color": "#60a1a2",
             "badge_sold_text": "",
             "badge_sold_text_color": "#000000",
-            "badge_sold_bg_color": "#ffffff"
+            "badge_sold_bg_color": "#ffffff",
+            "mobile_thumbs": true,
+            "enable_zoom": true
           }
         },
         "rating_tLDxEm": {
           "type": "rating",
           "settings": {
+            "star_color": "#ffcc00",
             "text": "<p>Rated <strong>4.9 Excellent </strong>| <a href=\"#az_reviews\" title=\"#az_reviews\"><span style=\"text-decoration:underline\">323 Reviews</span></a></p>"
           }
         },
@@ -326,27 +330,30 @@
         "title_gKAAjx": {
           "type": "title",
           "settings": {
-            "title": "<h3>Topical DHT Blocker</h3>"
+            "title": "<h3>Topical DHT Blocker</h3><h4>Stop Hair Loss & Start Regrowth</h4>",
+            "text_color": "#282828",
+            "highlight_color": "#45b5b7"
           }
         },
         "desc_WRDQpg": {
           "type": "desc",
           "settings": {
-            "desc": "<p>A blend of 9 natural super-oils designed to strengthen hair, stimulate new growth, and hydrate the scalp. </p>"
+            "desc": "<p><strong>Less hair loss in 14 days. Real, visible regrowth in 60 days — or we'll refund your entire order. </strong>A blend of 9 natural super-oils designed to strengthen hair, stimulate new growth, and hydrate the scalp. </p>"
           }
         },
         "benefits_PTRfMA": {
           "type": "benefits",
           "settings": {
             "icon1": "shopify://shop_images/Natural_Hair_Support_Serum___Simply_Revival___Helps_maintain_fuller-looking_hair_with_consistent_use-min.png",
-            "text1": "Strengthens follicles to prevent hair loss",
+            "text1": "Supports Blocking DHT to Prevent Hair Loss",
             "icon2": "shopify://shop_images/Natural_Hair_Support_Serum___Simply_Revival___Deeply_hydrates_the_scalp_and_smooths_the_appearance_of_damaged_hair-min.png",
             "text2": "Hydrates Scalp & Repairs Damaged Hair",
             "icon3": "shopify://shop_images/bullet_icon_04-min.png",
-            "text3": "Reduces shedding for thicker, fuller hair",
+            "text3": "Strengthens Hair and Promotes New Growth",
             "icon4": "shopify://shop_images/bullet_icon_01-min.png",
-            "text4": "9 premium oils boost circulation and shine",
-            "text5": "",
+            "text4": "Formulated To Be Side Effect FREE",
+            "icon5": "shopify://shop_images/Simply_Revival___Safe_Blend-min.png",
+            "text5": "Designed for Men & Women",
             "text6": ""
           }
         },
@@ -358,14 +365,31 @@
         },
         "price_display_PeyPD7": {
           "type": "price_display",
-          "settings": {}
+          "settings": {
+            "save_label": "Save"
+          }
         },
         "product_options_L6gajx": {
           "type": "product_options",
           "settings": {
             "image1": "shopify://shop_images/Simply_Revival___Topical_DHT_Blocker_Serum-min.png",
+            "badge_text_1": "",
+            "servings_text_1": "1 Month Supply",
+            "bonus_text_1_opt1": "",
+            "bonus_text_2_opt1": "",
             "image2": "shopify://shop_images/Simply_Revival___Topical_DHT_Blocker_Serum___Buy_2_-_Get_1_FREE-min.png",
-            "image3": "shopify://shop_images/Simply_Revival___Topical_DHT_Blocker_Serum___Buy_One-min.png"
+            "badge_text_2": "Most Popular + Free Shipping",
+            "servings_text_2": "3 Month Supply",
+            "bonus_image_1_opt2": "shopify://shop_images/icon_prop_01.png",
+            "bonus_text_1_opt2": "+ FREE 365 Day Money Back Guarantee",
+            "bonus_text_2_opt2": "",
+            "image3": "shopify://shop_images/Simply_Revival___Topical_DHT_Blocker_Serum___Buy_One-min.png",
+            "badge_text_3": "Best Value + Free Shipping + Free $20 Gift Card",
+            "servings_text_3": "5 Month Supply",
+            "bonus_image_1_opt3": "shopify://shop_images/icon_prop_01.png",
+            "bonus_text_1_opt3": "+ FREE 365 Day Money Back Guarantee",
+            "bonus_image_2_opt3": "shopify://shop_images/icon_prop_02.png",
+            "bonus_text_2_opt3": "+ FREE $20 Gift Card"
           }
         },
         "subscription_toggle_fCCQgL": {
@@ -495,6 +519,87 @@
         "text_color": "#ffffff",
         "padding_top": 20,
         "padding_bottom": 20
+      }
+    },
+    "cwc_testimonial_images_CxCPAz": {
+      "type": "CWC_testimonial_images",
+      "blocks": {
+        "testimonial_image_6qDttd": {
+          "type": "testimonial_image",
+          "settings": {
+            "image": "shopify://shop_images/hf_20260501_151556_d434473b-32a7-4c67-8a58-806193d560d0.png"
+          }
+        },
+        "testimonial_image_pa8Gnf": {
+          "type": "testimonial_image",
+          "settings": {
+            "image": "shopify://shop_images/hf_20260323_221907_e89e7b56-f8f9-4023-9710-10d4b8d27860.png"
+          }
+        },
+        "testimonial_image_hcBdwz": {
+          "type": "testimonial_image",
+          "settings": {
+            "image": "shopify://shop_images/hf_20260501_150843_b7ba4162-5726-46ce-a8d7-d6e63337a55a.png"
+          }
+        },
+        "testimonial_image_bxmCkR": {
+          "type": "testimonial_image",
+          "settings": {
+            "image": "shopify://shop_images/hf_20260409_135556_1d13c0e1-4be2-46cf-bcc0-ff062f832089.png"
+          }
+        },
+        "testimonial_image_MKgwLU": {
+          "type": "testimonial_image",
+          "settings": {
+            "image": "shopify://shop_images/hf_20260501_152029_e94f447f-3651-4cf1-b4f2-6b13344466a5.png"
+          }
+        },
+        "testimonial_image_A4pmd6": {
+          "type": "testimonial_image",
+          "settings": {
+            "image": "shopify://shop_images/hf_20260429_033146_bc46e11b-916e-4616-95a4-919917a1215b.png"
+          }
+        },
+        "testimonial_image_6RhbHL": {
+          "type": "testimonial_image",
+          "settings": {
+            "image": "shopify://shop_images/hf_20260501_150652_87df958b-3d1c-4f41-bdc0-f49d569b00c9.png"
+          }
+        },
+        "testimonial_image_Lh6WnE": {
+          "type": "testimonial_image",
+          "settings": {
+            "image": "shopify://shop_images/hf_20260409_142435_d9a5a5b6-91ba-43f1-8bef-f2f4f300e041.png"
+          }
+        },
+        "testimonial_image_aJW8C7": {
+          "type": "testimonial_image",
+          "settings": {
+            "image": "shopify://shop_images/hf_20260501_152419_911ea4b0-2561-4925-99dd-c6a596c132fd.png"
+          }
+        }
+      },
+      "block_order": [
+        "testimonial_image_6qDttd",
+        "testimonial_image_pa8Gnf",
+        "testimonial_image_hcBdwz",
+        "testimonial_image_bxmCkR",
+        "testimonial_image_MKgwLU",
+        "testimonial_image_A4pmd6",
+        "testimonial_image_6RhbHL",
+        "testimonial_image_Lh6WnE",
+        "testimonial_image_aJW8C7"
+      ],
+      "name": "Testimonial Images",
+      "settings": {
+        "testimonial_list": "",
+        "section_title": "<h2>Real <strong>Hair Transformations</strong></h2>",
+        "bold_color": "#125657",
+        "section_subtitle": "",
+        "bg_color": "#fffee3",
+        "text_color": "#111111",
+        "padding_top": 32,
+        "padding_bottom": 32
       }
     },
     "cwc_social_proof_VhXP3J": {
@@ -778,87 +883,6 @@
         "title_color": "#000000",
         "caption_color": "#ffffff",
         "caption_bg": "#60a1a2",
-        "padding_top": 32,
-        "padding_bottom": 32
-      }
-    },
-    "cwc_testimonial_images_CxCPAz": {
-      "type": "CWC_testimonial_images",
-      "blocks": {
-        "testimonial_image_6qDttd": {
-          "type": "testimonial_image",
-          "settings": {
-            "image": "shopify://shop_images/image_review_-_topical_serum_08.png"
-          }
-        },
-        "testimonial_image_pa8Gnf": {
-          "type": "testimonial_image",
-          "settings": {
-            "image": "shopify://shop_images/image_review_-_topical_serum_09.png"
-          }
-        },
-        "testimonial_image_hcBdwz": {
-          "type": "testimonial_image",
-          "settings": {
-            "image": "shopify://shop_images/image_review_-_topical_serum_01.png"
-          }
-        },
-        "testimonial_image_bxmCkR": {
-          "type": "testimonial_image",
-          "settings": {
-            "image": "shopify://shop_images/image_review_-_topical_serum_07.png"
-          }
-        },
-        "testimonial_image_MKgwLU": {
-          "type": "testimonial_image",
-          "settings": {
-            "image": "shopify://shop_images/image_review_-_topical_serum_03.png"
-          }
-        },
-        "testimonial_image_A4pmd6": {
-          "type": "testimonial_image",
-          "settings": {
-            "image": "shopify://shop_images/image_review_-_topical_serum_07.png"
-          }
-        },
-        "testimonial_image_6RhbHL": {
-          "type": "testimonial_image",
-          "settings": {
-            "image": "shopify://shop_images/image_review_-_topical_serum_05.png"
-          }
-        },
-        "testimonial_image_Lh6WnE": {
-          "type": "testimonial_image",
-          "settings": {
-            "image": "shopify://shop_images/image_review_-_topical_serum_02.png"
-          }
-        },
-        "testimonial_image_aJW8C7": {
-          "type": "testimonial_image",
-          "settings": {
-            "image": "shopify://shop_images/image_review_-_topical_serum_06.png"
-          }
-        }
-      },
-      "block_order": [
-        "testimonial_image_6qDttd",
-        "testimonial_image_pa8Gnf",
-        "testimonial_image_hcBdwz",
-        "testimonial_image_bxmCkR",
-        "testimonial_image_MKgwLU",
-        "testimonial_image_A4pmd6",
-        "testimonial_image_6RhbHL",
-        "testimonial_image_Lh6WnE",
-        "testimonial_image_aJW8C7"
-      ],
-      "name": "Testimonial Images",
-      "settings": {
-        "testimonial_list": "",
-        "section_title": "<h2>25,000+ <strong>Hair Transformations</strong></h2>",
-        "bold_color": "#125657",
-        "section_subtitle": "",
-        "bg_color": "#fffee3",
-        "text_color": "#111111",
         "padding_top": 32,
         "padding_bottom": 32
       }
@@ -1148,7 +1172,7 @@
       ],
       "name": "Video Testimonials",
       "settings": {
-        "video_testimonials_collection": "video-testimonial-list-lnxzuxpg",
+        "video_testimonials_collection": "serum-men-and-women",
         "heading": "<h3>Real People, <strong>Real Results</strong></h3>",
         "bold_color": "#125657",
         "text": "<p>See why thousands of people love our products</p>",
@@ -1577,10 +1601,10 @@
     "cwc_product_template_eC4DbX",
     "cwc_featured_product_KLMcfz",
     "cwc_usp_columns_NPgtAB",
+    "cwc_testimonial_images_CxCPAz",
+    "cwc_product_highlight_rows_EUh8KV",
     "cwc_social_proof_VhXP3J",
     "cwc_testimonials_FPgtbf",
-    "cwc_product_highlight_rows_EUh8KV",
-    "cwc_testimonial_images_CxCPAz",
     "cwc_background_features_fzEHDf",
     "cwc_reasons_raQjiN",
     "cwc_video_testimonials_eKGcNw",
