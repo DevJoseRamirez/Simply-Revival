@@ -1,0 +1,76 @@
+<script>
+  (function () {
+    const OPT_OUT_KEY = 'shipping_protection_opted_out';
+    const MAX_ATTEMPTS = 8;
+    const THROTTLE_MS = 500;
+    const PER_INPUT_LOCK_MS = 800;
+    const DEBUG = false;
+
+    let lastRun = 0;
+
+    function log(...args) {
+      if (DEBUG) console.log('[ship-protect]', ...args);
+    }
+
+    function setCheckedReactSafe(input) {
+      try {
+        const setter = Object.getOwnPropertyDescriptor(HTMLInputElement.prototype, 'checked').set;
+        setter.call(input, true);
+        input.dispatchEvent(new Event('change', { bubbles: true }));
+      } catch (e) {
+        log('react setter error', e);
+      }
+    }
+
+    function tryActivate() {
+      const now = Date.now();
+      if (now - lastRun < THROTTLE_MS) return;
+      lastRun = now;
+
+      try {
+        if (window.__disableShipProtect) return;
+        if (sessionStorage.getItem(OPT_OUT_KEY) === 'true') return;
+
+        const input = document.querySelector('.upcart-public-addons input[type="checkbox"]');
+        if (!input) return;
+
+        // Use aria-checked — it reflects the true state without including 'loading'
+        if (input.getAttribute('aria-checked') === 'true') return;
+
+        const lockUntil = parseInt(input.dataset.lockUntil || '0', 10);
+        if (now < lockUntil) return;
+
+        const attempts = parseInt(input.dataset.attempts || '0', 10);
+        if (attempts >= MAX_ATTEMPTS) return;
+
+        input.dataset.attempts = String(attempts + 1);
+        input.dataset.lockUntil = String(now + PER_INPUT_LOCK_MS);
+
+        log('attempt', attempts + 1);
+
+        if (attempts === 0) {
+          const label = input.closest('label');
+          if (label) label.click();
+        } else if (attempts === 1) {
+          input.click();
+        } else {
+          setCheckedReactSafe(input);
+        }
+      } catch (e) {
+        log('tryActivate error', e);
+      }
+    }
+
+    function init() {
+      tryActivate();
+      const observer = new MutationObserver(tryActivate);
+      observer.observe(document.body, { childList: true, subtree: true });
+    }
+
+    if (document.readyState === 'loading') {
+      document.addEventListener('DOMContentLoaded', init);
+    } else {
+      init();
+    }
+  })();
+</script>

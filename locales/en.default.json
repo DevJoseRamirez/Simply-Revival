@@ -559,7 +559,9 @@
         "pay_now_button_label": "Secure My Order"
       },
       "order_summary": {
-        "recurring_subtotal_label": "365 Day Guarantee "
+        "recurring_subtotal_label": "365 Day Guarantee ",
+        "recurring_total_label": "Delivered Monthly",
+        "recurring_total_tooltip": "If you are not satisfied with your order, we’ll make it right!"
       },
       "payment": {
         "title": "Secure Checkout",
