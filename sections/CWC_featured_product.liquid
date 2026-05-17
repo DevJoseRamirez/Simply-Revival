@@ -25,6 +25,12 @@
   else
     assign current_product = null
   endif
+
+  if section.settings.savings_type
+    assign savings_type = 'percent'
+  else
+    assign savings_type = 'amount'
+  endif
 %}
 
 {% if current_product %}
@@ -34,6 +40,7 @@
     class="cwc-featured-product"
     data-section-id="{{ section.id }}"
     data-product-id="{{ current_product.id }}"
+    data-savings-type="{{ savings_type }}"
     data-variants="{{ current_product.variants | json | escape }}"
     data-selling-plans="{{ current_product.selling_plan_groups | json | escape }}"
   >
