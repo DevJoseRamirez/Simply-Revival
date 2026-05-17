@@ -561,13 +561,18 @@
       "order_summary": {
         "recurring_subtotal_label": "365 Day Guarantee ",
         "recurring_total_label": "Delivered Monthly",
-        "recurring_total_tooltip": "If you are not satisfied with your order, we’ll make it right!"
+        "recurring_total_tooltip": "If you are not satisfied with your order, we’ll make it right!",
+        "recurring_payments": "‎ ‎ ",
+        "recurring_total_multiple_label": "‎ ‎ "
       },
       "payment": {
         "title": "Secure Checkout",
         "card_information_notice": "All transactions are secure and encrypted. Your order includes our award winning 365 day guarantee and 24/7 access to customer service",
         "card_security_notice": "All transactions are secure and encrypted. Your order includes our award winning 365 day guarantee and 24/7 access to customer service",
         "purchase_options_agreement_label": "By proceeding, you agree to charges at the listed price and frequency until canceled. You can cancel at any time."
+      },
+      "subscriptions": {
+        "recurring_totals": "‎ ‎ "
       }
     },
     "subscriptions": {
