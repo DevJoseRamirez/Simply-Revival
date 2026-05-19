@@ -366,7 +366,7 @@
         "price_display_PeyPD7": {
           "type": "price_display",
           "settings": {
-            "save_label": "Save"
+            "save_label": "Memorial Day Sale - Save"
           }
         },
         "product_options_L6gajx": {
@@ -480,7 +480,8 @@
         "product": "hair-revival-serum",
         "background_color": "#ffffff",
         "padding_top": 40,
-        "padding_bottom": 40
+        "padding_bottom": 40,
+        "savings_display_type": "dollar"
       }
     },
     "cwc_usp_columns_NPgtAB": {
@@ -598,6 +599,54 @@
         "section_subtitle": "",
         "bg_color": "#fffee3",
         "text_color": "#111111",
+        "padding_top": 32,
+        "padding_bottom": 32
+      }
+    },
+    "cwc_product_highlight_rows_EUh8KV": {
+      "type": "CWC_product_highlight_rows",
+      "blocks": {
+        "highlight_row_fjEPnU": {
+          "type": "highlight_row",
+          "settings": {
+            "title": "🧬 The Problem: DHT",
+            "text": "<p>DHT is a hormone that binds to receptors in your scalp - In excess it shrinks follicles, causing hair to thin and shed.</p>",
+            "text_color": ""
+          }
+        },
+        "highlight_row_MnGEXr": {
+          "type": "highlight_row",
+          "settings": {
+            "title": "🌿 The Solution: Natural Blockers",
+            "text": "<p>Our formula combines vitamins, herbs, botanical extracts, and other natural ingredients to reduce DHT levels safely.</p>",
+            "text_color": ""
+          }
+        },
+        "highlight_row_8hmLn3": {
+          "type": "highlight_row",
+          "settings": {
+            "title": "💪 The Impact: Stronger Growth",
+            "text": "<p>By lowering DHT, your follicles stay open and nourished, supporting regrowth, thickness, and healthier hair long term.</p>",
+            "text_color": ""
+          }
+        }
+      },
+      "block_order": [
+        "highlight_row_fjEPnU",
+        "highlight_row_MnGEXr",
+        "highlight_row_8hmLn3"
+      ],
+      "name": "Image Benefits",
+      "settings": {
+        "featured_image": "shopify://shop_images/Simply_Revival_DHT__The_Hidden_Hormone_Behind_Hair_Loss-min.png",
+        "reverse_layout": false,
+        "section_title": "<h3><strong>DHT: The Hidden Hormone Behind Hair Loss</strong></h3>",
+        "section_caption": "We stop it naturally.",
+        "background_color": "#ffffff",
+        "text_color": "#000000",
+        "title_color": "#000000",
+        "caption_color": "#ffffff",
+        "caption_bg": "#60a1a2",
         "padding_top": 32,
         "padding_bottom": 32
       }
@@ -837,54 +886,6 @@
         "highlight_color": "#009370",
         "padding_top": 20,
         "padding_bottom": 20
-      }
-    },
-    "cwc_product_highlight_rows_EUh8KV": {
-      "type": "CWC_product_highlight_rows",
-      "blocks": {
-        "highlight_row_fjEPnU": {
-          "type": "highlight_row",
-          "settings": {
-            "title": "🧬 The Problem: DHT",
-            "text": "<p>DHT is a hormone that binds to receptors in your scalp - In excess it shrinks follicles, causing hair to thin and shed.</p>",
-            "text_color": ""
-          }
-        },
-        "highlight_row_MnGEXr": {
-          "type": "highlight_row",
-          "settings": {
-            "title": "🌿 The Solution: Natural Blockers",
-            "text": "<p>Our formula combines vitamins, herbs, botanical extracts, and other natural ingredients to reduce DHT levels safely.</p>",
-            "text_color": ""
-          }
-        },
-        "highlight_row_8hmLn3": {
-          "type": "highlight_row",
-          "settings": {
-            "title": "💪 The Impact: Stronger Growth",
-            "text": "<p>By lowering DHT, your follicles stay open and nourished, supporting regrowth, thickness, and healthier hair long term.</p>",
-            "text_color": ""
-          }
-        }
-      },
-      "block_order": [
-        "highlight_row_fjEPnU",
-        "highlight_row_MnGEXr",
-        "highlight_row_8hmLn3"
-      ],
-      "name": "Image Benefits",
-      "settings": {
-        "featured_image": "shopify://shop_images/Simply_Revival_DHT__The_Hidden_Hormone_Behind_Hair_Loss-min.png",
-        "reverse_layout": false,
-        "section_title": "<h3><strong>DHT: The Hidden Hormone Behind Hair Loss</strong></h3>",
-        "section_caption": "We stop it naturally.",
-        "background_color": "#ffffff",
-        "text_color": "#000000",
-        "title_color": "#000000",
-        "caption_color": "#ffffff",
-        "caption_bg": "#60a1a2",
-        "padding_top": 32,
-        "padding_bottom": 32
       }
     },
     "cwc_background_features_fzEHDf": {

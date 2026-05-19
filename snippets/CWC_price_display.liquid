@@ -16,6 +16,9 @@
     gap: 3rem;
     padding: 0.74rem 0rem;
     padding: 0.7rem 0rem;
+    /* justify-content: space-between; */
+    gap: 8px;
+    gap: 1.5rem;
   }
 
   .cwc-featured-product__price-current {
@@ -36,7 +39,7 @@
 
   .cwc-featured-product__price-save {
     font-size: inherit;
-    display: flex;
+    /* display: flex; */
     font-size: 0.9rem;
     font-weight: 600;
     color: #fff;
@@ -44,7 +47,11 @@
     background: #60a1a2;
     border-radius: 5px;
     gap: 8px;
-    gap: 4px;
+    /* gap: 4px; */
+
+    text-align: center;
+    width: max-content;
+    display: inline;
   }
   .cwc-featured-product__price-save span {
     font-size: inherit;
@@ -60,7 +67,7 @@
     }
     .cwc_product-template__price,
     .cwc-featured-product__price {
-      gap: 2rem;
+      /* gap: 2rem; */
     }
   }
   /* ================================
@@ -69,7 +76,7 @@
   @media (max-width: 768px) {
     .cwc_product-template__price,
     .cwc-featured-product__price {
-      display: flex;
+      /* display: flex; */
       align-items: center;
       justify-content: flex-start;
       margin: 0rem 0 1rem 0;
@@ -80,7 +87,7 @@
       padding: 0.5rem 0rem;
       gap: 1rem;
       font-size: 1.3125rem;
-      gap: 0rem;
+      /* gap: 0rem; */
       justify-content: space-between;
     }
     .cwc-featured-product__price-save {
@@ -99,8 +106,10 @@
       padding: 2px 4px;
       padding: 2px 6px;
       gap: 4px;
-      display: flex;
+      /* display: flex; */
       flex-wrap: wrap;
+      /*  */
+      /* max-width: 50%; */
     }
   }
 {% endstyle %}
@@ -137,8 +146,15 @@
 {% assign save_amount = compare_price | minus: display_price %}
 {% assign save_pct = save_amount | times: 100 | divided_by: compare_price | round %}
 
-{% assign save_amount_formatted = save_amount | money %}
+{% assign save_amount_formatted = save_amount | money_without_trailing_zeros %}
 {% assign save_pct_formatted = save_pct | append: '%' %}
+
+{% comment %} {{ section.settings.savings_display_type }} {% endcomment %}
+{% if section.settings.savings_display_type == 'dollar' %}
+  {% assign display_savings = save_amount_formatted %}
+{% else %}
+  {% assign display_savings = save_pct_formatted %}
+{% endif %}
 
 {% comment %} {{ save_amount_formatted }} {% endcomment %}
 {% comment %} {{ save_pct_formatted }} {% endcomment %}
@@ -156,7 +172,7 @@
     <span class="cwc-featured-product__price-save-label">{{ block.settings.save_label | default: 'Save' }}</span>
 
     <span class="cwc-featured-product__price-save-amount">
-      {{ save_pct_formatted }}
+      {{ display_savings }}
     </span>
   </div>
 {% endif %}

@@ -19,15 +19,28 @@ document.addEventListener("DOMContentLoaded", function () {
     const productId = section.dataset.productId;
     const variants = JSON.parse(section.dataset.variants || "[]");
     const sellingPlanGroups = JSON.parse(section.dataset.sellingPlans || "[]");
+    const savingsDisplayType = section.dataset.savingsDisplay || "dollar";
 
-    initFeaturedProduct(section, sectionId, variants, sellingPlanGroups);
+    initFeaturedProduct(
+      section,
+      sectionId,
+      variants,
+      sellingPlanGroups,
+      savingsDisplayType,
+    );
   });
 });
 
 /* =====================================================
    MAIN INITIALIZATION FUNCTION
    ===================================================== */
-function initFeaturedProduct(section, sectionId, variants, sellingPlanGroups) {
+function initFeaturedProduct(
+  section,
+  sectionId,
+  variants,
+  sellingPlanGroups,
+  savingsDisplayType = "dollar",
+) {
   /* -----------------------------------------------------
      DOM ELEMENT REFERENCES
      ----------------------------------------------------- */
@@ -248,6 +261,33 @@ function initFeaturedProduct(section, sectionId, variants, sellingPlanGroups) {
     }).format(priceInCents / 100);
   }
 
+  /**
+   * Format the savings amount as either a dollar value or a percentage.
+   * Display type is controlled by the section's `data-savings-display`
+   * attribute (read into `savingsDisplayType` at section init).
+   *
+   *   savingsDisplayType === "percentage"  →  "25%"
+   *   savingsDisplayType === "dollar"       →  "$20.00"  (default)
+   *
+   * @param {number} comparePriceCents - Compare/original price in cents
+   * @param {number} currentPriceCents - Display/current price in cents
+   * @returns {string} Formatted savings value (no "Save" label)
+   */
+  function formatSavings(comparePriceCents, currentPriceCents) {
+    const savings = comparePriceCents - currentPriceCents;
+
+    console.log(savings);
+    console.log("savings");
+    if (savings <= 0 || !comparePriceCents) return "";
+
+    if (savingsDisplayType === "percentage") {
+      const pct = Math.round((savings / comparePriceCents) * 100);
+      return `${pct}%`;
+    }
+    // Default — dollar amount
+    return formatPrice(savings);
+  }
+
   /* -----------------------------------------------------
      BUTTON PRICE UPDATES
      ----------------------------------------------------- */
@@ -321,9 +361,8 @@ function initFeaturedProduct(section, sectionId, variants, sellingPlanGroups) {
           compareEl.style.display = "inline";
         }
         if (saveEl) {
-          const savings = displayComparePrice - displayPrice;
-          const savingsPct = Math.round((savings / displayComparePrice) * 100);
-          saveEl.textContent = `You Save ${savingsPct}%`;
+          const savingsText = formatSavings(displayComparePrice, displayPrice);
+          saveEl.textContent = `You Save ${savingsText}`;
           saveEl.style.display = "inline";
         }
       } else {
@@ -463,9 +502,22 @@ function initFeaturedProduct(section, sectionId, variants, sellingPlanGroups) {
         compareElement.style.display = "inline";
       }
       if (saveElement) {
-        const savings = displayComparePrice - displayPrice;
-        saveElement.innerHTML =
-          "<span>Save</span> " + `<span>${formatPrice(savings)}</span>`;
+        // Target the dedicated inner amount span — leaves the static "Save"
+        // label markup intact instead of rebuilding the parent's innerHTML.
+        // Falls back to writing to the parent for older markup that doesn't
+        // have a dedicated amount span.
+        const saveAmountEl = saveElement.querySelector(
+          ".cwc-featured-product__price-save-amount",
+        );
+        const savingsText = formatSavings(displayComparePrice, displayPrice);
+
+        if (saveAmountEl) {
+          saveAmountEl.textContent = savingsText;
+        } else {
+          // Legacy fallback — preserves prior behavior
+          saveElement.innerHTML =
+            "<span>Save</span> " + `<span>${savingsText}</span>`;
+        }
         saveElement.style.display = "flex";
       }
 

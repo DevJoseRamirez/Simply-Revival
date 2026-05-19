@@ -25,12 +25,6 @@
   else
     assign current_product = null
   endif
-
-  if section.settings.savings_type
-    assign savings_type = 'percent'
-  else
-    assign savings_type = 'amount'
-  endif
 %}
 
 {% if current_product %}
@@ -40,9 +34,9 @@
     class="cwc-featured-product"
     data-section-id="{{ section.id }}"
     data-product-id="{{ current_product.id }}"
-    data-savings-type="{{ savings_type }}"
     data-variants="{{ current_product.variants | json | escape }}"
     data-selling-plans="{{ current_product.selling_plan_groups | json | escape }}"
+    data-savings-display="{{ section.settings.savings_display_type }}"
   >
     <div class="cwc-featured-product__wrapper">
       <div class="cwc-featured-product__grid">
@@ -330,6 +324,23 @@
       "max": 200,
       "step": 5,
       "unit": "px"
+    },
+    {
+      "type": "select",
+      "id": "savings_display_type",
+      "label": "Savings Display Type",
+      "options": [
+        {
+          "value": "dollar",
+          "label": "Show Dollar Amount"
+        },
+        {
+          "value": "percentage",
+          "label": "Show Percentage"
+        }
+      ],
+      "default": "dollar",
+      "info": "Choose whether to display savings as dollar amount or percentage"
     }
   ],
   "blocks": [

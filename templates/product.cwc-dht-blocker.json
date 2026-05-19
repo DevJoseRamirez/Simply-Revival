@@ -230,7 +230,7 @@
         "price_display_8LMwX6": {
           "type": "price_display",
           "settings": {
-            "save_label": "SPRING SALE - Save"
+            "save_label": "Memorial Day Sale - Save"
           }
         },
         "low_stock_rLxPtY": {
@@ -418,7 +418,8 @@
         "product": "",
         "background_color": "#ffffff",
         "padding_top": 40,
-        "padding_bottom": 40
+        "padding_bottom": 40,
+        "savings_display_type": "dollar"
       }
     },
     "cwc_product_template_eC4DbX": {

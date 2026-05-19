@@ -27,6 +27,13 @@ document.addEventListener("DOMContentLoaded", function () {
    ===================================================== */
 function initFeaturedProductUI(section, sectionId) {
   /* -----------------------------------------------------
+     CONFIG
+     ----------------------------------------------------- */
+  // Display mode for savings: "percentage" → "25%", "dollar" → "$20.00"
+  // Mirrors what Core reads, but UI owns presentation decisions.
+  const savingsDisplayType = section.dataset.savingsDisplay || "dollar";
+
+  /* -----------------------------------------------------
      DOM REFERENCES
      ----------------------------------------------------- */
   const addToCartButton = section.querySelector(`#add-to-cart-${sectionId}`);
@@ -38,12 +45,96 @@ function initFeaturedProductUI(section, sectionId) {
   /* =====================================================
      UTILITY FUNCTIONS
      ===================================================== */
-  function formatPrice(priceInCents, currencyCode = "USD") {
-    return new Intl.NumberFormat("en-US", {
+  function formatPrice(priceInCents, currencyCode = "USD", noDecimals = false) {
+    const options = {
       style: "currency",
       currency: currencyCode,
-    }).format(priceInCents / 100);
+    };
+    if (noDecimals) {
+      options.minimumFractionDigits = 0;
+      options.maximumFractionDigits = 0;
+    }
+    return new Intl.NumberFormat("en-US", options).format(priceInCents / 100);
   }
+
+  /**
+   * Format savings as either a dollar amount or a percentage, per
+   * the section's `data-savings-display` attribute.
+   *
+   *   savingsDisplayType === "percentage"  →  "25%"
+   *   savingsDisplayType === "dollar"      →  "$20.00"  (default)
+   *
+   * @param {number} savingsInCents  - Raw savings amount (cents)
+   * @param {number} savingsPercent  - Pre-calculated savings percentage (integer)
+   * @returns {string} Formatted savings value (no "Save" label)
+   */
+  function formatSavings(savingsInCents, savingsPercent) {
+    if (!savingsInCents || savingsInCents <= 0) return "";
+
+    if (savingsDisplayType === "percentage") {
+      return `${savingsPercent}%`;
+    }
+
+    let cents = savingsInCents;
+    let useWholeNumber = false;
+
+    // --- OPTIONAL: round dollar savings down to nearest $10 ---
+    // Safe `typeof` guard means commenting out the block below
+    // does NOT break this function — it just falls through.
+    if (
+      typeof ROUND_DOLLAR_SAVINGS !== "undefined" &&
+      ROUND_DOLLAR_SAVINGS &&
+      typeof roundSavingsDownDollar === "function"
+    ) {
+      cents = roundSavingsDownDollar(cents);
+      // Drop cents only when the value cleared the rounding threshold
+      // (so under-threshold values like $9.99 still display accurately
+      // as "$9.99" rather than being mis-rounded to "$10").
+      useWholeNumber =
+        typeof ROUND_DOLLAR_MIN_CENTS === "undefined" ||
+        cents >= ROUND_DOLLAR_MIN_CENTS;
+    }
+
+    return formatPrice(cents, "USD", useWholeNumber);
+  }
+
+  /* =====================================================
+     OPTIONAL · ROUND DOLLAR SAVINGS DOWN TO CLEAN NUMBER
+     =====================================================
+     When enabled, dollar savings round DOWN to nearest $10 AND
+     drop the `.00` for cleaner marketing copy:
+         $31.98  →  $30
+         $128.50 →  $120
+         $200    →  $200
+         $9.99   →  $9.99   (under threshold, kept as-is so we
+                              don't lie and round it up to $10)
+
+     Affects: main price-save label AND option-button save labels.
+     Percentage mode is unaffected.
+
+     Configuration:
+     • ROUND_DOLLAR_SAVINGS      false → off (default) · true → on
+     • ROUND_DOLLAR_BUCKET_CENTS step in cents (1000 = $10)
+     • ROUND_DOLLAR_MIN_CENTS    don't round savings below this
+                                  (also the cutoff for dropping cents)
+
+     To disable: set ROUND_DOLLAR_SAVINGS = false
+     To remove:  comment out (or delete) this entire block — the
+                 formatSavings function has a typeof guard and will
+                 fall through to exact-amount display.
+     ===================================================== */
+     // const ROUND_DOLLAR_SAVINGS = false; // ← flip to true to enable
+     const ROUND_DOLLAR_SAVINGS = true; // ← flip to true to enable
+  const ROUND_DOLLAR_BUCKET_CENTS = 1000; // 1000 = $10 · 500 = $5 · 10000 = $100
+  const ROUND_DOLLAR_MIN_CENTS = 1000; // don't round amounts smaller than this
+
+  function roundSavingsDownDollar(cents) {
+    if (cents < ROUND_DOLLAR_MIN_CENTS) return cents;
+    return (
+      Math.floor(cents / ROUND_DOLLAR_BUCKET_CENTS) * ROUND_DOLLAR_BUCKET_CENTS
+    );
+  }
+  /* === END OPTIONAL · ROUND DOLLAR SAVINGS === */
 
   /* =====================================================
      PRICE DISPLAY UPDATES
@@ -51,9 +142,8 @@ function initFeaturedProductUI(section, sectionId) {
   function updateMainPriceDisplay(prices) {
     if (!prices) return;
 
-    const { price, comparePrice, savings } = prices;
-    console.log(savings);
-    console.log("savings");
+    const { price, comparePrice, savings, savingsPercent } = prices;
+
     // Main price element
     const priceElement =
       currentPriceEl ||
@@ -73,54 +163,26 @@ function initFeaturedProductUI(section, sectionId) {
       saveAmountEl ||
       section.querySelector(".cwc-featured-product__price-save");
 
-    // const savings = comparePrice - price;
-    const savingsPct = Math.round((savings / comparePrice) * 100);
-
     if (comparePrice && comparePrice > price) {
       if (compareElement) {
         compareElement.textContent = formatPrice(comparePrice);
-        compareElement.style.display = "inline";
+        // compareElement.style.display = "inline";
       }
       if (saveElement) {
+        // Target the dedicated inner amount span so the static "Save" label
+        // markup (.cwc-featured-product__price-save-label) is preserved.
         const saveAmountSpan = saveElement.querySelector(
           ".cwc-featured-product__price-save-amount",
         );
-        if (saveAmountSpan) saveAmountSpan.textContent = savingsPct + "%";
-        saveElement.style.display = "flex";
+        if (saveAmountSpan) {
+          saveAmountSpan.textContent = formatSavings(savings, savingsPercent);
+        }
+        // saveElement.style.display = "inline";
       }
     } else {
       if (compareElement) compareElement.style.display = "none";
       if (saveElement) saveElement.style.display = "none";
     }
-    // if (comparePrice && comparePrice > price) {
-    //   if (compareElement) {
-    //     compareElement.textContent = formatPrice(comparePrice);
-    //     compareElement.style.display = "inline";
-    //   }
-    //   if (saveElement) {
-    //     const saveAmountSpan = saveElement.querySelector(
-    //       ".cwc-featured-product__price-save-amount",
-    //     );
-    //     if (saveAmountSpan) saveAmountSpan.textContent = formatPrice(savings);
-    //     saveElement.style.display = "flex";
-    //   }
-    // } else {
-    //   if (compareElement) compareElement.style.display = "none";
-    //   if (saveElement) saveElement.style.display = "none";
-    // }
-    // if (comparePrice && comparePrice > price) {
-    //   if (compareElement) {
-    //     compareElement.textContent = formatPrice(comparePrice);
-    //     compareElement.style.display = "inline";
-    //   }
-    //   if (saveElement) {
-    //     saveElement.innerHTML = `<span>Save</span> <span>${formatPrice(savings)}</span>`;
-    //     saveElement.style.display = "flex";
-    //   }
-    // } else {
-    //   if (compareElement) compareElement.style.display = "none";
-    //   if (saveElement) saveElement.style.display = "none";
-    // }
   }
 
   function updateButtonPriceDisplay(prices) {
@@ -222,7 +284,7 @@ function initFeaturedProductUI(section, sectionId) {
         if (saveEl) {
           const savings = comparePrice - displayPrice;
           const savingsPct = Math.round((savings / comparePrice) * 100);
-          saveEl.textContent = `You Save ${savingsPct}%`;
+          saveEl.textContent = `You Save ${formatSavings(savings, savingsPct)}`;
           saveEl.style.display = "inline";
         }
       } else {

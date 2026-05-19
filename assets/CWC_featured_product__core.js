@@ -19,8 +19,15 @@ document.addEventListener("DOMContentLoaded", function () {
     const sectionId = section.dataset.sectionId;
     const variants = JSON.parse(section.dataset.variants || "[]");
     const sellingPlanGroups = JSON.parse(section.dataset.sellingPlans || "[]");
+    const savingsDisplayType = section.dataset.savingsDisplay || "dollar";
 
-    initFeaturedProductCore(section, sectionId, variants, sellingPlanGroups);
+    initFeaturedProductCore(
+      section,
+      sectionId,
+      variants,
+      sellingPlanGroups,
+      savingsDisplayType,
+    );
   });
 });
 
@@ -32,6 +39,7 @@ function initFeaturedProductCore(
   sectionId,
   variants,
   sellingPlanGroups,
+  savingsDisplayType = "dollar",
 ) {
   /* -----------------------------------------------------
      DOM REFERENCES
