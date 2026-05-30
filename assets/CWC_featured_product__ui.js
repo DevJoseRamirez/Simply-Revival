@@ -123,8 +123,7 @@ function initFeaturedProductUI(section, sectionId) {
                  formatSavings function has a typeof guard and will
                  fall through to exact-amount display.
      ===================================================== */
-     // const ROUND_DOLLAR_SAVINGS = false; // ← flip to true to enable
-     const ROUND_DOLLAR_SAVINGS = true; // ← flip to true to enable
+  const ROUND_DOLLAR_SAVINGS = true; // ← flip to true to enable
   const ROUND_DOLLAR_BUCKET_CENTS = 1000; // 1000 = $10 · 500 = $5 · 10000 = $100
   const ROUND_DOLLAR_MIN_CENTS = 1000; // don't round amounts smaller than this
 
@@ -166,7 +165,7 @@ function initFeaturedProductUI(section, sectionId) {
     if (comparePrice && comparePrice > price) {
       if (compareElement) {
         compareElement.textContent = formatPrice(comparePrice);
-        // compareElement.style.display = "inline";
+        compareElement.style.display = "inline";
       }
       if (saveElement) {
         // Target the dedicated inner amount span so the static "Save" label
@@ -177,7 +176,7 @@ function initFeaturedProductUI(section, sectionId) {
         if (saveAmountSpan) {
           saveAmountSpan.textContent = formatSavings(savings, savingsPercent);
         }
-        // saveElement.style.display = "inline";
+        saveElement.style.display = "inline";
       }
     } else {
       if (compareElement) compareElement.style.display = "none";
@@ -282,9 +281,13 @@ function initFeaturedProductUI(section, sectionId) {
           compareEl.style.display = "inline";
         }
         if (saveEl) {
+          // Option-button savings ALWAYS display as percentage, independent
+          // of the section's `savings_display_type` setting (which only
+          // controls the main price display). Keeps option buttons compact
+          // and on-brand regardless of the dollar/percent toggle.
           const savings = comparePrice - displayPrice;
           const savingsPct = Math.round((savings / comparePrice) * 100);
-          saveEl.textContent = `You Save ${formatSavings(savings, savingsPct)}`;
+          saveEl.textContent = `You Save ${savingsPct}%`;
           saveEl.style.display = "inline";
         }
       } else {

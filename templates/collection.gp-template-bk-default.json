@@ -8,111 +8,111 @@
  * ------------------------------------------------------------
  */
 {
-  "order": [
-    "collection-banner",
-    "product-grid",
-    "product_with_image_B7LTKC"
-  ],
   "sections": {
     "collection-banner": {
+      "type": "main-collection-banner",
       "disabled": true,
       "settings": {
-        "bg_color": "#f4efe9",
-        "des_all": "<p>Shop now, not later. Browse the best of our favorite sale styles and brands.</p>",
-        "enable_collection": true,
-        "enable_count": true,
-        "heading_size": "h2",
-        "image_overlay_color": "#000000",
-        "image_overlay_opacity": 50,
-        "image_text_color": "#ffffff",
-        "img_height": "350px",
-        "link_list_head": "",
-        "save_allproducts": true,
         "show_breadcrumb": true,
+        "width_breadcrumb": "container-fluid",
         "show_collection_description": true,
         "show_collection_image": true,
-        "style_banner": "full",
+        "save_allproducts": true,
         "title_all": "All Products",
-        "width_breadcrumb": "container-fluid"
-      },
-      "type": "main-collection-banner"
+        "des_all": "<p>Shop now, not later. Browse the best of our favorite sale styles and brands.</p>",
+        "style_banner": "full",
+        "heading_size": "h2",
+        "img_height": "350px",
+        "bg_color": "#f4efe9",
+        "image_text_color": "#ffffff",
+        "image_overlay_color": "#000000",
+        "image_overlay_opacity": 50,
+        "enable_collection": true,
+        "enable_count": true,
+        "link_list_head": ""
+      }
     },
     "product-grid": {
+      "type": "main-collection-template",
       "disabled": true,
       "settings": {
-        "collection_perrow": "2",
         "collection_width": "container",
-        "enable_color": true,
-        "enable_edit_item": false,
-        "enable_filtering": false,
-        "enable_list_collection": false,
-        "enable_sorting": false,
+        "products_per_page": 8,
+        "collection_perrow": "2",
+        "type_pagination": "pagi",
         "enable_viewcolumn": true,
+        "enable_filtering": false,
+        "enable_sorting": false,
         "filter_type": "vertical",
         "first_group": false,
-        "link_list_head": "",
         "open_group": true,
-        "padding_bottom": 48,
-        "padding_top": 48,
-        "products_per_page": 8,
-        "select_item": "product-7",
+        "enable_color": true,
+        "type_color": false,
         "style_color": "color_grid",
         "style_size": "grid",
-        "type_color": false,
-        "type_pagination": "pagi"
-      },
-      "type": "main-collection-template"
+        "enable_edit_item": false,
+        "select_item": "product-7",
+        "enable_list_collection": false,
+        "link_list_head": "",
+        "padding_top": 48,
+        "padding_bottom": 48
+      }
     },
     "product_with_image_B7LTKC": {
+      "type": "product-with-image",
+      "blocks": {
+        "banner_C9mncU": {
+          "type": "banner",
+          "settings": {
+            "subtitle": "",
+            "title": "",
+            "size_text": "h2",
+            "subtext": "",
+            "pos_banner": "mid-center",
+            "button": "",
+            "link": "",
+            "style_btn": "btn-underline btn-underline-white",
+            "image": "shopify://shop_images/DHT_IN_HAND.png",
+            "video": "",
+            "colortabimage": "#ffffff",
+            "bg-overlay": "#000000",
+            "bg-opacity": 0.2
+          }
+        },
+        "product_MdPCiL": {
+          "type": "product",
+          "settings": {
+            "product_list": [
+              "simply®-dht-blocker"
+            ],
+            "column": "1",
+            "limit": 4
+          }
+        }
+      },
       "block_order": [
         "banner_C9mncU",
         "product_MdPCiL"
       ],
-      "blocks": {
-        "banner_C9mncU": {
-          "settings": {
-            "bg-opacity": 0.2,
-            "bg-overlay": "#000000",
-            "button": "",
-            "colortabimage": "#ffffff",
-            "image": "shopify://shop_images/DHT_IN_HAND.png",
-            "link": "",
-            "pos_banner": "mid-center",
-            "size_text": "h2",
-            "style_btn": "btn-underline btn-underline-white",
-            "subtext": "",
-            "subtitle": "",
-            "title": "",
-            "video": ""
-          },
-          "type": "banner"
-        },
-        "product_MdPCiL": {
-          "settings": {
-            "column": "1",
-            "limit": 4,
-            "product_list": [
-              "simply®-dht-blocker"
-            ]
-          },
-          "type": "product"
-        }
-      },
       "settings": {
-        "align-heading": "center",
         "animation": "",
-        "bgsection": "#ffffff",
-        "des": "",
-        "marginmobile": "0px 0px 0px 0px",
-        "marginsection": "0px 0px 0px 0px",
-        "paddingmobile": "40px 0px 40px 0px",
-        "paddingsection": "0px 0px 0px 0px",
-        "pos_image": "normal",
         "setwidth": "container",
+        "bgsection": "#ffffff",
+        "title_top": "",
         "title": "",
-        "title_top": ""
-      },
-      "type": "product-with-image"
+        "des": "",
+        "align-heading": "center",
+        "pos_image": "normal",
+        "paddingsection": "0px 0px 0px 0px",
+        "paddingmobile": "40px 0px 40px 0px",
+        "marginsection": "0px 0px 0px 0px",
+        "marginmobile": "0px 0px 0px 0px"
+      }
     }
-  }
+  },
+  "order": [
+    "collection-banner",
+    "product-grid",
+    "product_with_image_B7LTKC"
+  ]
 }

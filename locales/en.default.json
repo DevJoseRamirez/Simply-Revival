@@ -568,16 +568,11 @@
       "payment": {
         "title": "Secure Checkout",
         "card_information_notice": "All transactions are secure and encrypted. Your order includes our award winning 365 day guarantee and 24/7 access to customer service",
-        "card_security_notice": "All transactions are secure and encrypted. Your order includes our award winning 365 day guarantee and 24/7 access to customer service",
-        "purchase_options_agreement_label": "By proceeding, you agree to charges at the listed price and frequency until canceled. You can cancel at any time."
+        "card_security_notice": "All transactions are secure and encrypted. Your order includes our award winning 365 day guarantee and 24/7 access to customer service"
       },
       "subscriptions": {
         "recurring_totals": "‎ ‎ "
       }
-    },
-    "subscriptions": {
-      "buyer_consent_product": "By proceeding, you agree to charges at the listed price and frequency until canceled. You can cancel at any time.",
-      "buyer_consent_cart": "By proceeding, you agree to charges at the listed price and frequency until canceled. You can cancel at any time."
     }
   },
   "templates": {

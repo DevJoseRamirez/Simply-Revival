@@ -11,7 +11,7 @@
   "sections": {
     "gp_section_614710286959510187": {
       "settings": {
-        "checksum": "bdb60e4f7f31ace48c0ed04519c4c6a62e9ad743b935a1619f607b807eb85a19_1_1_1_0__1",
+        "checksum": "bdb60e4f7f31ace48c0ed04519c4c6a62e9ad743b935a1619f607b807eb85a19_1_1_0_0__1",
         "section_preload": "true"
       },
       "type": "gp-section-614710286959510187"
@@ -19,6 +19,5 @@
   },
   "order": [
     "gp_section_614710286959510187"
-  ],
-  "layout": "theme.gempages.blank"
+  ]
 }

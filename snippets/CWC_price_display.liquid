@@ -74,6 +74,10 @@
    Mobile Responsive (max-width: 768px)
    ================================ */
   @media (max-width: 768px) {
+
+      .cwc-featured-product__price-save span {
+      font-size: 0.76rem;
+    }
     .cwc_product-template__price,
     .cwc-featured-product__price {
       /* display: flex; */
@@ -172,7 +176,7 @@
     <span class="cwc-featured-product__price-save-label">{{ block.settings.save_label | default: 'Save' }}</span>
 
     <span class="cwc-featured-product__price-save-amount">
-      {{ display_savings }}
+      {% comment %} {{ display_savings }} {% endcomment %}
     </span>
   </div>
 {% endif %}

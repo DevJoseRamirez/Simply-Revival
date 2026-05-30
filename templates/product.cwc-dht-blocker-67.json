@@ -174,17 +174,21 @@
         "image_carousel_jFp4EA": {
           "type": "image_carousel",
           "settings": {
+            "img_limit": 8,
             "badge_text": "",
             "badge_text_color": "#ffffff",
             "badge_bg_color": "#60a1a2",
             "badge_sold_text": "",
             "badge_sold_text_color": "#000000",
-            "badge_sold_bg_color": "#ffffff"
+            "badge_sold_bg_color": "#ffffff",
+            "mobile_thumbs": true,
+            "enable_zoom": true
           }
         },
         "rating_j6tWzb": {
           "type": "rating",
           "settings": {
+            "star_color": "#ffcc00",
             "text": "<p>Rated <strong>4.8 Excellent </strong>| <a href=\"#az_reviews\" title=\"#az_reviews\"><span style=\"text-decoration:underline\">25,593 Reviews</span></a></p>"
           }
         },
@@ -197,33 +201,37 @@
         "title_iKGYG9": {
           "type": "title",
           "settings": {
-            "title": "<h3>Natural DHT Blocker</h3>"
+            "title": "<h3>Natural DHT Blocker</h3><h4>Less Shedding, Healthier Growth</h4>",
+            "text_color": "#282828",
+            "highlight_color": "#45b5b7"
           }
         },
         "desc_aVrjLU": {
           "type": "desc",
           "settings": {
-            "desc": "<p>Thicker, fuller hair in 30 days - This natural formula contains a blend of 10 ancient herbs designed to stop hair loss & stimulate new growth.</p>"
+            "desc": "<p><strong>See less shedding in 14 days. Noticeably fuller, thicker hair in 60 days — or we'll refund your entire order. </strong>A natural blend of 10 ancient herbs formulated to support healthy DHT balance, healthier-looking, fuller hair — without relying on harsh ingredients.*</p>"
           }
         },
         "benefits_XqmTFX": {
           "type": "benefits",
           "settings": {
             "icon1": "shopify://shop_images/bullet_icon_04-min.png",
-            "text1": "Supports Blocking DHT To Prevent Hair Loss",
+            "text1": "Supports Blocking DHT - Reduce Hair Loss",
             "icon2": "shopify://shop_images/bullet_icon_02-min.png",
-            "text2": "Strengthens Hair & Promotes New Growth",
+            "text2": "Strengthens Hair & Supports Growth",
             "icon3": "shopify://shop_images/bullet_icon_03-min.png",
-            "text3": "Restores Balance & Gut Health",
+            "text3": "Restores Balance & Side Effect Free",
             "icon4": "shopify://shop_images/bullet_icon_01-min.png",
-            "text4": "Nutrient-rich For Natural Healing",
+            "text4": "Nutrient-Rich For Overall Health",
             "text5": "",
             "text6": ""
           }
         },
         "price_display_8LMwX6": {
           "type": "price_display",
-          "settings": {}
+          "settings": {
+            "save_label": "Save"
+          }
         },
         "product_options_K4yi8r": {
           "type": "product_options",
@@ -231,19 +239,28 @@
             "image1": "shopify://shop_images/Simply_Revival___Natural_Hair_Support_Blend___Buy_One-min.png",
             "badge_text_1": "",
             "servings_text_1": "1 Months Supply",
+            "bonus_text_1_opt1": "",
+            "bonus_text_2_opt1": "",
             "image2": "shopify://shop_images/Simply_Revival___Natural_Hair_Support_Blend___Buy_2_-_Get_1_FREE-min.png",
-            "badge_text_2": "Most Popular + Free Shipping",
-            "servings_text_2": "2 Months Supply",
+            "badge_text_2": "Most Popular + 1 FREE Bottle",
+            "servings_text_2": "3 Months Supply",
+            "bonus_image_1_opt2": "shopify://shop_images/icon_prop_01.png",
+            "bonus_text_1_opt2": "+ 365 Day Money Back Guarantee",
+            "bonus_text_2_opt2": "",
             "image3": "shopify://shop_images/Simply_Revival___Natural_Hair_Support_Blend___Buy_3_-_Get_2_FREE-min.png",
-            "badge_text_3": "Best Value + Free $20 Gift Card",
-            "servings_text_3": "3 Months Supply"
+            "badge_text_3": "FREE Shipping + 2 FREE Bottles + Free $20 Gift Card",
+            "servings_text_3": "5 Months Supply",
+            "bonus_image_1_opt3": "shopify://shop_images/icon_prop_01.png",
+            "bonus_text_1_opt3": "+ FREE 365 Day Money Back Guarantee",
+            "bonus_image_2_opt3": "shopify://shop_images/icon_prop_02.png",
+            "bonus_text_2_opt3": "+ FREE $20 Gift Card"
           }
         },
         "subscription_toggle_ArNDfx": {
           "type": "subscription_toggle",
           "settings": {
-            "title": "Save 25% With Automatic Refills!",
-            "subtitle": "Zero Commitment | Exclusive Discounts | Cancel Anytime"
+            "title": "Save With Automatic Refills!",
+            "subtitle": "Refills ship every 25 days | Cancel Anytime"
           }
         },
         "delivery_estimate_g6E4Az": {
@@ -344,7 +361,8 @@
         "product": "",
         "background_color": "#ffffff",
         "padding_top": 40,
-        "padding_bottom": 40
+        "padding_bottom": 40,
+        "savings_display_type": "dollar"
       }
     },
     "cwc_product_template_eC4DbX": {
@@ -552,6 +570,135 @@
         "text_color": "#ffffff",
         "padding_top": 20,
         "padding_bottom": 20
+      }
+    },
+    "cwc_testimonial_images_CxCPAz": {
+      "type": "CWC_testimonial_images",
+      "blocks": {
+        "testimonial_image_6qDttd": {
+          "type": "testimonial_image",
+          "settings": {
+            "image": "shopify://shop_images/hf_20260323_221907_e89e7b56-f8f9-4023-9710-10d4b8d27860.png"
+          }
+        },
+        "testimonial_image_pa8Gnf": {
+          "type": "testimonial_image",
+          "settings": {
+            "image": "shopify://shop_images/hf_20260409_135556_1d13c0e1-4be2-46cf-bcc0-ff062f832089.png"
+          }
+        },
+        "testimonial_image_hcBdwz": {
+          "type": "testimonial_image",
+          "settings": {
+            "image": "shopify://shop_images/hf_20260429_033146_bc46e11b-916e-4616-95a4-919917a1215b.png"
+          }
+        },
+        "testimonial_image_bxmCkR": {
+          "type": "testimonial_image",
+          "settings": {
+            "image": "shopify://shop_images/hf_20260409_142435_d9a5a5b6-91ba-43f1-8bef-f2f4f300e041.png"
+          }
+        },
+        "testimonial_image_MKgwLU": {
+          "type": "testimonial_image",
+          "settings": {
+            "image": "shopify://shop_images/hf_20260429_032537_c543a716-70f9-45ce-8b8c-43f764f47000.png"
+          }
+        },
+        "testimonial_image_A4pmd6": {
+          "type": "testimonial_image",
+          "settings": {
+            "image": "shopify://shop_images/hf_20260412_012327_cc04f4ef-540a-4843-95ab-723239db2794.png"
+          }
+        },
+        "testimonial_image_6RhbHL": {
+          "type": "testimonial_image",
+          "settings": {
+            "image": "shopify://shop_images/hf_20260323_221200_9afdc308-83ea-4c3d-beb2-3eb20873c673.png"
+          }
+        },
+        "testimonial_image_Lh6WnE": {
+          "type": "testimonial_image",
+          "settings": {
+            "image": "shopify://shop_images/hf_20260429_032730_5fcc04ad-a234-4f35-a8ff-7f18b6817ef9.png"
+          }
+        },
+        "testimonial_image_aJW8C7": {
+          "type": "testimonial_image",
+          "settings": {
+            "image": "shopify://shop_images/hf_20260429_033456_ba9597cf-1185-492e-9b67-d3c1ab3216a7.png"
+          }
+        }
+      },
+      "block_order": [
+        "testimonial_image_6qDttd",
+        "testimonial_image_pa8Gnf",
+        "testimonial_image_hcBdwz",
+        "testimonial_image_bxmCkR",
+        "testimonial_image_MKgwLU",
+        "testimonial_image_A4pmd6",
+        "testimonial_image_6RhbHL",
+        "testimonial_image_Lh6WnE",
+        "testimonial_image_aJW8C7"
+      ],
+      "name": "Testimonial Images",
+      "settings": {
+        "testimonial_list": "",
+        "section_title": "<h2>Real Men <strong>Real Transformations</strong></h2>",
+        "bold_color": "#125657",
+        "section_subtitle": "",
+        "bg_color": "#fffee3",
+        "text_color": "#111111",
+        "padding_top": 32,
+        "padding_bottom": 32
+      }
+    },
+    "cwc_product_highlight_rows_EUh8KV": {
+      "type": "CWC_product_highlight_rows",
+      "blocks": {
+        "highlight_row_fjEPnU": {
+          "type": "highlight_row",
+          "settings": {
+            "title": "🧬 The Problem: DHT",
+            "text": "<p>By addressing your DHT levels, your follicles stay nourished — supporting thickness and healthier-looking hair long term.</p>",
+            "text_color": ""
+          }
+        },
+        "highlight_row_MnGEXr": {
+          "type": "highlight_row",
+          "settings": {
+            "title": "🌿 The Solution: Natural Blockers",
+            "text": "<p>Our formula combines vitamins, herbs, botanical extracts, and other natural ingredients to help support healthy DHT balance.</p>",
+            "text_color": ""
+          }
+        },
+        "highlight_row_8hmLn3": {
+          "type": "highlight_row",
+          "settings": {
+            "title": "💪 The Impact: Stronger Growth",
+            "text": "<p>By lowering DHT, your follicles stay open and nourished, supporting regrowth, thickness, and healthier hair long term.</p>",
+            "text_color": ""
+          }
+        }
+      },
+      "block_order": [
+        "highlight_row_fjEPnU",
+        "highlight_row_MnGEXr",
+        "highlight_row_8hmLn3"
+      ],
+      "name": "Image Benefits",
+      "settings": {
+        "featured_image": "shopify://shop_images/Simply_Revival_DHT__The_Hidden_Hormone_Behind_Hair_Loss-min.png",
+        "reverse_layout": false,
+        "section_title": "<h3><strong>DHT: The Hidden Hormone Behind Hair Loss</strong></h3>",
+        "section_caption": "WE SUPPORT IT NATURALLY",
+        "background_color": "#ffffff",
+        "text_color": "#000000",
+        "title_color": "#000000",
+        "caption_color": "#ffffff",
+        "caption_bg": "#60a1a2",
+        "padding_top": 32,
+        "padding_bottom": 32
       }
     },
     "cwc_social_proof_VhXP3J": {
@@ -791,135 +938,6 @@
         "padding_bottom": 20
       }
     },
-    "cwc_product_highlight_rows_EUh8KV": {
-      "type": "CWC_product_highlight_rows",
-      "blocks": {
-        "highlight_row_fjEPnU": {
-          "type": "highlight_row",
-          "settings": {
-            "title": "🧬 The Problem: DHT",
-            "text": "<p>DHT is a hormone that binds to receptors in your scalp - In excess it shrinks follicles, causing hair to thin and shed.</p>",
-            "text_color": ""
-          }
-        },
-        "highlight_row_MnGEXr": {
-          "type": "highlight_row",
-          "settings": {
-            "title": "🌿 The Solution: Natural Blockers",
-            "text": "<p>Our formula combines vitamins, herbs, botanical extracts, and other natural ingredients to reduce DHT levels safely.</p>",
-            "text_color": ""
-          }
-        },
-        "highlight_row_8hmLn3": {
-          "type": "highlight_row",
-          "settings": {
-            "title": "💪 The Impact: Stronger Growth",
-            "text": "<p>By lowering DHT, your follicles stay open and nourished, supporting regrowth, thickness, and healthier hair long term.</p>",
-            "text_color": ""
-          }
-        }
-      },
-      "block_order": [
-        "highlight_row_fjEPnU",
-        "highlight_row_MnGEXr",
-        "highlight_row_8hmLn3"
-      ],
-      "name": "Image Benefits",
-      "settings": {
-        "featured_image": "shopify://shop_images/Simply_Revival_DHT__The_Hidden_Hormone_Behind_Hair_Loss-min.png",
-        "reverse_layout": false,
-        "section_title": "<h3><strong>DHT: The Hidden Hormone Behind Hair Loss</strong></h3>",
-        "section_caption": "We stop it naturally.",
-        "background_color": "#ffffff",
-        "text_color": "#000000",
-        "title_color": "#000000",
-        "caption_color": "#ffffff",
-        "caption_bg": "#60a1a2",
-        "padding_top": 32,
-        "padding_bottom": 32
-      }
-    },
-    "cwc_testimonial_images_CxCPAz": {
-      "type": "CWC_testimonial_images",
-      "blocks": {
-        "testimonial_image_6qDttd": {
-          "type": "testimonial_image",
-          "settings": {
-            "image": "shopify://shop_images/Simply_Revival___Transformation_-_I_have_baby_hairs_growing_where_nothing_used_to_be.png"
-          }
-        },
-        "testimonial_image_pa8Gnf": {
-          "type": "testimonial_image",
-          "settings": {
-            "image": "shopify://shop_images/Simply_Revival___Transformation_-_noticeable_difference.png"
-          }
-        },
-        "testimonial_image_hcBdwz": {
-          "type": "testimonial_image",
-          "settings": {
-            "image": "shopify://shop_images/Simply_Revival___Transformation_-_notice_a_tremendous_improvement_in_my_hairline.png"
-          }
-        },
-        "testimonial_image_bxmCkR": {
-          "type": "testimonial_image",
-          "settings": {
-            "image": "shopify://shop_images/Simply_Revival___Transformation_-_Definitely_see_my_results.png"
-          }
-        },
-        "testimonial_image_MKgwLU": {
-          "type": "testimonial_image",
-          "settings": {
-            "image": "shopify://shop_images/Simply_Revival___Transformation_-_I_m_on_my_4th_bottle_I_gained_all_my_hair_back_I_m_super_happy.png"
-          }
-        },
-        "testimonial_image_A4pmd6": {
-          "type": "testimonial_image",
-          "settings": {
-            "image": "shopify://shop_images/Simply_Revival___Transformation_-_Look_y_all_this_product_works..png"
-          }
-        },
-        "testimonial_image_6RhbHL": {
-          "type": "testimonial_image",
-          "settings": {
-            "image": "shopify://shop_images/Simply_Revival___Transformation_-_It_s_a_process_but_so_far_it_has_been_good.png"
-          }
-        },
-        "testimonial_image_Lh6WnE": {
-          "type": "testimonial_image",
-          "settings": {
-            "image": "shopify://shop_images/Simply_Revival___Transformation_-_My_bald_spot_on_my_crown_is_gone_and_my_hairline_is_so_thick_now..png"
-          }
-        },
-        "testimonial_image_aJW8C7": {
-          "type": "testimonial_image",
-          "settings": {
-            "image": "shopify://shop_images/Simply_Revival___Transformation_-_started_seeing_results_after_21_days.png"
-          }
-        }
-      },
-      "block_order": [
-        "testimonial_image_6qDttd",
-        "testimonial_image_pa8Gnf",
-        "testimonial_image_hcBdwz",
-        "testimonial_image_bxmCkR",
-        "testimonial_image_MKgwLU",
-        "testimonial_image_A4pmd6",
-        "testimonial_image_6RhbHL",
-        "testimonial_image_Lh6WnE",
-        "testimonial_image_aJW8C7"
-      ],
-      "name": "Testimonial Images",
-      "settings": {
-        "testimonial_list": "",
-        "section_title": "<h2>25,000+ <strong>Hair Transformations</strong></h2>",
-        "bold_color": "#125657",
-        "section_subtitle": "",
-        "bg_color": "#fffee3",
-        "text_color": "#111111",
-        "padding_top": 32,
-        "padding_bottom": 32
-      }
-    },
     "cwc_background_features_fzEHDf": {
       "type": "CWC_background_features",
       "blocks": {
@@ -956,7 +974,7 @@
         "checkmark_hnhymP": {
           "type": "checkmark",
           "settings": {
-            "text": "FDA Registered"
+            "text": "All Natural"
           }
         },
         "icon_block_cX9nJM": {
@@ -1031,7 +1049,7 @@
             "badge": "Reason 1",
             "badge_bg": "#60a1a2",
             "badge_color": "#ffffff",
-            "title": "Clinical Strength",
+            "title": "Strength",
             "text": "<p>Simply Revival® delivers 350mg+ of our proprietary blend of herbs including saw palmetto and stinging nettle.</p>"
           }
         },
@@ -1043,7 +1061,7 @@
             "badge_bg": "#60a1a2",
             "badge_color": "#ffffff",
             "title": "10 Legendary Herbs. One formula",
-            "text": "<p>We combine the 10 best herbs into one potent formula to stop hair loss and stimulate new growth simultaneously - without side effects.</p>"
+            "text": "<p>We combine the 10 best herbs into one potent formula designed to support a healthy hair growth cycle and reduce excess shedding — without harsh side effects.</p>"
           }
         },
         "reason_YLnYnw": {
@@ -1076,7 +1094,7 @@
             "badge_bg": "#60a1a2",
             "badge_color": "#ffffff",
             "title": "Radical Transparency",
-            "text": "<p>No fillers. No fluff. Just clinically backed ingredients.</p>"
+            "text": "<p>No fillers. No fluff. Just natural herbs. </p>"
           }
         },
         "button_wYqzHE": {
@@ -1247,7 +1265,7 @@
             "icon2": "shopify://shop_images/Simply_Revival___Feeling_insecure_about_your_hair-min.png",
             "text2": "Feeling insecure about your hair",
             "icon3": "shopify://shop_images/Simply_Revival___Sick_and_tired_of_prescription_side_effects-min.png",
-            "text3": "Sick and tired of prescription side effects"
+            "text3": "Sick and tired of solutions with side effects"
           }
         },
         "table_pm6GiK": {
@@ -1257,18 +1275,18 @@
             "bg_color": "#72c9ca",
             "text_color": "#ffffff",
             "icon1": "shopify://shop_images/Simply_Revival___A_full_head_of_healthy_hair-min.png",
-            "text1": "A full head of healthy hair",
+            "text1": "Noticeably fuller, healthier-looking hair",
             "icon2": "shopify://shop_images/Simply_Revival___New_found_confidence-min.png",
             "text2": "New found confidence",
             "icon3": "shopify://shop_images/Simply_Revival___No_harsh_side_effects-min_a3ac93f0-38c8-4903-88e4-7ddcc56efb4e.png",
-            "text3": "No harsh side effects"
+            "text3": "All Natural - No harsh side effects"
           }
         },
         "image_row_Bdgqed": {
           "type": "image_row",
           "settings": {
             "bf_image": "shopify://shop_images/Simply_Revival___DHT_Blocker_-_Before_Transformatoin-min.png",
-            "text": "Withing",
+            "text": "Within",
             "hi_text": "90 Days",
             "af_image": "shopify://shop_images/Simply_Revival___The_1_Natural_DHT_Blocker_for_Hair_Loss___Trasformatoin_-_After-min.png",
             "show_subtext": false,
@@ -1307,7 +1325,7 @@
         "text_DHUTee": {
           "type": "text",
           "settings": {
-            "text": "<p>When clean, plant-based ingredients meet clinical potency, the results speak for themselves.</p>",
+            "text": "<p>When clean, plant-based ingredients meet maximum natural potency, the results speak for themselves.</p>",
             "text_color": "#202020"
           }
         },
@@ -1324,7 +1342,7 @@
           "settings": {
             "number": "96%",
             "title": "<p>Would recommend Simply Revival® to a friend</p>",
-            "text": "<p>As a natural DHT blocker to treat hairloss</p>"
+            "text": "<p>As a natural DHT support alternative.</p>"
           }
         },
         "stat_U84iMg": {
@@ -1370,7 +1388,7 @@
           "settings": {
             "bold_text": "Simply Revival®",
             "bold_color": "#72c9ca",
-            "text": "vs Prescriptions",
+            "text": "vs Others",
             "text_color": "#ffffff"
           }
         },
@@ -1396,7 +1414,7 @@
         "competitor_table_YGJ7kM": {
           "type": "competitor_table",
           "settings": {
-            "title": "Prescriptions",
+            "title": "Other Solutions",
             "background_color": "#ffffff",
             "text_color": "#111111",
             "text1": "Nasty Side Effects",
@@ -1416,14 +1434,14 @@
         "bullet_HeMT46": {
           "type": "bullet",
           "settings": {
-            "text": "<p><strong>Safe for Daily Use</strong> – No prescriptions, no hassle, just consistent growth support.</p>",
+            "text": "<p><strong>Safe for Daily Use</strong> – No harsh ingredients, no hassle, just consistent growth support.</p>",
             "text_color": "#ffffff"
           }
         },
         "bullet_pAprff": {
           "type": "bullet",
           "settings": {
-            "text": "<p><strong>Clinically Backed Ingredients</strong> – Backed by science, Ingredients proven to work</p>",
+            "text": "<p><strong>Research-Supported Ingredients</strong> — formulated with ingredients that have been studied for their role in supporting hair and scalp health.</p>",
             "text_color": "#ffffff"
           }
         },
@@ -1483,7 +1501,7 @@
         "subtext_LixbJV": {
           "type": "subtext",
           "settings": {
-            "text": "<p>If you don’t experience noticeable improvements within 365 days, simply return your order for a full refund—no questions asked.</p>"
+            "text": "<p>If you don’t experience noticeable improvements within 365 days, simply return your most recent order for a full refund!</p>"
           }
         },
         "button_ezWWFE": {
@@ -1648,10 +1666,10 @@
     "cwc_featured_product_B7WhGk",
     "cwc_product_template_eC4DbX",
     "cwc_usp_columns_NPgtAB",
+    "cwc_testimonial_images_CxCPAz",
+    "cwc_product_highlight_rows_EUh8KV",
     "cwc_social_proof_VhXP3J",
     "cwc_testimonials_FPgtbf",
-    "cwc_product_highlight_rows_EUh8KV",
-    "cwc_testimonial_images_CxCPAz",
     "cwc_background_features_fzEHDf",
     "cwc_reasons_raQjiN",
     "cwc_video_testimonials_eKGcNw",

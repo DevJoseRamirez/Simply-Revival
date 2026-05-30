@@ -43,7 +43,7 @@
             "logofooter": "shopify://shop_images/Simply_Revival_Logo_Long_Black_Text.png",
             "widthlogofooter": 150,
             "title": "",
-            "text": "<div class=\"pr-lg-5 rte\">\n<p class=\"mb-0 \">\n<b>simplyrevival@gmail.com\n</b></p>\n<p class=\"mt-3\">Nurturing your skin and hair with nature’s best. Affordable, natural solutions for a healthier you.</p>\n</div>",
+            "text": "<div class=\"pr-lg-5 rte\">\n<p class=\"mb-0 \">\n<b>support@simplyrevival.com\n</b></p>\n<p class=\"mt-3\">Nurturing your skin and hair with nature’s best. Affordable, natural solutions for a healthier you.</p>\n</div>",
             "width": "50%"
           }
         },
@@ -138,7 +138,7 @@
         "text_PxpBYc": {
           "type": "text",
           "settings": {
-            "text": "<p><em>For cosmetic and nutritional support purposes only. Not intended to diagnose, treat, cure, or prevent any condition.</em></p>"
+            "text": "<p><em>For cosmetic and nutritional support purposes only. </em></p><p>*These statements have not been evaluated by the Food and Drug Administration. </p><p>*This product is not intended to diagnose, treat, cure, or prevent any disease.</p><p>* Individual results may vary.Testimonials and reviews reflect individual experiences and are not guaranteed outcomes.</p>"
           }
         }
       },

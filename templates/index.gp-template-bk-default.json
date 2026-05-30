@@ -1167,7 +1167,7 @@
         "price_display_WgT9Qb": {
           "type": "price_display",
           "settings": {
-            "save_label": "SPRING SALE - Save"
+            "save_label": "Memorial Day Sale - Save"
           }
         },
         "low_stock_P9ahcL": {
@@ -1330,7 +1330,8 @@
         "product": "simply®-dht-blocker",
         "background_color": "#ffffff",
         "padding_top": 40,
-        "padding_bottom": 40
+        "padding_bottom": 40,
+        "savings_display_type": "dollar"
       }
     },
     "cwc_free_trial_Anjcm8": {

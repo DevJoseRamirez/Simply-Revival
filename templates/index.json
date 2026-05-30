@@ -16,7 +16,7 @@
           "type": "item",
           "settings": {
             "image": "shopify://shop_images/Simply_Revival___356_Day_Guarantee_-_64px.png",
-            "text": "356 Day Guarantee"
+            "text": "365 Day Guarantee"
           }
         },
         "item_7LpL47": {
@@ -79,7 +79,7 @@
         "review_MDVPN9": {
           "type": "review",
           "settings": {
-            "text": "<p><strong>Rated 4.8/5</strong> | Trusted by 20,000+</p>"
+            "text": "<p><strong>Rated 4.8/5</strong> | Trusted by 50,000+</p>"
           }
         },
         "headline_UNtTwi": {
@@ -91,8 +91,8 @@
         "bullets_P7YwHr": {
           "type": "bullets",
           "settings": {
-            "text_1": "Results within 30 days or less",
-            "text_2": "No Side Effects or Money Back",
+            "text_1": "Thicker Fuller-Looking Hair",
+            "text_2": "All Natural & Made in the USA",
             "text_3": "Ultra-Potent herbal formula without fillers"
           }
         },
@@ -332,8 +332,8 @@
           "type": "testimonial",
           "settings": {
             "star_rating": "4.8",
-            "title": "Perfect alternative to prescriptions",
-            "text": "Didn't want to deal with prescription drugs and their side effects. Simply Revival gives me natural DHT blocking with ingredients I can actually pronounce. Results speak for themselves.",
+            "title": "Perfect alternative",
+            "text": "Didn't want to deal with standard solutions and their side effects. Simply Revival gives me natural DHT blocking with ingredients I can actually pronounce. Results speak for themselves.",
             "author_name": "TRAVIS S.",
             "feature_one": "Prescription Alternative",
             "feature_two": "Clean Ingredients"
@@ -416,7 +416,7 @@
           "type": "highlight_row",
           "settings": {
             "title": "🧬 The Problem: DHT",
-            "text": "<p>DHT is a hormone that binds to receptors in your scalp - In excess it shrinks follicles, causing hair to thin and shed.</p>",
+            "text": "<p>By addressing your DHT levels, your follicles stay nourished — supporting thickness and healthier-looking hair long term.</p>",
             "text_color": ""
           }
         },
@@ -424,7 +424,7 @@
           "type": "highlight_row",
           "settings": {
             "title": "🌿 The Solution: Natural Blockers",
-            "text": "<p>Our formula combines vitamins, herbs, botanical extracts, and other natural ingredients to reduce DHT levels safely.</p>",
+            "text": "<p>Our formula combines vitamins, herbs, botanical extracts, and other natural ingredients to help support healthy DHT balance.</p>",
             "text_color": ""
           }
         },
@@ -447,7 +447,7 @@
         "featured_image": "shopify://shop_images/Simply_Revival_DHT__The_Hidden_Hormone_Behind_Hair_Loss-min.png",
         "reverse_layout": false,
         "section_title": "<h3><strong>DHT: The Hidden Hormone Behind Hair Loss</strong></h3>",
-        "section_caption": "We stop it naturally.",
+        "section_caption": "WE SUPPORT IT NATURALLY",
         "background_color": "#ffffff",
         "text_color": "#000000",
         "title_color": "#000000",
@@ -574,7 +574,7 @@
         "checkmark_QzRYaG": {
           "type": "checkmark",
           "settings": {
-            "text": "FDA Registered"
+            "text": "All Natural"
           }
         },
         "icon_block_7gQjkt": {
@@ -598,7 +598,7 @@
         "icon_block_fe3nU8": {
           "type": "icon_block",
           "settings": {
-            "text": "No Harsh Side Effects"
+            "text": "Gentle Fromula"
           }
         }
       },
@@ -616,7 +616,7 @@
       ],
       "name": "Background Features",
       "settings": {
-        "headline": "Why Trust Simply Revival® vs Standard Prescriptions?",
+        "headline": "Why Trust Simply Revival® vs Standard Solutions?",
         "bg_color": "#125657",
         "bg_image": "shopify://shop_images/Simply_Revival___Why_Trust_Simply_Revival_vs_Standard_Prescriptions-min.png",
         "text_color": "#ffffff",
@@ -657,7 +657,7 @@
             "badge": "Reason 1",
             "badge_bg": "#60a1a2",
             "badge_color": "#ffffff",
-            "title": "Clinical Strength",
+            "title": "Strength",
             "text": "<p>Simply Revival® delivers 350mg+ of our proprietary blend of herbs including saw palmetto and stinging nettle. </p>"
           }
         },
@@ -669,7 +669,7 @@
             "badge_bg": "#60a1a2",
             "badge_color": "#ffffff",
             "title": "10 Legendary Herbs. One formula",
-            "text": "<p>We combine the 10 best herbs into one potent formula to stop hair loss and stimulate new growth simultaneously - without side effects.</p>"
+            "text": "<p>We combine the 10 best herbs into one potent formula designed to support a healthy hair growth cycle and reduce excess shedding — without harsh side effects.</p>"
           }
         },
         "reason_JmG9Ga": {
@@ -679,7 +679,7 @@
             "badge": "Reason 3",
             "badge_bg": "#60a1a2",
             "badge_color": "#ffffff",
-            "title": "No taste. No hassle. No Side Effects",
+            "title": "No taste. No hassle.",
             "text": "<p>Our plant based capsules are easy to swallow, tasteless, and gentle on your body.</p>"
           }
         },
@@ -702,7 +702,7 @@
             "badge_bg": "#60a1a2",
             "badge_color": "#ffffff",
             "title": "Radical Transparency",
-            "text": "<p>No fillers. No fluff. Just clinically backed ingredients.</p>"
+            "text": "<p>No fillers. No fluff. Just natural herbs.</p>"
           }
         },
         "button_edYeHU": {
@@ -874,7 +874,7 @@
             "icon2": "shopify://shop_images/Simply_Revival___Feeling_insecure_about_your_hair-min.png",
             "text2": "Feeling insecure about your hair",
             "icon3": "shopify://shop_images/Simply_Revival___Sick_and_tired_of_prescription_side_effects-min.png",
-            "text3": "Sick and tired of prescription side effects"
+            "text3": "Sick and tired of solutions with side effects"
           }
         },
         "table_8LRhr9": {
@@ -884,7 +884,7 @@
             "bg_color": "#72c9ca",
             "text_color": "#ffffff",
             "icon1": "shopify://shop_images/Simply_Revival___A_full_head_of_healthy_hair-min.png",
-            "text1": "A full head of healthy hair",
+            "text1": "Noticeably fuller, healthier-looking hair",
             "icon2": "shopify://shop_images/Simply_Revival___New_found_confidence-min.png",
             "text2": "New found confidence",
             "icon3": "shopify://shop_images/Simply_Revival___No_harsh_side_effects-min.png",
@@ -895,7 +895,7 @@
           "type": "image_row",
           "settings": {
             "bf_image": "shopify://shop_images/Simply_Revival___DHT_Blocker_-_Before_Transformatoin-min_13a68d46-b0f7-4201-bd96-5ff627f3c840.png",
-            "text": "Withing",
+            "text": "Within",
             "hi_text": "90 days",
             "af_image": "shopify://shop_images/Simply_Revival___The_1_Natural_DHT_Blocker_for_Hair_Loss___Trasformatoin_-_After-min.png",
             "show_subtext": false,
@@ -934,7 +934,7 @@
         "text_cCq7yd": {
           "type": "text",
           "settings": {
-            "text": "<p>When clean, plant-based ingredients meet clinical potency, the results speak for themselves.</p>",
+            "text": "<p>When clean, plant-based ingredients meet maximum natural potency, the results speak for themselves.</p>",
             "text_color": "#202020"
           }
         },
@@ -951,7 +951,7 @@
           "settings": {
             "number": "96%",
             "title": "<p>Would recommend Simply Revival® to a friend</p>",
-            "text": "<p>As a natural DHT blocker to treat hairloss</p>"
+            "text": "<p>As a natural DHT support alternative.</p>"
           }
         },
         "stat_e7cQae": {
@@ -1014,7 +1014,7 @@
         "competitor_table_DFgAkA": {
           "type": "competitor_table",
           "settings": {
-            "title": "Prescriptions",
+            "title": "Other Solutions",
             "background_color": "#ffffff",
             "text_color": "#111111",
             "text1": "Nasty Side Effects",
@@ -1029,7 +1029,7 @@
           "settings": {
             "bold_text": "Simply Revival®",
             "bold_color": "#72c9ca",
-            "text": "vs. Prescriptions",
+            "text": "vs. Others",
             "text_color": "#ffffff"
           }
         },
@@ -1043,14 +1043,14 @@
         "bullet_gtXNEN": {
           "type": "bullet",
           "settings": {
-            "text": "<p><strong>Safe for Daily Use</strong> – No prescriptions, no hassle, just consistent growth support.</p>",
+            "text": "<p><strong>Safe for Daily Use</strong> – No harsh ingredients, no hassle, just consistent growth support.</p>",
             "text_color": "#ffffff"
           }
         },
         "bullet_w4cY4M": {
           "type": "bullet",
           "settings": {
-            "text": "<p><strong>Clinically Backed Ingredients</strong> – Backed by science, Ingredients proven to work</p><p></p>",
+            "text": "<p><strong>Research-Supported Ingredients</strong> — formulated with ingredients that have been studied for their role in supporting hair and scalp health.</p>",
             "text_color": "#ffffff"
           }
         },
@@ -1138,7 +1138,7 @@
         "title_eDCqi8": {
           "type": "title",
           "settings": {
-            "title": "<h3>Natural DHT Blocker </h3>",
+            "title": "<h3>Natural DHT Blocker </h3><h4>Less Shedding, Healthier Growth</h4>",
             "text_color": "#282828",
             "highlight_color": "#45b5b7"
           }
@@ -1146,20 +1146,20 @@
         "desc_dBLCxn": {
           "type": "desc",
           "settings": {
-            "desc": "<p>Thicker, fuller hair in 30 days - This natural formula contains a blend of 10 ancient herbs designed to stop hair loss & stimulate new growth.</p>"
+            "desc": "<p><strong>See less shedding in 14 days. Noticeably fuller, thicker hair in 60 days — or we'll refund your entire order. </strong>A natural blend of 10 ancient herbs formulated to support healthy DHT balance, healthier-looking, fuller hair — without relying on harsh ingredients.*</p>"
           }
         },
         "benefits_YFNXMn": {
           "type": "benefits",
           "settings": {
             "icon1": "shopify://shop_images/Simply_Revival___Strengthens_hair_follicles_helps_prevent_hair_loss-min_5e9aa147-53e9-4dd5-abd0-3271e31cb4b7.png",
-            "text1": "Promotes healthy hair growth & helps prevent hair loss",
+            "text1": "Supports Blocking DHT - Reduce Hair Loss",
             "icon2": "shopify://shop_images/Simply_Revival___Deeply_hydrates_scalp_Repairs_damaged_hair_fibers-min_62adfec7-0fca-4c4b-8103-500a718ca1ce.png",
-            "text2": "Combats excessive shedding & enhances hair regrowth.",
+            "text2": "Strengthens Hair & Supports Growth",
             "icon3": "shopify://shop_images/Simply_Revival___Reduces_shedding_while_promoting_thicker_fuller_growth-min_69b2e63b-b83a-4f0e-bc4e-cb7d8a8fd8c3.png",
-            "text3": "Soothes irritated scalp and restores healthy balance",
+            "text3": "Restores Balance & Side Effect Free",
             "icon4": "shopify://shop_images/Simply_Revival___9_premium_oils_to_boost_circulation_and_restore_shine.-min_363002cf-ebff-4873-a3f4-597084723ae6.png",
-            "text4": "Rich in nutrients to boost immune health & natural healing",
+            "text4": "Nutrient-Rich For Overall Health",
             "text5": "",
             "text6": ""
           }
@@ -1167,7 +1167,7 @@
         "price_display_WgT9Qb": {
           "type": "price_display",
           "settings": {
-            "save_label": "Memorial Day Sale - Save"
+            "save_label": "Memorial Sale - Save"
           }
         },
         "low_stock_P9ahcL": {
@@ -1205,8 +1205,8 @@
         "subscription_toggle_WDR8rQ": {
           "type": "subscription_toggle",
           "settings": {
-            "title": "Save 25% With Automatic Refills",
-            "subtitle": "Zero Commitment | Exclusive Discounts | Cancel Anytime"
+            "title": "Save With Automatic Refills",
+            "subtitle": "Refills ship ever 25 days | Cancel Anytime"
           }
         },
         "delivery_estimate_zfWxwg": {
@@ -1361,7 +1361,7 @@
         "subtext_UGrQRi": {
           "type": "subtext",
           "settings": {
-            "text": "<p>If you don’t experience noticeable improvements within 365 days, simply return your order for a full refund!</p>"
+            "text": "<p>If you don’t experience noticeable improvements within 365 days, simply return your most recent order for a full refund!</p>"
           }
         },
         "button_zVGUHY": {
