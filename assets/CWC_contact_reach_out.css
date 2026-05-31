@@ -1,0 +1,411 @@
+/* ==============================
+   CWC Contact Reach Out
+   Header + 2-card grid (form + email)
+   ============================== */
+
+/* === Section Root === */
+.cwc_contact-reach-out {
+  background-color: var(--section-bg);
+  color: var(--subtext-color);
+  padding-top: var(--padding-top);
+  padding-bottom: var(--padding-bottom);
+}
+
+.cwc_contact-reach-out__container {
+  max-width: 1200px;
+  max-width: 1300px;
+  margin: 0 auto;
+  padding: 0 2rem;
+}
+
+/* === Header === */
+.cwc_contact-reach-out__header {
+  margin-bottom: 2.5rem;
+  max-width: 900px;
+}
+
+.cwc_contact-reach-out__eyebrow {
+  display: block;
+  color: var(--eyebrow-color);
+  font-size: 0.875rem;
+  font-weight: 700;
+  letter-spacing: 0.12em;
+  text-transform: uppercase;
+  margin-bottom: 0.5rem;
+  font-size: 1rem;
+}
+
+.cwc_contact-reach-out__heading {
+  color: var(--heading-color);
+  margin-bottom: 0.75rem;
+}
+
+.cwc_contact-reach-out__heading h1,
+.cwc_contact-reach-out__heading h2,
+.cwc_contact-reach-out__heading h3,
+.cwc_contact-reach-out__heading p {
+  color: inherit;
+  margin: 0;
+  font-size: clamp(1.75rem, 3.5vw, 2.5rem);
+  line-height: 1.1;
+  font-weight: 700;
+}
+
+.cwc_contact-reach-out__heading strong {
+  color: var(--highlight-color);
+  font-weight: 700;
+}
+
+.cwc_contact-reach-out__subtext {
+  color: var(--subtext-color);
+  font-size: 1rem;
+  line-height: 1.6;
+}
+
+.cwc_contact-reach-out__subtext>* {
+  font-size: 1.25rem;
+}
+
+
+.cwc_contact-reach-out__subtext p {
+  margin: 0;
+}
+
+.cwc_contact-reach-out__subtext strong {
+  color: var(--highlight-color);
+}
+
+/* === Grid === */
+.cwc_contact-reach-out__grid {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 1.5rem;
+  align-items: start;
+}
+
+/* === Card === */
+.cwc_contact-reach-out__card {
+  background-color: var(--card-bg);
+  border-radius: var(--card-radius);
+  padding: 2rem;
+  padding: 2.5rem;
+  padding: 2rem 2.5rem;
+  padding: 2.4375rem 3.4375rem 3rem 2rem;
+  /* padding: 2.4375rem 3.4375rem 3rem 3.4375rem; */
+  display: flex;
+  flex-direction: column;
+}
+
+.cwc_contact-reach-out__card--email .cwc_contact-reach-out__card-inner {
+  display: flex;
+  flex-direction: column;
+  /* nudge the content down a touch so it visually aligns with the form
+     card's content (which has more vertical room consumed by the form) */
+  /* padding: 1.25rem 0.5rem 0; */
+}
+
+.cwc_contact-reach-out__card-head {
+  display: flex;
+  align-items: center;
+  gap: 0.75rem;
+  margin-bottom: 1rem;
+}
+
+.cwc_contact-reach-out__card-icon {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  width: 36px;
+  height: 36px;
+  border-radius: 8px;
+  flex-shrink: 0;
+}
+
+.cwc_contact-reach-out__card-icon svg {
+  width: 18px;
+  height: 18px;
+  display: block;
+}
+
+.cwc_contact-reach-out__card-heading {
+  color: var(--card-heading-color);
+  font-size: 1.375rem;
+  font-weight: 700;
+  margin: 0;
+  line-height: 1.2;
+  font-size: 1.75rem;
+}
+
+.cwc_contact-reach-out__card-subtext,
+.cwc_contact-reach-out__card-body,
+.cwc_contact-reach-out__card-aux {
+  color: var(--card-body-color);
+  font-size: 1rem;
+  line-height: 1.55;
+}
+
+.cwc_contact-reach-out__card-subtext {
+  margin-bottom: 1.25rem;
+}
+
+.cwc_contact-reach-out__card-body {
+  margin-bottom: 1.25rem;
+}
+
+.cwc_contact-reach-out__card-subtext>*,
+.cwc_contact-reach-out__card-body>* {
+  font-size: 1.2rem;
+  font-size: 1.15rem;
+}
+
+.cwc_contact-reach-out__card-aux {
+  margin-top: 1rem;
+  font-size: 0.9375rem;
+  opacity: 0.85;
+}
+
+.cwc_contact-reach-out__card-subtext p,
+.cwc_contact-reach-out__card-body p,
+.cwc_contact-reach-out__card-aux p {
+  margin: 0 0 0.5em;
+}
+
+.cwc_contact-reach-out__card-subtext p:last-child,
+.cwc_contact-reach-out__card-body p:last-child,
+.cwc_contact-reach-out__card-aux p:last-child {
+  margin-bottom: 0;
+}
+
+/* === Email Link === */
+.cwc_contact-reach-out__email-link {
+  display: inline-block;
+  color: var(--link-color);
+  font-size: 1rem;
+  font-weight: 500;
+  text-decoration: underline;
+  text-underline-offset: 3px;
+  word-break: break-all;
+  transition: opacity 0.15s ease;
+}
+
+.cwc_contact-reach-out__email-link:hover,
+.cwc_contact-reach-out__email-link:focus-visible {
+  opacity: 0.8;
+  text-decoration: initial;
+  /* text-decoration: underline; */
+
+}
+
+/* === Form === */
+.cwc_contact-reach-out__form-wrap form {
+  display: flex;
+  flex-direction: column;
+  gap: 0.875rem;
+}
+
+.cwc_contact-reach-out__form-row {
+  display: grid;
+  gap: 0.875rem;
+}
+
+.cwc_contact-reach-out__form-row--two {
+  grid-template-columns: 1fr 1fr;
+}
+
+.cwc_contact-reach-out__field {
+  display: flex;
+  flex-direction: column;
+}
+
+/* === Inputs === */
+.cwc_contact-reach-out__input {
+  width: 100%;
+  background-color: var(--input-bg);
+  border: 1px solid var(--input-border);
+  border-radius: var(--input-radius);
+  color: var(--input-text);
+  font-family: inherit;
+  font-size: 1rem;
+  line-height: 1.4;
+  padding: 0.875rem 1rem;
+  transition: border-color 0.15s ease, box-shadow 0.15s ease;
+  -webkit-appearance: none;
+  appearance: none;
+}
+
+.cwc_contact-reach-out__input::placeholder {
+  color: var(--input-placeholder);
+  opacity: 1;
+}
+
+.cwc_contact-reach-out__input:hover {
+  border-color: color-mix(in srgb, var(--input-border) 60%, var(--input-text) 40%);
+}
+
+.cwc_contact-reach-out__input:focus,
+.cwc_contact-reach-out__input:focus-visible {
+  outline: none;
+  border-color: var(--input-border-focus);
+  box-shadow: 0 0 0 3px color-mix(in srgb, var(--input-border-focus) 18%, transparent);
+}
+
+.cwc_contact-reach-out__textarea {
+  min-height: 120px;
+  resize: vertical;
+  font-family: inherit;
+}
+
+/* === Submit Button === */
+.cwc_contact-reach-out__submit {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: 0.5rem;
+  width: 100%;
+  background-color: var(--btn-bg);
+  color: var(--btn-text);
+  border: none;
+  border-radius: var(--btn-radius);
+  padding: 1rem 1.5rem;
+  font-family: inherit;
+  font-size: 1rem;
+  font-weight: 600;
+  cursor: pointer;
+  margin-top: 0.5rem;
+  transition: background-color 0.18s ease, transform 0.18s ease;
+  border: 2px transparent solid;
+  line-height: 100%;
+}
+
+.cwc_contact-reach-out__submit:hover {
+  /* background-color: var(--btn-bg-hover); */
+  /* background-color: transparent; */
+  /* border-color: var(--btn-bg); */
+  /* color: var(--btn-bg); */
+  /* background-color: white; */
+  opacity: .8;
+  opacity: .9;
+}
+
+.cwc_contact-reach-out__submit:focus-visible {
+  outline: none;
+  box-shadow: 0 0 0 3px color-mix(in srgb, var(--btn-bg) 30%, transparent);
+}
+
+.cwc_contact-reach-out__submit:active {
+  /* transform: translateY(1px); */
+}
+
+.cwc_contact-reach-out__submit:disabled {
+  opacity: 0.6;
+  cursor: not-allowed;
+}
+
+.cwc_contact-reach-out__submit-arrow {
+  font-size: 1.05em;
+  line-height: 1;
+}
+
+/* === Form Messages === */
+.cwc_contact-reach-out__form-msg {
+  border-radius: 8px;
+  padding: 0.875rem 1rem;
+  font-size: 0.9375rem;
+  line-height: 1.5;
+}
+
+.cwc_contact-reach-out__form-msg--success {
+  background-color: var(--success-bg);
+  color: var(--success-text);
+}
+
+.cwc_contact-reach-out__form-msg--error {
+  background-color: var(--error-bg);
+  color: var(--error-text);
+}
+
+.cwc_contact-reach-out__form-msg ul {
+  margin: 0.5rem 0 0;
+  padding-left: 1.25rem;
+}
+
+/* === Visually hidden (a11y) === */
+.cwc_contact-reach-out .visually-hidden {
+  position: absolute;
+  width: 1px;
+  height: 1px;
+  padding: 0;
+  margin: -1px;
+  overflow: hidden;
+  clip: rect(0, 0, 0, 0);
+  white-space: nowrap;
+  border: 0;
+}
+
+.h-captcha {
+  display: none;
+  height: 0px;
+}
+
+/* ==============================
+   Tablet (CWC standard 991px)
+   ============================== */
+@media screen and (max-width: 991px) {
+  .cwc_contact-reach-out__container {
+    padding: 0 1.25rem;
+  }
+
+  .cwc_contact-reach-out__card {
+    padding: 1.75rem;
+  }
+}
+
+/* ==============================
+   Mobile (CWC standard 768px)
+   ============================== */
+@media screen and (max-width: 768px) {
+  .cwc_contact-reach-out__subtext>* {
+    font-size: .9rem;
+  }
+
+  .cwc_contact-reach-out__email-link,
+  .cwc_contact-reach-out__card-subtext>*,
+  .cwc_contact-reach-out__card-body>* {
+    font-size: .9rem;
+  }
+
+  .cwc_contact-reach-out {
+    padding-top: var(--padding-top-mobile);
+    padding-bottom: var(--padding-bottom-mobile);
+  }
+
+  .cwc_contact-reach-out__container {
+    padding: 0 1rem;
+  }
+
+  .cwc_contact-reach-out__header {
+    margin-bottom: 1.5rem;
+  }
+
+  .cwc_contact-reach-out__grid {
+    grid-template-columns: 1fr;
+    gap: 1rem;
+  }
+
+  .cwc_contact-reach-out__card {
+    padding: 1.5rem;
+  }
+
+  .cwc_contact-reach-out__card--email .cwc_contact-reach-out__card-inner {
+    padding: 0;
+  }
+
+  .cwc_contact-reach-out__card-heading {
+    font-size: 1.25rem;
+  }
+
+  /* Stack name + email on mobile for easier tap targets */
+  .cwc_contact-reach-out__form-row--two {
+    grid-template-columns: 1fr;
+  }
+}

@@ -1,0 +1,386 @@
+{% style %}
+  #cwc_contact-faq-{{ section.id }} {
+    --section-bg: {{ section.settings.bg_color | color_lighten: 5 }};
+    --eyebrow-color: {{ section.settings.eyebrow_color | default: '#3F8060' }};
+    --heading-color: {{ section.settings.heading_color | default: '#0C3B2C' }};
+    --highlight-color: {{ section.settings.bold_color | default: '#3F8060' }};
+    --image-radius: {{ section.settings.image_radius | default: 14 }}px;
+    --image-placeholder-bg: {{ section.settings.image_placeholder_bg | default: '#E5E2D2' }};
+    --item-bg: {{ section.settings.item_bg | default: '#FFFFFF' }};
+    --item-border: {{ section.settings.item_border | default: '#E1E0D2' }};
+    --item-border-hover: {{ section.settings.item_border_hover | default: '#C9C8B6' }};
+    --item-radius: {{ section.settings.item_radius | default: 14 }}px;
+    --item-question-color: {{ section.settings.item_question_color | default: '#0C3B2C' }};
+    --item-answer-color: {{ section.settings.item_answer_color | default: '#2A3A33' }};
+    --item-chevron-color: {{ section.settings.item_chevron_color | default: '#3F8060' }};
+    --item-answer-divider: {{ section.settings.item_answer_divider | default: '#EAE8DA' }};
+    --badge-bg: {{ section.settings.badge_bg | default: '#CBE5BA' }};
+    --badge-text: {{ section.settings.badge_text | default: '#0C3B2C' }};
+    --padding-top: {{ section.settings.padding_top | default: 80 }}px;
+    --padding-bottom: {{ section.settings.padding_bottom | default: 80 }}px;
+    --padding-top-mobile: {{ section.settings.padding_top | default: 80 | times: 0.5 }}px;
+    --padding-bottom-mobile: {{ section.settings.padding_bottom | default: 80 | times: 0.5 }}px;
+  }
+{% endstyle %}
+
+{{ 'CWC_contact_faq.css' | asset_url | stylesheet_tag }}
+
+{% comment %} | default: '#d0f0f263 {% endcomment %}
+<section
+  id="cwc_contact-faq-{{ section.id }}"
+  class="cwc_contact-faq"
+  data-section-id="{{ section.id }}"
+>
+  <div class="cwc_contact-faq__container">
+    {%- comment -%} ===== Centered Header ===== {%- endcomment -%}
+    {% if section.settings.eyebrow != blank or section.settings.heading != blank %}
+      <div class="cwc_contact-faq__header">
+        {% if section.settings.eyebrow != blank %}
+          <span class="cwc_contact-faq__eyebrow">{{ section.settings.eyebrow }}</span>
+        {% endif %}
+
+        {% if section.settings.heading != blank %}
+          <div class="cwc_contact-faq__heading cwc-rte">{{ section.settings.heading }}</div>
+        {% endif %}
+
+        {% if section.settings.subtext != blank %}
+          <div class="cwc_contact-faq__subtext cwc-rte">{{ section.settings.subtext }}</div>
+        {% endif %}
+      </div>
+    {% endif %}
+
+    {%- comment -%} ===== 2-col Body ===== {%- endcomment -%}
+    <div class="cwc_contact-faq__grid">
+      {%- comment -%} Left: image (fixed left per design) {%- endcomment -%}
+      <div class="cwc_contact-faq__media">
+        {% if section.settings.image != blank %}
+          {{
+            section.settings.image
+            | image_url: width: 1200
+            | image_tag:
+              loading: 'lazy',
+              widths: '400, 600, 800, 1000, 1200',
+              sizes: '(min-width: 992px) 40vw, 100vw',
+              class: 'cwc_contact-faq__image',
+              alt: section.settings.image.alt
+            | default: section.settings.heading
+          }}
+        {% else %}
+          <div class="cwc_contact-faq__image cwc_contact-faq__image--placeholder" aria-hidden="true"></div>
+        {% endif %}
+      </div>
+
+      {%- comment -%} Right: accordion stack {%- endcomment -%}
+      <div class="cwc_contact-faq__items">
+        {% if section.blocks.size > 0 %}
+          {% for block in section.blocks %}
+            {% if block.type == 'faq_item' %}
+              {%- assign panel_id = 'cwc_contact-faq-panel-' | append: section.id | append: '-' | append: block.id -%}
+              {%- assign btn_id = 'cwc_contact-faq-btn-' | append: section.id | append: '-' | append: block.id -%}
+
+              <div class="cwc_contact-faq__item" {{ block.shopify_attributes }}>
+                <h3 class="cwc_contact-faq__item-heading">
+                  <button
+                    type="button"
+                    class="cwc_contact-faq__question"
+                    id="{{ btn_id }}"
+                    aria-expanded="false"
+                    aria-controls="{{ panel_id }}"
+                  >
+                    <span class="cwc_contact-faq__question-text">
+                      {{ block.settings.question }}
+                    </span>
+
+                    <span class="cwc_contact-faq__question-end">
+                      {% if block.settings.show_badge and section.settings.badge_label != blank %}
+                        <span class="cwc_contact-faq__badge">{{ section.settings.badge_label }}</span>
+                      {% endif %}
+                      <span class="cwc_contact-faq__chevron" aria-hidden="true">
+                        <svg viewBox="0 0 16 16" xmlns="http://www.w3.org/2000/svg" focusable="false">
+                          <path d="M3.5 5.75 8 10.25l4.5-4.5" fill="none" stroke="#aaaaaa" stroke-width="1.75" stroke-linecap="round" stroke-linejoin="round"/>
+                        </svg>
+                      </span>
+                    </span>
+                  </button>
+                </h3>
+
+                <div
+                  id="{{ panel_id }}"
+                  class="cwc_contact-faq__answer"
+                  role="region"
+                  aria-labelledby="{{ btn_id }}"
+                  hidden
+                >
+                  <div class="cwc_contact-faq__answer-inner cwc-rte">
+                    {{ block.settings.answer }}
+                  </div>
+                </div>
+              </div>
+            {% endif %}
+          {% endfor %}
+        {% endif %}
+      </div>
+    </div>
+  </div>
+</section>
+
+{{ 'CWC_contact_faq.js' | asset_url | script_tag }}
+
+{% schema %}
+{
+  "name": "CWC Contact FAQ",
+  "settings": [
+    {
+      "type": "header",
+      "content": "Header"
+    },
+    {
+      "type": "text",
+      "id": "eyebrow",
+      "label": "Eyebrow",
+      "default": "FAQS"
+    },
+    {
+      "type": "richtext",
+      "id": "heading",
+      "label": "Heading",
+      "default": "<h2>Subscription & Account</h2>"
+    },
+    {
+      "type": "richtext",
+      "id": "subtext",
+      "label": "Subtext (optional, under heading)"
+    },
+    {
+      "type": "header",
+      "content": "Image"
+    },
+    {
+      "type": "image_picker",
+      "id": "image",
+      "label": "Side image (always left)"
+    },
+    {
+      "type": "range",
+      "id": "image_radius",
+      "label": "Image corner radius",
+      "min": 0,
+      "max": 32,
+      "step": 1,
+      "unit": "px",
+      "default": 14
+    },
+    {
+      "type": "header",
+      "content": "Accordion Items"
+    },
+    {
+      "type": "range",
+      "id": "item_radius",
+      "label": "Item corner radius",
+      "min": 0,
+      "max": 32,
+      "step": 1,
+      "unit": "px",
+      "default": 14
+    },
+    {
+      "type": "header",
+      "content": "Badge"
+    },
+    {
+      "type": "text",
+      "id": "badge_label",
+      "label": "Badge text",
+      "info": "Shown on items that have 'Show badge' enabled.",
+      "default": "NEW"
+    },
+    {
+      "type": "header",
+      "content": "Colors"
+    },
+    {
+      "type": "color",
+      "id": "bg_color",
+      "label": "Section background",
+      "default": "#fffee3"
+    },
+    {
+      "type": "color",
+      "id": "eyebrow_color",
+      "label": "Eyebrow color",
+      "default": "#3F8060"
+    },
+    {
+      "type": "color",
+      "id": "heading_color",
+      "label": "Heading color",
+      "default": "#0C3B2C"
+    },
+    {
+      "type": "color",
+      "id": "bold_color",
+      "label": "Highlight (bold) color",
+      "default": "#3F8060"
+    },
+    {
+      "type": "color",
+      "id": "image_placeholder_bg",
+      "label": "Image placeholder background",
+      "default": "#E5E2D2"
+    },
+    {
+      "type": "header",
+      "content": "Item Colors"
+    },
+    {
+      "type": "color",
+      "id": "item_bg",
+      "label": "Item background",
+      "default": "#FFFFFF"
+    },
+    {
+      "type": "color",
+      "id": "item_border",
+      "label": "Item border",
+      "default": "#E1E0D2"
+    },
+    {
+      "type": "color",
+      "id": "item_border_hover",
+      "label": "Item border (hover/active)",
+      "default": "#C9C8B6"
+    },
+    {
+      "type": "color",
+      "id": "item_question_color",
+      "label": "Question text color",
+      "default": "#0C3B2C"
+    },
+    {
+      "type": "color",
+      "id": "item_answer_color",
+      "label": "Answer text color",
+      "default": "#2A3A33"
+    },
+    {
+      "type": "color",
+      "id": "item_chevron_color",
+      "label": "Chevron color",
+      "default": "#3F8060"
+    },
+    {
+      "type": "color",
+      "id": "item_answer_divider",
+      "label": "Answer divider line",
+      "default": "#EAE8DA"
+    },
+    {
+      "type": "header",
+      "content": "Badge Colors"
+    },
+    {
+      "type": "color",
+      "id": "badge_bg",
+      "label": "Badge background",
+      "default": "#CBE5BA"
+    },
+    {
+      "type": "color",
+      "id": "badge_text",
+      "label": "Badge text color",
+      "default": "#0C3B2C"
+    },
+    {
+      "type": "header",
+      "content": "Spacing"
+    },
+    {
+      "type": "range",
+      "id": "padding_top",
+      "label": "Padding top",
+      "min": 0,
+      "max": 200,
+      "step": 5,
+      "unit": "px",
+      "default": 80
+    },
+    {
+      "type": "range",
+      "id": "padding_bottom",
+      "label": "Padding bottom",
+      "min": 0,
+      "max": 200,
+      "step": 5,
+      "unit": "px",
+      "default": 80
+    }
+  ],
+  "blocks": [
+    {
+      "type": "faq_item",
+      "name": "FAQ Item",
+      "settings": [
+        {
+          "type": "text",
+          "id": "question",
+          "label": "Question",
+          "default": "How do I cancel my subscription?"
+        },
+        {
+          "type": "richtext",
+          "id": "answer",
+          "label": "Answer",
+          "default": "<p>You can cancel your subscription anytime from your account dashboard, or by emailing our support team. We'll process your cancellation within one business day.</p>"
+        },
+        {
+          "type": "checkbox",
+          "id": "show_badge",
+          "label": "Show badge on this item",
+          "default": false
+        }
+      ]
+    }
+  ],
+  "presets": [
+    {
+      "name": "Contact FAQ",
+      "category": "CWC Custom",
+      "blocks": [
+        {
+          "type": "faq_item",
+          "settings": {
+            "question": "How do I cancel my subscription?"
+          }
+        },
+        {
+          "type": "faq_item",
+          "settings": {
+            "question": "Why am I receiving orders I didn't authorize?"
+          }
+        },
+        {
+          "type": "faq_item",
+          "settings": {
+            "question": "The website says I don't have a subscription, but I'm still being charged?"
+          }
+        },
+        {
+          "type": "faq_item",
+          "settings": {
+            "question": "How do I update my subscription (frequency, products, or address)?",
+            "show_badge": true
+          }
+        },
+        {
+          "type": "faq_item",
+          "settings": {
+            "question": "How do I skip my next shipment?",
+            "show_badge": true
+          }
+        }
+      ]
+    }
+  ]
+}
+{% endschema %}

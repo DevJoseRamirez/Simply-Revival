@@ -1,0 +1,683 @@
+{% style %}
+  #cwc_contact-reach-out-{{ section.id }} {
+    --section-bg: {{ section.settings.bg_color | default: '#ffffff' }};
+    --eyebrow-color: {{ section.settings.eyebrow_color | default: '#3F8060' }};
+    --heading-color: {{ section.settings.heading_color | default: '#0C3B2C' }};
+    --highlight-color: {{ section.settings.bold_color | default: '#3F8060' }};
+    --subtext-color: {{ section.settings.subtext_color | default: '#0C3B2C' }};
+    --card-bg: {{ section.settings.card_bg | default: '#EFEFE3' }};
+    --card-radius: {{ section.settings.card_radius | default: 14 }}px;
+    --card-heading-color: {{ section.settings.card_heading_color | default: '#0C3B2C' }};
+    --card-body-color: {{ section.settings.card_body_color | default: '#0C3B2C' }};
+    --icon-bg: {{ section.settings.icon_bg | default: '#125657' }};
+    --icon-color: {{ section.settings.icon_color | default: '#d8fff4' }};
+    --input-bg: {{ section.settings.input_bg | default: '#ffffff' }};
+    --input-border: {{ section.settings.input_border | default: '#D8D8C8' }};
+    --input-border-focus: {{ section.settings.input_border_focus | default: '#0C3B2C' }};
+    --input-text: {{ section.settings.input_text | default: '#0C3B2C' }};
+    --input-placeholder: {{ section.settings.input_placeholder | default: '#9A9A8A' }};
+    --input-radius: {{ section.settings.input_radius | default: 8 }}px;
+    --btn-bg: {{ section.settings.btn_bg | default: '#0C3B2C' }};
+    /* --btn-bg-hover: {{ section.settings.btn_bg_hover | default: '#1A5240' }}; */
+    --btn-text: {{ section.settings.btn_text | default: '#ffffff' }};
+    --btn-radius: {{ section.settings.btn_radius | default: 6 }}px;
+    --link-color: {{ section.settings.link_color | default: '##125657' }};
+    --success-bg: {{ section.settings.success_bg | default: '#E6F4EC' }};
+    --success-text: {{ section.settings.success_text | default: '#0C3B2C' }};
+    --error-bg: {{ section.settings.error_bg | default: '#FBEAEA' }};
+    --error-text: {{ section.settings.error_text | default: '#8C1F1F' }};
+    --padding-top: {{ section.settings.padding_top | default: 80 }}px;
+    --padding-bottom: {{ section.settings.padding_bottom | default: 80 }}px;
+    --padding-top-mobile: {{ section.settings.padding_top | default: 80 | times: 0.5 }}px;
+    --padding-bottom-mobile: {{ section.settings.padding_bottom | default: 80 | times: 0.5 }}px;
+  }
+{% endstyle %}
+
+{{ 'CWC_contact_reach_out.css' | asset_url | stylesheet_tag }}
+
+{%- comment -%}
+  Reusable inline SVG snippet for both card header icons.
+  Color is driven by `currentColor` so it inherits from the icon wrapper.
+{%- endcomment -%}
+{%- capture cwc_contact_icon_svg -%}
+  <svg viewBox="0 0 28 28" xmlns="http://www.w3.org/2000/svg" aria-hidden="true" focusable="false">
+    <path d="M5.5 4h13a3.5 3.5 0 0 1 3.5 3.5v9a3.5 3.5 0 0 1-3.5 3.5h-4.7l-3.6 3.4a1 1 0 0 1-1.7-.7V20H5.5A3.5 3.5 0 0 1 2 16.5v-9A3.5 3.5 0 0 1 5.5 4Z" fill="currentColor"/>
+  </svg>
+{%- endcapture -%}
+
+<section
+  id="cwc_contact-reach-out-{{ section.id }}"
+  class="cwc_contact-reach-out"
+>
+  <div class="cwc_contact-reach-out__container">
+    {%- comment -%} ===== Header ===== {%- endcomment -%}
+    {% if section.settings.eyebrow != blank or section.settings.heading != blank or section.settings.subtext != blank %}
+      <div class="cwc_contact-reach-out__header">
+        {% if section.settings.eyebrow != blank %}
+          <span class="cwc_contact-reach-out__eyebrow">{{ section.settings.eyebrow }}</span>
+        {% endif %}
+
+        {% if section.settings.heading != blank %}
+          <div class="cwc_contact-reach-out__heading cwc-rte">{{ section.settings.heading }}</div>
+        {% endif %}
+
+        {% if section.settings.subtext != blank %}
+          <div class="cwc_contact-reach-out__subtext cwc-rte">{{ section.settings.subtext }}</div>
+        {% endif %}
+      </div>
+    {% endif %}
+
+    {%- comment -%} ===== Cards Grid ===== {%- endcomment -%}
+    {% if section.blocks.size > 0 %}
+      <div class="cwc_contact-reach-out__grid">
+        {% for block in section.blocks %}
+          {%- case block.type -%}
+            {%- when 'contact_form' -%}
+              <div class="cwc_contact-reach-out__card cwc_contact-reach-out__card--form" {{ block.shopify_attributes }}>
+                <div class="cwc_contact-reach-out__card-head">
+                  {% if block.settings.show_icon %}
+                    <span
+                      class="cwc_contact-reach-out__card-icon"
+                      style="background-color: var(--icon-bg); color: var(--icon-color);"
+                    >
+                      {% comment %} {{ cwc_contact_icon_svg }} {% endcomment %}
+                      <svg
+                        viewBox="0 0 24 24"
+                        fill="none"
+                        stroke="currentColor"
+                        stroke-width="1.5"
+                        aria-hidden="true"
+                        focusable="false"
+                      >
+                        <path d="M21 15a2 2 0 0 1-2 2H7l-4 4V5a2 2 0 0 1 2-2h14a2 2 0 0 1 2 2z"></path>
+                        <line x1="8" y1="10" x2="16" y2="10"></line>
+                        <line x1="8" y1="14" x2="16" y2="14"></line>
+                      </svg>
+                    </span>
+                  {% endif %}
+                  {% if block.settings.heading != blank %}
+                    <h3 class="cwc_contact-reach-out__card-heading">{{ block.settings.heading }}</h3>
+                  {% endif %}
+                </div>
+
+                {% if block.settings.subtext != blank %}
+                  <div class="cwc_contact-reach-out__card-subtext cwc-rte">{{ block.settings.subtext }}</div>
+                {% endif %}
+
+                {%- comment -%} Native Shopify contact form {%- endcomment -%}
+                <div class="cwc_contact-reach-out__form-wrap" id="cwc-contact-form-{{ section.id }}-{{ block.id }}">
+                  {% form 'contact' %}
+                    {%- comment -%} Success state {%- endcomment -%}
+                    {% if form.posted_successfully? %}
+                      <div
+                        class="cwc_contact-reach-out__form-msg cwc_contact-reach-out__form-msg--success"
+                        role="status"
+                      >
+                        {{
+                          block.settings.success_message
+                          | default: 'Thanks for reaching out — we will get back to you shortly.'
+                        }}
+                      </div>
+                    {% endif %}
+
+                    {%- comment -%} Error state {%- endcomment -%}
+                    {% if form.errors %}
+                      <div class="cwc_contact-reach-out__form-msg cwc_contact-reach-out__form-msg--error" role="alert">
+                        <strong>
+                          {{- 'templates.contact.form.error_heading' | t | default: 'Please correct the following:' -}}
+                        </strong>
+                        <ul>
+                          {% for field in form.errors %}
+                            <li>{{ form.errors.messages[field] }}</li>
+                          {% endfor %}
+                        </ul>
+                      </div>
+                    {% endif %}
+
+                    {%- comment -%} Name + Email row {%- endcomment -%}
+                    <div class="cwc_contact-reach-out__form-row cwc_contact-reach-out__form-row--two">
+                      <div class="cwc_contact-reach-out__field">
+                        <label class="visually-hidden" for="cwc-contact-name-{{ section.id }}-{{ block.id }}">
+                          {{- block.settings.name_placeholder | default: 'Your Name' -}}
+                        </label>
+                        <input
+                          type="text"
+                          id="cwc-contact-name-{{ section.id }}-{{ block.id }}"
+                          name="contact[name]"
+                          class="cwc_contact-reach-out__input"
+                          placeholder="{{ block.settings.name_placeholder | default: 'Your Name' }}"
+                          value="{% if form.name %}{{ form.name }}{% elsif customer %}{{ customer.name }}{% endif %}"
+                          autocomplete="name"
+                          required
+                        >
+                      </div>
+                      <div class="cwc_contact-reach-out__field">
+                        <label class="visually-hidden" for="cwc-contact-email-{{ section.id }}-{{ block.id }}">
+                          {{- block.settings.email_placeholder | default: 'Email Address' -}}
+                        </label>
+                        <input
+                          type="email"
+                          id="cwc-contact-email-{{ section.id }}-{{ block.id }}"
+                          name="contact[email]"
+                          class="cwc_contact-reach-out__input"
+                          placeholder="{{ block.settings.email_placeholder | default: 'Email Address' }}"
+                          value="{% if form.email %}{{ form.email }}{% elsif customer %}{{ customer.email }}{% endif %}"
+                          autocomplete="email"
+                          spellcheck="false"
+                          autocapitalize="off"
+                          required
+                        >
+                      </div>
+                    </div>
+
+                    {%- comment -%} Order number (optional) {%- endcomment -%}
+                    {% if block.settings.show_order_field %}
+                      <div class="cwc_contact-reach-out__field">
+                        <label class="visually-hidden" for="cwc-contact-order-{{ section.id }}-{{ block.id }}">
+                          {{- block.settings.order_placeholder | default: 'Order Number (optional)' -}}
+                        </label>
+                        <input
+                          type="text"
+                          id="cwc-contact-order-{{ section.id }}-{{ block.id }}"
+                          name="contact[order]"
+                          class="cwc_contact-reach-out__input"
+                          placeholder="{{ block.settings.order_placeholder | default: 'Order Number (optional)' }}"
+                          value="{{ form.order }}"
+                        >
+                      </div>
+                    {% endif %}
+
+                    {%- comment -%} Subject {%- endcomment -%}
+                    {% if block.settings.show_subject_field %}
+                      <div class="cwc_contact-reach-out__field">
+                        <label class="visually-hidden" for="cwc-contact-subject-{{ section.id }}-{{ block.id }}">
+                          {{- block.settings.subject_placeholder | default: 'What can we help with?' -}}
+                        </label>
+                        <input
+                          type="text"
+                          id="cwc-contact-subject-{{ section.id }}-{{ block.id }}"
+                          name="contact[subject]"
+                          class="cwc_contact-reach-out__input"
+                          placeholder="{{ block.settings.subject_placeholder | default: 'What can we help with?' }}"
+                          value="{{ form.subject }}"
+                        >
+                      </div>
+                    {% endif %}
+
+                    {%- comment -%} Message (textarea) {%- endcomment -%}
+                    <div class="cwc_contact-reach-out__field">
+                      <label class="visually-hidden" for="cwc-contact-body-{{ section.id }}-{{ block.id }}">
+                        {{-
+                          block.settings.message_placeholder
+                          | default: "Tell us what's going on, the more detail the better."
+                        -}}
+                      </label>
+                      <textarea
+                        id="cwc-contact-body-{{ section.id }}-{{ block.id }}"
+                        name="contact[body]"
+                        class="cwc_contact-reach-out__input cwc_contact-reach-out__textarea"
+                        rows="5"
+                        placeholder="{{ block.settings.message_placeholder | default: "Tell us what's going on, the more detail the better." }}"
+                        required
+                      >{{ form.body }}</textarea>
+                    </div>
+
+                    <button type="submit" class="cwc_contact-reach-out__submit">
+                      <span>{{ block.settings.submit_label | default: 'Send Message' }} →</span>
+                      {% comment %} <span class="cwc_contact-reach-out__submit-arrow" aria-hidden="true">→</span> {% endcomment %}
+                    </button>
+                  {% endform %}
+                </div>
+              </div>
+
+            {%- when 'email_card' -%}
+              <div
+                class="cwc_contact-reach-out__card cwc_contact-reach-out__card--email"
+                {{ block.shopify_attributes }}
+              >
+                <div class="cwc_contact-reach-out__card-inner">
+                  <div class="cwc_contact-reach-out__card-head">
+                    {% if block.settings.show_icon %}
+                      <span
+                        class="cwc_contact-reach-out__card-icon"
+                        style="background-color: var(--icon-bg); color: var(--icon-color);"
+                      >
+                        {% comment %} {{ cwc_contact_icon_svg }} {% endcomment %}
+                        <svg
+                          viewBox="0 0 24 24"
+                          fill="none"
+                          stroke="currentColor"
+                          stroke-width="1.5"
+                          aria-hidden="true"
+                          focusable="false"
+                        >
+                          <path d="M21 15a2 2 0 0 1-2 2H7l-4 4V5a2 2 0 0 1 2-2h14a2 2 0 0 1 2 2z"></path>
+                          <line x1="8" y1="10" x2="16" y2="10"></line>
+                          <line x1="8" y1="14" x2="16" y2="14"></line>
+                        </svg>
+                      </span>
+                    {% endif %}
+                    {% if block.settings.heading != blank %}
+                      <h3 class="cwc_contact-reach-out__card-heading">{{ block.settings.heading }}</h3>
+                    {% endif %}
+                  </div>
+
+                  {% if block.settings.body != blank %}
+                    <div class="cwc_contact-reach-out__card-body cwc-rte">{{ block.settings.body }}</div>
+                  {% endif %}
+
+                  {% if block.settings.email_address != blank %}
+                    <a href="mailto:{{ block.settings.email_address }}" class="cwc_contact-reach-out__email-link">
+                      {{ block.settings.email_display | default: block.settings.email_address }}
+                    </a>
+                  {% endif %}
+
+                  {% if block.settings.aux_text != blank %}
+                    <div class="cwc_contact-reach-out__card-aux cwc-rte">{{ block.settings.aux_text }}</div>
+                  {% endif %}
+                </div>
+              </div>
+          {%- endcase -%}
+        {% endfor %}
+      </div>
+    {% endif %}
+  </div>
+</section>
+
+{% schema %}
+{
+  "name": "CWC Contact Reach Out",
+  "settings": [
+    {
+      "type": "header",
+      "content": "Header"
+    },
+    {
+      "type": "text",
+      "id": "eyebrow",
+      "label": "Eyebrow",
+      "default": "SUPPORT 24/7"
+    },
+    {
+      "type": "richtext",
+      "id": "heading",
+      "label": "Heading",
+      "default": "<h2>Reach Out Team</h2>"
+    },
+    {
+      "type": "richtext",
+      "id": "subtext",
+      "label": "Subtext",
+      "default": "<p>Have a question that isn't answered below? We typically respond within 4 hours.</p>"
+    },
+    {
+      "type": "header",
+      "content": "Layout"
+    },
+    {
+      "type": "range",
+      "id": "card_radius",
+      "label": "Card corner radius",
+      "min": 0,
+      "max": 32,
+      "step": 1,
+      "unit": "px",
+      "default": 14
+    },
+    {
+      "type": "range",
+      "id": "input_radius",
+      "label": "Input corner radius",
+      "min": 0,
+      "max": 20,
+      "step": 1,
+      "unit": "px",
+      "default": 8
+    },
+    {
+      "type": "range",
+      "id": "btn_radius",
+      "label": "Button corner radius",
+      "min": 0,
+      "max": 20,
+      "step": 1,
+      "unit": "px",
+      "default": 6
+    },
+    {
+      "type": "header",
+      "content": "Colors"
+    },
+    {
+      "type": "color",
+      "id": "bg_color",
+      "label": "Section background",
+      "default": "#ffffff"
+    },
+    {
+      "type": "color",
+      "id": "eyebrow_color",
+      "label": "Eyebrow color",
+      "default": "#3F8060"
+    },
+    {
+      "type": "color",
+      "id": "heading_color",
+      "label": "Heading color",
+      "default": "#0C3B2C"
+    },
+    {
+      "type": "color",
+      "id": "bold_color",
+      "label": "Highlight (bold) color",
+      "default": "#3F8060"
+    },
+    {
+      "type": "color",
+      "id": "subtext_color",
+      "label": "Subtext color",
+      "default": "#0C3B2C"
+    },
+    {
+      "type": "color",
+      "id": "link_color",
+      "label": "Email link color",
+      "default": "#125657"
+    },
+    {
+      "type": "header",
+      "content": "Card Colors"
+    },
+    {
+      "type": "color",
+      "id": "card_bg",
+      "label": "Card background",
+      "default": "#d0f0f2"
+    },
+    {
+      "type": "color",
+      "id": "card_heading_color",
+      "label": "Card heading color",
+      "default": "#0C3B2C"
+    },
+    {
+      "type": "color",
+      "id": "card_body_color",
+      "label": "Card body color",
+      "default": "#0C3B2C"
+    },
+    {
+      "type": "header",
+      "content": "Icon Colors"
+    },
+    {
+      "type": "color",
+      "id": "icon_bg",
+      "label": "Icon background",
+      "default": "#125657"
+    },
+    {
+      "type": "color",
+      "id": "icon_color",
+      "label": "Icon color",
+      "default": "#d8fff4"
+    },
+    {
+      "type": "header",
+      "content": "Form Input Colors"
+    },
+    {
+      "type": "color",
+      "id": "input_bg",
+      "label": "Input background",
+      "default": "#ffffff"
+    },
+    {
+      "type": "color",
+      "id": "input_border",
+      "label": "Input border",
+      "default": "#D8D8C8"
+    },
+    {
+      "type": "color",
+      "id": "input_border_focus",
+      "label": "Input border (focus)",
+      "default": "#0C3B2C"
+    },
+    {
+      "type": "color",
+      "id": "input_text",
+      "label": "Input text",
+      "default": "#0C3B2C"
+    },
+    {
+      "type": "color",
+      "id": "input_placeholder",
+      "label": "Input placeholder text",
+      "default": "#9A9A8A"
+    },
+    {
+      "type": "header",
+      "content": "Submit Button Colors"
+    },
+    {
+      "type": "color",
+      "id": "btn_bg",
+      "label": "Button background",
+      "default": "#125657"
+    },
+    {
+      "type": "color",
+      "id": "btn_text",
+      "label": "Button text",
+      "default": "#ffffff"
+    },
+    {
+      "type": "header",
+      "content": "Form State Colors"
+    },
+    {
+      "type": "color",
+      "id": "success_bg",
+      "label": "Success background",
+      "default": "#E6F4EC"
+    },
+    {
+      "type": "color",
+      "id": "success_text",
+      "label": "Success text",
+      "default": "#0C3B2C"
+    },
+    {
+      "type": "color",
+      "id": "error_bg",
+      "label": "Error background",
+      "default": "#FBEAEA"
+    },
+    {
+      "type": "color",
+      "id": "error_text",
+      "label": "Error text",
+      "default": "#8C1F1F"
+    },
+    {
+      "type": "header",
+      "content": "Spacing"
+    },
+    {
+      "type": "range",
+      "id": "padding_top",
+      "label": "Padding top",
+      "min": 0,
+      "max": 200,
+      "step": 5,
+      "unit": "px",
+      "default": 80
+    },
+    {
+      "type": "range",
+      "id": "padding_bottom",
+      "label": "Padding bottom",
+      "min": 0,
+      "max": 200,
+      "step": 5,
+      "unit": "px",
+      "default": 80
+    }
+  ],
+  "blocks": [
+    {
+      "type": "contact_form",
+      "name": "Contact Form Card",
+      "limit": 1,
+      "settings": [
+        {
+          "type": "header",
+          "content": "Header"
+        },
+        {
+          "type": "checkbox",
+          "id": "show_icon",
+          "label": "Show icon",
+          "default": true
+        },
+        {
+          "type": "text",
+          "id": "heading",
+          "label": "Card heading",
+          "default": "Send Us a Message"
+        },
+        {
+          "type": "richtext",
+          "id": "subtext",
+          "label": "Card subtext",
+          "default": "<p>We'll get back to you via email, usually within 24 hours.</p>"
+        },
+        {
+          "type": "header",
+          "content": "Form Fields"
+        },
+        {
+          "type": "text",
+          "id": "name_placeholder",
+          "label": "Name placeholder",
+          "default": "Your Name"
+        },
+        {
+          "type": "text",
+          "id": "email_placeholder",
+          "label": "Email placeholder",
+          "default": "Email Address"
+        },
+        {
+          "type": "checkbox",
+          "id": "show_order_field",
+          "label": "Show order number field",
+          "default": true
+        },
+        {
+          "type": "text",
+          "id": "order_placeholder",
+          "label": "Order number placeholder",
+          "default": "Order Number (optional)"
+        },
+        {
+          "type": "checkbox",
+          "id": "show_subject_field",
+          "label": "Show subject field",
+          "default": true
+        },
+        {
+          "type": "text",
+          "id": "subject_placeholder",
+          "label": "Subject placeholder",
+          "default": "What can we help with?"
+        },
+        {
+          "type": "text",
+          "id": "message_placeholder",
+          "label": "Message placeholder",
+          "default": "Tell us what's going on, the more detail the better."
+        },
+        {
+          "type": "header",
+          "content": "Submit Button"
+        },
+        {
+          "type": "text",
+          "id": "submit_label",
+          "label": "Submit button label",
+          "default": "Send Message"
+        },
+        {
+          "type": "header",
+          "content": "Success Message"
+        },
+        {
+          "type": "text",
+          "id": "success_message",
+          "label": "Success message",
+          "default": "Thanks for reaching out — we will get back to you shortly."
+        }
+      ]
+    },
+    {
+      "type": "email_card",
+      "name": "Email Direct Card",
+      "limit": 1,
+      "settings": [
+        {
+          "type": "checkbox",
+          "id": "show_icon",
+          "label": "Show icon",
+          "default": true
+        },
+        {
+          "type": "text",
+          "id": "heading",
+          "label": "Card heading",
+          "default": "Email Directly"
+        },
+        {
+          "type": "richtext",
+          "id": "body",
+          "label": "Body text",
+          "default": "<p>Prefer to write from your own inbox?<br>Reach us anytime at:</p>"
+        },
+        {
+          "type": "text",
+          "id": "email_address",
+          "label": "Email address",
+          "info": "Used for the mailto: link.",
+          "default": "support@simplyrevival.com"
+        },
+        {
+          "type": "text",
+          "id": "email_display",
+          "label": "Email display text",
+          "info": "Leave blank to show the email address itself."
+        },
+        {
+          "type": "richtext",
+          "id": "aux_text",
+          "label": "Auxiliary text (below email link)"
+        }
+      ]
+    }
+  ],
+  "presets": [
+    {
+      "name": "Contact Reach Out",
+      "category": "CWC Custom",
+      "blocks": [
+        {
+          "type": "contact_form"
+        },
+        {
+          "type": "email_card"
+        }
+      ]
+    }
+  ]
+}
+{% endschema %}
