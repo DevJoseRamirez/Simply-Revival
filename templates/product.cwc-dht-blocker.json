@@ -230,7 +230,7 @@
         "price_display_8LMwX6": {
           "type": "price_display",
           "settings": {
-            "save_label": "Memorial Sale - Save"
+            "save_label": "Summer Sale - Save"
           }
         },
         "low_stock_rLxPtY": {
@@ -1712,6 +1712,36 @@
         "padding_top": 60,
         "padding_bottom": 60
       }
+    },
+    "178024152691ed2ca6": {
+      "type": "apps",
+      "blocks": {
+        "loox_reviews_loox_dynamic_section_LCA3Pj": {
+          "type": "shopify://apps/loox-reviews/blocks/loox-dynamic-section/5c3b337f-fd14-4df5-b1d6-80ec13e6e28e",
+          "settings": {
+            "reviews_to_display": "",
+            "default_tab": "automatic",
+            "only_photos": false,
+            "aggregated": false,
+            "limit": 20,
+            "hide_thumbnails": false,
+            "maxwidth": 1080,
+            "is_sample": true
+          }
+        }
+      },
+      "block_order": [
+        "loox_reviews_loox_dynamic_section_LCA3Pj"
+      ],
+      "settings": {
+        "animation": "",
+        "setwidth": "container",
+        "paddingsection": "0px 0px 0px 0px",
+        "paddingmobile": "60px 0px 60px 0px",
+        "marginsection": "0px 0px 0px 0px",
+        "marginmobile": "0px 0px 0px 0px",
+        "bgsection": "#ffffff"
+      }
     }
   },
   "order": [
@@ -1737,6 +1767,7 @@
     "cwc_faqs_gzUrmK",
     "1629746450643786911",
     "areviews_1763084574_a82078",
-    "cwc_areviews_widget_8WXrDw"
+    "cwc_areviews_widget_8WXrDw",
+    "178024152691ed2ca6"
   ]
 }

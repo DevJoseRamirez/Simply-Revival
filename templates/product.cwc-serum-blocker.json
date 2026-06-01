@@ -366,7 +366,7 @@
         "price_display_PeyPD7": {
           "type": "price_display",
           "settings": {
-            "save_label": "Memorial Sale - Save"
+            "save_label": "Summer Sale - Save"
           }
         },
         "product_options_L6gajx": {
@@ -418,8 +418,8 @@
             "sticky_button_text": "Add to Cart",
             "sticky_bg_color": "#ffffff",
             "bundle_product_1": "25-gift-card",
-            "bundle_product_2": "shipping-protection-free-gift",
-            "bundle_product_3": "free-365-day-guarantee",
+            "bundle_product_2": "",
+            "bundle_product_3": "",
             "bundle_product_4": "",
             "skip_cart": false
           }

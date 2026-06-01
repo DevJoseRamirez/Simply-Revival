@@ -9,6 +9,7 @@
   color: var(--subtext-color);
   padding-top: var(--padding-top);
   padding-bottom: var(--padding-bottom);
+  border-bottom: 1px solid #CCC;
 }
 
 .cwc_manage-subscription__container {
@@ -22,6 +23,7 @@
   text-align: center;
   margin: 0 auto 2.5rem;
   max-width: 900px;
+  max-width: 800px;
 }
 
 .cwc_manage-subscription__eyebrow {

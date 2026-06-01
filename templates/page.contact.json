@@ -46,6 +46,7 @@
         "template--16736981025086__e7285e43-2bb7-46e5-a5e4-538568d8723e-1666759876b5fa9979-0",
         "template--16736981025086__e7285e43-2bb7-46e5-a5e4-538568d8723e-1666759876b5fa9979-1"
       ],
+      "disabled": true,
       "settings": {
         "animation": "fade-up",
         "setwidth": "full",
@@ -60,10 +61,214 @@
         "marginsection": "0px 0px 0px 0px",
         "marginmobile": "0px 0px 0px 0px"
       }
+    },
+    "cwc_manage_subscription_9zdaDB": {
+      "type": "CWC_manage_subscription",
+      "name": "Manage Subscription",
+      "settings": {
+        "eyebrow": "Track Your Order",
+        "heading": "<h2>Waiting On Your SimplyRevival® Order?</h2>",
+        "subtext": "<p>Log In to find your order number or tracking code to see your delivery status. You'll find these in your order confirmation email.</p>",
+        "card_heading": "",
+        "card_radius": 14,
+        "btn_label": "Track Your Order",
+        "btn_link": "https://simplyrevival.com/account/orders",
+        "btn_radius": 6,
+        "bg_color": "#ffffff",
+        "eyebrow_color": "#3f8060",
+        "heading_color": "#0c3b2c",
+        "bold_color": "#3f8060",
+        "subtext_color": "#0c3b2c",
+        "card_bg": "#efefe3",
+        "card_heading_color": "#0c3b2c",
+        "btn_bg": "#125657",
+        "btn_bg_hover": "#125657",
+        "btn_text": "#ffffff",
+        "padding_top": 60,
+        "padding_bottom": 60
+      }
+    },
+    "cwc_contact_reach_out_3Tz8nY": {
+      "type": "CWC_contact_reach_out",
+      "blocks": {
+        "contact_form_qYxYEC": {
+          "type": "contact_form",
+          "settings": {
+            "show_icon": true,
+            "heading": "Send Us a Message",
+            "subtext": "<p>We'll get back to you via email, usually within 24 hours.</p>",
+            "name_placeholder": "Your Name",
+            "email_placeholder": "Email Address",
+            "show_order_field": true,
+            "order_placeholder": "Order Number (optional)",
+            "show_subject_field": true,
+            "subject_placeholder": "What can we help with?",
+            "message_placeholder": "Tell us what's going on, the more detail the better.",
+            "submit_label": "Send Message",
+            "success_message": "Thanks for reaching out — we will get back to you shortly."
+          }
+        },
+        "email_card_cpCRwA": {
+          "type": "email_card",
+          "settings": {
+            "show_icon": true,
+            "heading": "Email Directly",
+            "body": "<p>Prefer to write from your own inbox?<br/>Reach us anytime at:</p>",
+            "email_address": "support@simplyrevival.com",
+            "email_display": "",
+            "aux_text": ""
+          }
+        }
+      },
+      "block_order": [
+        "contact_form_qYxYEC",
+        "email_card_cpCRwA"
+      ],
+      "name": "Contact Reach Out",
+      "settings": {
+        "eyebrow": "SUPPORT 24/7",
+        "heading": "<h2>Reach Out Team</h2>",
+        "subtext": "<p>Have a question that isn't answered below? We typically respond within 4 hours.</p>",
+        "card_radius": 14,
+        "input_radius": 8,
+        "btn_radius": 6,
+        "bg_color": "#ffffff",
+        "eyebrow_color": "#3f8060",
+        "heading_color": "#0c3b2c",
+        "bold_color": "#3f8060",
+        "subtext_color": "#0c3b2c",
+        "link_color": "#125657",
+        "card_bg": "#d0f0f2",
+        "card_heading_color": "#0c3b2c",
+        "card_body_color": "#0c3b2c",
+        "icon_bg": "#125657",
+        "icon_color": "#ffffff",
+        "input_bg": "#ffffff",
+        "input_border": "#d8d8c8",
+        "input_border_focus": "#0c3b2c",
+        "input_text": "#0c3b2c",
+        "input_placeholder": "#9a9a8a",
+        "btn_bg": "#125657",
+        "btn_text": "#ffffff",
+        "success_bg": "#e6f4ec",
+        "success_text": "#0c3b2c",
+        "error_bg": "#fbeaea",
+        "error_text": "#8c1f1f",
+        "padding_top": 80,
+        "padding_bottom": 80
+      }
+    },
+    "cwc_contact_faq_RnrtwJ": {
+      "type": "CWC_contact_faq",
+      "blocks": {
+        "faq_item_gtP6QC": {
+          "type": "faq_item",
+          "settings": {
+            "question": "How do I cancel my subscription?",
+            "answer": "<p>We make it easy! You can cancel anytime through <a href=\"https://simplyrevival.com/a/loop_subscriptions/get-subscription-link\" title=\"https://simplyrevival.com/a/loop_subscriptions/get-subscription-link\"><strong>SimplyRevival® Portal</strong></a>, or just drop us a line at <a href=\"mailto:support@simplyrevival.com\" target=\"_blank\"><strong>support@simplyrevival.com</strong></a> and we'll take care of it for you.</p><p>Please include your order number or the email address used at checkout so we can locate your account quickly.</p>",
+            "show_badge": false
+          }
+        },
+        "faq_item_8YQ7tX": {
+          "type": "faq_item",
+          "settings": {
+            "question": "Why am I receiving orders I didn't authorize?",
+            "answer": "<p>This can happen if an active subscription or saved payment method is still on file. No worries, you can manage or cancel through the <a href=\"https://simplyrevival.com/a/loop_subscriptions/get-subscription-link\" title=\"https://simplyrevival.com/a/loop_subscriptions/get-subscription-link\"><strong>SimplyRevival® Portal</strong></a>, or reach out to <a href=\"mailto:support@simplyrevival.com\" target=\"_blank\"><strong>support@simplyrevival.com</strong></a> and we'll sort it out right away.</p>",
+            "show_badge": false
+          }
+        },
+        "faq_item_b9ttLy": {
+          "type": "faq_item",
+          "settings": {
+            "question": "The website says I don't have a subscription, but I'm still being charged?",
+            "answer": "<p>It may be linked to a different email or payment method. Try logging into <a href=\"https://simplyrevival.com/a/loop_subscriptions/get-subscription-link\" title=\"https://simplyrevival.com/a/loop_subscriptions/get-subscription-link\"><strong>SimplyRevival® Portal</strong></a> with the email you used at checkout.</p><p>If it's still not showing up, just reach out to <a href=\"mailto:support@simplyrevival.com\" target=\"_blank\"><strong>support@simplyrevival.com</strong></a> and we'll find it for you.</p>",
+            "show_badge": false
+          }
+        },
+        "faq_item_kayWeP": {
+          "type": "faq_item",
+          "settings": {
+            "question": "How do I update my subscription (frequency, products, or address)?",
+            "answer": "<p>You can update your frequency, products, or shipping address anytime at <a href=\"https://simplyrevival.com/a/loop_subscriptions/get-subscription-link\" title=\"https://simplyrevival.com/a/loop_subscriptions/get-subscription-link\"><strong>SimplyRevival® Portal</strong></a>. Or if you prefer, just email <a href=\"mailto:support@simplyrevival.com\" target=\"_blank\"><strong>support@simplyrevival.com</strong></a> and we'll happily make the changes for you.</p>",
+            "show_badge": true
+          }
+        },
+        "faq_item_Fyk3aB": {
+          "type": "faq_item",
+          "settings": {
+            "question": "How do I skip my next shipment?",
+            "answer": "<p>Still working through your current supply? No problem! Skip your next shipment at <a href=\"https://simplyrevival.com/a/loop_subscriptions/get-subscription-link\" title=\"https://simplyrevival.com/a/loop_subscriptions/get-subscription-link\"><strong>SimplyRevival® Portal</strong></a>, or let us know at <a href=\"mailto:support@simplyrevival.com\" target=\"_blank\"><strong>support@simplyrevival.com</strong></a> and we'll push your renewal date.</p>",
+            "show_badge": true
+          }
+        }
+      },
+      "block_order": [
+        "faq_item_gtP6QC",
+        "faq_item_8YQ7tX",
+        "faq_item_b9ttLy",
+        "faq_item_kayWeP",
+        "faq_item_Fyk3aB"
+      ],
+      "name": "Contact FAQ",
+      "settings": {
+        "eyebrow": "FAQS",
+        "heading": "<h2>Subscription & Account</h2>",
+        "subtext": "",
+        "image": "shopify://shop_images/man_laptop_couch_smile2.png",
+        "image_radius": 14,
+        "item_radius": 14,
+        "badge_label": "NEW",
+        "bg_color": "#fffee3",
+        "eyebrow_color": "#3f8060",
+        "heading_color": "#0c3b2c",
+        "bold_color": "#3f8060",
+        "image_placeholder_bg": "#e5e2d2",
+        "item_bg": "#ffffff",
+        "item_border": "#e1e0d2",
+        "item_border_hover": "#c9c8b6",
+        "item_question_color": "#0c3b2c",
+        "item_answer_color": "#2a3a33",
+        "item_chevron_color": "#3f8060",
+        "item_answer_divider": "#eae8da",
+        "badge_bg": "#cbe5ba",
+        "badge_text": "#0c3b2c",
+        "padding_top": 80,
+        "padding_bottom": 80
+      }
+    },
+    "cwc_manage_subscription_qw8W9f": {
+      "type": "CWC_manage_subscription",
+      "name": "Manage Subscription",
+      "settings": {
+        "eyebrow": "MANAGE YOUR SUBSCRIPTION",
+        "heading": "<h2>Need to update something?</h2>",
+        "subtext": "<p>Skip a shipment, change your frequency, or update your address — all from your account dashboard.</p>",
+        "card_heading": "",
+        "card_radius": 14,
+        "btn_label": "Manage Subscription",
+        "btn_link": "https://simplyrevival.com/a/loop_subscriptions/get-subscription-link",
+        "btn_radius": 6,
+        "bg_color": "#ffffff",
+        "eyebrow_color": "#3f8060",
+        "heading_color": "#0c3b2c",
+        "bold_color": "#3f8060",
+        "subtext_color": "#0c3b2c",
+        "card_bg": "#efefe3",
+        "card_heading_color": "#0c3b2c",
+        "btn_bg": "#125657",
+        "btn_bg_hover": "#125657",
+        "btn_text": "#ffffff",
+        "padding_top": 80,
+        "padding_bottom": 80
+      }
     }
   },
   "order": [
     "main",
-    "e7285e43-2bb7-46e5-a5e4-538568d8723e"
+    "e7285e43-2bb7-46e5-a5e4-538568d8723e",
+    "cwc_manage_subscription_9zdaDB",
+    "cwc_contact_reach_out_3Tz8nY",
+    "cwc_contact_faq_RnrtwJ",
+    "cwc_manage_subscription_qw8W9f"
   ]
 }

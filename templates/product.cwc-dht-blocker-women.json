@@ -230,7 +230,7 @@
         "price_display_8LMwX6": {
           "type": "price_display",
           "settings": {
-            "save_label": "Save"
+            "save_label": "Summer Sale - Save"
           }
         },
         "product_options_K4yi8r": {
@@ -259,7 +259,7 @@
         "subscription_toggle_ArNDfx": {
           "type": "subscription_toggle",
           "settings": {
-            "title": "Save 25% With Automatic Refills!",
+            "title": "Save With Automatic Refills!",
             "subtitle": "Refills ship every 25 days | Cancel Anytime"
           }
         },
