@@ -223,6 +223,13 @@
   height: 100%;
   width: 100%;
   display: block;
+  width: 16px;
+  height: 16px;
+  height: 100%;
+  width: 100%;
+  display: block;
+  height: 2rem;
+  max-width: 32px;
 }
 
 .cwc_contact-faq__item.is-open .cwc_contact-faq__chevron {

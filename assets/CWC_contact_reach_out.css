@@ -192,8 +192,7 @@
 .cwc_contact-reach-out__email-link:focus-visible {
   opacity: 0.8;
   text-decoration: initial;
-  /* text-decoration: underline; */
-
+  text-decoration: underline;
 }
 
 /* === Form === */

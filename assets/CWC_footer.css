@@ -1,0 +1,386 @@
+/* ==============================
+   CWC Footer
+   3-col top (logo · newsletter · menu)
+   → optional disclaimer
+   → localization
+   → copyright
+   ============================== */
+
+/* === Root === */
+.cwc_footer {
+  background-color: var(--section-bg);
+  color: var(--text-color);
+  padding-top: var(--padding-top);
+  padding-bottom: var(--padding-bottom);
+  font-family: inherit;
+  line-height: 1.6;
+}
+
+.cwc_footer__container {
+  max-width: 1400px;
+  margin: 0 auto;
+  padding: 0 2rem;
+}
+
+/* === Global link styling === */
+.cwc_footer a {
+  color: var(--text-color);
+  text-decoration: none;
+  transition: color 0.18s ease;
+}
+
+.cwc_footer a:hover,
+.cwc_footer a:focus-visible {
+  color: var(--text-hover-color);
+}
+
+.cwc_footer .cwc-rte strong,
+.cwc_footer .cwc-rte b {
+  color: var(--highlight-color);
+}
+
+/* === Top row: 3 columns with vertical dividers === */
+.cwc_footer__top {
+  /* display: grid; */
+  /* grid-template-columns: minmax(0, 1fr) minmax(0, 2fr) minmax(0, 1fr); */
+  /* gap: 2rem; */
+  /* align-items: start; */
+  /* padding-bottom: 2.5rem; */
+  display: flex;
+  flex-wrap: wrap;
+}
+
+.cwc_footer__col {
+  min-width: 0;
+  height: 100%;
+  height: stretch;
+}
+
+.cwc_footer__col--newsletter {
+  border-left: .5px solid var(--divider-color);
+  border-right: .5px solid var(--divider-color);
+  /* padding: 0 2.5rem; */
+  border-color: rgba(228, 228, 228, 1);
+  width: 51%;
+  padding-left: 4rem;
+}
+
+/* === Logo === */
+.cwc_footer__logo-link,
+.cwc_footer__logo-text {
+  display: inline-block;
+  text-decoration: none;
+}
+
+.cwc_footer__logo {
+  display: block;
+  height: auto;
+}
+
+.cwc_footer__col--logo {
+  width: 19%
+}
+
+.cwc_footer__col--menu {
+  width: 30%;
+  padding-left: 4rem;
+}
+
+
+.cwc_footer__logo-text {
+  color: var(--title-color);
+  font-size: 1.125rem;
+  font-weight: 700;
+  letter-spacing: 0.12em;
+  text-transform: uppercase;
+}
+
+/* === Headings === */
+.cwc_footer__heading {
+  color: var(--title-color);
+  font-size: 1.0625rem;
+  font-weight: 700;
+  line-height: 1.3;
+  margin: 0 0 0.5rem;
+}
+
+.cwc_footer__subheading {
+  color: var(--text-color);
+  font-size: 0.9375rem;
+  line-height: 1.5;
+  margin-bottom: 1.25rem;
+}
+
+.cwc_footer__subheading>* {
+  color: var(--text-color);
+
+}
+
+.cwc_footer__subheading p {
+  margin: 0;
+}
+
+/* === Newsletter form === */
+.cwc_footer__newsletter {
+  margin-top: 1rem;
+}
+
+.cwc_footer__newsletter-field {
+  display: flex;
+  align-items: stretch;
+  background-color: var(--input-bg);
+  border: 1px solid var(--input-border);
+  border-radius: var(--btn-radius);
+  overflow: hidden;
+  max-width: 420px;
+}
+
+.cwc_footer__newsletter-input {
+  flex: 1 1 auto;
+  min-width: 0;
+  background: transparent;
+  border: none;
+  color: var(--input-text);
+  font-family: inherit;
+  font-size: 0.9375rem;
+  padding: 0.875rem 1rem;
+  -webkit-appearance: none;
+  appearance: none;
+}
+
+.cwc_footer__newsletter-input::placeholder {
+  color: var(--input-placeholder);
+  opacity: 1;
+}
+
+.cwc_footer__newsletter-input:focus,
+.cwc_footer__newsletter-input:focus-visible {
+  outline: none;
+}
+
+.cwc_footer__newsletter-field:focus-within {
+  border-color: var(--btn-bg);
+  box-shadow: 0 0 0 3px color-mix(in srgb, var(--btn-bg) 22%, transparent);
+}
+
+.cwc_footer__newsletter-submit {
+  flex: 0 0 auto;
+  background-color: var(--btn-bg);
+  color: var(--btn-text);
+  border: none;
+  padding: 0.875rem 1.5rem;
+  font-family: inherit;
+  font-size: 0.9375rem;
+  font-weight: 600;
+  cursor: pointer;
+  transition: background-color 0.18s ease;
+  white-space: nowrap;
+}
+
+.cwc_footer__newsletter-submit:hover {
+  background-color: var(--btn-bg-hover);
+}
+
+.cwc_footer__newsletter-submit:focus-visible {
+  outline: 2px solid var(--btn-bg);
+  outline-offset: 2px;
+}
+
+.cwc_footer__newsletter-success {
+  color: var(--highlight-color);
+  font-size: 0.9375rem;
+  margin: 0;
+}
+
+/* === Menu === */
+.cwc_footer__menu {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+}
+
+.cwc_footer__menu-item {
+  margin-bottom: 0.625rem;
+}
+
+.cwc_footer__menu-item:last-child {
+  margin-bottom: 0;
+}
+
+.cwc_footer__menu-item a {
+  font-size: 0.9375rem;
+  position: relative;
+  display: inline-block;
+}
+
+.cwc_footer__menu-item a::after {
+  content: "";
+  position: absolute;
+  left: 0;
+  bottom: -3px;
+  width: 0;
+  height: 1px;
+  background-color: var(--text-hover-color);
+  transition: width 0.25s ease;
+}
+
+.cwc_footer__menu-item a:hover::after,
+.cwc_footer__menu-item a:focus-visible::after {
+  width: 100%;
+}
+
+/* === Disclaimer text === */
+.cwc_footer__disclaimer {
+  color: var(--disclaimer-color);
+  font-size: 0.8125rem;
+  line-height: 1.65;
+  padding: 1.5rem 0 1rem;
+  padding: 2rem 0 1rem;
+}
+
+.cwc_footer__disclaimer>* {
+  color: var(--disclaimer-color);
+  font-size: .7rem;
+  margin: 0;
+  line-height: 1.4;
+}
+
+.cwc_footer__disclaimer p {
+  /* margin: 0 0 0.4em; */
+}
+
+.cwc_footer__disclaimer p:last-child {
+  margin-bottom: 0;
+}
+
+/* === Localization === */
+.cwc_footer__localization {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 1.5rem;
+  padding: 1.25rem 0 0.5rem;
+  flex-wrap: wrap;
+}
+
+/* === Copyright === */
+.cwc_footer__copyright {
+  text-align: center;
+  color: var(--copyright-color);
+  font-size: 0.8125rem;
+  padding-top: 0.75rem;
+}
+
+.cwc_footer__copyright a {
+  color: var(--copyright-color);
+}
+
+/* === Visually hidden (a11y) === */
+.cwc_footer .visually-hidden {
+  position: absolute;
+  width: 1px;
+  height: 1px;
+  padding: 0;
+  margin: -1px;
+  overflow: hidden;
+  clip: rect(0, 0, 0, 0);
+  white-space: nowrap;
+  border: 0;
+}
+
+/* ==============================
+   Tablet (CWC standard 991px)
+   ============================== */
+@media screen and (max-width: 991px) {
+  .cwc_footer__container {
+    padding: 0 1.5rem;
+  }
+
+  .cwc_footer__top {
+    grid-template-columns: minmax(0, 1fr) minmax(0, 1fr);
+    gap: 1.75rem;
+  }
+
+  /* Newsletter spans both columns on tablet; logo + menu sit side by side above */
+  .cwc_footer__col--logo {
+    grid-column: 1;
+    grid-row: 1;
+  }
+
+  .cwc_footer__col--menu {
+    grid-column: 2;
+    grid-row: 1;
+  }
+
+  .cwc_footer__col--newsletter {
+    grid-column: 1 / -1;
+    grid-row: 2;
+    border-left: none;
+    border-right: none;
+    border-top: 1px solid var(--divider-color);
+    padding: 1.75rem 0 0;
+  }
+}
+
+/* ==============================
+   Mobile (CWC standard 768px) — stack everything
+   ============================== */
+@media screen and (max-width: 768px) {
+  .cwc_footer {
+    padding-top: var(--padding-top-mobile);
+    padding-bottom: var(--padding-bottom-mobile);
+  }
+
+  .cwc_footer__container {
+    padding: 0 1rem;
+  }
+
+  .cwc_footer__top {
+    grid-template-columns: 1fr;
+    gap: 1.5rem;
+    padding-bottom: 1.75rem;
+  }
+
+  .cwc_footer__col--logo {
+    grid-column: 1;
+    grid-row: auto;
+    text-align: center;
+  }
+
+  .cwc_footer__col--newsletter {
+    grid-column: 1;
+    grid-row: auto;
+    border: none;
+    border-top: 1px solid var(--divider-color);
+    border-bottom: 1px solid var(--divider-color);
+    padding: 1.5rem 0;
+  }
+
+  .cwc_footer__col--menu {
+    grid-column: 1;
+    grid-row: auto;
+    /* width: 30%; */
+    /* padding-left: 4rem; */
+  }
+
+  .cwc_footer__newsletter-field {
+    flex-direction: column;
+  }
+
+  .cwc_footer__newsletter-submit {
+    width: 100%;
+  }
+
+  .cwc_footer__disclaimer {
+    font-size: 0.75rem;
+    padding: 1.25rem 0 0.75rem;
+  }
+
+  .cwc_footer__localization {
+    padding: 1rem 0 0.5rem;
+  }
+
+  .cwc_footer__copyright {
+    font-size: 0.75rem;
+  }
+}
