@@ -8,7 +8,7 @@
     --card-bg: {{ section.settings.card_bg | default: '#EFEFE3' }};
     --card-radius: {{ section.settings.card_radius | default: 14 }}px;
     --card-heading-color: {{ section.settings.card_heading_color | default: '#0C3B2C' }};
-    --btn-bg: {{ section.settings.btn_bg | default: '#0C3B2C' }};
+    --btn-bg: {{ section.settings.btn_bg | default: '#125657' }};
     --btn-bg-hover: {{ section.settings.btn_bg_hover | default: '#1A5240' }};
     --btn-text: {{ section.settings.btn_text | default: '#ffffff' }};
     --btn-radius: {{ section.settings.btn_radius | default: 6 }}px;
@@ -52,8 +52,8 @@
 
         {% if section.settings.btn_label != blank %}
           <a href="{{ section.settings.btn_link | default: '#' }}" class="cwc_manage-subscription__btn">
-            <span>{{ section.settings.btn_label }}</span>
-            <span class="cwc_manage-subscription__btn-arrow" aria-hidden="true">→</span>
+            <span>{{ section.settings.btn_label }} →</span>
+            {% comment %} <span class="cwc_manage-subscription__btn-arrow" aria-hidden="true">→</span> {% endcomment %}
           </a>
         {% endif %}
       </div>
@@ -201,7 +201,7 @@
       "type": "color",
       "id": "btn_bg_hover",
       "label": "Button background (hover)",
-      "default": "#1A5240"
+      "default": "#125657"
     },
     {
       "type": "color",

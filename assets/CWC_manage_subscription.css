@@ -82,7 +82,7 @@
 .cwc_manage-subscription__card {
   background-color: var(--card-bg);
   border-radius: var(--card-radius);
-  padding: 2.4375rem 3.4375rem 3rem 2rem;
+  /* padding: 2.4375rem 3.4375rem 3rem 2rem; */
   max-width: 900px;
   margin: 0 auto;
   display: flex;
@@ -146,7 +146,7 @@
   }
 
   .cwc_manage-subscription__card {
-    padding: 1.75rem;
+    /* padding: 1.75rem; */
   }
 }
 
@@ -172,7 +172,7 @@
   }
 
   .cwc_manage-subscription__card {
-    padding: 1.5rem;
+    /* padding: 1.5rem; */
   }
 
   .cwc_manage-subscription__card-heading {

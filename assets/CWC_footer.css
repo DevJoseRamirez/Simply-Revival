@@ -438,4 +438,8 @@
   .cwc_footer__menu-item a {
     font-size: .88rem;
   }
+
+  .cwc_footer__col {
+    height: auto;
+  }
 }
