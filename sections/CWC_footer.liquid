@@ -152,6 +152,18 @@
         {{ section.settings.custom_copyright }}
       {% endif %}
     </div>
+
+    <div class="cwc_footer__payment-icons">
+      {%- if shop.enabled_payment_types != empty -%}
+        <ul id="cwc_footer-payment-methods" class="list-inline payment-icons text-center text-lg-right">
+          {%- for type in shop.enabled_payment_types -%}
+            <li class="list-inline-item">
+              {{ type | payment_type_svg_tag: class: 'payment-icon' }}
+            </li>
+          {%- endfor -%}
+        </ul>
+      {%- endif -%}
+    </div>
   </div>
 </footer>
 

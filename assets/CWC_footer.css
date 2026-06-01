@@ -6,6 +6,14 @@
    → copyright
    ============================== */
 
+.shopify-policy__container {
+  margin: 3rem auto;
+}
+
+.shopify-policy__title {
+  margin-bottom: 1rem;
+}
+
 /* === Root === */
 .cwc_footer {
   background-color: var(--section-bg);
@@ -60,9 +68,10 @@
   border-left: .5px solid var(--divider-color);
   border-right: .5px solid var(--divider-color);
   /* padding: 0 2.5rem; */
-  border-color: rgba(228, 228, 228, 1);
+  border-color: #e4e4e485;
   width: 51%;
   padding-left: 4rem;
+  padding-right: 3rem;
 }
 
 /* === Logo === */
@@ -75,6 +84,8 @@
 .cwc_footer__logo {
   display: block;
   height: auto;
+  /*  */
+  max-width: 90%;
 }
 
 .cwc_footer__col--logo {
@@ -132,7 +143,7 @@
   border: 1px solid var(--input-border);
   border-radius: var(--btn-radius);
   overflow: hidden;
-  max-width: 420px;
+  max-width: 400px;
 }
 
 .cwc_footer__newsletter-input {
@@ -144,6 +155,7 @@
   font-family: inherit;
   font-size: 0.9375rem;
   padding: 0.875rem 1rem;
+  padding: 0.8rem 1rem;
   -webkit-appearance: none;
   appearance: none;
 }
@@ -169,6 +181,7 @@
   color: var(--btn-text);
   border: none;
   padding: 0.875rem 1.5rem;
+  padding: 0.8rem 1.5rem;
   font-family: inherit;
   font-size: 0.9375rem;
   font-weight: 600;
@@ -226,7 +239,7 @@
 
 .cwc_footer__menu-item a:hover::after,
 .cwc_footer__menu-item a:focus-visible::after {
-  width: 100%;
+  /* width: 100%; */
 }
 
 /* === Disclaimer text === */
@@ -268,11 +281,24 @@
   text-align: center;
   color: var(--copyright-color);
   font-size: 0.8125rem;
-  padding-top: 0.75rem;
+  padding-top: 1.5rem;
+  padding-bottom: 1rem;
 }
 
 .cwc_footer__copyright a {
   color: var(--copyright-color);
+}
+
+.cwc_footer__payment-icons {
+  margin: auto;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.cwc_footer__payment-icons .payment-icon {
+  height: 1.2rem;
+  width: auto;
 }
 
 /* === Visually hidden (a11y) === */
@@ -305,20 +331,27 @@
   .cwc_footer__col--logo {
     grid-column: 1;
     grid-row: 1;
+    width: 100%;
+    display: flex;
   }
 
   .cwc_footer__col--menu {
     grid-column: 2;
     grid-row: 1;
+    width: 100%;
+    padding: 0rem;
   }
 
   .cwc_footer__col--newsletter {
-    grid-column: 1 / -1;
-    grid-row: 2;
-    border-left: none;
-    border-right: none;
-    border-top: 1px solid var(--divider-color);
+    /* grid-column: 1 / -1; */
+    /* grid-row: 2; */
+    /* border-left: none; */
+    /* border-right: none; */
+    /* border-top: 1px solid var(--divider-color); */
     padding: 1.75rem 0 0;
+    width: 100%;
+    padding: 0rem;
+
   }
 }
 
@@ -326,6 +359,10 @@
    Mobile (CWC standard 768px) — stack everything
    ============================== */
 @media screen and (max-width: 768px) {
+  .cwc_footer__disclaimer>* {
+    text-align: center;
+  }
+
   .cwc_footer {
     padding-top: var(--padding-top-mobile);
     padding-bottom: var(--padding-bottom-mobile);
@@ -351,8 +388,10 @@
     grid-column: 1;
     grid-row: auto;
     border: none;
-    border-top: 1px solid var(--divider-color);
-    border-bottom: 1px solid var(--divider-color);
+    border-top: .5px solid var(--divider-color);
+    border-bottom: .5px solid var(--divider-color);
+    border-color: #e4e4e485;
+
     padding: 1.5rem 0;
   }
 
@@ -364,23 +403,39 @@
   }
 
   .cwc_footer__newsletter-field {
-    flex-direction: column;
+    /* flex-direction: column; */
   }
 
   .cwc_footer__newsletter-submit {
-    width: 100%;
+    /* width: 100%; */
+    font-size: .85rem;
   }
 
   .cwc_footer__disclaimer {
     font-size: 0.75rem;
-    padding: 1.25rem 0 0.75rem;
+    padding: 3rem 0 0.75rem;
+    border-top: .5px solid var(--divider-color);
+    /* border-bottom: .5px solid var(--divider-color); */
+    border-color: #e4e4e485;
   }
 
   .cwc_footer__localization {
-    padding: 1rem 0 0.5rem;
+    padding: 1rem 0 1.5rem;
   }
 
   .cwc_footer__copyright {
     font-size: 0.75rem;
+    border-top: .5px solid var(--divider-color);
+    /* border-bottom: .5px solid var(--divider-color); */
+    border-color: #e4e4e485;
+    text-align: left;
+  }
+
+  .cwc_footer__payment-icons {
+    justify-content: flex-start;
+  }
+
+  .cwc_footer__menu-item a {
+    font-size: .88rem;
   }
 }
