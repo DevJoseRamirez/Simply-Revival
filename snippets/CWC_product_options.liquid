@@ -139,6 +139,31 @@
 
         {% comment %}
           ======================
+           CART ADD-ONS RESOLUTION
+          ======================
+          Resolves up to 2 add-on PRODUCTS for the current option.
+          When the user clicks this option's button and then clicks
+          add-to-cart, the addons get appended to the cart request
+          (handled in CWC_featured_product__core.js via the
+          collectExtraCartItems() helper).
+          - Uses each addon's `first_available_variant` (quantity 1)
+          - Empty/blank addons render no data attribute → ignored by JS
+        {% endcomment %}
+        {% assign addon_1 = null %}
+        {% assign addon_2 = null %}
+        {% if option_index == 0 %}
+          {% assign addon_1 = block.settings.cart_addon_1_opt1 %}
+          {% assign addon_2 = block.settings.cart_addon_2_opt1 %}
+        {% elsif option_index == 1 %}
+          {% assign addon_1 = block.settings.cart_addon_1_opt2 %}
+          {% assign addon_2 = block.settings.cart_addon_2_opt2 %}
+        {% elsif option_index == 2 %}
+          {% assign addon_1 = block.settings.cart_addon_1_opt3 %}
+          {% assign addon_2 = block.settings.cart_addon_2_opt3 %}
+        {% endif %}
+
+        {% comment %}
+          ======================
            START OF OPTIONS BUTTON
           ======================
         {% endcomment %}
@@ -168,6 +193,13 @@
             {% endif %}
             {% if thumb_url %}
               data-thumb="{{ thumb_url }}"
+            {% endif %}
+            {% comment %} Per-option cart add-ons (read by core.js at click time) {% endcomment %}
+            {% if addon_1 and addon_1.first_available_variant %}
+              data-addon-variant-1="{{ addon_1.first_available_variant.id }}"
+            {% endif %}
+            {% if addon_2 and addon_2.first_available_variant %}
+              data-addon-variant-2="{{ addon_2.first_available_variant.id }}"
             {% endif %}
             {% unless candidate and candidate.available %}
               disabled aria-disabled="true"

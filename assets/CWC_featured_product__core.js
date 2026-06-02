@@ -422,19 +422,70 @@ function initFeaturedProductCore(
   }
 
   /* =====================================================
-     BUNDLE MODE DETECTION
+     EXTRA CART ITEMS · OPTION ADDONS + ATC BUNDLES
+     =====================================================
+     Collects all "extra" cart items to include alongside the
+     main variant in a single cart request. Two sources:
+
+       1. Option-level addons (NEW)
+          - read at click time from the CURRENTLY-SELECTED option button
+          - data-addon-variant-1, data-addon-variant-2
+          - lets the cart payload depend on which option the user picked
+
+       2. ATC-level bundles (EXISTING — unchanged)
+          - read from the add-to-cart button's data attributes
+          - data-bundle-variant-1 … data-bundle-variant-4
+          - applied regardless of which option is selected
+
+     Both lists are unioned and deduplicated. If both are empty,
+     the click falls through to the single-item standard handler
+     (which preserves the cart/add.js single-item payload shape).
      ===================================================== */
-  const isBundleMode =
-    addToCartButton &&
-    (addToCartButton.dataset.bundleVariant1 ||
-      addToCartButton.dataset.bundleVariant2 ||
-      addToCartButton.dataset.bundleVariant3 ||
-      addToCartButton.dataset.bundleVariant4);
+  function collectExtraCartItems() {
+    const extras = [];
+
+    // 1. Option-level addons (from selected option button)
+    const selectedOptionBtn = section.querySelector(
+      ".cwc-featured-product__option_button.selected",
+    );
+    if (selectedOptionBtn) {
+      for (let i = 1; i <= 2; i++) {
+        const val = selectedOptionBtn.dataset["addonVariant-" + i];
+        // console.log(val);
+        // console.log(selectedOptionBtn.dataset);
+        if (val && !isNaN(val)) {
+          extras.push(Number(val));
+        }
+      }
+    }
+
+    // 2. ATC-level bundles (existing, back-compat)
+    if (addToCartButton) {
+      [
+        "bundleVariant1",
+        "bundleVariant2",
+        "bundleVariant3",
+        "bundleVariant4",
+      ].forEach((key) => {
+        const val = addToCartButton.dataset[key];
+        if (val && !isNaN(val)) {
+          extras.push(Number(val));
+        }
+      });
+    }
+
+    // Deduplicate (in case the same variant appears in both lists)
+    return [...new Set(extras)];
+  }
 
   /* =====================================================
      BUNDLE ADD TO CART
+     =====================================================
+     Accepts the extra item IDs as a parameter (rather than
+     reading them directly from the ATC button dataset) so the
+     caller can blend option-level addons with ATC-level bundles.
      ===================================================== */
-  function handleBundleAddToCart() {
+  function handleBundleAddToCart(extraItemIds) {
     if (!variantIdInput?.value) {
       console.warn("CWC Core: No main variant ID for bundle");
       return;
@@ -454,18 +505,14 @@ function initFeaturedProductCore(
 
     const items = [];
 
-    // Collect bundle products
-    [
-      "bundleVariant1",
-      "bundleVariant2",
-      "bundleVariant3",
-      "bundleVariant4",
-    ].forEach((key) => {
-      const value = addToCartButton.dataset[key];
-      if (value && !isNaN(value)) {
-        items.push({ id: Number(value), quantity: 1 });
-      }
-    });
+    // Push extras (caller provides — already deduplicated)
+    if (Array.isArray(extraItemIds)) {
+      extraItemIds.forEach((id) => {
+        if (id && Number.isFinite(id)) {
+          items.push({ id: Number(id), quantity: 1 });
+        }
+      });
+    }
 
     // Add main product with subscription
     const mainItem = {
@@ -564,14 +611,35 @@ function initFeaturedProductCore(
   }
 
   /* =====================================================
+     ADD TO CART DISPATCHER
+     =====================================================
+     Decides per-click whether to use the bundle path (cart/add.js
+     with items array) or the standard path (cart/add.js with a
+     single item payload), based on whether any extra items exist
+     for the current selection.
+
+     This dynamic check is necessary because option-level addons
+     can differ between options — a static init-time decision
+     would lock to whichever option was selected on first render.
+     ===================================================== */
+  function handleAddToCart() {
+    const extras = collectExtraCartItems();
+    // console.log(extras);
+    if (extras.length > 0) {
+      handleBundleAddToCart(extras);
+    } else {
+      handleStandardAddToCart();
+    }
+  }
+
+  /* =====================================================
      ATTACH ADD TO CART HANDLER
      ===================================================== */
-  if (isBundleMode) {
-    addToCartButton.addEventListener("click", handleBundleAddToCart);
-    window.CWCBundleAddToCart = handleBundleAddToCart;
-  } else {
-    addToCartButton.addEventListener("click", handleStandardAddToCart);
-  }
+  addToCartButton.addEventListener("click", handleAddToCart);
+  // Preserve the global ref name in case other code triggers it externally
+  // (e.g. CWC_bundle_included section). The dispatcher routes correctly
+  // regardless of whether option addons or ATC bundles are configured.
+  window.CWCBundleAddToCart = handleAddToCart;
 
   /* =====================================================
      INITIALIZATION

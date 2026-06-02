@@ -230,7 +230,7 @@
         "price_display_8LMwX6": {
           "type": "price_display",
           "settings": {
-            "save_label": "Save"
+            "save_label": "Summer Sale - Save"
           }
         },
         "product_options_K4yi8r": {
@@ -242,16 +242,17 @@
             "bonus_text_1_opt1": "",
             "bonus_text_2_opt1": "",
             "image2": "shopify://shop_images/Simply_Revival___Natural_Hair_Support_Blend___Buy_2_-_Get_1_FREE-min.png",
-            "badge_text_2": "Most Popular + 1 FREE Bottle",
+            "badge_text_2": "Most Popular + 2 FREE Items",
             "servings_text_2": "3 Months Supply",
             "bonus_image_1_opt2": "shopify://shop_images/icon_prop_01.png",
-            "bonus_text_1_opt2": "+ 365 Day Money Back Guarantee",
-            "bonus_text_2_opt2": "",
+            "bonus_text_1_opt2": "",
+            "bonus_image_2_opt2": "shopify://shop_images/Untitled_Design_-_1_-_Edited.png",
+            "bonus_text_2_opt2": "+ FREE Hair Growth Serum",
             "image3": "shopify://shop_images/Simply_Revival___Natural_Hair_Support_Blend___Buy_3_-_Get_2_FREE-min.png",
-            "badge_text_3": "FREE Shipping + 2 FREE Bottles + Free $20 Gift Card",
+            "badge_text_3": "Best Value + 4 FREE Items + Free Shipping",
             "servings_text_3": "5 Months Supply",
-            "bonus_image_1_opt3": "shopify://shop_images/icon_prop_01.png",
-            "bonus_text_1_opt3": "+ FREE 365 Day Money Back Guarantee",
+            "bonus_image_1_opt3": "shopify://shop_images/Untitled_Design_-_1_-_Edited.png",
+            "bonus_text_1_opt3": "+ FREE Hair Growth Serum",
             "bonus_image_2_opt3": "shopify://shop_images/icon_prop_02.png",
             "bonus_text_2_opt3": "+ FREE $20 Gift Card"
           }

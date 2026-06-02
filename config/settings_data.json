@@ -92,10 +92,12 @@
     "letter_spacing_sub": 0.2,
     "main_linklist": "main-menu",
     "login_enable": false,
+    "lang_enable": true,
+    "currency_enable": true,
     "currency_enable_image": false,
     "selector_enable_name": false,
     "mobile_phone": "",
-    "mobile_email": "simplyrevival@gmail.com",
+    "mobile_email": "",
     "enable_post": false,
     "enable_article": false,
     "enable_collection": false,
@@ -2630,6 +2632,11 @@
         "disabled": false,
         "settings": {}
       },
+      "11532412952436166569": {
+        "type": "shopify://apps/loox-reviews/blocks/loox-inject/5c3b337f-fd14-4df5-b1d6-80ec13e6e28e",
+        "disabled": false,
+        "settings": {}
+      },
       "14952540001915115444": {
         "type": "shopify://apps/upcart-cart-drawer/blocks/app-embed/af3da5fb-f5f7-40ec-8273-41bf50059d4b",
         "disabled": false,
@@ -2657,11 +2664,6 @@
       },
       "855628211100114053": {
         "type": "shopify://apps/klaviyo-email-marketing-sms/blocks/klaviyo-onsite-embed/2632fe16-c075-4321-a88b-50b567f42507",
-        "disabled": false,
-        "settings": {}
-      },
-      "11532412952436166569": {
-        "type": "shopify://apps/loox-reviews/blocks/loox-inject/5c3b337f-fd14-4df5-b1d6-80ec13e6e28e",
         "disabled": false,
         "settings": {}
       }
