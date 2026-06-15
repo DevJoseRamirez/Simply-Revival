@@ -235,7 +235,7 @@
       ],
       "name": "Bundle Product",
       "settings": {
-        "product": "natural-dht-blocker-bundle",
+        "product": "natural-dht-blocker-67-off",
         "background_color": "#ffffff",
         "padding_top": 25,
         "padding_bottom": 25
@@ -326,17 +326,21 @@
         "image_carousel_QNkEf7": {
           "type": "image_carousel",
           "settings": {
+            "img_limit": 8,
             "badge_text": "BestSeller",
             "badge_text_color": "#ffffff",
             "badge_bg_color": "#60a1a2",
             "badge_sold_text": "50+ Sold Today",
             "badge_sold_text_color": "#000000",
-            "badge_sold_bg_color": "#ffffff"
+            "badge_sold_bg_color": "#ffffff",
+            "mobile_thumbs": true,
+            "enable_zoom": true
           }
         },
         "rating_dAyL4U": {
           "type": "rating",
           "settings": {
+            "star_color": "#ffcc00",
             "text": "<p>Rated <strong>4.9 Excellent </strong>| <a href=\"#az_reviews\" title=\"#az_reviews\"><span style=\"text-decoration:underline\">2,148 Reviews</span></a></p>"
           }
         },
@@ -349,7 +353,9 @@
         "title_W4zKmt": {
           "type": "title",
           "settings": {
-            "title": "<h3>{{ section.settings.product.title }}</h3>"
+            "title": "<h3>{{ section.settings.product.title }}</h3>",
+            "text_color": "#282828",
+            "highlight_color": "#45b5b7"
           }
         },
         "desc_Qmnjaa": {
@@ -375,14 +381,34 @@
         },
         "price_display_W8rh3e": {
           "type": "price_display",
-          "settings": {}
+          "settings": {
+            "save_label": "Save"
+          }
         },
         "product_options_WUtKk3": {
           "type": "product_options",
           "settings": {
             "image1": "shopify://shop_images/Simply_Revival___Natural_Hair_Support_Blend___Buy_One-min.png",
+            "badge_text_1": "",
+            "servings_text_1": "",
+            "bonus_text_1_opt1": "",
+            "bonus_text_2_opt1": "",
+            "cart_addon_1_opt1": "",
+            "cart_addon_2_opt1": "",
             "image2": "shopify://shop_images/Simply_Revival___Natural_Hair_Support_Blend___Buy_2_-_Get_1_FREE-min.png",
-            "image3": "shopify://shop_images/Simply_Revival___Natural_Hair_Support_Blend___Buy_3_-_Get_2_FREE-min.png"
+            "badge_text_2": "Most Popular",
+            "servings_text_2": "",
+            "bonus_text_1_opt2": "",
+            "bonus_text_2_opt2": "",
+            "cart_addon_1_opt2": "",
+            "cart_addon_2_opt2": "",
+            "image3": "shopify://shop_images/Simply_Revival___Natural_Hair_Support_Blend___Buy_3_-_Get_2_FREE-min.png",
+            "badge_text_3": "Free Shipping",
+            "servings_text_3": "",
+            "bonus_text_1_opt3": "",
+            "bonus_text_2_opt3": "",
+            "cart_addon_1_opt3": "",
+            "cart_addon_2_opt3": ""
           }
         },
         "subscription_toggle_AnHmTF": {
@@ -407,6 +433,9 @@
             "button_text": "Add to Cart",
             "button_bg_color": "#125657",
             "button_text_color": "#ffffff",
+            "enable_sticky_atc": false,
+            "sticky_button_text": "Add to Cart",
+            "sticky_bg_color": "#ffffff",
             "bundle_product_1": "",
             "bundle_product_2": "",
             "bundle_product_3": "",
@@ -482,7 +511,8 @@
         "product": "natural-dht-blocker-bundle",
         "background_color": "#ffffff",
         "padding_top": 40,
-        "padding_bottom": 10
+        "padding_bottom": 10,
+        "savings_display_type": "dollar"
       }
     },
     "main": {

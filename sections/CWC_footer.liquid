@@ -1,25 +1,29 @@
 {% style %}
-  #cwc_footer-{{ section.id }} {
-    --section-bg: {{ section.settings.bg_color | default: '#176b6c' }};
-    --text-color: {{ section.settings.text_color | default: '#FFFFFF' }};
-    --text-hover-color: {{ section.settings.text_hover_color | default: '#E8EDE9' }};
-    --title-color: {{ section.settings.title_color | default: '#FFFFFF' }};
-    --highlight-color: {{ section.settings.bold_color | default: '#A8D6B8' }};
-    --divider-color: {{ section.settings.divider_color | default: 'rgba(255,255,255,0.18)' }};
-    --input-bg: {{ section.settings.input_bg | default: '#0C5A4D' }};
-    --input-border: {{ section.settings.input_border | default: 'rgba(255,255,255,0.30)' }};
-    --input-text: {{ section.settings.input_text | default: '#FFFFFF' }};
-    --input-placeholder: {{ section.settings.input_placeholder | default: 'rgba(255,255,255,0.55)' }};
-    --btn-bg: {{ section.settings.btn_bg | default: '#FFFFFF' }};
-    --btn-bg-hover: {{ section.settings.btn_bg_hover | default: '#F0F0F0' }};
-    --btn-text: {{ section.settings.btn_text | default: '#0C5A4D' }};
-    --btn-radius: {{ section.settings.btn_radius | default: 4 }}px;
-    --disclaimer-color: {{ section.settings.disclaimer_color | default: 'rgba(255,255,255,0.7)' }};
-    --copyright-color: {{ section.settings.copyright_color | default: 'rgba(255,255,255,0.85)' }};
-    --padding-top: {{ section.settings.padding_top | default: 60 }}px;
-    --padding-bottom: {{ section.settings.padding_bottom | default: 40 }}px;
-    --padding-top-mobile: {{ section.settings.padding_top | default: 60 | times: 0.5 }}px;
-    --padding-bottom-mobile: {{ section.settings.padding_bottom | default: 40 | times: 0.5 }}px;
+    #cwc_footer-{{ section.id }} {
+      --section-bg: {{ section.settings.bg_color | default: '#176b6c' }};
+      --text-color: {{ section.settings.text_color | default: '#FFFFFF' }};
+      --text-hover-color: {{ section.settings.text_hover_color | default: '#E8EDE9' }};
+      --title-color: {{ section.settings.title_color | default: '#FFFFFF' }};
+      --highlight-color: {{ section.settings.bold_color | default: '#A8D6B8' }};
+      --divider-color: {{ section.settings.divider_color | default: 'rgba(255,255,255,0.18)' }};
+      --input-bg: {{ section.settings.input_bg | default: '#0C5A4D' }};
+      --input-border: {{ section.settings.input_border | default: 'rgba(255,255,255,0.30)' }};
+      --input-text: {{ section.settings.input_text | default: '#FFFFFF' }};
+      --input-placeholder: {{ section.settings.input_placeholder | default: 'rgba(255,255,255,0.55)' }};
+      --btn-bg: {{ section.settings.btn_bg | default: '#FFFFFF' }};
+      --btn-bg-hover: {{ section.settings.btn_bg_hover | default: '#F0F0F0' }};
+      --btn-text: {{ section.settings.btn_text | default: '#0C5A4D' }};
+      --btn-radius: {{ section.settings.btn_radius | default: 4 }}px;
+      --disclaimer-color: {{ section.settings.disclaimer_color | default: 'rgba(255,255,255,0.7)' }};
+      --copyright-color: {{ section.settings.copyright_color | default: 'rgba(255,255,255,0.85)' }};
+      --padding-top: {{ section.settings.padding_top | default: 60 }}px;
+      --padding-bottom: {{ section.settings.padding_bottom | default: 40 }}px;
+      --padding-top-mobile: {{ section.settings.padding_top | default: 60 | times: 0.5 }}px;
+      --padding-bottom-mobile: {{ section.settings.padding_bottom | default: 40 | times: 0.5 }}px;
+    }
+  {% comment %} testig only {% endcomment %}
+  .cwc-sticky-atc.is-visible {
+    display: none;
   }
 {% endstyle %}
 
