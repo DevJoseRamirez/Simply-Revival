@@ -1,0 +1,1779 @@
+/*
+ * ------------------------------------------------------------
+ * IMPORTANT: The contents of this file are auto-generated.
+ *
+ * This file may be updated by the Shopify admin theme editor
+ * or related systems. Please exercise caution as any changes
+ * made to this file may be overwritten.
+ * ------------------------------------------------------------
+ */
+{
+  "sections": {
+    "cwc_scrolling_banner_6nEerz": {
+      "type": "CWC_scrolling_banner",
+      "blocks": {
+        "item_WYMXkQ": {
+          "type": "item",
+          "settings": {
+            "image": "shopify://shop_images/Simply_Revival___356_Day_Guarantee_-_64px.png",
+            "text": "365 Day Guarantee"
+          }
+        },
+        "item_eRQTUW": {
+          "type": "item",
+          "settings": {
+            "image": "shopify://shop_images/Simply_Revival___Tiktok_Viral_-_64px.png",
+            "text": "Tiktok Viral"
+          }
+        },
+        "item_d4j3Ch": {
+          "type": "item",
+          "settings": {
+            "image": "shopify://shop_images/Simply_Revival___Number-1_Natural_64px-min.png",
+            "text": "#1 Natural DHT Blocker"
+          }
+        },
+        "item_NqwRT7": {
+          "type": "item",
+          "settings": {
+            "image": "shopify://shop_images/Simply_Revival___Safe_Formula_-_64px.png",
+            "text": "Safe Formula"
+          }
+        },
+        "item_F6tAcU": {
+          "type": "item",
+          "settings": {
+            "image": "shopify://shop_images/Simply_Revival___All_Natural_-_64px.png",
+            "text": "All Natural"
+          }
+        }
+      },
+      "block_order": [
+        "item_WYMXkQ",
+        "item_eRQTUW",
+        "item_d4j3Ch",
+        "item_NqwRT7",
+        "item_F6tAcU"
+      ],
+      "name": "Scrolling Banner",
+      "settings": {
+        "background_color": "#ffffff",
+        "text_color": "#125657",
+        "scroll_speed": 30,
+        "padding_top": 4,
+        "padding_bottom": 4
+      }
+    },
+    "product-content": {
+      "type": "product-content",
+      "blocks": {
+        "6889c9ba-caef-4edd-9757-6711505cb095": {
+          "type": "description",
+          "settings": {
+            "title_tab": "Description"
+          }
+        },
+        "b69a53cf-5bc1-4b18-add3-92af436f966c": {
+          "type": "content",
+          "settings": {
+            "title_tab": "Material",
+            "answer_content": "<p>Use collapsible tabs for more detailed information that will help customers make a purchasing decision.</p><p>Ex: Shipping and return policies, size guides, and other common questions.</p>",
+            "page": "material"
+          }
+        },
+        "147e9960-c5fe-44f4-8469-9583a9752a0a": {
+          "type": "review",
+          "settings": {
+            "title_tab": "Reviews"
+          }
+        },
+        "2e69c5c0-ab83-4cda-9c38-1aaab6fdf1cc": {
+          "type": "related-product",
+          "settings": {
+            "title_heading": "Buy With",
+            "size_text": "h6",
+            "product_limit": 3
+          }
+        }
+      },
+      "block_order": [
+        "6889c9ba-caef-4edd-9757-6711505cb095",
+        "b69a53cf-5bc1-4b18-add3-92af436f966c",
+        "147e9960-c5fe-44f4-8469-9583a9752a0a",
+        "2e69c5c0-ab83-4cda-9c38-1aaab6fdf1cc"
+      ],
+      "disabled": true,
+      "settings": {
+        "animation": "fade-up",
+        "setwidth": "container",
+        "tab_size": "large",
+        "enable_left": true,
+        "paddingsection": "48px 0px 40px 0px",
+        "paddingmobile": "32px 0px 32px 0px",
+        "marginsection": "0px 0px 0px 0px",
+        "marginmobile": "0px 0px 0px 0px"
+      }
+    },
+    "product-requently": {
+      "type": "product-bundle",
+      "disabled": true,
+      "settings": {
+        "animation": "fade-up",
+        "bgsection": "#ffffff",
+        "bundle_title": "Frequently Bought Together",
+        "size_text": "h4",
+        "limit_bundle": 3,
+        "enable_border": true,
+        "btn_add": "Add selected items",
+        "paddingsection": "40px 0px 40px 0px",
+        "paddingmobile": "40px 0px 40px 0px",
+        "marginsection": "0px 0px 0px 0px",
+        "marginmobile": "0px 0px 0px 0px"
+      }
+    },
+    "product-recent": {
+      "type": "recently-viewed",
+      "disabled": true,
+      "settings": {
+        "enable": true,
+        "animation": "fade-up",
+        "setwidth": "container",
+        "title_top": "Sub Title Top",
+        "title": "Recently viewed",
+        "des": "",
+        "align-heading": "center",
+        "limit": 6,
+        "paddingsection": "0px 0px 60px 0px",
+        "paddingmobile": "40px 0px 40px 0px",
+        "marginsection": "0px 0px 0px 0px",
+        "marginmobile": "0px 0px 0px 0px"
+      }
+    },
+    "product-recommendations": {
+      "type": "product-recommendations",
+      "disabled": true,
+      "settings": {
+        "animation": "fade-up",
+        "setwidth": "container-fluid",
+        "heading": "You may also like",
+        "heading_size": "h2",
+        "heading_align": "center",
+        "products_to_show": 10,
+        "spaceBetween": 30,
+        "perviewDesktop": 4,
+        "nowrap": true,
+        "arrows": true,
+        "scrollbar": true,
+        "padding_top": 80,
+        "padding_bottom": 32
+      }
+    },
+    "cwc_featured_product_B7WhGk": {
+      "type": "CWC_featured_product",
+      "blocks": {
+        "image_carousel_jFp4EA": {
+          "type": "image_carousel",
+          "settings": {
+            "img_limit": 8,
+            "badge_text": "",
+            "badge_text_color": "#ffffff",
+            "badge_bg_color": "#60a1a2",
+            "badge_sold_text": "",
+            "badge_sold_text_color": "#000000",
+            "badge_sold_bg_color": "#ffffff",
+            "mobile_thumbs": true,
+            "enable_zoom": true
+          }
+        },
+        "rating_j6tWzb": {
+          "type": "rating",
+          "settings": {
+            "star_color": "#ffcc00",
+            "text": "<p>Rated <strong>4.8 Excellent </strong>| <a href=\"#az_reviews\" title=\"#az_reviews\"><span style=\"text-decoration:underline\">25,593 Reviews</span></a></p>"
+          }
+        },
+        "vendor_g4GeAp": {
+          "type": "vendor",
+          "settings": {
+            "vendor": "<p>Simply Revival®</p>"
+          }
+        },
+        "title_iKGYG9": {
+          "type": "title",
+          "settings": {
+            "title": "<h3>Natural DHT Blocker</h3><h4>Less Shedding, Healthier Growth</h4>",
+            "text_color": "#282828",
+            "highlight_color": "#45b5b7"
+          }
+        },
+        "desc_aVrjLU": {
+          "type": "desc",
+          "settings": {
+            "desc": "<p><strong>See less shedding in 14 days. Noticeably fuller, thicker hair in 60 days — or we'll refund your entire order. </strong>A natural blend of 10 ancient herbs formulated to support healthy DHT balance, healthier-looking, fuller hair — without relying on harsh ingredients.*</p>"
+          }
+        },
+        "benefits_XqmTFX": {
+          "type": "benefits",
+          "settings": {
+            "icon1": "shopify://shop_images/bullet_icon_04-min.png",
+            "text1": "Supports Blocking DHT - Reduce Hair Loss",
+            "icon2": "shopify://shop_images/bullet_icon_02-min.png",
+            "text2": "Strengthens Hair & Supports Growth",
+            "icon3": "shopify://shop_images/bullet_icon_03-min.png",
+            "text3": "Restores Balance & Side Effect Free",
+            "icon4": "shopify://shop_images/bullet_icon_01-min.png",
+            "text4": "Nutrient-Rich For Overall Health",
+            "text5": "",
+            "text6": ""
+          }
+        },
+        "price_display_8LMwX6": {
+          "type": "price_display",
+          "settings": {
+            "save_label": "Summer Sale - Save"
+          }
+        },
+        "low_stock_rLxPtY": {
+          "type": "low_stock",
+          "settings": {
+            "text_primary": "Low Stock",
+            "text_primary_color": "#125657",
+            "text_secondary": "Selling Fast",
+            "text_secondary_color": "#125657",
+            "line_color": "#125657",
+            "padding_top": 0,
+            "padding_bottom": 0
+          }
+        },
+        "product_options_K4yi8r": {
+          "type": "product_options",
+          "settings": {
+            "image1": "shopify://shop_images/Simply_Revival___Natural_Hair_Support_Blend___Buy_One-min.png",
+            "badge_text_1": "",
+            "servings_text_1": "1 Month Supply",
+            "bonus_text_1_opt1": "",
+            "bonus_text_2_opt1": "",
+            "cart_addon_1_opt1": "",
+            "cart_addon_2_opt1": "",
+            "image2": "shopify://shop_images/Simply_Revival___Natural_Hair_Support_Blend___Buy_2_-_Get_1_FREE-min.png",
+            "badge_text_2": "Most Popular + 1 Month FREE",
+            "servings_text_2": "3 Month Supply",
+            "bonus_image_1_opt2": "shopify://shop_images/icon_guarantee.png",
+            "bonus_text_1_opt2": "+ FREE 365 Day Money Back Guarantee",
+            "bonus_text_2_opt2": "",
+            "cart_addon_1_opt2": "",
+            "cart_addon_2_opt2": "",
+            "image3": "shopify://shop_images/Simply_Revival___Natural_Hair_Support_Blend___Buy_3_-_Get_2_FREE-min.png",
+            "badge_text_3": "Best Value + Free Shipping + 2 Months FREE",
+            "servings_text_3": "5 Month Supply",
+            "bonus_image_1_opt3": "shopify://shop_images/icon_guarantee.png",
+            "bonus_text_1_opt3": "+ FREE 365 Day Money Back Guarantee",
+            "bonus_image_2_opt3": "shopify://shop_images/icon_prop_02.png",
+            "bonus_text_2_opt3": "+ FREE $20 Gift Card",
+            "cart_addon_1_opt3": "",
+            "cart_addon_2_opt3": ""
+          }
+        },
+        "subscription_toggle_ArNDfx": {
+          "type": "subscription_toggle",
+          "settings": {
+            "title": "Save 50% With Automatic Refills!",
+            "subtitle": "50% off for life | Refills ship every 25 days | Cancel Anytime"
+          }
+        },
+        "delivery_estimate_g6E4Az": {
+          "type": "delivery_estimate",
+          "settings": {
+            "text": "Order now for delivery by",
+            "max_shipping_days": 7,
+            "text_color": "#125657",
+            "bg_color": "#d8fff4"
+          }
+        },
+        "add_to_cart_7gampa": {
+          "type": "add_to_cart",
+          "settings": {
+            "button_text": "Add to Cart",
+            "button_bg_color": "#125657",
+            "button_text_color": "#ffffff",
+            "enable_sticky_atc": true,
+            "sticky_button_text": "Add to Cart",
+            "sticky_bg_color": "#ffffff",
+            "bundle_product_1": "25-gift-card",
+            "bundle_product_2": "",
+            "bundle_product_3": "",
+            "bundle_product_4": "",
+            "skip_cart": false
+          }
+        },
+        "guarantee_text_pAEtjq": {
+          "type": "guarantee_text",
+          "settings": {
+            "text": "365-day money back guarantee",
+            "icon": "shopify://shop_images/Simply_Revival___Gurantee-min.png"
+          }
+        },
+        "trusted_by_P9yexM": {
+          "type": "trusted_by",
+          "settings": {
+            "image_1": "shopify://shop_images/trusted_by_01.png",
+            "image_2": "shopify://shop_images/trusted_by_02.png",
+            "image_3": "shopify://shop_images/trusted_by_03.png",
+            "title": "<p><strong>Trusted by 100K+ customers</strong></p>",
+            "subtext": "<p>who choose Simply for consistent, long-term wellness support.</p>",
+            "bg_color": "#efefef",
+            "text_color": "#282828"
+          }
+        },
+        "warning_notice_cam3mA": {
+          "type": "warning_notice",
+          "settings": {
+            "title": "WARNING: Low Stock Notice",
+            "text": "<p>This product sold out 12 times last year. We encourage you to take advantage of the <strong>limited sale</strong> and buy now. Subscribing protects you against future stockouts.</p>",
+            "bg_color": "#fff0ee",
+            "border_color": "#e05a4e",
+            "title_color": "#c0392b",
+            "text_color": "#282828",
+            "padding_top": 8,
+            "padding_bottom": 8
+          }
+        },
+        "faq_x8mxYm": {
+          "type": "faq",
+          "disabled": true,
+          "settings": {
+            "title": "Description",
+            "content": ""
+          }
+        },
+        "faq_rgfywq": {
+          "type": "faq",
+          "disabled": true,
+          "settings": {
+            "title": "Description",
+            "content": ""
+          }
+        },
+        "value_props_x9niBd": {
+          "type": "value_props",
+          "settings": {
+            "icon_1": "shopify://shop_images/icon_prop_01.png",
+            "title_1": "365 Day Guarantee",
+            "desc_1": "If you don’t love it, money back.",
+            "price_1": "$50.00",
+            "icon_2": "shopify://shop_images/icon_prop_03.png",
+            "title_2": "Shipping Protection",
+            "desc_2": "Lost or damaged? We replace it.",
+            "price_2": "$15.00",
+            "icon_3": "shopify://shop_images/bundle_and_save_dht_1.png",
+            "title_3": "Up To 2 Bottles Free",
+            "desc_3": "On your First order",
+            "price_3": "$79.99",
+            "icon_4": "shopify://shop_images/icon_prop_02.png",
+            "title_4": "$20 Gift Card",
+            "desc_4": "Get $20 back!",
+            "price_4": "$20.00",
+            "border_color": "#60a1a2",
+            "card_bg_color": "#ffffff",
+            "title_color": "#111111",
+            "desc_color": "#555555",
+            "free_color": "#60a1a2",
+            "checkmark_bg_color": "#60a1a2"
+          }
+        },
+        "video_testimonials_fcgiKi": {
+          "type": "video_testimonials",
+          "settings": {
+            "heading": "<h4>What our customers are saying:</h4>",
+            "subtext": "",
+            "video_1": "shopify://files/videos/Simply Revival | Real People Real Results - Marc_20Malcolm_20.mp4",
+            "video_2": "shopify://files/videos/Simply Revival | Real People Real Results - lukefinds.mp4",
+            "video_3": "shopify://files/videos/Simply Revival | Real People Real Results - Anakin.mp4",
+            "video_4": "shopify://files/videos/Simply Revival | Real People Real Results - thehealthwealth.mp4",
+            "bg_color": "#ffffff",
+            "text_color": "#111111",
+            "accent_color": "#125657",
+            "padding_top": 4,
+            "padding_bottom": 8
+          }
+        }
+      },
+      "block_order": [
+        "image_carousel_jFp4EA",
+        "rating_j6tWzb",
+        "vendor_g4GeAp",
+        "title_iKGYG9",
+        "desc_aVrjLU",
+        "benefits_XqmTFX",
+        "price_display_8LMwX6",
+        "low_stock_rLxPtY",
+        "product_options_K4yi8r",
+        "subscription_toggle_ArNDfx",
+        "delivery_estimate_g6E4Az",
+        "add_to_cart_7gampa",
+        "guarantee_text_pAEtjq",
+        "trusted_by_P9yexM",
+        "warning_notice_cam3mA",
+        "faq_x8mxYm",
+        "faq_rgfywq",
+        "value_props_x9niBd",
+        "video_testimonials_fcgiKi"
+      ],
+      "name": "Featured Product",
+      "settings": {
+        "product": "simply®-dht-blocker",
+        "background_color": "#ffffff",
+        "padding_top": 40,
+        "padding_bottom": 40,
+        "savings_display_type": "dollar"
+      }
+    },
+    "cwc_product_template_eC4DbX": {
+      "type": "CWC_product_template",
+      "blocks": {
+        "image_carousel_xcam8i": {
+          "type": "image_carousel",
+          "settings": {
+            "badge_text": "",
+            "badge_text_color": "#ffffff",
+            "badge_bg_color": "#60a1a2",
+            "badge_sold_text": "",
+            "badge_sold_text_color": "#000000",
+            "badge_sold_bg_color": "#ffffff"
+          }
+        },
+        "rating_efyjWb": {
+          "type": "rating",
+          "settings": {
+            "text": "<p>Rated <strong>4.8 Excellent </strong>| <a href=\"#az_reviews\" title=\"#az_reviews\"><span style=\"text-decoration:underline\">25,593 Reviews</span></a></p>"
+          }
+        },
+        "vendor_7iLFXM": {
+          "type": "vendor",
+          "settings": {
+            "vendor": "<p>{{ product.vendor }}</p>"
+          }
+        },
+        "title_AkTrAX": {
+          "type": "title",
+          "settings": {
+            "title": "<h3>{{ product.title }}</h3>"
+          }
+        },
+        "areviews_reviews_importer_areviews_title_rating_39177F": {
+          "type": "shopify://apps/areviews-reviews-importer/blocks/AreviewsTitleRating/ab0ec5fe-c95b-4fd6-bfb8-db2a30d0756f",
+          "settings": {}
+        },
+        "desc_jFWt9g": {
+          "type": "desc",
+          "settings": {
+            "desc": "<p>Thicker, fuller hair in 30 days - This natural formula contains a blend of 10 ancient herbs designed to stop hair loss & stimulate new growth.</p>"
+          }
+        },
+        "benefits_p34Qab": {
+          "type": "benefits",
+          "settings": {
+            "icon1": "shopify://shop_images/Simply_Revival___Strengthens_hair_follicles_helps_prevent_hair_loss-min_5e9aa147-53e9-4dd5-abd0-3271e31cb4b7.png",
+            "text1": "Promotes healthy hair growth & helps prevent hair loss",
+            "icon2": "shopify://shop_images/Simply_Revival___Deeply_hydrates_scalp_Repairs_damaged_hair_fibers-min_62adfec7-0fca-4c4b-8103-500a718ca1ce.png",
+            "text2": "Combats excessive shedding & enhances hair regrowth.",
+            "icon3": "shopify://shop_images/Simply_Revival___Reduces_shedding_while_promoting_thicker_fuller_growth-min_69b2e63b-b83a-4f0e-bc4e-cb7d8a8fd8c3.png",
+            "text3": "Soothes irritated scalp and restores healthy balance",
+            "icon4": "shopify://shop_images/Simply_Revival___9_premium_oils_to_boost_circulation_and_restore_shine.-min_363002cf-ebff-4873-a3f4-597084723ae6.png",
+            "text4": "Rich in nutrients to boost immune health & natural healing",
+            "text5": "",
+            "text6": ""
+          }
+        },
+        "price_display_4QHJGW": {
+          "type": "price_display",
+          "settings": {}
+        },
+        "product_options_nPiXV8": {
+          "type": "product_options",
+          "settings": {
+            "image1": "shopify://shop_images/Simply_Revival___Buy_1-min_52525d88-7cfb-486f-bcfd-4c0cb6a8e6ec.png",
+            "image2": "shopify://shop_images/Simply_Revival___Buy_2_-_Get_1_FREE-min_01e026bf-7db9-4bd1-af6a-239ebbc10382.png",
+            "image3": "shopify://shop_images/Simply_Revival____Buy_3-Get-2-Free-min_d6b1c5cb-6f58-4fd0-a9f7-aa8fff12ca08.png"
+          }
+        },
+        "subscription_toggle_pXPczQ": {
+          "type": "subscription_toggle",
+          "settings": {
+            "title": "Save 25% With Automatic Refills!",
+            "subtitle": "Zero Commitment | Exclusive Discounts | Cancel Anytime"
+          }
+        },
+        "delivery_estimate_HyL64n": {
+          "type": "delivery_estimate",
+          "settings": {
+            "text": "Order now for delivery by",
+            "max_shipping_days": 7,
+            "text_color": "#125657",
+            "bg_color": "#d8fff4"
+          }
+        },
+        "add_to_cart_XREkcb": {
+          "type": "add_to_cart",
+          "settings": {
+            "button_text": "Add to Cart",
+            "button_bg_color": "#125657",
+            "button_text_color": "#ffffff",
+            "bundle_product_1": "25-gift-card",
+            "bundle_product_2": "shipping-protection-free-gift",
+            "bundle_product_3": "free-365-day-guarantee",
+            "bundle_product_4": "",
+            "skip_cart": false
+          }
+        },
+        "guarantee_text_cjAzqP": {
+          "type": "guarantee_text",
+          "settings": {
+            "text": "365-day money back guarantee",
+            "icon": "shopify://shop_images/Simply_Revival___Gurantee-min.png"
+          }
+        },
+        "faq_7YcCid": {
+          "type": "faq",
+          "settings": {
+            "title": "What is Simply Revival?",
+            "content": "<p>Simply revival is a wellness brand focused on natural plant based supplements to support your hair health, immune system, and overall health - without synthetic ingredients or harsh side effects. </p>"
+          }
+        },
+        "faq_wHxCrf": {
+          "type": "faq",
+          "settings": {
+            "title": "Is Simply revival safe to use?",
+            "content": "<p>Yes, our formulas are crafted to be the safest on the market and still provide powerful results. </p>"
+          }
+        },
+        "faq_aUfJty": {
+          "type": "faq",
+          "settings": {
+            "title": "How long does it take to see results?",
+            "content": "<p>Most users reported noticing less hair loss in 3-6 weeks and new growth after 6-12 weeks. </p>"
+          }
+        },
+        "faq_ppfPCd": {
+          "type": "faq",
+          "settings": {
+            "title": "Is simply revival suitable for all hair types?",
+            "content": "<p>Yes, the formula is designed to to support hair heath for all types of hair. </p>"
+          }
+        },
+        "faq_Nm9pcE": {
+          "type": "faq",
+          "settings": {
+            "title": "Do you have a guarantee?",
+            "content": "<p>Yes, All orders are backed by our 365 day money back guarantee. If you’re not happy, we will make it right!</p>"
+          }
+        }
+      },
+      "block_order": [
+        "image_carousel_xcam8i",
+        "rating_efyjWb",
+        "vendor_7iLFXM",
+        "title_AkTrAX",
+        "areviews_reviews_importer_areviews_title_rating_39177F",
+        "desc_jFWt9g",
+        "benefits_p34Qab",
+        "price_display_4QHJGW",
+        "product_options_nPiXV8",
+        "subscription_toggle_pXPczQ",
+        "delivery_estimate_HyL64n",
+        "add_to_cart_XREkcb",
+        "guarantee_text_cjAzqP",
+        "faq_7YcCid",
+        "faq_wHxCrf",
+        "faq_aUfJty",
+        "faq_ppfPCd",
+        "faq_Nm9pcE"
+      ],
+      "disabled": true,
+      "name": "Product Template",
+      "settings": {
+        "background_color": "#ffffff",
+        "padding_top": 40,
+        "padding_bottom": 40
+      }
+    },
+    "cwc_usp_columns_NPgtAB": {
+      "type": "CWC_usp_columns",
+      "blocks": {
+        "usp_KnnY7q": {
+          "type": "usp",
+          "settings": {
+            "icon": "shopify://shop_images/Simply_Revival___No_Harsh_Side_Effects_-_64.png",
+            "text": "No Harsh Side Effects"
+          }
+        },
+        "usp_8UbLgM": {
+          "type": "usp",
+          "settings": {
+            "icon": "shopify://shop_images/Simply_Revival___Third_Party_Tested_-_64.png",
+            "text": "THIRD PARTY TESTED"
+          }
+        },
+        "usp_9H8LXQ": {
+          "type": "usp",
+          "settings": {
+            "icon": "shopify://shop_images/Simply_Revival___Clean_Ingredients_-_64.png",
+            "text": "CLEAN INGREDIENT"
+          }
+        }
+      },
+      "block_order": [
+        "usp_KnnY7q",
+        "usp_8UbLgM",
+        "usp_9H8LXQ"
+      ],
+      "name": "USP Columns",
+      "settings": {
+        "background_color": "#125657",
+        "text_color": "#ffffff",
+        "padding_top": 20,
+        "padding_bottom": 20
+      }
+    },
+    "cwc_testimonial_images_CxCPAz": {
+      "type": "CWC_testimonial_images",
+      "blocks": {
+        "testimonial_image_6qDttd": {
+          "type": "testimonial_image",
+          "settings": {
+            "image": "shopify://shop_images/hf_20260323_221200_9afdc308-83ea-4c3d-beb2-3eb20873c673.png"
+          }
+        },
+        "testimonial_image_hcBdwz": {
+          "type": "testimonial_image",
+          "settings": {
+            "image": "shopify://shop_images/hf_20260409_135556_1d13c0e1-4be2-46cf-bcc0-ff062f832089.png"
+          }
+        },
+        "testimonial_image_bxmCkR": {
+          "type": "testimonial_image",
+          "settings": {
+            "image": "shopify://shop_images/hf_20260429_033456_ba9597cf-1185-492e-9b67-d3c1ab3216a7.png"
+          }
+        },
+        "testimonial_image_pa8Gnf": {
+          "type": "testimonial_image",
+          "settings": {
+            "image": "shopify://shop_images/hf_20260429_032730_5fcc04ad-a234-4f35-a8ff-7f18b6817ef9.png"
+          }
+        },
+        "testimonial_image_MKgwLU": {
+          "type": "testimonial_image",
+          "settings": {
+            "image": "shopify://shop_images/hf_20260323_221907_e89e7b56-f8f9-4023-9710-10d4b8d27860.png"
+          }
+        },
+        "testimonial_image_A4pmd6": {
+          "type": "testimonial_image",
+          "settings": {
+            "image": "shopify://shop_images/hf_20260429_032537_c543a716-70f9-45ce-8b8c-43f764f47000.png"
+          }
+        },
+        "testimonial_image_6RhbHL": {
+          "type": "testimonial_image",
+          "settings": {
+            "image": "shopify://shop_images/hf_20260409_142435_d9a5a5b6-91ba-43f1-8bef-f2f4f300e041.png"
+          }
+        },
+        "testimonial_image_Lh6WnE": {
+          "type": "testimonial_image",
+          "settings": {
+            "image": "shopify://shop_images/hf_20260429_033146_bc46e11b-916e-4616-95a4-919917a1215b.png"
+          }
+        },
+        "testimonial_image_aJW8C7": {
+          "type": "testimonial_image",
+          "settings": {
+            "image": "shopify://shop_images/hf_20260412_012327_cc04f4ef-540a-4843-95ab-723239db2794.png"
+          }
+        }
+      },
+      "block_order": [
+        "testimonial_image_6qDttd",
+        "testimonial_image_hcBdwz",
+        "testimonial_image_bxmCkR",
+        "testimonial_image_pa8Gnf",
+        "testimonial_image_MKgwLU",
+        "testimonial_image_A4pmd6",
+        "testimonial_image_6RhbHL",
+        "testimonial_image_Lh6WnE",
+        "testimonial_image_aJW8C7"
+      ],
+      "name": "Testimonial Images",
+      "settings": {
+        "testimonial_list": "",
+        "section_title": "<h2>Real Men - <strong>Real Hair Transformations</strong></h2>",
+        "bold_color": "#125657",
+        "section_subtitle": "",
+        "bg_color": "#fffee3",
+        "text_color": "#111111",
+        "padding_top": 32,
+        "padding_bottom": 32
+      }
+    },
+    "cwc_product_highlight_rows_EUh8KV": {
+      "type": "CWC_product_highlight_rows",
+      "blocks": {
+        "highlight_row_fjEPnU": {
+          "type": "highlight_row",
+          "settings": {
+            "title": "🧬 The Problem: DHT",
+            "text": "<p>By addressing your DHT levels, your follicles stay nourished — supporting thickness and healthier-looking hair long term.</p>",
+            "text_color": ""
+          }
+        },
+        "highlight_row_MnGEXr": {
+          "type": "highlight_row",
+          "settings": {
+            "title": "🌿 The Solution: Natural Blockers",
+            "text": "<p>Our formula combines vitamins, herbs, botanical extracts, and other natural ingredients to help support healthy DHT balance.</p>",
+            "text_color": ""
+          }
+        },
+        "highlight_row_8hmLn3": {
+          "type": "highlight_row",
+          "settings": {
+            "title": "💪 The Impact: Stronger Growth",
+            "text": "<p>By lowering DHT, your follicles stay open and nourished, supporting regrowth, thickness, and healthier hair long term.</p>",
+            "text_color": ""
+          }
+        }
+      },
+      "block_order": [
+        "highlight_row_fjEPnU",
+        "highlight_row_MnGEXr",
+        "highlight_row_8hmLn3"
+      ],
+      "name": "Image Benefits",
+      "settings": {
+        "featured_image": "shopify://shop_images/Simply_Revival_DHT__The_Hidden_Hormone_Behind_Hair_Loss-min.png",
+        "reverse_layout": false,
+        "section_title": "<h3><strong>DHT: The Hidden Hormone Behind Hair Loss</strong></h3>",
+        "section_caption": "WE SUPPORT IT NATURALLY",
+        "background_color": "#ffffff",
+        "text_color": "#000000",
+        "title_color": "#000000",
+        "caption_color": "#ffffff",
+        "caption_bg": "#60a1a2",
+        "padding_top": 32,
+        "padding_bottom": 32
+      }
+    },
+    "cwc_social_proof_VhXP3J": {
+      "type": "CWC_social_proof",
+      "blocks": {
+        "image_wqM7jj": {
+          "type": "image",
+          "settings": {
+            "image": "shopify://shop_images/Simply_Revival___Customer_Reviews_-_04-min.png"
+          }
+        },
+        "image_pFM3iM": {
+          "type": "image",
+          "settings": {
+            "image": "shopify://shop_images/Simply_Revival___Customer_Reviews_-_05-min.png"
+          }
+        },
+        "image_XPQPhJ": {
+          "type": "image",
+          "settings": {
+            "image": "shopify://shop_images/Simply_Revival___Customer_Reviews_-_02-min.png"
+          }
+        },
+        "image_MdYyhM": {
+          "type": "image",
+          "settings": {
+            "image": "shopify://shop_images/Simply_Revival___Customer_Reviews_-_07-min.png"
+          }
+        },
+        "image_NbX4VW": {
+          "type": "image",
+          "settings": {
+            "image": "shopify://shop_images/Simply_Revival___Customer_Reviews_-_01-min.png"
+          }
+        },
+        "image_iyhDpy": {
+          "type": "image",
+          "settings": {
+            "image": "shopify://shop_images/Simply_Revival___Customer_Reviews_-_06-min.png"
+          }
+        },
+        "image_eJVmTb": {
+          "type": "image",
+          "settings": {
+            "image": "shopify://shop_images/Simply_Revival___Customer_Reviews_-_03-min.png"
+          }
+        },
+        "image_FLwXV7": {
+          "type": "image",
+          "settings": {
+            "image": "shopify://shop_images/Simply_Revival___Customer_Reviews_-_08-min.png"
+          }
+        }
+      },
+      "block_order": [
+        "image_wqM7jj",
+        "image_pFM3iM",
+        "image_XPQPhJ",
+        "image_MdYyhM",
+        "image_NbX4VW",
+        "image_iyhDpy",
+        "image_eJVmTb",
+        "image_FLwXV7"
+      ],
+      "name": "Social Proof",
+      "settings": {
+        "social_proof_image_list": "",
+        "show_stars": true,
+        "star_link": "",
+        "heading": "<h3>Real Stories, <strong>Real Results</strong></h3>",
+        "bold_color": "#125657",
+        "text": "<p>See What customer Are Saying About Simply Revival</p>",
+        "bg_color": "#fffee3",
+        "text_color": "#111111",
+        "padding_top": 40,
+        "padding_bottom": 20
+      }
+    },
+    "cwc_testimonials_FPgtbf": {
+      "type": "CWC_testimonials",
+      "blocks": {
+        "testimonial_jcDtAK": {
+          "type": "testimonial",
+          "settings": {
+            "star_rating": "4.8",
+            "title": "Finally found something that works!",
+            "text": "I've been struggling with hair loss for about 3 years and tried everything. Simply Revival's DHT blocker has been a game changer - I'm seeing new growth after just 2 months of consistent use. The capsules are easy to take and no side effects!",
+            "author_name": "MARCUS T.",
+            "feature_one": "Hair Growth",
+            "feature_two": "Natural Formula"
+          }
+        },
+        "testimonial_rLxFC9": {
+          "type": "testimonial",
+          "settings": {
+            "star_rating": "5.0",
+            "title": "My acne cleared up dramatically!",
+            "text": "I'm 26 and was dealing with stubborn jawline acne that wouldn't go away. After reading about DHT and hormonal acne, I tried this product. Within 6 weeks my breakouts reduced by like 80%. So glad I found Simply Revival!",
+            "author_name": "JESSICA R.",
+            "feature_one": "Acne Control",
+            "feature_two": "Hormonal Balance"
+          }
+        },
+        "testimonial_zMqLVX": {
+          "type": "testimonial",
+          "settings": {
+            "star_rating": "4.9",
+            "title": "Hair shedding stopped completely",
+            "text": "Used to lose handfuls of hair in the shower every day. After 3 months on Simply Revival, my hair loss has practically stopped and my hair feels thicker. The natural ingredients give me confidence it's safe for long-term use.",
+            "author_name": "DAVID L.",
+            "feature_one": "Hair Retention",
+            "feature_two": "Clean Ingredients"
+          }
+        },
+        "testimonial_qaxnCw": {
+          "type": "testimonial",
+          "settings": {
+            "star_rating": "4.8",
+            "title": "Great value for the price",
+            "text": "Compared to other DHT blockers on the market, Simply Revival offers the best bang for your buck. Quality ingredients, effective results, and way more affordable than prescription options. Been using for 4 months now.",
+            "author_name": "SARAH M.",
+            "feature_one": "Affordable",
+            "feature_two": "Effective Formula"
+          }
+        },
+        "testimonial_AkHqfd": {
+          "type": "testimonial",
+          "settings": {
+            "star_rating": "5.0",
+            "title": "Nails and hair both improved!",
+            "text": "Started taking this primarily for hair thinning but noticed my nails got stronger too! They're growing faster and don't break as easily. Love that Simply Revival covers multiple benefits in one supplement.",
+            "author_name": "AMANDA K.",
+            "feature_one": "Hair & Nails",
+            "feature_two": "Multi-Benefit"
+          }
+        },
+        "testimonial_AxRCrX": {
+          "type": "testimonial",
+          "settings": {
+            "star_rating": "4.8",
+            "title": "Easy to incorporate into routine",
+            "text": "The capsules are the perfect size and don't have any weird taste or smell. I take them with breakfast every morning and never forget. Consistent use is key and Simply Revival makes it simple to stay on track.",
+            "author_name": "TYLER J.",
+            "feature_one": "Easy to Take",
+            "feature_two": "Daily Wellness"
+          }
+        },
+        "testimonial_8KVzNg": {
+          "type": "testimonial",
+          "settings": {
+            "star_rating": "4.9",
+            "title": "Saw results in just 8 weeks",
+            "text": "My hairline was starting to recede at 29 which was devastating. Simply Revival helped me regain confidence - I can see baby hairs growing where there was nothing before. Natural approach was important to me and this delivered.",
+            "author_name": "RACHEL P.",
+            "feature_one": "Quick Results",
+            "feature_two": "Confidence Boost"
+          }
+        },
+        "testimonial_dHLeNU": {
+          "type": "testimonial",
+          "settings": {
+            "star_rating": "5.0",
+            "title": "Hormonal acne finally under control",
+            "text": "Struggled with cystic acne along my jawline for months. Nothing worked until I discovered DHT blockers. Simply Revival has been incredible - my skin is the clearest it's been in years. Highly recommend!",
+            "author_name": "KEVIN S.",
+            "feature_one": "Cystic Acne",
+            "feature_two": "Clear Skin"
+          }
+        },
+        "testimonial_rnMUVE": {
+          "type": "testimonial",
+          "settings": {
+            "star_rating": "4.8",
+            "title": "Natural ingredients I can trust",
+            "text": "Love that Simply Revival uses clean, natural ingredients without fillers or junk. As someone who's picky about what I put in my body, this product meets all my standards while actually delivering results.",
+            "author_name": "MICHELLE W.",
+            "feature_one": "Clean Formula",
+            "feature_two": "Trustworthy"
+          }
+        },
+        "testimonial_mCxiU9": {
+          "type": "testimonial",
+          "settings": {
+            "star_rating": "4.8",
+            "title": "Perfect for sensitive stomachs",
+            "text": "I have a sensitive stomach and many supplements upset me, but Simply Revival is gentle and causes zero digestive issues. I can take it with or without food and feel great. The hair benefits are just a bonus!",
+            "author_name": "CHRIS B.",
+            "feature_one": "Gentle Formula",
+            "feature_two": "Stomach Friendly"
+          }
+        },
+        "testimonial_f7nXyC": {
+          "type": "testimonial",
+          "settings": {
+            "star_rating": "5.0",
+            "title": "Subscription service is convenient",
+            "text": "The monthly subscription ensures I never run out and saves me money too. Simply Revival has become an essential part of my daily routine. My hair stylist even commented on how much healthier my hair looks now.",
+            "author_name": "Nicole F.",
+            "feature_one": "Subscription",
+            "feature_two": "Hair Health"
+          }
+        },
+        "testimonial_jDacaK": {
+          "type": "testimonial",
+          "settings": {
+            "star_rating": "4.9",
+            "title": "Packaging and shipping excellent",
+            "text": "Product always arrives quickly and well-packaged. The bottles are sealed properly and the capsules stay fresh. Simply Revival clearly cares about quality from production to delivery. Very professional company!",
+            "author_name": "BRANDON M.",
+            "feature_one": "Quality Packaging",
+            "feature_two": "Fast Shipping"
+          }
+        }
+      },
+      "block_order": [
+        "testimonial_jcDtAK",
+        "testimonial_rLxFC9",
+        "testimonial_zMqLVX",
+        "testimonial_qaxnCw",
+        "testimonial_AkHqfd",
+        "testimonial_AxRCrX",
+        "testimonial_8KVzNg",
+        "testimonial_dHLeNU",
+        "testimonial_rnMUVE",
+        "testimonial_mCxiU9",
+        "testimonial_f7nXyC",
+        "testimonial_jDacaK"
+      ],
+      "name": "Testimonials",
+      "settings": {
+        "testimonials_collection": "main-testimonial",
+        "bg_color": "#fffee3",
+        "text_color": "#111111",
+        "card_bg": "#ffffff",
+        "highlight_color": "#009370",
+        "padding_top": 20,
+        "padding_bottom": 20
+      }
+    },
+    "cwc_background_features_fzEHDf": {
+      "type": "CWC_background_features",
+      "blocks": {
+        "checkmark_3PzVfp": {
+          "type": "checkmark",
+          "settings": {
+            "text": "Made in the USA"
+          }
+        },
+        "checkmark_j83xci": {
+          "type": "checkmark",
+          "settings": {
+            "text": "No GMOs"
+          }
+        },
+        "checkmark_Be67Ci": {
+          "type": "checkmark",
+          "settings": {
+            "text": "Gluten free"
+          }
+        },
+        "checkmark_gCmREn": {
+          "type": "checkmark",
+          "settings": {
+            "text": "No preservatives"
+          }
+        },
+        "checkmark_FJrVX3": {
+          "type": "checkmark",
+          "settings": {
+            "text": "No Sugar"
+          }
+        },
+        "checkmark_hnhymP": {
+          "type": "checkmark",
+          "settings": {
+            "text": "All Natural"
+          }
+        },
+        "icon_block_cX9nJM": {
+          "type": "icon_block",
+          "settings": {
+            "text": "All Natural Formula"
+          }
+        },
+        "icon_block_kY9neh": {
+          "type": "icon_block",
+          "settings": {
+            "text": "Third Party Tested"
+          }
+        },
+        "icon_block_KnFiLj": {
+          "type": "icon_block",
+          "settings": {
+            "text": "Afford-able"
+          }
+        },
+        "icon_block_AbpbTM": {
+          "type": "icon_block",
+          "settings": {
+            "text": "No Harsh Side Effects"
+          }
+        }
+      },
+      "block_order": [
+        "checkmark_3PzVfp",
+        "checkmark_j83xci",
+        "checkmark_Be67Ci",
+        "checkmark_gCmREn",
+        "checkmark_FJrVX3",
+        "checkmark_hnhymP",
+        "icon_block_cX9nJM",
+        "icon_block_kY9neh",
+        "icon_block_KnFiLj",
+        "icon_block_AbpbTM"
+      ],
+      "name": "Background Features",
+      "settings": {
+        "headline": "Why Choose Our Product",
+        "bg_color": "#125657",
+        "bg_image": "shopify://shop_images/Simply_Revival___Why_Trust_Simply_Revival_vs_Standard_Prescriptions-min.png",
+        "text_color": "#ffffff",
+        "padding_top": 30,
+        "padding_bottom": 30
+      }
+    },
+    "cwc_reasons_raQjiN": {
+      "type": "CWC_reasons",
+      "blocks": {
+        "caption_zHdM3K": {
+          "type": "caption",
+          "settings": {
+            "text": "5 Reasons Why",
+            "caption_bg": "#60a1a2",
+            "caption_color": "#ffffff"
+          }
+        },
+        "heading_jGHhHk": {
+          "type": "heading",
+          "settings": {
+            "text": "<h3>We’re different from everything you’ve tried</h3>",
+            "heading_color": "#111111"
+          }
+        },
+        "reason_UiAERk": {
+          "type": "reason",
+          "settings": {
+            "img": "shopify://shop_images/Simply_Revival___Reason_1_-_Clinical_Strength-min.png",
+            "badge": "Reason 1",
+            "badge_bg": "#60a1a2",
+            "badge_color": "#ffffff",
+            "title": "Strength",
+            "text": "<p>Simply Revival® delivers 350mg+ of our proprietary blend of herbs including saw palmetto and stinging nettle.</p>"
+          }
+        },
+        "reason_TKEJHx": {
+          "type": "reason",
+          "settings": {
+            "img": "shopify://shop_images/Simply_Revival___Reason_2_-_10_Legendary_Herbs._One_formula-min_1.png",
+            "badge": "Reason 2",
+            "badge_bg": "#60a1a2",
+            "badge_color": "#ffffff",
+            "title": "10 Legendary Herbs. One formula",
+            "text": "<p>We combine the 10 best herbs into one potent formula designed to support a healthy hair growth cycle and reduce excess shedding — without harsh side effects.</p>"
+          }
+        },
+        "reason_YLnYnw": {
+          "type": "reason",
+          "settings": {
+            "img": "shopify://shop_images/Simply_Revival___Reason_3_-_No_taste._No_hassle._No_Side_Effects-min.png",
+            "badge": "Reason 3",
+            "badge_bg": "#60a1a2",
+            "badge_color": "#ffffff",
+            "title": "No taste. No hassle. No Side Effects",
+            "text": "<p>Our plant based capsules are easy to swallow, tasteless, and gentle on your body.</p>"
+          }
+        },
+        "reason_xJhUca": {
+          "type": "reason",
+          "settings": {
+            "img": "shopify://shop_images/Simply_Revival___Reason_4_-_Real_Results_Fast-min.png",
+            "badge": "Reason 4",
+            "badge_bg": "#60a1a2",
+            "badge_color": "#ffffff",
+            "title": "Real Results Fast",
+            "text": "<p>Most people see a visible difference in hair shedding in 30 days or less - then comes the new growth and new found confidence.</p>"
+          }
+        },
+        "reason_az3atk": {
+          "type": "reason",
+          "settings": {
+            "img": "shopify://shop_images/Simply_Revival___Reason_5_-_Radical_Transparency-min.png",
+            "badge": "Reason 5",
+            "badge_bg": "#60a1a2",
+            "badge_color": "#ffffff",
+            "title": "Radical Transparency",
+            "text": "<p>No fillers. No fluff. Just natural herbs. </p>"
+          }
+        },
+        "button_wYqzHE": {
+          "type": "button",
+          "settings": {
+            "text": "Try Risk-Free Today",
+            "link": "#cwc-featured-product--anchor",
+            "button_bg_color": "#125657",
+            "button_text_color": "#ffffff"
+          }
+        },
+        "guarantee_text_njzq4J": {
+          "type": "guarantee_text",
+          "settings": {
+            "text": "365-day money back guarantee",
+            "icon": "shopify://shop_images/Simply_Revival___Gurantee-min.png"
+          }
+        }
+      },
+      "block_order": [
+        "caption_zHdM3K",
+        "heading_jGHhHk",
+        "reason_UiAERk",
+        "reason_TKEJHx",
+        "reason_YLnYnw",
+        "reason_xJhUca",
+        "reason_az3atk",
+        "button_wYqzHE",
+        "guarantee_text_njzq4J"
+      ],
+      "name": "Reasons",
+      "settings": {
+        "card_bg": "#ffffff",
+        "card_text": "#222222",
+        "section_bg": "#fffee3",
+        "padding_top": 40,
+        "padding_bottom": 40
+      }
+    },
+    "cwc_video_testimonials_eKGcNw": {
+      "type": "CWC_video_testimonials",
+      "blocks": {
+        "testimonial_gAB3Pi": {
+          "type": "testimonial",
+          "settings": {
+            "video_file": "shopify://files/videos/Simply Revival | Real People Real Results - lukefinds.mp4",
+            "video_url": "",
+            "author_name": "Customer Name"
+          }
+        },
+        "testimonial_JKCwDW": {
+          "type": "testimonial",
+          "settings": {
+            "video_file": "shopify://files/videos/Simply Revival | Real People Real Results - TikTok-viral.mp4",
+            "video_url": "",
+            "author_name": "Customer Name"
+          }
+        },
+        "testimonial_imEa7a": {
+          "type": "testimonial",
+          "settings": {
+            "video_file": "shopify://files/videos/Simply Revival | Real People Real Results - alexcozys.mp4",
+            "video_url": "",
+            "author_name": "Customer Name"
+          }
+        },
+        "testimonial_CEbkbp": {
+          "type": "testimonial",
+          "settings": {
+            "video_file": "shopify://files/videos/Simply Revival | Real People Real Results - thehealthwealth.mp4",
+            "video_url": "",
+            "author_name": "Customer Name"
+          }
+        },
+        "testimonial_LbgUCx": {
+          "type": "testimonial",
+          "settings": {
+            "video_file": "shopify://files/videos/Simply Revival | Real People Real Results - kwakusella.mp4",
+            "video_url": "",
+            "author_name": "Customer Name"
+          }
+        },
+        "testimonial_cUnGVh": {
+          "type": "testimonial",
+          "settings": {
+            "video_file": "shopify://files/videos/Simply Revival | Real People Real Results - Anakin.mp4",
+            "video_url": "",
+            "author_name": "Customer Name"
+          }
+        },
+        "testimonial_YUfUyU": {
+          "type": "testimonial",
+          "settings": {
+            "video_file": "shopify://files/videos/Simply Revival | Real People Real Results - Marc_20Malcolm_20.mp4",
+            "video_url": "",
+            "author_name": "Customer Name"
+          }
+        },
+        "button_Ydqp9F": {
+          "type": "button",
+          "settings": {
+            "text": "Try Risk-Free Today",
+            "link": "#cwc-featured-product--anchor",
+            "button_bg_color": "#125657",
+            "button_text_color": "#ffffff"
+          }
+        },
+        "guarantee_text_TtNrBf": {
+          "type": "guarantee_text",
+          "settings": {
+            "text": "365-day money back guarantee",
+            "icon": "shopify://shop_images/Simply_Revival___Gurantee-min.png"
+          }
+        }
+      },
+      "block_order": [
+        "testimonial_gAB3Pi",
+        "testimonial_JKCwDW",
+        "testimonial_imEa7a",
+        "testimonial_CEbkbp",
+        "testimonial_LbgUCx",
+        "testimonial_cUnGVh",
+        "testimonial_YUfUyU",
+        "button_Ydqp9F",
+        "guarantee_text_TtNrBf"
+      ],
+      "name": "Video Testimonials",
+      "settings": {
+        "video_testimonials_collection": "video-testimonial-list-lnxzuxpg",
+        "heading": "<h3>Real People, <strong>Real Results</strong></h3>",
+        "bold_color": "#125657",
+        "text": "<p>See why thousands of people love our products</p>",
+        "bg_color": "#faf9f6",
+        "text_color": "#111111",
+        "button_bg": "#125657",
+        "button_text": "#ffffff",
+        "padding_top": 32,
+        "padding_bottom": 32
+      }
+    },
+    "cwc_problem_solution_3rW9Gt": {
+      "type": "CWC_problem_solution",
+      "blocks": {
+        "caption_HBMmJc": {
+          "type": "caption",
+          "settings": {
+            "text": "Hair Health Starts Here",
+            "text_color": "#ffffff",
+            "bg_color": "#60a1a2"
+          }
+        },
+        "heading_NaQgDb": {
+          "type": "heading",
+          "settings": {
+            "heading": "<h3>From thinning & insecure to<br/><strong>Full & Confident</strong></h3><h2>💪</h2>",
+            "text_color": "#ffffff",
+            "bold_color": "#d0f0f2"
+          }
+        },
+        "table_G4t4EN": {
+          "type": "table",
+          "settings": {
+            "title": "Your Problem",
+            "bg_color": "#1c7779",
+            "text_color": "#ffffff",
+            "icon1": "shopify://shop_images/Simply_Revival___Struggling_with_thinning_hairline-crown-min.png",
+            "text1": "Struggling with thinning hairline/crown",
+            "icon2": "shopify://shop_images/Simply_Revival___Feeling_insecure_about_your_hair-min.png",
+            "text2": "Feeling insecure about your hair",
+            "icon3": "shopify://shop_images/Simply_Revival___Sick_and_tired_of_prescription_side_effects-min.png",
+            "text3": "Sick and tired of solutions with side effects"
+          }
+        },
+        "table_pm6GiK": {
+          "type": "table",
+          "settings": {
+            "title": "Our Solution",
+            "bg_color": "#72c9ca",
+            "text_color": "#ffffff",
+            "icon1": "shopify://shop_images/Simply_Revival___A_full_head_of_healthy_hair-min.png",
+            "text1": "Noticeably fuller, healthier-looking hair",
+            "icon2": "shopify://shop_images/Simply_Revival___New_found_confidence-min.png",
+            "text2": "New found confidence",
+            "icon3": "shopify://shop_images/Simply_Revival___No_harsh_side_effects-min_a3ac93f0-38c8-4903-88e4-7ddcc56efb4e.png",
+            "text3": "All Natural - No harsh side effects"
+          }
+        },
+        "image_row_Bdgqed": {
+          "type": "image_row",
+          "settings": {
+            "bf_image": "shopify://shop_images/Simply_Revival___DHT_Blocker_-_Before_Transformatoin-min.png",
+            "text": "Within",
+            "hi_text": "90 Days",
+            "af_image": "shopify://shop_images/Simply_Revival___The_1_Natural_DHT_Blocker_for_Hair_Loss___Trasformatoin_-_After-min.png",
+            "show_subtext": false,
+            "text_color": "#faf9f6"
+          }
+        }
+      },
+      "block_order": [
+        "caption_HBMmJc",
+        "heading_NaQgDb",
+        "table_G4t4EN",
+        "table_pm6GiK",
+        "image_row_Bdgqed"
+      ],
+      "name": "Problem Solution",
+      "settings": {
+        "subhead": "",
+        "heading": "<h3>From thinning & insecure to Full & Confident</h3>",
+        "text": "",
+        "background_color": "#125657",
+        "padding_top": 40,
+        "padding_bottom": 40
+      }
+    },
+    "cwc_statistical_proof_TyE7PV": {
+      "type": "CWC_statistical_proof",
+      "blocks": {
+        "heading_GgbTzk": {
+          "type": "heading",
+          "settings": {
+            "heading": "<h3>Simply Revival® Works -</h3><h3>The Numbers <strong>Prove it</strong></h3>",
+            "text_color": "#202020",
+            "bold_color": "#60a1a2"
+          }
+        },
+        "text_DHUTee": {
+          "type": "text",
+          "settings": {
+            "text": "<p>When clean, plant-based ingredients meet maximum natural potency, the results speak for themselves.</p>",
+            "text_color": "#202020"
+          }
+        },
+        "stat_JDHqkJ": {
+          "type": "stat",
+          "settings": {
+            "number": "93%",
+            "title": "<p>Said they noticed visibly less hair shedding </p>",
+            "text": "<p>After taking Simply Revival® consistently for 3+ weeks</p>"
+          }
+        },
+        "stat_9rBk8h": {
+          "type": "stat",
+          "settings": {
+            "number": "96%",
+            "title": "<p>Would recommend Simply Revival® to a friend</p>",
+            "text": "<p>As a natural DHT support alternative.</p>"
+          }
+        },
+        "stat_U84iMg": {
+          "type": "stat",
+          "settings": {
+            "number": "90%",
+            "title": "<p>Noticed new hair growth & healthier skin</p>",
+            "text": "<p>After taking consistently for 60+ days</p>"
+          }
+        },
+        "stat_Gax64r": {
+          "type": "stat",
+          "settings": {
+            "number": "89%",
+            "title": "<p>Said they prefer Simply Revival®’s formula</p>",
+            "text": "<p>Over other DHT blocking supplements they’ve tried</p>"
+          }
+        }
+      },
+      "block_order": [
+        "heading_GgbTzk",
+        "text_DHUTee",
+        "stat_JDHqkJ",
+        "stat_9rBk8h",
+        "stat_U84iMg",
+        "stat_Gax64r"
+      ],
+      "name": "Statistical Proof",
+      "settings": {
+        "bg_color": "#ffffff",
+        "bg_image_desktop": "shopify://shop_images/Simply_Revival_Works_-_The_Numbers_Prove_it.png",
+        "bg_image_mobile": "shopify://shop_images/Simply_Revival_Works_-_The_Numbers_Prove_it-min.png",
+        "highlight_color": "#60a1a2",
+        "padding_top": 60,
+        "padding_bottom": 60
+      }
+    },
+    "cwc_comparison_j8fkx6": {
+      "type": "CWC_comparison",
+      "blocks": {
+        "heading_Lxw7Lq": {
+          "type": "heading",
+          "settings": {
+            "bold_text": "Simply Revival®",
+            "bold_color": "#72c9ca",
+            "text": "vs Others",
+            "text_color": "#ffffff"
+          }
+        },
+        "brand_table_ziRYCm": {
+          "type": "brand_table",
+          "settings": {
+            "product_image": "shopify://shop_images/Simply_Revival___Buy_1-min_52525d88-7cfb-486f-bcfd-4c0cb6a8e6ec.png",
+            "title": "Simply Revival®",
+            "background_color": "#60a1a2",
+            "text_color": "#ffffff",
+            "icon1": "shopify://shop_images/Simply_Revival___No_harsh_side_effects-min_a3ac93f0-38c8-4903-88e4-7ddcc56efb4e.png",
+            "text1": "No harsh side effects",
+            "icon2": "shopify://shop_images/Simply_Revival___All_Natural-min.png",
+            "text2": "All Natural Formula",
+            "icon3": "shopify://shop_images/Simply_Revival___Preservative_paraben_free-min.png",
+            "text3": "Preservative & paraben free",
+            "icon4": "shopify://shop_images/Simply_Revival___No_Sugar_Gluten_Free-min.png",
+            "text4": "No Sugar & Gluten Free",
+            "icon5": "shopify://shop_images/Simply_Revival___Made_in_the_USA-min.png",
+            "text5": "Made in the USA"
+          }
+        },
+        "competitor_table_YGJ7kM": {
+          "type": "competitor_table",
+          "settings": {
+            "title": "Other Solutions",
+            "background_color": "#ffffff",
+            "text_color": "#111111",
+            "text1": "Nasty Side Effects",
+            "text2": "Chemical formula",
+            "text3": "Fillers & additives",
+            "text4": "Sugar, flavors, binders",
+            "text5": "Manufactured overseas"
+          }
+        },
+        "bullet_tHDNbt": {
+          "type": "bullet",
+          "settings": {
+            "text": "<p><strong>Real Results Without Harsh Side Effects</strong> – Gentle on your body, tough on hair loss.</p>",
+            "text_color": "#ffffff"
+          }
+        },
+        "bullet_HeMT46": {
+          "type": "bullet",
+          "settings": {
+            "text": "<p><strong>Safe for Daily Use</strong> – No harsh ingredients, no hassle, just consistent growth support.</p>",
+            "text_color": "#ffffff"
+          }
+        },
+        "bullet_pAprff": {
+          "type": "bullet",
+          "settings": {
+            "text": "<p><strong>Research-Supported Ingredients</strong> — formulated with ingredients that have been studied for their role in supporting hair and scalp health.</p>",
+            "text_color": "#ffffff"
+          }
+        },
+        "button_TRCxmU": {
+          "type": "button",
+          "settings": {
+            "button_text": "Try Risk-Free Today",
+            "button_link": "#cwc-featured-product--anchor",
+            "button_bg_color": "#ffffff",
+            "button_text_color": "#125657",
+            "button_note": "365-day money back guarantee"
+          }
+        }
+      },
+      "block_order": [
+        "heading_Lxw7Lq",
+        "brand_table_ziRYCm",
+        "competitor_table_YGJ7kM",
+        "bullet_tHDNbt",
+        "bullet_HeMT46",
+        "bullet_pAprff",
+        "button_TRCxmU"
+      ],
+      "name": "Comparison Section",
+      "settings": {
+        "background_start_color": "#005556",
+        "background_end_color": "#047f7f",
+        "text_color": "#ffffff",
+        "padding_top": 100,
+        "padding_bottom": 65
+      }
+    },
+    "cwc_free_trial_yzRXJa": {
+      "type": "CWC_free_trial",
+      "blocks": {
+        "badge_7QTmAp": {
+          "type": "badge",
+          "settings": {
+            "badge_number": "365",
+            "bg_image": "shopify://shop_images/Simply_Revival___365_Day_Money_Back_Guarantee-min.png",
+            "badge_text": "DAYS"
+          }
+        },
+        "subhead_hhyUHW": {
+          "type": "subhead",
+          "settings": {
+            "text": "FEEL THE DIFFERENCE",
+            "text_color": "#125657"
+          }
+        },
+        "headline_K9HwGk": {
+          "type": "headline",
+          "settings": {
+            "text": "365-Day Risk-Free Trial"
+          }
+        },
+        "subtext_LixbJV": {
+          "type": "subtext",
+          "settings": {
+            "text": "<p>If you don’t experience noticeable improvements within 365 days, simply return your most recent order for a full refund!</p>"
+          }
+        },
+        "button_ezWWFE": {
+          "type": "button",
+          "settings": {
+            "text": "Try Risk-Free Today",
+            "link": "#cwc-featured-product--anchor",
+            "button_bg_color": "#125657",
+            "button_text_color": "#ffffff"
+          }
+        }
+      },
+      "block_order": [
+        "badge_7QTmAp",
+        "subhead_hhyUHW",
+        "headline_K9HwGk",
+        "subtext_LixbJV",
+        "button_ezWWFE"
+      ],
+      "name": "Free Trial Section",
+      "settings": {
+        "background_color": "#fffee3",
+        "text_color": "#000000",
+        "image": "shopify://shop_images/Simply_Revival___365_Day_Money_Back_Guarantee___Natural_DHT_Blocker-min_43ea7fa5-0dde-4ff0-b910-cc4b0d0aab12.png",
+        "alt_text": "",
+        "image_position": "left",
+        "padding_top": 24,
+        "padding_bottom": 0
+      }
+    },
+    "cwc_faqs_gzUrmK": {
+      "type": "CWC_faqs",
+      "blocks": {
+        "faq_PCeDn4": {
+          "type": "faq",
+          "settings": {
+            "title": "<p>What is Simply Revival</p>",
+            "text": "<p>Simply revival is a wellness brand focused on natural plant based supplements to support your hair health, immune system, and overall health - without synthetic ingredients or harsh side effects.</p>"
+          }
+        },
+        "faq_xzkw93": {
+          "type": "faq",
+          "settings": {
+            "title": "<p>Is Simply revival safe to use?</p>",
+            "text": "<p>Yes, our formulas are crafted to be the safest on the market and still provide powerful results. </p>"
+          }
+        },
+        "faq_cXUTTa": {
+          "type": "faq",
+          "settings": {
+            "title": "<p>How long does it take to see results?</p>",
+            "text": "<p>Most users reported noticing less hair loss in 3-6 weeks and new growth after 6-12 weeks. </p>"
+          }
+        },
+        "faq_4RiGpg": {
+          "type": "faq",
+          "settings": {
+            "title": "<p>Is simply revival suitable for all hair types?</p>",
+            "text": "<p>Yes, the formula is designed to to support hair heathy for all types of hair. </p>"
+          }
+        },
+        "faq_LaibHE": {
+          "type": "faq",
+          "settings": {
+            "title": "<p>Do you have a guarantee?</p>",
+            "text": "<p>Yes, All orders are backed by our 365 day money back guarantee. If you’re not happy, we will make it right!</p>"
+          }
+        },
+        "faq_DyxH8n": {
+          "type": "faq",
+          "disabled": true,
+          "settings": {
+            "title": "<p>What is your return policy?</p>",
+            "text": "<p>We offer a 30-day return policy on all items.</p>"
+          }
+        },
+        "button_a3wazk": {
+          "type": "button",
+          "settings": {
+            "button_text": "Try Risk-Free Today",
+            "button_link": "#cwc-featured-product--anchor",
+            "button_bg_color": "#d0f0f2",
+            "button_text_color": "#125657",
+            "button_note": "365-day money back guarantee"
+          }
+        }
+      },
+      "block_order": [
+        "faq_PCeDn4",
+        "faq_xzkw93",
+        "faq_cXUTTa",
+        "faq_4RiGpg",
+        "faq_LaibHE",
+        "faq_DyxH8n",
+        "button_a3wazk"
+      ],
+      "name": "FAQs",
+      "settings": {
+        "bg_color": "#125657",
+        "text_color": "#ffffff",
+        "heading": "<h3><strong>Frequently Asked Questions</strong></h3>",
+        "text": "",
+        "faq_bg_color": "#ffffff",
+        "padding_top": 32,
+        "padding_bottom": 32
+      }
+    },
+    "1629746450643786911": {
+      "type": "areviews-section",
+      "disabled": true,
+      "settings": {
+        "hide_areviews_title_rating": false,
+        "areviews_theme_font": "inherit",
+        "areviews_stars_colors": "#f3c621",
+        "areviews_write_reviews_botton_color": "#373737"
+      }
+    },
+    "areviews_1763084574_a82078": {
+      "type": "apps",
+      "blocks": {
+        "areviews_reviews_importer_areviews_display_reviews_DF56F8": {
+          "type": "shopify://apps/areviews-reviews-importer/blocks/AreviewsDisplayReviews/ab0ec5fe-c95b-4fd6-bfb8-db2a30d0756f",
+          "disabled": true,
+          "settings": {
+            "hide_areviews_title_rating": false,
+            "areviews_theme_font": "inherit",
+            "areviews_stars_colors": "#f3c621",
+            "areviews_write_reviews_botton_color": "#373737"
+          }
+        }
+      },
+      "block_order": [
+        "areviews_reviews_importer_areviews_display_reviews_DF56F8"
+      ],
+      "disabled": true,
+      "settings": {
+        "animation": "",
+        "setwidth": "container",
+        "paddingsection": "0px 0px 0px 0px",
+        "paddingmobile": "60px 0px 60px 0px",
+        "marginsection": "0px 0px 0px 0px",
+        "marginmobile": "0px 0px 0px 0px",
+        "bgsection": "#ffffff"
+      }
+    },
+    "cwc_areviews_widget_8WXrDw": {
+      "type": "CWC_areviews_widget",
+      "name": "Areviews Wdget",
+      "settings": {
+        "product": "simply®-dht-blocker",
+        "padding_top": 60,
+        "padding_bottom": 60
+      }
+    },
+    "178024152691ed2ca6": {
+      "type": "apps",
+      "blocks": {
+        "loox_reviews_loox_dynamic_section_LCA3Pj": {
+          "type": "shopify://apps/loox-reviews/blocks/loox-dynamic-section/5c3b337f-fd14-4df5-b1d6-80ec13e6e28e",
+          "settings": {
+            "reviews_to_display": "",
+            "default_tab": "automatic",
+            "only_photos": false,
+            "aggregated": false,
+            "limit": 20,
+            "hide_thumbnails": false,
+            "maxwidth": 1080,
+            "is_sample": true
+          }
+        }
+      },
+      "block_order": [
+        "loox_reviews_loox_dynamic_section_LCA3Pj"
+      ],
+      "settings": {
+        "animation": "",
+        "setwidth": "container",
+        "paddingsection": "0px 0px 0px 0px",
+        "paddingmobile": "60px 0px 60px 0px",
+        "marginsection": "0px 0px 0px 0px",
+        "marginmobile": "0px 0px 0px 0px",
+        "bgsection": "#ffffff"
+      }
+    }
+  },
+  "order": [
+    "cwc_scrolling_banner_6nEerz",
+    "product-content",
+    "product-requently",
+    "product-recent",
+    "product-recommendations",
+    "cwc_featured_product_B7WhGk",
+    "cwc_product_template_eC4DbX",
+    "cwc_usp_columns_NPgtAB",
+    "cwc_testimonial_images_CxCPAz",
+    "cwc_product_highlight_rows_EUh8KV",
+    "cwc_social_proof_VhXP3J",
+    "cwc_testimonials_FPgtbf",
+    "cwc_background_features_fzEHDf",
+    "cwc_reasons_raQjiN",
+    "cwc_video_testimonials_eKGcNw",
+    "cwc_problem_solution_3rW9Gt",
+    "cwc_statistical_proof_TyE7PV",
+    "cwc_comparison_j8fkx6",
+    "cwc_free_trial_yzRXJa",
+    "cwc_faqs_gzUrmK",
+    "1629746450643786911",
+    "areviews_1763084574_a82078",
+    "cwc_areviews_widget_8WXrDw",
+    "178024152691ed2ca6"
+  ]
+}
