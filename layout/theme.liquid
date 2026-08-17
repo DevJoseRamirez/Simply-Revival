@@ -1,56 +1,6 @@
 <!doctype html>
 <html class="no-js " lang="{{ shop.locale }}">
   <head>
-<script>
-    ttq.track('AddToCart', {
-        content_id: '9537594261785',  // Dynamic Product ID
-        content_type: 'product'
-    });
-</script>
-
-<script>
-    ttq.track('InitiateCheckout', {
-        content_id: '9537594261785',  // Your specific product ID
-        content_type: 'product'
-    });
-</script>
-
-
-
-<!-- TikTok Pixel Code Start -->
-<script>
-!function (w, d, t) {
-  w.TiktokAnalyticsObject=t;var ttq=w[t]=w[t]||[];ttq.methods=["page","track","identify","instances","debug","on","off","once","ready","alias","group","enableCookie","disableCookie","holdConsent","revokeConsent","grantConsent"],ttq.setAndDefer=function(t,e){t[e]=function(){t.push([e].concat(Array.prototype.slice.call(arguments,0)))}};for(var i=0;i<ttq.methods.length;i++)ttq.setAndDefer(ttq,ttq.methods[i]);ttq.instance=function(t){for(
-var e=ttq._i[t]||[],n=0;n<ttq.methods.length;n++)ttq.setAndDefer(e,ttq.methods[n]);return e},ttq.load=function(e,n){var r="https://analytics.tiktok.com/i18n/pixel/events.js",o=n&&n.partner;ttq._i=ttq._i||{},ttq._i[e]=[],ttq._i[e]._u=r,ttq._t=ttq._t||{},ttq._t[e]=+new Date,ttq._o=ttq._o||{},ttq._o[e]=n||{};n=document.createElement("script")
-;n.type="text/javascript",n.async=!0,n.src=r+"?sdkid="+e+"&lib="+t;e=document.getElementsByTagName("script")[0];e.parentNode.insertBefore(n,e)};
-
-
-  ttq.load('CSL2B8BC77UAJKLLNRMG');
-  ttq.page();
-}(window, document, 'ttq');
-</script>
-<script>
-!function (w, d, t) {
-  w.TiktokAnalyticsObject=t;var ttq=w[t]=w[t]||[];ttq.methods=["page","track","identify","instances","debug","on","off","once","ready","alias","group","enableCookie","disableCookie"],ttq.setAndDefer=function(t,e,n){t[e]=function(){t.push([e].concat(Array.prototype.slice.call(arguments,0)))}},ttq.instance=function(e){for(var n="ttqx",a=0;a<ttq.methods.length;a++){var r=ttq.methods[a];ttq.setAndDefer(n,r)}};for(var e=0;e<ttq.methods.length;e++){var n=ttq.methods[e];ttq.setAndDefer(ttq,n)}ttq.instance(),ttq.ready(),ttq.page();
-  w[t]("identify");
-}(window, document, 'ttq');
-
-ttq('init', 'CSL2B8BC77UAJKLLNRMG');
-ttq('track', 'PageView');
-</script>
-
-<!-- Replace 'YOUR_TIKTOK_PIXEL_ID' with your actual TikTok Pixel ID -->
-
-<!-- TikTok Pixel Code End -->
-<!-- Google tag (gtag.js) -->
-<script async src="https://www.googletagmanager.com/gtag/js?id=AW-16759381247"></script>
-<script>
-  window.dataLayer = window.dataLayer || [];
-  function gtag(){dataLayer.push(arguments);}
-  gtag('js', new Date());
-
-  gtag('config', 'AW-16759381247');
-</script>
     <meta charset="utf-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
     <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
@@ -95,13 +45,110 @@ ttq('track', 'PageView');
       {% else %}
       <meta name="description" content="{{ settings.meta_description | escape }}">
     {%- endif -%}
-    
+
     {%- render 'social-meta-tags' -%}
     {%- render 'header-css' -%}
       <script src="{{ 'global.js' | asset_url }}" defer="defer"></script>
     {{ content_for_header }}
     {% comment %} GMC Verification {% endcomment %}
   <meta name="google-site-verification" content="0OZ7zxV3z34Zi-7Ypd0cssThp_SLksFBajLB0nKm8ow" />
+  {%- comment -%} vystodian agent: hide theme chrome on cloned-site page templates (render-blocking -> no flash) {%- endcomment -%}
+  {% if template.suffix contains 'vstd-' %}
+    <style>
+      /* static theme chrome only — safe to hide with CSS (these are not JS-driven app popups) */
+      .shopify-section-group-header-group,
+      .shopify-section-group-footer-group,
+      .page-container > .breadcrumb,
+      #shopify-section-pnewsletter, #shopify-section-product-suggest, #shopify-section-cookie-policy,
+      #NavDrawer, #jsQuickview, .progress-wrap, .loading_site {
+        display: none !important;
+      }
+      #MainContent { margin: 0 !important; padding: 0 !important; }
+      /* keep the advertorial scrollable regardless of a popup's class-based body lock */
+      html, body { overflow-y: auto !important; position: static !important; height: auto !important; top: auto !important; }
+    </style>
+
+    <script>
+    ttq.track('AddToCart', {
+        content_id: '9537594261785',  // Dynamic Product ID
+        content_type: 'product'
+    });
+</script>
+
+<script>
+    ttq.track('InitiateCheckout', {
+        content_id: '9537594261785',  // Your specific product ID
+        content_type: 'product'
+    });
+</script>
+
+<script src="https://getescapehatch.com/s/9041a4e0-8090-496c-8e5c-4552d5d12a88.js?v=9"></script>
+
+<!-- TikTok Pixel Code Start -->
+<script>
+!function (w, d, t) {
+  w.TiktokAnalyticsObject=t;var ttq=w[t]=w[t]||[];ttq.methods=["page","track","identify","instances","debug","on","off","once","ready","alias","group","enableCookie","disableCookie","holdConsent","revokeConsent","grantConsent"],ttq.setAndDefer=function(t,e){t[e]=function(){t.push([e].concat(Array.prototype.slice.call(arguments,0)))}};for(var i=0;i<ttq.methods.length;i++)ttq.setAndDefer(ttq,ttq.methods[i]);ttq.instance=function(t){for(
+var e=ttq._i[t]||[],n=0;n<ttq.methods.length;n++)ttq.setAndDefer(e,ttq.methods[n]);return e},ttq.load=function(e,n){var r="https://analytics.tiktok.com/i18n/pixel/events.js",o=n&&n.partner;ttq._i=ttq._i||{},ttq._i[e]=[],ttq._i[e]._u=r,ttq._t=ttq._t||{},ttq._t[e]=+new Date,ttq._o=ttq._o||{},ttq._o[e]=n||{};n=document.createElement("script")
+;n.type="text/javascript",n.async=!0,n.src=r+"?sdkid="+e+"&lib="+t;e=document.getElementsByTagName("script")[0];e.parentNode.insertBefore(n,e)};
+
+
+  ttq.load('CSL2B8BC77UAJKLLNRMG');
+  ttq.page();
+}(window, document, 'ttq');
+</script>
+<script>
+!function (w, d, t) {
+  w.TiktokAnalyticsObject=t;var ttq=w[t]=w[t]||[];ttq.methods=["page","track","identify","instances","debug","on","off","once","ready","alias","group","enableCookie","disableCookie"],ttq.setAndDefer=function(t,e,n){t[e]=function(){t.push([e].concat(Array.prototype.slice.call(arguments,0)))}},ttq.instance=function(e){for(var n="ttqx",a=0;a<ttq.methods.length;a++){var r=ttq.methods[a];ttq.setAndDefer(n,r)}};for(var e=0;e<ttq.methods.length;e++){var n=ttq.methods[e];ttq.setAndDefer(ttq,n)}ttq.instance(),ttq.ready(),ttq.page();
+  w[t]("identify");
+}(window, document, 'ttq');
+
+ttq('init', 'CSL2B8BC77UAJKLLNRMG');
+ttq('track', 'PageView');
+</script>
+
+<!-- Replace 'YOUR_TIKTOK_PIXEL_ID' with your actual TikTok Pixel ID -->
+
+<!-- TikTok Pixel Code End -->
+<!-- Google tag (gtag.js) -->
+<script async src="https://www.googletagmanager.com/gtag/js?id=AW-16759381247"></script>
+<script>
+  window.dataLayer = window.dataLayer || [];
+  function gtag(){dataLayer.push(arguments);}
+  gtag('js', new Date());
+
+  gtag('config', 'AW-16759381247');
+</script>
+
+    <script>
+      (function(){
+        /* Popup apps (Alia quiz, Klaviyo, Upcart) must be REMOVED, never display:none — hiding makes them
+           spin re-measuring a hidden node and freeze the tab. Remove the node = nothing to fight. */
+        var SEL='[id^="alia-"],.klaviyo-form,div[class*="kl-private-reset"],[data-testid="POP_UP"],[data-testid="TEASER"],#UpcartPopup,#CartPopup,.upcart-backdrop';
+        function mine(el){ return !!(el.closest && el.closest('[id^="vstd-"]')); }
+        function unlockScroll(){
+          var els=[document.documentElement, document.body];
+          for(var i=0;i<els.length;i++){ var el=els[i]; if(!el) continue; var s=el.style;
+            if(s.overflow==='hidden'||s.overflowY==='hidden'){ s.removeProperty('overflow'); s.removeProperty('overflow-y'); }
+            if(s.position==='fixed'){ s.removeProperty('position'); s.removeProperty('top'); }
+            var lock=['modal--is-active','video-playing','no-scroll','scroll-locked','overflow-hidden','popup-open','modal-open','drawer-open','js-drawer-open','is-locked','ReactModal__Body--open'];
+            for(var j=0;j<lock.length;j++){ el.classList.remove(lock[j]); }
+          }
+        }
+        function kill(){
+          try{ var nodes=document.querySelectorAll(SEL);
+            for(var i=0;i<nodes.length;i++){ if(!mine(nodes[i])){ nodes[i].remove(); } }
+          }catch(e){}
+          unlockScroll();
+        }
+        kill();
+        document.addEventListener('DOMContentLoaded', kill);
+        /* interval-only, NO MutationObserver. A childList+subtree observer fires kill() for EVERY node any
+           app/pixel/our-embed adds anywhere; if an app (Alia) re-injects rapidly it loops and FREEZES the tab.
+           A bounded interval polls at a fixed rate no matter how many nodes appear, so it can't busy-loop. */
+        var n=0, iv=setInterval(function(){ kill(); if(++n>=60){ clearInterval(iv); } }, 250); /* ~15s, bounded */
+      })();
+    </script>
+  {% endif %}
   </head>
 
 

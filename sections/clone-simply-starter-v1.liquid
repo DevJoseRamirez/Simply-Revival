@@ -1,0 +1,2777 @@
+{%- comment -%}
+  ═══════════════════════════════════════════════════════════════
+  CLONE — simply-starter-v1
+  Source: mengotomars.com/products/30-day-supply-starter-kit (dark PDP)
+  Reskinned to Simply Revival (light: white/cream/dark-teal). ONE self-contained
+  section. Interactive parts ported from _reference-components (Swiper via CDN).
+  All CSS scoped under #clone-simply-starter-v1-*. One schema setting: product.
+  ═══════════════════════════════════════════════════════════════
+{%- endcomment -%}
+
+{%- assign p = section.settings.product -%}
+
+{%- comment -%} ── Swiper (CDN, deterministic — do not rely on theme's copy) ── {%- endcomment -%}
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.css">
+
+<style>
+  #clone-simply-starter-v1 {
+    /* Brand tokens (Simply Revival) */
+    --sr-text: #282828;
+    --sr-accent: #72c9ca;
+    --sr-bg: #ffffff;
+    --sr-cream: #fffee3;
+    --sr-teal: #125657;
+    --sr-grey: #f7f7f5;
+    --sr-cta-bg: #125657;
+    --sr-cta-text: #ffffff;
+    --sr-muted: #555555;
+    --sr-check: #1a9e5f; /* semantic */
+    --sr-cross: #d64545; /* semantic */
+    --sr-quest: #999999;
+    /* Type scale */
+    --fs-xs: 0.75rem;
+    --fs-sm: 0.875rem;
+    --fs-base: 1rem;
+    --fs-md: 1.125rem;
+    --fs-lg: 1.375rem;
+    --fs-xl: 1.75rem;
+    --fs-2xl: 2.25rem;
+    --fs-3xl: 3rem;
+
+    background: var(--sr-bg);
+    color: var(--sr-text);
+    font-size: var(--fs-base);
+    line-height: 1.5;
+    overflow-x: hidden;
+  }
+  #clone-simply-starter-v1 * {
+    box-sizing: border-box;
+  }
+  #clone-simply-starter-v1 img {
+    max-width: 100%;
+  }
+  #clone-simply-starter-v1 .cl-wrap {
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 0 2rem;
+  }
+  #clone-simply-starter-v1 .cl-section {
+    padding: 56px 0;
+  }
+  #clone-simply-starter-v1 .cl-bg-cream {
+    background: var(--sr-cream);
+  }
+  #clone-simply-starter-v1 .cl-bg-grey {
+    background: var(--sr-grey);
+  }
+  #clone-simply-starter-v1 .cl-bg-teal {
+    background: var(--sr-teal);
+    color: #fff;
+  }
+  #clone-simply-starter-v1 h2.cl-h {
+    text-align: center;
+    font-weight: 800;
+    font-size: var(--fs-2xl);
+    margin: 0 0 0.5rem;
+    text-transform: uppercase;
+    letter-spacing: 0.5px;
+    line-height: 1.15;
+  }
+  #clone-simply-starter-v1 h2.cl-h strong {
+    color: var(--sr-accent);
+  }
+  #clone-simply-starter-v1 .cl-sub {
+    text-align: center;
+    color: var(--sr-muted);
+    max-width: 640px;
+    margin: 0 auto 2.25rem;
+    font-size: var(--fs-md);
+  }
+  #clone-simply-starter-v1 .cl-bg-teal .cl-sub {
+    color: rgba(255, 255, 255, 0.85);
+  }
+  #clone-simply-starter-v1 .cl-cta {
+    display: inline-flex;
+    align-items: center;
+    gap: 0.5rem;
+    background: var(--sr-cta-bg);
+    color: var(--sr-cta-text);
+    padding: 1rem 2.25rem;
+    border-radius: 6px;
+    font-weight: 700;
+    font-size: var(--fs-md);
+    text-decoration: none;
+    border: 2px solid var(--sr-teal);
+    cursor: pointer;
+    transition: all 0.2s ease;
+  }
+  #clone-simply-starter-v1 .cl-cta:hover {
+    background: transparent;
+    color: var(--sr-teal);
+  }
+  #clone-simply-starter-v1 .cl-bg-teal .cl-cta {
+    background: #fff;
+    color: var(--sr-teal);
+    border-color: #fff;
+  }
+  #clone-simply-starter-v1 .cl-bg-teal .cl-cta:hover {
+    background: transparent;
+    color: #fff;
+  }
+  #clone-simply-starter-v1 .cl-center {
+    text-align: center;
+  }
+
+  /* ─────────────  1. HERO  ───────────── */
+  #clone-simply-starter-v1 .hero-grid {
+    display: grid;
+    grid-template-columns: 1fr;
+    gap: 2rem;
+    align-items: start;
+  }
+  #clone-simply-starter-v1 .hero-title {
+    font-size: var(--fs-2xl);
+    font-weight: 800;
+    margin: 0 0 0.5rem;
+    line-height: 1.15;
+  }
+  #clone-simply-starter-v1 .hero-rating {
+    display: flex;
+    align-items: center;
+    gap: 0.5rem;
+    font-size: var(--fs-sm);
+    color: var(--sr-muted);
+    margin-bottom: 0.75rem;
+  }
+  #clone-simply-starter-v1 .hero-stars {
+    color: var(--sr-accent);
+    letter-spacing: 1px;
+  }
+  #clone-simply-starter-v1 .hero-lede {
+    font-size: var(--fs-md);
+    color: var(--sr-muted);
+    margin: 0 0 1rem;
+  }
+  #clone-simply-starter-v1 .hero-bullets {
+    list-style: none;
+    margin: 0 0 1.25rem;
+    padding: 0;
+  }
+  #clone-simply-starter-v1 .hero-bullets li {
+    display: flex;
+    align-items: flex-start;
+    gap: 0.6rem;
+    margin-bottom: 0.6rem;
+    font-weight: 600;
+  }
+  #clone-simply-starter-v1 .hero-bullets .ck {
+    color: var(--sr-teal);
+    flex-shrink: 0;
+    font-weight: 800;
+  }
+
+  /* offer / price box */
+  #clone-simply-starter-v1 .offer-box {
+    border: 2px solid var(--sr-teal);
+    border-radius: 12px;
+    padding: 1.25rem;
+    background: var(--sr-cream);
+    margin-bottom: 1rem;
+  }
+  #clone-simply-starter-v1 .offer-price {
+    display: flex;
+    align-items: baseline;
+    gap: 0.6rem;
+  }
+  #clone-simply-starter-v1 .offer-now {
+    font-size: var(--fs-2xl);
+    font-weight: 800;
+    color: var(--sr-teal);
+  }
+  #clone-simply-starter-v1 .offer-was {
+    font-size: var(--fs-md);
+    text-decoration: line-through;
+    color: var(--sr-muted);
+  }
+  #clone-simply-starter-v1 .offer-badge {
+    display: inline-block;
+    background: var(--sr-teal);
+    color: #fff;
+    font-size: var(--fs-xs);
+    font-weight: 700;
+    padding: 0.25rem 0.6rem;
+    border-radius: 20px;
+    margin-left: auto;
+  }
+  #clone-simply-starter-v1 .offer-sub {
+    font-size: var(--fs-sm);
+    color: var(--sr-muted);
+    margin-top: 0.5rem;
+  }
+  #clone-simply-starter-v1 .hero-trust {
+    display: flex;
+    justify-content: space-between;
+    gap: 0.5rem;
+    margin-top: 1rem;
+    text-align: center;
+  }
+  #clone-simply-starter-v1 .hero-trust div {
+    font-size: var(--fs-xs);
+    color: var(--sr-muted);
+    flex: 1;
+  }
+  #clone-simply-starter-v1 .hero-trust .ic {
+    font-size: 1.3rem;
+    display: block;
+    margin-bottom: 0.25rem;
+  }
+
+  /* gallery (ported product-gallery-1) */
+  #clone-simply-starter-v1 .g-main {
+    position: relative;
+    width: 100%;
+  }
+  #clone-simply-starter-v1 .g-main .swiper-slide img {
+    width: 100%;
+    height: auto;
+    object-fit: contain;
+    aspect-ratio: 1/1;
+    display: block;
+    background: #fff;
+    border-radius: 12px;
+  }
+  #clone-simply-starter-v1 .g-main .swiper-button-next,
+  #clone-simply-starter-v1 .g-main .swiper-button-prev {
+    color: var(--sr-teal);
+  }
+  #clone-simply-starter-v1 .g-thumbs {
+    margin-top: 0.75rem;
+  }
+  #clone-simply-starter-v1 .g-thumbs .swiper-slide {
+    width: calc((100% - 32px) / 5) !important;
+  }
+  #clone-simply-starter-v1 .g-thumb {
+    width: 100%;
+    aspect-ratio: 1/1;
+    overflow: hidden;
+    cursor: pointer;
+    border: 2px solid transparent;
+    border-radius: 8px;
+    transition: border-color 0.3s ease;
+  }
+  #clone-simply-starter-v1 .g-thumb img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    display: block;
+  }
+  #clone-simply-starter-v1 .g-thumb.active {
+    border-color: var(--sr-teal);
+  }
+
+  /* gallery testimonial carousel (left column, under thumbs — matches reference) */
+  #clone-simply-starter-v1 .g-testimonial {
+    margin-top: 1rem;
+  }
+  #clone-simply-starter-v1 .gtst-carousel {
+    border: 1px solid #e7e6d5;
+    border-radius: 10px;
+    background: var(--sr-grey);
+    overflow: hidden;
+  }
+  #clone-simply-starter-v1 .gtst-card {
+    padding: 1.1rem 1.25rem;
+  }
+  #clone-simply-starter-v1 .gtst-quote {
+    margin: 0 0 0.75rem;
+    font-size: var(--fs-sm);
+    color: var(--sr-text);
+    line-height: 1.55;
+  }
+  #clone-simply-starter-v1 .gtst-quote b {
+    color: var(--sr-text);
+  }
+  #clone-simply-starter-v1 .gtst-foot {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+  }
+  #clone-simply-starter-v1 .gtst-stars {
+    color: var(--sr-accent);
+    letter-spacing: 1px;
+  }
+  #clone-simply-starter-v1 .gtst-author {
+    font-size: var(--fs-xs);
+    color: var(--sr-muted);
+    font-weight: 700;
+  }
+  #clone-simply-starter-v1 .gtst-controls {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin-top: 0.6rem;
+  }
+  #clone-simply-starter-v1 .gtst-pagination {
+    display: flex;
+    align-items: center;
+    gap: 6px;
+  }
+  #clone-simply-starter-v1 .gtst-pagination .swiper-pagination-bullet {
+    width: 7px;
+    height: 7px;
+    border-radius: 50%;
+    background: #cfcfbf;
+    opacity: 1;
+    cursor: pointer;
+    transition: all 0.2s ease;
+  }
+  #clone-simply-starter-v1 .gtst-pagination .swiper-pagination-bullet-active {
+    background: var(--sr-teal);
+    width: 18px;
+    border-radius: 4px;
+  }
+
+  /* supplement-facts button (left column, under testimonial — matches reference) */
+  #clone-simply-starter-v1 .g-label-toggle {
+    margin-top: 1rem;
+  }
+  #clone-simply-starter-v1 .g-label-toggle summary {
+    list-style: none;
+    cursor: pointer;
+    display: block;
+    text-align: center;
+    border: 2px solid var(--sr-teal);
+    color: var(--sr-teal);
+    font-weight: 700;
+    padding: 0.85rem 1rem;
+    border-radius: 8px;
+    transition: all 0.2s ease;
+  }
+  #clone-simply-starter-v1 .g-label-toggle summary::-webkit-details-marker {
+    display: none;
+  }
+  #clone-simply-starter-v1 .g-label-toggle summary:hover {
+    background: var(--sr-teal);
+    color: #fff;
+  }
+  #clone-simply-starter-v1 .g-label-toggle img {
+    margin-top: 1rem;
+    border-radius: 8px;
+    width: 100%;
+  }
+
+  /* free gifts inside hero content column (matches reference) */
+  #clone-simply-starter-v1 .hero-disc {
+    font-size: var(--fs-xs);
+    color: var(--sr-muted);
+    text-align: center;
+    margin-top: 1rem;
+  }
+  #clone-simply-starter-v1 .hero-gifts {
+    margin-top: 1.5rem;
+  }
+  #clone-simply-starter-v1 .hg-head {
+    text-align: center;
+    font-weight: 800;
+    text-transform: uppercase;
+    font-size: var(--fs-md);
+    letter-spacing: 0.5px;
+    margin: 0 0 1rem;
+  }
+  #clone-simply-starter-v1 .hg-head strong {
+    color: var(--sr-accent);
+  }
+  #clone-simply-starter-v1 .hg-row {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    gap: 0.6rem;
+  }
+  #clone-simply-starter-v1 .hg-card {
+    text-align: center;
+  }
+  #clone-simply-starter-v1 .hg-thumb {
+    position: relative;
+    background: #fff;
+    border: 1px solid #e7e6d5;
+    border-radius: 8px;
+    padding: 0.5rem;
+    aspect-ratio: 1/1;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+  }
+  #clone-simply-starter-v1 .hg-thumb img {
+    width: 100%;
+    height: 100%;
+    object-fit: contain;
+  }
+  #clone-simply-starter-v1 .hg-badge {
+    position: absolute;
+    top: 0.3rem;
+    left: 0.3rem;
+    background: var(--sr-teal);
+    color: #fff;
+    font-size: 10px;
+    font-weight: 700;
+    padding: 0.1rem 0.35rem;
+    border-radius: 4px;
+  }
+  #clone-simply-starter-v1 .hg-name {
+    font-size: var(--fs-xs);
+    font-weight: 600;
+    margin-top: 0.4rem;
+    line-height: 1.2;
+  }
+
+  /* ─────────────  TABS (shared: PDP tabs + week tabs)  ───────────── */
+  #clone-simply-starter-v1 .tabs-nav {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 0.5rem;
+    justify-content: center;
+    margin-bottom: 1.5rem;
+  }
+  #clone-simply-starter-v1 .tab-btn {
+    padding: 0.6rem 1.1rem;
+    border: 1.5px solid var(--sr-teal);
+    background: transparent;
+    color: var(--sr-teal);
+    font-weight: 600;
+    border-radius: 6px;
+    cursor: pointer;
+    transition: all 0.2s ease;
+    font-size: var(--fs-sm);
+  }
+  #clone-simply-starter-v1 .tab-btn[aria-selected='true'] {
+    background: var(--sr-teal);
+    color: #fff;
+  }
+  #clone-simply-starter-v1 .tab-panel {
+    display: none;
+  }
+  #clone-simply-starter-v1 .tab-panel.is-active {
+    display: block;
+  }
+
+  /* PDP timeline (tab 1) */
+  #clone-simply-starter-v1 .timeline {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 1.5rem;
+  }
+  #clone-simply-starter-v1 .tl-col h3 {
+    display: flex;
+    align-items: center;
+    gap: 0.5rem;
+    font-size: var(--fs-lg);
+    margin: 0 0 0.75rem;
+    color: var(--sr-teal);
+  }
+  #clone-simply-starter-v1 .tl-col ul {
+    margin: 0;
+    padding-left: 1.1rem;
+    color: var(--sr-muted);
+  }
+  #clone-simply-starter-v1 .tl-col li {
+    margin-bottom: 0.4rem;
+  }
+  #clone-simply-starter-v1 .pdp-panel {
+    background: #fff;
+    border: 1px solid #e7e6d5;
+    border-radius: 12px;
+    padding: 1.75rem;
+  }
+  #clone-simply-starter-v1 .pdp-panel h3.panel-h {
+    margin-top: 0;
+  }
+
+  /* week tabs panel (2-col text/media) */
+  #clone-simply-starter-v1 .wk-panel.is-active {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 2rem;
+    align-items: center;
+    background: var(--sr-grey);
+    border-radius: 12px;
+    padding: 2rem;
+  }
+  #clone-simply-starter-v1 .wk-panel h3 {
+    display: flex;
+    align-items: center;
+    gap: 0.6rem;
+    font-size: var(--fs-lg);
+    margin: 0 0 0.75rem;
+  }
+  #clone-simply-starter-v1 .wk-panel h3 span.num {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    width: 2rem;
+    height: 2rem;
+    border-radius: 50%;
+    background: var(--sr-teal);
+    color: #fff;
+    font-size: var(--fs-sm);
+    flex-shrink: 0;
+  }
+  #clone-simply-starter-v1 .wk-panel p {
+    color: var(--sr-muted);
+    margin: 0 0 1rem;
+  }
+  #clone-simply-starter-v1 .wk-bh {
+    font-weight: 700;
+    margin: 1rem 0 0.5rem;
+  }
+  #clone-simply-starter-v1 .wk-panel ul {
+    margin: 0;
+    padding-left: 1.2rem;
+    color: var(--sr-muted);
+  }
+  #clone-simply-starter-v1 .wk-panel li {
+    margin-bottom: 0.4rem;
+  }
+  #clone-simply-starter-v1 .wk-media img {
+    width: 100%;
+    border-radius: 8px;
+    display: block;
+  }
+  #clone-simply-starter-v1 .wk-chart {
+    margin-top: 0.75rem;
+    background: #fff;
+    border-radius: 8px;
+    padding: 0.75rem;
+  }
+  #clone-simply-starter-v1 .wk-chart svg {
+    width: 100%;
+    height: auto;
+    display: block;
+  }
+  #clone-simply-starter-v1 .wk-disc {
+    font-size: var(--fs-xs);
+    color: var(--sr-muted);
+    margin-top: 0.5rem;
+  }
+
+  /* ─────────────  4. INGREDIENTS (grid)  ───────────── */
+  #clone-simply-starter-v1 .ing-grid {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    gap: 1rem;
+  }
+  #clone-simply-starter-v1 .ing-card {
+    background: #fff;
+    border: 1px solid #e7e6d5;
+    border-radius: 10px;
+    overflow: hidden;
+  }
+  #clone-simply-starter-v1 .ing-card .ing-img {
+    width: 100%;
+    aspect-ratio: 4/3;
+    overflow: hidden;
+    background: var(--sr-grey);
+  }
+  #clone-simply-starter-v1 .ing-card .ing-img img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    display: block;
+  }
+  #clone-simply-starter-v1 .ing-body {
+    padding: 1rem;
+  }
+  #clone-simply-starter-v1 .ing-body h3 {
+    font-size: var(--fs-md);
+    margin: 0 0 0.25rem;
+  }
+  #clone-simply-starter-v1 .ing-tag {
+    display: inline-block;
+    background: rgba(114, 201, 202, 0.18);
+    color: var(--sr-teal);
+    font-size: var(--fs-xs);
+    font-weight: 700;
+    padding: 0.15rem 0.55rem;
+    border-radius: 20px;
+    margin-bottom: 0.5rem;
+  }
+  #clone-simply-starter-v1 .ing-body p {
+    font-size: var(--fs-sm);
+    color: var(--sr-muted);
+    margin: 0;
+  }
+
+  /* ─────────────  5. DESCRIPTION + LAB  ───────────── */
+  #clone-simply-starter-v1 .desc-block {
+    max-width: 780px;
+    margin: 0 auto;
+    text-align: center;
+  }
+  #clone-simply-starter-v1 .desc-block ul {
+    list-style: none;
+    padding: 0;
+    margin: 1.25rem 0;
+    display: inline-block;
+    text-align: left;
+  }
+  #clone-simply-starter-v1 .desc-block li {
+    display: flex;
+    gap: 0.5rem;
+    margin-bottom: 0.5rem;
+  }
+  #clone-simply-starter-v1 .desc-block li .ck {
+    color: var(--sr-teal);
+    font-weight: 800;
+  }
+  #clone-simply-starter-v1 .lab-badge {
+    display: inline-flex;
+    align-items: center;
+    gap: 0.75rem;
+    background: #fff;
+    border: 1px solid #e7e6d5;
+    border-radius: 10px;
+    padding: 0.6rem 1rem;
+    margin: 1rem 0 1.75rem;
+    font-size: var(--fs-sm);
+  }
+  #clone-simply-starter-v1 .lab-badge img {
+    width: 40px;
+    height: 40px;
+    object-fit: contain;
+  }
+
+  /* ─────────────  6/9. IMAGE CAROUSELS  ───────────── */
+  #clone-simply-starter-v1 .imgc-carousel,
+  #clone-simply-starter-v1 .ugc-carousel {
+    position: relative;
+    overflow: hidden;
+    padding: 0.5rem 0;
+  }
+  #clone-simply-starter-v1 .imgc-card {
+    border: 1px solid #dfdfdf;
+    border-radius: 10px;
+    overflow: hidden;
+    filter: drop-shadow(0 4px 4px rgba(0, 0, 0, 0.12));
+    position: relative;
+  }
+  #clone-simply-starter-v1 .imgc-card img {
+    width: 100%;
+    height: auto;
+    object-fit: cover;
+    display: block;
+  }
+  #clone-simply-starter-v1 .imgc-label {
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    display: flex;
+    justify-content: space-between;
+    padding: 0.4rem 0.6rem;
+    background: linear-gradient(transparent, rgba(0, 0, 0, 0.55));
+    color: #fff;
+    font-size: var(--fs-xs);
+    font-weight: 700;
+  }
+  #clone-simply-starter-v1 .ugc-tag {
+    position: absolute;
+    top: 0.6rem;
+    left: 0.6rem;
+    background: var(--sr-teal);
+    color: #fff;
+    font-size: var(--fs-xs);
+    font-weight: 700;
+    padding: 0.2rem 0.6rem;
+    border-radius: 20px;
+    text-transform: uppercase;
+  }
+  #clone-simply-starter-v1 .ugc-play {
+    position: absolute;
+    inset: 0;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+  }
+  #clone-simply-starter-v1 .ugc-play span {
+    width: 46px;
+    height: 46px;
+    border-radius: 50%;
+    background: rgba(255, 255, 255, 0.9);
+    color: var(--sr-teal);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 1.1rem;
+  }
+  #clone-simply-starter-v1 .cl-controls {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 1rem;
+    margin-top: 1.25rem;
+  }
+  #clone-simply-starter-v1 .cl-progress {
+    height: 4px;
+    background: rgba(0, 0, 0, 0.1);
+    border-radius: 2px;
+    overflow: hidden;
+    max-width: 280px;
+    margin: 1.5rem auto 0;
+  }
+  #clone-simply-starter-v1 .cl-progress-bar {
+    height: 100%;
+    width: 0%;
+    background: var(--sr-teal);
+    transition: width 0.3s linear;
+  }
+  #clone-simply-starter-v1 .cl-bg-teal .cl-progress {
+    background: rgba(255, 255, 255, 0.25);
+  }
+  #clone-simply-starter-v1 .cl-bg-teal .cl-progress-bar {
+    background: #fff;
+  }
+
+  /* ─────────────  7. REVIEW CARDS SLIDER  ───────────── */
+  #clone-simply-starter-v1 .tst-carousel {
+    position: relative;
+    overflow: hidden;
+  }
+  #clone-simply-starter-v1 .tst-card {
+    background: #fff;
+    border: 1px solid rgba(0, 0, 0, 0.12);
+    border-radius: 10px;
+    padding: 1.5rem;
+    text-align: left;
+    height: auto;
+  }
+  #clone-simply-starter-v1 .tst-rating {
+    display: flex;
+    align-items: center;
+    gap: 6px;
+    margin-bottom: 0.75rem;
+  }
+  #clone-simply-starter-v1 .tst-rating-num {
+    opacity: 0.8;
+    font-size: 0.9rem;
+  }
+  #clone-simply-starter-v1 .tst-stars {
+    color: var(--sr-accent);
+    letter-spacing: 1px;
+  }
+  #clone-simply-starter-v1 .tst-title {
+    font-weight: 700;
+    font-size: var(--fs-md);
+    margin: 0 0 0.5rem;
+  }
+  #clone-simply-starter-v1 .tst-text {
+    font-size: var(--fs-base);
+    margin: 0 0 1rem;
+    color: var(--sr-text);
+  }
+  #clone-simply-starter-v1 .tst-author-row {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+  }
+  #clone-simply-starter-v1 .tst-author {
+    display: flex;
+    align-items: center;
+    gap: 6px;
+    font-size: 13px;
+    text-transform: uppercase;
+    color: rgba(0, 0, 0, 0.5);
+  }
+  #clone-simply-starter-v1 .tst-avatar {
+    width: 26px;
+    height: 26px;
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-weight: 700;
+    font-size: 0.8rem;
+    color: #fff;
+  }
+  #clone-simply-starter-v1 .tst-verified {
+    display: flex;
+    align-items: center;
+    gap: 3px;
+    font-size: 11px;
+    text-transform: uppercase;
+    color: var(--sr-teal);
+    font-weight: 700;
+  }
+  #clone-simply-starter-v1 .tst-tags {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 0.5rem;
+    margin-top: 1rem;
+  }
+  #clone-simply-starter-v1 .tst-tag {
+    background: rgba(114, 201, 202, 0.16);
+    color: var(--sr-teal);
+    border: 0.5px solid var(--sr-accent);
+    padding: 0.3rem 0.6rem;
+    border-radius: 20px;
+    font-size: 12px;
+  }
+
+  /* ─────────────  8. SOCIAL-PROOF STATS SLIDER (teal band)  ───────────── */
+  #clone-simply-starter-v1 .sp-carousel {
+    position: relative;
+    overflow: hidden;
+  }
+  #clone-simply-starter-v1 .sp-card {
+    background: rgba(255, 255, 255, 0.08);
+    border: 1px solid rgba(255, 255, 255, 0.25);
+    border-radius: 12px;
+    padding: 1.75rem 1.25rem;
+    text-align: center;
+    height: 100%;
+  }
+  #clone-simply-starter-v1 .sp-num {
+    font-size: var(--fs-2xl);
+    font-weight: 800;
+    color: #fff;
+  }
+  #clone-simply-starter-v1 .sp-lbl {
+    color: rgba(255, 255, 255, 0.85);
+    font-size: var(--fs-sm);
+    margin-top: 0.4rem;
+  }
+
+  /* ─────────────  10. COMPARISON TABLE  ───────────── */
+  #clone-simply-starter-v1 .ct-wrapper {
+    position: relative;
+    padding-bottom: 2.5rem;
+  }
+  #clone-simply-starter-v1 .ct-grid {
+    display: grid;
+    grid-template-columns: 48% 26% 26%;
+    width: 100%;
+    max-width: 900px;
+    margin: 0 auto;
+    position: relative;
+  }
+  #clone-simply-starter-v1 .ct-row {
+    display: contents;
+  }
+  #clone-simply-starter-v1 .ct-cell {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding: 1rem;
+    border-top: 1px solid #e2ded0;
+    font-size: var(--fs-sm);
+  }
+  #clone-simply-starter-v1 .ct-label {
+    justify-content: flex-start;
+    text-align: left;
+    font-weight: 600;
+    background: var(--sr-cream);
+    border-left: 2px solid #e2ded0;
+  }
+  #clone-simply-starter-v1 .ct-row:first-child .ct-label {
+    border-top: 2px solid #e2ded0;
+    border-top-left-radius: 16px;
+  }
+  #clone-simply-starter-v1 .ct-row:last-child .ct-label {
+    border-bottom: 2px solid #e2ded0;
+    border-bottom-left-radius: 16px;
+  }
+  #clone-simply-starter-v1 .ct-brand {
+    background: #e2ebed;
+    z-index: 2;
+    position: relative;
+    border-left: 2px solid var(--sr-teal);
+    border-right: 2px solid var(--sr-teal);
+    font-weight: 700;
+    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.08);
+  }
+  #clone-simply-starter-v1 .ct-row:first-child .ct-brand {
+    border-top: 2px solid var(--sr-teal);
+    border-radius: 16px 16px 0 0;
+    margin-top: -1.25rem;
+  }
+  #clone-simply-starter-v1 .ct-row:last-child .ct-brand {
+    border-bottom: 2px solid var(--sr-teal);
+    border-radius: 0 0 16px 16px;
+    margin-bottom: -1.5rem;
+  }
+  #clone-simply-starter-v1 .ct-comp {
+    background: var(--sr-cream);
+    border-right: 2px solid #e2ded0;
+  }
+  #clone-simply-starter-v1 .ct-row:first-child .ct-comp {
+    border-top: 2px solid #e2ded0;
+    border-top-right-radius: 16px;
+  }
+  #clone-simply-starter-v1 .ct-row:last-child .ct-comp {
+    border-bottom: 2px solid #e2ded0;
+    border-bottom-right-radius: 16px;
+  }
+  #clone-simply-starter-v1 .ct-head .ct-cell {
+    border-top: none;
+    padding: 1rem 0;
+  }
+  #clone-simply-starter-v1 .ct-head .ct-brand img,
+  #clone-simply-starter-v1 .ct-head .ct-comp img {
+    max-height: 96px;
+    width: auto;
+  }
+  #clone-simply-starter-v1 .ct-head .ct-comp {
+    flex-direction: column;
+  }
+  #clone-simply-starter-v1 .ct-other {
+    font-size: var(--fs-sm);
+    margin-bottom: 0.4rem;
+    color: #666;
+  }
+  #clone-simply-starter-v1 .ct-mark {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    width: 26px;
+    height: 26px;
+    border-radius: 50%;
+    font-size: 15px;
+  }
+  #clone-simply-starter-v1 .ct-check .ct-mark {
+    background: var(--sr-check);
+    color: #fff;
+  }
+  #clone-simply-starter-v1 .ct-cross .ct-mark {
+    border: 2px solid var(--sr-cross);
+    color: var(--sr-cross);
+  }
+  #clone-simply-starter-v1 .ct-quest .ct-mark {
+    border: 2px solid var(--sr-quest);
+    color: var(--sr-quest);
+  }
+
+  /* ─────────────  12. DHT EDUCATION (advisory repurpose)  ───────────── */
+  #clone-simply-starter-v1 .edu-grid {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 1.5rem;
+  }
+  #clone-simply-starter-v1 .edu-card {
+    background: #fff;
+    border: 1px solid #e7e6d5;
+    border-radius: 12px;
+    padding: 1.75rem;
+    text-align: center;
+  }
+  #clone-simply-starter-v1 .edu-card .edu-ic {
+    font-size: 2rem;
+  }
+  #clone-simply-starter-v1 .edu-card h3 {
+    font-size: var(--fs-lg);
+    margin: 0.5rem 0;
+  }
+  #clone-simply-starter-v1 .edu-card p {
+    color: var(--sr-muted);
+    margin: 0;
+    font-size: var(--fs-sm);
+  }
+
+  /* ─────────────  13. GUARANTEE BAND  ───────────── */
+  #clone-simply-starter-v1 .guar-grid {
+    display: grid;
+    grid-template-columns: 180px 1fr;
+    gap: 2rem;
+    align-items: center;
+    max-width: 900px;
+    margin: 0 auto;
+  }
+  #clone-simply-starter-v1 .guar-seal {
+    width: 180px;
+    height: 180px;
+    border-radius: 50%;
+    border: 3px solid #fff;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+    font-weight: 800;
+    font-size: var(--fs-md);
+    line-height: 1.2;
+    padding: 1rem;
+  }
+  #clone-simply-starter-v1 .guar-seal img {
+    width: 100%;
+    height: 100%;
+    object-fit: contain;
+  }
+  #clone-simply-starter-v1 .guar-body h2 {
+    text-align: left;
+    text-transform: none;
+  }
+  #clone-simply-starter-v1 .guar-body p {
+    color: rgba(255, 255, 255, 0.85);
+    margin: 0 0 1.25rem;
+  }
+
+  /* ─────────────  14. FAQ  ───────────── */
+  #clone-simply-starter-v1 .faq-grid {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 2.5rem;
+    align-items: center;
+  }
+  #clone-simply-starter-v1 .faq-item {
+    border: 1px solid #e7e6d5;
+    border-radius: 8px;
+    margin-bottom: 0.75rem;
+    overflow: hidden;
+    background: #fff;
+  }
+  #clone-simply-starter-v1 .faq-item summary {
+    cursor: pointer;
+    padding: 1rem 1.1rem;
+    font-weight: 700;
+    list-style: none;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+  }
+  #clone-simply-starter-v1 .faq-item summary::-webkit-details-marker {
+    display: none;
+  }
+  #clone-simply-starter-v1 .faq-item summary::after {
+    content: '⌄';
+    font-size: 1.2rem;
+    color: var(--sr-teal);
+    transition: transform 0.2s ease;
+  }
+  #clone-simply-starter-v1 .faq-item[open] summary::after {
+    transform: rotate(180deg);
+  }
+  #clone-simply-starter-v1 .faq-item .faq-a {
+    padding: 0 1.1rem 1.1rem;
+    color: var(--sr-muted);
+  }
+  #clone-simply-starter-v1 .faq-img img {
+    width: 100%;
+    border-radius: 12px;
+    display: block;
+  }
+
+  /* ─────────────  15. LAUNCH KIT INCLUDES  ───────────── */
+  #clone-simply-starter-v1 .kit-grid {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 2.5rem;
+    align-items: center;
+  }
+  #clone-simply-starter-v1 .kit-list {
+    list-style: none;
+    margin: 0;
+    padding: 0;
+  }
+  #clone-simply-starter-v1 .kit-list li {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    gap: 1rem;
+    padding: 0.75rem 0;
+    border-bottom: 1px solid #e7e6d5;
+  }
+  #clone-simply-starter-v1 .kit-name .kh {
+    font-weight: 700;
+  }
+  #clone-simply-starter-v1 .kit-name small {
+    color: var(--sr-muted);
+  }
+  #clone-simply-starter-v1 .kit-price {
+    text-align: right;
+    white-space: nowrap;
+  }
+  #clone-simply-starter-v1 .kit-price .was {
+    text-decoration: line-through;
+    color: var(--sr-muted);
+    font-size: var(--fs-sm);
+  }
+  #clone-simply-starter-v1 .kit-price .free {
+    color: var(--sr-teal);
+    font-weight: 800;
+  }
+  #clone-simply-starter-v1 .kit-img img {
+    width: 100%;
+    border-radius: 12px;
+    display: block;
+  }
+
+  /* ─────────────  16. CUSTOMER REVIEWS WIDGET  ───────────── */
+  #clone-simply-starter-v1 .rev-summary {
+    display: grid;
+    grid-template-columns: 220px 1fr;
+    gap: 2rem;
+    align-items: center;
+    margin-bottom: 1.5rem;
+  }
+  #clone-simply-starter-v1 .rev-score {
+    text-align: center;
+  }
+  #clone-simply-starter-v1 .rev-score .big {
+    font-size: var(--fs-3xl);
+    font-weight: 800;
+    line-height: 1;
+  }
+  #clone-simply-starter-v1 .rev-score .stars {
+    color: var(--sr-accent);
+    font-size: var(--fs-md);
+  }
+  #clone-simply-starter-v1 .rev-score .cnt {
+    color: var(--sr-muted);
+    font-size: var(--fs-sm);
+  }
+  #clone-simply-starter-v1 .rev-bars {
+    display: flex;
+    flex-direction: column;
+    gap: 0.35rem;
+  }
+  #clone-simply-starter-v1 .rev-bar-row {
+    display: flex;
+    align-items: center;
+    gap: 0.6rem;
+    font-size: var(--fs-sm);
+  }
+  #clone-simply-starter-v1 .rev-bar {
+    flex: 1;
+    height: 8px;
+    background: #eee;
+    border-radius: 4px;
+    overflow: hidden;
+  }
+  #clone-simply-starter-v1 .rev-bar span {
+    display: block;
+    height: 100%;
+    background: var(--sr-accent);
+  }
+  #clone-simply-starter-v1 .rev-ai {
+    background: var(--sr-grey);
+    border-radius: 10px;
+    padding: 1rem 1.25rem;
+    margin-bottom: 1.5rem;
+  }
+  #clone-simply-starter-v1 .rev-ai b {
+    color: var(--sr-teal);
+  }
+  #clone-simply-starter-v1 .rev-photos {
+    display: flex;
+    gap: 0.5rem;
+    overflow-x: auto;
+    padding-bottom: 0.5rem;
+    margin-bottom: 1.5rem;
+  }
+  #clone-simply-starter-v1 .rev-photos img {
+    width: 90px;
+    height: 90px;
+    object-fit: cover;
+    border-radius: 8px;
+    flex-shrink: 0;
+  }
+  #clone-simply-starter-v1 .rev-card {
+    border-bottom: 1px solid #e7e6d5;
+    padding: 1.25rem 0;
+  }
+  #clone-simply-starter-v1 .rev-card .rc-head {
+    display: flex;
+    align-items: center;
+    gap: 0.6rem;
+    margin-bottom: 0.5rem;
+  }
+  #clone-simply-starter-v1 .rev-card .rc-avatar {
+    width: 34px;
+    height: 34px;
+    border-radius: 50%;
+    background: var(--sr-teal);
+    color: #fff;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-weight: 700;
+    font-size: 0.8rem;
+  }
+  #clone-simply-starter-v1 .rev-card .rc-name {
+    font-weight: 700;
+    font-size: var(--fs-sm);
+  }
+  #clone-simply-starter-v1 .rev-card .rc-verified {
+    font-size: var(--fs-xs);
+    color: var(--sr-teal);
+  }
+  #clone-simply-starter-v1 .rev-card .rc-stars {
+    color: var(--sr-accent);
+  }
+  #clone-simply-starter-v1 .rev-card .rc-title {
+    font-weight: 700;
+    margin: 0.25rem 0;
+  }
+  #clone-simply-starter-v1 .rev-card p {
+    color: var(--sr-muted);
+    margin: 0 0 0.5rem;
+  }
+  #clone-simply-starter-v1 .rev-more {
+    text-align: center;
+    margin-top: 1.5rem;
+  }
+
+  /* ─────────────  ATC (ported atc-1)  ───────────── */
+  #clone-simply-starter-v1 .clone-atc__button {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 6px;
+    width: 100%;
+    padding: 1rem 2rem;
+    font-size: var(--fs-md);
+    font-weight: 700;
+    border: 2px solid var(--sr-teal);
+    border-radius: 6px;
+    cursor: pointer;
+    transition: all 0.25s ease;
+    background: var(--sr-cta-bg);
+    color: var(--sr-cta-text);
+    -webkit-tap-highlight-color: transparent;
+  }
+  #clone-simply-starter-v1 .clone-atc__button:hover {
+    background: #fff;
+    color: var(--sr-teal);
+  }
+  #clone-simply-starter-v1 .clone-atc__button:disabled {
+    opacity: 0.6;
+    cursor: not-allowed;
+  }
+  #clone-simply-starter-v1 .clone-atc__price-compare {
+    text-decoration: line-through;
+    opacity: 0.7;
+  }
+  #clone-simply-starter-v1 .clone-atc__button.is-loading {
+    opacity: 0.7;
+    pointer-events: none;
+  }
+  .clone-sticky-atc-simplystarterv1 {
+    position: fixed;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    z-index: 999;
+    background: #fff;
+    box-shadow: 0 -2px 10px rgba(0, 0, 0, 0.12);
+    transform: translateY(100%);
+    transition: transform 0.3s ease;
+    padding: 0.75rem 1rem;
+    padding-bottom: calc(0.75rem + env(safe-area-inset-bottom, 0px));
+  }
+  .clone-sticky-atc-simplystarterv1.is-visible {
+    transform: translateY(0);
+  }
+  .clone-sticky-atc-simplystarterv1 .clone-sticky__wrapper {
+    max-width: 1200px;
+    margin: 0 auto;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 1rem;
+  }
+  .clone-sticky-atc-simplystarterv1 .clone-sticky__info {
+    display: flex;
+    align-items: center;
+    gap: 0.75rem;
+    min-width: 0;
+  }
+  .clone-sticky-atc-simplystarterv1 .clone-sticky__thumb {
+    width: 50px;
+    height: 50px;
+    border-radius: 6px;
+    overflow: hidden;
+    flex-shrink: 0;
+    background: #f5f5f5;
+  }
+  .clone-sticky-atc-simplystarterv1 .clone-sticky__thumb img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+  }
+  .clone-sticky-atc-simplystarterv1 .clone-sticky__title {
+    font-size: var(--fs-sm);
+    font-weight: 700;
+    color: #111;
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
+  }
+  .clone-sticky-atc-simplystarterv1 .clone-sticky__price {
+    font-size: var(--fs-sm);
+    display: flex;
+    gap: 0.5rem;
+  }
+  .clone-sticky-atc-simplystarterv1 .clone-atc__button {
+    width: auto;
+    padding: 0.75rem 1.5rem;
+  }
+
+  /* ─────────────  RESPONSIVE  ───────────── */
+  @media (min-width: 992px) {
+    #clone-simply-starter-v1 .hero-grid {
+      grid-template-columns: 1fr 1fr;
+      gap: 3rem;
+    }
+  }
+  @media (max-width: 991px) {
+    #clone-simply-starter-v1 .ing-grid {
+      grid-template-columns: repeat(2, 1fr);
+    }
+    #clone-simply-starter-v1 .edu-grid {
+      grid-template-columns: 1fr;
+    }
+  }
+  @media (max-width: 768px) {
+    #clone-simply-starter-v1 .cl-wrap {
+      padding: 0 1rem;
+    }
+    #clone-simply-starter-v1 .cl-section {
+      padding: 40px 0;
+    }
+    #clone-simply-starter-v1 h2.cl-h {
+      font-size: var(--fs-xl);
+    }
+    #clone-simply-starter-v1 .timeline {
+      grid-template-columns: 1fr;
+    }
+    #clone-simply-starter-v1 .wk-panel.is-active {
+      grid-template-columns: 1fr;
+      padding: 1.25rem;
+      gap: 1.25rem;
+    }
+    #clone-simply-starter-v1 .ct-grid {
+      grid-template-columns: 54% 23% 23%;
+    }
+    #clone-simply-starter-v1 .ct-cell {
+      padding: 0.5rem;
+      font-size: var(--fs-xs);
+    }
+    #clone-simply-starter-v1 .ct-other {
+      display: none;
+    }
+    #clone-simply-starter-v1 .faq-grid {
+      grid-template-columns: 1fr;
+    }
+    #clone-simply-starter-v1 .faq-img {
+      order: -1;
+    }
+    #clone-simply-starter-v1 .kit-grid {
+      grid-template-columns: 1fr;
+    }
+    #clone-simply-starter-v1 .rev-summary {
+      grid-template-columns: 1fr;
+      text-align: center;
+    }
+    #clone-simply-starter-v1 .guar-grid {
+      grid-template-columns: 1fr;
+      text-align: center;
+    }
+    #clone-simply-starter-v1 .guar-seal {
+      margin: 0 auto;
+    }
+    #clone-simply-starter-v1 .guar-body h2 {
+      text-align: center;
+    }
+  }
+</style>
+
+<div id="clone-simply-starter-v1">
+  {%- comment -%} ═════════ 1. HERO ═════════ {%- endcomment -%}
+  <section class="cl-section">
+    <div class="cl-wrap hero-grid">
+      {%- comment -%} Gallery (ported product-gallery-1 → p.images) {%- endcomment -%}
+      <div class="hero-gallery">
+        <div class="swiper g-main" id="g-main-simplystarterv1">
+          <div class="swiper-wrapper">
+            {% if p.images.size > 0 %}
+              {% for image in p.images limit: 8 %}
+                <div class="swiper-slide">
+                  <img
+                    src="{{ image | image_url: width: 700 }}"
+                    alt="{{ image.alt | default: p.title }}"
+                    loading="{% if forloop.first %}eager{% else %}lazy{% endif %}"
+                  >
+                </div>
+              {% endfor %}
+            {% else %}
+              <div class="swiper-slide"><img src="https://placehold.co/700x700?text=Product" alt="Product"></div>
+            {% endif %}
+          </div>
+          <div class="swiper-button-prev"></div>
+          <div class="swiper-button-next"></div>
+        </div>
+        {% if p.images.size > 1 %}
+          <div class="g-thumbs" id="g-thumbs-simplystarterv1">
+            <div class="swiper">
+              <div class="swiper-wrapper">
+                {% for image in p.images limit: 8 %}
+                  <div class="swiper-slide">
+                    <div class="g-thumb {% if forloop.first %}active{% endif %}" data-slide="{{ forloop.index0 }}">
+                      <img
+                        src="{{ image | image_url: width: 135 }}"
+                        alt="{{ image.alt | default: p.title }}"
+                        loading="lazy"
+                      >
+                    </div>
+                  </div>
+                {% endfor %}
+              </div>
+            </div>
+          </div>
+        {% endif %}
+
+        {%- comment -%} Testimonial carousel (under thumbs, matches reference left column) {%- endcomment -%}
+        <div class="g-testimonial">
+          <div class="swiper gtst-carousel" id="gtst-simplystarterv1">
+            <div class="swiper-wrapper">
+              <div class="swiper-slide">
+                <div class="gtst-card">
+                  <p class="gtst-quote">
+                    "It took about 2–3 weeks to notice results. <b>Less shedding and my scalp feels healthier</b> — hair
+                    actually feels thicker in the shower now."
+                  </p>
+                  <div class="gtst-foot">
+                    <span class="gtst-stars">★★★★★</span><span class="gtst-author">🌿 Jonathan S.</span>
+                  </div>
+                </div>
+              </div>
+              <div class="swiper-slide">
+                <div class="gtst-card">
+                  <p class="gtst-quote">
+                    "Barely any hair comes out when I wash now. <b>The shedding reduction is incredible</b> and it's
+                    completely natural — no harsh side effects."
+                  </p>
+                  <div class="gtst-foot">
+                    <span class="gtst-stars">★★★★★</span><span class="gtst-author">🌿 Connor L.</span>
+                  </div>
+                </div>
+              </div>
+              <div class="swiper-slide">
+                <div class="gtst-card">
+                  <p class="gtst-quote">
+                    "After 3 months the thin spot at my crown is definitely filling back in.
+                    <b>My barber even commented</b> on how much better my hair looks."
+                  </p>
+                  <div class="gtst-foot">
+                    <span class="gtst-stars">★★★★★</span><span class="gtst-author">🌿 Ryan M.</span>
+                  </div>
+                </div>
+              </div>
+              <div class="swiper-slide">
+                <div class="gtst-card">
+                  <p class="gtst-quote">
+                    "I'm 28 and my hairline was creeping back. Four months in, <b>the loss completely stopped</b> and
+                    I'm even seeing regrowth at the temples."
+                  </p>
+                  <div class="gtst-foot">
+                    <span class="gtst-stars">★★★★★</span><span class="gtst-author">🌿 Mike D.</span>
+                  </div>
+                </div>
+              </div>
+              <div class="swiper-slide">
+                <div class="gtst-card">
+                  <p class="gtst-quote">
+                    "Not just about stopping the loss — <b>my hair actually feels thicker and stronger</b> now. More
+                    volume than I've had in years."
+                  </p>
+                  <div class="gtst-foot">
+                    <span class="gtst-stars">★★★★★</span><span class="gtst-author">🌿 Brandon W.</span>
+                  </div>
+                </div>
+              </div>
+              <div class="swiper-slide">
+                <div class="gtst-card">
+                  <p class="gtst-quote">
+                    "Dad and both grandfathers went bald early, so I figured I was next. <b>At 35 my hair looks better
+                    than it did at 30.</b> Wish I'd started sooner."
+                  </p>
+                  <div class="gtst-foot">
+                    <span class="gtst-stars">★★★★★</span><span class="gtst-author">🌿 Steve C.</span>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+          <div class="gtst-controls">
+            <div class="gtst-pagination"></div>
+          </div>
+        </div>
+
+        {%- comment -%} Supplement Facts button (under testimonial, matches reference left column) {%- endcomment -%}
+        <details class="g-label-toggle">
+          <summary>View Supplement Facts</summary>
+          {% if section.settings.nutrition_label_image %}
+            <img src="{{ section.settings.nutrition_label_image | image_url: width: 700 }}" alt="Supplement Facts">
+          {% else %}
+            <img src="https://placehold.co/600x700?text=Supplement+Facts" alt="Supplement Facts">
+          {% endif %}
+        </details>
+      </div>
+
+      {%- comment -%} Product info {%- endcomment -%}
+      <div class="hero-info">
+        <h1 class="hero-title">
+          {% if p %}{{ p.title }}{% else %}Simply Revival® Natural DHT Blocker{% endif %}
+        </h1>
+        <div class="hero-rating"><span class="hero-stars">★★★★★</span> 4.8 · 25,605 Reviews</div>
+        <p class="hero-lede">
+          A natural blend of 10 ancient herbs formulated to support healthy DHT balance and healthier-looking, fuller
+          hair — without relying on harsh ingredients.
+        </p>
+        <ul class="hero-bullets">
+          <li><span class="ck">✓</span> Supports Blocking DHT — Reduce Hair Loss</li>
+          <li><span class="ck">✓</span> Strengthens Hair &amp; Supports Growth</li>
+          <li><span class="ck">✓</span> Restores Balance &amp; Side Effect Free</li>
+          <li><span class="ck">✓</span> Nutrient-Rich For Overall Health</li>
+        </ul>
+
+        <div class="offer-box">
+          <div class="offer-price">
+            <span class="offer-now">
+              {%- if p %}{{ p.price | money }}{% else %}$54.99{% endif -%}
+            </span>
+            {% if p and p.compare_at_price > p.price %}
+              <span class="offer-was">{{ p.compare_at_price | money }}</span>
+            {% else %}
+              <span class="offer-was">$179.97</span>
+            {% endif %}
+            <span class="offer-badge">Summer Sale</span>
+          </div>
+          <div class="offer-sub">Subscribe &amp; save 50% for life — refills ship every ~25 days, cancel anytime.</div>
+        </div>
+
+        {%- comment -%} ATC (ported atc-1) — static button {%- endcomment -%}
+        <div class="clone-atc-simplystarterv1">
+          <button
+            type="button"
+            class="clone-atc__button"
+            id="clone-simply-starter-v1-atc"
+            data-variant-id="{{ p.selected_or_first_available_variant.id }}"
+            {% unless p.available %}
+              disabled
+            {% endunless %}
+          >
+            {% if p.available %}
+              <span>Add to Cart</span><span>|</span>
+              <span class="clone-atc__price-current">{{ p.price | money }}</span>
+              {% if p.compare_at_price > p.price -%}
+                <span class="clone-atc__price-compare">{{ p.compare_at_price | money }}</span>
+              {%- endif %}
+            {% elsif p %}
+              <span>Sold Out</span>
+            {% else %}
+              <span>Add to Cart</span>
+            {% endif %}
+          </button>
+        </div>
+
+        <div class="hero-trust">
+          <div><span class="ic">↻</span>Free 365-Day Guarantee</div>
+          <div><span class="ic">🌱</span>All Natural &amp; Side-Effect Free</div>
+          <div><span class="ic">🚚</span>Fast &amp; Free Shipping</div>
+        </div>
+
+        <p class="hero-disc">
+          By default you'll receive a fresh supply every ~30 days. Skip, pause, or cancel anytime. By subscribing you
+          get discounted pricing and subscriber-only benefits and gifts.
+        </p>
+
+        {%- comment -%} Free gifts — inside the content column (matches reference) {%- endcomment -%}
+        <div class="hero-gifts">
+          <h2 class="hg-head">Your <strong>Free Gifts</strong></h2>
+          <div class="hg-row">
+            {% assign gift_names = '365-Day Guarantee,Shipping Protection,Up To 2 Bottles Free,$20 Gift Card'
+              | split: ','
+            %}
+            {% for i in (1..4) %}
+              <div class="hg-card">
+                <div class="hg-thumb">
+                  <span class="hg-badge">FREE</span>
+                  {% assign gkey = 'gift_' | append: i | append: '_image' %}
+                  {% assign gimg = section.settings[gkey] %}
+                  {% if gimg %}
+                    <img src="{{ gimg | image_url: width: 200 }}" alt="{{ gift_names[forloop.index0] }}">
+                  {% else %}
+                    <img src="https://placehold.co/160x160?text=Gift+{{ i }}" alt="{{ gift_names[forloop.index0] }}">
+                  {% endif %}
+                </div>
+                <div class="hg-name">{{ gift_names[forloop.index0] }}</div>
+              </div>
+            {% endfor %}
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  {%- comment -%} ═════════ 3. PDP TABS (What to Expect / FAQs / Reviews) ═════════ {%- endcomment -%}
+  <section class="cl-section">
+    <div class="cl-wrap">
+      <h2 class="cl-h">What Happens After You <strong>Start Simply Revival</strong></h2>
+      <div class="tabs" data-tabs="pdp">
+        <div class="tabs-nav" role="tablist">
+          <button class="tab-btn" role="tab" aria-selected="true" data-tab="0">What To Expect</button>
+          <button class="tab-btn" role="tab" aria-selected="false" data-tab="1">FAQs</button>
+          <button class="tab-btn" role="tab" aria-selected="false" data-tab="2">Reviews</button>
+        </div>
+
+        <div class="tab-panel is-active" data-panel="0">
+          <div class="pdp-panel">
+            <div class="timeline">
+              <div class="tl-col">
+                <h3>🌱 Day 14 — Less Shedding</h3>
+                <ul>
+                  <li>Herbs begin supporting healthy DHT balance</li>
+                  <li>Many notice less hair in the drain</li>
+                  <li>Scalp starts feeling nourished</li>
+                  <li>The daily routine settles in</li>
+                </ul>
+              </div>
+              <div class="tl-col">
+                <h3>💪 Day 30 — Reduced Loss</h3>
+                <ul>
+                  <li>Shedding continues to slow for most</li>
+                  <li>Hair feels stronger at the root</li>
+                  <li>Follicles stay nourished and open</li>
+                  <li>Foundation laid for new growth</li>
+                </ul>
+              </div>
+              <div class="tl-col">
+                <h3>🚀 Day 60 — Fuller Hair</h3>
+                <ul>
+                  <li>Noticeably fuller, thicker-looking hair</li>
+                  <li>Early signs of new growth for many</li>
+                  <li>Healthier scalp and hair quality</li>
+                  <li>Newfound confidence</li>
+                </ul>
+              </div>
+            </div>
+            <p class="wk-disc">
+              *Based on customer-reported feedback; individual results vary and are not clinical or medical outcomes.
+            </p>
+          </div>
+        </div>
+
+        <div class="tab-panel" data-panel="1">
+          <div class="pdp-panel">
+            <details class="faq-item" open>
+              <summary>What is Simply Revival?</summary>
+              <div class="faq-a">
+                A wellness brand focused on natural, plant-based supplements to support your hair health, immune system,
+                and overall health — without synthetic ingredients or harsh side effects.
+              </div>
+            </details>
+            <details class="faq-item">
+              <summary>How long does it take to see results?</summary>
+              <div class="faq-a">
+                Most users report noticing less hair loss in 3–6 weeks and new growth after 6–12 weeks.
+              </div>
+            </details>
+            <details class="faq-item">
+              <summary>Is it suitable for all hair types?</summary>
+              <div class="faq-a">Yes, the formula is designed to support healthy hair for all hair types.</div>
+            </details>
+          </div>
+        </div>
+
+        <div class="tab-panel" data-panel="2">
+          <div class="pdp-panel">
+            <div class="rev-card" style="border:none;padding:0 0 1rem;">
+              <div class="rc-stars">★★★★★</div>
+              <div class="rc-title">"Shower drain stays clean now!"</div>
+              <p>
+                Used to clog the drain every week. Since starting, barely any hair comes out when I wash. The shedding
+                reduction is incredible. — Connor L.
+              </p>
+            </div>
+            <div class="rev-card" style="padding:1rem 0 0;">
+              <div class="rc-stars">★★★★★</div>
+              <div class="rc-title">"Crown area filling in nicely"</div>
+              <p>
+                After 3 months the thin spot at my crown is definitely filling back in. My barber even commented on how
+                much better my hair looks. — Ryan M.
+              </p>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  {%- comment -%} ═════════ 4. INGREDIENTS (grid, benefit-cards pattern) ═════════ {%- endcomment -%}
+  <section class="cl-section cl-bg-grey">
+    <div class="cl-wrap">
+      <h2 class="cl-h">10 Legendary Herbs In 1 <strong>Powerful Formula</strong></h2>
+      <p class="cl-sub">Research-supported • Plant-based • Nothing you don't need</p>
+      <div class="ing-grid">
+        {% assign ing_names = 'Saw Palmetto,Stinging Nettle,Bamboo Extract,Spirulina,Alfalfa,Horsetail,Fo-Ti,Biotin 5,000mcg'
+          | split: ','
+        %}
+        {% assign ing_tags = 'Primary DHT Blocker,Secondary DHT Blocker,Natural Silica,Growth Support,Vitamins &amp; Minerals,Scalp Support,Traditional Hair Herb,Hair &amp; Nail Support'
+          | split: ','
+        %}
+        {% assign ing_desc = 'Primary natural DHT blocker studied for supporting healthy hair.,Secondary natural DHT blocker that helps balance from within.,Rich in natural silica to help strengthen the hair.,Nutrient-dense algae that supports new hair growth.,Rich in the vitamins and minerals hair and scalp love.,Traditionally used to support a healthy scalp.,Classic botanical long used to support hair vitality.,A true label dose to support healthy hair and nails.'
+          | split: ','
+        %}
+        {% for i in (1..8) %}
+          <div class="ing-card">
+            <div class="ing-img">
+              {% assign ikey = 'ingredient_' | append: i | append: '_image' %}
+              {% assign iimg = section.settings[ikey] %}
+              {% if iimg %}
+                <img src="{{ iimg | image_url: width: 400 }}" alt="{{ ing_names[forloop.index0] }}" loading="lazy">
+              {% else %}
+                <img
+                  src="https://placehold.co/400x300?text={{ ing_names[forloop.index0] | url_encode }}"
+                  alt="{{ ing_names[forloop.index0] }}"
+                  loading="lazy"
+                >
+              {% endif %}
+            </div>
+            <div class="ing-body">
+              <span class="ing-tag">{{ ing_tags[forloop.index0] }}</span>
+              <h3>{{ ing_names[forloop.index0] }}</h3>
+              <p>{{ ing_desc[forloop.index0] }}</p>
+            </div>
+          </div>
+        {% endfor %}
+      </div>
+    </div>
+  </section>
+
+  {%- comment -%} ═════════ 5. DESCRIPTION + LAB BADGE ═════════ {%- endcomment -%}
+  <section class="cl-section">
+    <div class="cl-wrap cl-center">
+      <div class="desc-block">
+        <h2 class="cl-h">Natural DHT Blocker For <strong>Thicker, Fuller Hair</strong></h2>
+        <p class="cl-sub">
+          Simply Revival's Natural DHT Blocker is a plant-based formula crafted to support a healthy hair growth cycle,
+          reduce excess shedding, and nourish the scalp from within — without harsh side effects.
+        </p>
+        <ul>
+          <li><span class="ck">✓</span> Supports Healthy Hair Growth &amp; Helps Reduce Shedding</li>
+          <li><span class="ck">✓</span> Supports DHT Balance for Healthier, Fuller-Looking Hair</li>
+          <li><span class="ck">✓</span> Nourishes Scalp &amp; Supports Healthy Skin from Within</li>
+          <li><span class="ck">✓</span> Rich in Natural Vitamins &amp; Minerals for Hair &amp; Scalp Health</li>
+        </ul>
+        <div>
+          <div class="lab-badge">
+            {% if section.settings.lab_badge_image %}
+              <img src="{{ section.settings.lab_badge_image | image_url: width: 80 }}" alt="Lab tested">
+            {% else %}
+              <span style="font-size:1.6rem;">🧪</span>
+            {% endif %}
+            <span
+              ><strong>Third-Party Lab Tested &amp; Verified</strong><br>
+              Clean ingredients — Made in the USA</span
+            >
+          </div>
+        </div>
+        <div><a class="cl-cta" href="#clone-simply-starter-v1-atc">Try It Risk-Free →</a></div>
+      </div>
+    </div>
+  </section>
+
+  {%- comment -%} ═════════ 6. TRANSFORMATIONS CAROUSEL (ported image-carousel-1) ═════════ {%- endcomment -%}
+  <section class="cl-section cl-bg-grey">
+    <div class="cl-wrap">
+      <h2 class="cl-h">See How 100K+ People Are Getting <strong>Fuller, Healthier Hair</strong></h2>
+      <p class="cl-sub">Real customers, real routines. Results vary from person to person.</p>
+      <div class="swiper imgc-carousel" id="imgc-simplystarterv1">
+        <div class="swiper-wrapper">
+          {% for i in (1..6) %}
+            <div class="swiper-slide">
+              <div class="imgc-card">
+                {% assign tkey = 'transformation_' | append: i | append: '_image' %}
+                {% assign timg = section.settings[tkey] %}
+                {% if timg %}
+                  <img src="{{ timg | image_url: width: 600 }}" alt="Customer result {{ i }}" loading="lazy">
+                {% else %}
+                  <img
+                    src="https://placehold.co/600x600?text=Transformation+{{ i }}"
+                    alt="Customer result {{ i }}"
+                    loading="lazy"
+                    width="600"
+                    height="600"
+                  >
+                {% endif %}
+                <div class="imgc-label"><span>Week 0</span><span>Week 12</span></div>
+              </div>
+            </div>
+          {% endfor %}
+        </div>
+      </div>
+      <div class="cl-progress"><div class="cl-progress-bar" data-bar="imgc"></div></div>
+      <div class="cl-controls">
+        <div class="swiper-button-prev" data-prev="imgc"></div>
+        <div class="swiper-button-next" data-next="imgc"></div>
+      </div>
+    </div>
+  </section>
+
+  {%- comment -%} ═════════ 7. VERIFIED REVIEW SLIDER (ported carousel-1) ═════════ {%- endcomment -%}
+  <section class="cl-section">
+    <div class="cl-wrap">
+      <h2 class="cl-h">What Customers <strong>Are Saying</strong></h2>
+      <div class="swiper tst-carousel" id="tst-simplystarterv1">
+        <div class="swiper-wrapper">
+          {%- comment -%} slides from product-context testimonials {%- endcomment -%}
+          {% assign tst = 'Connor L.|C|#125657|5.0|Shower drain stays clean now!|Used to clog the shower drain with hair every week. Since starting 5 months ago, barely any hair comes out when I wash.|Reduced Shedding|Hair Retention'
+            | split: '~'
+          %}
+          <div class="swiper-slide">
+            <div class="tst-card">
+              <div class="tst-rating"><span class="tst-rating-num">5.0</span><span class="tst-stars">★★★★★</span></div>
+              <h3 class="tst-title">"Shower drain stays clean now!"</h3>
+              <p class="tst-text">
+                Used to clog the shower drain with hair every week. Since starting 5 months ago, barely any hair comes
+                out when I wash. The shedding reduction is incredible.
+              </p>
+              <div class="tst-author-row">
+                <div class="tst-author">
+                  <div class="tst-avatar" style="background:#125657;">C</div>
+                  <span>Connor L.</span>
+                </div>
+                <div class="tst-verified">✓ Verified Buyer</div>
+              </div>
+              <div class="tst-tags">
+                <span class="tst-tag">Reduced Shedding</span><span class="tst-tag">Hair Retention</span>
+              </div>
+            </div>
+          </div>
+          <div class="swiper-slide">
+            <div class="tst-card">
+              <div class="tst-rating"><span class="tst-rating-num">4.9</span><span class="tst-stars">★★★★★</span></div>
+              <h3 class="tst-title">"Crown area filling in nicely"</h3>
+              <p class="tst-text">
+                My crown was getting pretty thin and obvious. After 3 months on Simply Revival, the area is definitely
+                filling back in. My barber even commented.
+              </p>
+              <div class="tst-author-row">
+                <div class="tst-author">
+                  <div class="tst-avatar" style="background:#72c9ca;">R</div>
+                  <span>Ryan M.</span>
+                </div>
+                <div class="tst-verified">✓ Verified Buyer</div>
+              </div>
+              <div class="tst-tags">
+                <span class="tst-tag">Crown Regrowth</span><span class="tst-tag">Visible Results</span>
+              </div>
+            </div>
+          </div>
+          <div class="swiper-slide">
+            <div class="tst-card">
+              <div class="tst-rating"><span class="tst-rating-num">5.0</span><span class="tst-stars">★★★★★</span></div>
+              <h3 class="tst-title">"Temples are growing back!"</h3>
+              <p class="tst-text">
+                My temples were pretty far gone but Simply Revival is bringing them back. After 6 months I can see
+                actual hair where there was just scalp before.
+              </p>
+              <div class="tst-author-row">
+                <div class="tst-author">
+                  <div class="tst-avatar" style="background:#125657;">D</div>
+                  <span>Derek J.</span>
+                </div>
+                <div class="tst-verified">✓ Verified Buyer</div>
+              </div>
+              <div class="tst-tags">
+                <span class="tst-tag">Temple Regrowth</span><span class="tst-tag">Long-term Results</span>
+              </div>
+            </div>
+          </div>
+          <div class="swiper-slide">
+            <div class="tst-card">
+              <div class="tst-rating"><span class="tst-rating-num">4.9</span><span class="tst-stars">★★★★★</span></div>
+              <h3 class="tst-title">"Hair feels stronger and healthier"</h3>
+              <p class="tst-text">
+                Not just about stopping loss — my hair actually feels different now. Thicker, stronger, more volume.
+              </p>
+              <div class="tst-author-row">
+                <div class="tst-author">
+                  <div class="tst-avatar" style="background:#72c9ca;">B</div>
+                  <span>Brandon W.</span>
+                </div>
+                <div class="tst-verified">✓ Verified Buyer</div>
+              </div>
+              <div class="tst-tags">
+                <span class="tst-tag">Hair Quality</span><span class="tst-tag">Stronger Hair</span>
+              </div>
+            </div>
+          </div>
+          <div class="swiper-slide">
+            <div class="tst-card">
+              <div class="tst-rating"><span class="tst-rating-num">4.9</span><span class="tst-stars">★★★★★</span></div>
+              <h3 class="tst-title">"Stopped my receding hairline!"</h3>
+              <p class="tst-text">
+                I'm 28 and noticed my hairline going back. 4 months in, the hair loss completely stopped — even seeing
+                some regrowth at the temples.
+              </p>
+              <div class="tst-author-row">
+                <div class="tst-author">
+                  <div class="tst-avatar" style="background:#125657;">M</div>
+                  <span>Mike D.</span>
+                </div>
+                <div class="tst-verified">✓ Verified Buyer</div>
+              </div>
+              <div class="tst-tags">
+                <span class="tst-tag">Hair Regrowth</span><span class="tst-tag">Early Prevention</span>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+      <div class="cl-progress"><div class="cl-progress-bar" data-bar="tst"></div></div>
+      <div class="cl-controls">
+        <div class="swiper-button-prev" data-prev="tst"></div>
+        <div class="swiper-button-next" data-next="tst"></div>
+      </div>
+    </div>
+  </section>
+
+  {%- comment -%} ═════════ 8. SOCIAL-PROOF STATS SLIDER (repurposed experts → teal band) ═════════ {%- endcomment -%}
+  <section class="cl-section cl-bg-teal">
+    <div class="cl-wrap">
+      <h2 class="cl-h" style="color:#fff;">Trusted By <strong style="color:#fff;">100K+ Customers</strong></h2>
+      <p class="cl-sub">The numbers behind the #1 natural DHT blocker.</p>
+      <div class="swiper sp-carousel" id="sp-simplystarterv1">
+        <div class="swiper-wrapper">
+          {% assign sp_num = '93%,96%,90%,89%,100K+,25,605,4.8★' | split: ',' %}
+          {% assign sp_lbl = 'noticed visibly less shedding (after 3+ weeks),would recommend to a friend,noticed new growth &amp; healthier skin (after 60+ days),prefer our formula over other DHT blockers,happy customers &amp; counting,verified reviews,average rating — rated Excellent'
+            | split: ','
+          %}
+          {% for i in (0..6) %}
+            <div class="swiper-slide">
+              <div class="sp-card">
+                <div class="sp-num">{{ sp_num[i] }}</div>
+                <div class="sp-lbl">{{ sp_lbl[i] }}</div>
+              </div>
+            </div>
+          {% endfor %}
+        </div>
+      </div>
+      <div class="cl-progress"><div class="cl-progress-bar" data-bar="sp"></div></div>
+      <div class="cl-controls">
+        <div class="swiper-button-prev" data-prev="sp"></div>
+        <div class="swiper-button-next" data-next="sp"></div>
+      </div>
+    </div>
+  </section>
+
+  {%- comment -%} ═════════ 9. UGC / "WHAT PEOPLE ARE SAYING" (image-carousel-1) ═════════ {%- endcomment -%}
+  <section class="cl-section">
+    <div class="cl-wrap">
+      <h2 class="cl-h">Real People, <strong>Real Stories</strong></h2>
+      <div class="swiper ugc-carousel" id="ugc-simplystarterv1">
+        <div class="swiper-wrapper">
+          {% assign ugc_tags = 'Less Shedding,Regrowth,Natural,Confidence' | split: ',' %}
+          {% for i in (1..4) %}
+            <div class="swiper-slide">
+              <div class="imgc-card">
+                <span class="ugc-tag">{{ ugc_tags[forloop.index0] }}</span>
+                {% assign ukey = 'ugc_' | append: i | append: '_image' %}
+                {% assign uimg = section.settings[ukey] %}
+                {% if uimg %}
+                  <img src="{{ uimg | image_url: width: 500 }}" alt="Customer story {{ i }}" loading="lazy">
+                {% else %}
+                  <img
+                    src="https://placehold.co/400x600?text=Story+{{ i }}"
+                    alt="Customer story {{ i }}"
+                    loading="lazy"
+                    width="400"
+                    height="600"
+                  >
+                {% endif %}
+                <div class="ugc-play"><span>▶</span></div>
+              </div>
+            </div>
+          {% endfor %}
+        </div>
+      </div>
+      <div class="cl-progress"><div class="cl-progress-bar" data-bar="ugc"></div></div>
+      <div class="cl-controls">
+        <div class="swiper-button-prev" data-prev="ugc"></div>
+        <div class="swiper-button-next" data-next="ugc"></div>
+      </div>
+    </div>
+  </section>
+
+  {%- comment -%} ═════════ 10. COMPARISON TABLE (ported comparison-table-1) ═════════ {%- endcomment -%}
+  <section class="cl-section cl-bg-cream">
+    <div class="cl-wrap cl-center">
+      <h2 class="cl-h">The Simply Revival <strong>Difference</strong></h2>
+      <p class="cl-sub">See the clear difference vs. other hair-loss solutions.</p>
+      <div class="ct-wrapper">
+        <div class="ct-grid">
+          <div class="ct-row ct-head">
+            <div class="ct-cell ct-label"></div>
+            <div class="ct-cell ct-brand">
+              {% if section.settings.compare_brand_image %}
+                <img src="{{ section.settings.compare_brand_image | image_url: width: 200 }}" alt="Simply Revival">
+              {% elsif p.featured_image %}
+                <img src="{{ p.featured_image | image_url: width: 200 }}" alt="{{ p.title }}">
+              {% else %}
+                <img src="https://placehold.co/160x160?text=Simply+Revival" alt="Simply Revival">
+              {% endif %}
+            </div>
+            <div class="ct-cell ct-comp">
+              <span class="ct-other">Other Solutions</span>
+              {% if section.settings.compare_competitor_image %}
+                <img
+                  src="{{ section.settings.compare_competitor_image | image_url: width: 140 }}"
+                  alt="Other solutions"
+                >
+              {% else %}
+                <img src="https://placehold.co/120x140?text=Others" alt="Other solutions">
+              {% endif %}
+            </div>
+          </div>
+          <div class="ct-row">
+            <div class="ct-cell ct-label">Blocks DHT Naturally</div>
+            <div class="ct-cell ct-brand ct-check"><span class="ct-mark">✓</span></div>
+            <div class="ct-cell ct-comp ct-cross"><span class="ct-mark">✕</span></div>
+          </div>
+          <div class="ct-row">
+            <div class="ct-cell ct-label">Side Effects</div>
+            <div class="ct-cell ct-brand">No harsh side effects</div>
+            <div class="ct-cell ct-comp">Nasty side effects</div>
+          </div>
+          <div class="ct-row">
+            <div class="ct-cell ct-label">Formula</div>
+            <div class="ct-cell ct-brand">All Natural</div>
+            <div class="ct-cell ct-comp">Chemical formula</div>
+          </div>
+          <div class="ct-row">
+            <div class="ct-cell ct-label">Fillers &amp; Additives</div>
+            <div class="ct-cell ct-brand ct-check"><span class="ct-mark">✓</span> Free</div>
+            <div class="ct-cell ct-comp ct-cross"><span class="ct-mark">✕</span></div>
+          </div>
+          <div class="ct-row">
+            <div class="ct-cell ct-label">Sugar &amp; Gluten</div>
+            <div class="ct-cell ct-brand">None</div>
+            <div class="ct-cell ct-comp">Sugar, flavors, binders</div>
+          </div>
+          <div class="ct-row">
+            <div class="ct-cell ct-label">Made In</div>
+            <div class="ct-cell ct-brand">USA</div>
+            <div class="ct-cell ct-comp">Overseas</div>
+          </div>
+          <div class="ct-row">
+            <div class="ct-cell ct-label">365-Day Guarantee</div>
+            <div class="ct-cell ct-brand ct-check"><span class="ct-mark">✓</span></div>
+            <div class="ct-cell ct-comp ct-quest"><span class="ct-mark">?</span></div>
+          </div>
+          <div class="ct-row">
+            <div class="ct-cell ct-label">Third-Party Tested</div>
+            <div class="ct-cell ct-brand ct-check"><span class="ct-mark">✓</span></div>
+            <div class="ct-cell ct-comp ct-cross"><span class="ct-mark">✕</span></div>
+          </div>
+        </div>
+      </div>
+      <div style="margin-top:2.5rem;">
+        <a class="cl-cta" href="#clone-simply-starter-v1-atc">Try Risk-Free Today →</a>
+      </div>
+    </div>
+  </section>
+
+  {%- comment -%} ═════════ 11. WEEK-BY-WEEK TABS (ported tabs-1, 7 tabs) ═════════ {%- endcomment -%}
+  <section class="cl-section">
+    <div class="cl-wrap">
+      <h2 class="cl-h">What To Expect From Using <strong>Simply Revival Daily</strong></h2>
+      <div class="tabs" data-tabs="week">
+        <div class="tabs-nav" role="tablist">
+          <button class="tab-btn" role="tab" aria-selected="true" data-tab="0">Week 1-2</button>
+          <button class="tab-btn" role="tab" aria-selected="false" data-tab="1">Week 3-4</button>
+          <button class="tab-btn" role="tab" aria-selected="false" data-tab="2">Week 5-6</button>
+          <button class="tab-btn" role="tab" aria-selected="false" data-tab="3">Week 7-8</button>
+          <button class="tab-btn" role="tab" aria-selected="false" data-tab="4">Week 9-10</button>
+          <button class="tab-btn" role="tab" aria-selected="false" data-tab="5">Week 11-12</button>
+          <button class="tab-btn" role="tab" aria-selected="false" data-tab="6">Week 13+ Beyond</button>
+        </div>
+
+        {% assign wk_head = 'Adjustment,Less Shedding,Reduced Loss,Strengthening,Early Growth,Fuller Look,Maintain &amp; Thrive'
+          | split: ','
+        %}
+        {% assign wk_lede = 'Your body gets used to the herbs — gradually absorbing and processing the natural ingredients.,The blend supports healthy DHT balance and many people notice less hair in the drain.,Shedding continues to slow as your follicles stay nourished and open.,Hair starts to feel stronger at the root and the scalp feels healthier.,Some people begin to see early signs of new growth as the foundation takes hold.,Hair looks noticeably fuller and thicker for many — and confidence follows.,Ongoing daily support keeps DHT in balance for healthier hair long term.'
+          | split: ','
+        %}
+        {% assign wk_b1 = 'Early signs of the routine settling in,Less hair in the drain for many,Shedding continues to slow,Stronger hair at the root,Early new-growth signs for some,Noticeably fuller-looking hair,Consistent long-term support'
+          | split: ','
+        %}
+        {% assign wk_b2 = 'Scalp begins to feel nourished,Scalp feels calmer and nourished,Follicles stay nourished and open,Scalp feels healthier,Improved hair quality &amp; density,Improved thickness and volume,Follicles stay open and nourished'
+          | split: ','
+        %}
+        {% assign wk_b3 = 'Foundation laid for the weeks ahead,Foundation building for growth,Hair feels stronger,Momentum builds week to week,Newfound confidence emerging,Newfound confidence,Healthier hair for the long run'
+          | split: ','
+        %}
+
+        {% for i in (0..6) %}
+          <div class="tab-panel wk-panel {% if forloop.first %}is-active{% endif %}" data-panel="{{ i }}">
+            <div>
+              <h3>
+                <span class="num">{{ forloop.index }}</span> {{ wk_head[i] }}
+              </h3>
+              <p>{{ wk_lede[i] }}</p>
+              <div class="wk-bh">Benefits</div>
+              <ul>
+                <li>{{ wk_b1[i] }}</li>
+                <li>{{ wk_b2[i] }}</li>
+                <li>{{ wk_b3[i] }}</li>
+              </ul>
+            </div>
+            <div>
+              <div class="wk-media">
+                {% assign wkey = 'week_' | append: forloop.index | append: '_image' %}
+                {% assign wimg = section.settings[wkey] %}
+                {% if wimg %}
+                  <img src="{{ wimg | image_url: width: 600 }}" alt="{{ wk_head[i] }}" loading="lazy">
+                {% else %}
+                  <img
+                    src="https://placehold.co/600x360?text={{ wk_head[i] | url_encode }}"
+                    alt="{{ wk_head[i] }}"
+                    loading="lazy"
+                  >
+                {% endif %}
+              </div>
+              <div class="wk-chart">
+                {% assign dot_x = forloop.index | times: 36 | plus: 30 %}
+                {% assign dot_step = forloop.index0 | times: 12 %}
+                {% assign dot_y = 92 | minus: dot_step %}
+                <svg viewBox="0 0 300 110" role="img" aria-label="Illustrative hair-health trend">
+                  <line x1="30" y1="8" x2="30" y2="96" stroke="#ccc"/>
+                  <line x1="30" y1="96" x2="290" y2="96" stroke="#ccc"/>
+                  <polyline fill="none" stroke="#125657" stroke-width="3" points="30,92 66,86 102,74 138,60 174,46 210,34 246,20"/>
+                  {% if dot_y < 20 %}{% assign dot_y = 20 %}{% endif %}
+                  <circle cx="{{ dot_x }}" cy="{{ dot_y }}" r="5" fill="#72c9ca" stroke="#125657" stroke-width="2"/>
+                </svg>
+                <div class="wk-disc" style="text-align:center;margin-top:.25rem;">
+                  Illustrative — supported hair-health trend over time
+                </div>
+              </div>
+            </div>
+          </div>
+        {% endfor %}
+      </div>
+      <p class="wk-disc cl-center">
+        *Based on customer-reported feedback; individual results vary and are not clinical or medical outcomes.
+      </p>
+    </div>
+  </section>
+
+  {%- comment -%} ═════════ 12. DHT EDUCATION (repurposed advisory board) ═════════ {%- endcomment -%}
+  <section class="cl-section cl-bg-grey">
+    <div class="cl-wrap">
+      <h2 class="cl-h">DHT: The Hidden Hormone Behind Hair Loss — <strong>We Support It Naturally</strong></h2>
+      <div class="edu-grid">
+        <div class="edu-card">
+          <div class="edu-ic">🧬</div>
+          <h3>The Problem — DHT</h3>
+          <p>
+            DHT can shrink hair follicles over time. By addressing your DHT levels, your follicles stay nourished —
+            supporting thickness and healthier-looking hair long term.
+          </p>
+        </div>
+        <div class="edu-card">
+          <div class="edu-ic">🌿</div>
+          <h3>The Solution — Natural Blockers</h3>
+          <p>
+            Our formula combines vitamins, herbs, botanical extracts, and other natural ingredients to help support
+            healthy DHT balance.
+          </p>
+        </div>
+        <div class="edu-card">
+          <div class="edu-ic">💪</div>
+          <h3>The Impact — Stronger Growth</h3>
+          <p>
+            By supporting lower DHT, your follicles stay open and nourished — supporting regrowth, thickness, and
+            healthier hair long term.
+          </p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  {%- comment -%} ═════════ 13. GUARANTEE BAND (teal) ═════════ {%- endcomment -%}
+  <section class="cl-section cl-bg-teal">
+    <div class="cl-wrap">
+      <div class="guar-grid">
+        <div class="guar-seal">
+          {% if section.settings.guarantee_badge_image %}
+            <img
+              src="{{ section.settings.guarantee_badge_image | image_url: width: 240 }}"
+              alt="365-Day Money-Back Guarantee"
+            >
+          {% else %}
+            365-Day<br>
+            Money-Back<br>
+            Guarantee
+          {% endif %}
+        </div>
+        <div class="guar-body">
+          <h2 class="cl-h" style="color:#fff;">
+            See Less Shedding In 14 Days. Fuller Hair In 60 Days —
+            <strong style="color:#fff;text-decoration:underline;">Or Your Money Back</strong>
+          </h2>
+          <p>
+            We make sure every customer gets results or we refund your entire order. If you don't experience noticeable
+            improvements within 365 days, return your most recent order for a full refund. We bear all the risk.
+          </p>
+          <a class="cl-cta" href="#clone-simply-starter-v1-atc">Try It Risk-Free →</a>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  {%- comment -%} ═════════ 14. FAQ ACCORDION ═════════ {%- endcomment -%}
+  <section class="cl-section">
+    <div class="cl-wrap">
+      <h2 class="cl-h">Frequently Asked <strong>Questions</strong></h2>
+      <div class="faq-grid">
+        <div class="faq-list">
+          <details class="faq-item" open>
+            <summary>What is Simply Revival?</summary>
+            <div class="faq-a">
+              A wellness brand focused on natural, plant-based supplements to support your hair health, immune system,
+              and overall health — without synthetic ingredients or harsh side effects.
+            </div>
+          </details>
+          <details class="faq-item">
+            <summary>Is Simply Revival safe to use?</summary>
+            <div class="faq-a">
+              Yes, our formulas are crafted to be the safest on the market and still provide powerful results.
+            </div>
+          </details>
+          <details class="faq-item">
+            <summary>How long does it take to see results?</summary>
+            <div class="faq-a">
+              Most users report noticing less hair loss in 3–6 weeks and new growth after 6–12 weeks.
+            </div>
+          </details>
+          <details class="faq-item">
+            <summary>Is it suitable for all hair types?</summary>
+            <div class="faq-a">Yes, the formula is designed to support healthy hair for all hair types.</div>
+          </details>
+          <details class="faq-item">
+            <summary>Do you have a guarantee?</summary>
+            <div class="faq-a">
+              Yes, all orders are backed by our 365-day money-back guarantee. If you're not happy, we'll make it right.
+            </div>
+          </details>
+        </div>
+        <div class="faq-img">
+          {% if section.settings.faq_product_image %}
+            <img
+              src="{{ section.settings.faq_product_image | image_url: width: 700 }}"
+              alt="Simply Revival Natural DHT Blocker"
+            >
+          {% elsif p.featured_image %}
+            <img src="{{ p.featured_image | image_url: width: 700 }}" alt="{{ p.title }}">
+          {% else %}
+            <img src="https://placehold.co/600x600?text=Product" alt="Product">
+          {% endif %}
+        </div>
+      </div>
+    </div>
+  </section>
+
+  {%- comment -%} ═════════ 15. LAUNCH KIT INCLUDES ═════════ {%- endcomment -%}
+  <section class="cl-section cl-bg-cream">
+    <div class="cl-wrap">
+      <h2 class="cl-h">What's Included In <strong>Your Order</strong></h2>
+      <div class="kit-grid">
+        <ul class="kit-list">
+          <li>
+            <div class="kit-name">
+              <div class="kh">Natural DHT Blocker</div>
+              <small>30-day supply · 60 capsules</small>
+            </div>
+            <div class="kit-price">
+              <span class="was">
+                {%- if p and p.compare_at_price > p.price -%}
+                  {{- p.compare_at_price | money -}}
+                {%- else -%}
+                  $179.97
+                {%- endif -%}
+              </span>
+              <span class="free">
+                {%- if p %}{{ p.price | money }}{% else %}$54.99{% endif -%}
+              </span>
+            </div>
+          </li>
+          <li>
+            <div class="kit-name">
+              <div class="kh">365-Day Money-Back Guarantee</div>
+              <small>If you don't love it, money back</small>
+            </div>
+            <div class="kit-price"><span class="was">$50</span> <span class="free">Free</span></div>
+          </li>
+          <li>
+            <div class="kit-name">
+              <div class="kh">Shipping Protection</div>
+              <small>Lost or damaged? We replace it</small>
+            </div>
+            <div class="kit-price"><span class="was">$15</span> <span class="free">Free</span></div>
+          </li>
+          <li>
+            <div class="kit-name">
+              <div class="kh">Up To 2 Bottles Free</div>
+              <small>On qualifying bundle orders</small>
+            </div>
+            <div class="kit-price"><span class="was">$79.99</span> <span class="free">Free</span></div>
+          </li>
+          <li>
+            <div class="kit-name">
+              <div class="kh">$20 Gift Card</div>
+              <small>Get $20 back on your next order</small>
+            </div>
+            <div class="kit-price"><span class="was">$20</span> <span class="free">Free</span></div>
+          </li>
+          <li style="border:none;padding-top:1.25rem;">
+            <a class="cl-cta" href="#clone-simply-starter-v1-atc">Claim Your Order →</a>
+          </li>
+        </ul>
+        <div class="kit-img">
+          {% if section.settings.launch_kit_image %}
+            <img src="{{ section.settings.launch_kit_image | image_url: width: 700 }}" alt="What's included">
+          {% elsif p.featured_image %}
+            <img src="{{ p.featured_image | image_url: width: 700 }}" alt="{{ p.title }}">
+          {% else %}
+            <img src="https://placehold.co/600x600?text=Whats+Included" alt="What's included">
+          {% endif %}
+        </div>
+      </div>
+    </div>
+  </section>
+
+  {%- comment -%} ═════════ 16. CUSTOMER REVIEWS WIDGET ═════════ {%- endcomment -%}
+  <section class="cl-section">
+    <div class="cl-wrap">
+      <h2 class="cl-h">Customer <strong>Reviews</strong></h2>
+      <div class="rev-summary">
+        <div class="rev-score">
+          <div class="big">4.8</div>
+          <div class="stars">★★★★★</div>
+          <div class="cnt">25,605 reviews</div>
+        </div>
+        <div class="rev-bars">
+          {% assign rb_star = '5,4,3,2,1' | split: ',' %}
+          {% assign rb_pct = '87,8,3,1,1' | split: ',' %}
+          {% assign rb_cnt = '22,202,2,173,869,271,90' | split: ',' %}
+          <div class="rev-bar-row">
+            <span>5★</span>
+            <div class="rev-bar"><span style="width:87%"></span></div>
+            <span>22,202</span>
+          </div>
+          <div class="rev-bar-row">
+            <span>4★</span>
+            <div class="rev-bar"><span style="width:8%"></span></div>
+            <span>2,173</span>
+          </div>
+          <div class="rev-bar-row">
+            <span>3★</span>
+            <div class="rev-bar"><span style="width:3%"></span></div>
+            <span>869</span>
+          </div>
+          <div class="rev-bar-row">
+            <span>2★</span>
+            <div class="rev-bar"><span style="width:1%"></span></div>
+            <span>271</span>
+          </div>
+          <div class="rev-bar-row">
+            <span>1★</span>
+            <div class="rev-bar"><span style="width:1%"></span></div>
+            <span>90</span>
+          </div>
+        </div>
+      </div>
+
+      <div class="rev-ai">
+        <b>✦ What customers say:</b> Reviewers praise Simply Revival's Natural DHT Blocker for reducing hair shedding,
+        supporting new growth, and being gentle with no harsh side effects. Many note visible results within the first
+        few months and appreciate the clean, plant-based formula.
+      </div>
+
+      <div class="rev-photos">
+        {% for i in (1..6) %}
+          {% assign rpkey = 'review_photo_' | append: i %}
+          {% assign rpimg = section.settings[rpkey] %}
+          {% if rpimg %}
+            <img src="{{ rpimg | image_url: width: 180 }}" alt="Customer photo {{ i }}" loading="lazy">
+          {% else %}
+            <img src="https://placehold.co/120x120?text=Photo+{{ i }}" alt="Customer photo {{ i }}" loading="lazy">
+          {% endif %}
+        {% endfor %}
+      </div>
+
+      <div class="rev-list">
+        <div class="rev-card">
+          <div class="rc-head">
+            <div class="rc-avatar">JR</div>
+            <div>
+              <div class="rc-name">Jason R. <span class="rc-verified">✓ Verified buyer</span></div>
+              <div class="rc-stars">★★★★★</div>
+            </div>
+          </div>
+          <div class="rc-title">Best investment I've made</div>
+          <p>
+            Started losing hair at 25 which destroyed my confidence. Now my hair is thicker, stronger, and I'm not
+            shedding nearly as much.
+          </p>
+        </div>
+        <div class="rev-card">
+          <div class="rc-head">
+            <div class="rc-avatar">SC</div>
+            <div>
+              <div class="rc-name">Steve C. <span class="rc-verified">✓ Verified buyer</span></div>
+              <div class="rc-stars">★★★★★</div>
+            </div>
+          </div>
+          <div class="rc-title">Genetics don't have to win</div>
+          <p>
+            Dad and both grandfathers are bald, thought I was doomed. At 35 my hair is in better shape than it was 5
+            years ago.
+          </p>
+        </div>
+        <div class="rev-card">
+          <div class="rc-head">
+            <div class="rc-avatar">EK</div>
+            <div>
+              <div class="rc-name">Ethan K. <span class="rc-verified">✓ Verified buyer</span></div>
+              <div class="rc-stars">★★★★★</div>
+            </div>
+          </div>
+          <div class="rc-title">Great for younger guys like me</div>
+          <p>I'm only 22 but hair loss runs in my family. Starting early was the smartest decision.</p>
+        </div>
+        <div class="rev-card">
+          <div class="rc-head">
+            <div class="rc-avatar">LH</div>
+            <div>
+              <div class="rc-name">Lauren H. <span class="rc-verified">✓ Verified buyer</span></div>
+              <div class="rc-stars">★★★★★</div>
+            </div>
+          </div>
+          <div class="rc-title">Helped my hormonal acne too</div>
+          <p>Started this mainly for hair thinning but it cleared up my stubborn chin acne as well.</p>
+        </div>
+      </div>
+
+      <div class="rev-more"><a class="cl-cta" href="#clone-simply-starter-v1-atc">See More &amp; Try It →</a></div>
+    </div>
+  </section>
+
+  {%- comment -%} ═════════ STICKY ATC BAR (ported atc-1) ═════════ {%- endcomment -%}
+  <div class="clone-sticky-atc-simplystarterv1" data-observe-target="clone-simply-starter-v1-atc">
+    <div class="clone-sticky__wrapper">
+      <div class="clone-sticky__info">
+        <div class="clone-sticky__thumb">
+          {% if p.featured_image -%}
+            <img src="{{ p.featured_image | image_url: width: 100 }}" alt="{{ p.title | escape }}" loading="lazy">
+          {%- endif %}
+        </div>
+        <div>
+          <div class="clone-sticky__title">
+            {% if p %}{{ p.title }}{% else %}Natural DHT Blocker{% endif %}
+          </div>
+          <div class="clone-sticky__price">
+            <span class="clone-atc__price-current">
+              {%- if p %}{{ p.price | money }}{% else %}$54.99{% endif -%}
+            </span>
+            {% if p and p.compare_at_price > p.price -%}
+              <span class="clone-atc__price-compare">{{ p.compare_at_price | money }}</span>
+            {%- endif %}
+          </div>
+        </div>
+      </div>
+      <button
+        type="button"
+        class="clone-atc__button"
+        data-variant-id="{{ p.selected_or_first_available_variant.id }}"
+        {% unless p.available %}
+          disabled
+        {% endunless %}
+      >
+        {% if p.available or p == null %}Add to Cart{% else %}Sold Out{% endif %}
+      </button>
+    </div>
+  </div>
+</div>
+<script
+  src="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.js"
+  onload="cloneSwiperInit_simplystarterv1()"
+></script>
+
+{%- comment -%} ═════════ SWIPER INITS (CDN onload) ═════════ {%- endcomment -%}
+<script>
+  function cloneSwiperInit_simplystarterv1() {
+    var root = document.getElementById('clone-simply-starter-v1');
+    if (!root || typeof Swiper === 'undefined') return;
+
+    // ── Gallery main + thumbs ──
+    try {
+      var main = document.getElementById('g-main-simplystarterv1');
+      var thumbs = document.getElementById('g-thumbs-simplystarterv1');
+      if (main) {
+        var thumbSwiper = null;
+        if (thumbs) {
+          var thumbEl = thumbs.querySelector('.swiper');
+          if (thumbEl)
+            thumbSwiper = new Swiper(thumbEl, {
+              slidesPerView: 5,
+              spaceBetween: 4,
+              watchSlidesProgress: true,
+              slideToClickedSlide: true,
+            });
+        }
+        var mainSwiper = new Swiper(main, {
+          loop: false,
+          spaceBetween: 4,
+          speed: 400,
+          navigation: {
+            nextEl: '#g-main-simplystarterv1 .swiper-button-next',
+            prevEl: '#g-main-simplystarterv1 .swiper-button-prev',
+          },
+          thumbs: thumbSwiper ? { swiper: thumbSwiper } : undefined,
+          on: {
+            slideChange: function () {
+              if (!thumbs) return;
+              var items = thumbs.querySelectorAll('.g-thumb');
+              var idx = this.realIndex;
+              items.forEach(function (t, i) {
+                t.classList.toggle('active', i === idx);
+              });
+            },
+          },
+        });
+        if (thumbs)
+          thumbs.querySelectorAll('.g-thumb').forEach(function (thumb, i) {
+            thumb.addEventListener('click', function () {
+              mainSwiper.slideTo(i);
+            });
+          });
+      }
+    } catch (e) {}
+
+    // ── Gallery testimonial (auto-rotating, left column) ──
+    try {
+      if (document.getElementById('gtst-simplystarterv1')) {
+        new Swiper('#gtst-simplystarterv1', {
+          slidesPerView: 1,
+          spaceBetween: 0,
+          loop: true,
+          speed: 500,
+          autoplay: { delay: 4500, disableOnInteraction: false },
+          pagination: { el: '#clone-simply-starter-v1 .gtst-pagination', clickable: true },
+        });
+      }
+    } catch (e) {}
+
+    // ── Generic carousel helper (progress bar + arrows via data-*) ──
+    function initCarousel(sel, key, opts) {
+      try {
+        var extra = opts || {};
+        var cfg = {
+          slidesPerView: extra.base || 1.1,
+          spaceBetween: 16,
+          loop: !!extra.loop,
+          speed: 400,
+          navigation: { nextEl: '[data-next="' + key + '"]', prevEl: '[data-prev="' + key + '"]' },
+          breakpoints: extra.breakpoints || { 768: { slidesPerView: 2 }, 1024: { slidesPerView: extra.desktop || 3 } },
+          on: {
+            slideChange: function () {
+              var bar = document.querySelector('[data-bar="' + key + '"]');
+              if (bar) bar.style.width = ((this.realIndex + 1) / this.slides.length) * 100 + '%';
+            },
+          },
+        };
+        new Swiper(sel, cfg);
+      } catch (e) {}
+    }
+
+    initCarousel('#imgc-simplystarterv1', 'imgc', { base: 1.2, loop: true, desktop: 3 });
+    initCarousel('#tst-simplystarterv1', 'tst', { base: 1, loop: true, desktop: 3 });
+    initCarousel('#sp-simplystarterv1', 'sp', {
+      base: 1.4,
+      loop: true,
+      breakpoints: { 768: { slidesPerView: 3 }, 1024: { slidesPerView: 4 } },
+    });
+    initCarousel('#ugc-simplystarterv1', 'ugc', {
+      base: 1.4,
+      loop: true,
+      desktop: 4,
+      breakpoints: { 768: { slidesPerView: 3 }, 1024: { slidesPerView: 4 } },
+    });
+  }
+</script>
+
+{%- comment -%} ═════════ NON-SWIPER JS (tabs + ATC) ═════════ {%- endcomment -%}
+<script>
+  (function () {
+    'use strict';
+    var root = document.getElementById('clone-simply-starter-v1');
+    if (!root) return;
+
+    // ── Tabs (both tab groups) ──
+    root.querySelectorAll('[data-tabs]').forEach(function (grp) {
+      var btns = grp.querySelectorAll('.tab-btn');
+      var panels = grp.querySelectorAll('.tab-panel');
+      btns.forEach(function (btn) {
+        btn.addEventListener('click', function () {
+          var i = btn.getAttribute('data-tab');
+          btns.forEach(function (b) {
+            b.setAttribute('aria-selected', b === btn ? 'true' : 'false');
+          });
+          panels.forEach(function (pnl) {
+            pnl.classList.toggle('is-active', pnl.getAttribute('data-panel') === i);
+          });
+        });
+      });
+    });
+
+    // ── ATC (self-contained AJAX + sticky) ──
+    var scope = root.querySelector('.clone-atc-simplystarterv1');
+    var sticky = document.querySelector('.clone-sticky-atc-simplystarterv1');
+    var staticBtn = document.getElementById('clone-simply-starter-v1-atc');
+
+    function openCartOrFallback() {
+      try {
+        document.dispatchEvent(new CustomEvent('cart:refresh', { bubbles: true }));
+        document.dispatchEvent(new CustomEvent('cart-drawer:open', { bubbles: true }));
+        var drawer = document.querySelector('cart-drawer, #CartDrawer, .cart-drawer, [data-cart-drawer]');
+        if (drawer) {
+          if (typeof drawer.open === 'function') {
+            drawer.open();
+            return;
+          }
+          drawer.classList.add('active', 'is-open', 'open');
+          document.body.classList.add('cart-drawer-open');
+          return;
+        }
+      } catch (e) {}
+      window.location.href = window.routes && window.routes.cart_url ? window.routes.cart_url : '/cart';
+    }
+    function addToCart(btn) {
+      var variantId = btn.getAttribute('data-variant-id');
+      if (!variantId) {
+        window.location.href = '/cart';
+        return;
+      }
+      btn.classList.add('is-loading');
+      fetch('/cart/add.js', {
+        method: 'POST',
+        headers: { 'Content-Type': 'application/json' },
+        body: JSON.stringify({ items: [{ id: Number(variantId), quantity: 1 }] }),
+      })
+        .then(function (r) {
+          return r.json();
+        })
+        .then(function () {
+          btn.classList.remove('is-loading');
+          openCartOrFallback();
+        })
+        .catch(function () {
+          btn.classList.remove('is-loading');
+          alert('Could not add to cart. Please try again.');
+        });
+    }
+    [scope, sticky].forEach(function (container) {
+      if (!container) return;
+      container.querySelectorAll('.clone-atc__button').forEach(function (btn) {
+        if (btn.disabled) return;
+        btn.addEventListener('click', function () {
+          addToCart(btn);
+        });
+      });
+    });
+    if (sticky && staticBtn) {
+      var io = new IntersectionObserver(
+        function (entries) {
+          entries.forEach(function (entry) {
+            if (entry.isIntersecting) sticky.classList.remove('is-visible');
+            else sticky.classList.toggle('is-visible', staticBtn.getBoundingClientRect().bottom < 0);
+          });
+        },
+        { threshold: 0 }
+      );
+      io.observe(staticBtn);
+    }
+  })();
+</script>
+
+{% schema %}
+{
+  "name": "Clone simply-starter-v1",
+  "tag": "section",
+  "class": "clone-simply-starter-v1-section",
+  "settings": [
+    { "type": "product", "id": "product", "label": "Product" },
+
+    { "type": "header", "content": "Hero Images" },
+    { "type": "image_picker", "id": "nutrition_label_image", "label": "Hero — Supplement Facts / Nutrition Label" },
+
+    { "type": "header", "content": "Free Gift Images" },
+    { "type": "image_picker", "id": "gift_1_image", "label": "Free Gift 1 — 365-Day Guarantee" },
+    { "type": "image_picker", "id": "gift_2_image", "label": "Free Gift 2 — Shipping Protection" },
+    { "type": "image_picker", "id": "gift_3_image", "label": "Free Gift 3 — Up To 2 Bottles Free" },
+    { "type": "image_picker", "id": "gift_4_image", "label": "Free Gift 4 — $20 Gift Card" },
+
+    { "type": "header", "content": "Ingredient Images" },
+    { "type": "image_picker", "id": "ingredient_1_image", "label": "Ingredient 1 — Saw Palmetto" },
+    { "type": "image_picker", "id": "ingredient_2_image", "label": "Ingredient 2 — Stinging Nettle" },
+    { "type": "image_picker", "id": "ingredient_3_image", "label": "Ingredient 3 — Bamboo Extract" },
+    { "type": "image_picker", "id": "ingredient_4_image", "label": "Ingredient 4 — Spirulina" },
+    { "type": "image_picker", "id": "ingredient_5_image", "label": "Ingredient 5 — Alfalfa" },
+    { "type": "image_picker", "id": "ingredient_6_image", "label": "Ingredient 6 — Horsetail" },
+    { "type": "image_picker", "id": "ingredient_7_image", "label": "Ingredient 7 — Fo-Ti" },
+    { "type": "image_picker", "id": "ingredient_8_image", "label": "Ingredient 8 — Biotin 5,000mcg" },
+
+    { "type": "header", "content": "Description / Lab" },
+    { "type": "image_picker", "id": "lab_badge_image", "label": "Description — Third-Party Lab Badge" },
+
+    { "type": "header", "content": "Transformation Images (before/after)" },
+    { "type": "image_picker", "id": "transformation_1_image", "label": "Transformation 1" },
+    { "type": "image_picker", "id": "transformation_2_image", "label": "Transformation 2" },
+    { "type": "image_picker", "id": "transformation_3_image", "label": "Transformation 3" },
+    { "type": "image_picker", "id": "transformation_4_image", "label": "Transformation 4" },
+    { "type": "image_picker", "id": "transformation_5_image", "label": "Transformation 5" },
+    { "type": "image_picker", "id": "transformation_6_image", "label": "Transformation 6" },
+
+    { "type": "header", "content": "Real Stories / UGC Images" },
+    { "type": "image_picker", "id": "ugc_1_image", "label": "Story 1 — Less Shedding" },
+    { "type": "image_picker", "id": "ugc_2_image", "label": "Story 2 — Regrowth" },
+    { "type": "image_picker", "id": "ugc_3_image", "label": "Story 3 — Natural" },
+    { "type": "image_picker", "id": "ugc_4_image", "label": "Story 4 — Confidence" },
+
+    { "type": "header", "content": "Comparison Table Images" },
+    { "type": "image_picker", "id": "compare_brand_image", "label": "Comparison — Simply Revival product" },
+    { "type": "image_picker", "id": "compare_competitor_image", "label": "Comparison — Other solutions" },
+
+    { "type": "header", "content": "Week-by-Week Tab Images" },
+    { "type": "image_picker", "id": "week_1_image", "label": "Week 1-2 — Adjustment" },
+    { "type": "image_picker", "id": "week_2_image", "label": "Week 3-4 — Less Shedding" },
+    { "type": "image_picker", "id": "week_3_image", "label": "Week 5-6 — Reduced Loss" },
+    { "type": "image_picker", "id": "week_4_image", "label": "Week 7-8 — Strengthening" },
+    { "type": "image_picker", "id": "week_5_image", "label": "Week 9-10 — Early Growth" },
+    { "type": "image_picker", "id": "week_6_image", "label": "Week 11-12 — Fuller Look" },
+    { "type": "image_picker", "id": "week_7_image", "label": "Week 13+ — Maintain & Thrive" },
+
+    { "type": "header", "content": "Guarantee / FAQ / Kit Images" },
+    { "type": "image_picker", "id": "guarantee_badge_image", "label": "Guarantee — Money-Back Seal" },
+    { "type": "image_picker", "id": "faq_product_image", "label": "FAQ — Product Image (right side)" },
+    { "type": "image_picker", "id": "launch_kit_image", "label": "What's Included — Kit Image" },
+
+    { "type": "header", "content": "Customer Review Photos" },
+    { "type": "image_picker", "id": "review_photo_1", "label": "Review Photo 1" },
+    { "type": "image_picker", "id": "review_photo_2", "label": "Review Photo 2" },
+    { "type": "image_picker", "id": "review_photo_3", "label": "Review Photo 3" },
+    { "type": "image_picker", "id": "review_photo_4", "label": "Review Photo 4" },
+    { "type": "image_picker", "id": "review_photo_5", "label": "Review Photo 5" },
+    { "type": "image_picker", "id": "review_photo_6", "label": "Review Photo 6" }
+  ],
+  "presets": [{ "name": "simply-starter-v1", "category": "Clone Test" }]
+}
+{% endschema %}

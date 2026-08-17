@@ -1,0 +1,3806 @@
+{%- comment -%}
+  ═══════════════════════════════════════════════════════════════
+  REPLICANT — simply-starter-test
+  Source: mengotomars.com/products/30-day-supply-starter-kit (Mars Men PDP)
+  Reskinned to Simply Revival LIGHT brand (source was dark). ONE self-contained
+  section. Interactive parts adapted from _reference-components. Single schema
+  setting = product picker; every non-product image = image_picker setting.
+  ═══════════════════════════════════════════════════════════════
+{%- endcomment -%}
+
+{%- assign p = section.settings.product -%}
+{%- assign v = p.selected_or_first_available_variant -%}
+{%- comment -%} Pinned variant + subscription selling plan used by all ATC buttons {%- endcomment -%}
+{%- assign variant_id = 52707801530649 -%}
+{%- assign selling_plan_id = 691898515737 -%}
+{%- comment -%} Extra product added alongside the main item (product 10208929939737) {%- endcomment -%}
+{%- assign addon_variant_id = 51722672144665 -%}
+
+{%- comment -%} ═══════════ DEV UTILITY — IDs inspector (remove before launch) ═══════════ {%- endcomment -%}
+{% comment %}
+<style>
+  #rp-id-util {
+    font: 13px/1.5 ui-monospace, SFMono-Regular, Menlo, Consolas, monospace;
+    background: #0e1a1a;
+    color: #c9f0e6;
+    border: 1px solid #1e3a3a;
+    border-radius: 8px;
+    padding: 14px 16px;
+    margin: 0 0 16px;
+    max-width: 900px;
+  }
+  #rp-id-util h4 {
+    margin: 0 0 8px;
+    font-size: 12px;
+    letter-spacing: 0.08em;
+    text-transform: uppercase;
+    color: #72c9ca;
+  }
+  #rp-id-util .rp-row {
+    padding: 2px 0;
+    border-bottom: 1px solid #16292955;
+  }
+  #rp-id-util .rp-k {
+    color: #8fb8b0;
+  }
+  #rp-id-util .rp-v {
+    color: #ffe08a;
+  }
+  #rp-id-util table {
+    width: 100%;
+    border-collapse: collapse;
+    margin-top: 6px;
+  }
+  #rp-id-util th,
+  #rp-id-util td {
+    text-align: left;
+    padding: 3px 8px 3px 0;
+    border-bottom: 1px solid #16292955;
+    vertical-align: top;
+  }
+  #rp-id-util th {
+    color: #72c9ca;
+    font-weight: 600;
+    font-size: 11px;
+    text-transform: uppercase;
+    letter-spacing: 0.05em;
+  }
+</style>
+<div id="rp-id-util">
+  <h4>Replicant · Selected Product Inspector</h4>
+  {%- if p == blank -%}
+    <div class="rp-row"><span class="rp-k">⚠ No product selected in this section's settings.</span></div>
+  {%- else -%}
+    <div class="rp-row">
+      <span class="rp-k">Product:</span> <span class="rp-v">{{ p.title }}</span>
+    </div>
+    <div class="rp-row">
+      <span class="rp-k">Product ID:</span> <span class="rp-v">{{ p.id }}</span>
+    </div>
+    <div class="rp-row">
+      <span class="rp-k">Handle:</span> <span class="rp-v">{{ p.handle }}</span>
+    </div>
+
+    <h4 style="margin-top:14px">Options ({{ p.options_with_values.size }})</h4>
+    <table>
+      <thead>
+        <tr>
+          <th>Option</th>
+          <th>Values</th>
+        </tr>
+      </thead>
+      <tbody>
+        {%- for opt in p.options_with_values -%}
+          <tr>
+            <td>{{ opt.name }}</td>
+            <td class="rp-v">{{ opt.values | join: ', ' }}</td>
+          </tr>
+        {%- endfor -%}
+      </tbody>
+    </table>
+
+    <h4 style="margin-top:14px">Variants ({{ p.variants.size }})</h4>
+    <table>
+      <thead>
+        <tr>
+          <th>Variant ID</th>
+          <th>Title</th>
+          <th>Options</th>
+          <th>Price</th>
+          <th>Available</th>
+        </tr>
+      </thead>
+      <tbody>
+        {%- for variant in p.variants -%}
+          <tr>
+            <td class="rp-v">{{ variant.id }}</td>
+            <td>{{ variant.title }}</td>
+            <td>{{ variant.options | join: ' / ' }}</td>
+            <td>{{ variant.price | money }}</td>
+            <td>{{ variant.compare_at_price | money }}</td>
+            <td>{{ variant.available }}</td>
+          </tr>
+        {%- endfor -%}
+      </tbody>
+    </table>
+
+    <h4 style="margin-top:14px">Selling plans</h4>
+    {%- if p.selling_plan_groups.size > 0 -%}
+      <table>
+        <thead>
+          <tr>
+            <th>Group</th>
+            <th>Selling Plan ID</th>
+            <th>Plan name</th>
+          </tr>
+        </thead>
+        <tbody>
+          {%- for group in p.selling_plan_groups -%}
+            {%- for plan in group.selling_plans -%}
+              <tr>
+                <td>{{ group.name }}</td>
+                <td class="rp-v">{{ plan.id }}</td>
+                <td>{{ plan.name }}</td>
+              </tr>
+            {%- endfor -%}
+          {%- endfor -%}
+        </tbody>
+      </table>
+    {%- else -%}
+      <div class="rp-row"><span class="rp-k">No selling plan groups on this product.</span></div>
+    {%- endif -%}
+  {%- endif -%}
+</div>
+{% endcomment %}
+{%- comment -%} ═══════════ END DEV UTILITY ═══════════ {%- endcomment -%}
+
+{%- comment -%} Swiper (self-contained, CDN — do not rely on theme's) {%- endcomment -%}
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.css">
+
+<style>
+      /* ═══════════ SCOPE ROOT + BRAND TOKENS + TYPE SCALE ═══════════ */
+      #replicant-simply-starter-test {
+      --text: #282828;
+      --accent: #72c9ca;
+      --bg: #ffffff;
+      --cream: #fffee3;
+      --darkteal: #125657;
+      --grey: #f7f7f5;
+      --cta-bg: #125657;
+      --cta-text: #ffffff;
+      --star: #f5a623;
+      --check: #1a9e5f;
+      --cross: #d64545;
+      --quest: #999999;
+      /* type scale */
+      --fs-xs: 0.75rem;
+      --fs-sm: 0.875rem;
+      --fs-base: 1rem;
+      --fs-md: 1.125rem;
+      --fs-lg: 1.375rem;
+      --fs-xl: 1.75rem;
+      --fs-2xl: 2.25rem;
+      --fs-3xl: 3rem;
+      background: var(--bg);
+      color: var(--text);
+      font-size: var(--fs-base);
+      line-height: 1.5;
+      }
+      #replicant-simply-starter-test *,
+      #replicant-simply-starter-test *::before,
+      #replicant-simply-starter-test *::after {
+      box-sizing: border-box;
+      }
+      #replicant-simply-starter-test-guarantee .rp-btn-icon svg path {
+      fill: var(--darkteal);
+      }
+      #replicant-simply-starter-test img {
+      max-width: 100%;
+      }
+
+      #replicant-simply-starter-test .hero-reviews {
+      font-size: 1rem;
+      font-weight: 600;
+      }
+      #replicant-simply-starter-test .rp-stars {
+      font-size: 1.1rem;
+      }
+      /* ─── SWIPER FAIL-SAFE (self-contained — never let an un-initialized carousel blow up) ───
+      Until Swiper adds .swiper-initialized, show ONLY the first slide (no full-size stacking).
+      If Swiper never loads (CDN blocked), .rp-noswiper turns each carousel into a scrollable strip. */
+      #replicant-simply-starter-test .swiper {
+      overflow: hidden;
+      }
+      #replicant-simply-starter-test .swiper:not(.swiper-initialized) .swiper-slide {
+      display: none;
+      }
+      #replicant-simply-starter-test .swiper:not(.swiper-initialized) .swiper-slide:first-child {
+      display: block;
+      width: 100%;
+      }
+      #replicant-simply-starter-test.rp-noswiper .swiper:not(.swiper-initialized) {
+      overflow-x: auto;
+      -webkit-overflow-scrolling: touch;
+      }
+      #replicant-simply-starter-test.rp-noswiper .swiper:not(.swiper-initialized) .swiper-wrapper {
+      display: flex;
+      gap: 12px;
+      }
+      #replicant-simply-starter-test.rp-noswiper .swiper:not(.swiper-initialized) .swiper-slide {
+      display: block !important;
+      flex: 0 0 82%;
+      width: 82%;
+      }
+      #replicant-simply-starter-test.rp-noswiper
+      #replicant-simply-starter-test-gallery
+      .g-main:not(.swiper-initialized)
+      .swiper-slide {
+      flex-basis: 100%;
+      width: 100%;
+      }
+      #replicant-simply-starter-test h1,
+      #replicant-simply-starter-test h2,
+      #replicant-simply-starter-test h3 {
+      color: var(--text);
+      line-height: 1.2;
+      margin: 0;
+      }
+      #replicant-simply-starter-test .rp-accent {
+      color: var(--accent);
+      }
+      #replicant-simply-starter-test .rp-wrap {
+      max-width: 1300px;
+      margin: 0 auto;
+      padding: 0 1rem;
+      }
+      #replicant-simply-starter-test .rp-stars {
+      color: var(--star);
+      letter-spacing: 1px;
+      }
+      #replicant-simply-starter-test .rp-btn {
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      gap: 8px;
+      background: var(--cta-bg);
+      color: var(--cta-text);
+      font-weight: 700;
+      border: 2px solid var(--cta-bg);
+      border-radius: 8px;
+      padding: 1rem 2rem;
+      font-size: var(--fs-md);
+      cursor: pointer;
+      text-decoration: none;
+      transition: all 0.25s ease;
+          text-transform: uppercase;
+      }
+      #replicant-simply-starter-test .rp-btn:hover {
+      opacity: .9;
+      }
+
+      #replicant-simply-starter-test .rp-btn-icon svg,
+      #replicant-simply-starter-test .rp-btn-icon     {
+      height: max-content;
+      width: max-content;
+      }
+
+
+      /* ═══════════ 1. HERO / BUYBOX ═══════════ */
+      #replicant-simply-starter-test .hero {
+      padding: 2rem 0 3rem;
+      padding: 0rem;
+      }
+      #replicant-simply-starter-test .hero-left {
+      display: flex;
+      flex-direction: column;
+      min-width: 0;
+      }
+      #replicant-simply-starter-test .hero-quotes {
+      margin-top: 1rem;
+      width: 100%;
+      }
+      #replicant-simply-starter-test .hero-quote {
+      background: #fff;
+      border: 1px solid rgba(18, 86, 87, 0.15);
+      border-radius: 10px;
+      padding: 1rem 1.1rem;
+      font-size: var(--fs-sm);
+      margin: 0;
+      height: 100%;
+      }
+      #replicant-simply-starter-test .hero-quote::before {
+      display: none;
+      }
+      #replicant-simply-starter-test blockquote::before {
+      display: none;
+      }
+      #replicant-simply-starter-test .hero-quote .hq-text {
+      margin: 0 0 0.7rem;
+      line-height: 1.45;
+      text-align: left;
+      }
+      #replicant-simply-starter-test .hero-quote .hq-foot {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      }
+      #replicant-simply-starter-test .hero-quote .hq-foot .rp-stars {
+      font-size: 0.85rem;
+      }
+      /* facts button (opens modal) — full width like the reference */
+      #replicant-simply-starter-test .rp-facts-btn {
+      display: flex;
+      width: 100%;
+      align-items: center;
+      justify-content: center;
+      gap: 0.5rem;
+      margin-top: 1rem;
+      background: #fff;
+      color: var(--darkteal);
+      border: 2px solid var(--darkteal);
+      border-radius: 8px;
+      padding: 0.5rem 1.2rem;
+      font-weight: 700;
+      font-size: var(--fs-sm);
+      cursor: pointer;
+      transition: all 0.2s ease;
+      }
+
+      /* image modal */
+      #replicant-simply-starter-test .rp-modal {
+      position: fixed;
+      inset: 0;
+      z-index: 1000;
+      display: none;
+      align-items: center;
+      justify-content: center;
+      padding: 1rem;
+      }
+      #replicant-simply-starter-test .rp-modal.is-open {
+      display: flex;
+      }
+      #replicant-simply-starter-test .rp-modal-backdrop {
+      position: absolute;
+      inset: 0;
+      background: rgba(0, 0, 0, 0.72);
+      }
+      #replicant-simply-starter-test .rp-modal-inner {
+      position: relative;
+      z-index: 1;
+      max-width: 650px;
+      width: 100%;
+      max-height: 88vh;
+      overflow: auto;
+      background: #fff;
+      border-radius: 12px;
+      padding: 1rem;
+      }
+      #replicant-simply-starter-test .rp-modal-inner img {
+      width: 100%;
+      height: auto;
+      border-radius: 8px;
+      display: block;
+      }
+      #replicant-simply-starter-test .rp-modal-close {
+      position: absolute;
+      top: 0.5rem;
+      right: 0.6rem;
+      width: 36px;
+      height: 36px;
+      border: none;
+      background: rgba(0, 0, 0, 0.06);
+      border-radius: 50%;
+      font-size: 1.6rem;
+      line-height: 1;
+      cursor: pointer;
+      color: var(--text);
+      z-index: 2;
+      }
+      #replicant-simply-starter-test .hero-quote .rp-stars {
+      font-size: 0.8rem;
+      }
+      #replicant-simply-starter-test .hero-quote cite {
+      font-style: normal;
+      font-weight: 700;
+      font-size: var(--fs-xs);
+      }
+      #replicant-simply-starter-test .hero-grid {
+      display: grid;
+      grid-template-columns: minmax(0, 1fr);
+      gap: 2rem;
+      margin: 0 auto;
+      padding: 0 1rem;
+      grid-template-columns: 11.7fr 12fr;
+          max-width: 1200px;
+        padding: 0 1rem 2rem 1rem;
+      }
+      #replicant-simply-starter-test .hero-grid > * {
+      min-width: 0;
+      }
+      #replicant-simply-starter-test-gallery,
+      #replicant-simply-starter-test-gallery .g-carousel {
+      min-width: 0;
+      max-width: 100%;
+      }
+      #replicant-simply-starter-test .hero-eyebrow {
+      text-transform: uppercase;
+      letter-spacing: 2px;
+      font-size: var(--fs-sm);
+      color: var(--darkteal);
+      font-weight: 700;
+      margin-bottom: 0.35rem;
+      }
+      #replicant-simply-starter-test .hero-h1 {
+      font-size: var(--fs-2xl);
+      font-weight: 800;
+      margin-bottom: 0.5rem;
+      margin-top: 3rem;
+      font-size: var(--fs-2xl);
+      }
+      #replicant-simply-starter-test .hero-ratingrow {
+      display: flex;
+      align-items: center;
+      gap: 0.5rem;
+      font-size: var(--fs-sm);
+      margin-bottom: 0.75rem;
+      }
+
+      #replicant-simply-starter-test .hero-reviews {
+      text-transform: uppercase;
+      letter-spacing: 0.5px;
+      font-weight: 5  00;
+      font-size: var(--fs-xs);
+      opacity: 0.8;
+      font-size: 1rem;
+      }
+
+      #replicant-simply-starter-test .hero-desc {
+      font-size: var(--fs-md);
+      margin-bottom: 1rem;
+      line-height: normal;
+      }
+      #replicant-simply-starter-test .hero-bullets {
+      list-style: none;
+      padding: 0;
+      margin: 0 0 1.25rem;
+      display: grid;
+      gap: 0.5rem;
+      }
+      #replicant-simply-starter-test .hero-bullets li {
+      display: flex;
+      align-items: flex-start;
+      gap: 0.5rem;
+      font-weight: 600;
+      }
+      #replicant-simply-starter-test .hero-bullets li::before {
+      content: '✓';
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      width: 20px;
+      height: 20px;
+      border-radius: 50%;
+      background: var(--accent);
+      background: var(--cta-bg);
+      color: #fff;
+      font-size: 0.86rem;
+      font-weight: 900;
+      flex-shrink: 0;
+      }
+      /* ═══════════ PRICE BOX (cm-price-row) — white offer panel ═══════════ */
+      #replicant-simply-starter-test .cm-price-row {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      gap: 1rem;
+      background: #fff;
+      {% comment %} border: 1px solid rgba(18, 86, 87, 0.25); {% endcomment %}
+      border-radius: 10px;
+      padding: 0.9rem 0rem;
+      margin: 0 0 1rem;
+      }
+      #replicant-simply-starter-test .cm-price {
+      display: flex;
+      align-items: baseline;
+      gap: 0.5rem;
+      color: var(--darkteal);
+      font-size: var(--fs-2xl);
+      font-weight: 800;
+      line-height: 1;
+      }
+      #replicant-simply-starter-test .cm-price s {
+      color: rgba(40, 40, 40, 0.5);
+      {% comment %} font-size: var(--fs-lg); {% endcomment %}
+      font-weight: 600;
+      text-decoration: line-through;
+      opacity: .7;
+      }
+      #replicant-simply-starter-test .cm-offer {
+      text-align: right;
+      color: var(--darkteal);
+      font-size: var(--fs-md);
+      font-weight: 800;
+      text-transform: uppercase;
+      letter-spacing: 0.02em;
+      line-height: 1.15;
+      }
+      #replicant-simply-starter-test .cm-offer u {
+      text-decoration: underline;
+      text-underline-offset: 3px;
+      }
+      #replicant-simply-starter-test .cm-offer small {
+      display: block;
+      margin-top: 0.25rem;
+      color: var(--text);
+      font-size: var(--fs-xs);
+      font-weight: 600;
+      letter-spacing: 0.08em;
+      }
+      #replicant-simply-starter-test .hero-nutrilink {
+      font-size: var(--fs-sm);
+      color: var(--darkteal);
+      text-decoration: underline;
+      display: inline-block;
+      margin-bottom: 1rem;
+      }
+
+      /* offer box */
+      #replicant-simply-starter-test .offer {
+      background: var(--cream);
+      border: 1px solid rgba(18, 86, 87, 0.25);
+      border-radius: 14px;
+      padding: 1.1rem 1.2rem;
+      margin-bottom: 1rem;
+      max-width: 80%;
+      margin: auto;
+      margin-bottom: 1rem;
+
+
+
+      }
+      #replicant-simply-starter-test .offer-top {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      gap: 0.75rem;
+      }
+      #replicant-simply-starter-test .offer-price {
+      display: flex;
+      align-items: baseline;
+      gap: 0.5rem;
+      }
+      #replicant-simply-starter-test .offer-price .now {
+      font-size: var(--fs-2xl);
+      font-size: var(--fs-lg);
+      font-weight: 800;
+      color: var(--darkteal);
+      }
+      #replicant-simply-starter-test .offer-price .was {
+      text-decoration: line-through;
+      opacity: 0.5;
+      font-size: var(--fs-md);
+      }
+      #replicant-simply-starter-test .offer-life-badge {
+      border: 1.5px solid var(--darkteal);
+      color: var(--darkteal);
+      font-weight: 800;
+      font-size: var(--fs-xs);
+      padding: 0.4rem 0.7rem;
+      border-radius: 8px;
+      text-transform: uppercase;
+      letter-spacing: 0.5px;
+      white-space: nowrap;
+      }
+      #replicant-simply-starter-test .offer-track {
+      position: relative;
+      height: 2px;
+      background: rgba(18, 86, 87, 0.3);
+      margin: 1.1rem 14% 0.9rem;
+      }
+      #replicant-simply-starter-test .offer-track span {
+      position: absolute;
+      top: 50%;
+      width: 12px;
+      height: 12px;
+      border-radius: 50%;
+      background: var(--darkteal);
+      transform: translateY(-50%);
+      }
+      #replicant-simply-starter-test .offer-track span:first-child {
+      left: -6px;
+      }
+      #replicant-simply-starter-test .offer-track span:last-child {
+      right: -6px;
+      }
+      #replicant-simply-starter-test .offer-cols {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 0.75rem;
+      text-align: center;
+      }
+      #replicant-simply-starter-test .offer-col {
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      gap: 0.3rem;
+      }
+      #replicant-simply-starter-test .offer-pill {
+      background: var(--darkteal);
+      color: #fff;
+      font-weight: 800;
+      font-size: 10px;
+      padding: 0.25rem 0.55rem;
+      border-radius: 20px;
+      text-transform: uppercase;
+      letter-spacing: 0.3px;
+      }
+      #replicant-simply-starter-test .offer-col .lbl {
+      font-size: var(--fs-xs);
+      text-transform: uppercase;
+      letter-spacing: 0.5px;
+      opacity: 0.7;
+      }
+      #replicant-simply-starter-test .offer-col .price {
+      font-weight: 800;
+      color: var(--darkteal);
+      }
+      #replicant-simply-starter-test .offer-col .price s {
+      color: var(--text);
+      opacity: 0.45;
+      font-weight: 400;
+      margin-left: 0.25rem;
+      }
+      #replicant-simply-starter-test .hero-trust3 {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 0.5rem;
+      text-align: center;
+      margin: 1rem 0 0.75rem;
+      }
+      #replicant-simply-starter-test .hero-trust3 > div {
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      gap: 0.35rem;
+      font-size: 11px;
+      line-height: 1.25;
+      }
+      #replicant-simply-starter-test .hero-trust3 svg {
+      color: var(--darkteal);
+      }
+      #replicant-simply-starter-test .offer-fine {
+      font-size: var(--fs-xs);
+      opacity: 0.6;
+      text-align: center;
+      margin: 0 0 1.25rem;
+      line-height: normal;
+      font-size: 10px;
+      }
+
+      /* free gifts */
+      #replicant-simply-starter-test .gifts {
+      margin-bottom: 1.25rem;
+      margin-top: 1.25rem;
+      margin-top: 2rem;
+      }
+      #replicant-simply-starter-test .gifts h3 {
+      font-size: var(--fs-lg);
+      font-weight: 800;
+      text-align: center;
+      color: var(--darkteal);
+      margin-bottom: 8px;
+      }
+      #replicant-simply-starter-test .gifts .gifts-sub {
+      font-size: var(--fs-xs);
+      text-transform: uppercase;
+      letter-spacing: 1px;
+      opacity: 0.65;
+      margin-bottom: 0.9rem;
+      text-align: center;
+      }
+      #replicant-simply-starter-test .gifts-grid {
+      display: grid;
+      grid-template-columns: repeat(4, 1fr);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-wrap: nowrap;
+      gap: 10px;
+
+      }
+      #replicant-simply-starter-test .gift {
+      background: #fff;
+      {% comment %} border: 1px solid rgba(18, 86, 87, 0.15); {% endcomment %}
+      border-radius: 10px;
+      {% comment %} padding: 0.5rem 0.4rem 0.7rem; {% endcomment %}
+      text-align: center;
+      }
+      #replicant-simply-starter-test .gift .gift-flag {
+      color: var(--darkteal);
+      font-weight: 800;
+      font-size: 10px;
+      text-transform: uppercase;
+      margin-bottom: 0.4rem;
+      }
+      #replicant-simply-starter-test .gift .gift-flag s {
+      opacity: 0.55;
+      font-weight: 600;
+      }
+      #replicant-simply-starter-test .gift .gift-flag--win {
+      color: #b8860b;
+      }
+      #replicant-simply-starter-test .gift img {
+      width: 100%;
+      aspect-ratio: 1/1;
+      object-fit: contain;
+      margin-bottom: 0.4rem;
+      max-width: 90px;
+      }
+      #replicant-simply-starter-test .gift .gift-name {
+      font-size: 11px;
+      line-height: 1.2;
+      }
+
+      /* gallery (ported product-gallery-1) */
+      #replicant-simply-starter-test-gallery {
+      --g-accent: #125657;
+      }
+      #replicant-simply-starter-test-gallery .g-main {
+      position: relative;
+      width: 100%;
+      }
+      #replicant-simply-starter-test-gallery .g-main {
+      position: relative;
+      width: 100%;
+      overflow: hidden;
+      }
+      #replicant-simply-starter-test-gallery .g-main .swiper-slide img {
+      width: 100%;
+      height: auto;
+      max-height: 68vh;
+      object-fit: contain;
+      aspect-ratio: 1/1;
+      display: block;
+      background: #fff;
+      border-radius: 12px;
+      }
+      #replicant-simply-starter-test-gallery .g-main .swiper-button-next,
+      #replicant-simply-starter-test-gallery .g-main .swiper-button-prev {
+      color: var(--g-accent);
+      }
+      #replicant-simply-starter-test-gallery .g-thumbs {
+      margin-top: 0.75rem;
+      }
+      #replicant-simply-starter-test-gallery .g-thumbs .swiper-slide {
+      width: calc((100% - 32px) / 5) !important;
+      }
+      #replicant-simply-starter-test-gallery .g-thumb {
+      aspect-ratio: 1/1;
+      overflow: hidden;
+      cursor: pointer;
+      border: 2px solid transparent;
+      border-radius: 8px;
+      }
+      #replicant-simply-starter-test-gallery .g-thumb img {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+      display: block;
+      }
+      #replicant-simply-starter-test-gallery .g-thumb.active {
+      border-color: var(--g-accent);
+      }
+
+      /* ATC */
+      #replicant-simply-starter-test .rp-atc-btn {
+      width: 100%;
+      text-transform: uppercase;
+      }
+      #replicant-simply-starter-test .rp-atc-btn.is-loading {
+      opacity: 0.7;
+      pointer-events: none;
+      }
+      /* sticky atc */
+      #replicant-simply-starter-test-sticky {
+      position: fixed;
+      bottom: 0;
+      left: 0;
+      right: 0;
+      z-index: 999;
+      background: #fff;
+      box-shadow: 0 -2px 12px rgba(0, 0, 0, 0.12);
+      transform: translateY(100%);
+      transition: transform 0.3s ease;
+      padding: 0.7rem 1rem;
+      padding-bottom: calc(0.7rem + env(safe-area-inset-bottom, 0px));
+      padding: .5rem;
+      padding: 4px 0px;
+      }
+      #replicant-simply-starter-test-sticky.is-visible {
+      transform: translateY(0);
+      }
+      #replicant-simply-starter-test-sticky .sk-wrap {
+      max-width: 1200px;
+      margin: 0 auto;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      gap: 1rem;
+      margin: 0 auto;
+      padding: 0 1rem;
+      }
+      #replicant-simply-starter-test-sticky .sk-info {
+      display: flex;
+      align-items: center;
+      gap: 0.6rem;
+      min-width: 0;
+      }
+      #replicant-simply-starter-test-sticky .sk-thumb {
+      width: 46px;
+      height: 46px;
+      border-radius: 8px;
+      overflow: hidden;
+      background: var(--grey);
+      flex-shrink: 0;
+      height: 100%;
+      width: auto;
+      }
+      #replicant-simply-starter-test-sticky .sk-thumb img {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+      max-height: 80px;
+      }
+      #replicant-simply-starter-test-sticky .sk-txt {
+      min-width: 0;
+      display: flex;
+      flex-direction: column;
+      line-height: 1.2;
+      }
+      #replicant-simply-starter-test-sticky .sk-title {
+      font-weight: 700;
+      font-size: var(--fs-sm);
+      color: var(--text);
+      white-space: nowrap;
+      overflow: hidden;
+      text-overflow: ellipsis;
+      font-size: 1.2rem;
+      }
+      #replicant-simply-starter-test-sticky .sk-sub {
+      font-size: var(--fs-xs);
+      color: var(--darkteal);
+      font-weight: 600;
+      white-space: nowrap;
+      overflow: hidden;
+      text-overflow: ellipsis;
+      font-size: 1rem;
+      }
+      #replicant-simply-starter-test-sticky .sk-sub s {
+      color: var(--text);
+      opacity: 0.5;
+      font-weight: 400;
+      }
+      #replicant-simply-starter-test-sticky .rp-btn {
+      padding: 0.7rem 1.6rem;
+      width: auto;
+      flex-shrink: 0;
+      }
+
+      /* ═══════════ SECTION HEADINGS (shared) ═══════════ */
+      #replicant-simply-starter-test .sec {
+      padding: 3.5rem 0;
+      }
+      #replicant-simply-starter-test .sec-head {
+      text-align: center;
+      max-width: 760px;
+      margin: 0 auto 2.25rem;
+      padding: 0 1rem;
+      }
+      #replicant-simply-starter-test .sec-head h2 {
+      font-size: var(--fs-xl);
+      font-weight: 800;
+      text-transform: uppercase;
+      }
+      #replicant-simply-starter-test .sec-head p {
+      font-size: var(--fs-md);
+      margin-top: 0.6rem;
+      opacity: 0.85;
+      }
+
+      /* ═══════════ 2 & 8. TABS (day timeline + week timeline) ═══════════ */
+      #replicant-simply-starter-test .tabs-nav {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 0.5rem;
+      justify-content: center;
+      margin-bottom: 1.5rem;
+      }
+      #replicant-simply-starter-test .tab-btn {
+      padding: 0.6rem 1.1rem;
+      border: 1.5px solid var(--darkteal);
+      background: transparent;
+      color: var(--darkteal);
+      font-weight: 700;
+      border-radius: 8px;
+      cursor: pointer;
+      transition: all 0.2s ease;
+      font-size: var(--fs-sm);
+      }
+      #replicant-simply-starter-test .tab-btn[aria-selected='true'] {
+      background: var(--darkteal);
+      color: #fff;
+      }
+      #replicant-simply-starter-test .tab-panel {
+      display: none;
+      }
+      #replicant-simply-starter-test .tab-panel.is-active {
+      display: grid;
+      grid-template-columns: 1fr;
+      gap: 1.5rem;
+      align-items: center;
+      background: var(--grey);
+      border-radius: 14px;
+      padding: 1.5rem;
+      }
+      #replicant-simply-starter-test .tab-panel h3 {
+      display: flex;
+      align-items: center;
+      gap: 0.6rem;
+      font-size: var(--fs-lg);
+      margin-bottom: 0.75rem;
+      }
+      #replicant-simply-starter-test .tab-panel h3 .num {
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      width: 2.2rem;
+      height: 2.2rem;
+      border-radius: 50%;
+      background: var(--darkteal);
+      color: #fff;
+      font-size: var(--fs-sm);
+      flex-shrink: 0;
+      }
+      #replicant-simply-starter-test .tab-panel p {
+      margin-bottom: 1rem;
+      }
+      #replicant-simply-starter-test .tab-benefits-h {
+      font-weight: 800;
+      margin: 0.5rem 0;
+      text-transform: uppercase;
+      font-size: var(--fs-sm);
+      letter-spacing: 1px;
+      }
+      #replicant-simply-starter-test .tab-panel ul {
+      margin: 0;
+      padding-left: 1.2rem;
+      }
+      #replicant-simply-starter-test .tab-panel li {
+      margin-bottom: 0.4rem;
+      }
+      #replicant-simply-starter-test .tab-media img {
+      width: 100%;
+      border-radius: 10px;
+      display: block;
+      }
+      #replicant-simply-starter-test .tab-disc {
+      font-size: var(--fs-xs);
+      opacity: 0.6;
+      margin-top: 0.6rem;
+      }
+
+      /* ─── Reported-fullness line chart (grows per week tab) ─── */
+      #replicant-simply-starter-test .wk-chart {
+      background: var(--darkteal);
+      border-radius: 14px;
+      padding: 0.85rem 0.9rem 0.4rem;
+      }
+      #replicant-simply-starter-test .wk-chart svg {
+      width: 100%;
+      height: auto;
+      display: block;
+      font-family: inherit;
+      }
+      #replicant-simply-starter-test .wk-line {
+      fill: none;
+      stroke: #ff5b1e;
+      stroke-width: 3.5;
+      stroke-linecap: round;
+      stroke-linejoin: round;
+      stroke-dasharray: 1;
+      stroke-dashoffset: 1;
+      }
+      #replicant-simply-starter-test .tab-panel.is-active .wk-line {
+      animation: rp-wkdraw 1s ease forwards;
+      }
+      @keyframes rp-wkdraw { to { stroke-dashoffset: 0; } }
+      #replicant-simply-starter-test .wk-area { opacity: 0; }
+      #replicant-simply-starter-test .tab-panel.is-active .wk-area {
+      animation: rp-wkfade 0.8s ease 0.45s forwards;
+      }
+      @keyframes rp-wkfade { to { opacity: 1; } }
+      #replicant-simply-starter-test .wk-dot { opacity: 0; }
+      #replicant-simply-starter-test .tab-panel.is-active .wk-dot {
+      animation: rp-wkfade 0.35s ease 0.9s forwards;
+      }
+      #replicant-simply-starter-test .wk-pulse {
+      opacity: 0;
+      transform-box: fill-box;
+      transform-origin: center;
+      }
+      #replicant-simply-starter-test .tab-panel.is-active .wk-pulse {
+      animation: rp-wkpulse 1.9s ease-out 1.15s infinite;
+      }
+      @keyframes rp-wkpulse {
+      0% { transform: scale(0.6); opacity: 0.6; }
+      100% { transform: scale(2.6); opacity: 0; }
+      }
+      @media (prefers-reduced-motion: reduce) {
+      #replicant-simply-starter-test .wk-line { stroke-dashoffset: 0; }
+      #replicant-simply-starter-test .wk-area,
+      #replicant-simply-starter-test .wk-dot { opacity: 1; }
+      #replicant-simply-starter-test .tab-panel.is-active .wk-line,
+      #replicant-simply-starter-test .tab-panel.is-active .wk-area,
+      #replicant-simply-starter-test .tab-panel.is-active .wk-dot,
+      #replicant-simply-starter-test .tab-panel.is-active .wk-pulse { animation: none; }
+      }
+
+      /* ═══════════ 2. WHAT TO EXPECT / FAQs / REVIEWS — dark-teal folder-tab panel ═══════════ */
+      #replicant-simply-starter-test .wte {
+      position: relative;
+      }
+      #replicant-simply-starter-test .wte .wte-tabs {
+      display: flex;
+      gap: 6px;
+      margin: 0;
+      }
+      #replicant-simply-starter-test .wte .wte-tab {
+      flex: 1 1 0;
+      border: none;
+      border-radius: 12px 12px 0 0;
+      padding: 0.85rem 1rem;
+      font-weight: 800;
+      letter-spacing: 0.5px;
+      text-transform: uppercase;
+      font-size: var(--fs-sm);
+      cursor: pointer;
+      background: #e2ebed;
+      color: var(--darkteal);
+      transition: all 0.2s ease;
+      }
+      #replicant-simply-starter-test .wte .wte-tab[aria-selected='true'] {
+      background: var(--darkteal);
+      color: #fff;
+      }
+      #replicant-simply-starter-test .wte .wte-body {
+      background: var(--darkteal);
+      color: #fff;
+      border-radius: 0 0px 16px 16px;
+      padding: 1.75rem;
+      }
+      #replicant-simply-starter-test .wte .tab-panel.is-active {
+      display: block;
+      background: transparent;
+      padding: 0;
+      border-radius: 0;
+      }
+      #replicant-simply-starter-test .wte .wte-h {
+      color: #fff;
+      font-size: var(--fs-xl);
+      font-weight: 800;
+      text-transform: uppercase;
+      margin: 0 0 1rem;
+      }
+      #replicant-simply-starter-test .wte .wte-track {
+      position: relative;
+      height: 2px;
+      background: rgba(255, 255, 255, 0.25);
+      margin: 0 8px 1.75rem;
+      }
+      #replicant-simply-starter-test .wte .wte-track span {
+      position: absolute;
+      top: 50%;
+      width: 10px;
+      height: 10px;
+      border-radius: 50%;
+      background: var(--accent);
+      transform: translateY(-50%);
+      }
+      #replicant-simply-starter-test .wte .wte-track span:first-child {
+      left: -5px;
+      }
+      #replicant-simply-starter-test .wte .wte-track span:last-child {
+      right: -5px;
+      }
+      #replicant-simply-starter-test .wte .wte-cols {
+      display: grid;
+      grid-template-columns: 1fr;
+      gap: 1.5rem;
+      }
+      #replicant-simply-starter-test .wte .wte-col h3 {
+      display: flex;
+      align-items: center;
+      flex-wrap: wrap;
+      gap: 0.4rem;
+      font-size: var(--fs-md);
+      font-weight: 800;
+      color: #fff;
+      margin: 0 0 0.6rem;
+      }
+      #replicant-simply-starter-test .wte .wte-col .wte-day {
+      color: var(--accent);
+      }
+      #replicant-simply-starter-test .wte .wte-col ul {
+      list-style: none;
+      margin: 0;
+      padding: 0;
+      }
+      #replicant-simply-starter-test .wte .wte-col li {
+      position: relative;
+      padding-left: 1.1rem;
+      margin-bottom: 0.45rem;
+      font-size: var(--fs-sm);
+      color: rgba(255, 255, 255, 0.9);
+      line-height: 1.4;
+      }
+      #replicant-simply-starter-test .wte .wte-col li::before {
+      content: '•';
+      position: absolute;
+      left: 0;
+      color: var(--accent);
+      font-weight: 900;
+      }
+      /* FAQ tab */
+      #replicant-simply-starter-test .wte .wte-faq details {
+      border-bottom: 1px solid rgba(255, 255, 255, 0.2);
+      padding: 0.9rem 0;
+      }
+      #replicant-simply-starter-test .wte .wte-faq summary {
+      cursor: pointer;
+      font-weight: 700;
+      color: #fff;
+      list-style: none;
+      display: flex;
+      justify-content: space-between;
+      gap: 1rem;
+      }
+      #replicant-simply-starter-test .wte .wte-faq summary::-webkit-details-marker {
+      display: none;
+      }
+      #replicant-simply-starter-test .wte .wte-faq summary::after {
+      content: '+';
+      color: var(--accent);
+      font-size: 1.3rem;
+      line-height: 1;
+      }
+      #replicant-simply-starter-test .wte .wte-faq details[open] summary::after {
+      content: '–';
+      }
+      #replicant-simply-starter-test .wte .wte-faq p {
+      margin: 0.6rem 0 0;
+      color: rgba(255, 255, 255, 0.85);
+      font-size: var(--fs-sm);
+      }
+      /* Reviews tab */
+      #replicant-simply-starter-test .wte .wte-rev-score {
+      display: flex;
+      align-items: center;
+      gap: 0.6rem;
+      margin-bottom: 1.25rem;
+      flex-wrap: wrap;
+      }
+      #replicant-simply-starter-test .wte .wte-rev-num {
+      font-size: var(--fs-xl);
+      font-weight: 800;
+      color: #fff;
+      }
+      #replicant-simply-starter-test .wte .wte-rev-count {
+      font-size: var(--fs-sm);
+      color: rgba(255, 255, 255, 0.8);
+      }
+      #replicant-simply-starter-test .wte .wte-rev-grid {
+      display: grid;
+      grid-template-columns: 1fr;
+      gap: 1rem;
+      }
+      #replicant-simply-starter-test .wte .wte-rev-grid blockquote {
+      margin: 0;
+      background: rgba(255, 255, 255, 0.08);
+      border-radius: 10px;
+      padding: 1rem;
+      }
+      #replicant-simply-starter-test .wte .wte-rev-grid blockquote p {
+      margin: 0.5rem 0;
+      font-size: var(--fs-sm);
+      color: #fff;
+      line-height: 1.4;
+      }
+      #replicant-simply-starter-test .wte .wte-rev-grid cite {
+      font-style: normal;
+      font-weight: 700;
+      font-size: var(--fs-xs);
+      color: rgba(255, 255, 255, 0.85);
+      }
+      #replicant-simply-starter-test .wte .rp-stars {
+      color: var(--star);
+      }
+
+
+                                @media (min-width: 769px) {
+                                  #replicant-simply-starter-test .wte .wte-cols {
+                                    grid-template-columns: repeat(3, 1fr);
+                                    gap: 2rem;
+                                  }
+                                  #replicant-simply-starter-test .wte .wte-rev-grid {
+                                    grid-template-columns: repeat(3, 1fr);
+                                  }
+                                }
+                                @media (max-width: 600px) {
+                                  #replicant-simply-starter-test .wte .wte-tab {
+                                    padding: 0.7rem 0.35rem;
+                                    font-size: 11px;
+                                    letter-spacing: 0;
+                                  }
+                                  #replicant-simply-starter-test .wte .wte-body {
+                                    padding: 1.25rem;
+                                  }
+                                }
+
+      /* ═══════════ 3. INGREDIENTS (benefit-cards dual layout) ═══════════ */
+      #replicant-simply-starter-test-bc {
+      background: var(--grey);
+      }
+      #replicant-simply-starter-test-bc .bc-card {
+      background: #fff;
+      border: 1px solid #e5e7eb;
+      border-radius: 12px;
+      overflow: hidden;
+      display: flex;
+      flex-direction: column;
+      height: 100%;
+      }
+      #replicant-simply-starter-test-bc .bc-card-image {
+      position: relative;
+      width: 100%;
+      aspect-ratio: 4/3;
+      overflow: hidden;
+      background: #fff;
+      }
+      #replicant-simply-starter-test-bc .bc-card-image img {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+      display: block;
+      }
+      #replicant-simply-starter-test-bc .bc-dose {
+      position: absolute;
+      top: 0.6rem;
+      left: 0.6rem;
+      background: var(--darkteal);
+      color: #fff;
+      font-weight: 800;
+      font-size: var(--fs-xs);
+      padding: 0.25rem 0.6rem;
+      border-radius: 6px;
+      }
+      #replicant-simply-starter-test-bc .bc-card-body {
+      padding: 1rem;
+      text-align: center;
+      }
+      #replicant-simply-starter-test-bc .bc-card-title {
+      font-size: var(--fs-md);
+      font-weight: 800;
+      margin-bottom: 0.35rem;
+      }
+      #replicant-simply-starter-test-bc .bc-card-text {
+      font-size: var(--fs-sm);
+      opacity: 0.85;
+      line-height: 1.2;
+      }
+      #replicant-simply-starter-test-bc .bc-grid {
+      display: grid;
+      grid-template-columns: repeat(4, 1fr);
+      gap: 1rem;
+      }
+      #replicant-simply-starter-test-bc .bc-carousel {
+      display: none;
+      }
+      #replicant-simply-starter-test-bc .bc-carousel .swiper-slide {
+      height: auto;
+      }
+      #replicant-simply-starter-test-bc .bc-trust {
+      display: flex;
+      flex-wrap: wrap;
+      justify-content: center;
+      gap: 1rem 1.5rem;
+      margin-top: 2rem;
+      font-weight: 700;
+      font-size: var(--fs-sm);
+      }
+      #replicant-simply-starter-test-bc .bc-trust span {
+      display: inline-flex;
+      align-items: center;
+      gap: 0.4rem;
+      }
+      #replicant-simply-starter-test-bc .bc-trust span::before {
+      content: '✓';
+      color: var(--accent);
+      font-size: 24px;
+      }
+      #replicant-simply-starter-test .bc-controls {
+      display: flex;
+      justify-content: center;
+      gap: 0.75rem;
+      margin-top: 1.25rem;
+      }
+      #replicant-simply-starter-test .bc-prev,
+      #replicant-simply-starter-test .bc-next {
+      width: 42px;
+      height: 42px;
+      border-radius: 50%;
+      border: 1.5px solid rgba(0, 0, 0, 0.2);
+      background: #fff;
+      cursor: pointer;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      color: var(--text);
+      }
+
+      /* ═══════════ 4,5,9. CARD CAROUSELS (transformations / experts / advisory) ═══════════ */
+      #replicant-simply-starter-test-transimg,
+      #replicant-simply-starter-test-advisory {
+      background: var(--bg);
+      }
+      #replicant-simply-starter-test-transtxt,
+      #replicant-simply-starter-test-experts {
+      background: var(--grey);
+      }
+      /* image-only transformation card */
+      #replicant-simply-starter-test .ti-card { border-radius: 12px; overflow: hidden; border: 1px solid rgba(0,0,0,.1); }
+      #replicant-simply-starter-test .cc-card--text { min-height: 100%; }
+      /* smooth continuous marquee: constant-speed (linear) motion + fixed-width auto slides */
+      #replicant-simply-starter-test #rp-transimg .swiper-wrapper { transition-timing-function: linear !important; }
+      #replicant-simply-starter-test #rp-transimg .swiper-slide { width: min(80%, 320px); height: auto; }
+      #replicant-simply-starter-test .cc-carousel {
+      position: relative;
+      overflow: hidden;
+      }
+      #replicant-simply-starter-test .cc-card {
+      background: #fff;
+      border: 1px solid rgba(0, 0, 0, 0.12);
+      border-radius: 12px;
+      overflow: hidden;
+      height: auto;
+      display: flex;
+      flex-direction: column;
+      }
+      #replicant-simply-starter-test .cc-media {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 2px;
+      background: #eee;
+      }
+      #replicant-simply-starter-test .cc-media figure {
+      margin: 0;
+      position: relative;
+      }
+      #replicant-simply-starter-test .cc-media img {
+      width: 100%;
+      aspect-ratio: 1/1;
+      object-fit: cover;
+      display: block;
+      }
+      #replicant-simply-starter-test .cc-media figcaption {
+      position: absolute;
+      bottom: 0;
+      left: 0;
+      right: 0;
+      background: rgba(18, 86, 87, 0.85);
+      color: #fff;
+      font-size: var(--fs-xs);
+      font-weight: 700;
+      text-align: center;
+      padding: 0.25rem;
+      text-transform: uppercase;
+      letter-spacing: 0.5px;
+      }
+      #replicant-simply-starter-test .cc-single img {
+      width: 100%;
+      aspect-ratio: 1/1;
+      aspect-ratio: 4/3;
+      object-fit: cover;
+      display: block;
+      {% comment %} object-position: top; {% endcomment %}
+      }
+      #replicant-simply-starter-test .cc-body {
+      padding: 1.1rem 1.15rem 1.25rem;
+      text-align: left;
+      padding: 1rem;
+      }
+      #replicant-simply-starter-test .cc-rating {
+      display: flex;
+      align-items: center;
+      gap: 0.4rem;
+      margin-bottom: 0.5rem;
+      }
+      #replicant-simply-starter-test .cc-rating .num {
+      font-size: var(--fs-sm);
+      opacity: 0.7;
+      }
+      #replicant-simply-starter-test .cc-title {
+      font-size: var(--fs-md);
+      font-weight: 800;
+      margin-bottom: 0.4rem;
+      }
+      #replicant-simply-starter-test .cc-cred {
+      font-size: var(--fs-xs);
+      text-transform: uppercase;
+      letter-spacing: 1px;
+      color: var(--darkteal);
+      font-weight: 700;
+      margin-bottom: 0.5rem;
+      }
+      #replicant-simply-starter-test .cc-text {
+      font-size: var(--fs-sm);
+      line-height: 1.5;
+      }
+      #replicant-simply-starter-test .cc-author {
+      display: flex;
+      align-items: center;
+      gap: 0.5rem;
+      margin-top: 0.8rem;
+      font-size: var(--fs-xs);
+      text-transform: uppercase;
+      }
+      #replicant-simply-starter-test .cc-avatar {
+      width: 40px;
+      height: 40px;
+      border-radius: 50%;
+      object-fit: cover;
+      }
+      #replicant-simply-starter-test .cc-verified {
+      color: var(--accent);
+      font-weight: 700;
+      }
+      #replicant-simply-starter-test .cc-controls {
+      display: flex;
+      justify-content: center;
+      gap: 1rem;
+      margin-top: 1.5rem;
+      }
+
+      /* ═══════════ 6. UGC IMAGE CAROUSEL (what men are saying) ═══════════ */
+      #replicant-simply-starter-test-ugc {
+      background: var(--bg);
+      }
+      #replicant-simply-starter-test-ugc .ugc-card {
+      position: relative;
+      border-radius: 12px;
+      overflow: hidden;
+      border: 1px solid #e0e0e0;
+      }
+      #replicant-simply-starter-test-ugc .ugc-card img,
+      #replicant-simply-starter-test-ugc .ugc-card video {
+      width: 100%;
+      {% comment %} aspect-ratio: 9/14; {% endcomment %}
+      object-fit: cover;
+      display: block;
+      background: #000;
+      }
+      #replicant-simply-starter-test-ugc .ugc-ph {
+      width: 100%;
+      aspect-ratio: 9/14;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      justify-content: center;
+      gap: .5rem;
+      background: var(--grey);
+      color: var(--darkteal);
+      font-size: var(--fs-sm);
+      font-weight: 700;
+      }
+      #replicant-simply-starter-test-ugc .ugc-ph span {
+      width: 54px;
+      height: 54px;
+      border-radius: 50%;
+      background: #fff;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-size: 1.2rem;
+      }
+      #replicant-simply-starter-test-ugc .ugc-play {
+      position: absolute;
+      inset: 0;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      }
+      #replicant-simply-starter-test-ugc .ugc-play span {
+      width: 54px;
+      height: 54px;
+      border-radius: 50%;
+      background: rgba(255, 255, 255, 0.9);
+      color: var(--darkteal);
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-size: 1.2rem;
+      }
+      #replicant-simply-starter-test-ugc .ugc-tags {
+      display: flex;
+      justify-content: center;
+      gap: 0.5rem;
+      flex-wrap: wrap;
+      margin-top: 1.25rem;
+      }
+      #replicant-simply-starter-test-ugc .ugc-tags span {
+      border: 1px solid var(--darkteal);
+      color: var(--darkteal);
+      border-radius: 20px;
+      padding: 0.3rem 0.9rem;
+      font-size: var(--fs-xs);
+      font-weight: 700;
+      text-transform: uppercase;
+      }
+
+      /* progress + arrows (shared for swiper sections) */
+      #replicant-simply-starter-test .rp-progress {
+      height: 4px;
+      background: rgba(0, 0, 0, 0.1);
+      border-radius: 2px;
+      overflow: hidden;
+      max-width: 280px;
+      margin: 1.5rem auto 0;
+      }
+      #replicant-simply-starter-test .rp-progress-bar {
+      height: 100%;
+      width: 0;
+      background: var(--darkteal);
+      transition: width 0.3s linear;
+      }
+      #replicant-simply-starter-test .swiper-button-prev,
+      #replicant-simply-starter-test .swiper-button-next {
+      position: static;
+      width: 44px;
+      height: 44px;
+      border-radius: 50%;
+      background: #fff;
+      border: 1.5px solid rgba(0, 0, 0, 0.15);
+      color: var(--darkteal);
+      margin: 0;
+      }
+      #replicant-simply-starter-test .swiper-button-prev::after,
+      #replicant-simply-starter-test .swiper-button-next::after {
+      font-size: 1rem;
+      font-weight: 800;
+      }
+
+      /* ═══════════ 7. COMPARISON TABLE (ported comparison-table-1) ═══════════ */
+      #replicant-simply-starter-test-ct {
+      background: var(--bg);
+      }
+      #replicant-simply-starter-test-ct .ct-inner {
+      max-width: 1000px;
+      margin: 0 auto;
+      padding: 0 1rem;
+      text-align: center;
+      }
+      #replicant-simply-starter-test-ct .ct-wrapper {
+      position: relative;
+      padding: 1.5rem 0 3rem;
+      overflow-x: auto;
+      max-width: 850px;
+      margin: auto;
+      }
+      #replicant-simply-starter-test-ct .ct-grid {
+      display: grid;
+      grid-template-columns: 34% 22% 22% 22%;
+      width: 100%;
+      min-width: 480px;
+      }
+      #replicant-simply-starter-test-ct .ct-row {
+      display: contents;
+      }
+      #replicant-simply-starter-test-ct .ct-cell {
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      padding: 0.9rem 0.6rem;
+      border-top: 1px solid #e2ded0;
+      font-size: var(--fs-sm);
+      text-align: center;
+      word-wrap: break-word;
+      word-break: break-word;
+      }
+      #replicant-simply-starter-test-ct .ct-label {
+      justify-content: flex-start;
+      text-align: left;
+      font-weight: 700;
+      text-transform: uppercase;
+      letter-spacing: 0.3px;
+      font-size: var(--fs-xs);
+      }
+      /* brand = floating dark-teal band (2nd column) */
+      #replicant-simply-starter-test-ct .ct-brand {
+      background: var(--darkteal);
+      color: #fff;
+      z-index: 2;
+      position: relative;
+      border-top-color: rgba(255, 255, 255, 0.14);
+      font-weight: 700;
+      box-shadow: 0 10px 30px rgba(0, 0, 0, 0.12);
+      }
+      #replicant-simply-starter-test-ct .ct-brand-name {
+      font-size: var(--fs-md);
+      font-weight: 800;
+      color: #fff;
+      }
+      #replicant-simply-starter-test-ct .ct-row:first-child .ct-brand {
+      border-radius: 16px 16px 0 0;
+      margin-top: -1.5rem;
+      border-top-color: transparent;
+      }
+      #replicant-simply-starter-test-ct .ct-row:last-child .ct-brand {
+      border-radius: 0 0 16px 16px;
+      margin-bottom: -2rem;
+      }
+      #replicant-simply-starter-test-ct .ct-comp {
+      background: transparent;
+      color: var(--text);
+      }
+      #replicant-simply-starter-test-ct .ct-head .ct-cell {
+      border-top: none;
+      padding: 0.5rem 0.4rem 1.25rem;
+      align-items: flex-end;
+      }
+      #replicant-simply-starter-test-ct .ct-head .ct-brand {
+      flex-direction: column;
+      gap: 0.35rem;
+      align-items: center;
+      justify-content: flex-start;
+      padding-top: 1.5rem;
+      }
+      #replicant-simply-starter-test-ct .ct-head .ct-comp {
+      flex-direction: column;
+      justify-content: flex-end;
+      font-weight: 800;
+      font-size: var(--fs-md);
+      color: var(--text);
+      align-items; cetner;
+      flex-wrap: wrap;
+      word-wrap: break-word;
+      align-items: center;
+      }
+      #replicant-simply-starter-test-ct .ct-head img {
+      max-height: 54px;
+      width: auto;
+      border-radius: 8px;
+      margin-bottom: 0.3rem;
+      }
+      #replicant-simply-starter-test-ct .ct-mark {
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      width: 26px;
+      height: 26px;
+      border-radius: 50%;
+      font-size: 15px;
+      }
+      #replicant-simply-starter-test-ct .ct-check .ct-mark {
+      background: var(--check);
+      {% comment %} background: var(--accent); {% endcomment %}
+      color: #fff;
+      }
+      #replicant-simply-starter-test-ct .ct-cross .ct-mark {
+      border: 2px solid var(--cross);
+      color: var(--cross);
+      }
+      #replicant-simply-starter-test-ct .ct-quest .ct-mark {
+      border: 2px solid var(--quest);
+      color: var(--quest);
+      }
+      #replicant-simply-starter-test-ct .ct-brand.ct-cross .ct-mark {
+      border-color: #fff;
+      color: #fff;
+      }
+      #replicant-simply-starter-test-ct .ct-brand.ct-quest .ct-mark {
+      border-color: rgba(255, 255, 255, 0.6);
+      color: #fff;
+      }
+      #replicant-simply-starter-test-ct .ct-cta {
+      margin-top: 3rem;
+      }
+
+      /* ═══════════ 10. GUARANTEE BAND ═══════════ */
+      #replicant-simply-starter-test-guarantee {
+      background: var(--darkteal);
+      color: #fff;
+      text-align: center;
+      }
+      #replicant-simply-starter-test-guarantee h2 {
+      color: #fff;
+      font-size: var(--fs-2xl);
+      font-weight: 800;
+      }
+      #replicant-simply-starter-test-guarantee h2 .rp-accent {
+      color: var(--accent);
+      }
+      #replicant-simply-starter-test-guarantee p {
+      max-width: 640px;
+      margin: 1rem auto 1.75rem;
+      opacity: 0.9;
+      color: #fff
+      }
+      #replicant-simply-starter-test-guarantee .guarantee-badge {
+      width: 120px;
+      height: 120px;
+      margin: 0 auto 1.25rem;
+      }
+      #replicant-simply-starter-test-guarantee .rp-btn {
+      background: #fff;
+      color: var(--darkteal);
+      border-color: #fff;
+      }
+      #replicant-simply-starter-test-guarantee .rp-btn:hover {
+      opacity: .9;
+      }
+
+      /* ═══════════ 11. FAQ ═══════════ */
+      #replicant-simply-starter-test-faq {
+      background: var(--bg);
+      }
+      #replicant-simply-starter-test-faq .faq-list {
+      max-width: 780px;
+      margin: 0 auto;
+      padding: 0 1rem;
+      }
+      #replicant-simply-starter-test-faq details {
+      border-bottom: 1px solid #e5e5e5;
+      padding: 1rem 0;
+      }
+      #replicant-simply-starter-test-faq summary {
+      cursor: pointer;
+      font-weight: 700;
+      font-size: var(--fs-md);
+      list-style: none;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      gap: 1rem;
+      }
+      #replicant-simply-starter-test-faq summary::-webkit-details-marker {
+      display: none;
+      }
+      #replicant-simply-starter-test-faq summary::after {
+      content: '+';
+      font-size: 1.5rem;
+      color: var(--darkteal);
+      }
+      #replicant-simply-starter-test-faq details[open] summary::after {
+      content: '–';
+      }
+      #replicant-simply-starter-test-faq details p {
+      margin: 0.75rem 0 0;
+      opacity: 0.85;
+      }
+
+      /* ═══════════ 12. LAUNCH KIT ═══════════ */
+      #replicant-simply-starter-test-kit {
+      background: var(--cream);
+      }
+      #replicant-simply-starter-test-kit .kit-grid {
+      display: grid;
+      grid-template-columns: 1fr;
+      gap: 2rem;
+      align-items: center;
+      max-width: 1000px;
+      margin: 0 auto;
+      padding: 0 1rem;
+      }
+      #replicant-simply-starter-test-kit .kit-img img {
+      width: 100%;
+      border-radius: 12px;
+      }
+      #replicant-simply-starter-test-kit .kit-list {
+      list-style: none;
+      padding: 0;
+      margin: 0 0 1.5rem;
+      }
+      #replicant-simply-starter-test-kit .kit-list li {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      gap: 1rem;
+      padding: 0.75rem 0;
+      border-bottom: 1px dashed rgba(18, 86, 87, 0.25);
+      }
+      #replicant-simply-starter-test-kit .kit-list .kit-name {
+      font-weight: 600;
+      }
+      #replicant-simply-starter-test-kit .kit-list .kit-val {
+      display: flex;
+      gap: 0.5rem;
+      align-items: baseline;
+      white-space: nowrap;
+      }
+      #replicant-simply-starter-test-kit .kit-list .was {
+      text-decoration: line-through;
+      opacity: 0.5;
+      font-size: var(--fs-sm);
+      }
+      #replicant-simply-starter-test-kit .kit-list .free {
+      color: var(--darkteal);
+      font-weight: 800;
+      }
+
+      /* ═══════════ 13. REVIEWS ═══════════ */
+      #replicant-simply-starter-test-reviews {
+      background: var(--grey);
+      }
+      #replicant-simply-starter-test-reviews .rv-inner {
+      max-width: 1000px;
+      margin: 0 auto;
+      padding: 0 1rem;
+      }
+      #replicant-simply-starter-test-reviews .rv-summary {
+      display: grid;
+      grid-template-columns: 1fr;
+      gap: 1.5rem;
+      background: #fff;
+      border: 1px solid #e5e5e5;
+      border-radius: 14px;
+      padding: 1.5rem;
+      margin-bottom: 2rem;
+      }
+      #replicant-simply-starter-test-reviews .rv-score {
+      text-align: center;
+      }
+      #replicant-simply-starter-test-reviews .rv-score .big {
+      font-size: var(--fs-3xl);
+      font-weight: 800;
+      color: var(--darkteal);
+      line-height: 1;
+      }
+      #replicant-simply-starter-test-reviews .rv-score .rp-stars {
+      font-size: 1.2rem;
+      }
+      #replicant-simply-starter-test-reviews .rv-bars {
+      display: grid;
+      gap: 0.35rem;
+      }
+      #replicant-simply-starter-test-reviews .rv-bar {
+      display: flex;
+      align-items: center;
+      gap: 0.6rem;
+      font-size: var(--fs-sm);
+      }
+      #replicant-simply-starter-test-reviews .rv-bar .track {
+      flex: 1;
+      height: 8px;
+      background: #eee;
+      border-radius: 4px;
+      overflow: hidden;
+      }
+      #replicant-simply-starter-test-reviews .rv-bar .fill {
+      height: 100%;
+      background: var(--star);
+      }
+      #replicant-simply-starter-test-reviews .rv-what {
+      background: var(--cream);
+      border-radius: 10px;
+      padding: 1rem 1.25rem;
+      margin-bottom: 2rem;
+      font-size: var(--fs-sm);
+      }
+      #replicant-simply-starter-test-reviews .rv-what b {
+      display: block;
+      margin-bottom: 0.35rem;
+      }
+      #replicant-simply-starter-test-reviews .rv-grid {
+      display: grid;
+      grid-template-columns: 1fr;
+      gap: 1rem;
+      }
+      #replicant-simply-starter-test-reviews .rv-card {
+      background: #fff;
+      border: 1px solid #e5e5e5;
+      border-radius: 12px;
+      padding: 1.15rem;
+      }
+      #replicant-simply-starter-test-reviews .rv-card .rv-top {
+      display: flex;
+      align-items: center;
+      gap: 0.6rem;
+      margin-bottom: 0.5rem;
+      }
+      #replicant-simply-starter-test-reviews .rv-card .rv-ava {
+      width: 38px;
+      height: 38px;
+      border-radius: 50%;
+      background: var(--darkteal);
+      color: #fff;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-weight: 700;
+      }
+      #replicant-simply-starter-test-reviews .rv-card .rv-name {
+      font-weight: 700;
+      font-size: var(--fs-sm);
+      }
+      #replicant-simply-starter-test-reviews .rv-card .rv-vb {
+      font-size: var(--fs-xs);
+      color: var(--accent);
+      font-weight: 700;
+      }
+      #replicant-simply-starter-test-reviews .rv-card p {
+      font-size: var(--fs-sm);
+      margin: 0.4rem 0 0;
+      }
+      #replicant-simply-starter-test-reviews .rv-photos {
+      display: flex;
+      gap: 0.4rem;
+      margin-top: 0.6rem;
+      }
+      #replicant-simply-starter-test-reviews .rv-photos img {
+      width: 64px;
+      height: 64px;
+      object-fit: cover;
+      border-radius: 8px;
+      }
+      #replicant-simply-starter-test-reviews .hero-ratingrow-mobile {
+      display: none;
+      }
+      .rp-facts-btn-mobile {
+      display: none;}
+      #replicant-simply-starter-test  .hero-ratingrow-mobile {
+      display: none;
+      }
+      #replicant-simply-starter-test-transimg .rp-wrap {
+      max-width: 100%;
+      padding: 0rem;
+      }
+
+      #replicant-simply-starter-test  .hero-ratingrow-mobile {
+      display:none;}
+      #replicant-simply-starter-test .rp-facts-btn-mobile {
+      display: none
+      }
+      #replicant-simply-starter-test .offer {
+      padding: .5rem;}
+      #replicant-simply-starter-test-guarantee .rp-btn-icon {
+      fill: var(--darkteal);
+      }
+
+      #replicant-simply-starter-test-advisory  .rp-progress {
+      display: none;
+      }
+              {% comment %} ======================== DESKTOP ABOVE ========================  {% endcomment %}
+                                /* ═══════════ RESPONSIVE (desktop refinements) ═══════════ */
+                                @media (min-width: 769px) {
+                                  #replicant-simply-starter-test .hero-grid {
+                                    grid-template-columns: minmax(0, 1fr) minmax(0, 1fr);
+                                    align-items: start;
+                                  }
+
+                                  #replicant-simply-starter-test .tab-panel.is-active {
+                                    grid-template-columns: 1fr 1fr;
+                                    padding: 2rem;
+                                  }
+                                  #replicant-simply-starter-test .kit-grid {
+                                    grid-template-columns: 1fr 1fr;
+                                  }
+                                  #replicant-simply-starter-test .rv-summary {
+                                    grid-template-columns: 220px 1fr;
+                                    align-items: center;
+                                  }
+                                  #replicant-simply-starter-test .rv-grid {
+                                    grid-template-columns: 1fr 1fr;
+                                  }
+                                }
+                                @media (max-width: 991px) {
+                                  #replicant-simply-starter-test .hero-grid {
+                                      grid-template-columns: 1fr;
+                                    }
+            }
+      {% comment %} MOBILE ONLY STURE {% endcomment %}
+      @media (max-width: 768px) {
+      #replicant-simply-starter-test-ct .ct-head .ct-cell {
+      padding-left: 1rem;
+      padding-right: 1rem;
+      }
+
+        #replicant-simply-starter-test-sticky .sk-wrap {
+        padding-left: 1rem;
+        padding-right: 1rem;
+
+      }
+      #replicant-simply-starter-test-guarantee .guarantee-badge {
+      margin-bottom: 10px;
+    }
+      #replicant-simply-starter-test .hero-trust3 > div {
+      font-size: 10px;
+    }
+
+      #replicant-simply-starter-test-guarantee p {
+      line-height: 1.2;
+    }
+    #replicant-simply-starter-test .offer-price .was{
+    font-size: var(--fs-base);
+  }
+    #replicant-simply-starter-test-guarantee h2 {
+    font-size: var(--fs-xl);}
+        #replicant-simply-starter-test-kit .kit-list li {
+        font-size: 14px;
+        }
+        #replicant-simply-starter-test-kit .rp-btn {
+    margin: auto;
+        align-items: center;
+        justify-content: center;
+        display: block;
+        text-align: center;
+        max-width: 300px;
+    }
+        #replicant-simply-starter-test-advisory  .rp-progress {
+        display: block;
+        }
+
+        #replicant-simply-starter-test .hero-h1 {
+        margin-top: 0rem;}
+        #replicant-simply-starter-test .rp-facts-btn-mobile {
+        display: block
+        }
+        #replicant-simply-starter-test .hero-bullets {
+        margin-bottom: .65rem
+        }
+        #replicant-simply-starter-test .rp-facts-btn {
+        display: none;
+        }
+        #replicant-simply-starter-test-sticky .sk-info {
+        display: none;
+        }
+        #replicant-simply-starter-test-sticky .rp-btn {
+        width: 100%;
+        padding: .5rem 0px;
+        }
+        #replicant-simply-starter-test .hero-grid {
+        gap: 2px;
+        }
+        #replicant-simply-starter-test .hero-ratingrow {
+        display: none;
+        }
+        #replicant-simply-starter-test-bc .bc-grid {
+        grid-template-columns: repeat(2, 1fr);
+        }
+        #replicant-simply-starter-test-bc .bc-trust {
+        gap: 4px 4px}
+        #replicant-simply-starter-test .tabs-nav {
+        gap: 4px;
+        }
+        #replicant-simply-starter-test .tab-btn {
+        padding: 6px;
+
+        }
+        #replicant-simply-starter-test .rp-btn{
+        padding: .65rem 2rem;
+        padding: 10px;
+        }
+        #replicant-simply-starter-test .tab-panel.is-active,
+        #replicant-simply-starter-test .tab-panel {
+        padding: 1rem;
+        gap: 0px;
+        }
+        #replicant-simply-starter-test .tab-panel li {
+        font-size: var(--fs-sm);
+        }
+        #replicant-simply-starter-test .tab-panel p {
+        font-size: 10px;
+        line-height: 1.2;
+        }
+        #replicant-simply-starter-test-bc .bc-card-image {
+        aspect-ratio: 4/3;
+        }
+        #replicant-simply-starter-test-bc .bc-card-text {
+        font-size: 12px;
+        }
+        #replicant-simply-starter-test-bc .bc-card-body {
+        padding: .5rem;
+        }
+        #replicant-simply-starter-test .hero {
+        padding-top: 0rem}
+        #replicant-simply-starter-test .gifts-grid {
+        gap: 4px;
+        }
+        #replicant-simply-starter-test .hero {
+        padding-bottom: 1rem;
+        }
+        #replicant-simply-starter-test .offer-fine {
+        font-size: 9px;
+        line-height: 1.2;
+        }
+
+        #replicant-simply-starter-test .offer {
+        width: 100%;
+        max-width: 100%;
+        }
+
+        #replicant-simply-starter-test .hero-ratingrow-mobile {
+        margin: auto;
+        width: max-content;
+        margin-bottom: 2px;
+        margin-top: 2px;
+        }
+
+        #replicant-simply-starter-test .offer {
+        width: 100%;
+        }
+
+        .rp-facts-btn-mobile {
+        padding: 0;
+        background: none;
+        border: none;
+        text-decoration: underline;
+        text-decoration-color: var(--cta-bg);
+        margin-bottom: .65rem;
+        display: block;
+        }
+        #replicant-simply-starter-test .rp-stars {
+        font-size: 0.85rem;}
+        #replicant-simply-starter-test .hero-bullets li {
+        font-size: var(--fs-sm);
+
+        }
+        #replicant-simply-starter-test .hero-desc {
+        line-height: normal;
+        font-size: var(--fs-sm);
+        }
+
+        #replicant-simply-starter-test .hero-quote {
+        padding: .6rem
+        }
+        #replicant-simply-starter-test .hero-quote .hq-foot {
+        line-height: 1;
+        }
+
+        #replicant-simply-starter-test .hero-quote .hq-text {
+        font-size: 12px;
+        padding-bottom: 0px;
+        margin-bottom: 2px;
+        }
+        #replicant-simply-starter-test .offer-price .now {
+        font-size: var(--fs-md);
+        }
+        /* price box (cm-price-row) — mobile proportions */
+        #replicant-simply-starter-test .cm-price-row {
+        gap: 0.6rem;
+        padding: 0.65rem 0rem;
+        border-radius: 8px;
+        }
+        #replicant-simply-starter-test .cm-price {
+        font-size: var(--fs-xl);
+        gap: 0.35rem;
+        }
+        #replicant-simply-starter-test .cm-price s {
+        {% comment %} font-size: var(--fs-base); {% endcomment %}
+        }
+        #replicant-simply-starter-test .cm-offer {
+        font-size: var(--fs-sm);
+        }
+        #replicant-simply-starter-test .cm-offer small {
+        font-size: 10px;
+        letter-spacing: 0.04em;
+        }
+        #replicant-simply-starter-test .sec {
+        padding: 2rem 0;
+        }
+
+        #replicant-simply-starter-test .cc-media figcaption {
+        font-size: 10px;
+        }
+        #replicant-simply-starter-test-ct .ct-grid {
+        grid-template-columns: 26% 26% 24% 24%;
+        min-width: 340px;
+        }
+        #replicant-simply-starter-test-ct .ct-cell {
+        padding: .55rem 4px;
+        }
+        #replicant-simply-starter-test-ct .ct-inner {
+        padding: 0 .5rem;
+        }
+
+        #replicant-simply-starter-test-ct .ct-head img {
+        {% comment %} max-height: 40px; {% endcomment %}
+        }
+        #replicant-simply-starter-test-ct .ct-head .ct-comp {
+        font-size: var(--fs-sm);
+        font-size: .8rem;
+        justify-content: center;
+        }
+        #replicant-simply-starter-test-ct .ct-brand-name {
+        font-size: var(--fs-sm);
+        }
+        #replicant-simply-starter-test-ct .ct-cell {
+        padding: 0.55rem 0.25rem;
+        font-size: 11px;
+        }
+        #replicant-simply-starter-test-ct .ct-mark {
+        width: 20px;
+        height: 20px;
+        font-size: 12px;
+        }
+
+        #replicant-simply-starter-test .hero-h1 {
+        font-size: var(--fs-xl)}
+
+        #replicant-simply-starter-test .wte .wte-tabs {
+        }
+
+      }
+</style>
+
+<div id="replicant-simply-starter-test">
+  {%- comment -%} ═════════════ 1. HERO / BUYBOX ═════════════ {%- endcomment -%}
+  <section class="hero">
+    <div class="hero-grid">
+      {%- comment -%} LEFT: gallery + testimonial carousel + supplement-facts modal button {%- endcomment -%}
+      <div class="hero-left">
+        <div id="replicant-simply-starter-test-gallery">
+          <div class="g-carousel">
+            <div class="swiper g-main" id="rp-gmain">
+              <div class="swiper-wrapper">
+                {% if p.images.size > 0 %}
+                  {% for image in p.images limit: 8 %}
+                    <div class="swiper-slide">
+                      <img
+                        src="{{ image | image_url: width: 700 }}"
+                        alt="{{ image.alt | default: p.title | escape }}"
+                        width="{{ image.width }}"
+                        height="{{ image.height }}"
+                        loading="{% if forloop.first %}eager{% else %}lazy{% endif %}"
+                      >
+                    </div>
+                  {% endfor %}
+                {% else %}
+                  <div class="swiper-slide">
+                    <img
+                      width="700"
+                      height="700"
+                      src="https://placehold.co/700x700?text=Product"
+                      alt="Product"
+                      loading="eager"
+                    >
+                  </div>
+                {% endif %}
+              </div>
+              {% comment %} <div class="swiper-button-prev"></div> {% endcomment %}
+              {% comment %} <div class="swiper-button-next"></div> {% endcomment %}
+            </div>
+            {% if p.images.size > 1 %}
+              <div class="g-thumbs" id="rp-gthumbs">
+                <div class="swiper">
+                  <div class="swiper-wrapper">
+                    {% for image in p.images limit: 8 %}
+                      <div class="swiper-slide">
+                        <div class="g-thumb {% if forloop.first %}active{% endif %}" data-slide="{{ forloop.index0 }}">
+                          <img
+                            width="135"
+                            height="135"
+                            src="{{ image | image_url: width: 135 }}"
+                            alt="{{ image.alt | default: p.title | escape }}"
+                            loading="lazy"
+                          >
+                        </div>
+                      </div>
+                    {% endfor %}
+                  </div>
+                </div>
+              </div>
+            {% endif %}
+          </div>
+        </div>
+
+        {%- comment -%} testimonial carousel — under the gallery {%- endcomment -%}
+        <div class="hero-quotes swiper" id="rp-quotes">
+          <div class="swiper-wrapper">
+            <div class="swiper-slide">
+              <blockquote class="hero-quote">
+                <p class="hq-text">
+                  "Noticed way less hair in the drain within a few weeks, and my hair feels stronger."
+                </p>
+                <div class="hq-foot"><span class="rp-stars">★★★★★</span><cite>Mike D.</cite></div>
+              </blockquote>
+            </div>
+            <div class="swiper-slide">
+              <blockquote class="hero-quote">
+                <p class="hq-text">
+                  "My crown was thinning — three months on Simply Revival and it's filling back in."
+                </p>
+                <div class="hq-foot"><span class="rp-stars">★★★★★</span><cite>Ryan M.</cite></div>
+              </blockquote>
+            </div>
+            <div class="swiper-slide">
+              <blockquote class="hero-quote">
+                <p class="hq-text">
+                  "Barely any hair comes out when I wash now. The shedding reduction is incredible."
+                </p>
+                <div class="hq-foot"><span class="rp-stars">★★★★★</span><cite>Connor L.</cite></div>
+              </blockquote>
+            </div>
+            <div class="swiper-slide">
+              <blockquote class="hero-quote">
+                <p class="hq-text">"Started at 25 losing hair — now it's thicker, stronger, and I'm not shedding."</p>
+                <div class="hq-foot"><span class="rp-stars">★★★★★</span><cite>Jason R.</cite></div>
+              </blockquote>
+            </div>
+          </div>
+        </div>
+
+        {%- comment -%} supplement facts — opens image modal {%- endcomment -%}
+        <button type="button" class="rp-facts-btn" data-rp-modal-open="rp-facts-modal">View Supplement Facts</button>
+      </div>
+      {%- comment -%} /hero-left {%- endcomment -%}
+
+      {%- comment -%} RIGHT: info + offer + gifts {%- endcomment -%}
+      <div class="hero-info">
+        <div class="hero-ratingrow-mobile">
+          <span class="rp-stars">★★★★★</span> <span class="hero-reviews">25,605 Reviews</span>
+        </div>
+        <h1 class="hero-h1">{{ p.title | default: 'Natural DHT Blocker' }}</h1>
+        <div class="hero-ratingrow">
+          <span class="rp-stars">★★★★★</span> <span class="hero-reviews">25,605 Reviews</span>
+        </div>
+        <p class="hero-desc">
+          New all-in-one natural hair formula that targets thinning at its source. It works four ways: supports healthy
+          DHT levels, nourishes, strengthens, & promotes thicker, fuller-looking hair.*
+        </p>
+        <ul class="hero-bullets">
+          <li>10 Ancient Herbs — Plant-Based Formula</li>
+          <li>No Fillers or Fluff — Just Herbs</li>
+          <li>Made in the USA &amp; Third-Party Tested</li>
+          <li>365-Day 100% Money-Back Guarantee</li>
+          <li>Fast &amp; Free Shipping on First Order</li>
+        </ul>
+
+        <button type="button" class="rp-facts-btn-mobile" data-rp-modal-open="rp-facts-modal">
+          View Supplement Facts
+        </button>
+
+        {%- comment -%} PRICE BOX — cream distinct panel, today's vs future order {%- endcomment -%}
+
+        <div class="cm-price-row">
+          <div class="cm-price">$54.99 <s>$180</s></div>
+          <div class="cm-offer">Save 69% <u>FOR LIFE</u><small>No code required</small></div>
+        </div>
+
+        {% comment %}
+          <div class="offer">
+            <div class="offer-top">
+              <div class="offer-price">
+                <span class="now">{{ p.price | money }}</span>
+                {% if p.compare_at_price > p.price -%}
+                  <span class="was">$179.97 </span>
+                {%- endif %}
+              </div>
+              <span class="offer-life-badge">{{ p.price | money }} Today & For Life</span>
+            </div>
+            <div class="offer-track"><span></span><span></span></div>
+            <div class="offer-cols">
+              <div class="offer-col">
+                <span class="offer-pill">Save 68% Today</span>
+                <span class="lbl">Today's Order</span>
+                <span class="price">
+                  {{- p.price | money -}}
+                  {%- if p.compare_at_price > p.price %}
+                    <s>$179.97</s>
+                  {%- endif -%}
+                </span>
+              </div>
+              <div class="offer-col">
+                <span class="offer-pill">Save 68% For Life</span>
+                <span class="lbl">Future Orders</span>
+                <span class="price">
+                  {{- p.price | money -}}
+                  {%- if p.compare_at_price > p.price %}
+                    <s>{{ p.compare_at_price | money }}</s>
+                  {%- endif -%}
+                </span>
+              </div>
+            </div>
+          </div>
+        {% endcomment %}
+
+        {%- comment -%} CTA (ported atc-1) — below the price box {%- endcomment -%}
+        <button
+          type="button"
+          class="rp-btn rp-atc-btn"
+          id="rp-atc"
+          data-variant-id="{{ variant_id }}"
+          data-selling-plan="{{ selling_plan_id }}"
+          {% comment %} data-addon-variant="{{ addon_variant_id }}" {% endcomment %}
+          {% unless p.available %}
+            disabled
+          {% endunless %}
+        >
+          {% if p.available -%}
+            Try It Now - Buy 1 get 1 Free
+            <span class="rp-btn-icon">
+              <svg width="23" height="17" viewBox="0 0 23 17" fill="none" xmlns="http://www.w3.org/2000/svg">
+                <path d="M2.08398 7.43318C1.45866 7.43318 0.951735 7.94011 0.951735 8.56543C0.951735 9.19075 1.45866 9.69768 2.08398 9.69768L2.08398 7.43318ZM22.2304 9.36605C22.6726 8.92388 22.6726 8.20698 22.2304 7.76481L15.0248 0.559215C14.5826 0.117045 13.8657 0.117045 13.4236 0.559216C12.9814 1.00139 12.9814 1.71829 13.4236 2.16046L19.8285 8.56543L13.4236 14.9704C12.9814 15.4126 12.9814 16.1295 13.4236 16.5716C13.8657 17.0138 14.5826 17.0138 15.0248 16.5716L22.2304 9.36605ZM2.08398 8.56543L2.08398 9.69768L21.4298 9.69768L21.4298 8.56543L21.4298 7.43318L2.08398 7.43318L2.08398 8.56543Z" fill="white"></path>
+              </svg>
+            </span>
+          {% else -%}
+            Sold Out
+          {%- endif %}
+        </button>
+
+        {%- comment -%} 3 trust icons under CTA {%- endcomment -%}
+        <div class="hero-trust3">
+          <div>
+            <svg viewBox="0 0 24 24" width="22" height="22" fill="none">
+              <path d="M4 12a8 8 0 0 1 13.7-5.7L20 8M20 3v5h-5M20 12a8 8 0 0 1-13.7 5.7L4 16M4 21v-5h5" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round"/>
+            </svg>
+            <span>Refills Ship Every ~25 Days</span>
+          </div>
+          <div>
+            <svg viewBox="0 0 24 24" width="22" height="22" fill="none">
+              <path d="M12 3l7 3v5c0 4.5-3 8.3-7 10-4-1.7-7-5.5-7-10V6l7-3z" stroke="currentColor" stroke-width="1.7" stroke-linejoin="round"/><path d="M9 12l2 2 4-4" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round"/>
+            </svg>
+            <span>Risk-Free 365 Days or 100% Money Back</span>
+          </div>
+          <div>
+            <svg viewBox="0 0 24 24" width="22" height="22" fill="none">
+              <path d="M3 7h11v8H3zM14 10h4l3 3v2h-7z" stroke="currentColor" stroke-width="1.7" stroke-linejoin="round"/><circle cx="7" cy="17" r="1.5" stroke="currentColor" stroke-width="1.7"/><circle cx="17.5" cy="17" r="1.5" stroke="currentColor" stroke-width="1.7"/>
+            </svg>
+            <span>Fast &amp; Free Shipping with 1st Order</span>
+          </div>
+        </div>
+
+        {% comment %}
+          <p class="offer-fine">
+            By default you receive a 25-day supply on automatic refills. Skip, pause, or cancel anytime. By subscribing,
+            you get discounted pricing and subscriber-only benefits.
+          </p>
+        {% endcomment %}
+
+        {%- comment -%} FREE GIFTS (repurpose flagged: our real gift stack in content pass) {%- endcomment -%}
+        <div class="gifts">
+          <h3>Your Free Gifts</h3>
+          <div class="gifts-grid">
+            <div class="gift">
+              <div class="gift-flag">FREE <s>$54.99</s></div>
+              {% if section.settings.gift_1_image -%}
+                <img
+                  width="200"
+                  height="200"
+                  src="{{ section.settings.gift_1_image | image_url: width: 120 }}"
+                  alt="Free Gift"
+                >
+              {%- else -%}
+                <img width="200" height="200" src="https://placehold.co/200x200?text=365-Day" alt="">
+              {%- endif %}
+              <div class="gift-name">365-Day Guarantee</div>
+            </div>
+            <div class="gift">
+              <div class="gift-flag">FREE <s>$125.00</s></div>
+              {% if section.settings.gift_2_image -%}
+                <img
+                  width="200"
+                  height="200"
+                  src="{{ section.settings.gift_2_image | image_url: width: 120 }}"
+                  alt="Free Gift"
+                >
+              {%- else -%}
+                <img width="200" height="200" src="https://placehold.co/200x200?text=Shipping" alt="">
+              {%- endif %}
+              <div class="gift-name">69% Off For Life</div>
+            </div>
+
+            <div class="gift">
+              <div class="gift-flag">FREE <s>$54.99</s></div>
+              {% if section.settings.gift_3_image -%}
+                <img
+                  width="200"
+                  height="200"
+                  src="{{ section.settings.gift_3_image | image_url: width: 120 }}"
+                  alt="Free Gift"
+                >
+              {%- else -%}
+                <img width="200" height="200" src="https://placehold.co/200x200?text=Bottles" alt="">
+              {%- endif %}
+              <div class="gift-name">1 Extra Bottle Free</div>
+            </div>
+
+            <div class="gift">
+              <div class="gift-flag">FREE <s>$29.99</s></div>
+              {% comment %} <div class="gift-flag gift-flag--win">Chance To Win</div> {% endcomment %}
+              {% if section.settings.gift_4_image -%}
+                <img
+                  width="200"
+                  height="200"
+                  src="{{ section.settings.gift_4_image | image_url: width: 120 }}"
+                  alt="Free Gift"
+                >
+              {%- else -%}
+                <img width="200" height="200" src="https://placehold.co/200x200?text=%2420+Card" alt="">
+              {%- endif %}
+              <div class="gift-name">Bonus Free Gift</div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    {%- comment -%} SUPPLEMENT FACTS MODAL (opened by the button under the gallery) {%- endcomment -%}
+    <div class="rp-modal" id="rp-facts-modal" role="dialog" aria-modal="true" aria-label="Supplement Facts">
+      <div class="rp-modal-backdrop" data-rp-modal-close></div>
+      <div class="rp-modal-inner">
+        <button type="button" class="rp-modal-close" data-rp-modal-close aria-label="Close">&times;</button>
+        {% if section.settings.supplement_facts_image %}
+          <img
+            src="{{ section.settings.supplement_facts_image | image_url: width: 660 }}"
+            alt="Supplement Facts"
+            width="900"
+            height="1200"
+            loading="lazy"
+          >
+        {% else %}
+          <img
+            src="https://placehold.co/700x900?text=Supplement+Facts"
+            alt="Supplement Facts"
+            width="700"
+            height="900"
+            loading="lazy"
+          >
+        {% endif %}
+      </div>
+    </div>
+  </section>
+
+  {%- comment -%} ═════════════ 2. WHAT TO EXPECT / FAQs / REVIEWS (folder-tab panel) ═════════════ {%- endcomment -%}
+  <section class="sec" id="replicant-simply-starter-test-daytabs">
+    <div class="rp-wrap">
+      <div class="wte" data-tabs>
+        <div class="wte-tabs" role="tablist">
+          <button class="tab-btn wte-tab" role="tab" aria-selected="true" data-tab="0">What to Expect</button>
+          <button class="tab-btn wte-tab" role="tab" aria-selected="false" data-tab="1">FAQs</button>
+          <button class="tab-btn wte-tab" role="tab" aria-selected="false" data-tab="2">Reviews</button>
+        </div>
+        <div class="wte-body">
+          {%- comment -%} Panel 0 — What to Expect: Day timeline as 3 columns {%- endcomment -%}
+          <div class="tab-panel wte-panel is-active" data-panel="0">
+            <h2 class="wte-h">What Happens After You Start Simply Revival</h2>
+            <div class="wte-track"><span></span><span></span></div>
+            <div class="wte-cols">
+              <div class="wte-col">
+                <h3><span class="wte-ic">🌿</span> <span class="wte-day">Day 14</span> Less Shedding Begins</h3>
+                <ul>
+                  <li>Saw palmetto &amp; nettle begin supporting DHT balance</li>
+                  <li>Scalp feels calmer and nourished</li>
+                  <li>Many notice less hair in the drain</li>
+                  <li>Foundation for healthier growth is set</li>
+                </ul>
+              </div>
+              <div class="wte-col">
+                <h3><span class="wte-ic">💪</span> <span class="wte-day">Day 30</span> Stronger Roots</h3>
+                <ul>
+                  <li>Shedding noticeably reduced for many</li>
+                  <li>Bamboo silica helps strengthen the hair</li>
+                  <li>Follicles staying nourished and supported</li>
+                  <li>Hair looks and feels healthier</li>
+                </ul>
+              </div>
+              <div class="wte-col">
+                <h3><span class="wte-ic">✨</span> <span class="wte-day">Day 60</span> Visible Fullness</h3>
+                <ul>
+                  <li>Noticeably fuller, thicker-looking hair for many</li>
+                  <li>All 10 herbs working together in support</li>
+                  <li>New growth supported naturally</li>
+                  <li>Your healthiest-looking hair — from within</li>
+                </ul>
+              </div>
+            </div>
+          </div>
+          {%- comment -%} Panel 1 — FAQs {%- endcomment -%}
+          <div class="tab-panel wte-panel" data-panel="1">
+            <div class="wte-faq">
+              <details open>
+                <summary>How long until I see results?</summary>
+                <p>
+                  Most users notice less shedding in 3–6 weeks and new growth in 6–12 weeks with consistent daily use.
+                </p>
+              </details>
+              <details>
+                <summary>How does Simply Revival help reduce shedding?</summary>
+                <p>
+                  Our blend of saw palmetto, stinging nettle and 8 more herbs supports healthy DHT balance — which many
+                  customers say helps reduce excess shedding.
+                </p>
+              </details>
+              <details>
+                <summary>Will it work for my hair type?</summary>
+                <p>Yes — the formula is designed to support healthy hair for all hair types.</p>
+              </details>
+              <details>
+                <summary>What is your guarantee?</summary>
+                <p>
+                  Every order is backed by our 365-day money-back guarantee. If you don't love it, return your most
+                  recent order for a full refund.
+                </p>
+              </details>
+            </div>
+          </div>
+          {%- comment -%} Panel 2 — Reviews {%- endcomment -%}
+          <div class="tab-panel wte-panel" data-panel="2">
+            <div class="wte-reviews">
+              <div class="wte-rev-score">
+                <span class="wte-rev-num">4.8</span><span class="rp-stars">★★★★★</span
+                ><span class="wte-rev-count">25,605 verified reviews</span>
+              </div>
+              <div class="wte-rev-grid">
+                <blockquote>
+                  <span class="rp-stars">★★★★★</span>
+                  <p>"4 months in, my hair loss completely stopped — even seeing regrowth at the temples."</p>
+                  <cite>— Mike D.</cite>
+                </blockquote>
+                <blockquote>
+                  <span class="rp-stars">★★★★★</span>
+                  <p>"Barely any hair comes out when I wash now. The shedding reduction is incredible."</p>
+                  <cite>— Connor L.</cite>
+                </blockquote>
+                <blockquote>
+                  <span class="rp-stars">★★★★★</span>
+                  <p>"Thicker, stronger, and I'm not shedding nearly as much. Best investment I've made."</p>
+                  <cite>— Jason R.</cite>
+                </blockquote>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  {%- comment -%} ═════════════ 3. 8 INGREDIENTS (benefit-cards-1) ═════════════ {%- endcomment -%}
+  <section class="sec" id="replicant-simply-starter-test-bc">
+    <div class="rp-wrap">
+      {%- comment -%} desktop grid (8 cards) — proprietary blend, so ROLE TAGS not fake mg (Biotin's real label dose kept) {%- endcomment -%}
+      <div class="bc-grid">
+        {%- assign ing_names = 'Saw Palmetto,Stinging Nettle,Bamboo Extract,Biotin,Spirulina,Alfalfa,Horsetail,Fo-Ti'
+          | split: ','
+        -%}
+        {%- assign ing_dose = 'DHT Blocker,DHT Blocker,Silica,5000 mcg,Growth Support,Vitamins &amp; Minerals,Strength,Traditional Herb'
+          | split: ','
+        -%}
+        {%- assign ing_text = 'Our primary natural DHT blocker — supports healthy DHT balance,Secondary natural DHT blocker to help reduce follicle shrinkage,Strengthens hair with naturally-occurring silica,Supports keratin and healthy hair &amp; scalp,Supports new hair growth naturally,Rich in natural vitamins &amp; minerals for hair health,Provides silica to help support stronger strands,A traditional herb long used to support healthy hair'
+          | split: ','
+        -%}
+        {% for name in ing_names %}
+          <div class="bc-card">
+            <div class="bc-card-image">
+              <span class="bc-dose">{{ ing_dose[forloop.index0] }}</span>
+              {% assign _key = forloop.index | prepend: 'ingredient_' | append: '_image' %}
+              {% if section.settings[_key] -%}
+                <img
+                  width="400"
+                  height="400"
+                  src="{{ section.settings[_key] | image_url: width: 350 }}"
+                  alt="{{ name }}"
+                  loading="lazy"
+                >
+              {%- else -%}
+                <img
+                  width="400"
+                  height="400"
+                  src="https://placehold.co/400x400?text={{ name | url_encode }}"
+                  alt=""
+                  loading="lazy"
+                >
+              {%- endif %}
+            </div>
+            <div class="bc-card-body">
+              <h3 class="bc-card-title">{{ name }}</h3>
+              <div class="bc-card-text">{{ ing_text[forloop.index0] }}</div>
+            </div>
+          </div>
+        {% endfor %}
+      </div>
+      <div class="bc-trust">
+        <span>Made in the USA</span><span>Non-GMO</span><span>Gluten Free</span><span>Third-Party Tested</span
+        ><span>No Preservatives</span><span>All Natural</span>
+      </div>
+    </div>
+  </section>
+
+  {%- comment -%} ═════════════ 4a. TRANSFORMATION IMAGES (auto-scroll, swipeable) ═════════════ {%- endcomment -%}
+  <section class="sec" id="replicant-simply-starter-test-transimg">
+    <div class="sec-head">
+      <h2>Real Hair <span class="rp-accent">Transformations</span></h2>
+      <p>Trusted by 100,000+ customers and counting.</p>
+    </div>
+    <div class="rp-wrap">
+      <div class="swiper cc-carousel" id="rp-transimg">
+        <div class="swiper-wrapper">
+          {% for i in (1..8) %}
+            {% assign _kimg = i | prepend: 'transform_' | append: '_image' %}
+            <div class="swiper-slide">
+              <div class="ti-card">
+                <div class="cc-single">
+                  {% if section.settings[_kimg] -%}
+                    <img
+                      width="600"
+                      height="450"
+                      src="{{ section.settings[_kimg] | image_url: width: 600 }}"
+                      alt="Real hair transformation {{ i }}"
+                      loading="lazy"
+                    >
+                  {%- else -%}
+                    <img
+                      width="600"
+                      height="450"
+                      src="https://placehold.co/600x450?text=Before+%2F+After"
+                      alt=""
+                      loading="lazy"
+                    >
+                  {%- endif %}
+                </div>
+              </div>
+            </div>
+          {% endfor %}
+        </div>
+      </div>
+    </div>
+  </section>
+
+  {%- comment -%} ═════════════ 4b. TEXT TESTIMONIALS (manual swipe + arrows, no autoplay) ═════════════ {%- endcomment -%}
+  <section class="sec" id="replicant-simply-starter-test-transtxt">
+    <div class="rp-wrap">
+      <div class="swiper cc-carousel" id="rp-transtxt">
+        <div class="swiper-wrapper">
+          {%- assign tf_name = 'Ryan M.,Connor L.,Derek J.,Mike D.,Jason R.,Steve C.' | split: ',' -%}
+          {%- assign tf_title = "Crown area filling in nicely,Shower drain stays clean now,Temples are growing back,Stopped my receding hairline,Best investment I've made,Genetics don't have to win"
+            | split: ','
+          -%}
+          {%- assign tf_text = "My crown was getting thin and obvious. After 3 months the area is filling back in — my barber even noticed.,Used to clog the drain every week. Since starting 5 months ago barely any hair comes out when I wash.,My temples were pretty far gone but they're coming back. After 6 months I can see hair where there was just scalp.,I'm 28 and my hairline was going back. 4 months in the loss stopped and I'm even seeing regrowth.,Started losing hair at 25 which hurt my confidence. Now it's thicker and I'm not shedding nearly as much.,Dad and both grandfathers are bald — thought I was doomed. At 35 my hair is in better shape than 5 years ago."
+            | split: ','
+          -%}
+          {% for name in tf_name %}
+            <div class="swiper-slide">
+              <div class="cc-card cc-card--text">
+                <div class="cc-body">
+                  <div class="cc-rating"><span class="rp-stars">★★★★★</span><span class="num">5.0</span></div>
+                  <div class="cc-title">{{ tf_title[forloop.index0] }}</div>
+                  <p class="cc-text">"{{ tf_text[forloop.index0] }}"</p>
+                  <div class="cc-author">
+                    <strong>{{ name }}</strong> · <span class="cc-verified">✓ Verified Customer</span>
+                  </div>
+                </div>
+              </div>
+            </div>
+          {% endfor %}
+        </div>
+      </div>
+      <div class="rp-progress"><div class="rp-progress-bar" id="rp-transtxt-bar"></div></div>
+      <div class="cc-controls">
+        <div class="swiper-button-prev" id="rp-transtxt-prev"></div>
+        <div class="swiper-button-next" id="rp-transtxt-next"></div>
+      </div>
+    </div>
+  </section>
+
+  {%- comment -%} ═════════════ 5. EXPERTS & ATHLETES (carousel-1) — REPURPOSE flagged ═════════════ {%- endcomment -%}
+  <section class="sec" id="replicant-simply-starter-test-experts">
+    <div class="sec-head">
+      <h2>5 Reasons Simply Revival Is <span class="rp-accent">Different</span></h2>
+    </div>
+    <div class="rp-wrap">
+      <div class="swiper cc-carousel" id="rp-experts">
+        <div class="swiper-wrapper">
+          {%- assign ex_name = 'Strength,10 Legendary Herbs,No Hassle · No Side Effects,Real Results Fast,Radical Transparency'
+            | split: ','
+          -%}
+          {%- assign ex_cred = 'Reason 01,Reason 02,Reason 03,Reason 04,Reason 05' | split: ',' -%}
+          {%- assign ex_text = '
+            350mg+ of our proprietary blend of herbs — including saw palmetto and stinging nettle.
+            ~~
+            We combine the 10 best herbs into one potent formula to support a healthy growth cycle and reduce excess shedding.
+            ~~
+            Easy-to-swallow plant-based capsules — tasteless, gentle on your stomach, and simple to build into your routine.
+            ~~
+            Many customers notice less shedding in as little as 14 days — with fuller-looking hair building by day 60.
+            ~~
+            Every ingredient and dose is listed on the label — no proprietary hidden blends or fillers to guess about.'
+            | split: '~~'
+          -%}
+          {% for name in ex_name %}
+            <div class="swiper-slide">
+              <div class="cc-card">
+                <div class="cc-single">
+                  {% assign _ke = forloop.index | prepend: 'expert_' | append: '_image' %}
+                  {% if section.settings[_ke] -%}
+                    <img
+                      width="500"
+                      height="500"
+                      src="{{ section.settings[_ke] | image_url: width: 425 }}"
+                      alt="{{ name }}"
+                      loading="lazy"
+                    >
+                  {%- else -%}
+                    <img
+                      width="500"
+                      height="500"
+                      src="https://placehold.co/500x500?text=Reason+{{ forloop.index }}"
+                      alt=""
+                      loading="lazy"
+                    >
+                  {%- endif %}
+                </div>
+                <div class="cc-body">
+                  <div class="cc-title">{{ name }}</div>
+                  <div class="cc-cred">{{ ex_cred[forloop.index0] }}</div>
+                  <p class="cc-text">{{ ex_text[forloop.index0] }}</p>
+                </div>
+              </div>
+            </div>
+          {% endfor %}
+        </div>
+      </div>
+      <div class="rp-progress"><div class="rp-progress-bar" id="rp-experts-bar"></div></div>
+      <div class="cc-controls">
+        <div class="swiper-button-prev" id="rp-experts-prev"></div>
+        <div class="swiper-button-next" id="rp-experts-next"></div>
+      </div>
+    </div>
+  </section>
+
+  {%- comment -%} ═════════════ 6. WHAT MEN ARE SAYING (image-carousel-1, video thumbs) ═════════════ {%- endcomment -%}
+  <section class="sec" id="replicant-simply-starter-test-ugc">
+    <div class="sec-head">
+      <h2>Real People, <span class="rp-accent">Real Results</span></h2>
+      <p>Thousands of 5-star reviews from real customers.</p>
+    </div>
+    <div class="rp-wrap">
+      <div class="swiper cc-carousel" id="rp-ugc">
+        <div class="swiper-wrapper">
+          {% for i in (1..7) %}
+            <div class="swiper-slide">
+              <div class="ugc-card">
+                {% assign _kv = i | prepend: 'video_' %}
+                {% assign _vid = section.settings[_kv] %}
+                {% if _vid != blank %}
+                  {{
+                    _vid
+                    | video_tag: image_size: '480x', controls: true, playsinline: true, muted: true, preload: 'none'
+                  }}
+                {% else %}
+                  <div class="ugc-ph">
+                    <span>▶</span><small>Video {{ i }}</small>
+                  </div>
+                {% endif %}
+              </div>
+            </div>
+          {% endfor %}
+        </div>
+      </div>
+      <div class="rp-progress"><div class="rp-progress-bar" id="rp-ugc-bar"></div></div>
+      <div class="cc-controls">
+        <div class="swiper-button-prev" id="rp-ugc-prev"></div>
+        <div class="swiper-button-next" id="rp-ugc-next"></div>
+      </div>
+      <div class="ugc-tags">
+        <span>Less Shedding</span><span>Regrowth</span><span>Confidence</span><span>Natural</span>
+      </div>
+    </div>
+  </section>
+
+  {%- comment -%} ═════════════ 7. THE SIMPLY REVIVAL DIFFERENCE (comparison-table-1) ═════════════ {%- endcomment -%}
+  <section class="sec" id="replicant-simply-starter-test-ct">
+    <div class="ct-inner">
+      <h2 class="sec-head" style="text-transform:uppercase;font-size:var(--fs-xl);font-weight:800;margin-bottom:.5rem">
+        The Simply Revival <span class="rp-accent">Difference</span>
+      </h2>
+      <div class="sec-head" style="margin-top:0">
+        Not your typical DHT blocker — a natural, plant-based formula that supports healthy hair without the harsh side
+        effects of chemical alternatives.
+      </div>
+      <div class="ct-wrapper">
+        <div class="ct-grid">
+          <div class="ct-row ct-head">
+            <div class="ct-cell ct-label"></div>
+            <div class="ct-cell ct-brand">
+              {% if section.settings.comparison_brand_image -%}
+                <img
+                  width="120"
+                  height="120"
+                  src="{{ section.settings.comparison_brand_image | image_url: width: 200 }}"
+                  alt="{{ p.title | escape }}"
+                >
+              {%- elsif p.featured_image -%}
+                <img
+                  width="120"
+                  height="120"
+                  src="{{ p.featured_image | image_url: width: 200 }}"
+                  alt="{{ p.title | escape }}"
+                >
+              {%- endif %}
+            </div>
+            <div class="ct-cell ct-comp">Prescriptions</div>
+            <div class="ct-cell ct-comp">Generic Blockers</div>
+          </div>
+          <div class="ct-row">
+            <div class="ct-cell ct-label">Approach</div>
+            <div class="ct-cell ct-brand">Natural support</div>
+            <div class="ct-cell ct-comp">Synthetic</div>
+            <div class="ct-cell ct-comp">Natural support</div>
+          </div>
+          <div class="ct-row">
+            <div class="ct-cell ct-label">Convenience</div>
+            <div class="ct-cell ct-brand">Once / day</div>
+            <div class="ct-cell ct-comp">Rx required</div>
+            <div class="ct-cell ct-comp ct-quest"><span class="ct-mark">?</span></div>
+          </div>
+          <div class="ct-row">
+            <div class="ct-cell ct-label">Side Effects</div>
+            <div class="ct-cell ct-brand">Minimal</div>
+            <div class="ct-cell ct-comp">Sexual side effects</div>
+            <div class="ct-cell ct-comp ct-quest"><span class="ct-mark">?</span></div>
+          </div>
+          <div class="ct-row">
+            <div class="ct-cell ct-label">How It Works</div>
+            <div class="ct-cell ct-brand">Supports naturally</div>
+            <div class="ct-cell ct-comp">Blocks synthetically</div>
+            <div class="ct-cell ct-comp ct-quest"><span class="ct-mark">?</span></div>
+          </div>
+          <div class="ct-row">
+            <div class="ct-cell ct-label">Monitoring</div>
+            <div class="ct-cell ct-brand">None needed</div>
+            <div class="ct-cell ct-comp">Doctor visits</div>
+            <div class="ct-cell ct-comp ct-cross"><span class="ct-mark">✕</span></div>
+          </div>
+
+          {% comment %}
+            <div class="ct-row">
+              <div class="ct-cell ct-label">Clinical Herbs</div>
+              <div class="ct-cell ct-brand ct-check"><span class="ct-mark">✓</span></div>
+              <div class="ct-cell ct-comp ct-check"><span class="ct-mark">✓</span></div>
+              <div class="ct-cell ct-comp ct-cross"><span class="ct-mark">✕</span></div>
+            </div>
+          {% endcomment %}
+
+          <div class="ct-row">
+            <div class="ct-cell ct-label">Reversible</div>
+            <div class="ct-cell ct-brand ct-check"><span class="ct-mark">✓</span></div>
+            <div class="ct-cell ct-comp">Lifelong</div>
+            <div class="ct-cell ct-comp ct-quest"><span class="ct-mark">?</span></div>
+          </div>
+          <div class="ct-row">
+            <div class="ct-cell ct-label">Third-Party Tested</div>
+            <div class="ct-cell ct-brand ct-check"><span class="ct-mark">✓</span></div>
+            <div class="ct-cell ct-comp">N/A</div>
+            <div class="ct-cell ct-comp ct-quest"><span class="ct-mark">?</span></div>
+          </div>
+        </div>
+      </div>
+      <div class="ct-cta">
+        <a href="#rp-atc" class="rp-btn"
+          >Try It Now - Buy 1 get 1 Free
+          <span class="rp-btn-icon">
+            <svg width="23" height="17" viewBox="0 0 23 17" fill="none" xmlns="http://www.w3.org/2000/svg">
+              <path d="M2.08398 7.43318C1.45866 7.43318 0.951735 7.94011 0.951735 8.56543C0.951735 9.19075 1.45866 9.69768 2.08398 9.69768L2.08398 7.43318ZM22.2304 9.36605C22.6726 8.92388 22.6726 8.20698 22.2304 7.76481L15.0248 0.559215C14.5826 0.117045 13.8657 0.117045 13.4236 0.559216C12.9814 1.00139 12.9814 1.71829 13.4236 2.16046L19.8285 8.56543L13.4236 14.9704C12.9814 15.4126 12.9814 16.1295 13.4236 16.5716C13.8657 17.0138 14.5826 17.0138 15.0248 16.5716L22.2304 9.36605ZM2.08398 8.56543L2.08398 9.69768L21.4298 9.69768L21.4298 8.56543L21.4298 7.43318L2.08398 7.43318L2.08398 8.56543Z" fill="white"></path>
+            </svg></span
+        ></a>
+      </div>
+    </div>
+  </section>
+
+  {%- comment -%} ═════════════ 8. WEEK-BY-WEEK TIMELINE (tabs-1, 7 tabs) ═════════════ {%- endcomment -%}
+  <section class="sec" id="replicant-simply-starter-test-weektabs">
+    <div class="sec-head">
+      <h2>What To Expect From Simply Revival <span class="rp-accent">Daily</span></h2>
+    </div>
+    <div class="rp-wrap tabs" data-tabs="week">
+      <div class="tabs-nav" role="tablist">
+        <button class="tab-btn" role="tab" aria-selected="true" data-tab="0">Week 1-2</button>
+        <button class="tab-btn" role="tab" aria-selected="false" data-tab="1">Week 3-4</button>
+        <button class="tab-btn" role="tab" aria-selected="false" data-tab="2">Week 5-6</button>
+        <button class="tab-btn" role="tab" aria-selected="false" data-tab="3">Week 7-8</button>
+        <button class="tab-btn" role="tab" aria-selected="false" data-tab="4">Week 9-10</button>
+        <button class="tab-btn" role="tab" aria-selected="false" data-tab="5">Week 11-12</button>
+        <button class="tab-btn" role="tab" aria-selected="false" data-tab="6">Week 13+</button>
+      </div>
+      {%- assign wk_num = '01,02,03,04,05,06,07' | split: ',' -%}
+      {%- assign wk_name = 'Adjustment,Activation,Momentum,Strength,Refinement,Sustainable Growth,Optimization'
+        | split: ','
+      -%}
+      {%- assign wk_desc = 'Your body is getting used to the new blend, gradually absorbing and processing its herbs.,The herbs start to take effect; results vary with consistency and hair type.,Your scalp has adjusted and shedding begins to noticeably reduce for many.,Strands feel stronger as bamboo silica and nutrients build support.,Benefits compound — many notice healthier, fuller-looking hair.,Sustained support becomes your normal, not a temporary change.,Full support — all 10 herbs working together for long-term hair health.'
+        | split: ','
+      -%}
+      {%- comment -%} ── Per-tab benefits: 7 groups (~~), 3 bullets each (|) ── {%- endcomment -%}
+      {%- assign wk_ben = 'Herbal blend begins absorbing as your body adapts|Groundwork laid for healthy DHT balance|Daily habit forms — the key to real results~~Active herbs start working at the follicle level|Scalp environment begins to settle and calm|Hair cycles reset as the blend takes effect~~Shedding noticeably reduces for many|Scalp feels more nourished and balanced|Follicles supported for stronger future growth~~Strands feel stronger with bamboo silica support|Less breakage and better resilience day to day|Roots better anchored for fuller-looking hair~~Benefits compound into healthier fuller-looking hair|Improved shine and easier manageability reported|Visible density gains become more noticeable~~Fuller-looking hair becomes your new normal|Sustained DHT support helps maintain progress|Long-term routine keeps results on track~~All 10 herbs working together at full support|Long-term maintenance of thickness and strength|Ongoing support against future thinning'
+        | split: '~~'
+      -%}
+      {%- comment -%} ── Reported-fullness chart geometry: x points + y (rise then flatten) ── {%- endcomment -%}
+      {%- assign ch_x = '70,138,206,274,342,410,478' | split: ',' -%}
+      {%- assign ch_y = '224.8,202.8,172,136.8,101.6,75.2,64.2' | split: ',' -%}
+      {%- assign ch_lab = '1–2,3–4,5–6,7–8,9–10,11–12,13+' | split: ',' -%}
+      {%- assign ch_ghost = '' -%}
+      {%- for gx in ch_x -%}
+        {%- assign ch_ghost = ch_ghost | append: gx | append: ',' | append: ch_y[forloop.index0] | append: ' ' -%}
+      {%- endfor -%}
+      {% for num in wk_num %}
+        <div class="tab-panel {% if forloop.first %}is-active{% endif %}" data-panel="{{ forloop.index0 }}">
+          <div>
+            <h3>
+              <span class="num">{{ num }}</span> {{ wk_name[forloop.index0] }}
+            </h3>
+            <p>{{ wk_desc[forloop.index0] }}</p>
+            <div class="tab-benefits-h">Benefits</div>
+            {%- assign wk_bens = wk_ben[forloop.index0] | split: '|' -%}
+            <ul>
+              {% for ben in wk_bens %}
+                <li>{{ ben }}</li>
+              {% endfor %}
+            </ul>
+          </div>
+          <div>
+            {%- comment -%} ── Build orange line up to the current tab (extends right + up each week) ── {%- endcomment -%}
+            {%- assign upto = forloop.index -%}
+            {%- assign cur0 = forloop.index0 -%}
+            {%- assign ch_pts = '' -%}
+            {%- for k in (1..upto) -%}
+              {%- assign ki = k | minus: 1 -%}
+              {%- assign ch_pts = ch_pts | append: ch_x[ki] | append: ',' | append: ch_y[ki] | append: ' ' -%}
+            {%- endfor -%}
+            {%- assign cx = ch_x[cur0] -%}
+            {%- assign cy = ch_y[cur0] -%}
+            {%- assign ch_area = ch_x[0] | append: ',260 ' | append: ch_pts | append: cx | append: ',260' -%}
+            <div class="wk-chart">
+              <svg
+                viewBox="0 0 520 300"
+                role="img"
+                aria-label="Reported hair fullness through {{ wk_name[cur0] }}"
+                xmlns="http://www.w3.org/2000/svg"
+              >
+                <defs>
+                  <linearGradient id="rpwk-{{ section.id }}-{{ cur0 }}" x1="0" y1="0" x2="0" y2="1">
+                    <stop offset="0" stop-color="#ff5b1e" stop-opacity="0.35"></stop>
+                    <stop offset="1" stop-color="#ff5b1e" stop-opacity="0"></stop>
+                  </linearGradient>
+                </defs>
+                <text x="56" y="24" fill="#ffffff" font-size="15" font-weight="700">Reported Hair Fullness</text>
+                {%- comment -%} horizontal gridlines (fullness 0→10) {%- endcomment -%}
+                {%- assign grid_y = '40,84,128,172,216,260' | split: ',' -%}
+                {% for gy in grid_y %}
+                  <line x1="56" y1="{{ gy }}" x2="496" y2="{{ gy }}" stroke="#ffffff" stroke-opacity="{% if forloop.last %}0.9{% else %}0.14{% endif %}" stroke-width="{% if forloop.last %}1.6{% else %}0.8{% endif %}"></line>
+                {% endfor %}
+                <line x1="56" y1="40" x2="56" y2="260" stroke="#ffffff" stroke-opacity="0.9" stroke-width="1.6"></line>
+                <text x="50" y="46" fill="#ffffff" fill-opacity="0.65" font-size="11" text-anchor="end">High</text>
+                <text x="50" y="258" fill="#ffffff" fill-opacity="0.65" font-size="11" text-anchor="end">Low</text>
+                {%- comment -%} ghost target curve (full 13+ weeks) {%- endcomment -%}
+                <polyline points="{{ ch_ghost }}" fill="none" stroke="#ffffff" stroke-opacity="0.22" stroke-width="2" stroke-dasharray="5 6" stroke-linecap="round"></polyline>
+                {%- comment -%} filled area + solid line up to current week {%- endcomment -%}
+                <polygon class="wk-area" points="{{ ch_area }}" fill="url(#rpwk-{{ section.id }}-{{ cur0 }})"></polygon>
+                <polyline class="wk-line" pathLength="1" points="{{ ch_pts }}"></polyline>
+                <circle class="wk-pulse" cx="{{ cx }}" cy="{{ cy }}" r="7" fill="#ff5b1e" fill-opacity="0.5"></circle>
+                <circle class="wk-dot" cx="{{ cx }}" cy="{{ cy }}" r="6.5" fill="#ff5b1e" stroke="#ffffff" stroke-width="2.5"></circle>
+                {%- comment -%} x-axis week labels {%- endcomment -%}
+                {% for lx in ch_x %}
+                  <text x="{{ lx }}" y="280" fill="#ffffff" fill-opacity="{% if forloop.index0 == cur0 %}1{% else %}0.55{% endif %}" font-size="11" font-weight="{% if forloop.index0 == cur0 %}800{% else %}500{% endif %}" text-anchor="middle">{{ ch_lab[forloop.index0] }}</text>
+                {% endfor %}
+                <text x="276" y="298" fill="#ffffff" fill-opacity="0.5" font-size="10" text-anchor="middle">Weeks of daily use</text>
+              </svg>
+            </div>
+            {%- comment -%} optional photo below the chart if the merchant sets one {%- endcomment -%}
+            {% assign _kw = forloop.index | prepend: 'week_' | append: '_image' %}
+            {% if section.settings[_kw] != blank -%}
+              <div class="tab-media">
+                <img
+                  width="600"
+                  height="600"
+                  src="{{ section.settings[_kw] | image_url: width: 600 }}"
+                  alt="{{ wk_name[cur0] }}"
+                  loading="lazy"
+                >
+              </div>
+            {%- endif %}
+            <p class="tab-disc">
+              *Based on customer-reported survey feedback from verified purchasers — not clinical or medical outcomes.
+            </p>
+          </div>
+        </div>
+      {% endfor %}
+    </div>
+  </section>
+
+  {%- comment -%} ═════════════ 9. MEDICAL ADVISORY BOARD (carousel-1) — REPURPOSE flagged ═════════════ {%- endcomment -%}
+  <section class="sec" id="replicant-simply-starter-test-advisory">
+    <div class="sec-head">
+      <h2>DHT: The Hidden Hormone Behind Hair Loss — <span class="rp-accent">We Support It Naturally</span></h2>
+    </div>
+    <div class="rp-wrap">
+      <div class="swiper cc-carousel" id="rp-advisory">
+        <div class="swiper-wrapper">
+          {%- assign ad_name = '🧬 The Problem — DHT,🌿 The Solution — Natural Blockers,💪 The Impact — Stronger Growth'
+            | split: ','
+          -%}
+          {%- assign ad_cred = 'Why hair thins,How we help,What it means' | split: ',' -%}
+          {%- assign ad_text = "
+            DHT is a natural hormone that, over time, can bind to hair follicles and cause them to shrink — leading to thinner strands and slower growth. It's the leading cause of hereditary hair thinning in both men and women.
+            ~~
+            Saw palmetto and stinging nettle are two of the most studied natural DHT blockers — supporting healthy hormone balance without harsh synthetic side effects. Nourished follicles mean a better environment for thickness and fullness.
+            ~~
+            Biotin, silica, and key vitamins strengthen hair from the inside out — for less shedding, stronger roots, and fuller-looking hair."
+            | split: '~~'
+          -%}
+          {% for name in ad_name %}
+            <div class="swiper-slide">
+              <div class="cc-card">
+                <div class="cc-single">
+                  {% assign _kd = forloop.index | prepend: 'advisory_' | append: '_image' %}
+                  {% if section.settings[_kd] -%}
+                    <img
+                      width="500"
+                      height="500"
+                      src="{{ section.settings[_kd] | image_url: width: 500 }}"
+                      alt="{{ name }}"
+                      loading="lazy"
+                    >
+                  {%- else -%}
+                    <img
+                      width="500"
+                      height="500"
+                      src="https://placehold.co/500x500?text=DHT+Education"
+                      alt=""
+                      loading="lazy"
+                    >
+                  {%- endif %}
+                </div>
+                <div class="cc-body">
+                  <div class="cc-title">{{ name }}</div>
+                  <div class="cc-cred">{{ ad_cred[forloop.index0] }}</div>
+                  <p class="cc-text">{{ ad_text[forloop.index0] }}</p>
+                </div>
+              </div>
+            </div>
+          {% endfor %}
+        </div>
+      </div>
+      <div class="rp-progress"><div class="rp-progress-bar" id="rp-advisory-bar"></div></div>
+      <div class="cc-controls">
+        <div class="swiper-button-prev" id="rp-advisory-prev"></div>
+        <div class="swiper-button-next" id="rp-advisory-next"></div>
+      </div>
+    </div>
+  </section>
+
+  {%- comment -%} ═════════════ 10. GUARANTEE BAND ═════════════ {%- endcomment -%}
+  <section class="sec" id="replicant-simply-starter-test-guarantee">
+    <div class="rp-wrap">
+      <div class="guarantee-badge">
+        {% if section.settings.guarantee_badge_image -%}
+          <img
+            width="240"
+            height="240"
+            src="{{ section.settings.guarantee_badge_image | image_url: width: 240 }}"
+            alt="Money-back guarantee"
+          >
+        {%- else -%}
+          <img width="240" height="240" src="https://placehold.co/240x240?text=90-Day" alt="">
+        {%- endif %}
+      </div>
+      <h2>Less Shedding, Fuller Hair in <span class="rp-accent">60</span> — Or Your Money Back</h2>
+      <p>
+        Backed by our 365-day money-back guarantee. If you don't experience noticeable improvements, return your most
+        recent order for a full refund. We're so confident, we bear all the risk.
+      </p>
+      <a href="#rp-atc" class="rp-btn"
+        >Try It Now - Buy 1 get 1 Free
+        <span class="rp-btn-icon">
+          <svg width="23" height="17" viewBox="0 0 23 17" fill="none" xmlns="http://www.w3.org/2000/svg">
+            <path d="M2.08398 7.43318C1.45866 7.43318 0.951735 7.94011 0.951735 8.56543C0.951735 9.19075 1.45866 9.69768 2.08398 9.69768L2.08398 7.43318ZM22.2304 9.36605C22.6726 8.92388 22.6726 8.20698 22.2304 7.76481L15.0248 0.559215C14.5826 0.117045 13.8657 0.117045 13.4236 0.559216C12.9814 1.00139 12.9814 1.71829 13.4236 2.16046L19.8285 8.56543L13.4236 14.9704C12.9814 15.4126 12.9814 16.1295 13.4236 16.5716C13.8657 17.0138 14.5826 17.0138 15.0248 16.5716L22.2304 9.36605ZM2.08398 8.56543L2.08398 9.69768L21.4298 9.69768L21.4298 8.56543L21.4298 7.43318L2.08398 7.43318L2.08398 8.56543Z" fill="white"></path>
+          </svg>
+        </span>
+      </a>
+    </div>
+  </section>
+
+  {%- comment -%} ═════════════ 11. FAQ (inline details accordion) ═════════════ {%- endcomment -%}
+  <section class="sec" id="replicant-simply-starter-test-faq">
+    <div class="sec-head">
+      <h2>Frequently Asked <span class="rp-accent">Questions</span></h2>
+    </div>
+    <div class="faq-list">
+      <details open>
+        <summary>What is Simply Revival?</summary>
+        <p>
+          A wellness brand focused on natural, plant-based supplements to support your hair health, immune system, and
+          overall health — without synthetic ingredients or harsh side effects.
+        </p>
+      </details>
+      <details>
+        <summary>Is Simply Revival safe to use?</summary>
+        <p>Yes — our formulas are crafted to be the safest on the market and still provide powerful results.</p>
+      </details>
+      <details>
+        <summary>How long does it take to see results?</summary>
+        <p>Most users report noticing less hair loss in 3–6 weeks and new growth after 6–12 weeks.</p>
+      </details>
+      <details>
+        <summary>Is it suitable for all hair types?</summary>
+        <p>Yes — the formula is designed to support healthy hair for all hair types.</p>
+      </details>
+      <details>
+        <summary>Do you have a guarantee?</summary>
+        <p>
+          Yes — all orders are backed by our 365-day money-back guarantee. If you're not happy, we'll make it right.
+        </p>
+      </details>
+    </div>
+  </section>
+
+  {%- comment -%} ═════════════ 12. LAUNCH KIT INCLUDES ═════════════ {%- endcomment -%}
+  <section class="sec" id="replicant-simply-starter-test-kit">
+    <div class="sec-head">
+      <h2>Your Order <span class="rp-accent">Includes</span></h2>
+    </div>
+    <div class="kit-grid">
+      <div class="kit-img">
+        {% if section.settings.launch_kit_image -%}
+          <img
+            width="700"
+            height="700"
+            src="{{ section.settings.launch_kit_image | image_url: width: 700 }}"
+            alt="Launch kit"
+          >
+        {%- elsif p.featured_image -%}
+          <img
+            width="700"
+            height="700"
+            src="{{ p.featured_image | image_url: width: 700 }}"
+            alt="{{ p.title | escape }}"
+          >
+        {%- else -%}
+          <img width="700" height="500" src="https://placehold.co/700x500?text=Launch+Kit" alt="">
+        {%- endif %}
+      </div>
+      <div>
+        <ul class="kit-list">
+          <li>
+            <span class="kit-name">1 Simply Revival Natural DHT Blocker</span
+            ><span class="kit-val"><span class="was">$179.97</span><span class="free">$54.99</span></span>
+          </li>
+          <li>
+            <span class="kit-name">365-Day Money-Back Guarantee</span
+            ><span class="kit-val"><span class="was">$54.99</span><span class="free">Free</span></span>
+          </li>
+          <li>
+            <span class="kit-name">69% off for life</span
+            ><span class="kit-val"><span class="was">$125.00</span><span class="free">Free</span></span>
+          </li>
+          <li>
+            <span class="kit-name">1 Extra Bottles Free (first order)</span
+            ><span class="kit-val"><span class="was">$54.99</span><span class="free">Free</span></span>
+          </li>
+          <li>
+            <span class="kit-name">Bonus Free Gift</span
+            ><span class="kit-val"><span class="was">$29.99</span><span class="free">Free</span></span>
+          </li>
+          {% comment %}
+            <li>
+              <span class="kit-name">Fast &amp; Free Shipping</span
+              ><span class="kit-val"><span class="was">$15</span><span class="free">Free</span></span>
+            </li>
+          {% endcomment %}
+        </ul>
+        <a href="#rp-atc" class="rp-btn"
+          >Try It Now - Buy 1 get 1 Free
+          <span class="rp-btn-icon">
+            <svg width="23" height="17" viewBox="0 0 23 17" fill="none" xmlns="http://www.w3.org/2000/svg">
+              <path d="M2.08398 7.43318C1.45866 7.43318 0.951735 7.94011 0.951735 8.56543C0.951735 9.19075 1.45866 9.69768 2.08398 9.69768L2.08398 7.43318ZM22.2304 9.36605C22.6726 8.92388 22.6726 8.20698 22.2304 7.76481L15.0248 0.559215C14.5826 0.117045 13.8657 0.117045 13.4236 0.559216C12.9814 1.00139 12.9814 1.71829 13.4236 2.16046L19.8285 8.56543L13.4236 14.9704C12.9814 15.4126 12.9814 16.1295 13.4236 16.5716C13.8657 17.0138 14.5826 17.0138 15.0248 16.5716L22.2304 9.36605ZM2.08398 8.56543L2.08398 9.69768L21.4298 9.69768L21.4298 8.56543L21.4298 7.43318L2.08398 7.43318L2.08398 8.56543Z" fill="white"></path>
+            </svg>
+          </span>
+        </a>
+      </div>
+    </div>
+  </section>
+
+  {%- comment -%} ═════════════ 13. CUSTOMER REVIEWS ═════════════ {%- endcomment -%}
+  {% comment %}
+    <section class="sec" id="replicant-simply-starter-test-reviews">
+      <div class="sec-head">
+        <h2>Customer <span class="rp-accent">Reviews</span></h2>
+      </div>
+      <div class="rv-inner">
+        <div class="rv-summary">
+          <div class="rv-score">
+            <div class="big">4.8</div>
+            <div class="rp-stars">★★★★★</div>
+            <div style="font-size:var(--fs-sm);opacity:.7">25,605 reviews</div>
+          </div>
+          <div class="rv-bars">
+            <div class="rv-bar">
+              <span>5★</span>
+              <div class="track"><div class="fill" style="width:87%"></div></div>
+            </div>
+            <div class="rv-bar">
+              <span>4★</span>
+              <div class="track"><div class="fill" style="width:8%"></div></div>
+            </div>
+            <div class="rv-bar">
+              <span>3★</span>
+              <div class="track"><div class="fill" style="width:3%"></div></div>
+            </div>
+            <div class="rv-bar">
+              <span>2★</span>
+              <div class="track"><div class="fill" style="width:1%"></div></div>
+            </div>
+            <div class="rv-bar">
+              <span>1★</span>
+              <div class="track"><div class="fill" style="width:1%"></div></div>
+            </div>
+          </div>
+        </div>
+        <div class="rv-what">
+          <b>What customers say · Auto-generated</b>Reviewers praise Simply Revival's Natural DHT Blocker for helping
+          reduce shedding, supporting new growth, and nourishing the scalp — a natural, plant-based choice with no harsh
+          side effects.
+        </div>
+        <div class="rv-grid">
+          {%- assign rv_name = 'Mike D,Connor L,Derek J,Alex T,Lauren H,Ethan K' | split: ',' -%}
+          {%- assign rv_text = "I'm 28 and my hairline was going back. 4 months in the loss completely stopped — even seeing regrowth at the temples.,Used to clog the shower drain every week. Since starting, barely any hair comes out when I wash. The shedding reduction is incredible.,My temples were pretty far gone but Simply Revival is bringing them back — actual hair where there was just scalp before.,Tried fin but the side effects scared me off. This gives me the DHT blocking I need without harsh chemicals.,Started mainly for hair thinning but it cleared up my stubborn chin acne as well.,I'm only 22 but hair loss runs in my family. Starting early was the smartest decision I've made."
+            | split: ','
+          -%}
+          {% for name in rv_name %}
+            <div class="rv-card">
+              <div class="rv-top">
+                <div class="rv-ava">{{ name | slice: 0 }}</div>
+                <div>
+                  <div class="rv-name">{{ name }}</div>
+                  <div class="rv-vb">✓ Verified buyer</div>
+                </div>
+                <div style="margin-left:auto" class="rp-stars">★★★★★</div>
+              </div>
+              <p>{{ rv_text[forloop.index0] }}</p>
+            </div>
+          {% endfor %}
+        </div>
+      </div>
+    </section>
+  {% endcomment %}
+
+  {%- comment -%} ═════════════ STICKY BUY BAR (atc-1 sticky) ═════════════ {%- endcomment -%}
+  <div id="replicant-simply-starter-test-sticky" data-observe-target="rp-atc">
+    <div class="sk-wrap">
+      <div class="sk-info">
+        <div class="sk-thumb">
+          {% if p.featured_image -%}
+            <img
+              width="100"
+              height="100"
+              src="{{ p.featured_image | image_url: width: 100 }}"
+              alt="{{ p.title | escape }}"
+            >
+          {%- endif %}
+        </div>
+        <div class="sk-txt">
+          <div class="sk-title">{{ p.title | default: 'Natural DHT Blocker' }}</div>
+          <div class="sk-sub">SAVE 69% OFF FOR LIFE</div>
+        </div>
+      </div>
+      <button
+        type="button"
+        class="rp-btn rp-atc-btn"
+        data-variant-id="{{ variant_id }}"
+        data-selling-plan="{{ selling_plan_id }}"
+        {% comment %} data-addon-variant="{{ addon_variant_id }}" {% endcomment %}
+        {% unless p.available %}
+          disabled
+        {% endunless %}
+      >
+        {% if p.available -%}
+          Try It Now - Buy 1 get 1 Free
+          <span class="rp-btn-icon">
+            <svg width="23" height="17" viewBox="0 0 23 17" fill="none" xmlns="http://www.w3.org/2000/svg">
+              <path d="M2.08398 7.43318C1.45866 7.43318 0.951735 7.94011 0.951735 8.56543C0.951735 9.19075 1.45866 9.69768 2.08398 9.69768L2.08398 7.43318ZM22.2304 9.36605C22.6726 8.92388 22.6726 8.20698 22.2304 7.76481L15.0248 0.559215C14.5826 0.117045 13.8657 0.117045 13.4236 0.559216C12.9814 1.00139 12.9814 1.71829 13.4236 2.16046L19.8285 8.56543L13.4236 14.9704C12.9814 15.4126 12.9814 16.1295 13.4236 16.5716C13.8657 17.0138 14.5826 17.0138 15.0248 16.5716L22.2304 9.36605ZM2.08398 8.56543L2.08398 9.69768L21.4298 9.69768L21.4298 8.56543L21.4298 7.43318L2.08398 7.43318L2.08398 8.56543Z" fill="white"></path>
+            </svg>
+          </span>
+        {%- else -%}
+          Sold Out
+        {%- endif %}
+      </button>
+    </div>
+  </div>
+</div>
+
+{%- comment -%} ═════════════ SWIPER (self-contained CDN, one init fn) ═════════════ {%- endcomment -%}
+<script
+  defer
+  src="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.js"
+  onload="replicantSimplyStarterTestInit()"
+  onerror="var r=document.getElementById('replicant-simply-starter-test'); if(r) r.classList.add('rp-noswiper');"
+></script>
+<script>
+  function replicantSimplyStarterTestInit() {
+    var root = document.getElementById('replicant-simply-starter-test');
+    if (!root || window.__rpSSTdone) return;
+    if (typeof Swiper === 'undefined') {
+      root.classList.add('rp-noswiper');
+      return;
+    }
+    window.__rpSSTdone = true;
+    root.classList.remove('rp-noswiper');
+
+    // ---- Gallery (main + thumbs) ----
+    try {
+      var main = document.getElementById('rp-gmain');
+      var thumbsWrap = document.getElementById('rp-gthumbs');
+      var thumbSwiper = null;
+      if (thumbsWrap) {
+        var thumbEl = thumbsWrap.querySelector('.swiper');
+        if (thumbEl)
+          thumbSwiper = new Swiper(thumbEl, {
+            slidesPerView: 5,
+            spaceBetween: 4,
+            watchSlidesProgress: true,
+            slideToClickedSlide: true,
+          });
+      }
+      if (main) {
+        var mainSwiper = new Swiper(main, {
+          loop: false,
+          spaceBetween: 4,
+          speed: 400,
+          keyboard: { enabled: true },
+          navigation: {
+            nextEl: '#replicant-simply-starter-test-gallery .g-main .swiper-button-next',
+            prevEl: '#replicant-simply-starter-test-gallery .g-main .swiper-button-prev',
+          },
+          thumbs: thumbSwiper ? { swiper: thumbSwiper } : undefined,
+          on: {
+            slideChange: function () {
+              if (!thumbsWrap) return;
+              var items = thumbsWrap.querySelectorAll('.g-thumb');
+              var idx = this.realIndex;
+              items.forEach(function (t, i) {
+                t.classList.toggle('active', i === idx);
+              });
+            },
+          },
+        });
+        if (thumbsWrap)
+          thumbsWrap.querySelectorAll('.g-thumb').forEach(function (t, i) {
+            t.addEventListener('click', function () {
+              mainSwiper.slideTo(i);
+            });
+          });
+      }
+    } catch (e) {}
+
+    // ---- Hero testimonial carousel ----
+    try {
+      new Swiper('#rp-quotes', {
+        slidesPerView: 1,
+        spaceBetween: 12,
+        loop: true,
+        speed: 500,
+        autoplay: { delay: 4000, disableOnInteraction: false },
+      });
+    } catch (e) {}
+
+    // ---- Card carousels (transformations / experts / ugc / advisory) ----
+    function cc(id, opts) {
+      try {
+        var sel = '#' + id;
+        var barSel = sel + '-bar';
+        new Swiper(
+          sel,
+          Object.assign(
+            {
+              slidesPerView: 1.1,
+              spaceBetween: 16,
+              speed: 400,
+              navigation: { nextEl: sel + '-next', prevEl: sel + '-prev' },
+              breakpoints: { 768: { slidesPerView: 2 }, 1024: { slidesPerView: opts.desk || 3 } },
+              on: {
+                slideChange: function () {
+                  var bar = document.querySelector(barSel);
+                  if (bar)
+                    bar.style.width =
+                      ((this.activeIndex + 1) /
+                        Math.max(1, this.slides.length - Math.floor(this.params.slidesPerView) + 1)) *
+                        100 +
+                      '%';
+                },
+              },
+            },
+            opts.extra || {}
+          )
+        );
+      } catch (e) {}
+    }
+    // 4a: image carousel — smooth continuous infinite marquee; pauses only on interaction
+    try {
+      new Swiper('#rp-transimg', {
+        slidesPerView: 'auto',
+        spaceBetween: 16,
+        loop: true,
+        loopedSlides: 6,
+        speed: 6000,
+        grabCursor: true,
+        allowTouchMove: true,
+        autoplay: { delay: 0, disableOnInteraction: false, pauseOnMouseEnter: true, waitForTransition: false },
+      });
+    } catch (e) {}
+    // 4b: text testimonials — manual swipe + arrows only (no autoplay)
+    cc('rp-transtxt', { desk: 3 });
+    cc('rp-experts', { desk: 3 });
+    cc('rp-ugc', {
+      desk: 5,
+      extra: {
+        breakpoints: {
+          0: { slidesPerView: 1.3, spaceBetween: 8 },
+          480: { slidesPerView: 2.1 },
+          768: { slidesPerView: 3 },
+          1024: { slidesPerView: 5, spaceBetween: 20 },
+        },
+      },
+    });
+    cc('rp-advisory', { desk: 3 });
+
+    // ---- Ingredients: static grid always (no carousel) ----
+  }
+
+  // ---- Tabs (day + week) ----
+  (function () {
+    document.querySelectorAll('#replicant-simply-starter-test [data-tabs]').forEach(function (root) {
+      var btns = root.querySelectorAll('.tab-btn');
+      var panels = root.querySelectorAll('.tab-panel');
+      btns.forEach(function (btn) {
+        btn.addEventListener('click', function () {
+          var i = btn.getAttribute('data-tab');
+          btns.forEach(function (b) {
+            b.setAttribute('aria-selected', b === btn ? 'true' : 'false');
+          });
+          panels.forEach(function (pnl) {
+            pnl.classList.toggle('is-active', pnl.getAttribute('data-panel') === i);
+          });
+        });
+      });
+    });
+  })();
+
+  // ---- Image modal (supplement facts) ----
+  (function () {
+    var scope = document.getElementById('replicant-simply-starter-test');
+    if (!scope) return;
+    function close(m) {
+      m.classList.remove('is-open');
+    }
+    scope.querySelectorAll('[data-rp-modal-open]').forEach(function (btn) {
+      btn.addEventListener('click', function () {
+        var m = document.getElementById(btn.getAttribute('data-rp-modal-open'));
+        if (m) m.classList.add('is-open');
+      });
+    });
+    scope.querySelectorAll('[data-rp-modal-close]').forEach(function (el) {
+      el.addEventListener('click', function () {
+        var m = el.closest('.rp-modal');
+        if (m) close(m);
+      });
+    });
+    document.addEventListener('keydown', function (e) {
+      if (e.key === 'Escape') scope.querySelectorAll('.rp-modal.is-open').forEach(close);
+    });
+  })();
+
+  // ---- Offer toggle (visual only) ----
+  (function () {
+    var toggle = document.querySelectorAll('#replicant-simply-starter-test .offer-toggle button');
+    toggle.forEach(function (b) {
+      b.addEventListener('click', function () {
+        toggle.forEach(function (x) {
+          x.classList.remove('is-active');
+        });
+        b.classList.add('is-active');
+      });
+    });
+  })();
+
+  // ---- ATC (self-contained AJAX, static + sticky) ----
+  (function () {
+    var scope = document.getElementById('replicant-simply-starter-test');
+    var sticky = document.getElementById('replicant-simply-starter-test-sticky');
+    var staticBtn = document.getElementById('rp-atc');
+    // Open this store's mini-cart drawer via its trigger. NEVER redirect anywhere.
+    function openCartOrFallback() {
+      try {
+        document.dispatchEvent(new CustomEvent('cart:refresh', { bubbles: true }));
+        document.dispatchEvent(new CustomEvent('cart:updated', { bubbles: true }));
+        document.dispatchEvent(new CustomEvent('cart-drawer:open', { bubbles: true }));
+      } catch (e) {}
+      var trigger = document.querySelector('.js-mini-cart');
+      if (trigger) {
+        trigger.click();
+      }
+    }
+    function addToCart(btn) {
+      var variantId = btn.getAttribute('data-variant-id');
+      if (!variantId) {
+        return;
+      }
+      if (btn.classList.contains('is-loading')) {
+        return;
+      } // guard: ignore re-entrant clicks
+      var item = { id: Number(variantId), quantity: 1 };
+      var sp = btn.getAttribute('data-selling-plan');
+      if (sp) {
+        item.selling_plan = Number(sp);
+      } // add as subscription
+      var items = [item];
+      var addon = btn.getAttribute('data-addon-variant'); // extra product added with the main item
+      if (addon) {
+        items.push({ id: Number(addon), quantity: 1 });
+      }
+      btn.classList.add('is-loading');
+      fetch('/cart/add.js', {
+        method: 'POST',
+        headers: { 'Content-Type': 'application/json' },
+        body: JSON.stringify({ items: items }),
+      })
+        .then(function (r) {
+          return r.json();
+        })
+        .then(function () {
+          btn.classList.remove('is-loading');
+          openCartOrFallback();
+        })
+        .catch(function () {
+          btn.classList.remove('is-loading');
+          alert('Could not add to cart. Please try again.');
+        });
+    }
+    [scope, sticky].forEach(function (c) {
+      if (!c) return;
+      c.querySelectorAll('.rp-atc-btn').forEach(function (btn) {
+        if (btn.disabled || btn.dataset.rpBound) return; // guard: never bind the same button twice
+        btn.dataset.rpBound = '1';
+        btn.addEventListener('click', function () {
+          addToCart(btn);
+        });
+      });
+    });
+    if (sticky && staticBtn) {
+      var io = new IntersectionObserver(
+        function (entries) {
+          entries.forEach(function (entry) {
+            if (entry.isIntersecting) {
+              sticky.classList.remove('is-visible');
+            } else {
+              sticky.classList.toggle('is-visible', staticBtn.getBoundingClientRect().bottom < 0);
+            }
+          });
+        },
+        { threshold: 0 }
+      );
+      io.observe(staticBtn);
+    }
+  })();
+
+  // ---- Swiper load safety net ----
+  // If Swiper is already on the page (e.g. theme-provided) init right away; the onload handler
+  // also calls init (double-init guarded). If after a few seconds Swiper still hasn't loaded
+  // (CDN blocked by store CSP), fall back to a scrollable strip so nothing blows up.
+  (function () {
+    if (typeof Swiper !== 'undefined') {
+      try {
+        replicantSimplyStarterTestInit();
+      } catch (e) {}
+    }
+    setTimeout(function () {
+      var root = document.getElementById('replicant-simply-starter-test');
+      if (!root) return;
+      if (typeof Swiper !== 'undefined') {
+        try {
+          replicantSimplyStarterTestInit();
+        } catch (e) {}
+      } else {
+        root.classList.add('rp-noswiper');
+      }
+    }, 3000);
+  })();
+</script>
+
+{% schema %}
+{
+  "name": "Replicant Simply Starter",
+  "settings": [
+    { "type": "product", "id": "product", "label": "Product" },
+
+    { "type": "header", "content": "Hero — Free Gift Images" },
+    { "type": "image_picker", "id": "gift_1_image", "label": "Free Gift 1 — 365-Day Guarantee" },
+    { "type": "image_picker", "id": "gift_2_image", "label": "Free Gift 2 — Shipping Protection" },
+    { "type": "image_picker", "id": "gift_3_image", "label": "Free Gift 3 — Up To 2 Bottles Free" },
+    { "type": "image_picker", "id": "gift_4_image", "label": "Free Gift 4 — $20 Gift Card" },
+    {
+      "type": "image_picker",
+      "id": "supplement_facts_image",
+      "label": "Supplement Facts — modal image (opened by button under gallery)"
+    },
+
+    { "type": "header", "content": "Day Timeline Images (Day 14 / 30 / 60)" },
+    { "type": "image_picker", "id": "day_7_image", "label": "Day 14 — Less Shedding Begins" },
+    { "type": "image_picker", "id": "day_30_image", "label": "Day 30 — Stronger Roots" },
+    { "type": "image_picker", "id": "day_90_image", "label": "Day 60 — Visible Fullness" },
+
+    { "type": "header", "content": "Ingredient Images (8)" },
+    { "type": "image_picker", "id": "ingredient_1_image", "label": "Ingredient 1 — Saw Palmetto" },
+    { "type": "image_picker", "id": "ingredient_2_image", "label": "Ingredient 2 — Stinging Nettle" },
+    { "type": "image_picker", "id": "ingredient_3_image", "label": "Ingredient 3 — Bamboo Extract" },
+    { "type": "image_picker", "id": "ingredient_4_image", "label": "Ingredient 4 — Biotin" },
+    { "type": "image_picker", "id": "ingredient_5_image", "label": "Ingredient 5 — Spirulina" },
+    { "type": "image_picker", "id": "ingredient_6_image", "label": "Ingredient 6 — Alfalfa" },
+    { "type": "image_picker", "id": "ingredient_7_image", "label": "Ingredient 7 — Horsetail" },
+    { "type": "image_picker", "id": "ingredient_8_image", "label": "Ingredient 8 — Fo-Ti" },
+
+    { "type": "header", "content": "Transformation Images (6 cards)" },
+    { "type": "paragraph", "content": "One image per card — use a combined before/after image." },
+    { "type": "image_picker", "id": "transform_1_image", "label": "Transformation 1" },
+    { "type": "image_picker", "id": "transform_2_image", "label": "Transformation 2" },
+    { "type": "image_picker", "id": "transform_3_image", "label": "Transformation 3" },
+    { "type": "image_picker", "id": "transform_4_image", "label": "Transformation 4" },
+    { "type": "image_picker", "id": "transform_5_image", "label": "Transformation 5" },
+    { "type": "image_picker", "id": "transform_6_image", "label": "Transformation 6" },
+    { "type": "image_picker", "id": "transform_7_image", "label": "Transformation 7" },
+    { "type": "image_picker", "id": "transform_8_image", "label": "Transformation 8" },
+
+    { "type": "header", "content": "'5 Reasons We're Different' Card Images (5)" },
+    { "type": "image_picker", "id": "expert_1_image", "label": "Reason 1 — Strength" },
+    { "type": "image_picker", "id": "expert_2_image", "label": "Reason 2 — 10 Legendary Herbs" },
+    { "type": "image_picker", "id": "expert_3_image", "label": "Reason 3 — No Hassle / No Side Effects" },
+    { "type": "image_picker", "id": "expert_4_image", "label": "Reason 4 — Real Results Fast" },
+    { "type": "image_picker", "id": "expert_5_image", "label": "Reason 5 — Radical Transparency" },
+
+    { "type": "header", "content": "Video Testimonials (7 — Shopify-hosted videos)" },
+    { "type": "video", "id": "video_1", "label": "Video 1" },
+    { "type": "video", "id": "video_2", "label": "Video 2" },
+    { "type": "video", "id": "video_3", "label": "Video 3" },
+    { "type": "video", "id": "video_4", "label": "Video 4" },
+    { "type": "video", "id": "video_5", "label": "Video 5" },
+    { "type": "video", "id": "video_6", "label": "Video 6" },
+    { "type": "video", "id": "video_7", "label": "Video 7" },
+
+    { "type": "header", "content": "Comparison Table Images" },
+    {
+      "type": "image_picker",
+      "id": "comparison_brand_image",
+      "label": "Comparison — Our Product (defaults to product image)"
+    },
+    { "type": "image_picker", "id": "comparison_competitor_image", "label": "Comparison — Competitor / TRT" },
+
+    { "type": "header", "content": "Week Timeline (7)" },
+    {
+      "type": "paragraph",
+      "content": "A 'Reported Hair Fullness' line chart is generated automatically and grows with each tab. These image pickers are optional — a photo set here shows below the chart for that week."
+    },
+    { "type": "image_picker", "id": "week_1_image", "label": "Week 1-2 — Adjustment" },
+    { "type": "image_picker", "id": "week_2_image", "label": "Week 3-4 — Activation" },
+    { "type": "image_picker", "id": "week_3_image", "label": "Week 5-6 — Momentum" },
+    { "type": "image_picker", "id": "week_4_image", "label": "Week 7-8 — Strength" },
+    { "type": "image_picker", "id": "week_5_image", "label": "Week 9-10 — Refinement" },
+    { "type": "image_picker", "id": "week_6_image", "label": "Week 11-12 — Sustainable Growth" },
+    { "type": "image_picker", "id": "week_7_image", "label": "Week 13+ — Optimization" },
+
+    { "type": "header", "content": "DHT Education Card Images (3)" },
+    { "type": "image_picker", "id": "advisory_1_image", "label": "Education 1 — The Problem (DHT)" },
+    { "type": "image_picker", "id": "advisory_2_image", "label": "Education 2 — The Solution (Natural Blockers)" },
+    { "type": "image_picker", "id": "advisory_3_image", "label": "Education 3 — The Impact (Stronger Growth)" },
+
+    { "type": "header", "content": "Guarantee & Launch Kit Images" },
+    { "type": "image_picker", "id": "guarantee_badge_image", "label": "Guarantee Badge (90-day / money-back seal)" },
+    { "type": "image_picker", "id": "launch_kit_image", "label": "Launch Kit — What's Included Image" }
+  ],
+  "presets": [{ "name": "simply-starter-test", "category": "Replicant" }]
+}
+{% endschema %}

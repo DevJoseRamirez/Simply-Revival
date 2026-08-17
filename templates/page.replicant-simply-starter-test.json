@@ -1,0 +1,70 @@
+/*
+ * ------------------------------------------------------------
+ * IMPORTANT: The contents of this file are auto-generated.
+ *
+ * This file may be updated by the Shopify admin theme editor
+ * or related systems. Please exercise caution as any changes
+ * made to this file may be overwritten.
+ * ------------------------------------------------------------
+ */
+{
+  "sections": {
+    "main": {
+      "type": "replicant-simply-starter-test",
+      "settings": {
+        "product": "natural-dht-blocker-sub-only",
+        "gift_1_image": "shopify://shop_images/guarantee_bundle-1-min_04b26d13-2f2c-4634-8606-32334ecf6605.png",
+        "gift_2_image": "shopify://shop_images/for_life.png",
+        "gift_3_image": "shopify://shop_images/Natural_Hair_Support_Blend_1.png",
+        "gift_4_image": "shopify://shop_images/Free_Gfit_2.png",
+        "supplement_facts_image": "shopify://shop_images/hf_20260507_134318_9d115531-d76d-4af4-bc62-b0e1ba48b3ad.png",
+        "ingredient_1_image": "shopify://shop_images/saw_palmetto.png",
+        "ingredient_2_image": "shopify://shop_images/stinging_nettle.png",
+        "ingredient_3_image": "shopify://shop_images/bamboo_extract.png",
+        "ingredient_4_image": "shopify://shop_images/biotin.png",
+        "ingredient_5_image": "shopify://shop_images/spirulina.png",
+        "ingredient_6_image": "shopify://shop_images/alfalfa.png",
+        "ingredient_7_image": "shopify://shop_images/horsetail.png",
+        "ingredient_8_image": "shopify://shop_images/fo-ti.png",
+        "transform_1_image": "shopify://shop_images/hf_20260323_221200_9afdc308-83ea-4c3d-beb2-3eb20873c673.png",
+        "transform_2_image": "shopify://shop_images/hf_20260409_135556_1d13c0e1-4be2-46cf-bcc0-ff062f832089.png",
+        "transform_3_image": "shopify://shop_images/hf_20260429_033456_ba9597cf-1185-492e-9b67-d3c1ab3216a7.png",
+        "transform_4_image": "shopify://shop_images/hf_20260429_032730_5fcc04ad-a234-4f35-a8ff-7f18b6817ef9.png",
+        "transform_5_image": "shopify://shop_images/hf_20260323_221907_e89e7b56-f8f9-4023-9710-10d4b8d27860.png",
+        "transform_6_image": "shopify://shop_images/hf_20260429_032537_c543a716-70f9-45ce-8b8c-43f764f47000.png",
+        "transform_7_image": "shopify://shop_images/hf_20260409_142435_d9a5a5b6-91ba-43f1-8bef-f2f4f300e041.png",
+        "transform_8_image": "shopify://shop_images/hf_20260429_033146_bc46e11b-916e-4616-95a4-919917a1215b.png",
+        "expert_1_image": "shopify://shop_images/Simply_Revival___Reason_4-min.png",
+        "expert_2_image": "shopify://shop_images/hair_support-1-min.png",
+        "expert_3_image": "shopify://shop_images/Simply_Revival___Reason_5-min.png",
+        "expert_4_image": "shopify://shop_images/natural_hair_support-4-min.png",
+        "expert_5_image": "shopify://shop_images/Simply_Revival___Reason_1_-_Clinical_Strength-min.png",
+        "video_1": "shopify://files/videos/Simply Revival | Real People Real Results - Marc_20Malcolm_20.mp4",
+        "video_2": "shopify://files/videos/Simply Revival | Real People Real Results - alexcozys.mp4",
+        "video_3": "shopify://files/videos/Simply Revival | Real People Real Results - Anakin.mp4",
+        "video_4": "shopify://files/videos/Simply Revival | Real People Real Results - thehealthwealth.mp4",
+        "video_5": "shopify://files/videos/Simply Revival | Real People Real Results - TikTok-viral.mp4",
+        "video_6": "shopify://files/videos/Simply Revival | Real People Real Results - kwakusella.mp4",
+        "video_7": "shopify://files/videos/Simply Revival | Real People Real Results - lukefinds.mp4",
+        "comparison_brand_image": "shopify://shop_images/Simply_Revival___Natural_Hair_Support_Blend___Buy_One-min.png",
+        "advisory_1_image": "shopify://shop_images/education_03.png",
+        "advisory_2_image": "shopify://shop_images/education_02.png",
+        "advisory_3_image": "shopify://shop_images/education_01.png",
+        "guarantee_badge_image": "shopify://shop_images/icon_guarantee.png"
+      }
+    },
+    "cwc_areviews_widget_MAL7eF": {
+      "type": "CWC_areviews_widget",
+      "name": "Areviews Wdget",
+      "settings": {
+        "product": "simply®-dht-blocker",
+        "padding_top": 60,
+        "padding_bottom": 60
+      }
+    }
+  },
+  "order": [
+    "main",
+    "cwc_areviews_widget_MAL7eF"
+  ]
+}

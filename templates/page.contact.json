@@ -209,6 +209,7 @@
         "faq_item_kayWeP",
         "faq_item_Fyk3aB"
       ],
+      "disabled": true,
       "name": "Contact FAQ",
       "settings": {
         "eyebrow": "FAQS",
@@ -238,6 +239,7 @@
     },
     "cwc_manage_subscription_qw8W9f": {
       "type": "CWC_manage_subscription",
+      "disabled": true,
       "name": "Manage Subscription",
       "settings": {
         "eyebrow": "MANAGE YOUR SUBSCRIPTION",

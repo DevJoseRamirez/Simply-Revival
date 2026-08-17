@@ -104,6 +104,9 @@
 
     /* margin-bottom: 1rem; */
 }
+.cwc-featured-product__text a {
+text-decoration: underline;
+}
 
 /* ================================
    Benefits

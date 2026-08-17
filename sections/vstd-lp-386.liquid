@@ -1,0 +1,823 @@
+<!-- vystodian agent | lp-386-simply-revival | Paste into Shopify (Custom Liquid section or page Content HTML) -->
+<!-- REQUIRES lp-386-simply-revival-shopify.css deployed at https://storage.googleapis.com/vysta/lp-386-simply-revival/ (deploy the project folder) -->
+<style>{% raw %}
+html,body{margin:0 !important;padding:0 !important;}
+
+#vstd-lp-386-simply-revival *:where(:not(svg,svg *)){all:revert;}
+#vstd-lp-386-simply-revival [hidden]{display:none !important;}
+
+#vstd-lp-386-simply-revival img{width:auto;}
+
+#vstd-lp-386-simply-revival [width="1600"]{width:1600px;}
+#vstd-lp-386-simply-revival [width="1280"]{width:1280px;}
+#vstd-lp-386-simply-revival [width="1600"][height="900"]{aspect-ratio:1600/900;}
+#vstd-lp-386-simply-revival [width="1280"][height="720"]{aspect-ratio:1280/720;}
+
+#vstd-lp-386-simply-revival table,#vstd-lp-386-simply-revival thead,#vstd-lp-386-simply-revival tbody,#vstd-lp-386-simply-revival tfoot,#vstd-lp-386-simply-revival tr,#vstd-lp-386-simply-revival th,#vstd-lp-386-simply-revival td{background-color:transparent;}
+
+
+@font-face{font-family:'Inter';font-style:normal;font-weight:400;font-display:swap;src:url("https://storage.googleapis.com/vysta/lp-386-simply-revival/fonts/inter-400.woff2") format('woff2');unicode-range:U+0000-00FF;}
+@font-face{font-family:'Inter';font-style:normal;font-weight:500;font-display:swap;src:url("https://storage.googleapis.com/vysta/lp-386-simply-revival/fonts/inter-500.woff2") format('woff2');unicode-range:U+0000-00FF;}
+@font-face{font-family:'Inter';font-style:normal;font-weight:600;font-display:swap;src:url("https://storage.googleapis.com/vysta/lp-386-simply-revival/fonts/inter-600.woff2") format('woff2');unicode-range:U+0000-00FF;}
+@font-face{font-family:'Inter';font-style:normal;font-weight:700;font-display:swap;src:url("https://storage.googleapis.com/vysta/lp-386-simply-revival/fonts/inter-700.woff2") format('woff2');unicode-range:U+0000-00FF;}
+
+#vstd-lp-386-simply-revival{
+  --teal:#125657;
+  --teal-dark:#0d4243;
+  --teal-tint:#e9f1f0;
+  --gold:#c99b3f;
+  --ink:#1d2b2b;
+  --ink-soft:#48605f;
+  --cream:#ffffff;
+  --line:#e6e2d9;
+  --white:#ffffff;
+}
+#vstd-lp-386-simply-revival *{margin:0;padding:0;box-sizing:border-box;}
+#vstd-lp-386-simply-revival{scroll-behavior:smooth;}
+#vstd-lp-386-simply-revival{
+  font-family:'Inter',-apple-system,BlinkMacSystemFont,'Segoe UI',Arial,sans-serif;
+  background:var(--cream);
+  color:var(--ink);
+  font-size:18px;
+  line-height:1.75;
+  -webkit-font-smoothing:antialiased;
+}
+#vstd-lp-386-simply-revival img{max-width:100%;height:auto;display:block;}
+#vstd-lp-386-simply-revival a{color:var(--teal);}
+
+/* ---------- header ---------- */
+#vstd-lp-386-simply-revival .vy-masthead{
+  background:var(--white);
+  border-bottom:1px solid var(--line);
+  padding:16px 20px;
+}
+#vstd-lp-386-simply-revival .vy-masthead-inner{
+  max-width:900px;
+  margin:0 auto;
+  display:flex;
+  align-items:center;
+  justify-content:space-between;
+  gap:16px;
+}
+#vstd-lp-386-simply-revival .vy-mast-logo{
+  font-size:22px;
+  font-weight:800;
+  letter-spacing:-.015em;
+  color:var(--ink);
+  text-decoration:none;
+  white-space:nowrap;
+}
+#vstd-lp-386-simply-revival .vy-mast-logo b{color:var(--teal);font-weight:800;}
+#vstd-lp-386-simply-revival .vy-mast-badge{
+  font-size:10.5px;
+  font-weight:700;
+  letter-spacing:.16em;
+  text-transform:uppercase;
+  color:var(--ink-soft);
+  border:1px solid var(--line);
+  border-radius:999px;
+  padding:5px 12px;
+  white-space:nowrap;
+}
+
+/* ---------- article shell ---------- */
+#vstd-lp-386-simply-revival .vy-article{max-width:900px;margin:0 auto;padding:0 20px;}
+#vstd-lp-386-simply-revival .vy-wide{max-width:900px;margin:0 auto;padding:0 20px;}
+
+/* ---------- hero ---------- */
+#vstd-lp-386-simply-revival .vy-hero{padding:56px 0 8px;}
+#vstd-lp-386-simply-revival .vy-eyebrow{
+  display:inline-block;
+  font-size:12px;
+  font-weight:700;
+  letter-spacing:.2em;
+  text-transform:uppercase;
+  color:var(--gold);
+  margin-bottom:18px;
+}
+#vstd-lp-386-simply-revival h1{
+  font-weight:700;
+  font-size:44px;
+  line-height:1.18;
+  letter-spacing:-.01em;
+  margin-bottom:22px;
+}
+#vstd-lp-386-simply-revival .vy-dek{
+  font-size:21px;
+  line-height:1.6;
+  color:var(--ink-soft);
+  margin-bottom:28px;
+}
+#vstd-lp-386-simply-revival .vy-byline{
+  display:flex;
+  align-items:center;
+  gap:12px;
+  padding:16px 0 26px;
+  border-bottom:1px solid var(--line);
+  font-size:14px;
+  line-height:1.35;
+  color:var(--ink-soft);
+}
+#vstd-lp-386-simply-revival .vy-byline .vy-avatar{
+  width:38px;height:38px;
+  border-radius:50%;
+  background:var(--teal);
+  color:#fff;
+  display:flex;align-items:center;justify-content:center;
+  font-weight:600;font-size:14px;letter-spacing:.02em;
+  flex:0 0 auto;
+}
+#vstd-lp-386-simply-revival .vy-byline-body{
+  display:flex;
+  align-items:center;
+  flex-wrap:wrap;
+  gap:4px 8px;
+}
+#vstd-lp-386-simply-revival .vy-byline b{color:var(--ink);font-weight:600;}
+#vstd-lp-386-simply-revival .vy-byline .vy-dot{opacity:.45;}
+#vstd-lp-386-simply-revival .vy-hero-img{margin:30px 0 0;}
+#vstd-lp-386-simply-revival .vy-hero-img img{border-radius:16px;width:100%;aspect-ratio:16/9;object-fit:cover;}
+#vstd-lp-386-simply-revival .vy-hero-img figcaption{font-size:14px;color:var(--ink-soft);margin-top:10px;text-align:left;}
+/* uniform landscape figure */
+#vstd-lp-386-simply-revival .vy-figure-ls{margin:32px 0;}
+#vstd-lp-386-simply-revival .vy-figure-ls img{width:100%;aspect-ratio:16/9;object-fit:cover;border-radius:14px;display:block;}
+#vstd-lp-386-simply-revival .vy-figure-ls figcaption{font-size:14px;color:var(--ink-soft);text-align:center;margin-top:12px;line-height:1.55;}
+
+/* ---------- body copy ---------- */
+#vstd-lp-386-simply-revival .vy-section{padding:34px 0 6px;}
+#vstd-lp-386-simply-revival h2{
+  font-weight:700;
+  font-size:31px;
+  line-height:1.25;
+  margin:26px 0 18px;
+}
+#vstd-lp-386-simply-revival h3{
+  font-weight:600;
+  font-size:22px;
+  margin:26px 0 12px;
+}
+#vstd-lp-386-simply-revival .vy-section p{margin-bottom:20px;}
+#vstd-lp-386-simply-revival .vy-section p b{font-weight:600;}
+#vstd-lp-386-simply-revival .vy-lead-in{
+  font-size:21px;
+  font-weight:500;
+  color:var(--teal);
+}
+
+/* figure */
+#vstd-lp-386-simply-revival figure{margin:30px 0;}
+#vstd-lp-386-simply-revival figure .vy-imgframe{
+  background:var(--white);
+  border:1px solid var(--line);
+  border-radius:14px;
+  padding:18px;
+}
+#vstd-lp-386-simply-revival figure img{border-radius:8px;margin:0 auto;}
+#vstd-lp-386-simply-revival figcaption{
+  font-size:14px;
+  color:var(--ink-soft);
+  text-align:center;
+  margin-top:12px;
+  line-height:1.55;
+}
+
+/* callout */
+#vstd-lp-386-simply-revival .vy-callout{
+  background:var(--teal-tint);
+  border-left:4px solid var(--teal);
+  border-radius:0 12px 12px 0;
+  padding:22px 26px;
+  margin:28px 0;
+}
+#vstd-lp-386-simply-revival .vy-callout h4{
+  font-size:19px;
+  font-weight:700;
+  color:var(--teal);
+  margin-bottom:8px;
+}
+#vstd-lp-386-simply-revival .vy-callout p{margin:0;font-size:16.5px;line-height:1.7;}
+
+/* inline text link card */
+#vstd-lp-386-simply-revival .vy-crosslink{
+  display:block;
+  background:var(--white);
+  border:1px solid var(--line);
+  border-radius:12px;
+  padding:18px 22px;
+  margin:26px 0;
+  text-decoration:none;
+  font-size:16px;
+  color:var(--ink);
+  transition:border-color .15s;
+}
+#vstd-lp-386-simply-revival .vy-crosslink:hover{border-color:var(--teal);}
+#vstd-lp-386-simply-revival .vy-crosslink .vy-cl-label{
+  font-size:11px;
+  font-weight:700;
+  letter-spacing:.18em;
+  text-transform:uppercase;
+  color:var(--gold);
+  display:block;
+  margin-bottom:4px;
+}
+#vstd-lp-386-simply-revival .vy-crosslink .vy-cl-title{font-weight:600;color:var(--teal);}
+
+/* ---------- USP section ---------- */
+#vstd-lp-386-simply-revival .vy-usp-band{
+  background:var(--white);
+  border-top:1px solid var(--line);
+  border-bottom:1px solid var(--line);
+  margin-top:44px;
+  padding:60px 0 56px;
+}
+#vstd-lp-386-simply-revival .vy-usp-head{text-align:center;max-width:900px;margin:0 auto 14px;padding:0 20px;}
+#vstd-lp-386-simply-revival .vy-usp-head .vy-eyebrow{margin-bottom:12px;}
+#vstd-lp-386-simply-revival .vy-usp-head h2{margin:0 0 14px;}
+#vstd-lp-386-simply-revival .vy-usp-head p{color:var(--ink-soft);margin-bottom:10px;}
+#vstd-lp-386-simply-revival .vy-usp-grid{
+  margin-top:36px;
+}
+#vstd-lp-386-simply-revival .vy-usp-items{
+  display:grid;
+  grid-template-columns:1fr 1fr 1fr;
+  gap:34px 40px;
+}
+#vstd-lp-386-simply-revival .vy-usp{display:flex;gap:14px;align-items:flex-start;}
+#vstd-lp-386-simply-revival .vy-usp .vy-ic{
+  flex:0 0 44px;
+  width:44px;height:44px;
+  border-radius:12px;
+  background:var(--teal-tint);
+  display:flex;align-items:center;justify-content:center;
+}
+#vstd-lp-386-simply-revival .vy-usp .vy-ic svg{width:22px;height:22px;stroke:var(--teal);}
+#vstd-lp-386-simply-revival .vy-usp h4{font-size:16.5px;font-weight:700;margin-bottom:4px;line-height:1.35;}
+#vstd-lp-386-simply-revival .vy-usp p{font-size:15px;line-height:1.6;color:var(--ink-soft);margin:0;}
+
+/* ---------- expectations timeline ---------- */
+#vstd-lp-386-simply-revival .vy-timeline{
+  display:grid;
+  grid-template-columns:1fr 1fr 1fr;
+  gap:18px;
+  margin:30px 0 10px;
+}
+#vstd-lp-386-simply-revival .vy-tl-card{
+  background:var(--white);
+  border:1px solid var(--line);
+  border-radius:14px;
+  padding:24px 22px;
+}
+#vstd-lp-386-simply-revival .vy-tl-card .vy-tl-when{
+  font-size:12px;
+  font-weight:700;
+  letter-spacing:.16em;
+  text-transform:uppercase;
+  color:var(--gold);
+  margin-bottom:8px;
+}
+#vstd-lp-386-simply-revival .vy-tl-card h4{font-size:19px;font-weight:700;margin-bottom:8px;}
+#vstd-lp-386-simply-revival .vy-tl-card p{font-size:15px;line-height:1.6;color:var(--ink-soft);margin:0;}
+
+/* ---------- reviews ---------- */
+#vstd-lp-386-simply-revival .vy-reviews-band{padding:56px 0 30px;}
+#vstd-lp-386-simply-revival .vy-reviews-head{text-align:center;margin-bottom:8px;}
+#vstd-lp-386-simply-revival .vy-reviews-head h2{margin-top:6px;}
+#vstd-lp-386-simply-revival .vy-stars{color:var(--gold);font-size:19px;letter-spacing:3px;}
+#vstd-lp-386-simply-revival .vy-rating-line{font-size:15px;color:var(--ink-soft);margin-top:10px;}
+#vstd-lp-386-simply-revival .vy-review-grid{
+  display:grid;
+  grid-template-columns:1fr 1fr;
+  gap:22px;
+  margin-top:32px;
+}
+#vstd-lp-386-simply-revival .vy-review-card{
+  background:var(--white);
+  border:1px solid var(--line);
+  border-radius:14px;
+  padding:26px 26px 22px;
+}
+#vstd-lp-386-simply-revival .vy-review-card .vy-stars{font-size:15px;letter-spacing:2px;}
+#vstd-lp-386-simply-revival .vy-review-card .vy-review-quote{
+  font-size:16px;
+  line-height:1.7;
+  margin:12px 0 16px;
+  color:var(--ink);
+}
+#vstd-lp-386-simply-revival .vy-review-who{display:flex;align-items:center;gap:10px;font-size:14px;}
+#vstd-lp-386-simply-revival .vy-review-who .vy-avatar{
+  width:34px;height:34px;border-radius:50%;
+  background:var(--teal);color:#fff;
+  display:flex;align-items:center;justify-content:center;
+  font-weight:600;font-size:13px;
+}
+#vstd-lp-386-simply-revival .vy-review-who b{font-weight:600;}
+#vstd-lp-386-simply-revival .vy-verified{
+  color:var(--teal);
+  font-size:12.5px;
+  font-weight:600;
+  display:inline-flex;align-items:center;gap:4px;
+}
+#vstd-lp-386-simply-revival .vy-verified svg{width:14px;height:14px;}
+#vstd-lp-386-simply-revival .vy-ba-grid{
+  display:grid;
+  grid-template-columns:1fr 1fr;
+  gap:22px;
+  margin-top:26px;
+}
+#vstd-lp-386-simply-revival .vy-ba-grid img{width:100%;aspect-ratio:16/9;object-fit:cover;border-radius:14px;border:1px solid var(--line);}
+#vstd-lp-386-simply-revival .vy-ba-note{
+  text-align:center;
+  font-size:13.5px;
+  color:var(--ink-soft);
+  margin-top:14px;
+}
+
+/* ---------- CTA ---------- */
+#vstd-lp-386-simply-revival .vy-cta-band{
+  background:var(--teal);
+  color:#fff;
+  margin-top:40px;
+  padding:64px 0;
+}
+#vstd-lp-386-simply-revival .vy-cta-inner{
+  display:grid;
+  grid-template-columns:300px 1fr;
+  gap:52px;
+  align-items:center;
+}
+#vstd-lp-386-simply-revival .vy-cta-photo{
+  text-align:center;
+}
+#vstd-lp-386-simply-revival .vy-cta-photo img{margin:0 auto;max-height:440px;width:auto;}
+#vstd-lp-386-simply-revival .vy-cta-copy .vy-eyebrow{color:var(--gold);}
+#vstd-lp-386-simply-revival .vy-cta-copy h2{color:#fff;margin-top:4px;}
+#vstd-lp-386-simply-revival .vy-cta-copy p{color:#d7e4e3;margin-bottom:20px;}
+#vstd-lp-386-simply-revival .vy-cta-list{list-style:none;margin:0 0 26px;}
+#vstd-lp-386-simply-revival .vy-cta-list li{
+  padding-left:30px;
+  position:relative;
+  margin-bottom:11px;
+  font-size:16.5px;
+  color:#eef4f3;
+}
+#vstd-lp-386-simply-revival .vy-cta-list li::before{
+  content:"";
+  position:absolute;left:0;top:5px;
+  width:18px;height:18px;
+  border-radius:50%;
+  background:var(--gold);
+}
+#vstd-lp-386-simply-revival .vy-cta-list li::after{
+  content:"";
+  position:absolute;left:5px;top:9px;
+  width:8px;height:5px;
+  border-left:2px solid #10312f;
+  border-bottom:2px solid #10312f;
+  transform:rotate(-45deg);
+}
+#vstd-lp-386-simply-revival .vy-price-line{font-size:16px;color:#d7e4e3;margin-bottom:22px;}
+#vstd-lp-386-simply-revival .vy-price-line b{color:#fff;font-size:19px;}
+#vstd-lp-386-simply-revival .vy-btn{
+  display:inline-block;
+  background:var(--gold);
+  color:#10312f;
+  font-weight:700;
+  font-size:18px;
+  padding:18px 42px;
+  border-radius:999px;
+  text-decoration:none;
+  transition:transform .12s, box-shadow .12s;
+  box-shadow:0 6px 18px rgba(0,0,0,.22);
+}
+#vstd-lp-386-simply-revival .vy-btn:hover{transform:translateY(-2px);box-shadow:0 10px 24px rgba(0,0,0,.28);}
+#vstd-lp-386-simply-revival .vy-cta-micro{font-size:13.5px;color:#b8cfce;margin-top:14px;}
+
+/* ---------- guarantee ---------- */
+#vstd-lp-386-simply-revival .vy-guarantee{padding:64px 0 56px;}
+#vstd-lp-386-simply-revival .vy-g-inner{
+  display:grid;
+  grid-template-columns:1fr 320px;
+  gap:48px;
+  align-items:center;
+  background:var(--white);
+  border:1px solid var(--line);
+  border-radius:18px;
+  padding:44px 48px;
+}
+#vstd-lp-386-simply-revival .vy-g-inner h2{margin-top:0;}
+#vstd-lp-386-simply-revival .vy-g-inner p{color:var(--ink-soft);margin-bottom:14px;}
+#vstd-lp-386-simply-revival .vy-g-inner img{margin:0 auto;}
+
+/* ---------- footer ---------- */
+#vstd-lp-386-simply-revival footer{
+  background:#10312f;
+  color:#9db7b5;
+  padding:44px 20px 110px;
+  font-size:13px;
+  line-height:1.7;
+  text-align:center;
+}
+#vstd-lp-386-simply-revival footer .vy-f-inner{max-width:760px;margin:0 auto;}
+#vstd-lp-386-simply-revival footer .vy-f-logo{font-size:18px;font-weight:800;letter-spacing:-.015em;color:#fff;margin-bottom:20px;}
+#vstd-lp-386-simply-revival footer .vy-f-logo b{color:var(--gold);font-weight:800;}
+#vstd-lp-386-simply-revival footer p{margin-bottom:10px;}
+#vstd-lp-386-simply-revival footer .vy-f-copy{margin-top:18px;color:#7b9997;}
+
+/* ---------- sticky cta ---------- */
+#vstd-lp-386-simply-revival .vy-sticky-cta{
+  position:fixed;
+  left:0;right:0;bottom:0;
+  background:var(--white);
+  border-top:1px solid var(--line);
+  box-shadow:0 -6px 24px rgba(16,49,47,.12);
+  padding:12px 24px;
+  z-index:90;
+  transform:translateY(110%);
+  transition:transform .3s ease;
+}
+#vstd-lp-386-simply-revival .vy-sticky-inner{
+  max-width:1120px;
+  margin:0 auto;
+  display:flex;
+  align-items:center;
+  justify-content:space-between;
+  gap:24px;
+}
+#vstd-lp-386-simply-revival .vy-sticky-cta.vy-show{transform:translateY(0);}
+#vstd-lp-386-simply-revival .vy-sticky-cta .vy-s-name{font-size:16px;font-weight:600;}
+#vstd-lp-386-simply-revival .vy-sticky-cta .vy-s-sub{font-size:12.5px;color:var(--ink-soft);}
+#vstd-lp-386-simply-revival .vy-sticky-cta .vy-btn{font-size:15px;padding:13px 52px;box-shadow:none;white-space:nowrap;}
+
+/* ---------- responsive ---------- */
+@media (max-width:900px){
+  #vstd-lp-386-simply-revival .vy-usp-items{grid-template-columns:1fr 1fr;gap:30px 34px;}
+  #vstd-lp-386-simply-revival .vy-cta-inner{grid-template-columns:1fr;gap:36px;}
+  #vstd-lp-386-simply-revival .vy-cta-photo{max-width:280px;margin:0 auto;}
+  #vstd-lp-386-simply-revival .vy-g-inner{grid-template-columns:1fr;padding:36px 28px;gap:28px;}
+  #vstd-lp-386-simply-revival .vy-g-inner img{max-width:260px;}
+}
+@media (max-width:700px){
+  #vstd-lp-386-simply-revival{font-size:17px;}
+  #vstd-lp-386-simply-revival h1{font-size:30px;}
+  #vstd-lp-386-simply-revival h2{font-size:26px;}
+  #vstd-lp-386-simply-revival .vy-dek{font-size:18.5px;}
+  #vstd-lp-386-simply-revival .vy-hero{padding-top:40px;}
+  #vstd-lp-386-simply-revival .vy-article, #vstd-lp-386-simply-revival .vy-wide, #vstd-lp-386-simply-revival .vy-usp-head{padding-left:20px;padding-right:20px;}
+  #vstd-lp-386-simply-revival .vy-masthead{padding-left:20px;padding-right:20px;}
+  #vstd-lp-386-simply-revival .vy-mast-logo{font-size:18px;}
+  #vstd-lp-386-simply-revival .vy-mast-badge{font-size:9.5px;letter-spacing:.12em;padding:4px 10px;}
+  #vstd-lp-386-simply-revival .vy-byline-body{flex-direction:column;align-items:flex-start;gap:3px;}
+  #vstd-lp-386-simply-revival .vy-byline-sep{display:none;}
+  #vstd-lp-386-simply-revival .vy-usp-items{grid-template-columns:1fr;gap:22px;}
+  #vstd-lp-386-simply-revival .vy-timeline{grid-template-columns:1fr;}
+  #vstd-lp-386-simply-revival .vy-review-grid{grid-template-columns:1fr;}
+  #vstd-lp-386-simply-revival .vy-ba-grid{grid-template-columns:1fr;}
+  #vstd-lp-386-simply-revival .vy-cta-band{padding:48px 0;}
+  #vstd-lp-386-simply-revival .vy-cta-photo{max-width:190px;padding:14px;}
+  #vstd-lp-386-simply-revival .vy-cta-photo img{max-height:300px;}
+  #vstd-lp-386-simply-revival .vy-cta-copy .vy-btn{display:block;width:100%;text-align:center;font-size:16.5px;padding:16px 18px;}
+  #vstd-lp-386-simply-revival .vy-sticky-cta{padding:10px 16px;}
+  #vstd-lp-386-simply-revival .vy-sticky-cta .vy-s-info{display:none;}
+  #vstd-lp-386-simply-revival .vy-sticky-inner{justify-content:center;}
+  #vstd-lp-386-simply-revival .vy-sticky-cta .vy-btn{flex:1;text-align:center;padding:14px 24px;}
+}
+
+
+/* Preserve paragraph spacing inside Funnelish embed where empty <p> tags collapse */
+#vstd-lp-386-simply-revival p:empty {
+  min-height: 1em !important;
+  display: block !important;
+}
+/* Growtype: undo flex-induced height:100% blowup on custom-css blocks */
+#vstd-lp-386-simply-revival [class*="growtype-customcss-"],
+#vstd-lp-386-simply-revival [class*="growtype-customcss-"] > div {
+  height: auto !important;
+}
+
+{% endraw %}</style>
+
+<div id="vstd-lp-386-simply-revival" class="vstd-page">
+<header class="vy-masthead">
+  <div class="vy-masthead-inner">
+    <a class="vy-mast-logo" href="#">Hair Health <b>Daily</b></a>
+    <span class="vy-mast-badge">Advertorial</span>
+  </div>
+</header>
+
+<article>
+
+  <!-- SECTION 1: HOOK -->
+  <div class="vy-article vy-hero">
+    <h1>Why DHT Blockers Are the Most Effective Way to Address Genetic Hair Loss</h1>
+    <p class="vy-dek">Here's what's actually happening to your hair follicles, and why addressing DHT is the most direct way to slow it down.</p>
+    <div class="vy-byline">
+      <div class="vy-avatar">HD</div>
+      <div class="vy-byline-body">
+        <span class="vy-byline-author">By the <b>Hair Health Daily</b> Team</span>
+        <span class="vy-dot vy-byline-sep">•</span>
+        <span class="vy-byline-meta">Updated July 28, 2026 &nbsp;•&nbsp; 6 min read</span>
+      </div>
+    </div>
+    <figure class="vy-hero-img">
+      <img src="https://storage.googleapis.com/vysta/lp-386-simply-revival/images/hero-mirror.jpg" alt="Man examining his hairline in a bathroom mirror" width="1600" height="900">
+      <figcaption>For most men, it starts at the mirror: a hairline that sits a little higher, a crown that looks a little thinner.</figcaption>
+    </figure>
+  </div>
+
+  <!-- SECTION 2: WHAT IS DHT -->
+  <div class="vy-article vy-section">
+    <p class="vy-lead-in">If your hairline is creeping back, or your crown is thinning while the sides stay thick, that is not random shedding.</p>
+    <p>It follows a predictable pattern, and that pattern has a name: androgenetic alopecia, better known as male pattern hair loss. It affects the majority of men at some point in their lives, and it is driven primarily by a single hormone.</p>
+
+    <figure class="vy-figure-ls">
+      <img src="https://storage.googleapis.com/vysta/lp-386-simply-revival/images/scalp-closeup.jpg" alt="Close-up of the crown and part of a man's scalp" width="1600" height="900">
+      <figcaption>Pattern hair loss shows up first where DHT-sensitive follicles are concentrated: the crown and the temples.</figcaption>
+    </figure>
+
+    <h2>What DHT Is, and Why It Causes Pattern Hair Loss</h2>
+    <p>DHT, short for dihydrotestosterone, is a hormone your body makes naturally from testosterone. It plays a useful role earlier in life, but in adulthood it keeps circulating, and in men who carry a genetic sensitivity to it, DHT starts working against the hair on top of the head.</p>
+    <p>Here is the mechanism in plain language: <b>DHT binds to receptors in your hair follicles</b>, especially at the temples and the crown. Each time an affected follicle completes a growth cycle, it comes back slightly smaller. The hairs it produces get shorter, thinner, and lighter. Think of the follicle as slowly shrinking with each cycle, until eventually it stops producing visible hair at all.</p>
+
+    <figure class="vy-figure-ls">
+      <img src="https://storage.googleapis.com/vysta/lp-386-simply-revival/images/followup-diagram.jpg" alt="Diagram comparing a shrunken hair follicle to a healthy hair follicle" width="1280" height="720">
+      <figcaption>Follicle miniaturization: with repeated DHT exposure, a sensitive follicle gradually shrinks and produces thinner, weaker hair.</figcaption>
+    </figure>
+
+    <div class="vy-callout">
+      <h4>Why it's called "pattern" hair loss</h4>
+      <p>The follicles at your temples and crown carry more DHT-sensitive receptors than the follicles at the back and sides of your head. That is why hair loss shows up at the hairline and crown first, and why the band of hair around the sides usually stays put.</p>
+    </div>
+
+    <p>To be clear, DHT is not behind every type of hair loss: stress, nutrition gaps, thyroid issues, and certain medications can all contribute. But for the classic receding-temples-and-thinning-crown pattern, DHT sensitivity is the primary driver, which is exactly why it has become the primary target.</p>
+  </div>
+
+  <!-- SECTION 3: WHY DHT BLOCKERS -->
+  <div class="vy-article vy-section">
+    <h2>Why Blocking DHT Is the Logical Response</h2>
+    <p>Once you understand the mechanism, the logic follows naturally. Many hair products work downstream of the problem: thickening shampoos coat the hairs you still have, and stimulating treatments try to increase blood flow to the follicle. Those approaches can have their place, but none of them touch the trigger itself.</p>
+    <p>A DHT blocker addresses the cause upstream. <b>Less DHT activity at the follicle means less of the shrinking process</b> that causes pattern hair loss in the first place. That is why, if the goal is to slow genetic hair loss rather than mask it, addressing DHT directly is the most targeted approach available.</p>
+    <p>"DHT blocker" is a category, not a single product. It spans prescription medication (finasteride is the best-known) as well as natural, non-prescription formulas built around botanicals like saw palmetto. Both routes aim at the same target in different ways, and each comes with its own trade-offs.</p>
+
+    <figure class="vy-figure-ls">
+      <img src="https://storage.googleapis.com/vysta/lp-386-simply-revival/images/ingredients.jpg" alt="Natural DHT-support botanicals including saw palmetto berries and stinging nettle leaves" width="1600" height="900">
+      <figcaption>The natural side of the category leans on botanicals like saw palmetto and stinging nettle, long studied for their role in supporting healthy DHT balance.</figcaption>
+    </figure>
+
+    <a class="vy-crosslink" href="https://simplyrevival.com/products/simply%C2%AE-dht-blocker">
+      <span class="vy-cl-label">Related Reading</span>
+      <span class="vy-cl-title">Prescription vs. Natural DHT Blockers: The Full Comparison &rarr;</span>
+    </a>
+  </div>
+
+  <!-- SECTION 4: USPs -->
+  <section class="vy-usp-band">
+    <div class="vy-usp-head">
+      <span class="vy-eyebrow">The Natural Option</span>
+      <h2>Where Simply Revival's Natural DHT Blocker Fits In</h2>
+      <p>For men who want to address DHT without a prescription, Simply Revival's DHT Blocker sits on the natural side of the category: a simple daily supplement formulated to support healthy DHT balance using a blend of 10 herbs.</p>
+    </div>
+    <div class="vy-wide">
+      <div class="vy-usp-grid">
+        <div class="vy-usp-items">
+          <div class="vy-usp">
+            <div class="vy-ic"><svg viewBox="0 0 24 24" fill="none" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M12 22c4-2 8-5.5 8-11V5l-8-3-8 3v6c0 5.5 4 9 8 11z"/><path d="M9 12l2 2 4-4"/></svg></div>
+            <div>
+              <h4>Natural and non-prescription</h4>
+              <p>A 500mg+ per serving blend of 10 herbs, including saw palmetto and stinging nettle. No doctor visit, no ongoing prescription management.</p>
+            </div>
+          </div>
+          <div class="vy-usp">
+            <div class="vy-ic"><svg viewBox="0 0 24 24" fill="none" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M12 2a7 7 0 0 1 7 7c0 3-2 5-4 7l-3 6-3-6c-2-2-4-4-4-7a7 7 0 0 1 7-7z" transform="rotate(180 12 12)"/><path d="M8 14c1.5-1 6.5-1 8 0"/></svg></div>
+            <div>
+              <h4>Gentle on the body</h4>
+              <p>No known systemic side effects associated with the prescription category. Plant-based capsules that are tasteless and easy to swallow.</p>
+            </div>
+          </div>
+          <div class="vy-usp">
+            <div class="vy-ic"><svg viewBox="0 0 24 24" fill="none" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="13" r="8"/><path d="M12 9v4l3 2"/><path d="M9 2h6"/></svg></div>
+            <div>
+              <h4>A routine you can actually keep</h4>
+              <p>Two capsules with breakfast. Consistency matters more than raw strength, and skipped doses are one of the biggest reasons treatments fail in practice.</p>
+            </div>
+          </div>
+          <div class="vy-usp">
+            <div class="vy-ic"><svg viewBox="0 0 24 24" fill="none" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M9 3h6M10 3v6l-5 8.5A3 3 0 0 0 7.6 22h8.8a3 3 0 0 0 2.6-4.5L14 9V3"/><path d="M7 15h10"/></svg></div>
+            <div>
+              <h4>Third-party tested</h4>
+              <p>Lab tested and verified for purity and potency. No fillers, no fluff, just natural herbs.</p>
+            </div>
+          </div>
+          <div class="vy-usp">
+            <div class="vy-ic"><svg viewBox="0 0 24 24" fill="none" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M3 6h18v12H3z"/><path d="M3 10h18"/><path d="M7 6v-2M17 6v-2"/></svg></div>
+            <div>
+              <h4>Clean formula, made in the USA</h4>
+              <p>Non-GMO, gluten free, and free of preservatives and parabens. Manufactured in the USA.</p>
+            </div>
+          </div>
+          <div class="vy-usp">
+            <div class="vy-ic"><svg viewBox="0 0 24 24" fill="none" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="9"/><path d="M8.5 12l2.5 2.5 4.5-5"/></svg></div>
+            <div>
+              <h4>365-day money-back guarantee</h4>
+              <p>If you don't experience noticeable improvements within 365 days, return your most recent order for a full refund.</p>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- SECTION 5: REALISTIC EXPECTATIONS -->
+  <div class="vy-article vy-section">
+    <h2>What to Realistically Expect</h2>
+    <p>An honest note before you buy anything, from us or anyone else: <b>no DHT blocker delivers a dramatic overnight reversal</b>, and you should be skeptical of any product that promises one. Hair grows in slow cycles, so any approach needs consistent daily use before you can fairly judge it.</p>
+    <div class="vy-timeline">
+      <div class="vy-tl-card">
+        <div class="vy-tl-when">Weeks 3 to 6</div>
+        <h4>Shedding settles</h4>
+        <p>Most users report noticing less hair loss within the first 3 to 6 weeks of consistent use.</p>
+      </div>
+      <div class="vy-tl-card">
+        <div class="vy-tl-when">Weeks 6 to 12</div>
+        <h4>New growth begins</h4>
+        <p>With the growth cycle supported, users typically notice new growth after 6 to 12 weeks.</p>
+      </div>
+      <div class="vy-tl-card">
+        <div class="vy-tl-when">Beyond 12 weeks</div>
+        <h4>Maintain and build</h4>
+        <p>Results are gradual and compound with daily consistency. Think maintenance, not miracle.</p>
+      </div>
+    </div>
+    <figure class="vy-figure-ls">
+      <img src="https://storage.googleapis.com/vysta/lp-386-simply-revival/images/morning-routine.jpg" alt="Man taking a daily supplement capsule with a glass of water during his morning routine" width="1600" height="900">
+      <figcaption>The routine that works is the one you keep: two capsules with breakfast, every day.</figcaption>
+    </figure>
+    <p>DHT blockers also work best as an <b>early and maintenance approach</b>: the more follicles still producing hair when you start, the more you have to protect. If your expectation is "slow the loss, keep what I have, and support gradual improvement," you are exactly the person this category was built for.</p>
+  </div>
+
+  <!-- SECTION 6: TESTIMONIALS -->
+  <div class="vy-wide vy-reviews-band">
+    <div class="vy-reviews-head">
+      <div class="vy-stars">★★★★★</div>
+      <h2>What Customers Are Saying</h2>
+      <div class="vy-rating-line">Rated 4.8 Excellent, from 25,593 verified reviews</div>
+    </div>
+    <div class="vy-review-grid">
+      <div class="vy-review-card">
+        <div class="vy-stars">★★★★★</div>
+        <div class="vy-review-quote">"My crown was getting pretty thin and obvious. After 3 months on Simply Revival, the area is definitely filling back in. My barber even commented on how much better my hair looks now. Worth every penny for my confidence!"</div>
+        <div class="vy-review-who">
+          <div class="vy-avatar">J</div>
+          <div><b>Joseph</b><br>
+          <span class="vy-verified"><svg viewBox="0 0 24 24" fill="currentColor"><path d="M12 2l2.4 2.4 3.4-.5 1 3.3 3 1.6-1.3 3.2 1.3 3.2-3 1.6-1 3.3-3.4-.5L12 22l-2.4-2.4-3.4.5-1-3.3-3-1.6 1.3-3.2L2.2 8.8l3-1.6 1-3.3 3.4.5z"/><path d="M9.5 12.2l1.8 1.8 3.6-3.8" stroke="#fff" stroke-width="2" fill="none" stroke-linecap="round" stroke-linejoin="round"/></svg> Verified Customer</span></div>
+        </div>
+      </div>
+      <div class="vy-review-card">
+        <div class="vy-stars">★★★★★</div>
+        <div class="vy-review-quote">"Used to lose handfuls of hair in the shower every day. After 3 months on Simply Revival, my hair loss has practically stopped and my hair feels thicker. The natural ingredients give me confidence it's safe for long-term use."</div>
+        <div class="vy-review-who">
+          <div class="vy-avatar">R</div>
+          <div><b>Ryan</b><br>
+          <span class="vy-verified"><svg viewBox="0 0 24 24" fill="currentColor"><path d="M12 2l2.4 2.4 3.4-.5 1 3.3 3 1.6-1.3 3.2 1.3 3.2-3 1.6-1 3.3-3.4-.5L12 22l-2.4-2.4-3.4.5-1-3.3-3-1.6 1.3-3.2L2.2 8.8l3-1.6 1-3.3 3.4.5z"/><path d="M9.5 12.2l1.8 1.8 3.6-3.8" stroke="#fff" stroke-width="2" fill="none" stroke-linecap="round" stroke-linejoin="round"/></svg> Verified Customer</span></div>
+        </div>
+      </div>
+      <div class="vy-review-card">
+        <div class="vy-stars">★★★★★</div>
+        <div class="vy-review-quote">"I'm 38 and noticed my hairline starting to go back. Been using Simply Revival for 4 months and the hair loss completely stopped. Even seeing some regrowth at the temples. This stuff actually works and fits my budget perfectly!"</div>
+        <div class="vy-review-who">
+          <div class="vy-avatar">T</div>
+          <div><b>Tyler</b><br>
+          <span class="vy-verified"><svg viewBox="0 0 24 24" fill="currentColor"><path d="M12 2l2.4 2.4 3.4-.5 1 3.3 3 1.6-1.3 3.2 1.3 3.2-3 1.6-1 3.3-3.4-.5L12 22l-2.4-2.4-3.4.5-1-3.3-3-1.6 1.3-3.2L2.2 8.8l3-1.6 1-3.3 3.4.5z"/><path d="M9.5 12.2l1.8 1.8 3.6-3.8" stroke="#fff" stroke-width="2" fill="none" stroke-linecap="round" stroke-linejoin="round"/></svg> Verified Customer</span></div>
+        </div>
+      </div>
+      <div class="vy-review-card">
+        <div class="vy-stars">★★★★★</div>
+        <div class="vy-review-quote">"I've been struggling with hair loss for about 3 years and tried everything. Simply Revival's DHT blocker has been a game changer - I'm seeing new growth after just 2 months of consistent use. The capsules are easy to take and no side effects!"</div>
+        <div class="vy-review-who">
+          <div class="vy-avatar">D</div>
+          <div><b>Derek</b><br>
+          <span class="vy-verified"><svg viewBox="0 0 24 24" fill="currentColor"><path d="M12 2l2.4 2.4 3.4-.5 1 3.3 3 1.6-1.3 3.2 1.3 3.2-3 1.6-1 3.3-3.4-.5L12 22l-2.4-2.4-3.4.5-1-3.3-3-1.6 1.3-3.2L2.2 8.8l3-1.6 1-3.3 3.4.5z"/><path d="M9.5 12.2l1.8 1.8 3.6-3.8" stroke="#fff" stroke-width="2" fill="none" stroke-linecap="round" stroke-linejoin="round"/></svg> Verified Customer</span></div>
+        </div>
+      </div>
+    </div>
+    <div class="vy-ba-grid">
+      <img src="https://storage.googleapis.com/vysta/lp-386-simply-revival/images/ba-1.jpg" alt="Customer-submitted before and after photo showing crown coverage improvement">
+      <img src="https://storage.googleapis.com/vysta/lp-386-simply-revival/images/ba-2.jpg" alt="Customer-submitted before and after photo showing thicker hair at the crown and hairline">
+      <img src="https://storage.googleapis.com/vysta/lp-386-simply-revival/images/ba-3.jpg" alt="Customer-submitted before and after photo showing a fuller hairline">
+      <img src="https://storage.googleapis.com/vysta/lp-386-simply-revival/images/ba-4.jpg" alt="Customer-submitted before and after photo showing regrowth at the crown">
+    </div>
+    <div class="vy-ba-note">Customer-submitted progress photos. Individual results vary; testimonials reflect individual experiences and are not guaranteed outcomes.</div>
+    <figure class="vy-figure-ls" style="margin-top:34px;">
+      <img src="https://storage.googleapis.com/vysta/lp-386-simply-revival/images/confident-man.jpg" alt="Confident smiling man with a full head of healthy hair outdoors" width="1600" height="900">
+      <figcaption>Addressing DHT early is about keeping what you have and staying ahead of the pattern.</figcaption>
+    </figure>
+  </div>
+
+  <!-- SECTION 7: CTA -->
+  <section class="vy-cta-band">
+    <div class="vy-wide">
+      <div class="vy-cta-inner">
+        <div class="vy-cta-photo">
+          <img src="https://storage.googleapis.com/vysta/lp-386-simply-revival/images/bottle.png" alt="Simply Revival DHT Blocker bottle">
+        </div>
+        <div class="vy-cta-copy">
+          <span class="vy-eyebrow">Simply Revival&reg; DHT Blocker</span>
+          <h2>Address the Cause, Not Just the Symptoms</h2>
+          <p>A natural approach to fuller, healthier hair, trusted by 100,000+ customers.</p>
+          <ul class="vy-cta-list">
+            <li>10 herbs, including saw palmetto and stinging nettle</li>
+            <li>Two capsules a day, no prescription</li>
+            <li>Third-party tested, made in the USA</li>
+            <li>365-day money-back guarantee</li>
+          </ul>
+          <div class="vy-price-line">Summer Sale: from <b>$29.99</b> a bottle, up to 73% off</div>
+          <a class="vy-btn" href="https://simplyrevival.com/products/simply%C2%AE-dht-blocker">Try It Risk-Free</a>
+          <div class="vy-cta-micro">Full-year money-back guarantee. If it doesn't work, it's free.</div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- GUARANTEE -->
+  <div class="vy-wide vy-guarantee">
+    <div class="vy-g-inner">
+      <div>
+        <h2>A Full Year to See for Yourself</h2>
+        <p>Because results from any DHT blocker build gradually, Simply Revival backs every order with a 365-day money-back guarantee. Use it consistently, judge it on your own hair, and if you don't experience noticeable improvements within 365 days, simply return your most recent order for a full refund.</p>
+        <p><b>That shifts the risk off you entirely</b>: the only way you lose is by doing nothing while the pattern continues.</p>
+      </div>
+      <img src="https://storage.googleapis.com/vysta/lp-386-simply-revival/images/guarantee-man.png" alt="Man holding a Simply Revival capsule, with a 365-day money-back guarantee badge">
+    </div>
+  </div>
+
+</article>
+
+<footer>
+  <div class="vy-f-inner">
+    <div class="vy-f-logo">Hair Health <b>Daily</b></div>
+    <p>This article is an advertorial published by Hair Health Daily. It features Simply Revival&reg; DHT Blocker, a paid advertiser, and contains sponsored product placement. It is intended for educational purposes and is not medical advice. Always consult your physician before starting any supplement, especially if you are taking medication or managing a health condition.</p>
+    <p>For cosmetic and nutritional support purposes only.</p>
+    <p>*These statements have not been evaluated by the Food and Drug Administration. *This product is not intended to diagnose, treat, cure, or prevent any disease. *Individual results may vary. Testimonials and reviews reflect individual experiences and are not guaranteed outcomes.</p>
+    <p class="vy-f-copy">&copy; 2026 Hair Health Daily | All Rights Reserved</p>
+  </div>
+</footer>
+
+<div class="vy-sticky-cta" id="stickyCta">
+  <div class="vy-sticky-inner">
+    <div class="vy-s-info">
+      <div class="vy-s-name">Simply Revival&reg; DHT Blocker</div>
+      <div class="vy-s-sub">365-day money-back guarantee</div>
+    </div>
+    <a class="vy-btn" href="https://simplyrevival.com/products/simply%C2%AE-dht-blocker">Try Risk-Free</a>
+  </div>
+</div>
+
+<script>/**/</script>
+  <script>
+
+(function () {
+  var bar = document.getElementById('stickyCta');
+  var cta = document.querySelector('.vy-cta-band');
+  function onScroll() {
+    var scrollable = document.documentElement.scrollHeight - window.innerHeight;
+    var progress = scrollable > 0 ? window.scrollY / scrollable : 0;
+    var r = cta.getBoundingClientRect();
+    var ctaVisible = r.top < window.innerHeight && r.bottom > 0;
+    if (progress >= 0.30 && !ctaVisible) { bar.classList.add('vy-show'); }
+    else { bar.classList.remove('vy-show'); }
+  }
+  window.addEventListener('scroll', onScroll, { passive: true });
+  onScroll();
+})();
+
+  </script>
+
+  <script>
+  (function(){var el=document.getElementById("vstd-lp-386-simply-revival");if(!el)return;
+    function bleed(node,vw){node.style.setProperty("max-width","none","important");node.style.setProperty("width",vw+"px","important");node.style.setProperty("left","0","important");var l=node.getBoundingClientRect().left,cm=parseFloat(getComputedStyle(node).marginLeft)||0;node.style.setProperty("margin-left",(cm-l)+"px","important");}
+    function fit(){var vw=document.documentElement.clientWidth;if(!vw||vw<200)return;
+      el.style.setProperty("max-width","none","important");el.style.setProperty("width",vw+"px","important");
+      var left=el.getBoundingClientRect().left,curML=parseFloat(getComputedStyle(el).marginLeft)||0;
+      el.style.setProperty("margin-left",(curML-left)+"px","important");
+      el.style.removeProperty("margin-top");var op=el.offsetParent,rect=el.getBoundingClientRect();
+      var topGap=op?Math.round(rect.top-op.getBoundingClientRect().top):0;
+      if(topGap>0&&topGap<=80)el.style.setProperty("margin-top",(-topGap)+"px","important");
+      var nested=el.querySelectorAll('[id^="vstd-"]');for(var i=0;i<nested.length;i++){if(nested[i].getBoundingClientRect().width<vw*0.9)continue;bleed(nested[i],vw);}}
+    if(document.readyState==="complete")fit();
+    document.addEventListener("DOMContentLoaded",fit);window.addEventListener("load",fit);
+    window.addEventListener("resize",fit);[100,300,800,1500].forEach(function(t){setTimeout(fit,t);});})();
+  </script>
+
+  <script>
+  (function(){var el=document.getElementById("vstd-lp-386-simply-revival");if(!el)return;
+    function hide(){var n=el;while(n&&n.parentElement&&n.parentElement!==document.documentElement){var p=n.parentElement,k=p.children;
+      for(var i=0;i<k.length;i++){var c=k[i],t=c.tagName;if(c!==n&&t!=="SCRIPT"&&t!=="LINK"&&t!=="STYLE"&&t!=="HEAD")c.style.setProperty("display","none","important");}
+      n=p;}
+      document.body.style.setProperty("margin","0","important");document.body.style.setProperty("padding","0","important");}
+    hide();document.addEventListener("DOMContentLoaded",hide);window.addEventListener("load",hide);[50,200,600,1500].forEach(function(t){setTimeout(hide,t);});
+  })();
+  </script>
+
+</div>
+
+
+{% schema %}{"name":"Vstd LP 386","settings":[],"presets":[{"name":"Vstd LP 386"}]}{% endschema %}

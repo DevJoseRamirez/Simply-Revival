@@ -1,0 +1,501 @@
+<!-- vystodian agent | lp-383-simply-revival | Paste into Shopify (Custom Liquid section or page Content HTML) -->
+<!-- REQUIRES lp-383-simply-revival-shopify.css deployed at https://storage.googleapis.com/vysta/lp-383-simply-revival/ (deploy the project folder) -->
+<style>{% raw %}
+html,body{margin:0 !important;padding:0 !important;}
+
+#vstd-lp-383-simply-revival *:where(:not(svg,svg *)){all:revert;}
+#vstd-lp-383-simply-revival [hidden]{display:none !important;}
+
+#vstd-lp-383-simply-revival img{width:auto;}
+
+#vstd-lp-383-simply-revival [width="1600"]{width:1600px;}
+#vstd-lp-383-simply-revival [width="20"]{width:20px;}
+#vstd-lp-383-simply-revival [width="1400"]{width:1400px;}
+#vstd-lp-383-simply-revival [width="34"]{width:34px;}
+#vstd-lp-383-simply-revival [width="494"]{width:494px;}
+#vstd-lp-383-simply-revival [width="1600"][height="1066"]{aspect-ratio:1600/1066;}
+#vstd-lp-383-simply-revival [width="20"][height="20"]{aspect-ratio:20/20;}
+#vstd-lp-383-simply-revival [width="1400"][height="933"]{aspect-ratio:1400/933;}
+#vstd-lp-383-simply-revival [width="34"][height="44"]{aspect-ratio:34/44;}
+#vstd-lp-383-simply-revival [width="1600"][height="1000"]{aspect-ratio:1600/1000;}
+#vstd-lp-383-simply-revival [width="494"][height="1000"]{aspect-ratio:494/1000;}
+
+#vstd-lp-383-simply-revival table,#vstd-lp-383-simply-revival thead,#vstd-lp-383-simply-revival tbody,#vstd-lp-383-simply-revival tfoot,#vstd-lp-383-simply-revival tr,#vstd-lp-383-simply-revival th,#vstd-lp-383-simply-revival td{background-color:transparent;}
+
+
+@font-face{font-family:'Inter';font-style:normal;font-weight:100 900;font-display:swap;src:url("https://storage.googleapis.com/vysta/lp-383-simply-revival/fonts/inter-var.woff2") format('woff2')}
+#vstd-lp-383-simply-revival{
+  --teal:#2E6D6C;
+  --teal-dark:#1E4B4A;
+  --teal-soft:#E7F0EF;
+  --ink:#1D2827;
+  --body:#3A4644;
+  --muted:#6B7A78;
+  --paper:#FFFFFF;
+  --card:#F4F0E8;
+  --line:#E4E0D5;
+  --gold:#DFA33C;
+  --serif:'Inter',-apple-system,BlinkMacSystemFont,'Segoe UI',Arial,sans-serif;
+  --sans:'Inter',-apple-system,BlinkMacSystemFont,'Segoe UI',Arial,sans-serif;
+}
+#vstd-lp-383-simply-revival *{margin:0;padding:0;box-sizing:border-box}
+#vstd-lp-383-simply-revival{scroll-behavior:smooth}
+#vstd-lp-383-simply-revival{font-family:var(--sans);background:var(--paper);color:var(--body);font-size:18px;line-height:1.7;-webkit-font-smoothing:antialiased}
+#vstd-lp-383-simply-revival img{max-width:100%;height:auto;display:block}
+#vstd-lp-383-simply-revival .vy-wrap{max-width:900px;margin:0 auto;padding:0 22px}
+
+/* ── Masthead ── */
+#vstd-lp-383-simply-revival .vy-topbar{background:#fff;border-bottom:1px solid var(--line)}
+#vstd-lp-383-simply-revival .vy-topbar-inner{max-width:1060px;margin:0 auto;padding:14px 22px;display:flex;align-items:center;justify-content:space-between;gap:16px}
+#vstd-lp-383-simply-revival .vy-masthead{font-family:var(--serif);font-weight:700;font-size:20px;color:var(--ink);letter-spacing:.2px;text-decoration:none}
+#vstd-lp-383-simply-revival .vy-masthead span{color:var(--teal)}
+#vstd-lp-383-simply-revival .vy-topbar-tag{font-size:11px;font-weight:600;letter-spacing:1.6px;text-transform:uppercase;color:var(--muted)}
+
+/* ── Hero ── */
+#vstd-lp-383-simply-revival .vy-hero{padding:52px 0 8px}
+#vstd-lp-383-simply-revival h1{font-family:var(--serif);font-weight:650;font-size:clamp(30px,5.4vw,44px);line-height:1.18;color:var(--ink);letter-spacing:-.4px;margin-bottom:18px}
+#vstd-lp-383-simply-revival .vy-sub{font-size:clamp(18px,2.6vw,21px);line-height:1.6;color:var(--muted);margin-bottom:24px}
+#vstd-lp-383-simply-revival .vy-byline{display:flex;flex-wrap:wrap;align-items:center;gap:8px 14px;padding:14px 0;border-top:1px solid var(--line);border-bottom:1px solid var(--line);font-size:13.5px;color:var(--muted)}
+#vstd-lp-383-simply-revival .vy-byline b{color:var(--ink);font-weight:600}
+#vstd-lp-383-simply-revival .vy-byline .vy-dot{width:3px;height:3px;border-radius:50%;background:var(--line)}
+#vstd-lp-383-simply-revival .vy-hero-figure{margin:30px 0 0}
+#vstd-lp-383-simply-revival .vy-hero-figure img{border-radius:14px;width:100%}
+#vstd-lp-383-simply-revival figcaption{font-size:13.5px;color:var(--muted);padding-top:10px;line-height:1.55}
+
+/* ── Article body ── */
+#vstd-lp-383-simply-revival .vy-article{padding:14px 0 0}
+#vstd-lp-383-simply-revival .vy-article p{margin:0 0 22px}
+#vstd-lp-383-simply-revival .vy-article .vy-lede{font-size:19.5px;color:var(--ink)}
+#vstd-lp-383-simply-revival h2{font-family:var(--serif);font-weight:650;font-size:clamp(25px,3.8vw,32px);line-height:1.25;color:var(--ink);letter-spacing:-.3px;margin:54px 0 18px}
+#vstd-lp-383-simply-revival h2 .vy-num{color:var(--gold);margin-right:6px}
+#vstd-lp-383-simply-revival .vy-section-rule{height:1px;background:var(--line);margin:52px 0 0}
+
+/* ── Self-check ── */
+#vstd-lp-383-simply-revival .vy-check-card{background:#fff;border:1px solid var(--line);border-radius:16px;padding:10px 0 0;margin:28px 0 10px;box-shadow:0 10px 30px rgba(30,75,74,.06);overflow:hidden}
+#vstd-lp-383-simply-revival .vy-check-head{padding:18px 24px 14px;display:flex;align-items:center;gap:12px;border-bottom:1px solid var(--line)}
+#vstd-lp-383-simply-revival .vy-check-head .vy-clock{flex:0 0 auto;width:38px;height:38px;border-radius:50%;background:var(--teal-soft);display:flex;align-items:center;justify-content:center}
+#vstd-lp-383-simply-revival .vy-check-head h3{font-family:var(--sans);font-size:16px;font-weight:700;color:var(--ink);line-height:1.3}
+#vstd-lp-383-simply-revival .vy-check-head p{font-size:13px;color:var(--muted);margin:2px 0 0;line-height:1.4}
+#vstd-lp-383-simply-revival .vy-check-item{display:flex;gap:16px;align-items:flex-start;width:100%;text-align:left;background:none;border:none;border-bottom:1px solid var(--line);padding:20px 24px;cursor:pointer;font-family:var(--sans);transition:background .18s}
+#vstd-lp-383-simply-revival .vy-check-item:hover{background:#FBFAF6}
+#vstd-lp-383-simply-revival .vy-box{flex:0 0 auto;width:26px;height:26px;margin-top:2px;border:2px solid #C6CFCD;border-radius:8px;background:#fff;position:relative;transition:all .18s}
+#vstd-lp-383-simply-revival .vy-box svg{position:absolute;inset:0;margin:auto;width:15px;height:15px;opacity:0;transform:scale(.4);transition:all .18s}
+#vstd-lp-383-simply-revival .vy-check-item.vy-checked .vy-box{background:var(--teal);border-color:var(--teal)}
+#vstd-lp-383-simply-revival .vy-check-item.vy-checked .vy-box svg{opacity:1;transform:scale(1)}
+#vstd-lp-383-simply-revival .vy-check-item .vy-t{font-size:16.5px;font-weight:650;color:var(--ink);line-height:1.35}
+#vstd-lp-383-simply-revival .vy-check-item .vy-d{font-size:14.5px;color:var(--muted);line-height:1.5;margin-top:3px}
+#vstd-lp-383-simply-revival .vy-check-item.vy-checked .vy-t{color:var(--teal-dark)}
+#vstd-lp-383-simply-revival .vy-check-result{padding:22px 24px 24px;background:#FBFAF6}
+#vstd-lp-383-simply-revival .vy-meter-label{display:flex;justify-content:space-between;font-size:12.5px;font-weight:600;letter-spacing:.6px;text-transform:uppercase;color:var(--muted);margin-bottom:9px}
+#vstd-lp-383-simply-revival .vy-meter{display:flex;gap:6px;margin-bottom:16px}
+#vstd-lp-383-simply-revival .vy-meter i{height:8px;flex:1;border-radius:99px;background:#E7E3D8;transition:background .25s}
+#vstd-lp-383-simply-revival .vy-meter i.vy-on{background:var(--teal)}
+#vstd-lp-383-simply-revival .vy-meter i.vy-on.vy-hot{background:var(--gold)}
+#vstd-lp-383-simply-revival #check-verdict{font-size:15.5px;line-height:1.6;color:var(--body)}
+#vstd-lp-383-simply-revival #check-verdict b{display:block;font-size:16.5px;color:var(--ink);margin-bottom:4px}
+#vstd-lp-383-simply-revival #check-verdict a{color:var(--teal);font-weight:650;text-decoration:underline;text-underline-offset:3px}
+
+/* ── Causes ── */
+#vstd-lp-383-simply-revival .vy-cause{display:flex;gap:0;align-items:stretch;background:#fff;border:1px solid var(--line);border-radius:14px;overflow:hidden;margin-bottom:16px}
+#vstd-lp-383-simply-revival .vy-cause-photo{flex:0 0 224px;position:relative;background:var(--teal-soft)}
+#vstd-lp-383-simply-revival .vy-cause-photo img{position:absolute;inset:0;width:100%;height:100%;object-fit:cover}
+#vstd-lp-383-simply-revival .vy-cause-body{flex:1;padding:24px 26px}
+#vstd-lp-383-simply-revival .vy-cause h3{font-family:var(--sans);font-size:18px;font-weight:700;color:var(--ink);line-height:1.3;display:flex;flex-wrap:wrap;align-items:center;gap:8px;margin-bottom:8px}
+#vstd-lp-383-simply-revival .vy-chip{font-size:10.5px;font-weight:700;letter-spacing:1px;text-transform:uppercase;background:var(--gold);color:#fff;border-radius:99px;padding:3px 10px}
+#vstd-lp-383-simply-revival .vy-chip.vy-gray{background:#8C9997}
+#vstd-lp-383-simply-revival .vy-cause p{font-size:15.5px;line-height:1.65;margin:0 0 10px}
+#vstd-lp-383-simply-revival .vy-cause .vy-sign{font-size:14px;line-height:1.55;color:var(--teal-dark);background:var(--teal-soft);border-radius:9px;padding:10px 14px;margin:0}
+#vstd-lp-383-simply-revival .vy-cause .vy-sign b{font-weight:700}
+
+/* ── DHT explainer ── */
+#vstd-lp-383-simply-revival .vy-dht-steps{display:flex;gap:12px;margin:26px 0 30px}
+#vstd-lp-383-simply-revival .vy-dht-step{flex:1;background:#fff;border:1px solid var(--line);border-radius:13px;padding:18px 14px;text-align:center}
+#vstd-lp-383-simply-revival .vy-dht-step .vy-stage{font-size:11px;font-weight:700;letter-spacing:1.4px;text-transform:uppercase;color:var(--gold);margin-bottom:10px}
+#vstd-lp-383-simply-revival .vy-dht-step svg{margin:0 auto 10px}
+#vstd-lp-383-simply-revival .vy-dht-step p{font-size:13.5px;line-height:1.5;color:var(--body);margin:0}
+#vstd-lp-383-simply-revival .vy-dht-step p b{color:var(--ink)}
+
+/* ── CTA card ── */
+#vstd-lp-383-simply-revival .vy-cta-card{position:relative;overflow:hidden;display:flex;align-items:center;gap:36px;background:linear-gradient(135deg,#EAF3F0 0%,#F6F1E6 100%);border:1px solid #DCE6E1;border-radius:22px;padding:42px;margin:38px 0 10px;color:var(--body);box-shadow:0 16px 40px rgba(30,75,74,.12)}
+#vstd-lp-383-simply-revival .vy-cta-glow{position:absolute;right:-70px;top:50%;transform:translateY(-50%);width:360px;height:360px;background:radial-gradient(circle,rgba(46,109,108,.10),rgba(46,109,108,0) 70%);pointer-events:none}
+#vstd-lp-383-simply-revival .vy-cta-card .vy-txt{flex:1;position:relative;z-index:1}
+#vstd-lp-383-simply-revival .vy-cta-kicker{display:inline-block;font-size:11px;font-weight:700;letter-spacing:1.8px;text-transform:uppercase;color:#7A5410;background:rgba(223,163,60,.20);border:1px solid rgba(223,163,60,.45);border-radius:99px;padding:5px 12px;margin-bottom:15px}
+#vstd-lp-383-simply-revival .vy-cta-card h3{font-family:var(--serif);font-weight:700;font-size:clamp(23px,3.2vw,29px);line-height:1.22;color:var(--teal-dark);margin-bottom:12px;letter-spacing:-.3px}
+#vstd-lp-383-simply-revival .vy-cta-card p{font-size:15.5px;line-height:1.62;margin-bottom:20px;color:var(--body)}
+#vstd-lp-383-simply-revival .vy-cta-feats{list-style:none;margin:0 0 24px;padding:0;display:flex;flex-wrap:wrap;gap:9px}
+#vstd-lp-383-simply-revival .vy-cta-feats li{position:relative;padding:7px 14px 7px 31px;font-size:13px;font-weight:600;line-height:1.1;color:var(--teal-dark);background:#fff;border:1px solid #D5E2DE;border-radius:99px}
+#vstd-lp-383-simply-revival .vy-cta-feats li::before{content:"✓";position:absolute;left:9px;top:50%;transform:translateY(-50%);width:15px;height:15px;border-radius:50%;background:var(--teal);color:#fff;font-size:10px;font-weight:800;display:flex;align-items:center;justify-content:center;line-height:1}
+#vstd-lp-383-simply-revival .vy-cta-btn{display:inline-block;background:var(--gold);color:#231A05;font-size:16.5px;font-weight:700;text-decoration:none;border-radius:11px;padding:16px 30px;transition:transform .15s,box-shadow .15s;box-shadow:0 8px 20px rgba(223,163,60,.35)}
+#vstd-lp-383-simply-revival .vy-cta-btn:hover{transform:translateY(-2px);box-shadow:0 12px 26px rgba(223,163,60,.45)}
+#vstd-lp-383-simply-revival .vy-cta-card .vy-cta-note{font-size:12px;color:var(--muted);margin:28px 0 0}
+#vstd-lp-383-simply-revival .vy-cta-card .vy-bottle{flex:0 0 auto;position:relative;z-index:1}
+#vstd-lp-383-simply-revival .vy-cta-card .vy-bottle img{height:380px;width:auto;filter:drop-shadow(0 16px 22px rgba(30,75,74,.22))}
+
+/* ── Sticky ATC ── */
+#vstd-lp-383-simply-revival .vy-sticky-atc{position:fixed;left:0;right:0;bottom:0;z-index:200;background:#fff;border-top:1px solid var(--line);box-shadow:0 -6px 26px rgba(30,75,74,.14);transform:translateY(115%);transition:transform .35s cubic-bezier(.22,.61,.36,1)}
+#vstd-lp-383-simply-revival .vy-sticky-atc.vy-show{transform:translateY(0)}
+#vstd-lp-383-simply-revival .vy-sticky-atc-inner{max-width:900px;margin:0 auto;padding:11px 22px;display:flex;align-items:center;gap:14px}
+#vstd-lp-383-simply-revival .vy-sticky-atc-img{width:40px;height:50px;flex:0 0 40px;object-fit:contain}
+#vstd-lp-383-simply-revival .vy-sticky-atc-txt{flex:1;min-width:0;display:flex;flex-direction:column;line-height:1.25}
+#vstd-lp-383-simply-revival .vy-sticky-atc-name{font-size:15.5px;font-weight:700;color:var(--ink);white-space:nowrap;overflow:hidden;text-overflow:ellipsis}
+#vstd-lp-383-simply-revival .vy-sticky-atc-sub{font-size:12.5px;color:var(--muted)}
+#vstd-lp-383-simply-revival .vy-sticky-atc-btn{flex:0 0 auto;background:var(--gold);color:#231A05;font-size:15px;font-weight:700;text-decoration:none;border-radius:9px;padding:12px 22px;white-space:nowrap;box-shadow:0 6px 16px rgba(223,163,60,.35);transition:transform .15s}
+#vstd-lp-383-simply-revival .vy-sticky-atc-btn:hover{transform:translateY(-1px)}
+#vstd-lp-383-simply-revival .vy-sticky-atc-btn .vy-atc-lbl-short{display:none}
+
+/* ── Footer ── */
+#vstd-lp-383-simply-revival footer{margin-top:64px;background:var(--teal-dark);color:#9DBBBA;padding:38px 0 44px}
+#vstd-lp-383-simply-revival footer .vy-wrap{max-width:900px}
+#vstd-lp-383-simply-revival .vy-f-mast{font-family:var(--serif);font-weight:700;font-size:18px;color:#fff;margin-bottom:14px}
+#vstd-lp-383-simply-revival footer p{font-size:12.5px;line-height:1.65;margin-bottom:12px}
+#vstd-lp-383-simply-revival footer .vy-fine{border-top:1px solid rgba(255,255,255,.14);padding-top:16px;margin-top:6px}
+
+@media (max-width:640px){
+  #vstd-lp-383-simply-revival{font-size:17px}
+  #vstd-lp-383-simply-revival .vy-masthead{font-size:17px;white-space:nowrap}
+  #vstd-lp-383-simply-revival .vy-topbar-tag{display:none}
+  #vstd-lp-383-simply-revival .vy-hero{padding-top:36px}
+  #vstd-lp-383-simply-revival .vy-byline{font-size:12.5px}
+  #vstd-lp-383-simply-revival .vy-check-item{padding:17px 18px}
+  #vstd-lp-383-simply-revival .vy-check-head, #vstd-lp-383-simply-revival .vy-check-result{padding-left:18px;padding-right:18px}
+  #vstd-lp-383-simply-revival .vy-cause{flex-direction:column}
+  #vstd-lp-383-simply-revival .vy-cause-photo{flex-basis:auto;height:190px}
+  #vstd-lp-383-simply-revival .vy-cause-body{padding:20px 18px}
+  #vstd-lp-383-simply-revival .vy-dht-steps{flex-direction:column}
+  #vstd-lp-383-simply-revival .vy-cta-card{flex-direction:column-reverse;padding:30px 22px;text-align:center;gap:24px}
+  #vstd-lp-383-simply-revival .vy-cta-card .vy-bottle img{height:300px}
+  #vstd-lp-383-simply-revival .vy-cta-btn{display:block;width:100%;padding:16px 18px}
+  #vstd-lp-383-simply-revival .vy-cta-feats{justify-content:center}
+  #vstd-lp-383-simply-revival .vy-sticky-atc-inner{padding:9px 15px;gap:11px}
+  #vstd-lp-383-simply-revival .vy-sticky-atc-img{width:42px;height:42px;flex-basis:42px}
+  #vstd-lp-383-simply-revival .vy-sticky-atc-name{font-size:14px}
+  #vstd-lp-383-simply-revival .vy-sticky-atc-sub{display:none}
+  #vstd-lp-383-simply-revival .vy-sticky-atc-btn{font-size:14px;padding:11px 18px}
+  #vstd-lp-383-simply-revival .vy-sticky-atc-btn .vy-atc-lbl-full{display:none}
+  #vstd-lp-383-simply-revival .vy-sticky-atc-btn .vy-atc-lbl-short{display:inline}
+  #vstd-lp-383-simply-revival .vy-cta-glow{right:auto;top:24%;left:50%;transform:translateX(-50%);width:280px;height:280px}
+}
+
+
+/* Preserve paragraph spacing inside Funnelish embed where empty <p> tags collapse */
+#vstd-lp-383-simply-revival p:empty {
+  min-height: 1em !important;
+  display: block !important;
+}
+/* Growtype: undo flex-induced height:100% blowup on custom-css blocks */
+#vstd-lp-383-simply-revival [class*="growtype-customcss-"],
+#vstd-lp-383-simply-revival [class*="growtype-customcss-"] > div {
+  height: auto !important;
+}
+
+{% endraw %}</style>
+
+<div id="vstd-lp-383-simply-revival" class="vstd-page">
+<header class="vy-topbar">
+  <div class="vy-topbar-inner">
+    <a class="vy-masthead" href="#">Hair Health <span>Daily</span></a>
+    <div class="vy-topbar-tag">Advertorial</div>
+  </div>
+</header>
+
+<header class="vy-hero">
+  <div class="vy-wrap">
+    <h1>Is Your Hair Loss Actually Genetic? Take 60 Seconds to Find Out</h1>
+    <p class="vy-sub">Not all hair loss has the same cause, and the right response depends entirely on which type you have. Before you spend a dollar on the wrong fix, run through this quick self-check.</p>
+    <div class="vy-byline">
+      <span>By <b>Hair Health Daily Editorial Team</b></span>
+      <span class="vy-dot"></span>
+      <span>Updated July 28, 2026</span>
+      <span class="vy-dot"></span>
+      <span>4 min read</span>
+    </div>
+    <figure class="vy-hero-figure">
+      <img src="https://storage.googleapis.com/vysta/lp-383-simply-revival/images/hero-mirror.jpg" alt="Man checking his hairline in the bathroom mirror" width="1600" height="1066">
+      <figcaption>Most men first notice the change at the mirror: a hairline that sits a little higher, or more scalp showing at the crown.</figcaption>
+    </figure>
+  </div>
+</header>
+
+<main class="vy-article">
+  <div class="vy-wrap">
+
+    <p class="vy-lede">Here is the uncomfortable truth about hair loss: most men buy a fix before they know the cause. They grab a shampoo, a vitamin, or whatever an ad showed them at 1 a.m., give it two months, see nothing, and conclude that nothing works.</p>
+    <p>The problem usually is not the product. It is the diagnosis. Hair loss has at least five distinct causes, and a remedy aimed at the wrong one does nothing at all.</p>
+    <p>So before anything else, figure out which type you are dealing with. The quick self-check below takes about a minute, and it is built around the same questions a dermatologist would ask you first.</p>
+
+    <h2 id="self-check">The 60-Second Self-Check</h2>
+    <p>Answer honestly. Tap each statement that applies to you. You are looking for a pattern, not a single symptom.</p>
+
+    <div class="vy-check-card" id="checkCard">
+      <div class="vy-check-head">
+        <div class="vy-clock">
+          <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="#2E6D6C" stroke-width="2" stroke-linecap="round"><circle cx="12" cy="12" r="9"/><path d="M12 7v5l3 3"/></svg>
+        </div>
+        <div>
+          <h3>Tap every statement that applies to you</h3>
+          <p>Your result updates as you go. Nothing is submitted or recorded.</p>
+        </div>
+      </div>
+
+      <button class="vy-check-item" type="button" aria-pressed="false">
+        <span class="vy-box"><svg viewBox="0 0 24 24" fill="none" stroke="#fff" stroke-width="3.5" stroke-linecap="round" stroke-linejoin="round"><path d="M4 12.5l5 5L20 6.5"/></svg></span>
+        <span><span class="vy-t">Hair loss runs in my family</span><span class="vy-d" style="display:block">Your father, grandfather, or uncles thinned out or went bald, on either side of the family.</span></span>
+      </button>
+
+      <button class="vy-check-item" type="button" aria-pressed="false">
+        <span class="vy-box"><svg viewBox="0 0 24 24" fill="none" stroke="#fff" stroke-width="3.5" stroke-linecap="round" stroke-linejoin="round"><path d="M4 12.5l5 5L20 6.5"/></svg></span>
+        <span><span class="vy-t">The thinning is concentrated, not all over</span><span class="vy-d" style="display:block">It shows mostly at the temples, the hairline, or the crown, rather than evenly across the whole head.</span></span>
+      </button>
+
+      <button class="vy-check-item" type="button" aria-pressed="false">
+        <span class="vy-box"><svg viewBox="0 0 24 24" fill="none" stroke="#fff" stroke-width="3.5" stroke-linecap="round" stroke-linejoin="round"><path d="M4 12.5l5 5L20 6.5"/></svg></span>
+        <span><span class="vy-t">It has been gradual</span><span class="vy-d" style="display:block">The change crept in over months or years, not sudden clumps or bare patches.</span></span>
+      </button>
+
+      <button class="vy-check-item" type="button" aria-pressed="false">
+        <span class="vy-box"><svg viewBox="0 0 24 24" fill="none" stroke="#fff" stroke-width="3.5" stroke-linecap="round" stroke-linejoin="round"><path d="M4 12.5l5 5L20 6.5"/></svg></span>
+        <span><span class="vy-t">Nothing else explains it</span><span class="vy-d" style="display:block">No recent major illness, new medication, crash diet, or high-stress stretch that could trigger sudden shedding.</span></span>
+      </button>
+
+      <div class="vy-check-result">
+        <div class="vy-meter-label"><span>Genetic pattern signals</span><span id="meterCount">0 of 4</span></div>
+        <div class="vy-meter"><i></i><i></i><i></i><i></i></div>
+        <p id="check-verdict">Tap the statements above and your result will appear here.</p>
+      </div>
+    </div>
+
+    <figure class="vy-hero-figure" style="margin-top:34px">
+      <img src="https://storage.googleapis.com/vysta/lp-383-simply-revival/images/shedding-hand.jpg" alt="Loose strands of hair in an open palm over a bathroom sink" width="1400" height="933" loading="lazy">
+      <figcaption>Context matters: losing 50 to 100 hairs a day is normal for everyone. It is the pattern and the timeline that tell you what is going on.</figcaption>
+    </figure>
+
+    <div class="vy-section-rule"></div>
+
+    <h2>The 5 Real Causes of Hair Loss, and How to Tell Them Apart</h2>
+    <p>Most people assume all hair loss is the same thing at different speeds. It is not. These five causes behave differently, and each one calls for a different response.</p>
+
+    <div class="vy-cause">
+      <div class="vy-cause-photo"><img src="https://storage.googleapis.com/vysta/lp-383-simply-revival/images/crown-thinning.jpg" alt="Early thinning visible at the crown of a man's head" loading="lazy"></div>
+      <div class="vy-cause-body">
+        <h3>1. Pattern hair loss <span class="vy-chip">Most common in men</span></h3>
+        <p>By far the most common cause, and strongly hereditary, especially through your father's side. It follows a predictable map: the temples and hairline pull back, the crown thins, and the change unfolds slowly over years. Doctors call it androgenetic alopecia. Most men know it as male pattern baldness, and a large majority of men experience some degree of it by later adulthood.</p>
+        <p class="vy-sign"><b>Tell-tale signs:</b> family history, thinning concentrated at the temples and crown, gradual timeline.</p>
+      </div>
+    </div>
+
+    <div class="vy-cause">
+      <div class="vy-cause-photo"><img src="https://storage.googleapis.com/vysta/lp-383-simply-revival/images/stress-shedding.jpg" alt="Loose hair strands on a white pillowcase" loading="lazy"></div>
+      <div class="vy-cause-body">
+        <h3>2. Stress shedding <span class="vy-chip vy-gray">Usually temporary</span></h3>
+        <p>A physically or emotionally intense event, such as an illness, surgery, or a brutal few months at work, can push a large share of your follicles into their resting phase at once. Two to three months later, hair starts coming out in noticeable amounts all over the head, often in the shower or on the pillow.</p>
+        <p class="vy-sign"><b>Tell-tale signs:</b> sudden, diffuse shedding that begins a few months after a stressful event. It typically resolves on its own within months once the trigger passes.</p>
+      </div>
+    </div>
+
+    <div class="vy-cause">
+      <div class="vy-cause-photo"><img src="https://storage.googleapis.com/vysta/lp-383-simply-revival/images/nutrient-foods.jpg" alt="Foods rich in iron, zinc, vitamin D, and B vitamins on a kitchen table" loading="lazy"></div>
+      <div class="vy-cause-body">
+        <h3>3. Nutritional gaps</h3>
+        <p>Hair is metabolically expensive, and your body treats it as optional. When iron, zinc, vitamin D, or B vitamins run low, hair is one of the first places it shows. This one is easy to miss because the rest of your diet can look reasonably healthy.</p>
+        <p class="vy-sign"><b>Tell-tale signs:</b> all-over thinning, often alongside fatigue or brittle nails. Basic blood work at a doctor's office can confirm or rule it out.</p>
+      </div>
+    </div>
+
+    <div class="vy-cause">
+      <div class="vy-cause-photo"><img src="https://storage.googleapis.com/vysta/lp-383-simply-revival/images/scalp-exam.jpg" alt="Doctor examining a patient's scalp during a check-up" loading="lazy"></div>
+      <div class="vy-cause-body">
+        <h3>4. Thyroid, hormonal, and scalp conditions</h3>
+        <p>An underactive or overactive thyroid can disrupt the hair growth cycle across the whole scalp. So can certain hormonal shifts, and scalp conditions such as seborrheic dermatitis or fungal infection, which inflame the skin the hair grows from.</p>
+        <p class="vy-sign"><b>Tell-tale signs:</b> thinning that arrives with other symptoms, such as changes in energy, weight, or skin, or an itchy, flaky, irritated scalp. These are worth raising with a doctor.</p>
+      </div>
+    </div>
+
+    <div class="vy-cause">
+      <div class="vy-cause-photo"><img src="https://storage.googleapis.com/vysta/lp-383-simply-revival/images/traction-bun.jpg" alt="Man with hair pulled tightly into a bun, showing tension at the hairline" loading="lazy"></div>
+      <div class="vy-cause-body">
+        <h3>5. Traction alopecia</h3>
+        <p>Purely mechanical. Years of tight styles, harsh brushing, or constant friction can damage follicles along the exact lines where the tension sits. It has nothing to do with hormones or genetics, and catching it early matters, because prolonged traction can become permanent.</p>
+        <p class="vy-sign"><b>Tell-tale signs:</b> thinning that traces precisely where the pulling happens, most often along the edges and hairline.</p>
+      </div>
+    </div>
+
+    <p style="margin-top:26px"><b style="color:var(--ink)">Why this matters:</b> a fix aimed at the wrong cause does nothing. Iron will not restore a genetically receding hairline, and no hormone-focused approach will help thinning caused by a thyroid problem. Match the response to the cause, or you are burning money and months.</p>
+
+    <div class="vy-section-rule"></div>
+
+    <h2 id="genetic">If Your Answers Point to Genetic Hair Loss, Here Is What Is Actually Happening</h2>
+    <p>Genetic hair loss is not about poor circulation, a dirty scalp, or wearing hats. It comes down to a hormone called <b style="color:var(--ink)">DHT</b>, short for dihydrotestosterone, which your body makes naturally from testosterone.</p>
+    <p>If you inherited follicles that are sensitive to DHT, the hormone gradually miniaturizes them. Each new hair grows in slightly thinner and shorter than the one before it, until some follicles stop producing visible hair at all. That is why pattern hair loss is gradual, and why it concentrates at the temples and crown, where follicles tend to be most DHT-sensitive.</p>
+
+    <div class="vy-dht-steps">
+      <div class="vy-dht-step">
+        <div class="vy-stage">Stage 1</div>
+        <svg width="34" height="44" viewBox="0 0 34 44" fill="none"><path d="M17 42V10" stroke="#2E6D6C" stroke-width="7" stroke-linecap="round"/><ellipse cx="17" cy="38" rx="9" ry="6" fill="#E7F0EF"/><path d="M17 42V10" stroke="#2E6D6C" stroke-width="7" stroke-linecap="round"/></svg>
+        <p><b>Healthy follicle.</b> Hair grows thick, anchored deep, on a full growth cycle.</p>
+      </div>
+      <div class="vy-dht-step">
+        <div class="vy-stage">Stage 2</div>
+        <svg width="34" height="44" viewBox="0 0 34 44" fill="none"><ellipse cx="17" cy="38" rx="8" ry="5.5" fill="#F6E8CE"/><path d="M17 42V14" stroke="#4C8483" stroke-width="4.5" stroke-linecap="round"/></svg>
+        <p><b>DHT exposure.</b> Sensitive follicles shrink. Each new hair comes in thinner and shorter.</p>
+      </div>
+      <div class="vy-dht-step">
+        <div class="vy-stage">Stage 3</div>
+        <svg width="34" height="44" viewBox="0 0 34 44" fill="none"><ellipse cx="17" cy="38" rx="7" ry="5" fill="#F3D9D3"/><path d="M17 42V24" stroke="#9BB5B4" stroke-width="2" stroke-linecap="round"/></svg>
+        <p><b>Miniaturized.</b> The follicle produces only fine, wispy hair, then eventually none.</p>
+      </div>
+    </div>
+
+    <p>Two things follow from that. First, genetic hair loss is progressive: left alone, it continues on its own schedule. Second, because the mechanism is so well understood, it is also the most addressable type. There are established ways to approach it, ranging from prescription medications a doctor can walk you through, to non-prescription approaches aimed at the same DHT pathway.</p>
+
+    <figure class="vy-hero-figure" style="margin:6px 0 28px">
+      <img src="https://storage.googleapis.com/vysta/lp-383-simply-revival/images/doctor-consult.jpg" alt="Man discussing hair loss options with a doctor in a clinic" width="1600" height="1000" loading="lazy">
+      <figcaption>Because the DHT mechanism is well mapped, genetic hair loss is one of the few types with established, well-studied ways to address it.</figcaption>
+    </figure>
+    <p>Prescription routes are one path. If you would rather start with a plant-based, non-prescription way to work on that same DHT pathway, here is a good place to begin.</p>
+
+    <div class="vy-cta-card">
+      <div class="vy-cta-glow"></div>
+      <div class="vy-txt">
+        <div class="vy-cta-kicker">A Natural, Non-Prescription Option</div>
+        <h3>Simply Revival's Natural DHT Blocker</h3>
+        <p>A plant-based way to work on the same DHT pathway, no prescription needed.</p>
+        <ul class="vy-cta-feats">
+          <li>Saw palmetto &amp; nettle</li>
+          <li>No prescription</li>
+          <li>Non-GMO &amp; gluten-free</li>
+          <li>365-day guarantee</li>
+        </ul>
+        <a class="vy-cta-btn" href="https://simplyrevival.com/products/simply%C2%AE-dht-blocker" rel="noopener">See the DHT Blocker &rarr;</a>
+        <p class="vy-cta-note">Dietary supplement. Not evaluated by the FDA.</p>
+      </div>
+      <div class="vy-bottle">
+        <img src="https://storage.googleapis.com/vysta/lp-383-simply-revival/images/dht-blocker-bottle.png" alt="Simply Revival Natural DHT Blocker bottle" width="494" height="1000" loading="lazy">
+      </div>
+    </div>
+
+  </div>
+</main>
+
+<footer>
+  <div class="vy-wrap">
+    <div class="vy-f-mast">Hair Health Daily</div>
+    <p>This article is for educational purposes only and is not medical advice, diagnosis, or treatment. The self-check above is an informal guide, not a clinical assessment. Always consult a qualified healthcare professional about hair loss, especially if it is sudden, patchy, or accompanied by other symptoms.</p>
+    <p class="vy-fine">Published in partnership with Simply Revival. &copy; 2026 Hair Health Daily. All rights reserved.</p>
+  </div>
+</footer>
+
+<div class="vy-sticky-atc" id="stickyAtc" aria-hidden="true">
+  <div class="vy-sticky-atc-inner">
+    <img class="vy-sticky-atc-img" src="https://storage.googleapis.com/vysta/lp-383-simply-revival/images/dht-blocker-bottle.png" alt="Simply Revival Natural DHT Blocker">
+    <div class="vy-sticky-atc-txt">
+      <span class="vy-sticky-atc-name">Natural DHT Blocker</span>
+      <span class="vy-sticky-atc-sub">Plant-based &middot; No prescription</span>
+    </div>
+    <a class="vy-sticky-atc-btn" href="https://simplyrevival.com/products/simply%C2%AE-dht-blocker" rel="noopener"><span class="vy-atc-lbl-full">See the DHT Blocker &rarr;</span><span class="vy-atc-lbl-short">Shop Now &rarr;</span></a>
+  </div>
+</div>
+
+<script>/**/</script>
+
+<script>/**/</script>
+  <script>
+
+(function(){
+  var bar = document.getElementById('stickyAtc');
+  if(!bar) return;
+  var footer = document.querySelector('footer');
+  var footerVisible = false;
+  if('IntersectionObserver' in window && footer){
+    new IntersectionObserver(function(entries){
+      footerVisible = entries[0].isIntersecting;
+      update();
+    }, {threshold:0}).observe(footer);
+  }
+  function update(){
+    var scrolled = window.pageYOffset || document.documentElement.scrollTop || 0;
+    var docH = document.documentElement.scrollHeight - window.innerHeight;
+    var pct = docH > 0 ? scrolled / docH : 0;
+    var show = pct >= 0.30 && !footerVisible;
+    bar.classList.toggle('vy-show', show);
+    bar.setAttribute('aria-hidden', show ? 'false' : 'true');
+  }
+  window.addEventListener('scroll', update, {passive:true});
+  window.addEventListener('resize', update);
+  update();
+})();
+
+  </script>
+
+  <script>
+
+(function(){
+  var items = document.querySelectorAll('.vy-check-item');
+  var bars = document.querySelectorAll('.vy-meter i');
+  var count = document.getElementById('meterCount');
+  var verdict = document.getElementById('check-verdict');
+  var touched = false;
+
+  var results = {
+    0: 'Based on your answers so far, there is no strong genetic pattern here. Read through the five causes below, and pay particular attention to the temporary ones: stress, nutrition, and health changes.',
+    1: '<b>Not a strong genetic pattern so far.</b>One match on its own is common and can come with almost any type of hair loss. Read the causes below, and pay close attention to the temporary ones: stress, nutrition, and health changes.',
+    2: '<b>A mixed picture.</b>Some of your signs point toward genetic hair loss and some do not. Read through all five causes below before deciding what to do next. More than one can be active at the same time.',
+    3: '<b>Likely genetic.</b>Three of the four classic signs of pattern hair loss apply to you. Read the breakdown below, then see what actually drives this type of hair loss. <a href="#genetic">Skip to: what to do if it is genetic &darr;</a>',
+    4: '<b>Strong genetic pattern.</b>You checked all four classic signs of pattern hair loss, the kind driven by heredity and hormones rather than stress or diet. <a href="#genetic">See what is actually happening, and what can be done &darr;</a>'
+  };
+
+  function update(){
+    var n = document.querySelectorAll('.vy-check-item.vy-checked').length;
+    count.textContent = n + ' of 4';
+    bars.forEach(function(b,i){
+      b.className = i < n ? (n >= 3 ? 'on hot' : 'on') : '';
+    });
+    if(!touched){
+      verdict.innerHTML = 'Tap the statements above and your result will appear here.';
+      return;
+    }
+    verdict.innerHTML = results[n];
+  }
+
+  items.forEach(function(it){
+    it.addEventListener('click', function(){
+      touched = true;
+      it.classList.toggle('vy-checked');
+      it.setAttribute('aria-pressed', it.classList.contains('vy-checked') ? 'true' : 'false');
+      update();
+    });
+  });
+  update();
+})();
+
+  </script>
+
+  <script>
+  (function(){var el=document.getElementById("vstd-lp-383-simply-revival");if(!el)return;
+    function bleed(node,vw){node.style.setProperty("max-width","none","important");node.style.setProperty("width",vw+"px","important");node.style.setProperty("left","0","important");var l=node.getBoundingClientRect().left,cm=parseFloat(getComputedStyle(node).marginLeft)||0;node.style.setProperty("margin-left",(cm-l)+"px","important");}
+    function fit(){var vw=document.documentElement.clientWidth;if(!vw||vw<200)return;
+      el.style.setProperty("max-width","none","important");el.style.setProperty("width",vw+"px","important");
+      var left=el.getBoundingClientRect().left,curML=parseFloat(getComputedStyle(el).marginLeft)||0;
+      el.style.setProperty("margin-left",(curML-left)+"px","important");
+      el.style.removeProperty("margin-top");var op=el.offsetParent,rect=el.getBoundingClientRect();
+      var topGap=op?Math.round(rect.top-op.getBoundingClientRect().top):0;
+      if(topGap>0&&topGap<=80)el.style.setProperty("margin-top",(-topGap)+"px","important");
+      var nested=el.querySelectorAll('[id^="vstd-"]');for(var i=0;i<nested.length;i++){if(nested[i].getBoundingClientRect().width<vw*0.9)continue;bleed(nested[i],vw);}}
+    if(document.readyState==="complete")fit();
+    document.addEventListener("DOMContentLoaded",fit);window.addEventListener("load",fit);
+    window.addEventListener("resize",fit);[100,300,800,1500].forEach(function(t){setTimeout(fit,t);});})();
+  </script>
+
+  <script>
+  (function(){var el=document.getElementById("vstd-lp-383-simply-revival");if(!el)return;
+    function hide(){var n=el;while(n&&n.parentElement&&n.parentElement!==document.documentElement){var p=n.parentElement,k=p.children;
+      for(var i=0;i<k.length;i++){var c=k[i],t=c.tagName;if(c!==n&&t!=="SCRIPT"&&t!=="LINK"&&t!=="STYLE"&&t!=="HEAD")c.style.setProperty("display","none","important");}
+      n=p;}
+      document.body.style.setProperty("margin","0","important");document.body.style.setProperty("padding","0","important");}
+    hide();document.addEventListener("DOMContentLoaded",hide);window.addEventListener("load",hide);[50,200,600,1500].forEach(function(t){setTimeout(hide,t);});
+  })();
+  </script>
+
+</div>
+
+
+{% schema %}{"name":"Simply Revival DHT","settings":[],"presets":[{"name":"Simply Revival DHT"}]}{% endschema %}

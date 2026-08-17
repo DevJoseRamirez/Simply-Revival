@@ -21,10 +21,6 @@
       --padding-top-mobile: {{ section.settings.padding_top | default: 60 | times: 0.5 }}px;
       --padding-bottom-mobile: {{ section.settings.padding_bottom | default: 40 | times: 0.5 }}px;
     }
-  {% comment %} testig only {% endcomment %}
-  .cwc-sticky-atc.is-visible {
-    display: none;
-  }
 {% endstyle %}
 
 {{ 'CWC_footer.css' | asset_url | stylesheet_tag }}

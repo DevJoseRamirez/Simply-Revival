@@ -171,6 +171,13 @@
     "cwc_featured_product_B7WhGk": {
       "type": "CWC_featured_product",
       "blocks": {
+        "text_ph4EKd": {
+          "type": "text",
+          "disabled": true,
+          "settings": {
+            "content": "<h2><strong>Currently Sold Out</strong></h2><h3><a href=\"https://simplyrevival.com/products/simply%C2%AE-dht-blocker\" title=\"https://simplyrevival.com/products/simply%C2%AE-dht-blocker\"><em><strong>Try Our Natural DHT Blocker Formula</strong></em></a></h3>"
+          }
+        },
         "image_carousel_jFp4EA": {
           "type": "image_carousel",
           "settings": {
@@ -249,17 +256,17 @@
             "bonus_image_1_opt2": "shopify://shop_images/icon_prop_01.png",
             "bonus_text_1_opt2": "",
             "bonus_image_2_opt2": "shopify://shop_images/Untitled_Design_-_1_-_Edited.png",
-            "bonus_text_2_opt2": "+ FREE Hair Growth Serum",
-            "cart_addon_1_opt2": "free-hair-growth-serum",
+            "bonus_text_2_opt2": "",
+            "cart_addon_1_opt2": "",
             "cart_addon_2_opt2": "",
             "image3": "shopify://shop_images/Simply_Revival___Natural_Hair_Support_Blend___Buy_3_-_Get_2_FREE-min.png",
             "badge_text_3": "Best Value + 4 FREE Items + Free Shipping",
             "servings_text_3": "5 Months Supply",
             "bonus_image_1_opt3": "shopify://shop_images/Untitled_Design_-_1_-_Edited.png",
-            "bonus_text_1_opt3": "+ FREE Hair Growth Serum",
+            "bonus_text_1_opt3": "",
             "bonus_image_2_opt3": "shopify://shop_images/icon_prop_02.png",
             "bonus_text_2_opt3": "+ FREE $20 Gift Card",
-            "cart_addon_1_opt3": "free-hair-growth-serum",
+            "cart_addon_1_opt3": "",
             "cart_addon_2_opt3": "25-gift-card"
           }
         },
@@ -277,6 +284,13 @@
             "max_shipping_days": 7,
             "text_color": "#125657",
             "bg_color": "#d8fff4"
+          }
+        },
+        "text_xjaE4E": {
+          "type": "text",
+          "disabled": true,
+          "settings": {
+            "content": "<h2><strong>Currently Sold Out</strong></h2><h3><a href=\"https://simplyrevival.com/products/simply%C2%AE-dht-blocker\" title=\"https://simplyrevival.com/products/simply%C2%AE-dht-blocker\"><em><strong>Try Our Natural DHT Blocker Formula</strong></em></a></h3>"
           }
         },
         "add_to_cart_7gampa": {
@@ -347,6 +361,7 @@
         }
       },
       "block_order": [
+        "text_ph4EKd",
         "image_carousel_jFp4EA",
         "rating_j6tWzb",
         "vendor_g4GeAp",
@@ -357,6 +372,7 @@
         "product_options_K4yi8r",
         "subscription_toggle_ArNDfx",
         "delivery_estimate_g6E4Az",
+        "text_xjaE4E",
         "add_to_cart_7gampa",
         "guarantee_text_pAEtjq",
         "faq_x8mxYm",
