@@ -7,10 +7,12 @@
    Scope is deliberately tiny. It does NOT touch variants,
    prices, selling plans or the cart — CWC_featured_product__core.js
    and __ui.js still own all of that, unmodified. All this does is
-   mirror the selected tier into two pieces of presentation state:
+   mirror the selected tier into three pieces of presentation state:
 
      1. .is-selected on the tier wrap  → opens that tier's panel
      2. .is-unlocked on strip cells    → reveals gifts 1…N
+     3. .is-active on a cell's views   → swaps a gift's image/label
+                                         when a higher tier overrides it
 
    INDEX PARITY
    ------------
@@ -61,6 +63,21 @@
     for (var j = 0; j < cells.length; j++) {
       var cellTier = parseInt(cells[j].dataset.tier, 10) || 0;
       cells[j].classList.toggle("is-unlocked", cellTier > 0 && cellTier <= tier);
+
+      // A cell can carry per-tier overrides — e.g. the bottle gift shows
+      // one bottle on tier 2 and two bottles on tier 3. Every view is
+      // already in the DOM; pick the one for this tier, else "base".
+      // Cells with no overrides render a single view and are skipped.
+      var views = cells[j].querySelectorAll("[data-tier-view]");
+      if (views.length < 2) continue;
+
+      var active =
+        cells[j].querySelector('[data-tier-view="' + tier + '"]') ||
+        cells[j].querySelector('[data-tier-view="base"]');
+
+      for (var v = 0; v < views.length; v++) {
+        views[v].classList.toggle("is-active", views[v] === active);
+      }
     }
   }
 

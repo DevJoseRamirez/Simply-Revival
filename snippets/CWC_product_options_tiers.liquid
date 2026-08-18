@@ -122,6 +122,15 @@
           {%- endif -%}
 
           {%- comment -%}
+            Leaks out of the loop on purpose: the gifts strip below
+            needs the selected tier to paint the right gift view on
+            first render, before CWC_gift_unlock.js runs.
+          {%- endcomment -%}
+          {%- if is_selected -%}
+            {%- assign current_tier = tier_number -%}
+          {%- endif -%}
+
+          {%- comment -%}
             PRICING · subscription is ALWAYS on in this layout, so the
             displayed price is the selling-plan allocation price whenever
             one exists. Compare price is always compare_at_price.
@@ -152,6 +161,7 @@
                clean marketing numbers ($84.99 → $85, $129.99 → $130).
           {%- endcomment -%}
           {%- assign save_override = null -%}
+          {%- assign title_override = null -%}
           {%- assign thumb_setting = null -%}
           {%- assign badge_text = null -%}
           {%- assign servings_text = null -%}
@@ -169,6 +179,7 @@
           {%- case tier_number -%}
             {%- when 1 -%}
               {%- assign save_override = block.settings.save_text_1 -%}
+              {%- assign title_override = block.settings.title_text_1 -%}
               {%- assign thumb_setting = block.settings.image1 -%}
               {%- assign badge_text = block.settings.badge_text_1 -%}
               {%- assign servings_text = block.settings.servings_text_1 -%}
@@ -184,6 +195,7 @@
               {%- assign addon_2 = block.settings.cart_addon_2_opt1 -%}
             {%- when 2 -%}
               {%- assign save_override = block.settings.save_text_2 -%}
+              {%- assign title_override = block.settings.title_text_2 -%}
               {%- assign thumb_setting = block.settings.image2 -%}
               {%- assign badge_text = block.settings.badge_text_2 -%}
               {%- assign servings_text = block.settings.servings_text_2 -%}
@@ -199,6 +211,7 @@
               {%- assign addon_2 = block.settings.cart_addon_2_opt2 -%}
             {%- when 3 -%}
               {%- assign save_override = block.settings.save_text_3 -%}
+              {%- assign title_override = block.settings.title_text_3 -%}
               {%- assign thumb_setting = block.settings.image3 -%}
               {%- assign badge_text = block.settings.badge_text_3 -%}
               {%- assign servings_text = block.settings.servings_text_3 -%}
@@ -225,6 +238,14 @@
               {%- assign save_display = save_rounded | money_without_trailing_zeros -%}
             {%- endif -%}
           {%- endif -%}
+
+          {%- comment -%}
+            TITLE · block override wins, else the raw Shopify option
+            value. DISPLAY ONLY — data-value on the button and the
+            hidden option input below must keep the real value, or
+            core.js can't resolve the variant.
+          {%- endcomment -%}
+          {%- assign title_display = title_override | default: value -%}
 
           {%- comment -%}
             THUMBNAIL · block image wins, then variant image.
@@ -292,7 +313,7 @@
                   <img
                     class="cwc-gift-tier__thumb"
                     src="{{ thumb_url }}"
-                    alt="{{ value | escape }}"
+                    alt="{{ title_display | escape }}"
                     width="{{ thumb_obj.width }}"
                     height="{{ thumb_obj.height }}"
                     loading="lazy"
@@ -301,7 +322,7 @@
               {%- endif -%}
 
               <span class="cwc-gift-tier__labels">
-                <span class="cwc-gift-tier__title">{{ value }}</span>
+                <span class="cwc-gift-tier__title">{{ title_display }}</span>
                 {%- if save_display -%}
                   {%- comment -%}
                     New class name on purpose — keeps ui.js:290 from
@@ -478,16 +499,34 @@
                 assign cell_value = block.settings.unlock_value_1
                 assign cell_label = block.settings.unlock_label_1
                 assign cell_tier = block.settings.unlock_at_tier_1 | default: 1
+                assign cell_image_t2 = block.settings.unlock_image_1_opt2
+                assign cell_value_t2 = block.settings.unlock_value_1_opt2
+                assign cell_label_t2 = block.settings.unlock_label_1_opt2
+                assign cell_image_t3 = block.settings.unlock_image_1_opt3
+                assign cell_value_t3 = block.settings.unlock_value_1_opt3
+                assign cell_label_t3 = block.settings.unlock_label_1_opt3
               when 2
                 assign cell_image = block.settings.unlock_image_2
                 assign cell_value = block.settings.unlock_value_2
                 assign cell_label = block.settings.unlock_label_2
                 assign cell_tier = block.settings.unlock_at_tier_2 | default: 2
+                assign cell_image_t2 = block.settings.unlock_image_2_opt2
+                assign cell_value_t2 = block.settings.unlock_value_2_opt2
+                assign cell_label_t2 = block.settings.unlock_label_2_opt2
+                assign cell_image_t3 = block.settings.unlock_image_2_opt3
+                assign cell_value_t3 = block.settings.unlock_value_2_opt3
+                assign cell_label_t3 = block.settings.unlock_label_2_opt3
               when 3
                 assign cell_image = block.settings.unlock_image_3
                 assign cell_value = block.settings.unlock_value_3
                 assign cell_label = block.settings.unlock_label_3
                 assign cell_tier = block.settings.unlock_at_tier_3 | default: 3
+                assign cell_image_t2 = block.settings.unlock_image_3_opt2
+                assign cell_value_t2 = block.settings.unlock_value_3_opt2
+                assign cell_label_t2 = block.settings.unlock_label_3_opt2
+                assign cell_image_t3 = block.settings.unlock_image_3_opt3
+                assign cell_value_t3 = block.settings.unlock_value_3_opt3
+                assign cell_label_t3 = block.settings.unlock_label_3_opt3
             endcase
           -%}
           {%- if cell_label != blank -%}
@@ -506,21 +545,91 @@
             {%- endcomment -%}
             <div class="cwc-gift-strip__cell" data-gift-cell data-tier="{{ cell_tier }}">
               <div class="cwc-gift-strip__reveal">
-                {%- if cell_image != blank -%}
-                  <div class="cwc-gift-strip__image">
-                    <img
-                      src="{{ cell_image | image_url: width: 240 }}"
-                      alt="{{ cell_label | escape }}"
-                      width="{{ cell_image.width }}"
-                      height="{{ cell_image.height }}"
-                      loading="lazy"
+                {%- comment -%}
+                  VIEWS · what this cell shows for a given selected tier.
+                  "base" is the cell's normal contents; a tier view is
+                  rendered only when at least one of its override fields
+                  is filled in, and each field falls back to the base on
+                  its own — so overriding just the image keeps the base
+                  label. Every view ships in the HTML and
+                  CWC_gift_unlock.js only flips .is-active, so the swap
+                  is instant with no request and no flash.
+                {%- endcomment -%}
+                {%- liquid
+                  assign has_view_2 = false
+                  if cell_image_t2 != blank or cell_value_t2 != blank or cell_label_t2 != blank
+                    assign has_view_2 = true
+                  endif
+                  assign has_view_3 = false
+                  if cell_image_t3 != blank or cell_value_t3 != blank or cell_label_t3 != blank
+                    assign has_view_3 = true
+                  endif
+
+                  comment
+                    Server-side active view, so the first paint already
+                    matches the tier Liquid rendered as selected. Falls
+                    back to base whenever that tier has no override —
+                    same resolution CWC_gift_unlock.js uses at runtime.
+                  endcomment
+                  assign current_tier_name = current_tier | append: ''
+                  assign active_view = 'base'
+                  if current_tier_name == '2' and has_view_2
+                    assign active_view = '2'
+                  elsif current_tier_name == '3' and has_view_3
+                    assign active_view = '3'
+                  endif
+                -%}
+                {%- for v in (0..2) -%}
+                  {%- liquid
+                    case v
+                      when 0
+                        assign view_name = 'base'
+                        assign view_render = true
+                        assign view_image = cell_image
+                        assign view_value = cell_value
+                        assign view_label = cell_label
+                      when 1
+                        assign view_name = '2'
+                        assign view_render = has_view_2
+                        assign view_image = cell_image_t2 | default: cell_image
+                        assign view_value = cell_value_t2 | default: cell_value
+                        assign view_label = cell_label_t2 | default: cell_label
+                      when 2
+                        assign view_name = '3'
+                        assign view_render = has_view_3
+                        assign view_image = cell_image_t3 | default: cell_image
+                        assign view_value = cell_value_t3 | default: cell_value
+                        assign view_label = cell_label_t3 | default: cell_label
+                    endcase
+
+                    assign view_active = false
+                    if view_name == active_view
+                      assign view_active = true
+                    endif
+                  -%}
+                  {%- if view_render -%}
+                    <div
+                      class="cwc-gift-strip__view{% if view_active %} is-active{% endif %}"
+                      data-tier-view="{{ view_name }}"
                     >
-                  </div>
-                {%- endif -%}
-                {%- if cell_value != blank -%}
-                  <div class="cwc-gift-strip__value">{{ cell_value }}</div>
-                {%- endif -%}
-                <div class="cwc-gift-strip__label">{{ cell_label }}</div>
+                      {%- if view_image != blank -%}
+                        <div class="cwc-gift-strip__image">
+                          <img
+                            src="{{ view_image | image_url: width: 240 }}"
+                            alt="{{ view_label | escape }}"
+                            width="{{ view_image.width }}"
+                            height="{{ view_image.height }}"
+                            loading="lazy"
+                          >
+                        </div>
+                      {%- endif -%}
+                      {%- if view_value != blank -%}
+                        <div class="cwc-gift-strip__value">{{ view_value }}</div>
+                      {%- endif -%}
+                      <div class="cwc-gift-strip__label">{{ view_label }}</div>
+                    </div>
+                  {%- endif -%}
+                {%- endfor -%}
               </div>
 
               <div class="cwc-gift-strip__lock" aria-hidden="true">

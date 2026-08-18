@@ -444,6 +444,21 @@
     transition: filter .35s ease, opacity .35s ease;
 }
 
+/* One view per selected-tier state; only the active one occupies
+   layout, so a swap never shifts the strip. The base view ships with
+   .is-active from Liquid, which is also the no-JS fallback. */
+.cwc-gift-strip__view {
+    display: none;
+    flex-direction: column;
+    align-items: center;
+    gap: 3px;
+    width: 100%;
+}
+
+.cwc-gift-strip__view.is-active {
+    display: flex;
+}
+
 .cwc-gift-strip__image {
     display: flex;
     align-items: center;
