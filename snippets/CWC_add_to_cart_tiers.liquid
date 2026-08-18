@@ -1,0 +1,580 @@
+{% comment %}
+  CWC_add_to_cart_tiers.liquid
+  =====================================================
+  Add to Cart button for the gift-unlock tier layout.
+
+  RELATIONSHIP TO CWC_add_to_cart.liquid
+  --------------------------------------
+  A sibling, not a replacement. The original snippet is
+  untouched and still powers every other template; this one
+  is rendered only by the `add_to_cart_tiers` block.
+
+  Everything the JS binds to is carried over verbatim, so
+  add-to-cart, bundles, price sync and the sticky bar all
+  work on the existing, unmodified scripts:
+
+    id="add-to-cart-{section_id}"      ← core.js:55 click binding
+    data-skip-cart                     ← core.js:495
+    data-bundle-variant1…4             ← core.js:464 bundle items
+    .cwc-button-text                   ← ui.js:306/340 state + success text
+    #current-price-button-{section_id} ← ui.js:194 price sync
+    #compare-price-button-{section_id} ← ui.js:202 compare sync
+    data-sticky-atc / -button / -price ← CWC_sticky_atc.js
+
+  ONE DELIBERATE IMPROVEMENT
+  --------------------------
+  The original only renders the compare-price element when
+  compare > price at page load, so a variant switched into a
+  discount afterwards can never show it (ui.js can only fill
+  an element that exists). Here it is always rendered and
+  hidden with an inline style instead, which matters more in
+  this layout because every tier carries a compare price.
+
+  Accepts: product, section_id, block
+{% endcomment %}
+
+{%- liquid
+  assign btn_bg = block.settings.button_bg_color | default: '#125657'
+  assign btn_fg = block.settings.button_text_color | default: '#ffffff'
+  assign note_color = block.settings.note_color | default: '#3d4a4a'
+
+  comment
+    Mirrors the original snippet's reversed mapping so the two
+    behave identically when the same products are configured.
+  endcomment
+  assign bundle_product_4 = block.settings.bundle_product_1
+  assign bundle_product_3 = block.settings.bundle_product_2
+  assign bundle_product_2 = block.settings.bundle_product_3
+  assign bundle_product_1 = block.settings.bundle_product_4
+-%}
+
+{% style %}
+   /* ================================
+      Tier Add to Cart Button
+      ================================ */
+   #cwc-atc-tiers-{{ block.id }} {
+     --atc-bg: {{ btn_bg }};
+     --atc-fg: {{ btn_fg }};
+     --atc-note: {{ note_color }};
+   }
+
+   .cwc-atc-tiers .cwc-atc-tiers__button {
+     display: flex;
+     align-items: center;
+     justify-content: space-between;
+     justify-content: center;
+     gap: 14px;
+     width: 100%;
+     padding: 15px 22px;
+     border: 0;
+     border-radius: 10px;
+     background-color: var(--atc-bg);
+     color: var(--atc-fg);
+     font-family: inherit;
+     cursor: pointer;
+     transition: filter .2s ease-in-out, opacity .2s ease-in-out;
+     -webkit-tap-highlight-color: transparent;
+     box-sizing: border-box;
+   }
+
+   .cwc-atc-tiers .cwc-atc-tiers__button:hover {
+     filter: brightness(1.08);
+   }
+
+   .cwc-atc-tiers .cwc-atc-tiers__button:active {
+     outline: none;
+     box-shadow: none;
+   }
+
+   .cwc-atc-tiers .cwc-atc-tiers__button:disabled {
+     opacity: .6;
+     cursor: not-allowed;
+     filter: none;
+   }
+
+   /* label */
+   .cwc-atc-tiers .cwc-button-text {
+     flex: 0 0 auto;
+     font-size: 1.0625rem;
+     font-weight: 700;
+     line-height: 1.2;
+     white-space: nowrap;
+   }
+
+   /* centre pill · prices + guarantee */
+   .cwc-atc-tiers .cwc-atc-tiers__pill {
+     flex: 0 1 auto;
+     display: flex;
+     align-items: center;
+     justify-content: center;
+     gap: 9px;
+     min-width: 0;
+     padding: 7px 16px;
+     border: 1px solid rgba(255, 255, 255, .28);
+     border-radius: 999px;
+     background: rgba(255, 255, 255, .12);
+     font-size: .9375rem;
+     line-height: 1.2;
+   }
+
+   .cwc-atc-tiers .cwc-atc-tiers__compare {
+     color: inherit;
+     opacity: .65;
+     font-weight: 400;
+     text-decoration: line-through;
+     white-space: nowrap;
+   font-size: .875rem;
+   }
+
+   .cwc-atc-tiers .cwc-atc-tiers__price {
+     color: inherit;
+     font-weight: 600;
+     white-space: nowrap;
+  font-size: .875rem;
+   }
+
+   .cwc-atc-tiers .cwc-atc-tiers__divider {
+     width: 1px;
+     height: 16px;
+     background: rgba(255, 255, 255, .35);
+     flex: 0 0 auto;
+   }
+
+   .cwc-atc-tiers .cwc-atc-tiers__guarantee {
+     display: flex;
+     align-items: center;
+     gap: 6px;
+     font-size: .875rem;
+     font-weight: 500;
+     white-space: nowrap;
+   }
+
+   .cwc-atc-tiers .cwc-atc-tiers__guarantee svg {
+     display: block;
+     flex: 0 0 auto;
+   }
+
+   /* trailing arrow */
+   .cwc-atc-tiers .cwc-atc-tiers__arrow {
+     flex: 0 0 auto;
+     display: flex;
+     align-items: center;
+   }
+
+   .cwc-atc-tiers .cwc-atc-tiers__arrow svg {
+     display: block;
+   }
+
+   /* notes under the button */
+   .cwc-atc-tiers .cwc-atc-tiers__notes {
+     display: flex;
+     align-items: center;
+     justify-content: center;
+     flex-wrap: wrap;
+     gap: 6px 12px;
+     margin-top: 10px;
+     color: var(--atc-note);
+     font-size: .8125rem;
+     line-height: 1.3;
+     padding-bottom: 1.5rem;
+   }
+
+   .cwc-atc-tiers .cwc-atc-tiers__note {
+     display: flex;
+     align-items: center;
+     gap: 6px;
+   }
+
+   .cwc-atc-tiers .cwc-atc-tiers__note svg {
+     display: block;
+     flex: 0 0 auto;
+   }
+
+   .cwc-atc-tiers .cwc-atc-tiers__note-sep {
+     opacity: .45;
+   }
+
+   @media (max-width: 768px) {
+    .cwc-atc-tiers   .cwc-atc-tiers__guarantee {
+       display: none;
+     }
+     .cwc-atc-tiers .cwc-atc-tiers__button {
+       flex-wrap: wrap;
+       justify-content: center;
+       gap: 8px;
+       padding: 13px 16px;
+     }
+
+     .cwc-atc-tiers .cwc-button-text {
+       font-size: 1rem;
+     }
+
+     .cwc-atc-tiers .cwc-atc-tiers__pill {
+       padding: 5px 12px;
+       gap: 7px;
+       font-size: .875rem;
+     }
+
+     .cwc-atc-tiers .cwc-atc-tiers__guarantee {
+       font-size: .8125rem;
+     }
+
+     .cwc-atc-tiers .cwc-atc-tiers__notes {
+       font-size: .75rem;
+       gap: 4px 10px;
+     }
+   }
+
+   /* ================================
+      Sticky Add to Cart Bar
+      ================================ */
+   #cwc-atc-tiers-sticky-{{ block.id }}.cwc-sticky-atc {
+     --sticky-bg: {{ block.settings.sticky_bg_color | default: '#ffffff' }};
+
+     position: fixed;
+     bottom: 0;
+     left: 0;
+     right: 0;
+     z-index: 999;
+     background-color: var(--sticky-bg);
+     box-shadow: 0 -2px 10px rgba(0, 0, 0, .1);
+     transform: translateY(100%);
+     transition: transform .3s ease-in-out;
+     padding: .75rem 1rem;
+     padding-bottom: calc(.75rem + env(safe-area-inset-bottom, 0px));
+   }
+
+   #cwc-atc-tiers-sticky-{{ block.id }}.cwc-sticky-atc.is-visible {
+     transform: translateY(0);
+   }
+
+   #cwc-atc-tiers-sticky-{{ block.id }} .cwc-sticky-atc__wrapper {
+     max-width: 1200px;
+     margin: 0 auto;
+     display: flex;
+     align-items: center;
+     justify-content: space-between;
+     gap: 1rem;
+   }
+
+   #cwc-atc-tiers-sticky-{{ block.id }} .cwc-sticky-atc__product-info {
+     display: flex;
+     align-items: center;
+     gap: .75rem;
+     flex: 1;
+     min-width: 0;
+   }
+
+   #cwc-atc-tiers-sticky-{{ block.id }} .cwc-sticky-atc__thumbnail {
+     width: 50px;
+     height: 50px;
+     flex-shrink: 0;
+     border-radius: 6px;
+     overflow: hidden;
+     background: #f5f5f5;
+   }
+
+   #cwc-atc-tiers-sticky-{{ block.id }} .cwc-sticky-atc__thumbnail img {
+     width: 100%;
+     height: 100%;
+     object-fit: cover;
+   }
+
+   #cwc-atc-tiers-sticky-{{ block.id }} .cwc-sticky-atc__details {
+     display: flex;
+     flex-direction: column;
+     gap: .125rem;
+     min-width: 0;
+     width: 100%;
+   }
+
+   #cwc-atc-tiers-sticky-{{ block.id }} .cwc-sticky-atc__title {
+     font-size: .875rem;
+     font-weight: 600;
+     color: #111;
+     white-space: nowrap;
+     overflow: hidden;
+     text-overflow: ellipsis;
+     line-height: 1.3;
+   }
+
+   #cwc-atc-tiers-sticky-{{ block.id }} .cwc-sticky-atc__price {
+     display: flex;
+     align-items: center;
+     gap: .5rem;
+     font-size: .875rem;
+   }
+
+   #cwc-atc-tiers-sticky-{{ block.id }} .cwc-sticky-atc__price-current {
+     font-weight: 600;
+     color: #111;
+   }
+
+   #cwc-atc-tiers-sticky-{{ block.id }} .cwc-sticky-atc__price-compare {
+     text-decoration: line-through;
+     color: #888;
+     font-size: .8125rem;
+   }
+
+   #cwc-atc-tiers-sticky-{{ block.id }} .cwc-sticky-atc__button {
+     flex-shrink: 0;
+     padding: .75rem 1.5rem;
+     font-weight: 700;
+     font-size: .9375rem;
+     border-radius: 999px;
+     border: 0;
+     cursor: pointer;
+     background-color: var(--atc-bg, {{ btn_bg }});
+     color: var(--atc-fg, {{ btn_fg }});
+     white-space: nowrap;
+     transition: filter .2s ease-in-out;
+     -webkit-tap-highlight-color: transparent;
+   }
+
+   #cwc-atc-tiers-sticky-{{ block.id }} .cwc-sticky-atc__button:hover {
+     filter: brightness(1.08);
+   }
+
+   #cwc-atc-tiers-sticky-{{ block.id }} .cwc-sticky-atc__button:disabled {
+     opacity: .6;
+     cursor: not-allowed;
+   }
+
+   @media (max-width: 768px) {
+
+     #cwc-atc-tiers-sticky-{{ block.id }}.cwc-sticky-atc {
+       padding: .625rem .75rem;
+       padding-bottom: calc(.625rem + env(safe-area-inset-bottom, 0px));
+     }
+
+     #cwc-atc-tiers-sticky-{{ block.id }} .cwc-sticky-atc__thumbnail {
+       width: 44px;
+       height: 44px;
+       border-radius: 4px;
+     }
+
+     #cwc-atc-tiers-sticky-{{ block.id }} .cwc-sticky-atc__button {
+       padding: .625rem 1rem;
+       font-size: .875rem;
+     }
+   }
+{% endstyle %}
+
+<div id="cwc-atc-tiers-{{ block.id }}" class="cwc-atc-tiers">
+  <button
+    type="button"
+    class="cwc-atc-tiers__button"
+    id="add-to-cart-{{ section_id }}"
+    data-static-atc
+    {% unless product.available %}
+      disabled
+    {% endunless %}
+    data-skip-cart="{{ block.settings.skip_cart }}"
+    {%- if bundle_product_1 != blank -%}
+      data-bundle-variant1="{{ bundle_product_1.selected_or_first_available_variant.id }}"
+    {%- endif -%}
+    {%- if bundle_product_2 != blank -%}
+      data-bundle-variant2="{{ bundle_product_2.selected_or_first_available_variant.id }}"
+    {%- endif -%}
+    {%- if bundle_product_3 != blank -%}
+      data-bundle-variant3="{{ bundle_product_3.selected_or_first_available_variant.id }}"
+    {%- endif -%}
+    {%- if bundle_product_4 != blank -%}
+      data-bundle-variant4="{{ bundle_product_4.selected_or_first_available_variant.id }}"
+    {%- endif -%}
+  >
+    {%- if product.available -%}
+      <span class="cwc-button-text">{{ block.settings.button_text | default: 'Add To Cart' }}</span>
+
+      <span class="cwc-atc-tiers__pill">
+        {%- comment -%}
+          Always rendered, hidden inline when there's nothing to compare —
+          ui.js can only update an element that already exists.
+
+          The legacy .cwc-featured-product__price-current / -compare classes
+          are kept ALONGSIDE the new ones because CWC_sticky_atc.js:84-90
+          finds the static prices by those class names (via closest() on
+          .cwc-featured-product__add_to_cart) and MutationObserves them to
+          mirror into the sticky bar. Drop them and the sticky bar's price
+          freezes at its page-load value when the tier changes.
+
+          The compare span is left EMPTY rather than value-plus-hidden when
+          there is nothing to compare, because that same script decides
+          whether to show the sticky compare price from textContent, not
+          from the inline display style.
+        {%- endcomment -%}
+        <span
+          class="cwc-atc-tiers__compare cwc-featured-product__price-compare"
+          id="compare-price-button-{{ section_id }}"
+          {% unless product.compare_at_price > product.price %}
+            style="display: none;"
+          {% endunless %}
+        >
+          {%- if product.compare_at_price > product.price -%}
+            {{- product.compare_at_price | money -}}
+          {%- endif -%}
+        </span>
+
+        <span
+          class="cwc-atc-tiers__price cwc-featured-product__price-current"
+          id="current-price-button-{{ section_id }}"
+        >
+          {{- product.price | money -}}
+        </span>
+
+        {%- if block.settings.guarantee_text != blank -%}
+          <span class="cwc-atc-tiers__guarantee">
+            <span class="cwc-atc-tiers__divider" aria-hidden="true"></span>
+            <svg xmlns="http://www.w3.org/2000/svg" width="15" height="15" viewBox="0 0 15 15" fill="none">
+              <g clip-path="url(#clip0_1171_260)" fill="none">
+                <path d="M7.5 13.75C10.9518 13.75 13.75 10.9518 13.75 7.5C13.75 4.04822 10.9518 1.25 7.5 1.25C4.04822 1.25 1.25 4.04822 1.25 7.5C1.25 10.9518 4.04822 13.75 7.5 13.75Z" stroke="white" stroke-width="1.1875"/>
+                <path d="M4.875 7.6875L6.5625 9.375L10.125 5.6875" stroke="white" stroke-width="1.1875" stroke-linecap="round" stroke-linejoin="round"/>
+              </g>
+              <defs>
+                <clipPath id="clip0_1171_260">
+                  <rect width="15" height="15" fill="white"/>
+                </clipPath>
+              </defs>
+            </svg>
+            {{ block.settings.guarantee_text }}
+          </span>
+        {%- endif -%}
+      </span>
+
+      {%- if block.settings.show_arrow -%}
+        <span class="cwc-atc-tiers__arrow" aria-hidden="true">
+          <svg xmlns="http://www.w3.org/2000/svg" width="22" height="16" viewBox="0 0 24 16" fill="none">
+            <path
+              d="M1 8h20.5M15 1.5L21.8 8 15 14.5"
+              stroke="currentColor"
+              stroke-width="1.9"
+              stroke-linecap="round"
+              stroke-linejoin="round"
+            />
+          </svg>
+        </span>
+      {%- endif -%}
+    {%- else -%}
+      <span class="cwc-button-text">Sold Out</span>
+    {%- endif -%}
+  </button>
+
+  {%- if block.settings.note_1 != blank or block.settings.note_2 != blank -%}
+    <div class="cwc-atc-tiers__notes">
+      {%- if block.settings.note_1 != blank -%}
+        <span class="cwc-atc-tiers__note">
+          <svg
+            xmlns="http://www.w3.org/2000/svg"
+            width="14"
+            height="14"
+            viewBox="0 0 24 24"
+            fill="none"
+            aria-hidden="true"
+          >
+            <path
+              d="M20.5 12a8.5 8.5 0 1 1-2.6-6.1"
+              stroke="currentColor"
+              stroke-width="1.9"
+              stroke-linecap="round"
+              fill="none"
+            />
+            <path
+              d="M20.7 3.2v4.2h-4.2"
+              stroke="currentColor"
+              stroke-width="1.9"
+              stroke-linecap="round"
+              stroke-linejoin="round"
+            />
+          </svg>
+          {{ block.settings.note_1 }}
+        </span>
+      {%- endif -%}
+
+      {%- if block.settings.note_1 != blank and block.settings.note_2 != blank -%}
+        <span class="cwc-atc-tiers__note-sep" aria-hidden="true">|</span>
+      {%- endif -%}
+
+      {%- if block.settings.note_2 != blank -%}
+        <span class="cwc-atc-tiers__note">
+          <svg
+            xmlns="http://www.w3.org/2000/svg"
+            width="14"
+            height="14"
+            viewBox="0 0 24 24"
+            fill="none"
+            aria-hidden="true"
+          >
+            <circle fill="none" cx="12" cy="12" r="9.2" stroke="currentColor" stroke-width="1.9"/>
+            <path d="M5.6 5.6l12.8 12.8" stroke="currentColor" stroke-width="1.9" stroke-linecap="round"/>
+          </svg>
+          {{ block.settings.note_2 }}
+        </span>
+      {%- endif -%}
+    </div>
+  {%- endif -%}
+</div>
+
+{% comment %}
+  ================================
+  Sticky Add to Cart Bar
+  ================================
+{% endcomment %}
+{% if block.settings.enable_sticky_atc %}
+  <div
+    id="cwc-atc-tiers-sticky-{{ block.id }}"
+    class="cwc-sticky-atc"
+    data-sticky-atc
+    data-observe-target="add-to-cart-{{ section_id }}"
+  >
+    <div class="cwc-sticky-atc__wrapper">
+      <div class="cwc-sticky-atc__product-info">
+        <div class="cwc-sticky-atc__thumbnail">
+          {% if product.featured_image %}
+            <img
+              src="{{ product.featured_image | image_url: width: 100 }}"
+              alt="{{ product.title | escape }}"
+              width="{{ product.featured_image.width }}"
+              height="{{ product.featured_image.height }}"
+              loading="lazy"
+            >
+          {% endif %}
+        </div>
+
+        <div class="cwc-sticky-atc__details">
+          <div class="cwc-sticky-atc__title">{{ product.title }}</div>
+          <div class="cwc-sticky-atc__price">
+            <span class="cwc-sticky-atc__price-current" data-sticky-price-current>
+              {{- product.price | money -}}
+            </span>
+            <span
+              class="cwc-sticky-atc__price-compare"
+              data-sticky-price-compare
+              {% unless product.compare_at_price > product.price %}
+                style="display: none;"
+              {% endunless %}
+            >
+              {{- product.compare_at_price | money -}}
+            </span>
+          </div>
+        </div>
+      </div>
+
+      <button
+        type="button"
+        class="cwc-sticky-atc__button"
+        data-sticky-atc-button
+        {% unless product.available %}
+          disabled
+        {% endunless %}
+      >
+        {%- if product.available -%}
+          {{ block.settings.sticky_button_text | default: block.settings.button_text | default: 'Add To Cart' }}
+        {%- else -%}
+          Sold Out
+        {%- endif -%}
+      </button>
+    </div>
+  </div>
+
+  {{ 'CWC_sticky_atc.js' | asset_url | script_tag }}
+{% endif %}

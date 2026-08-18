@@ -298,6 +298,21 @@
                     {% render 'CWC_add_to_cart', product: current_product, section_id: section.id, block: block %}
                   </div>
 
+                {% comment %}
+                  Tier-styled Add to Cart. Additive sibling of the block
+                  above — same JS bindings, different presentation. Use one
+                  or the other in a template, never both: they would emit
+                  duplicate #add-to-cart-{section.id} ids.
+                {% endcomment %}
+                {% when 'add_to_cart_tiers' %}
+                  <div class="cwc-featured-product__add_to_cart" {{ block.shopify_attributes }}>
+                    {% render 'CWC_add_to_cart_tiers',
+                      product: current_product,
+                      section_id: section.id,
+                      block: block
+                    %}
+                  </div>
+
                 {% when 'guarantee_text' %}
                   <div class="cwc-featured-product__guarantee_text" {{ block.shopify_attributes }}>
                     {% render 'CWC_guarantee_text', product: current_product, section_id: section.id, block: block %}
@@ -1644,6 +1659,132 @@
           "type": "product",
           "id": "bundle_product_1",
           "label": "Product 1"
+        },
+        {
+          "type": "product",
+          "id": "bundle_product_2",
+          "label": "Product 2"
+        },
+        {
+          "type": "product",
+          "id": "bundle_product_3",
+          "label": "Product 3"
+        },
+        {
+          "type": "product",
+          "id": "bundle_product_4",
+          "label": "Product 4"
+        },
+        {
+          "type": "header",
+          "content": "Checkout Behavior"
+        },
+        {
+          "type": "checkbox",
+          "id": "skip_cart",
+          "label": "Skip cart & send to checkout",
+          "default": false
+        }
+      ]
+    },
+    {
+      "type": "add_to_cart_tiers",
+      "name": "Add to Cart (Tiers)",
+      "settings": [
+        {
+          "type": "paragraph",
+          "content": "Tier-styled Add to Cart. Use INSTEAD of the standard Add to Cart Button block, not alongside it."
+        },
+        {
+          "type": "header",
+          "content": "Button"
+        },
+        {
+          "type": "text",
+          "id": "button_text",
+          "label": "Button Text",
+          "default": "Add To Cart"
+        },
+        {
+          "type": "color",
+          "id": "button_bg_color",
+          "label": "Button Background Color",
+          "default": "#125657"
+        },
+        {
+          "type": "color",
+          "id": "button_text_color",
+          "label": "Button Text Color",
+          "default": "#ffffff"
+        },
+        {
+          "type": "checkbox",
+          "id": "show_arrow",
+          "label": "Show trailing arrow",
+          "default": true
+        },
+        {
+          "type": "text",
+          "id": "guarantee_text",
+          "label": "Guarantee pill text",
+          "default": "365-Day Guarantee",
+          "info": "Sits beside the price inside the button. Leave blank to show price only."
+        },
+        {
+          "type": "header",
+          "content": "Notes Under Button"
+        },
+        {
+          "type": "text",
+          "id": "note_1",
+          "label": "Note 1",
+          "default": "Refills Ship Every 25 Days"
+        },
+        {
+          "type": "text",
+          "id": "note_2",
+          "label": "Note 2",
+          "default": "Stop or Cancel Anytime"
+        },
+        {
+          "type": "color",
+          "id": "note_color",
+          "label": "Note Text Color",
+          "default": "#3d4a4a"
+        },
+        {
+          "type": "header",
+          "content": "Sticky Add to Cart"
+        },
+        {
+          "type": "checkbox",
+          "id": "enable_sticky_atc",
+          "label": "Enable Sticky Add to Cart",
+          "info": "Shows a floating bar at the bottom when user scrolls past the main button",
+          "default": false
+        },
+        {
+          "type": "text",
+          "id": "sticky_button_text",
+          "label": "Sticky Button Text",
+          "info": "Leave blank to use main button text",
+          "default": "Add To Cart"
+        },
+        {
+          "type": "color",
+          "id": "sticky_bg_color",
+          "label": "Sticky Bar Background",
+          "default": "#ffffff"
+        },
+        {
+          "type": "header",
+          "content": "Bundle Products"
+        },
+        {
+          "type": "product",
+          "id": "bundle_product_1",
+          "label": "Product 1",
+          "info": "Added to cart alongside the main variant on every tier."
         },
         {
           "type": "product",

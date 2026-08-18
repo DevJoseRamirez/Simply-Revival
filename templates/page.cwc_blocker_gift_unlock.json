@@ -227,13 +227,18 @@
           }
         },
         "add_to_cart_7gampa": {
-          "type": "add_to_cart",
+          "type": "add_to_cart_tiers",
           "settings": {
-            "button_text": "Add to Cart",
+            "button_text": "Add To Cart",
             "button_bg_color": "#125657",
             "button_text_color": "#ffffff",
+            "show_arrow": true,
+            "guarantee_text": "365-Day Guarantee",
+            "note_1": "Refills Ship Every 25 Days",
+            "note_2": "Stop or Cancel Anytime",
+            "note_color": "#3d4a4a",
             "enable_sticky_atc": true,
-            "sticky_button_text": "Add to Cart",
+            "sticky_button_text": "Add To Cart",
             "sticky_bg_color": "#ffffff",
             "bundle_product_1": "",
             "bundle_product_2": "",
@@ -244,6 +249,7 @@
         },
         "guarantee_text_pAEtjq": {
           "type": "guarantee_text",
+          "disabled": true,
           "settings": {
             "text": "365-day money back guarantee",
             "icon": "shopify://shop_images/Simply_Revival___Gurantee-min.png"
@@ -356,7 +362,7 @@
       ],
       "name": "Featured Product",
       "settings": {
-        "product": "simply®-dht-blocker",
+        "product": "natural-dht-blocker-bogo",
         "background_color": "#ffffff",
         "padding_top": 40,
         "padding_bottom": 40,
