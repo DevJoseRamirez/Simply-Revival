@@ -1,0 +1,553 @@
+{% comment %}
+  =====================================================
+  CWC PRODUCT OPTIONS · GIFT-UNLOCK TIERS
+  =====================================================
+  A tier-style buy box: one row per option value, with a
+  detail panel that opens ONLY on the selected tier, plus
+  a "GIFTS UNLOCKED" reveal strip underneath.
+
+  RELATIONSHIP TO CWC_product_options.liquid
+  ------------------------------------------
+  This is a sibling, NOT a replacement. The original
+  snippet is untouched and still powers every other
+  template. This one is only rendered by the
+  `product_options_tiers` block.
+
+  WHAT DRIVES IT (all existing, unmodified JS)
+  -------------------------------------------
+  The buttons keep the exact classes + data attributes
+  that CWC_featured_product__core.js binds to, so variant
+  switching, the hidden option inputs, selling plans and
+  per-tier cart add-ons all work with no JS changes:
+    .cwc-featured-product__option_buttons  ← core.js:366 sibling lookup
+    .cwc-featured-product__option_button   ← core.js:357 click binding
+    data-variant-id / -price / -compare
+    data-selling-plan-id / -subscription-price
+    data-addon-variant-1 / -2              ← core.js:453 cart add-ons
+    .cwc-featured-product__option-input    ← core.js:378 hidden input
+
+  Prices keep the original class names so
+  CWC_featured_product__ui.js keeps them in sync.
+  The SAVINGS label deliberately uses a NEW class
+  (.cwc-gift-tier__save) so ui.js's percentage rewrite
+  (ui.js:290) can't find it — that lets us render dollar
+  savings from Liquid and have them stick.
+
+  SUBSCRIPTION
+  ------------
+  This layout is subscription-only: there is no toggle and
+  no one-time option. The section renders a hidden, checked
+  #auto-refill-{section.id} input alongside this snippet so
+  core.js's isSubscriptionActive() stays true — which is
+  what attaches the selling plan at cart and keeps
+  subscription pricing on screen.
+
+  INDEX PARITY
+  ------------
+  Option N ↔ Gift N. Selecting tier i unlocks gifts 1…i.
+  No "unlocks at tier" setting: the numbering IS the link.
+{% endcomment %}
+
+{{ 'CWC_gift_unlock.css' | asset_url | stylesheet_tag }}
+
+{%- liquid
+  if default_variant
+    assign sel = default_variant
+  else
+    assign sel = product.selected_or_first_available_variant
+  endif
+
+  assign accent = block.settings.accent_color | default: '#125657'
+  assign free_color = block.settings.free_color | default: '#d0342c'
+  assign save_label = block.settings.save_label | default: 'You save'
+  assign check_color = block.settings.check_color | default: '#125657'
+-%}
+
+{% style %}
+  #CWC_gift-tiers-{{ block.id }} {
+    --gt-accent: {{ accent }};
+    --gt-selected-bg: {{ block.settings.selected_bg_color | default: '#e6f4ef' }};
+    --gt-free-color: {{ free_color }};
+    --gt-check: {{ check_color }};
+    --gt-badge-bg: {{ block.settings.badge_bg_color | default: accent }};
+    --gt-badge-color: {{ block.settings.badge_text_color | default: '#ffffff' }};
+  }
+{% endstyle %}
+
+<div id="CWC_gift-tiers-{{ block.id }}" class="cwc-gift-tiers" data-gift-tiers>
+  {%- for option in product.options_with_values -%}
+    <div class="cwc-gift-tiers__option">
+      {%- comment -%}
+        Container class is REQUIRED — core.js:366 walks up to it
+        with closest() to deselect sibling tiers.
+      {%- endcomment -%}
+      <div class="cwc-featured-product__option_buttons cwc-gift-tiers__list">
+        {%- for value in option.values -%}
+          {%- assign tier_number = forloop.index -%}
+
+          {%- comment -%}
+            Candidate variant for this tier: set this option to
+            "value", keep the other options at the current
+            selection. Same resolution as the original snippet.
+          {%- endcomment -%}
+          {%- assign candidate = null -%}
+          {%- for v in product.variants -%}
+            {%- assign match = true -%}
+            {%- if option.position == 1 -%}
+              {%- if v.option1 != value %}{% assign match = false %}{% endif -%}
+              {%- if product.options.size > 1 and v.option2 != sel.option2 %}{% assign match = false %}{% endif -%}
+              {%- if product.options.size > 2 and v.option3 != sel.option3 %}{% assign match = false %}{% endif -%}
+            {%- elsif option.position == 2 -%}
+              {%- if v.option2 != value %}{% assign match = false %}{% endif -%}
+              {%- if v.option1 != sel.option1 %}{% assign match = false %}{% endif -%}
+              {%- if product.options.size > 2 and v.option3 != sel.option3 %}{% assign match = false %}{% endif -%}
+            {%- else -%}
+              {%- if v.option3 != value %}{% assign match = false %}{% endif -%}
+              {%- if v.option1 != sel.option1 %}{% assign match = false %}{% endif -%}
+              {%- if v.option2 != sel.option2 %}{% assign match = false %}{% endif -%}
+            {%- endif -%}
+            {%- if match -%}
+              {%- assign candidate = v -%}
+              {%- break -%}
+            {%- endif -%}
+          {%- endfor -%}
+
+          {%- assign is_selected = false -%}
+          {%- if option.position == 1 and sel.option1 == value -%}
+            {%- assign is_selected = true -%}
+          {%- elsif option.position == 2 and sel.option2 == value -%}
+            {%- assign is_selected = true -%}
+          {%- elsif option.position == 3 and sel.option3 == value -%}
+            {%- assign is_selected = true -%}
+          {%- endif -%}
+
+          {%- comment -%}
+            PRICING · subscription is ALWAYS on in this layout, so the
+            displayed price is the selling-plan allocation price whenever
+            one exists. Compare price is always compare_at_price.
+          {%- endcomment -%}
+          {%- assign variant_selling_plan_id = null -%}
+          {%- assign subscription_price = null -%}
+          {%- assign display_price = candidate.price -%}
+
+          {%- if candidate and candidate.selling_plan_allocations.size > 0 -%}
+            {%- assign allocation = candidate.selling_plan_allocations[0] -%}
+            {%- assign variant_selling_plan_id = allocation.selling_plan.id -%}
+            {%- assign subscription_price = allocation.price -%}
+            {%- assign display_price = subscription_price -%}
+          {%- endif -%}
+
+          {%- assign show_compare = false -%}
+          {%- assign save_money = 0 -%}
+          {%- if candidate and candidate.compare_at_price and candidate.compare_at_price > display_price -%}
+            {%- assign show_compare = true -%}
+            {%- assign save_money = candidate.compare_at_price | minus: display_price -%}
+          {%- endif -%}
+
+          {%- comment -%}
+            SAVINGS TEXT
+            1. Per-tier manual override wins, if set.
+            2. Else computed, rounded per the block's setting.
+               "nearest_dollar" is the default because it produces the
+               clean marketing numbers ($84.99 → $85, $129.99 → $130).
+          {%- endcomment -%}
+          {%- assign save_override = null -%}
+          {%- assign thumb_setting = null -%}
+          {%- assign badge_text = null -%}
+          {%- assign servings_text = null -%}
+          {%- assign included_title = null -%}
+          {%- assign included_sub = null -%}
+          {%- assign gift_1_title = null -%}
+          {%- assign gift_1_sub = null -%}
+          {%- assign gift_2_title = null -%}
+          {%- assign gift_2_sub = null -%}
+          {%- assign gift_3_title = null -%}
+          {%- assign gift_3_sub = null -%}
+          {%- assign addon_1 = null -%}
+          {%- assign addon_2 = null -%}
+
+          {%- case tier_number -%}
+            {%- when 1 -%}
+              {%- assign save_override = block.settings.save_text_1 -%}
+              {%- assign thumb_setting = block.settings.image1 -%}
+              {%- assign badge_text = block.settings.badge_text_1 -%}
+              {%- assign servings_text = block.settings.servings_text_1 -%}
+              {%- assign included_title = block.settings.included_title_1 -%}
+              {%- assign included_sub = block.settings.included_sub_1 -%}
+              {%- assign gift_1_title = block.settings.bonus_text_1_opt1 -%}
+              {%- assign gift_1_sub = block.settings.bonus_sub_1_opt1 -%}
+              {%- assign gift_2_title = block.settings.bonus_text_2_opt1 -%}
+              {%- assign gift_2_sub = block.settings.bonus_sub_2_opt1 -%}
+              {%- assign gift_3_title = block.settings.bonus_text_3_opt1 -%}
+              {%- assign gift_3_sub = block.settings.bonus_sub_3_opt1 -%}
+              {%- assign addon_1 = block.settings.cart_addon_1_opt1 -%}
+              {%- assign addon_2 = block.settings.cart_addon_2_opt1 -%}
+            {%- when 2 -%}
+              {%- assign save_override = block.settings.save_text_2 -%}
+              {%- assign thumb_setting = block.settings.image2 -%}
+              {%- assign badge_text = block.settings.badge_text_2 -%}
+              {%- assign servings_text = block.settings.servings_text_2 -%}
+              {%- assign included_title = block.settings.included_title_2 -%}
+              {%- assign included_sub = block.settings.included_sub_2 -%}
+              {%- assign gift_1_title = block.settings.bonus_text_1_opt2 -%}
+              {%- assign gift_1_sub = block.settings.bonus_sub_1_opt2 -%}
+              {%- assign gift_2_title = block.settings.bonus_text_2_opt2 -%}
+              {%- assign gift_2_sub = block.settings.bonus_sub_2_opt2 -%}
+              {%- assign gift_3_title = block.settings.bonus_text_3_opt2 -%}
+              {%- assign gift_3_sub = block.settings.bonus_sub_3_opt2 -%}
+              {%- assign addon_1 = block.settings.cart_addon_1_opt2 -%}
+              {%- assign addon_2 = block.settings.cart_addon_2_opt2 -%}
+            {%- when 3 -%}
+              {%- assign save_override = block.settings.save_text_3 -%}
+              {%- assign thumb_setting = block.settings.image3 -%}
+              {%- assign badge_text = block.settings.badge_text_3 -%}
+              {%- assign servings_text = block.settings.servings_text_3 -%}
+              {%- assign included_title = block.settings.included_title_3 -%}
+              {%- assign included_sub = block.settings.included_sub_3 -%}
+              {%- assign gift_1_title = block.settings.bonus_text_1_opt3 -%}
+              {%- assign gift_1_sub = block.settings.bonus_sub_1_opt3 -%}
+              {%- assign gift_2_title = block.settings.bonus_text_2_opt3 -%}
+              {%- assign gift_2_sub = block.settings.bonus_sub_2_opt3 -%}
+              {%- assign gift_3_title = block.settings.bonus_text_3_opt3 -%}
+              {%- assign gift_3_sub = block.settings.bonus_sub_3_opt3 -%}
+              {%- assign addon_1 = block.settings.cart_addon_1_opt3 -%}
+              {%- assign addon_2 = block.settings.cart_addon_2_opt3 -%}
+          {%- endcase -%}
+
+          {%- assign save_display = null -%}
+          {%- if save_override != blank -%}
+            {%- assign save_display = save_override -%}
+          {%- elsif save_money > 0 -%}
+            {%- if block.settings.save_rounding == 'exact' -%}
+              {%- assign save_display = save_money | money_without_trailing_zeros -%}
+            {%- else -%}
+              {%- assign save_rounded = save_money | divided_by: 100.0 | round | times: 100 -%}
+              {%- assign save_display = save_rounded | money_without_trailing_zeros -%}
+            {%- endif -%}
+          {%- endif -%}
+
+          {%- comment -%}
+            THUMBNAIL · block image wins, then variant image.
+            (The original snippet has a dead `custom_image_url`
+            branch that silently overrode block images with the
+            variant image — deliberately not reproduced here.)
+          {%- endcomment -%}
+          {%- assign thumb_url = null -%}
+          {%- assign thumb_obj = null -%}
+          {%- if thumb_setting != blank -%}
+            {%- assign thumb_obj = thumb_setting -%}
+          {%- elsif candidate and candidate.featured_image -%}
+            {%- assign thumb_obj = candidate.featured_image -%}
+          {%- elsif candidate and candidate.image -%}
+            {%- assign thumb_obj = candidate.image -%}
+          {%- endif -%}
+          {%- if thumb_obj -%}
+            {%- assign thumb_url = thumb_obj | image_url: width: 320 -%}
+          {%- endif -%}
+
+          {%- assign has_gift_rows = false -%}
+          {%- if gift_1_title != blank or gift_2_title != blank or gift_3_title != blank -%}
+            {%- assign has_gift_rows = true -%}
+          {%- endif -%}
+          {%- assign has_panel = false -%}
+          {%- if included_title != blank or has_gift_rows -%}
+            {%- assign has_panel = true -%}
+          {%- endif -%}
+
+          <div
+            class="cwc-gift-tier__wrap{% if is_selected %} is-selected{% endif %}{% if has_panel %} has-panel{% endif %}"
+            data-tier-index="{{ tier_number }}"
+          >
+            <button
+              type="button"
+              class="cwc-featured-product__option_button cwc-gift-tier{% if is_selected %} selected{% endif %}{% unless candidate and candidate.available %} disabled{% endunless %}"
+              data-option-index="{{ option.position | minus: 1 }}"
+              data-option-name="{{ option.name | escape }}"
+              data-value="{{ value | escape }}"
+              {% if candidate %}
+                data-variant-id="{{ candidate.id }}"
+                data-price="{{ candidate.price }}"
+                data-compare="{{ candidate.compare_at_price | default: 0 }}"
+              {% endif %}
+              {% if variant_selling_plan_id %}
+                data-selling-plan-id="{{ variant_selling_plan_id }}"
+              {% endif %}
+              {% if subscription_price %}
+                data-subscription-price="{{ subscription_price }}"
+              {% endif %}
+              {%- comment -%} Per-tier cart add-ons · read by core.js:453 at click time {%- endcomment -%}
+              {% if addon_1 and addon_1.first_available_variant %}
+                data-addon-variant-1="{{ addon_1.first_available_variant.id }}"
+              {% endif %}
+              {% if addon_2 and addon_2.first_available_variant %}
+                data-addon-variant-2="{{ addon_2.first_available_variant.id }}"
+              {% endif %}
+              {% unless candidate and candidate.available %}
+                disabled aria-disabled="true"
+              {% endunless %}
+              aria-pressed="{% if is_selected %}true{% else %}false{% endif %}"
+            >
+              {%- if thumb_url -%}
+                <span class="cwc-gift-tier__thumb-wrap">
+                  <img
+                    class="cwc-gift-tier__thumb"
+                    src="{{ thumb_url }}"
+                    alt="{{ value | escape }}"
+                    width="{{ thumb_obj.width }}"
+                    height="{{ thumb_obj.height }}"
+                    loading="lazy"
+                  >
+                </span>
+              {%- endif -%}
+
+              <span class="cwc-gift-tier__labels">
+                <span class="cwc-gift-tier__title">{{ value }}</span>
+                {%- if save_display -%}
+                  {%- comment -%}
+                    New class name on purpose — keeps ui.js:290 from
+                    overwriting this with a percentage.
+                  {%- endcomment -%}
+                  <span class="cwc-gift-tier__save">
+                    {{- save_label }}
+                    {{ save_display -}}
+                  </span>
+                {%- endif -%}
+                {%- if servings_text != blank -%}
+                  <span class="cwc-gift-tier__servings">{{ servings_text }}</span>
+                {%- endif -%}
+              </span>
+
+              {%- if candidate -%}
+                <span class="cwc-gift-tier__prices">
+                  <span class="cwc-featured-product__option_button_price cwc-gift-tier__price">
+                    {{- display_price | money -}}
+                  </span>
+                  {%- if show_compare -%}
+                    <span class="cwc-featured-product__option_button_compare_price cwc-gift-tier__compare">
+                      {{- candidate.compare_at_price | money -}}
+                    </span>
+                  {%- endif -%}
+                </span>
+              {%- else -%}
+                <span class="cwc-gift-tier__prices">
+                  <span class="cwc-gift-tier__unavailable">Unavailable</span>
+                </span>
+              {%- endif -%}
+
+              {%- if badge_text != blank -%}
+                <span class="cwc-gift-tier__badge">{{ badge_text }}</span>
+              {%- endif -%}
+            </button>
+
+            {%- comment -%}
+              DETAIL PANEL · revealed only while this tier is selected
+              (CSS keys off .is-selected on the wrap, kept in sync by
+              CWC_gift_unlock.js, with a :has() fallback).
+            {%- endcomment -%}
+            {%- if has_panel -%}
+              <div class="cwc-gift-tier__panel">
+                <div class="cwc-gift-tier__panel-inner">
+                  {%- comment -%}
+                    BULLET TYPE 1 · what the bundle itself includes.
+                    Filled badge check, separated from the tier row by a
+                    hairline. Visually outranks the gift rows below.
+                  {%- endcomment -%}
+                  {%- if included_title != blank -%}
+                    <div class="cwc-gift-tier__row cwc-gift-tier__row--included">
+                      <span class="cwc-gift-tier__check cwc-gift-tier__check--badge">
+                        {%- render 'CWC_icon-check_fill', fill_color: check_color -%}
+                      </span>
+                      <span class="cwc-gift-tier__row-text">
+                        <span class="cwc-gift-tier__row-title">{{ included_title }}</span>
+                        {%- if included_sub != blank -%}
+                          <span class="cwc-gift-tier__row-sub">{{ included_sub }}</span>
+                        {%- endif -%}
+                      </span>
+                    </div>
+                  {%- endif -%}
+
+                  {%- if included_title != blank and has_gift_rows and block.settings.divider_label != blank -%}
+                    <div class="cwc-gift-tier__divider">
+                      <span>{{ block.settings.divider_label }}</span>
+                    </div>
+                  {%- endif -%}
+
+                  {%- for i in (1..3) -%}
+                    {%- liquid
+                      case i
+                        when 1
+                          assign row_title = gift_1_title
+                          assign row_sub = gift_1_sub
+                        when 2
+                          assign row_title = gift_2_title
+                          assign row_sub = gift_2_sub
+                        when 3
+                          assign row_title = gift_3_title
+                          assign row_sub = gift_3_sub
+                      endcase
+                    -%}
+                    {%- comment -%}
+                      BULLET TYPE 2 · the free gifts. Bare checkmark, no
+                      hairline between rows — they read as one group under
+                      the "PLUS FREE GIFTS" rule. Same stroke geometry as
+                      snippets/CWC_icon-check.liquid, inlined here so the
+                      colour can come from the block setting.
+                    {%- endcomment -%}
+                    {%- if row_title != blank -%}
+                      <div class="cwc-gift-tier__row cwc-gift-tier__row--gift">
+                        <span class="cwc-gift-tier__check cwc-gift-tier__check--mark">
+                          <svg
+                            xmlns="http://www.w3.org/2000/svg"
+                            width="36"
+                            height="36"
+                            viewBox="0 0 36 36"
+                            fill="none"
+                            aria-hidden="true"
+                          >
+                            <path
+                              d="M4 18.4153L10.8969 27.6111C11.2693 28.1077 11.9996 28.1485 12.4251 27.6965L31.9041 7"
+                              stroke="{{ check_color }}"
+                              stroke-width="5.0736"
+                              stroke-linecap="round"
+                            />
+                          </svg>
+                        </span>
+                        <span class="cwc-gift-tier__row-text">
+                          <span class="cwc-gift-tier__row-title">{{ row_title }}</span>
+                          {%- if row_sub != blank -%}
+                            <span class="cwc-gift-tier__row-sub">{{ row_sub }}</span>
+                          {%- endif -%}
+                        </span>
+                      </div>
+                    {%- endif -%}
+                  {%- endfor -%}
+                </div>
+              </div>
+            {%- endif -%}
+          </div>
+        {%- endfor -%}
+      </div>
+
+      {%- comment -%}
+        Hidden option input · core.js:378 reads this by
+        data-option-index to resolve the variant.
+      {%- endcomment -%}
+      <input
+        type="hidden"
+        name="options[{{ option.name | escape }}]"
+        class="cwc-featured-product__option-input"
+        data-option-index="{{ option.position | minus: 1 }}"
+        value="{% if option.position == 1 %}{{ sel.option1 }}{% elsif option.position == 2 %}{{ sel.option2 }}{% else %}{{ sel.option3 }}{% endif %}"
+      >
+    </div>
+  {%- endfor -%}
+
+  {%- comment -%}
+    =====================================================
+    GIFTS UNLOCKED STRIP
+    =====================================================
+    One cell per tier — index parity means cell N belongs to
+    tier N. Selecting tier i unlocks cells 1…i; the rest stay
+    blurred behind a lock. State is applied by
+    CWC_gift_unlock.js via .is-unlocked.
+  {%- endcomment -%}
+  {%- liquid
+    assign has_cells = false
+    if block.settings.unlock_label_1 != blank or block.settings.unlock_label_2 != blank or block.settings.unlock_label_3 != blank
+      assign has_cells = true
+    endif
+  -%}
+
+  {%- if block.settings.show_strip and has_cells -%}
+    <div class="cwc-gift-strip" data-gift-strip>
+      {%- if block.settings.strip_label != blank -%}
+        <span class="cwc-gift-strip__legend">{{ block.settings.strip_label }}</span>
+      {%- endif %}
+
+      <div class="cwc-gift-strip__cells">
+        {%- comment -%}
+          Counter rather than forloop.first, so a blank tier-1 gift
+          label can't leave a leading "+" in front of tier 2's cell.
+        {%- endcomment -%}
+        {%- assign rendered_cells = 0 -%}
+        {%- for i in (1..3) -%}
+          {%- liquid
+            case i
+              when 1
+                assign cell_image = block.settings.unlock_image_1
+                assign cell_value = block.settings.unlock_value_1
+                assign cell_label = block.settings.unlock_label_1
+                assign cell_tier = block.settings.unlock_at_tier_1 | default: 1
+              when 2
+                assign cell_image = block.settings.unlock_image_2
+                assign cell_value = block.settings.unlock_value_2
+                assign cell_label = block.settings.unlock_label_2
+                assign cell_tier = block.settings.unlock_at_tier_2 | default: 2
+              when 3
+                assign cell_image = block.settings.unlock_image_3
+                assign cell_value = block.settings.unlock_value_3
+                assign cell_label = block.settings.unlock_label_3
+                assign cell_tier = block.settings.unlock_at_tier_3 | default: 3
+            endcase
+          -%}
+          {%- if cell_label != blank -%}
+            {%- if rendered_cells > 0 -%}
+              <span class="cwc-gift-strip__plus" aria-hidden="true">+</span>
+            {%- endif -%}
+            {%- assign rendered_cells = rendered_cells | plus: 1 -%}
+
+            {%- comment -%}
+              data-tier is the tier that UNLOCKS this gift, not the cell's
+              position. They are the same by default, but the two are
+              decoupled so a tier can unlock several gifts at once (and so
+              tier 1 can unlock none). CWC_gift_unlock.js reveals every cell
+              whose data-tier is <= the selected tier, so no JS change was
+              needed for this.
+            {%- endcomment -%}
+            <div class="cwc-gift-strip__cell" data-gift-cell data-tier="{{ cell_tier }}">
+              <div class="cwc-gift-strip__reveal">
+                {%- if cell_image != blank -%}
+                  <div class="cwc-gift-strip__image">
+                    <img
+                      src="{{ cell_image | image_url: width: 240 }}"
+                      alt="{{ cell_label | escape }}"
+                      width="{{ cell_image.width }}"
+                      height="{{ cell_image.height }}"
+                      loading="lazy"
+                    >
+                  </div>
+                {%- endif -%}
+                {%- if cell_value != blank -%}
+                  <div class="cwc-gift-strip__value">{{ cell_value }}</div>
+                {%- endif -%}
+                <div class="cwc-gift-strip__label">{{ cell_label }}</div>
+              </div>
+
+              <div class="cwc-gift-strip__lock" aria-hidden="true">
+                <span class="cwc-gift-strip__lock-icon">
+                  <svg xmlns="http://www.w3.org/2000/svg" width="28" height="28" viewBox="0 0 24 24" fill="none">
+                    <rect x="4" y="10" width="16" height="11" rx="2.5" fill="{{ accent }}"/>
+                    <path
+                      d="M8 10V7.5a4 4 0 0 1 8 0V10"
+                      stroke="{{ accent }}"
+                      stroke-width="2.1"
+                      stroke-linecap="round"
+                      fill="none"
+                    />
+                    <circle cx="12" cy="15.5" r="1.6" fill="#ffffff"/>
+                    <rect x="11.2" y="15.5" width="1.6" height="3" rx="0.8" fill="#ffffff"/>
+                  </svg>
+                </span>
+                {%- if block.settings.locked_label != blank -%}
+                  <span class="cwc-gift-strip__locked-label">{{ block.settings.locked_label }}</span>
+                {%- endif -%}
+              </div>
+            </div>
+          {%- endif -%}
+        {%- endfor -%}
+      </div>
+    </div>
+  {%- endif -%}
+</div>
+
+{{ 'CWC_gift_unlock.js' | asset_url | script_tag }}

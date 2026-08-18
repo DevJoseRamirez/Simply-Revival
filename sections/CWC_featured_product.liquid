@@ -223,6 +223,60 @@
                     </div>
                   {% endif %}
 
+                {% comment %}
+                  =====================================================
+                  PRODUCT OPTIONS · GIFT-UNLOCK TIERS
+                  =====================================================
+                  Additive alternative to the `product_options` block
+                  above — never both in the same template. Renders the
+                  tier buy box plus the "GIFTS UNLOCKED" reveal strip.
+
+                  The buttons keep the classes and data attributes that
+                  CWC_featured_product__core.js binds to, so variant
+                  switching and per-tier cart add-ons need no JS changes.
+
+                  SUBSCRIPTION-ONLY LAYOUT
+                  ------------------------
+                  This layout has no subscription toggle and no one-time
+                  purchase path — everything is a subscription. But core.js
+                  gates the selling plan on that toggle's checkbox:
+                  isSubscriptionActive() reads #auto-refill-{section.id},
+                  and if the element is missing it returns false, which
+                  drops `selling_plan` from the cart payload AND makes
+                  ui.js repaint one-time prices over the subscription
+                  ones. So the checkbox is rendered here, hidden and
+                  permanently checked. Everything downstream then behaves
+                  exactly as it does today with the toggle switched on.
+
+                  Don't also add a `subscription_toggle` block alongside
+                  this one — two elements would share the same id and the
+                  visible toggle would be the one core.js ignores.
+                {% endcomment %}
+                {% when 'product_options_tiers' %}
+                  <input
+                    type="checkbox"
+                    id="auto-refill-{{ section.id }}"
+                    checked
+                    hidden
+                    aria-hidden="true"
+                    tabindex="-1"
+                    style="display: none;"
+                  >
+                  {% if current_product.variants.size > 1 %}
+                    <div
+                      id="CWC_featured-product__gift-tiers-{{ block.id }}"
+                      class="cwc-featured-product__gift_tiers"
+                      {{ block.shopify_attributes }}
+                    >
+                      {% render 'CWC_product_options_tiers',
+                        product: current_product,
+                        section_id: section.id,
+                        block: block,
+                        default_variant: default_variant
+                      %}
+                    </div>
+                  {% endif %}
+
                 {% when 'subscription_toggle' %}
                   {% if current_product.selling_plan_groups.size > 0 %}
                     <div class="cwc-featured-product__subscription" {{ block.shopify_attributes }}>
@@ -1021,6 +1075,465 @@
           "type": "product",
           "id": "cart_addon_2_opt3",
           "label": "Add-on Product 2"
+        }
+      ]
+    },
+    {
+      "type": "product_options_tiers",
+      "name": "Gift Tier Options",
+      "settings": [
+        {
+          "type": "paragraph",
+          "content": "Tier buy box with a gift-reveal strip. Use INSTEAD of the Product Options block, not alongside it. Subscription-only: do not also add a Subscription Toggle block. Tier N unlocks gift N."
+        },
+        {
+          "type": "header",
+          "content": "Copy"
+        },
+        {
+          "type": "text",
+          "id": "save_label",
+          "label": "Savings label",
+          "default": "You save"
+        },
+        {
+          "type": "select",
+          "id": "save_rounding",
+          "label": "Savings rounding",
+          "options": [
+            {
+              "value": "nearest_dollar",
+              "label": "Nearest dollar ($84.99 → $85)"
+            },
+            {
+              "value": "exact",
+              "label": "Exact ($84.99)"
+            }
+          ],
+          "default": "nearest_dollar",
+          "info": "Per-tier overrides below take priority over this."
+        },
+        {
+          "type": "text",
+          "id": "divider_label",
+          "label": "Gift divider label",
+          "default": "PLUS FREE GIFTS",
+          "info": "Shown in a tier's panel only when it has both an included row and gift rows."
+        },
+        {
+          "type": "header",
+          "content": "Gifts Unlocked Strip"
+        },
+        {
+          "type": "checkbox",
+          "id": "show_strip",
+          "label": "Show gifts unlocked strip",
+          "default": true
+        },
+        {
+          "type": "text",
+          "id": "strip_label",
+          "label": "Strip label",
+          "default": "GIFTS UNLOCKED"
+        },
+        {
+          "type": "text",
+          "id": "locked_label",
+          "label": "Locked label",
+          "default": "Locked"
+        },
+        {
+          "type": "header",
+          "content": "Colors"
+        },
+        {
+          "type": "color",
+          "id": "accent_color",
+          "label": "Accent (price, border, checks)",
+          "default": "#125657"
+        },
+        {
+          "type": "color",
+          "id": "selected_bg_color",
+          "label": "Selected tier background",
+          "default": "#e6f4ef"
+        },
+        {
+          "type": "color",
+          "id": "free_color",
+          "label": "FREE gift text",
+          "default": "#d0342c"
+        },
+        {
+          "type": "color",
+          "id": "check_color",
+          "label": "Panel checkmarks",
+          "default": "#22a069",
+          "info": "Used for both the filled 'included' badge and the bare gift checkmarks."
+        },
+        {
+          "type": "color",
+          "id": "badge_bg_color",
+          "label": "Badge background",
+          "default": "#125657"
+        },
+        {
+          "type": "color",
+          "id": "badge_text_color",
+          "label": "Badge text",
+          "default": "#ffffff"
+        },
+        {
+          "type": "header",
+          "content": "Tier 1"
+        },
+        {
+          "type": "image_picker",
+          "id": "image1",
+          "label": "Thumbnail image"
+        },
+        {
+          "type": "text",
+          "id": "badge_text_1",
+          "label": "Badge text"
+        },
+        {
+          "type": "text",
+          "id": "servings_text_1",
+          "label": "Servings text"
+        },
+        {
+          "type": "text",
+          "id": "save_text_1",
+          "label": "Savings override",
+          "info": "Leave blank to calculate from compare-at price."
+        },
+        {
+          "type": "header",
+          "content": "Tier 1 · Panel (selected only)"
+        },
+        {
+          "type": "text",
+          "id": "included_title_1",
+          "label": "Included row - title"
+        },
+        {
+          "type": "text",
+          "id": "included_sub_1",
+          "label": "Included row - subtitle"
+        },
+        {
+          "type": "text",
+          "id": "bonus_text_1_opt1",
+          "label": "Gift row 1 - title"
+        },
+        {
+          "type": "text",
+          "id": "bonus_sub_1_opt1",
+          "label": "Gift row 1 - subtitle"
+        },
+        {
+          "type": "text",
+          "id": "bonus_text_2_opt1",
+          "label": "Gift row 2 - title"
+        },
+        {
+          "type": "text",
+          "id": "bonus_sub_2_opt1",
+          "label": "Gift row 2 - subtitle"
+        },
+        {
+          "type": "text",
+          "id": "bonus_text_3_opt1",
+          "label": "Gift row 3 - title"
+        },
+        {
+          "type": "text",
+          "id": "bonus_sub_3_opt1",
+          "label": "Gift row 3 - subtitle"
+        },
+        {
+          "type": "header",
+          "content": "Tier 1 · Gift it unlocks"
+        },
+        {
+          "type": "image_picker",
+          "id": "unlock_image_1",
+          "label": "Gift image"
+        },
+        {
+          "type": "text",
+          "id": "unlock_value_1",
+          "label": "Gift value (struck through)",
+          "default": "$4.95"
+        },
+        {
+          "type": "text",
+          "id": "unlock_label_1",
+          "label": "Gift label",
+          "default": "FREE Shipping",
+          "info": "Leave blank to hide this cell."
+        },
+        {
+          "type": "select",
+          "id": "unlock_at_tier_1",
+          "label": "Unlocks at tier",
+          "options": [
+            { "value": "1", "label": "Tier 1" },
+            { "value": "2", "label": "Tier 2" },
+            { "value": "3", "label": "Tier 3" }
+          ],
+          "default": "1",
+          "info": "Which tier the customer must pick before this gift is revealed. Several gifts can share a tier."
+        },
+        {
+          "type": "header",
+          "content": "Tier 1 · Cart Add-Ons"
+        },
+        {
+          "type": "product",
+          "id": "cart_addon_1_opt1",
+          "label": "Add-on product 1",
+          "info": "Added to cart (first available variant, qty 1) when Tier 1 is selected."
+        },
+        {
+          "type": "product",
+          "id": "cart_addon_2_opt1",
+          "label": "Add-on product 2"
+        },
+        {
+          "type": "header",
+          "content": "Tier 2"
+        },
+        {
+          "type": "image_picker",
+          "id": "image2",
+          "label": "Thumbnail image"
+        },
+        {
+          "type": "text",
+          "id": "badge_text_2",
+          "label": "Badge text",
+          "default": "Most Popular"
+        },
+        {
+          "type": "text",
+          "id": "servings_text_2",
+          "label": "Servings text"
+        },
+        {
+          "type": "text",
+          "id": "save_text_2",
+          "label": "Savings override",
+          "info": "Leave blank to calculate from compare-at price."
+        },
+        {
+          "type": "header",
+          "content": "Tier 2 · Panel (selected only)"
+        },
+        {
+          "type": "text",
+          "id": "included_title_2",
+          "label": "Included row - title"
+        },
+        {
+          "type": "text",
+          "id": "included_sub_2",
+          "label": "Included row - subtitle"
+        },
+        {
+          "type": "text",
+          "id": "bonus_text_1_opt2",
+          "label": "Gift row 1 - title"
+        },
+        {
+          "type": "text",
+          "id": "bonus_sub_1_opt2",
+          "label": "Gift row 1 - subtitle"
+        },
+        {
+          "type": "text",
+          "id": "bonus_text_2_opt2",
+          "label": "Gift row 2 - title"
+        },
+        {
+          "type": "text",
+          "id": "bonus_sub_2_opt2",
+          "label": "Gift row 2 - subtitle"
+        },
+        {
+          "type": "text",
+          "id": "bonus_text_3_opt2",
+          "label": "Gift row 3 - title"
+        },
+        {
+          "type": "text",
+          "id": "bonus_sub_3_opt2",
+          "label": "Gift row 3 - subtitle"
+        },
+        {
+          "type": "header",
+          "content": "Tier 2 · Gift it unlocks"
+        },
+        {
+          "type": "image_picker",
+          "id": "unlock_image_2",
+          "label": "Gift image"
+        },
+        {
+          "type": "text",
+          "id": "unlock_value_2",
+          "label": "Gift value (struck through)"
+        },
+        {
+          "type": "text",
+          "id": "unlock_label_2",
+          "label": "Gift label",
+          "info": "Leave blank to hide this cell."
+        },
+        {
+          "type": "select",
+          "id": "unlock_at_tier_2",
+          "label": "Unlocks at tier",
+          "options": [
+            { "value": "1", "label": "Tier 1" },
+            { "value": "2", "label": "Tier 2" },
+            { "value": "3", "label": "Tier 3" }
+          ],
+          "default": "2",
+          "info": "Which tier the customer must pick before this gift is revealed. Several gifts can share a tier."
+        },
+        {
+          "type": "header",
+          "content": "Tier 2 · Cart Add-Ons"
+        },
+        {
+          "type": "product",
+          "id": "cart_addon_1_opt2",
+          "label": "Add-on product 1",
+          "info": "Added to cart (first available variant, qty 1) when Tier 2 is selected."
+        },
+        {
+          "type": "product",
+          "id": "cart_addon_2_opt2",
+          "label": "Add-on product 2"
+        },
+        {
+          "type": "header",
+          "content": "Tier 3"
+        },
+        {
+          "type": "image_picker",
+          "id": "image3",
+          "label": "Thumbnail image"
+        },
+        {
+          "type": "text",
+          "id": "badge_text_3",
+          "label": "Badge text",
+          "default": "Free Shipping"
+        },
+        {
+          "type": "text",
+          "id": "servings_text_3",
+          "label": "Servings text"
+        },
+        {
+          "type": "text",
+          "id": "save_text_3",
+          "label": "Savings override",
+          "info": "Leave blank to calculate from compare-at price."
+        },
+        {
+          "type": "header",
+          "content": "Tier 3 · Panel (selected only)"
+        },
+        {
+          "type": "text",
+          "id": "included_title_3",
+          "label": "Included row - title"
+        },
+        {
+          "type": "text",
+          "id": "included_sub_3",
+          "label": "Included row - subtitle"
+        },
+        {
+          "type": "text",
+          "id": "bonus_text_1_opt3",
+          "label": "Gift row 1 - title"
+        },
+        {
+          "type": "text",
+          "id": "bonus_sub_1_opt3",
+          "label": "Gift row 1 - subtitle"
+        },
+        {
+          "type": "text",
+          "id": "bonus_text_2_opt3",
+          "label": "Gift row 2 - title"
+        },
+        {
+          "type": "text",
+          "id": "bonus_sub_2_opt3",
+          "label": "Gift row 2 - subtitle"
+        },
+        {
+          "type": "text",
+          "id": "bonus_text_3_opt3",
+          "label": "Gift row 3 - title"
+        },
+        {
+          "type": "text",
+          "id": "bonus_sub_3_opt3",
+          "label": "Gift row 3 - subtitle"
+        },
+        {
+          "type": "header",
+          "content": "Tier 3 · Gift it unlocks"
+        },
+        {
+          "type": "image_picker",
+          "id": "unlock_image_3",
+          "label": "Gift image"
+        },
+        {
+          "type": "text",
+          "id": "unlock_value_3",
+          "label": "Gift value (struck through)"
+        },
+        {
+          "type": "text",
+          "id": "unlock_label_3",
+          "label": "Gift label",
+          "info": "Leave blank to hide this cell."
+        },
+        {
+          "type": "select",
+          "id": "unlock_at_tier_3",
+          "label": "Unlocks at tier",
+          "options": [
+            { "value": "1", "label": "Tier 1" },
+            { "value": "2", "label": "Tier 2" },
+            { "value": "3", "label": "Tier 3" }
+          ],
+          "default": "3",
+          "info": "Which tier the customer must pick before this gift is revealed. Several gifts can share a tier."
+        },
+        {
+          "type": "header",
+          "content": "Tier 3 · Cart Add-Ons"
+        },
+        {
+          "type": "product",
+          "id": "cart_addon_1_opt3",
+          "label": "Add-on product 1",
+          "info": "Added to cart (first available variant, qty 1) when Tier 3 is selected."
+        },
+        {
+          "type": "product",
+          "id": "cart_addon_2_opt3",
+          "label": "Add-on product 2"
         }
       ]
     },

@@ -1,0 +1,581 @@
+/* =====================================================
+   CWC GIFT-UNLOCK TIERS
+   =====================================================
+   Styles for snippets/CWC_product_options_tiers.liquid.
+
+   Self-contained on purpose: CWC_product_options.css is NOT
+   loaded by that snippet, so nothing here depends on it.
+   Where a property below looks redundant it is deliberate —
+   it re-declares anything the old options stylesheet would
+   set on .cwc-featured-product__option_button, so the tier
+   layout still renders correctly if a template ever puts
+   both option blocks on the same page.
+
+   The visual "card" is the WRAP, not the button, so the
+   detail panel can sit inside the same rounded border.
+   ===================================================== */
+
+.cwc-gift-tiers {
+    --gt-accent: #125657;
+    --gt-selected-bg: #0f92ae26;
+    --gt-free-color: #d0342c;
+    --gt-badge-bg: var(--gt-accent);
+    --gt-badge-color: #ffffff;
+    --gt-border: #e3e6e6;
+    --gt-title: #1f2937;
+    --gt-muted: #6b7280;
+
+    display: flex;
+    flex-direction: column;
+    gap: 1.25rem;
+    margin: 1rem 0;
+}
+
+.cwc-gift-tiers__option {
+    display: flex;
+    flex-direction: column;
+}
+
+/* Container class is required by core.js (sibling deselect).
+   Re-declared here because the old stylesheet isn't loaded. */
+.cwc-gift-tiers .cwc-gift-tiers__list {
+    display: flex;
+    flex-direction: column;
+    align-items: stretch;
+    flex-wrap: nowrap;
+    gap: 14px;
+    cursor: default;
+}
+
+/* ================================
+   Tier card (the wrap)
+   ================================ */
+
+.cwc-gift-tier__wrap {
+    position: relative;
+    width: 100%;
+    background: #fff;
+    border: 1px solid var(--gt-border);
+    border-radius: 10px;
+    transition: border-color .2s ease, background-color .2s ease, box-shadow .2s ease;
+    border-color: #bbbbbb;
+}
+
+.cwc-gift-tier__wrap.is-selected,
+.cwc-gift-tier__wrap:has(.cwc-featured-product__option_button.selected) {
+    border-color: var(--gt-accent);
+    border-width: 1.5px;
+    background: var(--gt-selected-bg);
+    background-color: #0f92ae26;
+}
+
+/* ================================
+   Tier button
+   ================================ */
+
+.cwc-gift-tiers .cwc-gift-tier {
+    /* explicit reset of everything CWC_product_options.css may set */
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: flex-start;
+    gap: 14px;
+    width: 100%;
+    min-width: 0;
+    min-height: 0;
+    margin: 0;
+    padding: 14px 18px;
+    background: transparent;
+    border: 0;
+    border-radius: 10px;
+    box-shadow: none;
+    outline: none;
+    text-align: left;
+    font: inherit;
+    color: inherit;
+    cursor: pointer;
+    box-sizing: border-box;
+    position: static;
+    -webkit-tap-highlight-color: transparent;
+}
+
+.cwc-gift-tiers .cwc-gift-tier.selected {
+    background: transparent;
+    border: 0;
+}
+
+/* the old stylesheet hangs an empty ::after on .selected */
+.cwc-gift-tiers .cwc-gift-tier.selected::after {
+    content: none;
+}
+
+.cwc-gift-tiers .cwc-gift-tier.disabled,
+.cwc-gift-tiers .cwc-gift-tier[disabled] {
+    opacity: .5;
+    cursor: not-allowed;
+}
+
+/* ---- thumbnail ---- */
+
+.cwc-gift-tier__thumb-wrap {
+    flex: 0 0 auto;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 72px;
+    min-width: 110px;
+    height: 60px;
+}
+
+.cwc-gift-tier__thumb {
+    max-width: 100%;
+    max-height: 58px;
+    width: auto;
+    height: auto;
+    object-fit: contain;
+}
+
+/* ---- labels ---- */
+
+.cwc-gift-tier__labels {
+    flex: 1 1 auto;
+    min-width: 0;
+    display: flex;
+    flex-direction: column;
+    gap: 2px;
+}
+
+.cwc-gift-tier__title {
+    font-size: .9375rem;
+    font-weight: 700;
+    line-height: 1.3;
+    color: var(--gt-title);
+}
+
+.cwc-gift-tier__save {
+    font-size: .8125rem;
+    font-weight: 400;
+    line-height: 1.35;
+    color: var(--gt-muted);
+    color: #454545;
+}
+
+.cwc-gift-tier__servings {
+    font-size: .75rem;
+    line-height: 1.35;
+    color: var(--gt-muted);
+    word-break: break-word;
+}
+
+/* ---- prices ---- */
+
+.cwc-gift-tier__prices {
+    flex: 0 0 auto;
+    display: flex;
+    flex-direction: column;
+    align-items: flex-end;
+    gap: 1px;
+    text-align: right;
+    margin-left: auto;
+}
+
+.cwc-gift-tiers .cwc-gift-tier__price {
+    font-size: .9375rem;
+    font-weight: 700;
+    color: var(--gt-accent);
+}
+
+.cwc-gift-tiers .cwc-gift-tier__compare {
+    font-size: .8125rem;
+    font-weight: 400;
+    color: var(--gt-muted);
+    text-decoration: line-through;
+    opacity: .85;
+}
+
+.cwc-gift-tier__unavailable {
+    font-size: .8125rem;
+    color: var(--gt-muted);
+}
+
+/* ---- floating badge ---- */
+
+.cwc-gift-tier__badge {
+    position: absolute;
+    top: -11px;
+    right: 16px;
+    z-index: 2;
+    background: var(--gt-badge-bg);
+    color: var(--gt-badge-color);
+    font-size: .6875rem;
+    font-weight: 600;
+    line-height: 1.7;
+    letter-spacing: .01em;
+    padding: 1px 13px;
+    border-radius: 999px;
+    white-space: nowrap;
+}
+
+/* ================================
+   Detail panel (selected tier only)
+   ================================
+   Collapsed with the 0fr → 1fr grid technique so it animates
+   to its natural height. Collapses correctly even where the
+   transition isn't supported, because the inner element
+   clips with overflow: hidden. */
+
+.cwc-gift-tier__panel {
+    display: grid;
+    grid-template-rows: 0fr;
+    transition: grid-template-rows .3s ease;
+}
+
+.cwc-gift-tier__panel-inner {
+    overflow: hidden;
+    min-height: 0;
+}
+
+.cwc-gift-tier__wrap.is-selected>.cwc-gift-tier__panel,
+.cwc-gift-tier__wrap:has(.cwc-featured-product__option_button.selected)>.cwc-gift-tier__panel {
+    grid-template-rows: 1fr;
+}
+
+.cwc-gift-tier__row {
+    display: flex;
+    align-items: flex-start;
+    gap: 10px;
+    padding: 9px 18px;
+}
+
+/* ---- bullet type 1 · included (filled badge, hairline above) ---- */
+
+.cwc-gift-tier__row--included {
+    padding-top: 11px;
+    padding-bottom: 10px;
+    border-top: 1px solid rgba(18, 86, 87, .16);
+}
+
+/* ---- bullet type 2 · free gifts (bare check, no rules between) ---- */
+
+.cwc-gift-tier__row--gift {
+    border-top: 0;
+    padding-top: 10px;
+    padding-bottom: 10px;
+}
+
+.cwc-gift-tier__row--gift:last-child {
+    padding-bottom: 12px;
+}
+
+/* A gift row leading the panel (no included row above it) still needs
+   separating from the tier button. */
+.cwc-gift-tier__row--gift:first-child {
+    padding-top: 11px;
+    border-top: 1px solid rgba(18, 86, 87, .16);
+}
+
+.cwc-gift-tier__check {
+    flex: 0 0 auto;
+    display: block;
+}
+
+.cwc-gift-tier__check svg {
+    display: block;
+}
+
+.cwc-gift-tier__check.cwc-gift-tier__check--mark svg {
+    fill: none
+}
+
+.cwc-gift-tier__check--badge,
+.cwc-gift-tier__check--badge svg {
+    width: 17px;
+    height: 17px;
+}
+
+.cwc-gift-tier__check--badge {
+    margin-top: 1px;
+}
+
+.cwc-gift-tier__check--mark,
+.cwc-gift-tier__check--mark svg {
+    width: 19px;
+    height: 19px;
+}
+
+.cwc-gift-tier__check--mark {
+    margin-top: 0;
+}
+
+.cwc-gift-tier__row-text {
+    display: flex;
+    flex-direction: column;
+    gap: 1px;
+    min-width: 0;
+}
+
+.cwc-gift-tier__row-title {
+    font-size: .8125rem;
+    font-weight: 700;
+    font-weight: 600;
+    line-height: 1.35;
+    color: var(--gt-title);
+}
+
+.cwc-gift-tier__row-sub {
+    font-size: .75rem;
+    font-weight: 400;
+    line-height: 1.35;
+    color: var(--gt-muted);
+}
+
+/* "PLUS FREE GIFTS" rule */
+
+.cwc-gift-tier__divider {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    padding: 5px 18px 1px;
+}
+
+.cwc-gift-tier__divider::before,
+.cwc-gift-tier__divider::after {
+    content: '';
+    flex: 1 1 auto;
+    height: 1px;
+    background: rgba(18, 86, 87, .16);
+}
+
+.cwc-gift-tier__divider span {
+    flex: 0 0 auto;
+    font-size: .625rem;
+    font-size: .8rem;
+    font-weight: 700;
+    letter-spacing: .06em;
+    text-transform: uppercase;
+    color: var(--gt-check);
+    color: #125657;
+
+}
+
+/* The divider is itself the separator, so the gift row following it
+   never draws its own rule. */
+.cwc-gift-tier__divider+.cwc-gift-tier__row {
+    border-top: 0;
+    padding-top: 7px;
+}
+
+/* ================================
+   Gifts unlocked strip
+   ================================ */
+
+.cwc-gift-strip {
+    position: relative;
+    border: 1px solid var(--gt-border);
+    border-radius: 10px;
+    padding: 26px 14px 16px;
+    background: #fff;
+    border-color: #bbbbbb;
+}
+
+.cwc-gift-strip__legend {
+    position: absolute;
+    top: -10px;
+    left: 14px;
+    background: #fff;
+    border: 1px solid var(--gt-border);
+    border-radius: 6px;
+    padding: 2px 10px;
+    font-size: .6875rem;
+    font-weight: 700;
+    font-weight: 600;
+    letter-spacing: .06em;
+    text-transform: uppercase;
+    color: var(--gt-title);
+    white-space: nowrap;
+    background-color: #fffee3;
+    border-color: #bbbbbb;
+    font-size: .9rem;
+}
+
+.cwc-gift-strip__cells {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 6px;
+}
+
+.cwc-gift-strip__plus {
+    flex: 0 0 auto;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 18px;
+    height: 18px;
+    border: 1px solid var(--gt-border);
+    border-radius: 50%;
+    background: #fff;
+    font-size: .6875rem;
+    line-height: 1;
+    color: #9aa0a0;
+}
+
+.cwc-gift-strip__cell {
+    position: relative;
+    flex: 1 1 0;
+    min-width: 0;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding: 4px 2px;
+}
+
+.cwc-gift-strip__reveal {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 3px;
+    width: 100%;
+    /* locked by default — JS/`is-unlocked` reveals it */
+    filter: blur(6px);
+    opacity: .5;
+    transition: filter .35s ease, opacity .35s ease;
+}
+
+.cwc-gift-strip__image {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    height: 58px;
+}
+
+.cwc-gift-strip__image img {
+    max-height: 64px;
+    max-width: 100%;
+    width: auto;
+    height: auto;
+    object-fit: contain;
+}
+
+.cwc-gift-strip__value {
+    font-size: .75rem;
+    line-height: 1.3;
+    color: #9aa0a0;
+    text-decoration: line-through;
+}
+
+.cwc-gift-strip__label {
+    font-size: .75rem;
+    font-weight: 700;
+    font-weight: 600;
+    line-height: 1.25;
+    text-align: center;
+    color: var(--gt-free-color);
+}
+
+.cwc-gift-strip__lock {
+    position: absolute;
+    inset: 0;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    gap: 4px;
+    opacity: 1;
+    transition: opacity .25s ease;
+}
+
+.cwc-gift-strip__lock-icon svg {
+    display: block;
+}
+
+.cwc-gift-strip__locked-label {
+    font-size: .75rem;
+    font-weight: 600;
+    color: var(--gt-accent);
+}
+
+/* ---- unlocked state ---- */
+
+.cwc-gift-strip__cell.is-unlocked .cwc-gift-strip__reveal {
+    filter: none;
+    opacity: 1;
+}
+
+.cwc-gift-strip__cell.is-unlocked .cwc-gift-strip__lock {
+    opacity: 0;
+    pointer-events: none;
+}
+
+/* ================================
+   Mobile
+   ================================ */
+
+@media (max-width: 768px) {
+    .cwc-gift-strip__legend {
+        font-size: .8rem;
+    }
+
+
+    .cwc-gift-tiers {
+        gap: 1rem;
+    }
+
+    .cwc-gift-tiers .cwc-gift-tier {
+        padding: 6px 12px;
+        gap: 10px;
+    }
+
+    .cwc-gift-tier__thumb-wrap {
+        width: 58px;
+    }
+
+    .cwc-gift-tier__thumb {
+        max-height: 48px;
+    }
+
+    .cwc-gift-tier__title {
+        font-size: .875rem;
+    }
+
+    .cwc-gift-tier__save,
+    .cwc-gift-tiers .cwc-gift-tier__price {
+        font-size: .8125rem;
+    }
+
+    .cwc-gift-tiers .cwc-gift-tier__compare {
+        font-size: .75rem;
+    }
+
+    .cwc-gift-tier__badge {
+        right: 10px;
+        font-size: .625rem;
+        padding: 1px 11px;
+    }
+
+    .cwc-gift-tier__row,
+    .cwc-gift-tier__divider {
+        padding-left: 12px;
+        padding-right: 12px;
+    }
+
+    .cwc-gift-strip {
+        padding: 24px 8px 14px;
+    }
+
+    .cwc-gift-strip__cells {
+        gap: 2px;
+    }
+
+    .cwc-gift-strip__image,
+    .cwc-gift-strip__image img {
+        height: 46px;
+        max-height: 46px;
+    }
+
+    .cwc-gift-strip__value,
+    .cwc-gift-strip__label,
+    .cwc-gift-strip__locked-label {
+        font-size: .75rem;
+    }
+}
