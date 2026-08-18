@@ -195,7 +195,7 @@
             "unlock_value_2": "$50.00",
             "unlock_label_2": "FREE 365 Day Guarantee",
             "unlock_at_tier_2": "2",
-            "cart_addon_1_opt2": "",
+            "cart_addon_1_opt2": "free-365-day-guarantee",
             "cart_addon_2_opt2": "",
             "image3": "shopify://shop_images/buy_3_get_2_free_2_free_gift.png",
             "badge_text_3": "Best Value",
@@ -213,8 +213,8 @@
             "unlock_value_3": "$20.00",
             "unlock_label_3": "FREE $20 Gift Card",
             "unlock_at_tier_3": "3",
-            "cart_addon_1_opt3": "",
-            "cart_addon_2_opt3": ""
+            "cart_addon_1_opt3": "free-365-day-guarantee",
+            "cart_addon_2_opt3": "25-gift-card"
           }
         },
         "delivery_estimate_g6E4Az": {
@@ -235,7 +235,7 @@
             "enable_sticky_atc": true,
             "sticky_button_text": "Add to Cart",
             "sticky_bg_color": "#ffffff",
-            "bundle_product_1": "25-gift-card",
+            "bundle_product_1": "",
             "bundle_product_2": "",
             "bundle_product_3": "",
             "bundle_product_4": "",
