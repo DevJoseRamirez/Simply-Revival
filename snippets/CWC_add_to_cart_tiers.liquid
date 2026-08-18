@@ -52,10 +52,16 @@
    /* ================================
       Tier Add to Cart Button
       ================================ */
-   #cwc-atc-tiers-{{ block.id }} {
+   #cwc-atc-tiers-{{ block.id }},
+   #cwc-atc-tiers-sticky-{{ block.id }} {
      --atc-bg: {{ btn_bg }};
      --atc-fg: {{ btn_fg }};
      --atc-note: {{ note_color }};
+
+     /* Hover inverts the button: the fill becomes the text colour and
+        the brand colour moves to the text, border and pill. */
+     --atc-hover-bg: {{ block.settings.button_hover_bg_color | default: btn_fg }};
+     --atc-hover-fg: {{ block.settings.button_hover_text_color | default: btn_bg }};
    }
 
    .cwc-atc-tiers .cwc-atc-tiers__button {
@@ -66,19 +72,37 @@
      gap: 14px;
      width: 100%;
      padding: 15px 22px;
-     border: 0;
+     /* Same colour as the fill so the hover border adds no layout shift. */
+     border: 1px solid var(--atc-bg);
      border-radius: 10px;
      background-color: var(--atc-bg);
      color: var(--atc-fg);
      font-family: inherit;
      cursor: pointer;
-     transition: filter .2s ease-in-out, opacity .2s ease-in-out;
+     transition: background-color .2s ease-in-out, border-color .2s ease-in-out,
+                 color .2s ease-in-out, opacity .2s ease-in-out;
      -webkit-tap-highlight-color: transparent;
      box-sizing: border-box;
    }
 
-   .cwc-atc-tiers .cwc-atc-tiers__button:hover {
-     filter: brightness(1.08);
+   .cwc-atc-tiers .cwc-atc-tiers__button:hover:not(:disabled) {
+     background-color: var(--atc-hover-bg);
+     border-color: var(--atc-hover-fg);
+     color: var(--atc-hover-fg);
+   }
+
+   /* The pill, divider and guarantee tick all read from currentColor, so
+      they only need their translucent surfaces re-tinted to the brand. */
+   .cwc-atc-tiers .cwc-atc-tiers__button:hover:not(:disabled) .cwc-atc-tiers__pill {
+     border-color: rgba(0, 0, 0, .18);
+     border-color: color-mix(in srgb, var(--atc-hover-fg) 32%, transparent);
+     background: rgba(0, 0, 0, .05);
+     background: color-mix(in srgb, var(--atc-hover-fg) 8%, transparent);
+   }
+
+   .cwc-atc-tiers .cwc-atc-tiers__button:hover:not(:disabled) .cwc-atc-tiers__divider {
+     background: rgba(0, 0, 0, .25);
+     background: color-mix(in srgb, var(--atc-hover-fg) 38%, transparent);
    }
 
    .cwc-atc-tiers .cwc-atc-tiers__button:active {
@@ -89,7 +113,6 @@
    .cwc-atc-tiers .cwc-atc-tiers__button:disabled {
      opacity: .6;
      cursor: not-allowed;
-     filter: none;
    }
 
    /* label */
@@ -115,6 +138,7 @@
      background: rgba(255, 255, 255, .12);
      font-size: .9375rem;
      line-height: 1.2;
+     transition: background-color .2s ease-in-out, border-color .2s ease-in-out;
    }
 
    .cwc-atc-tiers .cwc-atc-tiers__compare {
@@ -138,6 +162,7 @@
      height: 16px;
      background: rgba(255, 255, 255, .35);
      flex: 0 0 auto;
+     transition: background-color .2s ease-in-out;
    }
 
    .cwc-atc-tiers .cwc-atc-tiers__guarantee {
@@ -322,17 +347,20 @@
      font-weight: 700;
      font-size: .9375rem;
      border-radius: 999px;
-     border: 0;
      cursor: pointer;
+     border: 1px solid var(--atc-bg, {{ btn_bg }});
      background-color: var(--atc-bg, {{ btn_bg }});
      color: var(--atc-fg, {{ btn_fg }});
      white-space: nowrap;
-     transition: filter .2s ease-in-out;
+     transition: background-color .2s ease-in-out, border-color .2s ease-in-out,
+                 color .2s ease-in-out;
      -webkit-tap-highlight-color: transparent;
    }
 
-   #cwc-atc-tiers-sticky-{{ block.id }} .cwc-sticky-atc__button:hover {
-     filter: brightness(1.08);
+   #cwc-atc-tiers-sticky-{{ block.id }} .cwc-sticky-atc__button:hover:not(:disabled) {
+     background-color: var(--atc-hover-bg);
+     border-color: var(--atc-hover-fg);
+     color: var(--atc-hover-fg);
    }
 
    #cwc-atc-tiers-sticky-{{ block.id }} .cwc-sticky-atc__button:disabled {
@@ -427,8 +455,8 @@
             <span class="cwc-atc-tiers__divider" aria-hidden="true"></span>
             <svg xmlns="http://www.w3.org/2000/svg" width="15" height="15" viewBox="0 0 15 15" fill="none">
               <g clip-path="url(#clip0_1171_260)" fill="none">
-                <path d="M7.5 13.75C10.9518 13.75 13.75 10.9518 13.75 7.5C13.75 4.04822 10.9518 1.25 7.5 1.25C4.04822 1.25 1.25 4.04822 1.25 7.5C1.25 10.9518 4.04822 13.75 7.5 13.75Z" stroke="white" stroke-width="1.1875"/>
-                <path d="M4.875 7.6875L6.5625 9.375L10.125 5.6875" stroke="white" stroke-width="1.1875" stroke-linecap="round" stroke-linejoin="round"/>
+                <path d="M7.5 13.75C10.9518 13.75 13.75 10.9518 13.75 7.5C13.75 4.04822 10.9518 1.25 7.5 1.25C4.04822 1.25 1.25 4.04822 1.25 7.5C1.25 10.9518 4.04822 13.75 7.5 13.75Z" stroke="currentColor" stroke-width="1.1875"/>
+                <path d="M4.875 7.6875L6.5625 9.375L10.125 5.6875" stroke="currentColor" stroke-width="1.1875" stroke-linecap="round" stroke-linejoin="round"/>
               </g>
               <defs>
                 <clipPath id="clip0_1171_260">

@@ -58,6 +58,7 @@
                   %}
                 </div>
 
+            
               {% when 'faq' %}
                 <div class="cwc-featured-product__faq desktop__only" {{ block.shopify_attributes }}>
                   {% render 'CWC_faq_blocks', product: current_product, section_id: section.id, block: block %}
@@ -67,6 +68,13 @@
                 <div class="cwc-featured-product__value_props desktop__only" {{ block.shopify_attributes }}>
                   {% render 'CWC_block__value_props', product: current_product, section_id: section.id, block: block %}
                 </div>
+
+              {% when 'video_testimonials' %}
+                {% if block.settings.column == 'left' %}
+                  <div class="cwc-featured-product__video-testimonials" {{ block.shopify_attributes }}>
+                    {% render 'CWC_video_testimonials_block', block: block, section_id: section.id %}
+                  </div>
+                {% endif %}
             {% endcase %}
           {% endfor %}
         </div>
@@ -187,10 +195,16 @@
                     %}
                   </div>
 
+                {% comment %}
+                  Rendered from either column loop; the two guards are mutually
+                  exclusive so the block never renders twice.
+                {% endcomment %}
                 {% when 'video_testimonials' %}
-                  <div class="cwc-featured-product__video-testimonials" {{ block.shopify_attributes }}>
-                    {% render 'CWC_video_testimonials_block', block: block, section_id: section.id %}
-                  </div>
+                  {% unless block.settings.column == 'left' %}
+                    <div class="cwc-featured-product__video-testimonials" {{ block.shopify_attributes }}>
+                      {% render 'CWC_video_testimonials_block', block: block, section_id: section.id %}
+                    </div>
+                  {% endunless %}
 
                 {% when 'warning_notice' %}
                   <div class="cwc-featured-product__warning-notice" {{ block.shopify_attributes }}>
@@ -1718,6 +1732,20 @@
           "default": "#ffffff"
         },
         {
+          "type": "color",
+          "id": "button_hover_bg_color",
+          "label": "Button Hover Background Color",
+          "default": "#ffffff",
+          "info": "Hover inverts the button. Defaults to the button text color."
+        },
+        {
+          "type": "color",
+          "id": "button_hover_text_color",
+          "label": "Button Hover Text Color",
+          "default": "#125657",
+          "info": "Also colors the hover border, pill outline and arrow."
+        },
+        {
           "type": "checkbox",
           "id": "show_arrow",
           "label": "Show trailing arrow",
@@ -1965,6 +1993,21 @@
       "type": "video_testimonials",
       "name": "Video Testimonials",
       "settings": [
+        {
+          "type": "header",
+          "content": "Layout"
+        },
+        {
+          "type": "select",
+          "id": "column",
+          "label": "Column",
+          "options": [
+            { "value": "right", "label": "Right content" },
+            { "value": "left", "label": "Left content" }
+          ],
+          "default": "right",
+          "info": "On mobile the columns stack, so \"Left content\" places this above the buy box."
+        },
         {
           "type": "header",
           "content": "Content"

@@ -232,6 +232,8 @@
             "button_text": "Add To Cart",
             "button_bg_color": "#125657",
             "button_text_color": "#ffffff",
+            "button_hover_bg_color": "#ffffff",
+            "button_hover_text_color": "#125657",
             "show_arrow": true,
             "guarantee_text": "365-Day Guarantee",
             "note_1": "Refills Ship Every 25 Days",
@@ -326,6 +328,7 @@
         "video_testimonials_fcgiKi": {
           "type": "video_testimonials",
           "settings": {
+            "column": "right",
             "heading": "<h4>What our customers are saying:</h4>",
             "subtext": "",
             "video_1": "shopify://files/videos/Simply Revival | Real People Real Results - Marc_20Malcolm_20.mp4",
@@ -362,7 +365,7 @@
       ],
       "name": "Featured Product",
       "settings": {
-        "product": "natural-dht-blocker-bogo",
+        "product": "simply®-dht-blocker",
         "background_color": "#ffffff",
         "padding_top": 40,
         "padding_bottom": 40,
