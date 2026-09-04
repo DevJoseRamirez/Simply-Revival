@@ -209,7 +209,7 @@
         "desc_aVrjLU": {
           "type": "desc",
           "settings": {
-            "desc": "<p><strong>See less shedding in 14 days. Noticeably fuller, thicker hair in 60 days — or we'll refund your entire order. </strong>A natural blend of 10 ancient herbs formulated to support healthy DHT balance, healthier-looking, fuller hair — without relying on harsh ingredients.*</p>"
+            "desc": "<p><strong>See less shedding in 14 days. Noticeably fuller, thicker hair in 60 days — backed by our 365-day money-back guarantee. </strong>A natural blend of 10 ancient herbs formulated to support healthy DHT balance, healthier-looking, fuller hair — without relying on harsh ingredients.*</p>"
           }
         },
         "benefits_XqmTFX": {
@@ -322,7 +322,7 @@
           "settings": {
             "icon_1": "shopify://shop_images/icon_prop_01.png",
             "title_1": "365 Day Guarantee",
-            "desc_1": "If you don’t love it, money back.",
+            "desc_1": "365-day money-back guarantee / Return your most recent order",
             "price_1": "$50.00",
             "icon_2": "shopify://shop_images/icon_prop_03.png",
             "title_2": "Shipping Protection",
@@ -508,7 +508,7 @@
           "type": "faq",
           "settings": {
             "title": "Do you have a guarantee?",
-            "content": "<p>Yes, All orders are backed by our 365 day money back guarantee. If you’re not happy, we will make it right!</p>"
+            "content": "<p>You’re covered by our 365-day money-back guarantee. If you’re not happy, send your most recent order back to our warehouse, opened is fine; and once we receive it we’ll refund that order in full.</p>"
           }
         }
       },
@@ -1582,7 +1582,7 @@
         "subtext_LixbJV": {
           "type": "subtext",
           "settings": {
-            "text": "<p>If you don’t experience noticeable improvements within 365 days, simply return your most recent order for a full refund!</p>"
+            "text": "<p>You’re covered by our 365-day money-back guarantee. If you’re not happy, send your most recent order back to our warehouse — opened is fine — and once we receive it we’ll refund that order in full.</p>"
           }
         },
         "button_ezWWFE": {
@@ -1648,7 +1648,7 @@
           "type": "faq",
           "settings": {
             "title": "<p>Do you have a guarantee?</p>",
-            "text": "<p>Yes, All orders are backed by our 365 day money back guarantee. If you’re not happy, we will make it right!</p>"
+            "text": "<p>You’re covered by our 365-day money-back guarantee. If you’re not happy, send your most recent order back to our warehouse, opened is fine; and once we receive it we’ll refund that order in full.</p>"
           }
         },
         "faq_DyxH8n": {
