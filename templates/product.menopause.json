@@ -548,7 +548,7 @@
           "type": "usp",
           "settings": {
             "icon": "shopify://shop_images/Simply_Revival___Third_Party_Tested_-_64.png",
-            "text": "THIRD PARTY TESTED"
+            "text": "NO FILLERS OR ADDITIVES"
           }
         },
         "usp_9H8LXQ": {
@@ -958,7 +958,7 @@
         "checkmark_3PzVfp": {
           "type": "checkmark",
           "settings": {
-            "text": "Made in the USA"
+            "text": "10 Herbs, One Formula"
           }
         },
         "checkmark_j83xci": {
@@ -1000,7 +1000,7 @@
         "icon_block_kY9neh": {
           "type": "icon_block",
           "settings": {
-            "text": "Third Party Tested"
+            "text": "No Fillers or Additives"
           }
         },
         "icon_block_KnFiLj": {
@@ -1483,7 +1483,7 @@
             "icon4": "shopify://shop_images/Simply_Revival___No_Sugar_Gluten_Free-min.png",
             "text4": "No Sugar & Gluten Free",
             "icon5": "shopify://shop_images/Simply_Revival___Made_in_the_USA-min.png",
-            "text5": "Made in the USA"
+            "text5": "10 Herbs, One Formula"
           }
         },
         "competitor_table_YGJ7kM": {
