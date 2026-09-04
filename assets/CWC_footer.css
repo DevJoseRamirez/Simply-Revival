@@ -92,6 +92,28 @@
   width: 19%
 }
 
+/* === Address / text under logo === */
+.cwc_footer__address {
+  font-size: 0.875rem;
+  line-height: 1.6;
+  color: var(--text-color);
+  margin-top: 1.25rem;
+}
+
+.cwc_footer__address>* {
+  color: var(--text-color);
+  margin: 0;
+}
+
+.cwc_footer__address a {
+  color: inherit;
+  text-decoration: none;
+}
+
+.cwc_footer__address a:hover {
+  color: var(--text-hover-color);
+}
+
 .cwc_footer__col--menu {
   width: 30%;
   padding-left: 4rem;
@@ -333,6 +355,8 @@
     grid-row: 1;
     width: 100%;
     display: flex;
+    flex-direction: column;
+    align-items: flex-start;
   }
 
   .cwc_footer__col--menu {

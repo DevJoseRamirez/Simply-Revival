@@ -1,0 +1,70 @@
+{% comment %}
+  CWC Disclaimer
+  Small-print legal/results disclaimer. Rendered under testimonial content.
+
+  Accepts:
+  - text       {String}  Richtext/plain text to display. Falls back to the standard FDA disclaimer.
+  - align      {String}  'center' (default) | 'left'
+  - max_width  {String}  Max width of the disclaimer copy. Default '760px'.
+
+  Usage:
+  {% render 'CWC_disclaimer', text: section.settings.disclaimer_text %}
+{% endcomment %}
+
+{%- liquid
+  assign cwc_disclaimer_text = text
+  if cwc_disclaimer_text == blank
+    assign cwc_disclaimer_text = 'Individual results vary. These statements have not been evaluated by the FDA. This product is not intended to diagnose, treat, cure, or prevent any disease.'
+  endif
+  assign cwc_disclaimer_align = align | default: 'center'
+  assign cwc_disclaimer_max_width = max_width | default: '760px'
+-%}
+
+{% style %}
+  .cwc_disclaimer {
+    margin-top: 1.5rem;
+    padding: 0 1rem;
+    box-sizing: border-box;
+  }
+
+  .cwc_disclaimer__text,
+  .cwc_disclaimer__text > * {
+    margin: 0 auto;
+    max-width: var(--cwc-disclaimer-max-width, 760px);
+    font-size: 0.75rem;
+    line-height: 1.5;
+    color: var(--text-color, #111111);
+    opacity: 0.65;
+    text-align: var(--cwc-disclaimer-align, center);
+  }
+
+  .cwc_disclaimer__text > * + * {
+    margin-top: 0.5rem;
+  }
+
+  .cwc_disclaimer--left .cwc_disclaimer__text,
+  .cwc_disclaimer--left .cwc_disclaimer__text > * {
+    margin-left: 0;
+    margin-right: 0;
+  }
+
+  @media (max-width: 768px) {
+    .cwc_disclaimer {
+      margin-top: 1.25rem;
+    }
+
+    .cwc_disclaimer__text,
+    .cwc_disclaimer__text > * {
+      font-size: 0.6875rem;
+    }
+  }
+{% endstyle %}
+
+<div
+  class="cwc_disclaimer cwc_disclaimer--{{ cwc_disclaimer_align }}"
+  style="--cwc-disclaimer-align: {{ cwc_disclaimer_align }}; --cwc-disclaimer-max-width: {{ cwc_disclaimer_max_width }};"
+>
+  <div class="cwc_disclaimer__text cwc-rte">
+    {{ cwc_disclaimer_text }}
+  </div>
+</div>

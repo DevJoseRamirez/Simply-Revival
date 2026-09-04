@@ -17,7 +17,8 @@
       "settings": {
         "logo": "shopify://shop_images/Simply_Revival_Logo_white_text-min.png",
         "logo_width": 160,
-        "logo_text": "BRAND",
+        "logo_text": "SimplyRevival",
+        "logo_address": "<p>Simply Revival<br>4301 Valley Blvd<br>Los Angeles, CA 90032<\/p>",
         "newsletter_heading": "Stay In The Know",
         "newsletter_subheading": "<p>Sign up for newsletters, special offers and exclusive discounts!</p>",
         "newsletter_placeholder": "Your Email",

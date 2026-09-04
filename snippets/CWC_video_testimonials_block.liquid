@@ -88,6 +88,10 @@
           class="swiper-button-next cwc-video-testimonials-block__next cwc-video-testimonials-block__next--{{ block.id }}"
         ></div>
       </div>
+
+      {%- if block.settings.show_disclaimer -%}
+        {% render 'CWC_disclaimer', text: block.settings.disclaimer_text %}
+      {%- endif -%}
     </div>
   </div>
 </div>

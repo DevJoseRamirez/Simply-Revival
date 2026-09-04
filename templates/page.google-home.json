@@ -75,7 +75,7 @@
         "review_nwp389": {
           "type": "review",
           "settings": {
-            "text": "<p><strong>Rated 4.8/5</strong> | Trusted by 20,000+</p>"
+            "text": "<p><strong>Rated 4.8/5</strong> | 100,000+ bottles sold</p>"
           }
         },
         "headline_GJrgJt": {
@@ -137,8 +137,9 @@
         "background_color": "#d0f0f2",
         "text_color": "#222222",
         "image": "shopify://shop_images/Simply_Revival___The_1_Natural_DHT_Blocker_for_Hair_Loss_-_Hero_Image_Mobile-min.png",
-        "alt_text": "",
         "image_position": "left",
+        "m_image_position": "top",
+        "alt_text": "",
         "padding_top": 40,
         "padding_bottom": 40
       }
@@ -254,6 +255,7 @@
       ],
       "name": "Social Proof",
       "settings": {
+        "social_proof_image_list": "",
         "show_stars": true,
         "star_link": "#az_reviews",
         "heading": "<h3>Real Stories, <strong>Real Experiences</strong></h3>",
@@ -776,8 +778,69 @@
         "padding_bottom": 60
       }
     },
+    "cwc_key_facts_kF9xQ2": {
+      "type": "CWC_key_facts",
+      "blocks": {
+        "fact_blend": {
+          "type": "fact",
+          "settings": {
+            "number": "350mg+",
+            "title": "<p>Proprietary herbal blend per serving</p>",
+            "text": "<p>Including saw palmetto and stinging nettle</p>"
+          }
+        },
+        "fact_herbs": {
+          "type": "fact",
+          "settings": {
+            "number": "10",
+            "title": "<p>Legendary herbs in one formula</p>",
+            "text": "<p>Chosen to support a healthy hair growth cycle</p>"
+          }
+        },
+        "fact_dose": {
+          "type": "fact",
+          "settings": {
+            "number": "2",
+            "title": "<p>Capsules a day</p>",
+            "text": "<p>Tasteless, plant-based, taken with breakfast</p>"
+          }
+        },
+        "fact_free": {
+          "type": "fact",
+          "settings": {
+            "number": "0",
+            "title": "<p>Fillers, sugar, or preservatives</p>",
+            "text": "<p>No GMOs, no gluten, no parabens</p>"
+          }
+        }
+      },
+      "block_order": [
+        "fact_blend",
+        "fact_herbs",
+        "fact_dose",
+        "fact_free"
+      ],
+      "name": "Key Facts",
+      "settings": {
+        "heading": "<p>Simply Revival® — What's <strong>Inside</strong> Every Capsule</p>",
+        "subtext": "<p>Ten plant-based ingredients, full doses, nothing hidden behind a label.</p>",
+        "bg_color": "#FCFCFB",
+        "text_color": "#0B0B0B",
+        "bold_color": "#1D9E75",
+        "subtext_color": "#52514E",
+        "number_color": "#1D9E75",
+        "fact_title_color": "#0B0B0B",
+        "fact_text_color": "#52514E",
+        "content_max_width": 820,
+        "column_gap": 80,
+        "row_gap": 40,
+        "padding_top": 60,
+        "padding_bottom": 60
+      }
+    },
     "cwc_statistical_proof_N9aDwp": {
       "type": "CWC_statistical_proof",
+      "disabled": true,
       "blocks": {
         "heading_ibajKQ": {
           "type": "heading",
@@ -945,17 +1008,21 @@
         "image_carousel_QNkEf7": {
           "type": "image_carousel",
           "settings": {
+            "img_limit": 8,
             "badge_text": "BestSeller",
             "badge_text_color": "#ffffff",
             "badge_bg_color": "#60a1a2",
             "badge_sold_text": "50+ Sold Today",
             "badge_sold_text_color": "#000000",
-            "badge_sold_bg_color": "#ffffff"
+            "badge_sold_bg_color": "#ffffff",
+            "mobile_thumbs": true,
+            "enable_zoom": true
           }
         },
         "rating_dAyL4U": {
           "type": "rating",
           "settings": {
+            "star_color": "#ffcc00",
             "text": "<p>Rated 4.8 Excellent | <a href=\"#az_reviews\" title=\"#az_reviews\"><span style=\"text-decoration:underline\"><strong>2148 Reviews</strong></span></a></p>"
           }
         },
@@ -968,7 +1035,9 @@
         "title_W4zKmt": {
           "type": "title",
           "settings": {
-            "title": "<h3>Natural DHT Support Hair Care Blend</h3>"
+            "title": "<h3>Natural DHT Support Hair Care Blend</h3>",
+            "text_color": "#282828",
+            "highlight_color": "#45b5b7"
           }
         },
         "desc_Qmnjaa": {
@@ -994,14 +1063,34 @@
         },
         "price_display_W8rh3e": {
           "type": "price_display",
-          "settings": {}
+          "settings": {
+            "save_label": "Save"
+          }
         },
         "product_options_WUtKk3": {
           "type": "product_options",
           "settings": {
             "image1": "shopify://shop_images/Simply_Revival___Natural_Hair_Support_Blend___Buy_One-min.png",
+            "badge_text_1": "",
+            "servings_text_1": "",
+            "bonus_text_1_opt1": "",
+            "bonus_text_2_opt1": "",
+            "cart_addon_1_opt1": "",
+            "cart_addon_2_opt1": "",
             "image2": "shopify://shop_images/Simply_Revival___Natural_Hair_Support_Blend___Buy_2_-_Get_1_FREE-min.png",
-            "image3": "shopify://shop_images/Simply_Revival___Natural_Hair_Support_Blend___Buy_3_-_Get_2_FREE-min.png"
+            "badge_text_2": "Most Popular",
+            "servings_text_2": "",
+            "bonus_text_1_opt2": "",
+            "bonus_text_2_opt2": "",
+            "cart_addon_1_opt2": "",
+            "cart_addon_2_opt2": "",
+            "image3": "shopify://shop_images/Simply_Revival___Natural_Hair_Support_Blend___Buy_3_-_Get_2_FREE-min.png",
+            "badge_text_3": "Free Shipping",
+            "servings_text_3": "",
+            "bonus_text_1_opt3": "",
+            "bonus_text_2_opt3": "",
+            "cart_addon_1_opt3": "",
+            "cart_addon_2_opt3": ""
           }
         },
         "subscription_toggle_AnHmTF": {
@@ -1025,7 +1114,15 @@
           "settings": {
             "button_text": "Add to Cart",
             "button_bg_color": "#125657",
-            "button_text_color": "#ffffff"
+            "button_text_color": "#ffffff",
+            "enable_sticky_atc": false,
+            "sticky_button_text": "Add to Cart",
+            "sticky_bg_color": "#ffffff",
+            "bundle_product_1": "",
+            "bundle_product_2": "",
+            "bundle_product_3": "",
+            "bundle_product_4": "",
+            "skip_cart": false
           }
         },
         "guarantee_text_dfTDaP": {
@@ -1095,7 +1192,8 @@
         "product": "natural-hair-support-blend",
         "background_color": "#ffffff",
         "padding_top": 40,
-        "padding_bottom": 0
+        "padding_bottom": 0,
+        "savings_display_type": "dollar"
       }
     },
     "rich_text_niMgHq": {
@@ -1106,7 +1204,7 @@
         "setwidth": "full",
         "bgsection": "#ffffff",
         "gradient_bg": "",
-        "title_color": "transparent",
+        "title_color": "rgba(0,0,0,0)",
         "title_top": "",
         "title": "",
         "text": "<p><em>Product label currently reads “DHT Blocker.” Packaging update in progress — same trusted blend.</em></p>",
@@ -1247,7 +1345,7 @@
       "type": "CWC_areviews_widget",
       "name": "Areviews Wdget",
       "settings": {
-        "product": "simply®-dht-blocker",
+        "product": "simply-dht-blocker",
         "padding_top": 60,
         "padding_bottom": 60
       }
@@ -1266,6 +1364,7 @@
     "cwc_reasons_pHJPxW",
     "cwc_video_testimonials_JNizXH",
     "cwc_problem_solution_rhM8jg",
+    "cwc_key_facts_kF9xQ2",
     "cwc_statistical_proof_N9aDwp",
     "cwc_comparison_hALj4g",
     "cwc_featured_product_pKwzFB",

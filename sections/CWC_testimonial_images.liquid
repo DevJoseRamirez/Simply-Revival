@@ -90,6 +90,10 @@
       <div class="swiper-button-prev cwc-testimonial-images__carousel-prev"></div>
       <div class="swiper-button-next cwc-testimonial-images__carousel-next"></div>
     </div>
+
+    {%- if section.settings.show_disclaimer -%}
+      {% render 'CWC_disclaimer', text: section.settings.disclaimer_text %}
+    {%- endif -%}
   </div>
 </section>
 
@@ -159,6 +163,22 @@
       "step": 4,
       "unit": "px",
       "default": 60
+    },
+    {
+      "type": "header",
+      "content": "Disclaimer"
+    },
+    {
+      "type": "checkbox",
+      "id": "show_disclaimer",
+      "label": "Show disclaimer",
+      "default": true
+    },
+    {
+      "type": "richtext",
+      "id": "disclaimer_text",
+      "label": "Disclaimer text",
+      "default": "<p>Individual results vary. These statements have not been evaluated by the FDA. This product is not intended to diagnose, treat, cure, or prevent any disease.</p>"
     }
   ],
   "blocks": [

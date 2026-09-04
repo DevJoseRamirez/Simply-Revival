@@ -189,7 +189,7 @@
           "type": "rating",
           "settings": {
             "star_color": "#ffcc00",
-            "text": "<p>Rated <strong>4.8 Excellent </strong>| <a href=\"#az_reviews\" title=\"#az_reviews\"><span style=\"text-decoration:underline\">25,593 Reviews</span></a></p>"
+            "text": "<p>Rated <strong>4.8 Excellent </strong>| <a href=\"#az_reviews\" title=\"#az_reviews\"><span style=\"text-decoration:underline\">25,000+ reviews</span></a></p>"
           }
         },
         "vendor_g4GeAp": {
@@ -274,6 +274,7 @@
             "unlock_image_1": "shopify://shop_images/bundle_and_save_dht_1.png",
             "unlock_value_1": "$79.99",
             "unlock_label_1": "FREE Bottles",
+            "unlock_at_tier_1": "2",
             "cart_addon_1_opt1": "",
             "cart_addon_2_opt1": "",
             "image2": "shopify://shop_images/Simply_Revival___Natural_Hair_Support_Blend___Buy_2_-_Get_1_FREE-min.png",
@@ -291,6 +292,7 @@
             "unlock_image_2": "shopify://shop_images/icon_prop_01.png",
             "unlock_value_2": "$50.00",
             "unlock_label_2": "FREE 365 Day Guarantee",
+            "unlock_at_tier_2": "2",
             "cart_addon_1_opt2": "",
             "cart_addon_2_opt2": "",
             "image3": "shopify://shop_images/Simply_Revival___Natural_Hair_Support_Blend___Buy_3_-_Get_2_FREE-min.png",
@@ -308,11 +310,9 @@
             "unlock_image_3": "shopify://shop_images/icon_prop_02.png",
             "unlock_value_3": "$20.00",
             "unlock_label_3": "FREE $20 Gift Card",
+            "unlock_at_tier_3": "3",
             "cart_addon_1_opt3": "",
-            "cart_addon_2_opt3": "",
-            "unlock_at_tier_1": "2",
-            "unlock_at_tier_2": "2",
-            "unlock_at_tier_3": "3"
+            "cart_addon_2_opt3": ""
           }
         },
         "delivery_estimate_g6E4Az": {
@@ -358,7 +358,7 @@
             "image_1": "shopify://shop_images/trusted_by_01.png",
             "image_2": "shopify://shop_images/trusted_by_02.png",
             "image_3": "shopify://shop_images/trusted_by_03.png",
-            "title": "<p><strong>Trusted by 100K+ customers</strong></p>",
+            "title": "<p><strong>100,000+ Bottles Sold</strong></p>",
             "subtext": "<p>who choose Simply for consistent, long-term wellness support.</p>",
             "bg_color": "#efefef",
             "text_color": "#282828"
@@ -368,7 +368,7 @@
           "type": "warning_notice",
           "settings": {
             "title": "WARNING: Low Stock Notice",
-            "text": "<p>This product sold out 12 times last year. We encourage you to take advantage of the <strong>limited sale</strong> and buy now. Subscribing protects you against future stockouts.</p>",
+            "text": "<p>This product sold out 4 times this year. We encourage you to take advantage of the <strong>limited sale</strong> and buy now. Subscribing protects you against future stockouts.</p>",
             "bg_color": "#fff0ee",
             "border_color": "#e05a4e",
             "title_color": "#c0392b",
@@ -459,7 +459,7 @@
       ],
       "name": "Featured Product",
       "settings": {
-        "product": "simply®-dht-blocker",
+        "product": "simply-dht-blocker",
         "background_color": "#ffffff",
         "padding_top": 40,
         "padding_bottom": 40,
@@ -483,7 +483,7 @@
         "rating_efyjWb": {
           "type": "rating",
           "settings": {
-            "text": "<p>Rated <strong>4.8 Excellent </strong>| <a href=\"#az_reviews\" title=\"#az_reviews\"><span style=\"text-decoration:underline\">25,593 Reviews</span></a></p>"
+            "text": "<p>Rated <strong>4.8 Excellent </strong>| <a href=\"#az_reviews\" title=\"#az_reviews\"><span style=\"text-decoration:underline\">25,000+ reviews</span></a></p>"
           }
         },
         "vendor_7iLFXM": {
@@ -1412,8 +1412,69 @@
         "padding_bottom": 40
       }
     },
+    "cwc_key_facts_kF9xQ2": {
+      "type": "CWC_key_facts",
+      "blocks": {
+        "fact_blend": {
+          "type": "fact",
+          "settings": {
+            "number": "350mg+",
+            "title": "<p>Proprietary herbal blend per serving</p>",
+            "text": "<p>Including saw palmetto and stinging nettle</p>"
+          }
+        },
+        "fact_herbs": {
+          "type": "fact",
+          "settings": {
+            "number": "10",
+            "title": "<p>Legendary herbs in one formula</p>",
+            "text": "<p>Chosen to support a healthy hair growth cycle</p>"
+          }
+        },
+        "fact_dose": {
+          "type": "fact",
+          "settings": {
+            "number": "2",
+            "title": "<p>Capsules a day</p>",
+            "text": "<p>Tasteless, plant-based, taken with breakfast</p>"
+          }
+        },
+        "fact_free": {
+          "type": "fact",
+          "settings": {
+            "number": "0",
+            "title": "<p>Fillers, sugar, or preservatives</p>",
+            "text": "<p>No GMOs, no gluten, no parabens</p>"
+          }
+        }
+      },
+      "block_order": [
+        "fact_blend",
+        "fact_herbs",
+        "fact_dose",
+        "fact_free"
+      ],
+      "name": "Key Facts",
+      "settings": {
+        "heading": "<p>Simply Revival® — What's <strong>Inside</strong> Every Capsule</p>",
+        "subtext": "<p>Ten plant-based ingredients, full doses, nothing hidden behind a label.</p>",
+        "bg_color": "#FCFCFB",
+        "text_color": "#0B0B0B",
+        "bold_color": "#1D9E75",
+        "subtext_color": "#52514E",
+        "number_color": "#1D9E75",
+        "fact_title_color": "#0B0B0B",
+        "fact_text_color": "#52514E",
+        "content_max_width": 820,
+        "column_gap": 80,
+        "row_gap": 40,
+        "padding_top": 60,
+        "padding_bottom": 60
+      }
+    },
     "cwc_statistical_proof_TyE7PV": {
       "type": "CWC_statistical_proof",
+      "disabled": true,
       "blocks": {
         "heading_GgbTzk": {
           "type": "heading",
@@ -1752,7 +1813,7 @@
       "type": "CWC_areviews_widget",
       "name": "Areviews Wdget",
       "settings": {
-        "product": "simply®-dht-blocker",
+        "product": "simply-dht-blocker",
         "padding_top": 60,
         "padding_bottom": 60
       }
@@ -1805,6 +1866,7 @@
     "cwc_reasons_raQjiN",
     "cwc_video_testimonials_eKGcNw",
     "cwc_problem_solution_3rW9Gt",
+    "cwc_key_facts_kF9xQ2",
     "cwc_statistical_proof_TyE7PV",
     "cwc_comparison_j8fkx6",
     "cwc_free_trial_yzRXJa",

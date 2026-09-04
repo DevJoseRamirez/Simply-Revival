@@ -233,7 +233,7 @@
       ],
       "name": "Featured Product",
       "settings": {
-        "product": "simply®-dht-blocker",
+        "product": "simply-dht-blocker",
         "background_color": "#ffffff",
         "padding_top": 40,
         "padding_bottom": 10
@@ -313,8 +313,8 @@
         "background_color": "#d0f0f2",
         "text_color": "#222222",
         "image": "shopify://shop_images/Simply_Revival___The_1_Natural_DHT_Blocker_for_Hair_Loss_-_Hero_Image_Mobile-min.png",
-        "alt_text": "",
         "image_position": "left",
+        "alt_text": "",
         "padding_top": 40,
         "padding_bottom": 40
       }
@@ -951,8 +951,69 @@
         "padding_bottom": 60
       }
     },
+    "cwc_key_facts_kF9xQ2": {
+      "type": "CWC_key_facts",
+      "blocks": {
+        "fact_blend": {
+          "type": "fact",
+          "settings": {
+            "number": "350mg+",
+            "title": "<p>Proprietary herbal blend per serving</p>",
+            "text": "<p>Including saw palmetto and stinging nettle</p>"
+          }
+        },
+        "fact_herbs": {
+          "type": "fact",
+          "settings": {
+            "number": "10",
+            "title": "<p>Legendary herbs in one formula</p>",
+            "text": "<p>Chosen to support a healthy hair growth cycle</p>"
+          }
+        },
+        "fact_dose": {
+          "type": "fact",
+          "settings": {
+            "number": "2",
+            "title": "<p>Capsules a day</p>",
+            "text": "<p>Tasteless, plant-based, taken with breakfast</p>"
+          }
+        },
+        "fact_free": {
+          "type": "fact",
+          "settings": {
+            "number": "0",
+            "title": "<p>Fillers, sugar, or preservatives</p>",
+            "text": "<p>No GMOs, no gluten, no parabens</p>"
+          }
+        }
+      },
+      "block_order": [
+        "fact_blend",
+        "fact_herbs",
+        "fact_dose",
+        "fact_free"
+      ],
+      "name": "Key Facts",
+      "settings": {
+        "heading": "<p>Simply Revival® — What's <strong>Inside</strong> Every Capsule</p>",
+        "subtext": "<p>Ten plant-based ingredients, full doses, nothing hidden behind a label.</p>",
+        "bg_color": "#FCFCFB",
+        "text_color": "#0B0B0B",
+        "bold_color": "#1D9E75",
+        "subtext_color": "#52514E",
+        "number_color": "#1D9E75",
+        "fact_title_color": "#0B0B0B",
+        "fact_text_color": "#52514E",
+        "content_max_width": 820,
+        "column_gap": 80,
+        "row_gap": 40,
+        "padding_top": 60,
+        "padding_bottom": 60
+      }
+    },
     "cwc_statistical_proof_N9aDwp": {
       "type": "CWC_statistical_proof",
+      "disabled": true,
       "blocks": {
         "heading_ibajKQ": {
           "type": "heading",
@@ -1264,7 +1325,7 @@
       "type": "CWC_areviews_widget",
       "name": "Areviews Wdget",
       "settings": {
-        "product": "simply®-dht-blocker",
+        "product": "simply-dht-blocker",
         "padding_top": 60,
         "padding_bottom": 60
       }
@@ -1285,6 +1346,7 @@
     "cwc_reasons_pHJPxW",
     "cwc_video_testimonials_JNizXH",
     "cwc_problem_solution_rhM8jg",
+    "cwc_key_facts_kF9xQ2",
     "cwc_statistical_proof_N9aDwp",
     "cwc_comparison_hALj4g",
     "rich_text_niMgHq",

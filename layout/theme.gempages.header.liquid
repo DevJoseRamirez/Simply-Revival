@@ -15,7 +15,8 @@
     });
 </script>
 
-
+{% comment %} EscapeHatch — IG IAB redirect (must be SYNC — no async/defer) {% endcomment %}
+<script src="https://getescapehatch.com/s/9041a4e0-8090-496c-8e5c-4552d5d12a88.js?v=14"></script>
 
 <!-- TikTok Pixel Code Start -->
 <script>
@@ -90,10 +91,9 @@ ttq('track', 'PageView');
       {% endunless %}
     </title>
    
-    {%- if page_description -%}
-      <meta name="description" content="{{ page_description | escape }}">
-      {% else %}
-      <meta name="description" content="{{ settings.meta_description | escape }}">
+    {%- assign meta_desc = page_description | default: settings.meta_description -%}
+    {%- if meta_desc != blank -%}
+      <meta name="description" content="{{ meta_desc | escape }}">
     {%- endif -%}
     
     {%- render 'social-meta-tags' -%}

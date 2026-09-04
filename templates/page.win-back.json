@@ -276,7 +276,7 @@
       ],
       "name": "Product Card Options",
       "settings": {
-        "product": "simply®-dht-blocker",
+        "product": "simply-dht-blocker",
         "show_variant_ids": false,
         "section_title": "<h2>Choose the Plan That Helps You Stay Consistent</h2>",
         "section_subtitle": "<p>Small daily actions create long-term change. Keep giving your hair the steady support it needs.</p><p></p>",
@@ -525,7 +525,7 @@
       "type": "CWC_product_content_stack",
       "name": "Product Content Stack",
       "settings": {
-        "product": "simply®-dht-blocker",
+        "product": "simply-dht-blocker",
         "variant_id": "50987460559129",
         "show_variant_ids": false,
         "title": "<h2>Stay Committed to Your Results — Up to 60% Off</h2>",

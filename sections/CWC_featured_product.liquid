@@ -213,7 +213,7 @@
 
                 {% when 'low_stock' %}
                   <div class="cwc-featured-product__low-stock" {{ block.shopify_attributes }}>
-                    {% render 'CWC_low_stock', block: block %}
+                    {% render 'CWC_low_stock', block: block, product: current_product %}
                   </div>
 
                 {% when 'trusted_by' %}
@@ -870,6 +870,17 @@
       "type": "low_stock",
       "name": "Low Stock Notice",
       "settings": [
+        {
+          "type": "header",
+          "content": "Visibility"
+        },
+        {
+          "type": "number",
+          "id": "inventory_threshold",
+          "label": "Inventory threshold",
+          "default": 1000,
+          "info": "The badge only shows when the product's total tracked inventory is above 0 and at or below this number. If inventory tracking is off for the product, the badge never shows — including in this editor preview."
+        },
         {
           "type": "text",
           "id": "text_primary",
@@ -2039,7 +2050,7 @@
           "type": "richtext",
           "id": "title",
           "label": "Title",
-          "default": "<p>Trusted by 100K+ customers</p>"
+          "default": "<p>100,000+ Bottles Sold</p>"
         },
         {
           "type": "richtext",
@@ -2083,7 +2094,7 @@
           "type": "richtext",
           "id": "text",
           "label": "Body Text",
-          "default": "<p>This product sold out 12 times last year. We encourage you to take advantage of the <strong>limited sale</strong> and buy now. Subscribing protects you against future stockouts.</p>"
+          "default": "<p>This product sold out 4 times this year. We encourage you to take advantage of the <strong>limited sale</strong> and buy now. Subscribing protects you against future stockouts.</p>"
         },
         {
           "type": "header",
@@ -2255,6 +2266,22 @@
           "unit": "px",
           "label": "Padding Bottom",
           "default": 24
+        },
+        {
+          "type": "header",
+          "content": "Disclaimer"
+        },
+        {
+          "type": "checkbox",
+          "id": "show_disclaimer",
+          "label": "Show disclaimer",
+          "default": true
+        },
+        {
+          "type": "richtext",
+          "id": "disclaimer_text",
+          "label": "Disclaimer text",
+          "default": "<p>Individual results vary. These statements have not been evaluated by the FDA. This product is not intended to diagnose, treat, cure, or prevent any disease.</p>"
         }
       ]
     }

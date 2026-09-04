@@ -53,6 +53,12 @@
             {{ section.settings.logo_text }}
           </a>
         {% endif %}
+
+        {% if section.settings.logo_address != blank %}
+          <div class="cwc_footer__address rte">
+            {{ section.settings.logo_address }}
+          </div>
+        {% endif %}
       </div>
 
       {%- comment -%} Newsletter column {%- endcomment -%}
@@ -194,6 +200,13 @@
       "label": "Logo text (fallback if no image)",
       "info": "Used when no logo image is set.",
       "default": "BRAND"
+    },
+    {
+      "type": "richtext",
+      "id": "logo_address",
+      "label": "Text under logo",
+      "info": "Business name and address shown beneath the logo.",
+      "default": "<p>Simply Revival<br>4301 Valley Blvd<br>Los Angeles, CA 90032</p>"
     },
     {
       "type": "header",

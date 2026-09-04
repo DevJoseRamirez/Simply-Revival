@@ -230,7 +230,7 @@
         "button_color": "#125657",
         "button_text_color": "#ffffff",
         "button_text": "GET 50% OFF →",
-        "button_link": "shopify://products/simply®-dht-blocker",
+        "button_link": "shopify://products/simply-dht-blocker",
         "subtext": "<p>Try it today with a 30-Day Money-Back Guarantee!</p>"
       }
     },
@@ -240,7 +240,7 @@
         "column_Q7hckE": {
           "type": "column",
           "settings": {
-            "title": "✅ Genetics Don't Have to Win",
+            "title": "✅ Thinning Doesn't Have to Be the End of the Story",
             "text": "<p>Simply Revival combines 10 powerful herbs—including Saw Palmetto and Stinging Nettle—that block DHT at the source. Even if you're genetically predisposed to hair loss, you can protect your follicles and keep your hair.</p>"
           }
         },
@@ -417,7 +417,7 @@
         "text": "<p>Due to high demand, Simply Revival can be hard to find in stock. But right now, a new batch is available.</p><p>If you recognized 3 or more of the signs above, this is your chance to fight back—naturally, safely, and effectively.</p>",
         "text_2": "",
         "button_text": "Check Availability Now",
-        "button_link": "shopify://products/simply®-dht-blocker",
+        "button_link": "shopify://products/simply-dht-blocker",
         "subtext": "<p>Made in the USA | Third-Party Tested | 365-Day Money-Back Guarantee</p>"
       }
     },
@@ -449,7 +449,7 @@
           "type": "button",
           "settings": {
             "text": "Try Risk-Free Today",
-            "link": "shopify://products/simply®-dht-blocker",
+            "link": "shopify://products/simply-dht-blocker",
             "button_bg_color": "#125657",
             "button_text_color": "#ffffff"
           }

@@ -218,6 +218,10 @@
           </div>
       {% endcase %}
     {% endfor %}
+
+    {%- if section.settings.show_disclaimer -%}
+      {% render 'CWC_disclaimer', text: section.settings.disclaimer_text %}
+    {%- endif -%}
   </div>
 </section>
 
@@ -295,6 +299,22 @@
       "step": 4,
       "default": 60,
       "unit": "px"
+    },
+    {
+      "type": "header",
+      "content": "Disclaimer"
+    },
+    {
+      "type": "checkbox",
+      "id": "show_disclaimer",
+      "label": "Show disclaimer",
+      "default": true
+    },
+    {
+      "type": "richtext",
+      "id": "disclaimer_text",
+      "label": "Disclaimer text",
+      "default": "<p>Individual results vary. These statements have not been evaluated by the FDA. This product is not intended to diagnose, treat, cure, or prevent any disease.</p>"
     }
   ],
   "blocks": [

@@ -1,0 +1,928 @@
+<!-- vystodian agent | lp-581-simply-revival | Paste into Shopify (Custom Liquid section or page Content HTML) -->
+<!-- REQUIRES lp-581-simply-revival-shopify.css deployed at https://storage.googleapis.com/vysta/lp-581-simply-revival/ (deploy the project folder) -->
+<style>{% raw %}
+html,body{margin:0 !important;padding:0 !important;}
+
+#vstd-lp-581-simply-revival{letter-spacing:normal;word-spacing:normal;line-height:normal;text-transform:none;font-style:normal;font-variant:normal;text-indent:0;text-align:start;white-space:normal;}
+
+#vstd-lp-581-simply-revival *:where(:not(svg,svg *)){all:revert;}
+#vstd-lp-581-simply-revival [hidden]{display:none !important;}
+
+#vstd-lp-581-simply-revival :where(img){width:auto;}
+
+#vstd-lp-581-simply-revival :where([width="19"]){width:19px;}
+#vstd-lp-581-simply-revival :where([width="1400"]){width:1400px;}
+#vstd-lp-581-simply-revival :where([width="20"]){width:20px;}
+#vstd-lp-581-simply-revival :where([width="1300"]){width:1300px;}
+#vstd-lp-581-simply-revival :where([width="13"]){width:13px;}
+#vstd-lp-581-simply-revival :where([width="12"]){width:12px;}
+#vstd-lp-581-simply-revival :where([width="1100"]){width:1100px;}
+#vstd-lp-581-simply-revival :where([width="440"]){width:440px;}
+#vstd-lp-581-simply-revival :where([width="18"]){width:18px;}
+#vstd-lp-581-simply-revival :where([width="400"]){width:400px;}
+#vstd-lp-581-simply-revival :where([width="38"]){width:38px;}
+#vstd-lp-581-simply-revival :where([width="37"]){width:37px;}
+#vstd-lp-581-simply-revival :where([width="45"]){width:45px;}
+#vstd-lp-581-simply-revival :where([width="19"][height="19"]){aspect-ratio:19/19;}
+#vstd-lp-581-simply-revival :where([width="1400"][height="919"]){aspect-ratio:1400/919;}
+#vstd-lp-581-simply-revival :where([width="20"][height="20"]){aspect-ratio:20/20;}
+#vstd-lp-581-simply-revival :where([width="1300"][height="867"]){aspect-ratio:1300/867;}
+#vstd-lp-581-simply-revival :where([width="13"][height="13"]){aspect-ratio:13/13;}
+#vstd-lp-581-simply-revival :where([width="12"][height="12"]){aspect-ratio:12/12;}
+#vstd-lp-581-simply-revival :where([width="1100"][height="1100"]){aspect-ratio:1100/1100;}
+#vstd-lp-581-simply-revival :where([width="440"][height="883"]){aspect-ratio:440/883;}
+#vstd-lp-581-simply-revival :where([width="18"][height="18"]){aspect-ratio:18/18;}
+#vstd-lp-581-simply-revival :where([width="400"][height="70"]){aspect-ratio:400/70;}
+#vstd-lp-581-simply-revival :where([width="20"][height="15"]){aspect-ratio:20/15;}
+#vstd-lp-581-simply-revival :where([width="38"][height="24"]){aspect-ratio:38/24;}
+#vstd-lp-581-simply-revival :where([width="37"][height="23"]){aspect-ratio:37/23;}
+#vstd-lp-581-simply-revival :where([width="45"][height="45"]){aspect-ratio:45/45;}
+
+#vstd-lp-581-simply-revival table,#vstd-lp-581-simply-revival thead,#vstd-lp-581-simply-revival tbody,#vstd-lp-581-simply-revival tfoot,#vstd-lp-581-simply-revival tr,#vstd-lp-581-simply-revival th,#vstd-lp-581-simply-revival td{background-color:transparent;}
+
+
+#vstd-lp-581-simply-revival bubbl{top:25px!important}#vstd-lp-581-simply-revival .vy-product-label.vy-rectangular_label, #vstd-lp-581-simply-revival .vy-styles_StickyWidget__{display:none}#vstd-lp-581-simply-revival *, #vstd-lp-581-simply-revival *:before, #vstd-lp-581-simply-revival *:after{box-sizing:border-box}#vstd-lp-581-simply-revival *:focus{outline:none}#vstd-lp-581-simply-revival{margin:0!important;transition:opacity ease-out 1.2s;opacity:1!important}#vstd-lp-581-simply-revival, #vstd-lp-581-simply-revival input, #vstd-lp-581-simply-revival textarea, #vstd-lp-581-simply-revival button, #vstd-lp-581-simply-revival select{-webkit-font-smoothing:antialiased;-webkit-text-size-adjust:100%}#vstd-lp-581-simply-revival img{max-width:100%;border:0;height:auto}#vstd-lp-581-simply-revival button, #vstd-lp-581-simply-revival input, #vstd-lp-581-simply-revival optgroup, #vstd-lp-581-simply-revival select, #vstd-lp-581-simply-revival textarea{color:inherit;font:inherit;margin:0}#vstd-lp-581-simply-revival button[disabled], #vstd-lp-581-simply-revival input[disabled]{cursor:default}#vstd-lp-581-simply-revival button::-moz-focus-inner, #vstd-lp-581-simply-revival [type=button]::-moz-focus-inner, #vstd-lp-581-simply-revival [type=reset]::-moz-focus-inner, #vstd-lp-581-simply-revival [type=submit]::-moz-focus-inner{border-style:none;padding:0}#vstd-lp-581-simply-revival button:-moz-focusring, #vstd-lp-581-simply-revival [type=button]:-moz-focusring, #vstd-lp-581-simply-revival [type=reset]:-moz-focusring, #vstd-lp-581-simply-revival [type=submit]:-moz-focusring{outline:1px dotted ButtonText}#vstd-lp-581-simply-revival button:focus{outline:none}#vstd-lp-581-simply-revival input[type=search]{-webkit-appearance:none;-moz-appearance:none;appearance:none}#vstd-lp-581-simply-revival table{border-collapse:collapse;border-spacing:0}#vstd-lp-581-simply-revival td, #vstd-lp-581-simply-revival th{padding:0}#vstd-lp-581-simply-revival textarea{overflow:auto;-webkit-appearance:none;-moz-appearance:none;appearance:none}#vstd-lp-581-simply-revival [tabindex="-1"]:focus{outline:none}#vstd-lp-581-simply-revival .vy-visually-hidden, #vstd-lp-581-simply-revival .vy-icon__fallback-text, #vstd-lp-581-simply-revival .vy-no-js .vy-lazyload, #vstd-lp-581-simply-revival .vy-no-js .vy-article__photo-wrapper, #vstd-lp-581-simply-revival .vy-no-js .vy-image-content__image-wrapper{position:absolute!important;overflow:hidden;clip:rect(0 0 0 0);height:1px;width:1px;margin:-1px;padding:0;border:0}#vstd-lp-581-simply-revival, #vstd-lp-581-simply-revival{background-color:var(--color-body)}#vstd-lp-581-simply-revival .vy-container, #vstd-lp-581-simply-revival .vy-container-fluid, #vstd-lp-581-simply-revival .vy-col, #vstd-lp-581-simply-revival .vy-col-1, #vstd-lp-581-simply-revival .vy-col-10, #vstd-lp-581-simply-revival .vy-col-11, #vstd-lp-581-simply-revival .vy-col-12, #vstd-lp-581-simply-revival .vy-col-2, #vstd-lp-581-simply-revival .vy-col-3, #vstd-lp-581-simply-revival .vy-col-4, #vstd-lp-581-simply-revival .vy-col-5, #vstd-lp-581-simply-revival .vy-col-6, #vstd-lp-581-simply-revival .vy-col-7, #vstd-lp-581-simply-revival .vy-col-8, #vstd-lp-581-simply-revival .vy-col-9, #vstd-lp-581-simply-revival .vy-col-auto, #vstd-lp-581-simply-revival .vy-col-lg, #vstd-lp-581-simply-revival .vy-col-lg-1, #vstd-lp-581-simply-revival .vy-col-lg-10, #vstd-lp-581-simply-revival .vy-col-lg-11, #vstd-lp-581-simply-revival .vy-col-lg-12, #vstd-lp-581-simply-revival .vy-col-lg-2, #vstd-lp-581-simply-revival .vy-col-lg-3, #vstd-lp-581-simply-revival .vy-col-lg-4, #vstd-lp-581-simply-revival .vy-col-lg-5, #vstd-lp-581-simply-revival .vy-col-lg-6, #vstd-lp-581-simply-revival .vy-col-lg-7, #vstd-lp-581-simply-revival .vy-col-lg-8, #vstd-lp-581-simply-revival .vy-col-lg-9, #vstd-lp-581-simply-revival .vy-col-lg-auto, #vstd-lp-581-simply-revival .vy-col-md, #vstd-lp-581-simply-revival .vy-col-md-1, #vstd-lp-581-simply-revival .vy-col-md-10, #vstd-lp-581-simply-revival .vy-col-md-11, #vstd-lp-581-simply-revival .vy-col-md-12, #vstd-lp-581-simply-revival .vy-col-md-2, #vstd-lp-581-simply-revival .vy-col-md-3, #vstd-lp-581-simply-revival .vy-col-md-4, #vstd-lp-581-simply-revival .vy-col-md-5, #vstd-lp-581-simply-revival .vy-col-md-6, #vstd-lp-581-simply-revival .vy-col-md-7, #vstd-lp-581-simply-revival .vy-col-md-8, #vstd-lp-581-simply-revival .vy-col-md-9, #vstd-lp-581-simply-revival .vy-col-md-auto, #vstd-lp-581-simply-revival .vy-col-sm, #vstd-lp-581-simply-revival .vy-col-sm-1, #vstd-lp-581-simply-revival .vy-col-sm-10, #vstd-lp-581-simply-revival .vy-col-sm-11, #vstd-lp-581-simply-revival .vy-col-sm-12, #vstd-lp-581-simply-revival .vy-col-sm-2, #vstd-lp-581-simply-revival .vy-col-sm-3, #vstd-lp-581-simply-revival .vy-col-sm-4, #vstd-lp-581-simply-revival .vy-col-sm-5, #vstd-lp-581-simply-revival .vy-col-sm-6, #vstd-lp-581-simply-revival .vy-col-sm-7, #vstd-lp-581-simply-revival .vy-col-sm-8, #vstd-lp-581-simply-revival .vy-col-sm-9, #vstd-lp-581-simply-revival .vy-col-sm-auto, #vstd-lp-581-simply-revival .vy-col-xl, #vstd-lp-581-simply-revival .vy-col-xl-1, #vstd-lp-581-simply-revival .vy-col-xl-10, #vstd-lp-581-simply-revival .vy-col-xl-11, #vstd-lp-581-simply-revival .vy-col-xl-12, #vstd-lp-581-simply-revival .vy-col-xl-2, #vstd-lp-581-simply-revival .vy-col-xl-3, #vstd-lp-581-simply-revival .vy-col-xl-4, #vstd-lp-581-simply-revival .vy-col-xl-5, #vstd-lp-581-simply-revival .vy-col-xl-6, #vstd-lp-581-simply-revival .vy-col-xl-7, #vstd-lp-581-simply-revival .vy-col-xl-8, #vstd-lp-581-simply-revival .vy-col-xl-9, #vstd-lp-581-simply-revival .vy-col-xl-auto, #vstd-lp-581-simply-revival .vy-col-2-4, #vstd-lp-581-simply-revival .vy-col-9-6, #vstd-lp-581-simply-revival .vy-col-sm-2-4, #vstd-lp-581-simply-revival .vy-col-sm-9-6, #vstd-lp-581-simply-revival .vy-col-md-2-4, #vstd-lp-581-simply-revival .vy-col-md-9-6, #vstd-lp-581-simply-revival .vy-col-lg-2-4, #vstd-lp-581-simply-revival .vy-col-lg-9-6{padding-left:var(--g-hgutter);padding-right:var(--g-hgutter)}@media only screen and (max-width:989px){#vstd-lp-581-simply-revival .vy-container{padding:0 20px}}#vstd-lp-581-simply-revival blockquote p+cite{margin-top:var(--g-hgutter)}#vstd-lp-581-simply-revival blockquote cite{display:block}#vstd-lp-581-simply-revival blockquote cite:before{content:"\2014  "}#vstd-lp-581-simply-revival code, #vstd-lp-581-simply-revival pre{font-family:Consolas,monospace;font-size:1em}#vstd-lp-581-simply-revival pre{overflow:auto}#vstd-lp-581-simply-revival svg, #vstd-lp-581-simply-revival .vy-icon, #vstd-lp-581-simply-revival [class^="vy-icon-"]{display:inline-block;vertical-align:middle;width:16px;height:16px;font-size:16px;fill:currentColor}#vstd-lp-581-simply-revival svg.vy-icon:not(.vy-icon--full-color) circle, #vstd-lp-581-simply-revival svg.vy-icon:not(.vy-icon--full-color) ellipse, #vstd-lp-581-simply-revival svg.vy-icon:not(.vy-icon--full-color) g, #vstd-lp-581-simply-revival svg.vy-icon:not(.vy-icon--full-color) line, #vstd-lp-581-simply-revival svg.vy-icon:not(.vy-icon--full-color) path, #vstd-lp-581-simply-revival svg.vy-icon:not(.vy-icon--full-color) polygon, #vstd-lp-581-simply-revival svg.vy-icon:not(.vy-icon--full-color) polyline, #vstd-lp-581-simply-revival svg.vy-icon:not(.vy-icon--full-color) rect, #vstd-lp-581-simply-revival symbol.vy-icon:not(.vy-icon--full-color) circle, #vstd-lp-581-simply-revival symbol.vy-icon:not(.vy-icon--full-color) ellipse, #vstd-lp-581-simply-revival symbol.vy-icon:not(.vy-icon--full-color) g, #vstd-lp-581-simply-revival symbol.vy-icon:not(.vy-icon--full-color) line, #vstd-lp-581-simply-revival symbol.vy-icon:not(.vy-icon--full-color) path, #vstd-lp-581-simply-revival symbol.vy-icon:not(.vy-icon--full-color) polygon, #vstd-lp-581-simply-revival symbol.vy-icon:not(.vy-icon--full-color) polyline, #vstd-lp-581-simply-revival symbol.vy-icon:not(.vy-icon--full-color) rect{fill:inherit;stroke:inherit}#vstd-lp-581-simply-revival .vy-lazyload, #vstd-lp-581-simply-revival .vy-lazyloading{opacity:.3}#vstd-lp-581-simply-revival img[data-sizes=auto]{display:block;width:100%}#vstd-lp-581-simply-revival .vy-payment-icons{-moz-user-select:none;-ms-user-select:none;-webkit-user-select:none;user-select:none;cursor:default}#vstd-lp-581-simply-revival .vy-payment-icons li{margin-right:5px}#vstd-lp-581-simply-revival .vy-payment-icons .vy-icon, #vstd-lp-581-simply-revival .vy-payment-icons [class^="vy-icon-"]{width:38px;height:24px}#vstd-lp-581-simply-revival ul, #vstd-lp-581-simply-revival ol{margin:0;padding:0}#vstd-lp-581-simply-revival ol{list-style:decimal}#vstd-lp-581-simply-revival table{width:100%;border-collapse:collapse;border-spacing:0}#vstd-lp-581-simply-revival th{font-weight:700}#vstd-lp-581-simply-revival th, #vstd-lp-581-simply-revival td{text-align:left;border:1px solid rgba(0,0,0,.1)}#vstd-lp-581-simply-revival svg:not(:root){overflow:hidden}@media only screen and (max-width:989px){#vstd-lp-581-simply-revival input, #vstd-lp-581-simply-revival select, #vstd-lp-581-simply-revival textarea{font-size:calc(var(--g-font-size) + 2px)}}#vstd-lp-581-simply-revival fieldset{border:1px solid rgba(0,0,0,.1);margin:0 0 var(--g-gutter);padding:var(--g-hgutter)}#vstd-lp-581-simply-revival legend{border:0;padding:0}#vstd-lp-581-simply-revival button, #vstd-lp-581-simply-revival input[type=submit]{cursor:pointer}#vstd-lp-581-simply-revival input, #vstd-lp-581-simply-revival textarea, #vstd-lp-581-simply-revival select{border:1px solid rgba(0,0,0,.1);border-radius:0;max-width:100%}#vstd-lp-581-simply-revival input:focus, #vstd-lp-581-simply-revival textarea:focus, #vstd-lp-581-simply-revival select:focus{border-color:#b5b5b5;outline:none}#vstd-lp-581-simply-revival input[disabled], #vstd-lp-581-simply-revival textarea[disabled], #vstd-lp-581-simply-revival select[disabled]{cursor:default;background-color:#d5d5d5;border-color:#757575}#vstd-lp-581-simply-revival select{-webkit-appearance:none;-moz-appearance:none;appearance:none;background-position:right center;background-image:url("https://storage.googleapis.com/vysta/lp-581-simply-revival/images/img-41.svg");background-repeat:no-repeat;background-position:right 10px center;background-color:transparent;padding-right:28px;text-indent:.01px;text-overflow:"";cursor:pointer}#vstd-lp-581-simply-revival optgroup{font-weight:700}#vstd-lp-581-simply-revival option{color:#000;background-color:#fff}#vstd-lp-581-simply-revival select::-ms-expand{display:none}#vstd-lp-581-simply-revival label[for]{cursor:pointer}#vstd-lp-581-simply-revival figcaption{position:relative}@media print{@page{margin:.5cm}#vstd-lp-581-simply-revival p{orphans:3;widows:3}#vstd-lp-581-simply-revival, #vstd-lp-581-simply-revival{background-color:#fff;color:#000}}#vstd-lp-581-simply-revival .vy-no-js:not(html){display:none}#vstd-lp-581-simply-revival .vy-no-js .vy-no-js:not(html){display:block}#vstd-lp-581-simply-revival .vy-no-js .vy-js{display:none}#vstd-lp-581-simply-revival, #vstd-lp-581-simply-revival input, #vstd-lp-581-simply-revival textarea, #vstd-lp-581-simply-revival button, #vstd-lp-581-simply-revival select, #vstd-lp-581-simply-revival p{font-size:var(--g-font-size);font-family:var(--g-font-2);color:var(--color-body-text);line-height:var(--g-body-lineheight);font-weight:var(--g-font-weight-body)}@media only screen and (max-width:989px){#vstd-lp-581-simply-revival input, #vstd-lp-581-simply-revival textarea{font-size:calc(var(--g-font-size) + 2px)}}#vstd-lp-581-simply-revival h1, #vstd-lp-581-simply-revival h2, #vstd-lp-581-simply-revival h3, #vstd-lp-581-simply-revival h4, #vstd-lp-581-simply-revival h5, #vstd-lp-581-simply-revival h6, #vstd-lp-581-simply-revival .vy-h1, #vstd-lp-581-simply-revival .vy-h2, #vstd-lp-581-simply-revival .vy-h3, #vstd-lp-581-simply-revival .vy-h4, #vstd-lp-581-simply-revival .vy-h5, #vstd-lp-581-simply-revival .vy-h6{color:var(--g-color-heading);font-family:var(--g-font-1)}#vstd-lp-581-simply-revival h1 a, #vstd-lp-581-simply-revival h2 a, #vstd-lp-581-simply-revival h3 a, #vstd-lp-581-simply-revival h4 a, #vstd-lp-581-simply-revival h5 a, #vstd-lp-581-simply-revival h6 a, #vstd-lp-581-simply-revival .vy-h1 a, #vstd-lp-581-simply-revival .vy-h2 a, #vstd-lp-581-simply-revival .vy-h3 a, #vstd-lp-581-simply-revival .vy-h4 a, #vstd-lp-581-simply-revival .vy-h5 a, #vstd-lp-581-simply-revival .vy-h6 a{color:inherit;text-decoration:none;font-weight:inherit}#vstd-lp-581-simply-revival h1:last-child, #vstd-lp-581-simply-revival h2:last-child, #vstd-lp-581-simply-revival h3:last-child, #vstd-lp-581-simply-revival h4:last-child, #vstd-lp-581-simply-revival h5:last-child, #vstd-lp-581-simply-revival h6:last-child, #vstd-lp-581-simply-revival .vy-h1:last-child, #vstd-lp-581-simply-revival .vy-h2:last-child, #vstd-lp-581-simply-revival .vy-h3:last-child, #vstd-lp-581-simply-revival .vy-h4:last-child, #vstd-lp-581-simply-revival .vy-h5:last-child, #vstd-lp-581-simply-revival .vy-h6:last-child{margin-bottom:0}#vstd-lp-581-simply-revival h1, #vstd-lp-581-simply-revival .vy-h1{font-weight:var(--g-h1-font-weight);font-size:var(--g-h1-font-size);line-height:var(--g-h1-font-lineheight);letter-spacing:var(--g-h1-font-spacing);text-transform:var(--g-h1-font-transform)}@media only screen and (max-width:749px){#vstd-lp-581-simply-revival h1, #vstd-lp-581-simply-revival .vy-h1{font-size:var(--g-h1-font-size-mobile)}}#vstd-lp-581-simply-revival h2, #vstd-lp-581-simply-revival .vy-h2{font-weight:var(--g-h2-font-weight);font-size:var(--g-h2-font-size);line-height:var(--g-h2-font-lineheight);letter-spacing:var(--g-h2-font-spacing);text-transform:var(--g-h2-font-transform)}@media only screen and (max-width:749px){#vstd-lp-581-simply-revival h2, #vstd-lp-581-simply-revival .vy-h2{font-size:var(--g-h2-font-size-mobile)}}#vstd-lp-581-simply-revival h3, #vstd-lp-581-simply-revival .vy-h3{font-weight:var(--g-h3-font-weight);font-size:var(--g-h3-font-size);line-height:var(--g-h3-font-lineheight);letter-spacing:var(--g-h3-font-spacing);text-transform:var(--g-h3-font-transform)}@media only screen and (max-width:749px){#vstd-lp-581-simply-revival h3, #vstd-lp-581-simply-revival .vy-h3{font-size:var(--g-h3-font-size-mobile)}}#vstd-lp-581-simply-revival h4, #vstd-lp-581-simply-revival .vy-h4{font-weight:var(--g-h4-font-weight);font-size:var(--g-h4-font-size);line-height:var(--g-h4-font-lineheight);letter-spacing:var(--g-h4-font-spacing);text-transform:var(--g-h4-font-transform)}@media only screen and (max-width:749px){#vstd-lp-581-simply-revival h4, #vstd-lp-581-simply-revival .vy-h4{font-size:var(--g-h4-font-size-mobile)}}#vstd-lp-581-simply-revival h5, #vstd-lp-581-simply-revival .vy-h5{font-weight:var(--g-h5-font-weight);font-size:var(--g-h5-font-size);line-height:var(--g-h5-font-lineheight);letter-spacing:var(--g-h5-font-spacing);text-transform:var(--g-h5-font-transform)}@media only screen and (max-width:749px){#vstd-lp-581-simply-revival h5, #vstd-lp-581-simply-revival .vy-h5{font-size:var(--g-h5-font-size-mobile)}}#vstd-lp-581-simply-revival h6, #vstd-lp-581-simply-revival .vy-h6{font-weight:var(--g-h6-font-weight);font-size:var(--g-h6-font-size);line-height:var(--g-h6-font-lineheight);letter-spacing:var(--g-h6-font-spacing);text-transform:var(--g-h6-font-transform)}@media only screen and (max-width:749px){#vstd-lp-581-simply-revival h6, #vstd-lp-581-simply-revival .vy-h6{font-size:var(--g-h6-font-size-mobile)}}#vstd-lp-581-simply-revival p{margin:0 0 10px;line-height:var(--g-body-lineheight)}#vstd-lp-581-simply-revival p:last-child{margin-bottom:0}#vstd-lp-581-simply-revival blockquote{text-align:center}#vstd-lp-581-simply-revival blockquote cite{font-size:calc(var(--g-font-size) - 1px);opacity:.6}@media only screen and (max-width:749px){#vstd-lp-581-simply-revival blockquote{margin-left:0;margin-right:0}}#vstd-lp-581-simply-revival td, #vstd-lp-581-simply-revival th{padding:var(--g-hgutter);border:1px solid 1px solid rgba(0,0,0,.1)}#vstd-lp-581-simply-revival ::-webkit-input-placeholder{font-size:var(--g-font-size);color:var(--color-body-text);opacity:.6}#vstd-lp-581-simply-revival :-moz-placeholder{font-size:var(--g-font-size);color:var(--color-body-text);opacity:.6}#vstd-lp-581-simply-revival :-ms-input-placeholder{font-size:var(--g-font-size);color:var(--color-body-text);opacity:.6}#vstd-lp-581-simply-revival ::-ms-input-placeholder{font-size:var(--g-font-size);color:var(--color-body-text);opacity:.6;opacity:1}#vstd-lp-581-simply-revival input, #vstd-lp-581-simply-revival textarea, #vstd-lp-581-simply-revival select{background-color:#f4f4f4;color:#333;border:0;max-width:100%}#vstd-lp-581-simply-revival input[disabled], #vstd-lp-581-simply-revival textarea[disabled], #vstd-lp-581-simply-revival select[disabled]{color:#0006}#vstd-lp-581-simply-revival input, #vstd-lp-581-simply-revival textarea{padding:13px 15px}#vstd-lp-581-simply-revival select{padding-top:10px;padding-left:15px;padding-bottom:10px}#vstd-lp-581-simply-revival .vy-link-accent-color, #vstd-lp-581-simply-revival .vy-link, #vstd-lp-581-simply-revival p a:not(.vy-button), #vstd-lp-581-simply-revival .vy-rte a:not(.vy-button), #vstd-lp-581-simply-revival .vy-rte a:not(.vy-spr-summary-actions-newreview){text-decoration:underline;color:rgba(var(--color-body-text-rgb),.7);transition:.3s ease-in;text-underline-offset:4px;text-decoration-color:rgba(var(--color-body-text-rgb),.4);text-decoration-thickness:1px}#vstd-lp-581-simply-revival p a:not(.vy-button):hover, #vstd-lp-581-simply-revival p a:not(.vy-button):focus, #vstd-lp-581-simply-revival .vy-rte a:not(.vy-button):hover, #vstd-lp-581-simply-revival .vy-rte a:not(.vy-button):focus, #vstd-lp-581-simply-revival .vy-link-accent-color:hover, #vstd-lp-581-simply-revival .vy-link-accent-color:focus, #vstd-lp-581-simply-revival .vy-link:hover, #vstd-lp-581-simply-revival .vy-link:focus{color:rgba(var(--color-body-text-rgb),1);text-decoration-color:rgba(var(--color-body-text-rgb),1);text-decoration:underline;text-decoration-thickness:1px}#vstd-lp-581-simply-revival [id*=ComparePrice-product-template]{font-size:1.14286em}#vstd-lp-581-simply-revival [id*=ProductPrice-product-template]{font-weight:500;color:var(--g-main-2);letter-spacing:-1px}#vstd-lp-581-simply-revival .vy-page-container{overflow:hidden;transition:none!important}#vstd-lp-581-simply-revival .vy-is-moved-by-drawer{transition:all .35s cubic-bezier(.33,.59,.14,1)}#vstd-lp-581-simply-revival .vy-page-element{position:relative}#vstd-lp-581-simply-revival .vy-page-container{background-color:#fff}#vstd-lp-581-simply-revival .vy-is-moved-by-drawer, #vstd-lp-581-simply-revival .vy-js-drawer-open .vy-is-moved-by-drawer{transition:all .35s cubic-bezier(.33,.59,.14,1)}#vstd-lp-581-simply-revival .vy-js-qty{position:relative}#vstd-lp-581-simply-revival .vy-js-qty__input{width:100%;border:2px solid #e9e9e9;background:#fff;height:50px;padding:12px 15px;text-align:center}#vstd-lp-581-simply-revival .vy-js-qty__adjust{position:absolute;top:0;bottom:0;text-align:center;width:30px;height:100%;padding:0;background:none;border-style:solid;border-color:#e7e7e7;border-width:0;transition:background-color .03s ease-in}#vstd-lp-581-simply-revival .vy-js-qty__adjust:hover, #vstd-lp-581-simply-revival .vy-js-qty__adjust:focus{background-color:#f1f1f1;transition-duration:.08s}#vstd-lp-581-simply-revival .vy-js-qty__adjust svg{width:14px;height:14px;font-size:14px}#vstd-lp-581-simply-revival .vy-js-qty__adjust .vy-icon, #vstd-lp-581-simply-revival .vy-js-qty__adjust [class^="vy-icon-"]{width:8px;height:8px;font-size:9px;fill:#222;font-weight:600}#vstd-lp-581-simply-revival .vy-js-qty__adjust--minus{left:0;top:0;bottom:0}#vstd-lp-581-simply-revival .vy-js-qty__adjust--plus{right:0}#vstd-lp-581-simply-revival blockquote:before{content:"\201c";font-family:Georgia,serif;font-size:60px;font-weight:700;color:rgba(var(--g-color-heading-rgb),.2);position:absolute;left:16px;top:0}#vstd-lp-581-simply-revival [class^="vy-spr-icon-"]:before, #vstd-lp-581-simply-revival [class*="vy- spr-icon-"]:before{font-size:14px!important}@keyframes animateLocalizationBottom{0%{opacity:0;transform:translateY(0)}to{opacity:1;transform:translateY(-1rem)}}#vstd-lp-581-simply-revival .vy-localization-form__select .vy-icon-caret{transition:transform var(--duration-default) ease}#vstd-lp-581-simply-revival .vy-localization-form__select[aria-expanded=true] .vy-icon-caret{transform:rotate(180deg)}#vstd-lp-581-simply-revival .vy-localization-selector+.vy-disclosure__list-wrapper{opacity:1;animation:animateLocalizationBottom var(--duration-default) ease}#vstd-lp-581-simply-revival .vy-disclosure{position:relative}#vstd-lp-581-simply-revival .vy-disclosure img{box-shadow:0 0 1px #0003}#vstd-lp-581-simply-revival .vy-disclosure__button{display:flex;align-items:center}#vstd-lp-581-simply-revival .vy-localization-form__select{padding:6px 12px;height:auto;line-height:1.4;border:1px solid rgb(var(--g-input-bg));background-color:transparent;color:var(--footer-title);font-size:calc(var(--g-font-size) - 1px);border-radius:var(--g-input-radius);white-space:nowrap}#vstd-lp-581-simply-revival .vy-localization-form__select .vy-icon-caret{margin-left:8px;width:10px;height:10px}#vstd-lp-581-simply-revival .vy-disclosure__list-wrapper{overflow:hidden;position:absolute;bottom:100%;transform:translateY(-1rem);z-index:2;background-color:var(--color-body);border:1px solid rgb(var(--g-input-bg))}#vstd-lp-581-simply-revival .vy-disclosure__list{position:relative;overflow-y:auto;padding-bottom:.5rem;padding-top:.5rem;padding-left:1rem;scroll-padding:.5rem 0;min-height:8.2rem;max-height:19rem;max-width:18rem;min-width:14rem;width:max-content;display:flex;flex-direction:column;row-gap:6px}#vstd-lp-581-simply-revival .vy-disclosure__item .vy-disclosure__link{color:rgba(var(--color-body-text-rgb),1)!important;font-size:calc(var(--g-font-size) - 1px);display:flex;align-items:center}#vstd-lp-581-simply-revival .vy-disclosure__item .vy-disclosure__link--active:after{display:inline-block;transform:rotate(45deg) translateY(-4px);height:12px;width:6px;border-bottom:2px solid rgb(var(--color-body-text-rgb));border-right:2px solid rgb(var(--color-body-text-rgb));margin-left:.8rem;content:""}#vstd-lp-581-simply-revival .vy-checkbox{position:relative;display:flex}#vstd-lp-581-simply-revival{scroll-behavior:smooth}#vstd-lp-581-simply-revival .vy-breadcrumb.vy-g-breadcrumb{display:none}#vstd-lp-581-simply-revival a, #vstd-lp-581-simply-revival a:active, #vstd-lp-581-simply-revival button, #vstd-lp-581-simply-revival button:active{outline:none;-webkit-tap-highlight-color:transparent;box-shadow:none}#vstd-lp-581-simply-revival, #vstd-lp-581-simply-revival{margin:0 !important;padding:0 !important;}#vstd-lp-581-simply-revival #vstd-lp-385-simply-revival *:where(:not(svg,svg *)){all:revert;}#vstd-lp-581-simply-revival #vstd-lp-385-simply-revival [hidden]{display:none !important;}#vstd-lp-581-simply-revival #vstd-lp-385-simply-revival img{width:auto;}#vstd-lp-581-simply-revival #vstd-lp-385-simply-revival [width="19"]{width:19px;}#vstd-lp-581-simply-revival #vstd-lp-385-simply-revival [width="1400"]{width:1400px;}#vstd-lp-581-simply-revival #vstd-lp-385-simply-revival [width="20"]{width:20px;}#vstd-lp-581-simply-revival #vstd-lp-385-simply-revival [width="1300"]{width:1300px;}#vstd-lp-581-simply-revival #vstd-lp-385-simply-revival [width="13"]{width:13px;}#vstd-lp-581-simply-revival #vstd-lp-385-simply-revival [width="12"]{width:12px;}#vstd-lp-581-simply-revival #vstd-lp-385-simply-revival [width="1100"]{width:1100px;}#vstd-lp-581-simply-revival #vstd-lp-385-simply-revival [width="440"]{width:440px;}#vstd-lp-581-simply-revival #vstd-lp-385-simply-revival [width="18"]{width:18px;}#vstd-lp-581-simply-revival #vstd-lp-385-simply-revival [width="19"][height="19"]{aspect-ratio:19/19;}#vstd-lp-581-simply-revival #vstd-lp-385-simply-revival [width="1400"][height="919"]{aspect-ratio:1400/919;}#vstd-lp-581-simply-revival #vstd-lp-385-simply-revival [width="20"][height="20"]{aspect-ratio:20/20;}#vstd-lp-581-simply-revival #vstd-lp-385-simply-revival [width="1300"][height="867"]{aspect-ratio:1300/867;}#vstd-lp-581-simply-revival #vstd-lp-385-simply-revival [width="13"][height="13"]{aspect-ratio:13/13;}#vstd-lp-581-simply-revival #vstd-lp-385-simply-revival [width="12"][height="12"]{aspect-ratio:12/12;}#vstd-lp-581-simply-revival #vstd-lp-385-simply-revival [width="1100"][height="1100"]{aspect-ratio:1100/1100;}#vstd-lp-581-simply-revival #vstd-lp-385-simply-revival [width="440"][height="883"]{aspect-ratio:440/883;}#vstd-lp-581-simply-revival #vstd-lp-385-simply-revival [width="18"][height="18"]{aspect-ratio:18/18;}#vstd-lp-581-simply-revival #vstd-lp-385-simply-revival table, #vstd-lp-581-simply-revival #vstd-lp-385-simply-revival thead, #vstd-lp-581-simply-revival #vstd-lp-385-simply-revival tbody, #vstd-lp-581-simply-revival #vstd-lp-385-simply-revival tfoot, #vstd-lp-581-simply-revival #vstd-lp-385-simply-revival tr, #vstd-lp-581-simply-revival #vstd-lp-385-simply-revival th, #vstd-lp-581-simply-revival #vstd-lp-385-simply-revival td{background-color:transparent;}#vstd-lp-581-simply-revival #vstd-lp-385-simply-revival{--teal:#125657;--teal-deep:#0D4142;--teal-soft:#EAF3F2;--mint:#F4F8F7;--ink:#1D2B2B;--muted:#5B6E6D;--line:#DCE7E5;--gold:#E3A63B;--white:#FFFFFF;}#vstd-lp-581-simply-revival #vstd-lp-385-simply-revival *{margin:0;padding:0;box-sizing:border-box;}#vstd-lp-581-simply-revival #vstd-lp-385-simply-revival{scroll-behavior:smooth;}#vstd-lp-581-simply-revival #vstd-lp-385-simply-revival{font-family:'Poppins',-apple-system,BlinkMacSystemFont,'Segoe UI',Arial,sans-serif;color:var(--ink);background:var(--white);font-size:17px;line-height:1.65;-webkit-font-smoothing:antialiased;}#vstd-lp-581-simply-revival #vstd-lp-385-simply-revival img{max-width:100%;height:auto;display:block;}#vstd-lp-581-simply-revival #vstd-lp-385-simply-revival a{color:var(--teal);}#vstd-lp-581-simply-revival #vstd-lp-385-simply-revival .vy-wrap{max-width:950px;margin:0 auto;padding:0 20px;}#vstd-lp-581-simply-revival #vstd-lp-385-simply-revival .vy-wrap-narrow{max-width:950px;margin:0 auto;padding:0 20px;}#vstd-lp-581-simply-revival #vstd-lp-385-simply-revival h1, #vstd-lp-581-simply-revival #vstd-lp-385-simply-revival h2{font-family:'Poppins',sans-serif;line-height:1.18;color:var(--teal-deep);}#vstd-lp-581-simply-revival #vstd-lp-385-simply-revival h1{font-size:clamp(28px,3.9vw,43px);font-weight:700;letter-spacing:-0.01em;}#vstd-lp-581-simply-revival #vstd-lp-385-simply-revival h2{font-size:clamp(25px,3.2vw,36px);font-weight:700;margin-bottom:14px;}#vstd-lp-581-simply-revival #vstd-lp-385-simply-revival .vy-eyebrow{display:inline-block;font-size:12.5px;font-weight:600;letter-spacing:0.14em;text-transform:uppercase;color:var(--teal);background:var(--teal-soft);border:1px solid var(--line);border-radius:100px;padding:7px 16px;margin-bottom:18px;}#vstd-lp-581-simply-revival #vstd-lp-385-simply-revival .vy-lead{font-size:clamp(17px,2vw,20px);color:var(--muted);}#vstd-lp-581-simply-revival #vstd-lp-385-simply-revival header.vy-site{position:static;background:#fff;border-bottom:1px solid var(--line);}#vstd-lp-581-simply-revival #vstd-lp-385-simply-revival .vy-hdr-tag{font-size:11px;font-weight:600;letter-spacing:0.18em;text-transform:uppercase;color:var(--muted);white-space:nowrap;}#vstd-lp-581-simply-revival #vstd-lp-385-simply-revival .vy-site-inner{display:flex;align-items:center;justify-content:space-between;gap:16px;padding:14px 20px;}#vstd-lp-581-simply-revival #vstd-lp-385-simply-revival .vy-site-logo img{height:30px;width:auto;}#vstd-lp-581-simply-revival #vstd-lp-385-simply-revival .vy-masthead{display:inline-flex;align-items:center;gap:10px;font-weight:700;font-size:20px;letter-spacing:-0.01em;color:var(--teal-deep);line-height:1;white-space:nowrap;}#vstd-lp-581-simply-revival #vstd-lp-385-simply-revival .vy-masthead .vy-mh-ic{width:32px;height:32px;border-radius:9px;background:var(--teal);display:flex;align-items:center;justify-content:center;flex-shrink:0;}#vstd-lp-581-simply-revival #vstd-lp-385-simply-revival .vy-footer-masthead{display:inline-flex;align-items:center;gap:10px;font-weight:700;font-size:19px;color:var(--teal-deep);margin-bottom:20px;}#vstd-lp-581-simply-revival #vstd-lp-385-simply-revival .vy-footer-masthead .vy-mh-ic{width:30px;height:30px;border-radius:9px;background:var(--teal);display:flex;align-items:center;justify-content:center;flex-shrink:0;}#vstd-lp-581-simply-revival #vstd-lp-385-simply-revival .vy-btn{display:inline-block;background:var(--teal);color:#fff;text-decoration:none;font-weight:600;border-radius:100px;padding:13px 28px;font-size:15.5px;transition:background .18s ease,transform .18s ease;text-align:center;}#vstd-lp-581-simply-revival #vstd-lp-385-simply-revival .vy-btn:hover{background:var(--teal-deep);transform:translateY(-1px);}#vstd-lp-581-simply-revival #vstd-lp-385-simply-revival .vy-btn-gold{background:var(--gold);color:#2A1F06;}#vstd-lp-581-simply-revival #vstd-lp-385-simply-revival .vy-btn-gold:hover{background:#D0972F;}#vstd-lp-581-simply-revival #vstd-lp-385-simply-revival .vy-hero{background:#fff;padding:48px 0 54px;}#vstd-lp-581-simply-revival #vstd-lp-385-simply-revival .vy-hero-center{max-width:950px;margin:0 auto;text-align:left;display:flex;flex-direction:column;align-items:flex-start;}#vstd-lp-581-simply-revival #vstd-lp-385-simply-revival .vy-hero-center h1{max-width:none;}#vstd-lp-581-simply-revival #vstd-lp-385-simply-revival .vy-hero-center .vy-lead{margin-left:auto;margin-right:auto;}#vstd-lp-581-simply-revival #vstd-lp-385-simply-revival .vy-hero-center p.vy-sub{margin-top:18px;}#vstd-lp-581-simply-revival #vstd-lp-385-simply-revival .vy-hero-product{margin-top:40px;width:100%;}#vstd-lp-581-simply-revival #vstd-lp-385-simply-revival .vy-hero-product img{width:100%;display:block;border-radius:20px;box-shadow:0 20px 52px rgba(13,65,66,0.16);}#vstd-lp-581-simply-revival #vstd-lp-385-simply-revival .vy-hero-strip{display:grid;grid-template-columns:repeat(3,1fr);gap:24px;margin-top:46px;padding-top:32px;border-top:1px solid var(--line);}#vstd-lp-581-simply-revival #vstd-lp-385-simply-revival .vy-hs-item{display:flex;gap:12px;align-items:flex-start;}#vstd-lp-581-simply-revival #vstd-lp-385-simply-revival .vy-hs-item svg{flex-shrink:0;margin-top:2px;}#vstd-lp-581-simply-revival #vstd-lp-385-simply-revival .vy-hs-item b{display:block;font-size:15px;color:var(--teal-deep);font-weight:600;margin-bottom:2px;}#vstd-lp-581-simply-revival #vstd-lp-385-simply-revival .vy-hs-item span{font-size:13.5px;color:var(--muted);line-height:1.5;}#vstd-lp-581-simply-revival #vstd-lp-385-simply-revival section{padding:44px 0;}#vstd-lp-581-simply-revival #vstd-lp-385-simply-revival section.vy-alt{background:#fff;}#vstd-lp-581-simply-revival #vstd-lp-385-simply-revival .vy-section-head{text-align:left;max-width:none;margin:0 0 40px;}#vstd-lp-581-simply-revival #vstd-lp-385-simply-revival .vy-section-head .vy-lead{margin:0;}#vstd-lp-581-simply-revival #vstd-lp-385-simply-revival .vy-table-scroll{overflow-x:auto;-webkit-overflow-scrolling:touch;border-radius:18px;box-shadow:0 16px 44px rgba(13,65,66,0.1);}#vstd-lp-581-simply-revival #vstd-lp-385-simply-revival table.vy-compare{width:100%;min-width:860px;border-collapse:separate;border-spacing:0;background:#fff;font-size:15px;}#vstd-lp-581-simply-revival #vstd-lp-385-simply-revival table.vy-compare th, #vstd-lp-581-simply-revival #vstd-lp-385-simply-revival table.vy-compare td{padding:18px 20px;text-align:left;vertical-align:top;border-bottom:1px solid var(--line);}#vstd-lp-581-simply-revival #vstd-lp-385-simply-revival table.vy-compare thead th{background:var(--teal-deep);color:#fff;font-family:'Poppins',sans-serif;font-weight:600;font-size:15.5px;line-height:1.35;border-bottom:none;}#vstd-lp-581-simply-revival #vstd-lp-385-simply-revival table.vy-compare thead th:first-child{background:var(--teal-deep);border-radius:18px 0 0 0;width:180px;}#vstd-lp-581-simply-revival #vstd-lp-385-simply-revival table.vy-compare thead th:last-child{border-radius:0 18px 0 0;}#vstd-lp-581-simply-revival #vstd-lp-385-simply-revival table.vy-compare thead th small{display:block;font-weight:400;font-size:12.5px;color:#B9D2D1;margin-top:3px;}#vstd-lp-581-simply-revival #vstd-lp-385-simply-revival table.vy-compare tbody th{font-weight:600;color:var(--teal-deep);background:#FBFDFC;font-size:14px;width:180px;}#vstd-lp-581-simply-revival #vstd-lp-385-simply-revival table.vy-compare tbody tr:last-child th, #vstd-lp-581-simply-revival #vstd-lp-385-simply-revival table.vy-compare tbody tr:last-child td{border-bottom:none;}#vstd-lp-581-simply-revival #vstd-lp-385-simply-revival table.vy-compare td.vy-ours{background:var(--teal-soft);}#vstd-lp-581-simply-revival #vstd-lp-385-simply-revival table.vy-compare thead th.vy-ours{background:var(--teal);position:relative;}#vstd-lp-581-simply-revival #vstd-lp-385-simply-revival table.vy-compare thead th.vy-ours .vy-pill{display:inline-block;background:var(--gold);color:#2A1F06;font-size:11px;font-weight:700;letter-spacing:0.06em;text-transform:uppercase;border-radius:100px;padding:3px 10px;margin-bottom:6px;}#vstd-lp-581-simply-revival #vstd-lp-385-simply-revival table.vy-compare tbody tr:last-child td.vy-ours{border-radius:0 0 18px 0;}#vstd-lp-581-simply-revival #vstd-lp-385-simply-revival .vy-tag{display:inline-block;font-size:12px;font-weight:600;border-radius:6px;padding:3px 9px;margin-bottom:7px;letter-spacing:0.02em;}#vstd-lp-581-simply-revival #vstd-lp-385-simply-revival .vy-tag-yes{background:#F3E9E9;color:#8A4B3D;}#vstd-lp-581-simply-revival #vstd-lp-385-simply-revival .vy-tag-no{background:#E7F2EC;color:#1F6B4A;}#vstd-lp-581-simply-revival #vstd-lp-385-simply-revival .vy-tag-neutral{background:#EEF1F1;color:#5B6E6D;}#vstd-lp-581-simply-revival #vstd-lp-385-simply-revival .vy-tbl-foot{font-size:13px;color:var(--muted);margin-top:16px;}#vstd-lp-581-simply-revival #vstd-lp-385-simply-revival .vy-compare-cards{display:none;}#vstd-lp-581-simply-revival #vstd-lp-385-simply-revival .vy-tradeoff-quotebox{background:var(--teal-deep);color:#EAF3F2;border-radius:18px;padding:34px 36px;margin:30px 0;font-size:clamp(18px,2.4vw,22px);font-family:'Poppins',sans-serif;font-weight:600;line-height:1.5;}#vstd-lp-581-simply-revival #vstd-lp-385-simply-revival .vy-tradeoff-quotebox em{color:var(--gold);font-style:normal;}#vstd-lp-581-simply-revival #vstd-lp-385-simply-revival .vy-tri-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:18px;margin-top:34px;}#vstd-lp-581-simply-revival #vstd-lp-385-simply-revival .vy-tri-card{background:#fff;border:1px solid var(--line);border-radius:16px;padding:26px 24px;}#vstd-lp-581-simply-revival #vstd-lp-385-simply-revival section.vy-alt .vy-tri-card{box-shadow:0 8px 26px rgba(13,65,66,0.06);border:none;}#vstd-lp-581-simply-revival #vstd-lp-385-simply-revival .vy-tri-card h3{font-size:16.5px;font-weight:600;color:var(--teal-deep);margin-bottom:8px;display:flex;align-items:center;gap:9px;}#vstd-lp-581-simply-revival #vstd-lp-385-simply-revival .vy-tri-card p{font-size:14.5px;color:var(--muted);}#vstd-lp-581-simply-revival #vstd-lp-385-simply-revival .vy-tri-card .vy-who{display:inline-block;margin-top:12px;font-size:12.5px;font-weight:600;color:var(--teal);background:var(--teal-soft);border-radius:100px;padding:4px 12px;}#vstd-lp-581-simply-revival #vstd-lp-385-simply-revival .vy-split{display:block;max-width:950px;margin:0 auto;text-align:left;}#vstd-lp-581-simply-revival #vstd-lp-385-simply-revival .vy-split > img{width:100%;max-width:950px;margin:0 0 30px;border-radius:20px;box-shadow:0 18px 48px rgba(13,65,66,0.12);}#vstd-lp-581-simply-revival #vstd-lp-385-simply-revival .vy-split > div + img{margin-top:40px;}#vstd-lp-581-simply-revival #vstd-lp-385-simply-revival .vy-split > div{margin:0;}#vstd-lp-581-simply-revival #vstd-lp-385-simply-revival .vy-check-list{list-style:none;margin:24px 0 0;display:grid;gap:12px;max-width:640px;text-align:left;}#vstd-lp-581-simply-revival #vstd-lp-385-simply-revival .vy-check-list li{display:flex;gap:12px;align-items:flex-start;font-size:15.5px;}#vstd-lp-581-simply-revival #vstd-lp-385-simply-revival .vy-check-list li svg{flex-shrink:0;margin-top:4px;}#vstd-lp-581-simply-revival #vstd-lp-385-simply-revival .vy-check-list li b{font-weight:600;}#vstd-lp-581-simply-revival #vstd-lp-385-simply-revival .vy-mini-note{margin-top:18px;font-size:13.5px;color:var(--muted);}#vstd-lp-581-simply-revival #vstd-lp-385-simply-revival .vy-review-by{display:flex;align-items:center;gap:10px;margin-top:16px;font-size:14px;color:var(--muted);}#vstd-lp-581-simply-revival #vstd-lp-385-simply-revival .vy-review-by .vy-avatar{width:38px;height:38px;border-radius:50%;background:var(--teal);color:#fff;font-weight:600;font-size:15px;display:flex;align-items:center;justify-content:center;}#vstd-lp-581-simply-revival #vstd-lp-385-simply-revival .vy-verified{display:inline-flex;align-items:center;gap:5px;color:#1F6B4A;font-weight:600;font-size:12.5px;}#vstd-lp-581-simply-revival #vstd-lp-385-simply-revival .vy-stars{color:var(--gold);font-size:15px;letter-spacing:2px;}#vstd-lp-581-simply-revival #vstd-lp-385-simply-revival .vy-review-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:18px;align-items:stretch;}#vstd-lp-581-simply-revival #vstd-lp-385-simply-revival .vy-review-card{background:#fff;border:1px solid var(--line);border-radius:16px;padding:24px;display:flex;flex-direction:column;gap:12px;}#vstd-lp-581-simply-revival #vstd-lp-385-simply-revival section.vy-alt .vy-review-card{border:none;box-shadow:0 8px 26px rgba(13,65,66,0.06);}#vstd-lp-581-simply-revival #vstd-lp-385-simply-revival .vy-review-card p{font-size:14.5px;color:var(--ink);}#vstd-lp-581-simply-revival #vstd-lp-385-simply-revival .vy-review-card .vy-review-by{margin-top:auto;}#vstd-lp-581-simply-revival #vstd-lp-385-simply-revival .vy-ba-block{display:block;max-width:950px;margin:52px auto 0;text-align:left;}#vstd-lp-581-simply-revival #vstd-lp-385-simply-revival .vy-ba-block > img{width:100%;max-width:950px;margin:0 0 26px;border-radius:20px;box-shadow:0 18px 48px rgba(13,65,66,0.12);}#vstd-lp-581-simply-revival #vstd-lp-385-simply-revival .vy-ba-block h3{font-family:'Poppins',sans-serif;font-size:clamp(20px,2.6vw,26px);color:var(--teal-deep);margin-bottom:12px;}#vstd-lp-581-simply-revival #vstd-lp-385-simply-revival .vy-ba-block p{color:var(--muted);font-size:15.5px;}#vstd-lp-581-simply-revival #vstd-lp-385-simply-revival .vy-review-src{font-size:12.5px;color:var(--muted);text-align:center;margin-top:26px;}#vstd-lp-581-simply-revival #vstd-lp-385-simply-revival .vy-faq{max-width:none;margin:0 auto;}#vstd-lp-581-simply-revival #vstd-lp-385-simply-revival details{background:#fff;border:1px solid var(--line);border-radius:14px;margin-bottom:12px;overflow:hidden;}#vstd-lp-581-simply-revival #vstd-lp-385-simply-revival summary{cursor:pointer;list-style:none;display:flex;justify-content:space-between;align-items:center;gap:16px;padding:20px 24px;font-weight:600;font-size:16px;color:var(--teal-deep);}#vstd-lp-581-simply-revival #vstd-lp-385-simply-revival summary::-webkit-details-marker{display:none;}#vstd-lp-581-simply-revival #vstd-lp-385-simply-revival summary .vy-chev{flex-shrink:0;width:26px;height:26px;border-radius:50%;background:var(--teal-soft);display:flex;align-items:center;justify-content:center;transition:transform .2s ease;}#vstd-lp-581-simply-revival #vstd-lp-385-simply-revival details[open] summary .vy-chev{transform:rotate(45deg);}#vstd-lp-581-simply-revival #vstd-lp-385-simply-revival .vy-faq-a{padding:0 24px 22px;color:var(--muted);font-size:15px;}#vstd-lp-581-simply-revival #vstd-lp-385-simply-revival .vy-faq-a b{color:var(--ink);}#vstd-lp-581-simply-revival #vstd-lp-385-simply-revival .vy-cta-band{background:var(--teal-deep);}#vstd-lp-581-simply-revival #vstd-lp-385-simply-revival .vy-cta-card{display:grid;grid-template-columns:1.5fr 0.5fr;gap:44px;align-items:center;margin:0 auto;text-align:left;}#vstd-lp-581-simply-revival #vstd-lp-385-simply-revival .vy-cta-bottle{width:100%;max-width:230px;height:auto;justify-self:center;filter:drop-shadow(0 16px 34px rgba(0,0,0,0.32));}#vstd-lp-581-simply-revival #vstd-lp-385-simply-revival .vy-cta-copy h2{color:#fff;}#vstd-lp-581-simply-revival #vstd-lp-385-simply-revival .vy-cta-copy p{color:#C4D9D8;font-size:16px;margin:0;}#vstd-lp-581-simply-revival #vstd-lp-385-simply-revival .vy-price-row{display:flex;justify-content:flex-start;align-items:baseline;gap:12px;margin:24px 0 4px;}#vstd-lp-581-simply-revival #vstd-lp-385-simply-revival .vy-price-now{font-size:40px;font-weight:700;color:#fff;font-family:'Poppins',sans-serif;}#vstd-lp-581-simply-revival #vstd-lp-385-simply-revival .vy-price-was{font-size:18px;color:#8FB0AF;text-decoration:line-through;}#vstd-lp-581-simply-revival #vstd-lp-385-simply-revival .vy-price-sub{font-size:13.5px;color:#9FBFBE;}#vstd-lp-581-simply-revival #vstd-lp-385-simply-revival .vy-btn-xl{padding:17px 40px;font-size:17px;}#vstd-lp-581-simply-revival #vstd-lp-385-simply-revival footer{background:#fff;color:var(--muted);padding:44px 0 110px;font-size:12.5px;line-height:1.7;border-top:1px solid var(--line);}#vstd-lp-581-simply-revival #vstd-lp-385-simply-revival footer img{height:26px;width:auto;margin-bottom:20px;}#vstd-lp-581-simply-revival #vstd-lp-385-simply-revival footer p{max-width:900px;margin-bottom:12px;}#vstd-lp-581-simply-revival #vstd-lp-385-simply-revival footer a{color:var(--teal);}#vstd-lp-581-simply-revival #vstd-lp-385-simply-revival .vy-sticky-cta{position:fixed;left:0;right:0;bottom:0;z-index:60;background:#fff;border-top:1px solid var(--line);box-shadow:0 -8px 30px rgba(13,65,66,0.12);padding:10px 20px calc(10px + env(safe-area-inset-bottom));transform:translateY(110%);transition:transform .25s ease;}#vstd-lp-581-simply-revival #vstd-lp-385-simply-revival .vy-sticky-inner{max-width:950px;margin:0 auto;display:flex;align-items:center;justify-content:space-between;gap:14px;}#vstd-lp-581-simply-revival #vstd-lp-385-simply-revival .vy-sticky-cta.vy-show{transform:translateY(0);}#vstd-lp-581-simply-revival #vstd-lp-385-simply-revival .vy-sticky-cta .vy-s-info{display:flex;flex-direction:column;line-height:1.25;min-width:0;}#vstd-lp-581-simply-revival #vstd-lp-385-simply-revival .vy-sticky-cta .vy-s-name{font-weight:600;font-size:13.5px;color:var(--teal-deep);white-space:nowrap;overflow:hidden;text-overflow:ellipsis;}#vstd-lp-581-simply-revival #vstd-lp-385-simply-revival .vy-sticky-cta .vy-s-price{font-weight:700;font-size:16px;color:var(--teal-deep);white-space:nowrap;}#vstd-lp-581-simply-revival #vstd-lp-385-simply-revival .vy-sticky-cta .vy-s-guar{font-weight:400;font-size:12px;color:var(--muted);}#vstd-lp-581-simply-revival #vstd-lp-385-simply-revival .vy-sticky-cta .vy-btn{padding:12px 26px;font-size:15px;white-space:nowrap;}@media (max-width:900px){#vstd-lp-581-simply-revival #vstd-lp-385-simply-revival .vy-hero-strip{grid-template-columns:1fr;gap:18px;margin-top:36px;padding-top:26px;}#vstd-lp-581-simply-revival #vstd-lp-385-simply-revival .vy-split{grid-template-columns:1fr;gap:32px;}#vstd-lp-581-simply-revival #vstd-lp-385-simply-revival .vy-split img{width:100%;max-width:480px;margin:0 auto;}#vstd-lp-581-simply-revival #vstd-lp-385-simply-revival .vy-tri-grid{grid-template-columns:1fr;}#vstd-lp-581-simply-revival #vstd-lp-385-simply-revival .vy-review-grid{grid-template-columns:1fr;}#vstd-lp-581-simply-revival #vstd-lp-385-simply-revival .vy-review-grid{grid-template-columns:repeat(2,1fr);}#vstd-lp-581-simply-revival #vstd-lp-385-simply-revival .vy-ba-block{grid-template-columns:1fr;gap:28px;}#vstd-lp-581-simply-revival #vstd-lp-385-simply-revival .vy-ba-block.vy-rev img{order:0;}#vstd-lp-581-simply-revival #vstd-lp-385-simply-revival .vy-ba-block.vy-rev div{order:0;}#vstd-lp-581-simply-revival #vstd-lp-385-simply-revival .vy-cta-card{grid-template-columns:1fr;gap:24px;}#vstd-lp-581-simply-revival #vstd-lp-385-simply-revival .vy-cta-bottle{max-width:190px;}#vstd-lp-581-simply-revival #vstd-lp-385-simply-revival section{padding:34px 0;}}@media (max-width:760px){#vstd-lp-581-simply-revival #vstd-lp-385-simply-revival .vy-table-scroll{display:none;}#vstd-lp-581-simply-revival #vstd-lp-385-simply-revival .vy-review-grid{grid-template-columns:1fr;}#vstd-lp-581-simply-revival #vstd-lp-385-simply-revival .vy-compare-cards{display:grid;gap:20px;}#vstd-lp-581-simply-revival #vstd-lp-385-simply-revival .vy-cmp-card{background:#fff;border:1px solid var(--line);border-radius:18px;overflow:hidden;box-shadow:0 10px 30px rgba(13,65,66,0.07);}#vstd-lp-581-simply-revival #vstd-lp-385-simply-revival .vy-cmp-card .vy-cmp-head{background:var(--teal-deep);color:#fff;padding:18px 22px;font-weight:600;font-size:17px;}#vstd-lp-581-simply-revival #vstd-lp-385-simply-revival .vy-cmp-card.vy-ours .vy-cmp-head{background:var(--teal);}#vstd-lp-581-simply-revival #vstd-lp-385-simply-revival .vy-cmp-card .vy-cmp-head .vy-pill{display:inline-block;background:var(--gold);color:#2A1F06;font-size:11px;font-weight:700;letter-spacing:0.06em;text-transform:uppercase;border-radius:100px;padding:3px 10px;margin-bottom:7px;}#vstd-lp-581-simply-revival #vstd-lp-385-simply-revival .vy-cmp-card .vy-cmp-head small{display:block;font-weight:400;font-size:12.5px;color:#B9D2D1;margin-top:2px;}#vstd-lp-581-simply-revival #vstd-lp-385-simply-revival .vy-cmp-row{padding:15px 22px;border-bottom:1px solid var(--line);font-size:14.5px;}#vstd-lp-581-simply-revival #vstd-lp-385-simply-revival .vy-cmp-row:last-child{border-bottom:none;}#vstd-lp-581-simply-revival #vstd-lp-385-simply-revival .vy-cmp-row .vy-lbl{font-size:11.5px;font-weight:600;letter-spacing:0.1em;text-transform:uppercase;color:var(--muted);margin-bottom:4px;}#vstd-lp-581-simply-revival #vstd-lp-385-simply-revival .vy-cmp-card.vy-ours .vy-cmp-row{background:var(--teal-soft);border-bottom-color:#D5E5E2;}}@media (min-width:761px){#vstd-lp-581-simply-revival #vstd-lp-385-simply-revival .vy-sticky-cta .vy-s-price span{display:inline;margin-left:8px;}}@media (max-width:480px){#vstd-lp-581-simply-revival #vstd-lp-385-simply-revival .vy-masthead{font-size:16px;gap:8px;}#vstd-lp-581-simply-revival #vstd-lp-385-simply-revival .vy-masthead .vy-mh-ic{width:28px;height:28px;border-radius:8px;}#vstd-lp-581-simply-revival #vstd-lp-385-simply-revival .vy-hdr-tag{font-size:9.5px;letter-spacing:0.12em;}#vstd-lp-581-simply-revival #vstd-lp-385-simply-revival .vy-site-inner{gap:10px;}}#vstd-lp-581-simply-revival #vstd-lp-385-simply-revival p:empty{min-height: 1em !important;display: block !important;}#vstd-lp-581-simply-revival #vstd-lp-385-simply-revival [class*="vy-growtype-customcss-"], #vstd-lp-581-simply-revival #vstd-lp-385-simply-revival [class*="vy-growtype-customcss-"] > div{height: auto !important;}#vstd-lp-581-simply-revival .vy-cwc_footer{background-color:var(--section-bg);color:var(--text-color);padding-top:var(--padding-top);padding-bottom:var(--padding-bottom);font-family:inherit;line-height:1.6}#vstd-lp-581-simply-revival .vy-cwc_footer__container{max-width:1400px;margin:0 auto;padding:0 2rem}#vstd-lp-581-simply-revival .vy-cwc_footer a{color:var(--text-color);text-decoration:none;transition:color .18s ease}#vstd-lp-581-simply-revival .vy-cwc_footer a:hover, #vstd-lp-581-simply-revival .vy-cwc_footer a:focus-visible{color:var(--text-hover-color)}#vstd-lp-581-simply-revival .vy-cwc_footer .vy-cwc-rte strong, #vstd-lp-581-simply-revival .vy-cwc_footer .vy-cwc-rte b{color:var(--highlight-color)}#vstd-lp-581-simply-revival .vy-cwc_footer__top{display:flex;flex-wrap:wrap}#vstd-lp-581-simply-revival .vy-cwc_footer__col{min-width:0;height:100%;height:-webkit-fill-available;height:stretch}#vstd-lp-581-simply-revival .vy-cwc_footer__col--newsletter{border-left:.5px solid var(--divider-color);border-right:.5px solid var(--divider-color);border-color:#e4e4e485;width:51%;padding-left:4rem;padding-right:3rem}#vstd-lp-581-simply-revival .vy-cwc_footer__logo-link, #vstd-lp-581-simply-revival .vy-cwc_footer__logo-text{display:inline-block;text-decoration:none}#vstd-lp-581-simply-revival .vy-cwc_footer__logo{display:block;height:auto;max-width:90%}#vstd-lp-581-simply-revival .vy-cwc_footer__col--logo{width:19%}#vstd-lp-581-simply-revival .vy-cwc_footer__col--menu{width:30%;padding-left:4rem}#vstd-lp-581-simply-revival .vy-cwc_footer__heading{color:var(--title-color);font-size:1.0625rem;font-weight:700;line-height:1.3;margin:0 0 .5rem}#vstd-lp-581-simply-revival .vy-cwc_footer__subheading{color:var(--text-color);font-size:.9375rem;line-height:1.5;margin-bottom:1.25rem}#vstd-lp-581-simply-revival .vy-cwc_footer__subheading>*{color:var(--text-color)}#vstd-lp-581-simply-revival .vy-cwc_footer__subheading p{margin:0}#vstd-lp-581-simply-revival .vy-cwc_footer__newsletter{margin-top:1rem}#vstd-lp-581-simply-revival .vy-cwc_footer__newsletter-field{display:flex;align-items:stretch;background-color:var(--input-bg);border:1px solid var(--input-border);border-radius:var(--btn-radius);overflow:hidden;max-width:400px}#vstd-lp-581-simply-revival .vy-cwc_footer__newsletter-input{flex:1 1 auto;min-width:0;background:transparent;border:none;color:var(--input-text);font-family:inherit;font-size:.9375rem;padding:.875rem 1rem;padding:.8rem 1rem;-webkit-appearance:none;appearance:none}#vstd-lp-581-simply-revival .vy-cwc_footer__newsletter-input::placeholder{color:var(--input-placeholder);opacity:1}#vstd-lp-581-simply-revival .vy-cwc_footer__newsletter-input:focus, #vstd-lp-581-simply-revival .vy-cwc_footer__newsletter-input:focus-visible{outline:none}#vstd-lp-581-simply-revival .vy-cwc_footer__newsletter-field:focus-within{border-color:var(--btn-bg);box-shadow:0 0 0 3px color-mix(in srgb,var(--btn-bg) 22%,transparent)}#vstd-lp-581-simply-revival .vy-cwc_footer__newsletter-submit{flex:0 0 auto;background-color:var(--btn-bg);color:var(--btn-text);border:none;padding:.875rem 1.5rem;padding:.8rem 1.5rem;font-family:inherit;font-size:.9375rem;font-weight:600;cursor:pointer;transition:background-color .18s ease;white-space:nowrap}#vstd-lp-581-simply-revival .vy-cwc_footer__newsletter-submit:hover{background-color:var(--btn-bg-hover)}#vstd-lp-581-simply-revival .vy-cwc_footer__newsletter-submit:focus-visible{outline:2px solid var(--btn-bg);outline-offset:2px}#vstd-lp-581-simply-revival .vy-cwc_footer__menu{list-style:none;margin:0;padding:0}#vstd-lp-581-simply-revival .vy-cwc_footer__menu-item{margin-bottom:.625rem}#vstd-lp-581-simply-revival .vy-cwc_footer__menu-item:last-child{margin-bottom:0}#vstd-lp-581-simply-revival .vy-cwc_footer__menu-item a{font-size:.9375rem;position:relative;display:inline-block}#vstd-lp-581-simply-revival .vy-cwc_footer__menu-item a:after{content:"";position:absolute;left:0;bottom:-3px;width:0;height:1px;background-color:var(--text-hover-color);transition:width .25s ease}#vstd-lp-581-simply-revival .vy-cwc_footer__disclaimer{color:var(--disclaimer-color);font-size:.8125rem;line-height:1.65;padding:1.5rem 0 1rem;padding:2rem 0 1rem}#vstd-lp-581-simply-revival .vy-cwc_footer__disclaimer>*{color:var(--disclaimer-color);font-size:.7rem;margin:0;line-height:1.4}#vstd-lp-581-simply-revival .vy-cwc_footer__disclaimer p:last-child{margin-bottom:0}#vstd-lp-581-simply-revival .vy-cwc_footer__localization{display:flex;align-items:center;justify-content:center;gap:1.5rem;padding:1.25rem 0 .5rem;flex-wrap:wrap}#vstd-lp-581-simply-revival .vy-cwc_footer__copyright{text-align:center;color:var(--copyright-color);font-size:.8125rem;padding-top:1.5rem;padding-bottom:1rem}#vstd-lp-581-simply-revival .vy-cwc_footer__copyright a{color:var(--copyright-color)}#vstd-lp-581-simply-revival .vy-cwc_footer__payment-icons{margin:auto;display:flex;align-items:center;justify-content:center}#vstd-lp-581-simply-revival .vy-cwc_footer__payment-icons .vy-payment-icon{height:1.2rem;width:auto}#vstd-lp-581-simply-revival .vy-cwc_footer .vy-visually-hidden{position:absolute;width:1px;height:1px;padding:0;margin:-1px;overflow:hidden;clip:rect(0,0,0,0);white-space:nowrap;border:0}@media screen and (max-width:991px){#vstd-lp-581-simply-revival .vy-cwc_footer__container{padding:0 1.5rem}#vstd-lp-581-simply-revival .vy-cwc_footer__top{grid-template-columns:minmax(0,1fr) minmax(0,1fr);gap:1.75rem}#vstd-lp-581-simply-revival .vy-cwc_footer__col--logo{grid-column:1;grid-row:1;width:100%;display:flex}#vstd-lp-581-simply-revival .vy-cwc_footer__col--menu{grid-column:2;grid-row:1;width:100%;padding:0rem}#vstd-lp-581-simply-revival .vy-cwc_footer__col--newsletter{padding:1.75rem 0 0;width:100%;padding:0rem}}@media screen and (max-width:768px){#vstd-lp-581-simply-revival .vy-cwc_footer__disclaimer>*{text-align:center}#vstd-lp-581-simply-revival .vy-cwc_footer{padding-top:var(--padding-top-mobile);padding-bottom:var(--padding-bottom-mobile)}#vstd-lp-581-simply-revival .vy-cwc_footer__container{padding:0 1rem}#vstd-lp-581-simply-revival .vy-cwc_footer__top{grid-template-columns:1fr;gap:1.5rem;padding-bottom:1.75rem}#vstd-lp-581-simply-revival .vy-cwc_footer__col--logo{grid-column:1;grid-row:auto;text-align:center}#vstd-lp-581-simply-revival .vy-cwc_footer__col--newsletter{grid-column:1;grid-row:auto;border:none;border-top:.5px solid var(--divider-color);border-bottom:.5px solid var(--divider-color);border-color:#e4e4e485;padding:1.5rem 0}#vstd-lp-581-simply-revival .vy-cwc_footer__col--menu{grid-column:1;grid-row:auto}#vstd-lp-581-simply-revival .vy-cwc_footer__newsletter-submit{font-size:.85rem}#vstd-lp-581-simply-revival .vy-cwc_footer__disclaimer{font-size:.75rem;padding:3rem 0 .75rem;border-top:.5px solid var(--divider-color);border-color:#e4e4e485}#vstd-lp-581-simply-revival .vy-cwc_footer__localization{padding:1rem 0 1.5rem}#vstd-lp-581-simply-revival .vy-cwc_footer__copyright{font-size:.75rem;border-top:.5px solid var(--divider-color);border-color:#e4e4e485;text-align:left}#vstd-lp-581-simply-revival .vy-cwc_footer__payment-icons{justify-content:flex-start}#vstd-lp-581-simply-revival .vy-cwc_footer__menu-item a{font-size:.88rem}#vstd-lp-581-simply-revival .vy-cwc_footer__col{height:auto}}#vstd-lp-581-simply-revival .vy-upcart-internal-header{color:var(--upcart-internal-design-text-color);align-items:center;background-color:var(--upcart-internal-header-background-color);border-bottom:var(--upcart-internal-header-border-bottom);display:flex;flex-direction:var(--upcart-internal-header-flex-direction);flex-shrink:0;justify-content:space-between;padding:var(--upcart-internal-desktop-header-padding-block) 30px}#vstd-lp-581-simply-revival .vy-upcart-internal-header [class="vy-upcart-cart-quantity"]{color:#0000004d;font-weight:300;margin-left:.5ch}#vstd-lp-581-simply-revival .vy-upcart-internal-header h2, #vstd-lp-581-simply-revival .vy-upcart-internal-header h3, #vstd-lp-581-simply-revival .vy-upcart-internal-header h4{margin:0 var(--upcart-internal-header-title-margin-inline)!important}#vstd-lp-581-simply-revival .vy-upcart-internal-header span[data-internal-properties*="hasNonDefaultTitleAlignment=true"]{margin-left:var(--upcart-internal-header-title-margin-inline);margin-right:var(--upcart-internal-header-title-margin-inline);transform:translate(calc(var(--upcart-internal-header-title-offset-direction-sign) * var(--upcart-internal-header-close-button-size) / 2))}#vstd-lp-581-simply-revival .vy-upcart-internal-header span{font-size:var(--upcart-internal-header-title-font-size);font-weight:var(--upcart-internal-header-title-font-weight);line-height:var(--upcart-internal-header-title-font-size);color:var(--upcart-internal-header-title-color)}#vstd-lp-581-simply-revival .vy-upcart-internal-header__close-button{align-items:center;background-color:var(--upcart-internal-header-close-button-background-color);border-color:var(--upcart-internal-header-close-button-border-color);border-radius:var(--upcart-internal-global-button-border-radius);border-style:solid;border-width:var(--upcart-internal-header-close-button-border-width);cursor:pointer;display:flex;height:var(--upcart-internal-header-close-button-size);justify-content:center;transition:background-color .2s;width:var(--upcart-internal-header-close-button-size)}#vstd-lp-581-simply-revival .vy-upcart-internal-header__close-button:active, #vstd-lp-581-simply-revival .vy-upcart-internal-header__close-button:hover{background-color:var(--upcart-internal-header-close-button-background-color-hover);border-color:var(--upcart-internal-header-close-button-border-color-hover);fill:var(--upcart-internal-header-close-button-icon-color-hover);stroke:var(--upcart-internal-header-close-button-icon-color-hover);stroke-width:var(--upcart-internal-header-close-button-icon-stroke-width)}#vstd-lp-581-simply-revival .vy-upcart-internal-header__close-button-icon{fill:var(--upcart-internal-header-close-button-icon-color);height:var(--upcart-internal-header-close-button-icon-size);width:var(--upcart-internal-header-close-button-icon-size);stroke:var(--upcart-internal-header-close-button-icon-color);stroke-width:var(--upcart-internal-header-close-button-icon-stroke-width)}#vstd-lp-581-simply-revival .vy-upcart-internal-header__close-button-icon:active, #vstd-lp-581-simply-revival .vy-upcart-internal-header__close-button-icon:hover{fill:var(--upcart-internal-header-close-button-icon-color-hover);stroke:var(--upcart-internal-header-close-button-icon-color-hover);stroke-width:var(--upcart-internal-header-close-button-icon-stroke-width)}@media (max-width: 600px){#vstd-lp-581-simply-revival .vy-upcart-internal-header{padding:var(--upcart-internal-mobile-header-padding-block) 20px}}#vstd-lp-581-simply-revival #UpcartPopup{--upcart-transition-time: .249s}#vstd-lp-581-simply-revival #UpcartPopup *{box-sizing:border-box}#vstd-lp-581-simply-revival #UpcartPopup p{margin:0}#vstd-lp-581-simply-revival #UpcartPopup div:empty{display:block}#vstd-lp-581-simply-revival[data-upcart-cart-enabled] div[id=CartDrawer], #vstd-lp-581-simply-revival[data-upcart-cart-enabled] html[class~="vy-js-drawer-open"] main[class~="vy-main-content"]:after{display:none!important}#vstd-lp-581-simply-revival .vy-upcartPopupShow div[id~=cart-drawer], #vstd-lp-581-simply-revival[data-upcart-cart-enabled] div[id~=cart-drawer]{display:none!important}#vstd-lp-581-simply-revival[data-upcart-cart-enabled] html[class~="vy-js-drawer-open"], #vstd-lp-581-simply-revival[data-upcart-cart-enabled] html[class~="vy-no-scroll"]{overflow:auto!important}#vstd-lp-581-simply-revival[data-upcart-cart-enabled] div[class="vy-PageOverlay vy-is-visible"]{display:none!important}#vstd-lp-581-simply-revival[data-upcart-cart-enabled] div[class~="vy-Drawer"][aria-hidden=false]{display:none!important;visibility:hidden!important}#vstd-lp-581-simply-revival[data-upcart-cart-enabled] aside[id=slideout-ajax-cart], #vstd-lp-581-simply-revival[data-upcart-cart-enabled] cart-drawer[class*="vy-drawer"], #vstd-lp-581-simply-revival[data-upcart-cart-enabled] div[class*="vy-shopping-cart"] div[class*="vy-mini-cart"], #vstd-lp-581-simply-revival[data-upcart-cart-enabled] div[class~="vy-js-cart-drawer-root"], #vstd-lp-581-simply-revival[data-upcart-cart-enabled] div[class~="vy-js-modal-overlay"], #vstd-lp-581-simply-revival[data-upcart-cart-enabled] div[class~="vy-js-slideout-overlay"]{display:none!important}#vstd-lp-581-simply-revival .vy-styles_CartPreview__{-ms-overflow-style:none;background:#fff;margin:auto;overflow-x:hidden;scrollbar-width:none;top:0;transition:var(--upcart-transition-time) width;width:var(--upcart-internal-desktop-cart-width);z-index:2147483640;--upcart-keyboard-offset: 0px}#vstd-lp-581-simply-revival .vy-upcart-internal-cart-preview__container{overflow-y:hidden;height:100%}#vstd-lp-581-simply-revival .vy-styles_CartPreview__ input{line-height:inherit}#vstd-lp-581-simply-revival .vy-styles_CartPreview__::-webkit-scrollbar{display:none}#vstd-lp-581-simply-revival .vy-styles_CartPreview__position-fixed__{position:fixed}#vstd-lp-581-simply-revival .vy-styles_CartPreview__card__{background-color:var(--p-color-bg);border-radius:0;box-shadow:var(--p-card-shadow);display:flex;flex-direction:column;height:100%;transform:translateY(calc(var(--upcart-keyboard-offset) * -1));transition:transform var(--upcart-transition-time) ease;outline:1px solid transparent}#vstd-lp-581-simply-revival .vy-styles_CartPreview__:focus-visible{outline:2px solid var(--upcart-internal-design-text-color)}#vstd-lp-581-simply-revival .vy-styles_CartPreview__card_nonSticky__{height:auto;min-height:100%}#vstd-lp-581-simply-revival .vy-styles_CartPreview__right__{right:calc(var(--upcart-internal-desktop-cart-width) * -1);transition:var(--upcart-transition-time)}#vstd-lp-581-simply-revival .vy-styles_CartPreview__empty__{align-items:center;display:flex;flex:1;justify-content:center}#vstd-lp-581-simply-revival .vy-styles_CartPreview__empty__body__{-ms-overflow-style:none;display:flex;flex-direction:column;scrollbar-width:none}#vstd-lp-581-simply-revival .vy-styles_CartPreview__empty__body__::-webkit-scrollbar{display:none}#vstd-lp-581-simply-revival .vy-styles_CartPreview__empty__ h3{color:#000;font-size:22px;font-style:normal;font-weight:400;line-height:20px;margin:auto;text-align:center}#vstd-lp-581-simply-revival .vy-styles_CartPreview__backdrop__{background:#000;display:none!important;height:100vh;left:0;opacity:.4;position:fixed;top:0;width:100%;z-index:2147483639}@media (max-width: 600px){#vstd-lp-581-simply-revival .vy-styles_CartPreview__{width:var(--upcart-internal-mobile-cart-width)}#vstd-lp-581-simply-revival .vy-styles_CartPreview__right__{right:calc(var(--upcart-internal-mobile-cart-width) * -1)}}#vstd-lp-581-simply-revival .vy-styles_StickyWidget__{position:var(--upcart-sticky-position);height:82px;width:82px;border-radius:50%;z-index:2147483638;cursor:pointer;background:var(--upcart-sticky-background);top:var(--upcart-sticky-top);bottom:var(--upcart-sticky-bottom);right:var(--upcart-sticky-right);left:var(--upcart-sticky-left);box-shadow:0 4px 4px #00000040}#vstd-lp-581-simply-revival .vy-styles_CartQuantityIcon__{display:flex;align-items:center;justify-content:center;box-sizing:border-box;position:absolute;top:5px;left:60px;width:25px;height:25px;border-radius:100px}#vstd-lp-581-simply-revival .vy-styles_CartQuantityIconText__{color:#fff;font-family:SF Pro Text;font-style:normal;font-weight:700;font-size:14px;line-height:14px}#vstd-lp-581-simply-revival .vy-styles_CartIcon__{position:absolute;top:18px;left:18px}#vstd-lp-581-simply-revival article, #vstd-lp-581-simply-revival aside, #vstd-lp-581-simply-revival figcaption, #vstd-lp-581-simply-revival figure, #vstd-lp-581-simply-revival footer, #vstd-lp-581-simply-revival header, #vstd-lp-581-simply-revival hgroup, #vstd-lp-581-simply-revival main, #vstd-lp-581-simply-revival nav, #vstd-lp-581-simply-revival section{display:block}#vstd-lp-581-simply-revival{margin:0;font-family:-apple-system,BlinkMacSystemFont,"Segoe UI",Roboto,"Helvetica Neue",Arial,"Noto Sans",sans-serif,"Apple Color Emoji","Segoe UI Emoji","Segoe UI Symbol","Noto Color Emoji";font-size:1rem;font-weight:400;line-height:1.5;color:#212529;text-align:left;background-color:#fff}#vstd-lp-581-simply-revival [tabindex="-1"]:focus{outline:0!important}#vstd-lp-581-simply-revival hr{box-sizing:content-box;height:0;overflow:visible}#vstd-lp-581-simply-revival h1, #vstd-lp-581-simply-revival h2, #vstd-lp-581-simply-revival h3, #vstd-lp-581-simply-revival h4, #vstd-lp-581-simply-revival h5, #vstd-lp-581-simply-revival h6{margin-top:0;margin-bottom:.5rem}#vstd-lp-581-simply-revival p{margin-top:0;margin-bottom:1rem}#vstd-lp-581-simply-revival abbr[data-original-title], #vstd-lp-581-simply-revival abbr[title]{text-decoration:underline;-webkit-text-decoration:underline dotted;text-decoration:underline dotted;cursor:help;border-bottom:0;-webkit-text-decoration-skip-ink:none;text-decoration-skip-ink:none}#vstd-lp-581-simply-revival address{margin-bottom:1rem;font-style:normal;line-height:inherit}#vstd-lp-581-simply-revival dl, #vstd-lp-581-simply-revival ol, #vstd-lp-581-simply-revival ul{margin-top:0;margin-bottom:1rem}#vstd-lp-581-simply-revival ol ol, #vstd-lp-581-simply-revival ol ul, #vstd-lp-581-simply-revival ul ol, #vstd-lp-581-simply-revival ul ul{margin-bottom:0}#vstd-lp-581-simply-revival dt{font-weight:700}#vstd-lp-581-simply-revival dd{margin-bottom:.5rem;margin-left:0}#vstd-lp-581-simply-revival blockquote{margin:0 0 1rem}#vstd-lp-581-simply-revival b, #vstd-lp-581-simply-revival strong{font-weight:bolder}#vstd-lp-581-simply-revival small{font-size:80%}#vstd-lp-581-simply-revival sub, #vstd-lp-581-simply-revival sup{position:relative;font-size:75%;line-height:0;vertical-align:baseline}#vstd-lp-581-simply-revival sub{bottom:-.25em}#vstd-lp-581-simply-revival sup{top:-.5em}#vstd-lp-581-simply-revival a{color:#007bff;text-decoration:none;background-color:transparent}#vstd-lp-581-simply-revival a:hover{color:#0056b3;text-decoration:underline}#vstd-lp-581-simply-revival a:not([href]):not([tabindex]){color:inherit;text-decoration:none}#vstd-lp-581-simply-revival a:not([href]):not([tabindex]):focus, #vstd-lp-581-simply-revival a:not([href]):not([tabindex]):hover{color:inherit;text-decoration:none}#vstd-lp-581-simply-revival a:not([href]):not([tabindex]):focus{outline:0}#vstd-lp-581-simply-revival code, #vstd-lp-581-simply-revival kbd, #vstd-lp-581-simply-revival pre, #vstd-lp-581-simply-revival samp{font-family:SFMono-Regular,Menlo,Monaco,Consolas,"Liberation Mono","Courier New",monospace;font-size:1em}#vstd-lp-581-simply-revival pre{margin-top:0;margin-bottom:1rem;overflow:auto}#vstd-lp-581-simply-revival figure{margin:0 0 1rem}#vstd-lp-581-simply-revival img{vertical-align:middle;border-style:none}#vstd-lp-581-simply-revival svg{overflow:hidden;vertical-align:middle}#vstd-lp-581-simply-revival table{border-collapse:collapse}#vstd-lp-581-simply-revival caption{padding-top:.75rem;padding-bottom:.75rem;color:#6c757d;text-align:left;caption-side:bottom}#vstd-lp-581-simply-revival th{text-align:inherit}#vstd-lp-581-simply-revival label{display:inline-block;margin-bottom:.5rem}#vstd-lp-581-simply-revival button{border-radius:0}#vstd-lp-581-simply-revival button:focus{outline:1px dotted;outline:5px auto -webkit-focus-ring-color}#vstd-lp-581-simply-revival button, #vstd-lp-581-simply-revival input, #vstd-lp-581-simply-revival optgroup, #vstd-lp-581-simply-revival select, #vstd-lp-581-simply-revival textarea{margin:0;font-family:inherit;font-size:inherit;line-height:inherit}#vstd-lp-581-simply-revival button, #vstd-lp-581-simply-revival input{overflow:visible}#vstd-lp-581-simply-revival button, #vstd-lp-581-simply-revival select{text-transform:none}#vstd-lp-581-simply-revival select{word-wrap:normal}#vstd-lp-581-simply-revival [type=button], #vstd-lp-581-simply-revival [type=reset], #vstd-lp-581-simply-revival [type=submit], #vstd-lp-581-simply-revival button{-webkit-appearance:button}#vstd-lp-581-simply-revival [type=button]:not(:disabled), #vstd-lp-581-simply-revival [type=reset]:not(:disabled), #vstd-lp-581-simply-revival [type=submit]:not(:disabled), #vstd-lp-581-simply-revival button:not(:disabled){cursor:pointer}#vstd-lp-581-simply-revival [type=button]::-moz-focus-inner, #vstd-lp-581-simply-revival [type=reset]::-moz-focus-inner, #vstd-lp-581-simply-revival [type=submit]::-moz-focus-inner, #vstd-lp-581-simply-revival button::-moz-focus-inner{padding:0;border-style:none}#vstd-lp-581-simply-revival input[type=checkbox], #vstd-lp-581-simply-revival input[type=radio]{box-sizing:border-box;padding:0}#vstd-lp-581-simply-revival input[type=date], #vstd-lp-581-simply-revival input[type=datetime-local], #vstd-lp-581-simply-revival input[type=month], #vstd-lp-581-simply-revival input[type=time]{-webkit-appearance:listbox}#vstd-lp-581-simply-revival textarea{overflow:auto;resize:vertical}#vstd-lp-581-simply-revival fieldset{min-width:0;padding:0;margin:0;border:0}#vstd-lp-581-simply-revival legend{display:block;width:100%;max-width:100%;padding:0;margin-bottom:.5rem;font-size:1.5rem;line-height:inherit;color:inherit;white-space:normal}#vstd-lp-581-simply-revival progress{vertical-align:baseline}#vstd-lp-581-simply-revival [type=number]::-webkit-inner-spin-button, #vstd-lp-581-simply-revival [type=number]::-webkit-outer-spin-button{height:auto}#vstd-lp-581-simply-revival [type=search]{outline-offset:-2px;-webkit-appearance:none}#vstd-lp-581-simply-revival [type=search]::-webkit-search-decoration{-webkit-appearance:none}#vstd-lp-581-simply-revival ::-webkit-file-upload-button{font:inherit;-webkit-appearance:button}#vstd-lp-581-simply-revival output{display:inline-block}#vstd-lp-581-simply-revival summary{display:list-item;cursor:pointer}#vstd-lp-581-simply-revival template{display:none}#vstd-lp-581-simply-revival [hidden]{display:none!important}#vstd-lp-581-simply-revival .vy-h1, #vstd-lp-581-simply-revival .vy-h2, #vstd-lp-581-simply-revival .vy-h3, #vstd-lp-581-simply-revival .vy-h4, #vstd-lp-581-simply-revival .vy-h5, #vstd-lp-581-simply-revival .vy-h6, #vstd-lp-581-simply-revival h1, #vstd-lp-581-simply-revival h2, #vstd-lp-581-simply-revival h3, #vstd-lp-581-simply-revival h4, #vstd-lp-581-simply-revival h5, #vstd-lp-581-simply-revival h6{margin-bottom:.5rem;font-weight:600;line-height:1.2}#vstd-lp-581-simply-revival .vy-h1, #vstd-lp-581-simply-revival h1{font-size:2.5rem}#vstd-lp-581-simply-revival .vy-h2, #vstd-lp-581-simply-revival h2{font-size:2rem}#vstd-lp-581-simply-revival .vy-h3, #vstd-lp-581-simply-revival h3{font-size:1.75rem}#vstd-lp-581-simply-revival .vy-h4, #vstd-lp-581-simply-revival h4{font-size:1.5rem}#vstd-lp-581-simply-revival .vy-h5, #vstd-lp-581-simply-revival h5{font-size:1.25rem}#vstd-lp-581-simply-revival .vy-h6, #vstd-lp-581-simply-revival h6{font-size:1rem}#vstd-lp-581-simply-revival hr{margin-top:1rem;margin-bottom:1rem;border:0;border-top:1px solid rgba(0,0,0,.1)}#vstd-lp-581-simply-revival .vy-small, #vstd-lp-581-simply-revival small{font-size:80%;font-weight:400}#vstd-lp-581-simply-revival .vy-mark, #vstd-lp-581-simply-revival mark{padding:.2em;background-color:#fcf8e3}#vstd-lp-581-simply-revival .vy-list-unstyled{padding-left:0;list-style:none}#vstd-lp-581-simply-revival .vy-list-inline{padding-left:0;list-style:none}#vstd-lp-581-simply-revival .vy-list-inline-item{display:inline-block}#vstd-lp-581-simply-revival .vy-list-inline-item:not(:last-child){margin-right:.5rem}#vstd-lp-581-simply-revival code{font-size:87.5%;color:#e83e8c;word-break:break-word}#vstd-lp-581-simply-revival a>code{color:inherit}#vstd-lp-581-simply-revival kbd{padding:.2rem .4rem;font-size:87.5%;color:#fff;background-color:#212529;border-radius:.2rem}#vstd-lp-581-simply-revival kbd kbd{padding:0;font-size:100%;font-weight:700}#vstd-lp-581-simply-revival pre{display:block;font-size:87.5%;color:#212529}#vstd-lp-581-simply-revival pre code{font-size:inherit;color:inherit;word-break:normal}#vstd-lp-581-simply-revival .vy-container{width:100%;padding-right:15px;padding-left:15px;margin-right:auto;margin-left:auto}@media (min-width:576px){#vstd-lp-581-simply-revival .vy-container{max-width:540px}}@media (min-width:768px){#vstd-lp-581-simply-revival .vy-container{max-width:720px}}@media (min-width:992px){#vstd-lp-581-simply-revival .vy-container{max-width:960px}}@media (min-width:1200px){#vstd-lp-581-simply-revival .vy-container{max-width:1140px}}#vstd-lp-581-simply-revival .vy-breadcrumb{display:-ms-flexbox;display:flex;-ms-flex-wrap:wrap;flex-wrap:wrap;padding:.75rem 1rem;margin-bottom:1rem;list-style:none;background-color:#e9ecef;border-radius:.25rem}#vstd-lp-581-simply-revival .vy-d-flex{display:-ms-flexbox!important;display:flex!important}#vstd-lp-581-simply-revival .vy-align-items-center{-ms-flex-align:center!important;align-items:center!important}#vstd-lp-581-simply-revival .vy-mr-2, #vstd-lp-581-simply-revival .vy-mx-2{margin-right:.5rem!important}#vstd-lp-581-simply-revival .vy-mr-3, #vstd-lp-581-simply-revival .vy-mx-3{margin-right:1rem!important}#vstd-lp-581-simply-revival .vy-text-left{text-align:left!important}#vstd-lp-581-simply-revival .vy-text-center{text-align:center!important}@media (min-width:992px){#vstd-lp-581-simply-revival .vy-text-lg-right{text-align:right!important}}@media print{#vstd-lp-581-simply-revival *, #vstd-lp-581-simply-revival ::after, #vstd-lp-581-simply-revival ::before{text-shadow:none!important;box-shadow:none!important}#vstd-lp-581-simply-revival a:not(.vy-btn){text-decoration:underline}#vstd-lp-581-simply-revival abbr[title]::after{content:" (" attr(title) ")"}#vstd-lp-581-simply-revival pre{white-space:pre-wrap!important}#vstd-lp-581-simply-revival blockquote, #vstd-lp-581-simply-revival pre{border:1px solid #adb5bd;page-break-inside:avoid}#vstd-lp-581-simply-revival thead{display:table-header-group}#vstd-lp-581-simply-revival img, #vstd-lp-581-simply-revival tr{page-break-inside:avoid}#vstd-lp-581-simply-revival h2, #vstd-lp-581-simply-revival h3, #vstd-lp-581-simply-revival p{orphans:3;widows:3}#vstd-lp-581-simply-revival h2, #vstd-lp-581-simply-revival h3{page-break-after:avoid}@page{size:a3}#vstd-lp-581-simply-revival{min-width:992px!important}#vstd-lp-581-simply-revival .vy-container{min-width:992px!important}}@font-face{font-family:swiper-icons;src:url('data:application/font-woff;charset=utf-8;base64,d09GRgABAAAAAAZgABAAAAAADAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAABGRlRNAAAGRAAAABoAAAAci6qHkUdERUYAAAWgAAAAIwAAACQAYABXR1BPUwAABhQAAAAuAAAANuAY7+xHU1VCAAAFxAAAAFAAAABm2fPczU9TLzIAAAHcAAAASgAAAGBP9V5RY21hcAAAAkQAAACIAAABYt6F0cBjdnQgAAACzAAAAAQAAAAEABEBRGdhc3AAAAWYAAAACAAAAAj//wADZ2x5ZgAAAywAAADMAAAD2MHtryVoZWFkAAABbAAAADAAAAA2E2+eoWhoZWEAAAGcAAAAHwAAACQC9gDzaG10eAAAAigAAAAZAAAArgJkABFsb2NhAAAC0AAAAFoAAABaFQAUGG1heHAAAAG8AAAAHwAAACAAcABAbmFtZQAAA/gAAAE5AAACXvFdBwlwb3N0AAAFNAAAAGIAAACE5s74hXjaY2BkYGAAYpf5Hu/j+W2+MnAzMYDAzaX6QjD6/4//Bxj5GA8AuRwMYGkAPywL13jaY2BkYGA88P8Agx4j+/8fQDYfA1AEBWgDAIB2BOoAeNpjYGRgYNBh4GdgYgABEMnIABJzYNADCQAACWgAsQB42mNgYfzCOIGBlYGB0YcxjYGBwR1Kf2WQZGhhYGBiYGVmgAFGBiQQkOaawtDAoMBQxXjg/wEGPcYDDA4wNUA2CCgwsAAAO4EL6gAAeNpj2M0gyAACqxgGNWBkZ2D4/wMA+xkDdgAAAHjaY2BgYGaAYBkGRgYQiAHyGMF8FgYHIM3DwMHABGQrMOgyWDLEM1T9/w8UBfEMgLzE////P/5//f/V/xv+r4eaAAeMbAxwIUYmIMHEgKYAYjUcsDAwsLKxc3BycfPw8jEQA/gZBASFhEVExcQlJKWkZWTl5BUUlZRVVNXUNTQZBgMAAMR+E+gAEQFEAAAAKgAqACoANAA+AEgAUgBcAGYAcAB6AIQAjgCYAKIArAC2AMAAygDUAN4A6ADyAPwBBgEQARoBJAEuATgBQgFMAVYBYAFqAXQBfgGIAZIBnAGmAbIBzgHsAAB42u2NMQ6CUAyGW568x9AneYYgm4MJbhKFaExIOAVX8ApewSt4Bic4AfeAid3VOBixDxfPYEza5O+Xfi04YADggiUIULCuEJK8VhO4bSvpdnktHI5QCYtdi2sl8ZnXaHlqUrNKzdKcT8cjlq+rwZSvIVczNiezsfnP/uznmfPFBNODM2K7MTQ45YEAZqGP81AmGGcF3iPqOop0r1SPTaTbVkfUe4HXj97wYE+yNwWYxwWu4v1ugWHgo3S1XdZEVqWM7ET0cfnLGxWfkgR42o2PvWrDMBSFj/IHLaF0zKjRgdiVMwScNRAoWUoH78Y2icB/yIY09An6AH2Bdu/UB+yxopYshQiEvnvu0dURgDt8QeC8PDw7Fpji3fEA4z/PEJ6YOB5hKh4dj3EvXhxPqH/SKUY3rJ7srZ4FZnh1PMAtPhwP6fl2PMJMPDgeQ4rY8YT6Gzao0eAEA409DuggmTnFnOcSCiEiLMgxCiTI6Cq5DZUd3Qmp10vO0LaLTd2cjN4fOumlc7lUYbSQcZFkutRG7g6JKZKy0RmdLY680CDnEJ+UMkpFFe1RN7nxdVpXrC4aTtnaurOnYercZg2YVmLN/d/gczfEimrE/fs/bOuq29Zmn8tloORaXgZgGa78yO9/cnXm2BpaGvq25Dv9S4E9+5SIc9PqupJKhYFSSl47+Qcr1mYNAAAAeNptw0cKwkAAAMDZJA8Q7OUJvkLsPfZ6zFVERPy8qHh2YER+3i/BP83vIBLLySsoKimrqKqpa2hp6+jq6RsYGhmbmJqZSy0sraxtbO3sHRydnEMU4uR6yx7JJXveP7WrDycAAAAAAAH//wACeNpjYGRgYOABYhkgZgJCZgZNBkYGLQZtIJsFLMYAAAw3ALgAeNolizEKgDAQBCchRbC2sFER0YD6qVQiBCv/H9ezGI6Z5XBAw8CBK/m5iQQVauVbXLnOrMZv2oLdKFa8Pjuru2hJzGabmOSLzNMzvutpB3N42mNgZGBg4GKQYzBhYMxJLMlj4GBgAYow/P/PAJJhLM6sSoWKfWCAAwDAjgbRAAB42mNgYGBkAIIbCZo5IPrmUn0hGA0AO8EFTQAA') format('woff');font-weight:400;font-style:normal}#vstd-lp-581-simply-revival{--swiper-theme-color:#007aff}#vstd-lp-581-simply-revival{--swiper-navigation-size:44px}#vstd-lp-581-simply-revival [class*="vy- icon-"], #vstd-lp-581-simply-revival [class^="vy-icon-"]{font-family:icomoon!important;speak:none;font-style:normal;font-weight:400;font-variant:normal;text-transform:none;line-height:1;-webkit-font-smoothing:antialiased;-moz-osx-font-smoothing:grayscale}@font-face{font-family: Petrona;font-weight: 900;font-style: normal;font-display: swap;src: url("https://storage.googleapis.com/vysta/lp-581-simply-revival/fonts/font-18.woff2") format("woff2"),url("https://storage.googleapis.com/vysta/lp-581-simply-revival/fonts/font-23.woff") format("woff");}@font-face{font-family: Petrona;font-weight: 700;font-style: normal;font-display: swap;src: url("https://storage.googleapis.com/vysta/lp-581-simply-revival/fonts/font-4.woff2") format("woff2"),url("https://storage.googleapis.com/vysta/lp-581-simply-revival/fonts/font-34.woff") format("woff");}@font-face{font-family: Petrona;font-weight: 500;font-style: normal;font-display: swap;src: url("https://storage.googleapis.com/vysta/lp-581-simply-revival/fonts/font-5.woff2") format("woff2"),url("https://storage.googleapis.com/vysta/lp-581-simply-revival/fonts/font-36.woff") format("woff");}@font-face{font-family: Petrona;font-weight: 600;font-style: normal;font-display: swap;src: url("https://storage.googleapis.com/vysta/lp-581-simply-revival/fonts/font-6.woff2") format("woff2"),url("https://storage.googleapis.com/vysta/lp-581-simply-revival/fonts/font-38.woff") format("woff");}@font-face{font-family: Petrona;font-weight: 900;font-style: italic;font-display: swap;src: url("https://storage.googleapis.com/vysta/lp-581-simply-revival/fonts/font-7.woff2") format("woff2"),url("https://storage.googleapis.com/vysta/lp-581-simply-revival/fonts/font-40.woff") format("woff");}@font-face{font-family: Petrona;font-weight: 700;font-style: italic;font-display: swap;src: url("https://storage.googleapis.com/vysta/lp-581-simply-revival/fonts/font-8.woff2") format("woff2"),url("https://storage.googleapis.com/vysta/lp-581-simply-revival/fonts/font-42.woff") format("woff");}#vstd-lp-581-simply-revival{--duration-short: .1s;--duration-default: .2s;--duration-long: .5s;--g-font-1: Petrona,serif;--g-font-2: Poppins,sans-serif;--g-font-3: Blackseas;--g-font-size: 15px;--g-main: #ffd064;--g-main-2: #282828;--g-color-heading: #282828;--g-color-heading-rgb:40,40,40;--g-cta-button: #ff9500;--g-cta-text:#ffffff;--g-container: 1200px;--g-gutter: 32px;--g-hgutter: 16px;--g-alert: #ff9500;--g-alert-bg: #f1f5f4;--g-alert-bd: #f1f5f4;--g-font-weight-body:400;--g-body-lineheight :1.7;--g-font-color-subtop:#282828;--g-font-size-subtop:14px;--g-font-weight-subtop:400;--g-font-spacing-subtop:0.2em;--g-object :cover;--g-radius-label : 0px;--g-pos-top-label :16px;--g-pos-left-label :16px;--g-font-topbar :;--g-bg-sale :#dbe5d3;--g-cl-sale :#1d4d41;--g-label-size: 10px;--g-label-space : 0.1em;--g-font-family_btn :Poppins,sans-serif;--g-font-weight-btn : 600;--g-font-size-btn : 14px;--g-font-spacing-btn : 0.1em;--g-font-radius-btn : 6px;--g-font-border-bottom-btn : 1px;--g-text-transform-btn : uppercase;--g-padding-ver-btn : 17px;--g-padding-hoz-btn : 32px;--g-height-border-btnline: 1px;--g-input-bg:rgba(0,0,0,0);--g-input-border:rgba(0,0,0,0);--g-input-height:48px;--g-input-radius:6px;--g-h1-font-size: 58px;--g-h1-font-size-mobile: 44px;--g-h1-font-weight: 400;--g-h1-font-spacing: 0em;--g-h1-font-lineheight: 1.2;--g-h1-font-transform: none;--g-h2-font-size: 44px;--g-h2-font-size-mobile: 34px;--g-h2-font-weight: 400;--g-h2-font-spacing: 0em;--g-h2-font-lineheight: 1.4;--g-h2-font-transform: none;--g-h3-font-size: 32px;--g-h3-font-size-mobile: 28px;--g-h3-font-weight: 400;--g-h3-font-spacing: 0em;--g-h3-font-lineheight: 1.4;--g-h3-font-transform: none;--g-h4-font-size: 24px;--g-h4-font-size-mobile: 20px;--g-h4-font-weight: 400;--g-h4-font-spacing: 0em;--g-h4-font-lineheight: 1.4;--g-h4-font-transform: none;--g-h5-font-size: 20px;--g-h5-font-size-mobile: 18px;--g-h5-font-weight: 500;--g-h5-font-spacing: 0em;--g-h5-font-lineheight: 1.4;--g-h5-font-transform: none;--g-h6-font-size: 16px;--g-h6-font-size_mobile: 16px;--g-h6-font-weight: 400;--g-h6-font-spacing: 0em;--g-h6-font-lineheight: 1.2;--g-h6-font-transform: none;--g-slide-font-size: 58px;--g-slide-font-size-mobile: 44px;--g-slide-font-weight: 400;--g-slide-font-spacing: 0em;--g-slide-font-lineheight: 1.2;--g-slide-font-transform: none;--g-p-font_family : var(--g-font-2);--g-p-font-size: 15px;--g-p-font-weight: 600;--g-p-font-spacing: 0em;--g-p-font-lineheight: 1.3;--g-p-font-transform: none;--color-foreground:40,40,40;--color-body-text: #282828;--color-body-text-rgb: 40,40,40;--color-body: #ffffff;--color-content:#ffffff;--color-background: 255,255,255;--color-accent: #ffd064;--color-form: #f4f4f4;--color-form-text: #333;--color-disabled: #d5d5d5;--color-disabled-border: #cecece;--color-disabled-text: rgba(0,0,0,0.4);--color-error: #ec523e;--color-error-bg: #ec523e;--color-drawer-text: #000000;--height-announbar: 0px;--color-border:233,233,233;--anim-transition: cubic-bezier(.785,.135,.15,.86);--g-img-portrait:130%;--g-img-square:100%;--g-img-wide:60%;--g-img-landscape:75%;--g-btn-outline-color: #ff9500;--g-btn-hover-color: #ffffff;--g-btn-shawdow: 255,208,100;}@media (min-width: 1200px){#vstd-lp-581-simply-revival .vy-container{max-width: 1200px;}}#vstd-lp-581-simply-revival a{color: inherit;}#vstd-lp-581-simply-revival a:hover{color: inherit;text-decoration: none;}#vstd-lp-581-simply-revival .vy-shopify-section-group-header-group, #vstd-lp-581-simply-revival .vy-shopify-section-group-footer-group, #vstd-lp-581-simply-revival .vy-page-container > .vy-breadcrumb, #vstd-lp-581-simply-revival #shopify-section-pnewsletter, #vstd-lp-581-simply-revival #shopify-section-product-suggest, #vstd-lp-581-simply-revival #shopify-section-cookie-policy, #vstd-lp-581-simply-revival #NavDrawer, #vstd-lp-581-simply-revival #jsQuickview, #vstd-lp-581-simply-revival .vy-progress-wrap, #vstd-lp-581-simply-revival .vy-loading_site{display: none !important;}#vstd-lp-581-simply-revival #MainContent{margin: 0 !important;padding: 0 !important;}#vstd-lp-581-simply-revival, #vstd-lp-581-simply-revival{overflow-y: auto !important;position: static !important;height: auto !important;top: auto !important;}#vstd-lp-581-simply-revival *{}#vstd-lp-581-simply-revival a[href='#looxReviews']{text-decoration:none;color: inherit;}#vstd-lp-581-simply-revival a[href='#looxReviewsFrame']{text-decoration:none;color: inherit;}#vstd-lp-581-simply-revival .vy-shopify-app-block:has(> .vy-loox-widget){width: 100%;}#vstd-lp-581-simply-revival [data-lx-fill='empty']{--lx-rating-percent: 0%;}#vstd-lp-581-simply-revival [data-lx-fill='half']{--lx-rating-percent: 50%;}#vstd-lp-581-simply-revival [data-lx-fill='full']{--lx-rating-percent: 100%;}#vstd-lp-581-simply-revival .vy-g-breadcrumb{border-radius: 0;flex-direction: column;color:#ff9500;padding:16px 0;margin:0;background:#ffffff;border-top:1px solid #ffffff;}#vstd-lp-581-simply-revival .vy-g-breadcrumb a, #vstd-lp-581-simply-revival .vy-g-breadcrumb span{padding:0 3px;font-size:14px;line-height:20px;display:inline-block;}#vstd-lp-581-simply-revival .vy-g-breadcrumb a{color:#282828;}#vstd-lp-581-simply-revival .vy-g-breadcrumb .vy-container, #vstd-lp-581-simply-revival .vy-g-breadcrumb .vy-container-fluid{z-index: 2;position: relative;}#vstd-lp-581-simply-revival #cwc_footer-sections--28074015654169__cwc_footer_eNB4yz{--section-bg: #176b6c;--text-color: #e8ede9;--text-hover-color: #ffffff;--title-color: #ffffff;--highlight-color: #a8d6b8;--divider-color: #1e6b5e;--input-bg: rgba(0,0,0,0);--input-border: #ffffff;--input-text: #ffffff;--input-placeholder: #b0c4bc;--btn-bg: #ffffff;--btn-bg-hover: #f0f0f0;--btn-text: #0c5a4d;--btn-radius: 4px;--disclaimer-color: #b8c4bd;--copyright-color: #d8ddd9;--padding-top: 60px;--padding-bottom: 40px;--padding-top-mobile: 30.0px;--padding-bottom-mobile: 20.0px;}#vstd-lp-581-simply-revival :host{all: initial;}#vstd-lp-581-simply-revival #UpcartPopup{font-family: 'Poppins',sans-serif;}#vstd-lp-581-simply-revival #UpcartPopup h3{font-family: 'Poppins',sans-serif;font-weight: 600}#vstd-lp-581-simply-revival .vy-UpcartDesignSettings__backgroundColor > div{background: #FFFFFF;}#vstd-lp-581-simply-revival .vy-upcart-public-header{padding: 10px;}#vstd-lp-581-simply-revival .vy-styles_CartPreview__empty__body__{padding: 1rem 0rem;padding-top: 2rem;}#vstd-lp-581-simply-revival #UpcartPopup h3{font-size: 20px !important;}
+  
+
+
+@font-face{font-family:'Poppins';font-style:normal;font-weight:400;font-display:swap;src:url("https://storage.googleapis.com/vysta/lp-581-simply-revival/fonts/poppins-400.woff2") format('woff2');}
+@font-face{font-family:'Poppins';font-style:normal;font-weight:500;font-display:swap;src:url("https://storage.googleapis.com/vysta/lp-581-simply-revival/fonts/poppins-500.woff2") format('woff2');}
+@font-face{font-family:'Poppins';font-style:normal;font-weight:600;font-display:swap;src:url("https://storage.googleapis.com/vysta/lp-581-simply-revival/fonts/poppins-600.woff2") format('woff2');}
+@font-face{font-family:'Poppins';font-style:normal;font-weight:700;font-display:swap;src:url("https://storage.googleapis.com/vysta/lp-581-simply-revival/fonts/poppins-700.woff2") format('woff2');}
+
+
+
+#vstd-lp-581-simply-revival{
+  --font-body-family:Poppins, sans-serif!important;
+  --font-body:Poppins, sans-serif!important;
+  --font-heading-family:Poppins, sans-serif!important;
+  --font-heading:Poppins, sans-serif!important;
+}
+#vstd-lp-581-simply-revival{font-family:Poppins, sans-serif!important;font-weight:400!important;}
+  
+
+#vstd-lp-581-simply-revival .vy-g-breadcrumb{border-radius: 0;flex-direction: column;color:#ff9500;padding:16px 0;margin:0;background:#ffffff;border-top:1px solid #ffffff;}#vstd-lp-581-simply-revival .vy-g-breadcrumb a, #vstd-lp-581-simply-revival .vy-g-breadcrumb span{padding:0 3px;font-size:14px;line-height:20px;display:inline-block;}#vstd-lp-581-simply-revival .vy-g-breadcrumb a{color:#282828;}#vstd-lp-581-simply-revival .vy-g-breadcrumb .vy-container, #vstd-lp-581-simply-revival .vy-g-breadcrumb .vy-container-fluid{z-index: 2;position: relative;}
+
+#vstd-lp-581-simply-revival #cwc_footer-sections--28074015654169__cwc_footer_eNB4yz{--section-bg: #176b6c;--text-color: #e8ede9;--text-hover-color: #ffffff;--title-color: #ffffff;--highlight-color: #a8d6b8;--divider-color: #1e6b5e;--input-bg: rgba(0,0,0,0);--input-border: #ffffff;--input-text: #ffffff;--input-placeholder: #b0c4bc;--btn-bg: #ffffff;--btn-bg-hover: #f0f0f0;--btn-text: #0c5a4d;--btn-radius: 4px;--disclaimer-color: #b8c4bd;--copyright-color: #d8ddd9;--padding-top: 60px;--padding-bottom: 40px;--padding-top-mobile: 30.0px;--padding-bottom-mobile: 20.0px;}
+
+#vstd-lp-581-simply-revival :host{all: initial;}#vstd-lp-581-simply-revival #UpcartPopup{font-family: 'Poppins',sans-serif;}#vstd-lp-581-simply-revival #UpcartPopup h3{font-family: 'Poppins',sans-serif;font-weight: 600}#vstd-lp-581-simply-revival .vy-UpcartDesignSettings__backgroundColor > div{background: #FFFFFF;}
+
+#vstd-lp-581-simply-revival .vy-upcart-public-header{padding: 10px;}#vstd-lp-581-simply-revival .vy-styles_CartPreview__empty__body__{padding: 1rem 0rem;padding-top: 2rem;}#vstd-lp-581-simply-revival #UpcartPopup h3{font-size: 20px !important;}
+
+#vstd-lp-581-simply-revival{scroll-behavior:smooth}
+
+/* Preserve paragraph spacing inside Funnelish embed where empty <p> tags collapse */
+#vstd-lp-581-simply-revival p:empty {
+  min-height: 1em !important;
+  display: block !important;
+}
+/* Growtype: undo flex-induced height:100% blowup on custom-css blocks */
+#vstd-lp-581-simply-revival [class*="growtype-customcss-"],
+#vstd-lp-581-simply-revival [class*="growtype-customcss-"] > div {
+  height: auto !important;
+}
+/* Shopify Horizon: neutralize app-shell inner-scroll so the embed flows in the host page */
+#vstd-lp-581-simply-revival:has(.vy-page-wrapper),
+#vstd-lp-581-simply-revival:has(.vy-page-wrapper) .vy-page-wrapper,
+#vstd-lp-581-simply-revival[scroll-lock],
+#vstd-lp-581-simply-revival[scroll-lock] .vy-page-wrapper {
+  height: auto !important;
+  max-height: none !important;
+  overflow: visible !important;
+}
+
+/* vystodian: convert.js emits `*{all:revert}` for isolation, which also reverts INHERITED
+   line-height to the UA default. Elements with no explicit line-height rule (every table
+   cell) rendered at `normal` instead of the source's 1.65. Restore inheritance at zero
+   selector-specificity so every real rule still wins, then match the hero trust strip's
+   rendered line box to the source. */
+#vstd-lp-581-simply-revival #vstd-lp-385-simply-revival :where(*){line-height:inherit;}
+#vstd-lp-581-simply-revival #vstd-lp-385-simply-revival .vy-hs-item span{line-height:28.05px;}
+
+{% endraw %}</style>
+
+<div id="vstd-lp-581-simply-revival" class="vstd-page vy-template-page vy-body-theme">
+<!-- loading.liquid -->
+<style>/**/</style>
+<!-- Use id #js-loading to overwrite CSS {display:none} in javascript or specific page -->
+<!-- BEGIN sections: header-group -->
+
+<!-- END sections: header-group --><div class="vy-page-container vy-page-element vy-is-moved-by-drawer">
+<style>/**/</style>
+
+<nav class=" vy-breadcrumb vy-g-breadcrumb vy-text-left" role="navigation" aria-label="breadcrumbs" style="display: none !important;">
+  <div class="vy-container">
+    <a href="/" title="Home">Home</a>
+    
+    <span aria-hidden="true">/</span>
+    <span>Saw Palmetto vs. Finasteride &amp; Minoxidil: An Honest DHT Blocker Comparison</span>
+    
+  </div>
+</nav>
+
+<main class="vy-main-content" id="MainContent" role="main">
+
+
+          <div id="shopify-section-template--28074009362713__main" class="vy-shopify-section"><!-- vystodian agent | lp-385-simply-revival | Paste into Shopify (Custom Liquid section or page Content HTML) -->
+<link data-vy-stripped="">
+
+<div id="vstd-lp-385-simply-revival" class="vy-vstd-page" style="max-width: none !important; width: 100% !important; margin-left: 0px !important;">
+<header class="vy-site">
+  <div class="vy-wrap vy-site-inner">
+    <a class="vy-site-logo" href="#top" aria-label="Hair Health Daily">
+      <span class="vy-masthead"><span class="vy-mh-ic"><svg width="19" height="19" viewBox="0 0 24 24" fill="none"><path d="M2 12h4l2.5-6 3.5 12 3-8 2 2h5" stroke="#fff" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"></path></svg></span>Hair Health Daily</span>
+    </a>
+    <span class="vy-hdr-tag">Advertorial</span>
+  </div>
+</header>
+
+<!-- &#9472;&#9472;&#9472;&#9472;&#9472;&#9472;&#9472;&#9472;&#9472;&#9472;&#9472; SECTION 1 &#183; HOOK &#9472;&#9472;&#9472;&#9472;&#9472;&#9472;&#9472;&#9472;&#9472;&#9472;&#9472; -->
+<section class="vy-hero" id="top">
+  <div class="vy-wrap vy-hero-center">
+    <span class="vy-eyebrow">Comparison Guide</span>
+    <h1>Minoxidil Can Regrow Hair. It Never Touches DHT. That's the Gap.</h1>
+    <p class="vy-lead vy-sub">Minoxidil is the one almost everybody starts with, and for a lot of men it genuinely works. Here is the part the bottle never mentions: it works downstream of the reason your hair is thinning in the first place. Below is how minoxidil, finasteride, and saw palmetto actually line up.</p>
+    <div class="vy-hero-product">
+      <img src="https://storage.googleapis.com/vysta/lp-581-simply-revival/images/hero-thinning-crown.jpg" alt="Looking down at a man's thinning crown as he parts his hair to inspect it, a dropper bottle of daily scalp solution beside him" width="1400" height="919">
+    </div>
+  </div>
+  <div class="vy-wrap vy-hero-strip">
+    <div class="vy-hs-item"><svg width="20" height="20" viewBox="0 0 20 20" fill="none"><circle cx="10" cy="10" r="10" fill="#125657"></circle><path d="M6 10.2l2.6 2.6L14 7.4" stroke="#fff" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"></path></svg><div><b>Nothing oversold</b><span>A supplement is not a drug, and we will not pretend it is one.</span></div></div>
+    <div class="vy-hs-item"><svg width="20" height="20" viewBox="0 0 20 20" fill="none"><circle cx="10" cy="10" r="10" fill="#125657"></circle><path d="M6 10.2l2.6 2.6L14 7.4" stroke="#fff" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"></path></svg><div><b>No scare stories</b><span>Minoxidil helps plenty of men. We say so plainly.</span></div></div>
+    <div class="vy-hs-item"><svg width="20" height="20" viewBox="0 0 20 20" fill="none"><circle cx="10" cy="10" r="10" fill="#125657"></circle><path d="M6 10.2l2.6 2.6L14 7.4" stroke="#fff" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"></path></svg><div><b>Only the trade-offs</b><span>The whole picture, so the choice is genuinely yours.</span></div></div>
+  </div>
+</section>
+
+<!-- &#9472;&#9472;&#9472;&#9472;&#9472;&#9472;&#9472;&#9472;&#9472;&#9472;&#9472; SECTION 2 &#183; COMPARISON TABLE &#9472;&#9472;&#9472;&#9472;&#9472;&#9472;&#9472;&#9472;&#9472;&#9472;&#9472; -->
+<section id="compare" class="vy-alt">
+  <div class="vy-wrap">
+    <div class="vy-section-head">
+      <span class="vy-eyebrow">Side by Side</span>
+      <h2>Saw Palmetto vs. Minoxidil &amp; Finasteride: What's Actually Different?</h2>
+      <p class="vy-lead">Three tools, three different jobs, and only two of them have anything to do with DHT. Here is how they line up on the questions men actually ask.</p>
+    </div>
+
+    <div class="vy-table-scroll">
+      <table class="vy-compare">
+        <thead>
+          <tr>
+            <th scope="col"></th>
+            <th scope="col">Minoxidil</th>
+            <th scope="col">Finasteride</th>
+            <th scope="col" class="vy-ours"><span class="vy-pill">Our Pick, No Rx</span><br>Saw Palmetto<small>Simply Revival Natural DHT Blocker</small></th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr>
+            <th scope="row">Prescription required</th>
+            <td><span class="vy-tag vy-tag-no">No</span><br>Over the counter (topical)</td>
+            <td><span class="vy-tag vy-tag-yes">Yes</span><br>Doctor visit and ongoing prescription</td>
+            <td class="vy-ours"><span class="vy-tag vy-tag-no">No</span><br>Order online, no doctor visit or monitoring</td>
+          </tr>
+          <tr>
+            <th scope="row">Mechanism</th>
+            <td>Increases blood flow and supports the growth phase; not DHT-related</td>
+            <td>Blocks DHT production (oral)</td>
+            <td class="vy-ours">Blocks DHT production (milder, natural)</td>
+          </tr>
+          <tr>
+            <th scope="row">Relative DHT reduction</th>
+            <td><span class="vy-tag vy-tag-neutral">N/A</span><br>Different mechanism entirely</td>
+            <td>Strongest (~70%)*</td>
+            <td class="vy-ours">Modest (~30-40%)*</td>
+          </tr>
+          <tr>
+            <th scope="row">Known side effect concerns</th>
+            <td>Scalp irritation; an initial shedding phase is common</td>
+            <td>Sexual and mood side effects reported in a subset of users</td>
+            <td class="vy-ours">No known systemic side effects reported of the kind associated with prescription DHT blockers</td>
+          </tr>
+          <tr>
+            <th scope="row">Typically best for</th>
+            <td>Often combined with a DHT blocker for growth-phase support</td>
+            <td>Men wanting maximum DHT suppression who are comfortable with a prescription and monitoring</td>
+            <td class="vy-ours">Men who want a DHT-supportive option without the prescription or the side-effect risk</td>
+          </tr>
+        </tbody>
+      </table>
+    </div>
+
+    <!-- Mobile stacked cards -->
+    <div class="vy-compare-cards">
+      <div class="vy-cmp-card vy-ours">
+        <div class="vy-cmp-head"><span class="vy-pill">Our Pick, No Rx</span><br>Saw Palmetto<small>Simply Revival Natural DHT Blocker</small></div>
+        <div class="vy-cmp-row"><div class="vy-lbl">Prescription required</div><span class="vy-tag vy-tag-no">No</span> Order online, no doctor visit or monitoring</div>
+        <div class="vy-cmp-row"><div class="vy-lbl">Mechanism</div>Blocks DHT production (milder, natural)</div>
+        <div class="vy-cmp-row"><div class="vy-lbl">Relative DHT reduction</div>Modest (~30-40%)*</div>
+        <div class="vy-cmp-row"><div class="vy-lbl">Side effect concerns</div>No known systemic side effects reported of the kind associated with prescription DHT blockers</div>
+        <div class="vy-cmp-row"><div class="vy-lbl">Typically best for</div>Men who want a DHT-supportive option without the prescription or the side-effect risk</div>
+      </div>
+      <div class="vy-cmp-card">
+        <div class="vy-cmp-head">Minoxidil</div>
+        <div class="vy-cmp-row"><div class="vy-lbl">Prescription required</div><span class="vy-tag vy-tag-no">No</span> Over the counter (topical)</div>
+        <div class="vy-cmp-row"><div class="vy-lbl">Mechanism</div>Increases blood flow and supports the growth phase; not DHT-related</div>
+        <div class="vy-cmp-row"><div class="vy-lbl">Relative DHT reduction</div><span class="vy-tag vy-tag-neutral">N/A</span> Different mechanism entirely</div>
+        <div class="vy-cmp-row"><div class="vy-lbl">Side effect concerns</div>Scalp irritation; an initial shedding phase is common</div>
+        <div class="vy-cmp-row"><div class="vy-lbl">Typically best for</div>Often combined with a DHT blocker for growth-phase support</div>
+      </div>
+      <div class="vy-cmp-card">
+        <div class="vy-cmp-head">Finasteride</div>
+        <div class="vy-cmp-row"><div class="vy-lbl">Prescription required</div><span class="vy-tag vy-tag-yes">Yes</span> Doctor visit and ongoing prescription</div>
+        <div class="vy-cmp-row"><div class="vy-lbl">Mechanism</div>Blocks DHT production (oral)</div>
+        <div class="vy-cmp-row"><div class="vy-lbl">Relative DHT reduction</div>Strongest (~70%)*</div>
+        <div class="vy-cmp-row"><div class="vy-lbl">Side effect concerns</div>Sexual and mood side effects reported in a subset of users</div>
+        <div class="vy-cmp-row"><div class="vy-lbl">Typically best for</div>Men wanting maximum DHT suppression who are comfortable with a prescription and monitoring</div>
+      </div>
+    </div>
+
+    <p class="vy-tbl-foot">*Directional figures drawn from published research on serum DHT reduction; individual results vary. Minoxidil is listed as N/A because it works through a different mechanism and is not a DHT blocker. These are not head-to-head claims about any specific product, and no equivalence between a supplement and a prescription medication is implied. Talk to a healthcare provider about what is right for you.</p>
+  </div>
+</section>
+
+<!-- &#9472;&#9472;&#9472;&#9472;&#9472;&#9472;&#9472;&#9472;&#9472;&#9472;&#9472; SECTION 3 &#183; THE HONEST TRADE-OFF &#9472;&#9472;&#9472;&#9472;&#9472;&#9472;&#9472;&#9472;&#9472;&#9472;&#9472; -->
+<section>
+  <div class="vy-wrap-narrow">
+    <span class="vy-eyebrow">The Honest Trade-Off</span>
+    <h2>Minoxidil Isn't Wrong. It's Just Incomplete.</h2>
+    <p>Minoxidil has decades of research behind it and it grows hair for a lot of men. That is not in dispute, and any page that tells you otherwise is selling you something. What it does not do is touch DHT. It widens blood vessels and keeps follicles in their growth phase longer, which is a real benefit, while the hormone shrinking those follicles carries on untouched.</p>
+    <div class="vy-tradeoff-quotebox">So the question was never minoxidil or nothing. It's <em>"am I doing anything at all about the DHT underneath?"</em></div>
+    <p>There is a second catch, and it is the practical one. Minoxidil is a topical you apply every day and never stop. Let it slide for a few months and the hair it was holding on to tends to go with it. A routine you abandon does less for your hair than a milder one you keep up. That is the whole case for a daily saw palmetto capsule: a real if more modest effect on DHT, no prescription, no known systemic side effects reported, and nothing to work into your scalp before bed.</p>
+
+    <div class="vy-tri-grid">
+      <div class="vy-tri-card">
+        <h3><svg width="20" height="20" viewBox="0 0 20 20" fill="none"><path d="M10 2l2.4 5.2 5.6.6-4.2 3.8 1.2 5.6L10 14.4l-5 2.8 1.2-5.6L2 7.8l5.6-.6L10 2z" fill="#125657"></path></svg>Direct regrowth</h3>
+        <p>Minoxidil has the deepest clinical record for visible regrowth at the follicle. If that is your single criterion and a daily topical suits your routine, that route exists.</p>
+        <span class="vy-who">Advantage: Minoxidil</span>
+      </div>
+      <div class="vy-tri-card">
+        <h3><svg width="20" height="20" viewBox="0 0 20 20" fill="none"><path d="M10 1.8c2.6 2 5.4 2.8 7.2 3 0 6.4-2.4 11-7.2 13.4C5.2 15.8 2.8 11.2 2.8 4.8c1.8-.2 4.6-1 7.2-3z" fill="#125657"></path><path d="M7 10l2.2 2.2L13.4 8" stroke="#fff" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"></path></svg>The DHT side</h3>
+        <p>Minoxidil leaves DHT alone by design. Saw palmetto is what men add when they want the hormonal half of the picture covered too, without a prescription pad.</p>
+        <span class="vy-who">Advantage: Saw Palmetto</span>
+      </div>
+      <div class="vy-tri-card">
+        <h3><svg width="20" height="20" viewBox="0 0 20 20" fill="none"><circle cx="10" cy="10" r="8" stroke="#125657" stroke-width="2"></circle><path d="M10 5.5V10l3 2" stroke="#125657" stroke-width="2" stroke-linecap="round"></path></svg>Staying on it</h3>
+        <p>Whatever you pick only counts while you keep doing it. A capsule with breakfast survives a busy month better than a scalp routine you have to remember every night.</p>
+        <span class="vy-who">Advantage: The one you stick with</span>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- &#9472;&#9472;&#9472;&#9472;&#9472;&#9472;&#9472;&#9472;&#9472;&#9472;&#9472; SECTION 3B &#183; THE PRODUCT &#9472;&#9472;&#9472;&#9472;&#9472;&#9472;&#9472;&#9472;&#9472;&#9472;&#9472; -->
+<section class="vy-alt">
+  <div class="vy-wrap vy-split">
+    <img src="https://storage.googleapis.com/vysta/lp-581-simply-revival/images/ingredients-shelf.jpg" alt="Herbal capsules, dried saw palmetto berries and nettle leaves on a bathroom shelf beside a comb and hairbrush" width="1300" height="867">
+    <div>
+      <span class="vy-eyebrow">The Capsule Route</span>
+      <h2>Ten Herbs, One Capsule, Nothing to Rub In</h2>
+      <p>Simply Revival's Natural DHT Blocker leads with saw palmetto and stinging nettle, the two natural ingredients with the most research behind them on the DHT side, then fills out the formula with 8 more herbs plus the vitamins and minerals hair draws on.</p>
+      <ul class="vy-check-list">
+        <li><svg width="19" height="19" viewBox="0 0 20 20" fill="none"><circle cx="10" cy="10" r="10" fill="#125657"></circle><path d="M6 10.2l2.6 2.6L14 7.4" stroke="#fff" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"></path></svg><span><b>Saw palmetto + stinging nettle</b> doing the DHT-supportive work</span></li>
+        <li><svg width="19" height="19" viewBox="0 0 20 20" fill="none"><circle cx="10" cy="10" r="10" fill="#125657"></circle><path d="M6 10.2l2.6 2.6L14 7.4" stroke="#fff" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"></path></svg><span><b>350mg+ herbal blend per serving</b>, alongside biotin, zinc, and B vitamins</span></li>
+        <li><svg width="19" height="19" viewBox="0 0 20 20" fill="none"><circle cx="10" cy="10" r="10" fill="#125657"></circle><path d="M6 10.2l2.6 2.6L14 7.4" stroke="#fff" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"></path></svg><span><b>Non-GMO, gluten-free, third-party tested</b>, and made in the USA</span></li>
+        <li><svg width="19" height="19" viewBox="0 0 20 20" fill="none"><circle cx="10" cy="10" r="10" fill="#125657"></circle><path d="M6 10.2l2.6 2.6L14 7.4" stroke="#fff" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"></path></svg><span><b>60 capsules, 30-day supply</b>, covered by a 365-day money-back guarantee</span></li>
+      </ul>
+      <p class="vy-mini-note">The full supplement facts panel is in the FAQ below.</p>
+    </div>
+  </div>
+  <div class="vy-wrap vy-split" style="margin-top:56px;">
+    <div>
+      <span class="vy-eyebrow">What to Expect</span>
+      <h2>Give It 90 Days Before You Decide</h2>
+      <p>Nothing you do for your hair, topical or capsule or prescription, shows up in a week. Among customers who report results, the shedding usually eases off first, somewhere in the first month or two, and visible thickness takes 90 days or more. That is how hair cycles run, not a flaw in the product.</p>
+      <p style="margin-top:14px;">So set the bar honestly: take it every day, give it a full 90 days, then judge the mirror instead of the marketing. The 365-day guarantee is there so that trial costs you nothing if you turn out not to be a responder.</p>
+    </div>
+    <img src="https://storage.googleapis.com/vysta/lp-581-simply-revival/images/progress-photo.jpg" alt="A man photographing his own receding hairline to track it month by month, capsules and water on the table beside him" width="1300" height="867">
+  </div>
+</section>
+
+<!-- &#9472;&#9472;&#9472;&#9472;&#9472;&#9472;&#9472;&#9472;&#9472;&#9472;&#9472; SECTION 4 &#183; TESTIMONIALS &#9472;&#9472;&#9472;&#9472;&#9472;&#9472;&#9472;&#9472;&#9472;&#9472;&#9472; -->
+<section>
+  <div class="vy-wrap">
+    <div class="vy-section-head">
+      <span class="vy-eyebrow">Verified Customer Reviews</span>
+      <h2>What Men Actually Say</h2>
+      <p class="vy-lead">Copied word for word from verified purchase reviews of the Natural DHT Blocker.</p>
+    </div>
+
+    <div class="vy-review-grid">
+      <div class="vy-review-card">
+        <div class="vy-stars">&#9733;&#9733;&#9733;&#9733;&#9733;</div>
+        <p>"Love this product it really works. My crown was thinning bad and now it's almost completely grown back. Im on my second bottle and by the 3rd I'm sure that's all it will take very thankful for this product."</p>
+        <div class="vy-review-by"><div class="vy-avatar">E</div><div><b>Eric E.</b><br><span class="vy-verified"><svg width="13" height="13" viewBox="0 0 20 20" fill="none"><circle cx="10" cy="10" r="10" fill="#1F6B4A"></circle><path d="M6 10.2l2.6 2.6L14 7.4" stroke="#fff" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"></path></svg>Verified purchase</span></div></div>
+      </div>
+      <div class="vy-review-card">
+        <div class="vy-stars">&#9733;&#9733;&#9733;&#9733;&#9733;</div>
+        <p>"This stuff has definitely made my hair thicker and has filled in my thinning spots for sure."</p>
+        <div class="vy-review-by"><div class="vy-avatar">J</div><div><b>James H.</b><br><span class="vy-verified"><svg width="13" height="13" viewBox="0 0 20 20" fill="none"><circle cx="10" cy="10" r="10" fill="#1F6B4A"></circle><path d="M6 10.2l2.6 2.6L14 7.4" stroke="#fff" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"></path></svg>Verified purchase</span></div></div>
+      </div>
+      <div class="vy-review-card">
+        <div class="vy-stars">&#9733;&#9733;&#9733;&#9733;&#9733;</div>
+        <p>"Saw results the first week. Thicker hair. Baby hairs sprouting on the hair line."</p>
+        <div class="vy-review-by"><div class="vy-avatar">J</div><div><b>Jeffrey H.</b><br><span class="vy-verified"><svg width="13" height="13" viewBox="0 0 20 20" fill="none"><circle cx="10" cy="10" r="10" fill="#1F6B4A"></circle><path d="M6 10.2l2.6 2.6L14 7.4" stroke="#fff" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"></path></svg>Verified purchase</span></div></div>
+      </div>
+      <div class="vy-review-card">
+        <div class="vy-stars">&#9733;&#9733;&#9733;&#9733;&#9733;</div>
+        <p>"I definitely have seen my hair growing and my patch filling in."</p>
+        <div class="vy-review-by"><div class="vy-avatar">D</div><div><b>David R.</b><br><span class="vy-verified"><svg width="13" height="13" viewBox="0 0 20 20" fill="none"><circle cx="10" cy="10" r="10" fill="#1F6B4A"></circle><path d="M6 10.2l2.6 2.6L14 7.4" stroke="#fff" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"></path></svg>Verified purchase</span></div></div>
+      </div>
+      <div class="vy-review-card">
+        <div class="vy-stars">&#9733;&#9733;&#9733;&#9733;&#9733;</div>
+        <p>"So far, The THD Blocker is working my crown is growing back , and I'm excited. I'm still hoping to see growth along my hairline too and looking forward to more results."</p>
+        <div class="vy-review-by"><div class="vy-avatar">S</div><div><b>Steady N.</b><br><span class="vy-verified"><svg width="13" height="13" viewBox="0 0 20 20" fill="none"><circle cx="10" cy="10" r="10" fill="#1F6B4A"></circle><path d="M6 10.2l2.6 2.6L14 7.4" stroke="#fff" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"></path></svg>Verified purchase</span></div></div>
+      </div>
+      <div class="vy-review-card">
+        <div class="vy-stars">&#9733;&#9733;&#9733;&#9733;&#9733;</div>
+        <p>"I really like the product, it really helps for my hair to grow back. I've been using this just almost 2 months and there's a progress. I will recommend it to others and definitely gonna buy again"</p>
+        <div class="vy-review-by"><div class="vy-avatar">L</div><div><b>Lyle O.</b><br><span class="vy-verified"><svg width="13" height="13" viewBox="0 0 20 20" fill="none"><circle cx="10" cy="10" r="10" fill="#1F6B4A"></circle><path d="M6 10.2l2.6 2.6L14 7.4" stroke="#fff" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"></path></svg>Verified purchase</span></div></div>
+      </div>
+    </div>
+
+    <div class="vy-ba-block">
+      <img src="https://storage.googleapis.com/vysta/lp-581-simply-revival/images/result-thick-hair.jpg" alt="A man outdoors pushing his hand back through a thick, full head of hair" width="1300" height="867">
+      <div>
+        <h3>"In 30 days I noticed way less hair shedding and in 90 days my hair was VISIBLY thicker and fuller!"</h3>
+        <p>A verified Simply Revival customer review. Individual results vary, and the clock is slow whichever route you take: the shedding tends to settle first, thickness comes later. (Photo is illustrative.)</p>
+      </div>
+    </div>
+
+    <div class="vy-ba-block vy-rev">
+      <img src="https://storage.googleapis.com/vysta/lp-581-simply-revival/images/barber-chair-cut.jpg" alt="A barber combing and cutting through the hair on top of a customer's head in a high street barber shop" width="1300" height="867">
+      <div>
+        <h3>You Wouldn't Be the First to Add the Capsule</h3>
+        <p>Simply Revival counts 100,000+ customers who wanted thicker, fuller-looking hair without a prescription and without another bottle to work into their scalp every night. Some respond quickly, some slowly, some not at all, which is supplements for you. What is different here is that you get a full year to work out which one you are.</p>
+      </div>
+    </div>
+
+    <p class="vy-review-src">Quotes are reproduced verbatim from verified purchase reviews collected on simplyrevival.com. Individual results vary.</p>
+  </div>
+</section>
+
+<!-- &#9472;&#9472;&#9472;&#9472;&#9472;&#9472;&#9472;&#9472;&#9472;&#9472;&#9472; SECTION 5 &#183; FAQ &#9472;&#9472;&#9472;&#9472;&#9472;&#9472;&#9472;&#9472;&#9472;&#9472;&#9472; -->
+<section class="vy-alt">
+  <div class="vy-wrap">
+    <div class="vy-section-head">
+      <span class="vy-eyebrow">Straight Answers</span>
+      <h2>Questions Men Ask Before Adding It</h2>
+    </div>
+    <div class="vy-faq">
+      <details>
+        <summary>Does saw palmetto do the same job as minoxidil?<span class="vy-chev"><svg width="12" height="12" viewBox="0 0 12 12" fill="none"><path d="M6 1v10M1 6h10" stroke="#125657" stroke-width="2" stroke-linecap="round"></path></svg></span></summary>
+        <div class="vy-faq-a"><b>No, and that is rather the point.</b> Minoxidil works at the follicle, widening blood vessels and holding hair in its growth phase longer. It has no known effect on DHT. Saw palmetto works on the hormonal side instead, more gently than a prescription DHT blocker, but on the actual driver. They answer two different questions, which is why plenty of men run both. Finasteride shows stronger DHT suppression in clinical research; saw palmetto's effect is real but more modest, with no prescription and no known systemic side effects reported of the kind associated with prescription DHT blockers.</div>
+      </details>
+      <details>
+        <summary>Can I keep using minoxidil with this?<span class="vy-chev"><svg width="12" height="12" viewBox="0 0 12 12" fill="none"><path d="M6 1v10M1 6h10" stroke="#125657" stroke-width="2" stroke-linecap="round"></path></svg></span></summary>
+        <div class="vy-faq-a"><b>Yes, and that is the most common way men use it.</b> The two mechanisms do not overlap: minoxidil handles blood flow and the growth phase at the scalp, a DHT blocker handles the hormonal side. Nothing about the capsule asks you to give up your topical. As with any change to a routine, check with your healthcare provider if you have questions.</div>
+      </details>
+      <details>
+        <summary>How long before I see results?<span class="vy-chev"><svg width="12" height="12" viewBox="0 0 12 12" fill="none"><path d="M6 1v10M1 6h10" stroke="#125657" stroke-width="2" stroke-linecap="round"></path></svg></span></summary>
+        <div class="vy-faq-a">Hair cycles are slow, and anyone promising you a date is overselling. Among customers who report results, less shedding is usually noticed first, often inside the first month or two, with visible thickness taking 90 days or more. The same slow clock applies to minoxidil and to the prescription options. Give any DHT-supportive routine at least 3 months of daily consistency, and the 365-day guarantee covers you while you make up your mind.</div>
+      </details>
+      <details>
+        <summary>What exactly is in it?<span class="vy-chev"><svg width="12" height="12" viewBox="0 0 12 12" fill="none"><path d="M6 1v10M1 6h10" stroke="#125657" stroke-width="2" stroke-linecap="round"></path></svg></span></summary>
+        <div class="vy-faq-a">Saw palmetto and stinging nettle head a 10-herb blend that also includes fo-ti, bamboo extract, horsetail, spirulina, alfalfa, barley grass, Chinese peony, and plant sterols, along with biotin, zinc, folate, and B vitamins. Non-GMO, gluten-free, third-party tested, made in the USA. Here is the full panel:
+          <img src="https://storage.googleapis.com/vysta/lp-581-simply-revival/images/img-6.jpg" alt="Simply Revival DHT Blocker supplement facts panel" style="margin-top:16px;border-radius:12px;" width="1100" height="1100">
+        </div>
+      </details>
+      <details>
+        <summary>Do I need a prescription, bloodwork, or monitoring?<span class="vy-chev"><svg width="12" height="12" viewBox="0 0 12 12" fill="none"><path d="M6 1v10M1 6h10" stroke="#125657" stroke-width="2" stroke-linecap="round"></path></svg></span></summary>
+        <div class="vy-faq-a"><b>No.</b> It is a plant-based dietary supplement, so there is no doctor visit, no prescription pad, and no lab work. If you take medication or have a medical condition, running any new supplement past your doctor is still the sensible move.</div>
+      </details>
+      <details>
+        <summary>What if it doesn't work for me?<span class="vy-chev"><svg width="12" height="12" viewBox="0 0 12 12" fill="none"><path d="M6 1v10M1 6h10" stroke="#125657" stroke-width="2" stroke-linecap="round"></path></svg></span></summary>
+        <div class="vy-faq-a">Every order comes with a <b>365-day money-back guarantee</b>. Hair takes months to respond to anything at all, so the window is deliberately long enough for a real trial with no pressure. If you are not happy with your results, contact support for a refund.</div>
+      </details>
+    </div>
+  </div>
+</section>
+
+<!-- &#9472;&#9472;&#9472;&#9472;&#9472;&#9472;&#9472;&#9472;&#9472;&#9472;&#9472; SECTION 6 &#183; CTA &#9472;&#9472;&#9472;&#9472;&#9472;&#9472;&#9472;&#9472;&#9472;&#9472;&#9472; -->
+<section class="vy-cta-band" id="buy">
+  <div class="vy-wrap vy-cta-card">
+    <div class="vy-cta-copy" data-product-card-tracked="true">
+      <span class="vy-eyebrow" style="background:rgba(255,255,255,0.1);border-color:rgba(255,255,255,0.2);color:#EAF3F2;">Ready When You Are</span>
+      <h2>Cover the DHT Side, Without a Prescription</h2>
+      <p>If covering the hormonal side makes sense to you, this is where to start: 10 herbs, third-party tested, no prescription.</p>
+      <div class="vy-price-row"><span class="vy-price-now">$29.99</span><span class="vy-price-was">$59.99</span></div>
+      <div class="vy-price-sub">60 capsules &#183; 30-day supply &#183; 365-day money-back guarantee</div>
+      <a class="vy-btn vy-btn-gold vy-btn-xl" href="https://simplyrevival.com/products/simply%C2%AE-dht-blocker" style="margin-top:26px;" data-product-impression-tracked="true" data-product-link-position="2" data-impression-id="84df9332-0851-4753-a38c-e7fa007fd1ef" data-above-fold="false" data-product-click-tracked="true">Get the Natural DHT Blocker</a>
+    </div>
+    <img class="vy-cta-bottle" src="https://storage.googleapis.com/vysta/lp-581-simply-revival/images/img-7.png" alt="Simply Revival Natural DHT Blocker bottle, 60 capsules" width="440" height="883">
+  </div>
+</section>
+
+<footer>
+  <div class="vy-wrap" data-product-card-tracked="true">
+    <div class="vy-footer-masthead"><span class="vy-mh-ic"><svg width="18" height="18" viewBox="0 0 24 24" fill="none"><path d="M2 12h4l2.5-6 3.5 12 3-8 2 2h5" stroke="#fff" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"></path></svg></span>Hair Health Daily</div>
+    <p>*These statements have not been evaluated by the Food and Drug Administration. This product is not intended to diagnose, treat, cure, or prevent any disease. Individual results vary.</p>
+    <p>This page is an educational comparison published by Hair Health Daily. References to minoxidil and finasteride are for general informational purposes only; both are legitimate options that help many men, and nothing here is medical advice or a claim that any supplement is equivalent to a prescription medication. Percentage figures are directional ranges drawn from published research on DHT reduction, not head-to-head product claims. Always consult a qualified healthcare provider about hair loss treatment options, especially before starting or stopping any medication.</p>
+    <p>&#169; 2026 Hair Health Daily. All rights reserved. &#183; Featured product: <a href="https://simplyrevival.com/products/simply%C2%AE-dht-blocker" data-product-link-position="2" data-impression-id="84df9332-0851-4753-a38c-e7fa007fd1ef" data-product-click-tracked="true">Simply Revival Natural DHT Blocker</a></p>
+  </div>
+</footer>
+
+<div class="vy-sticky-cta" id="stickyCta">
+  <div class="vy-sticky-inner" data-product-card-tracked="true">
+    <div class="vy-s-info">
+      <span class="vy-s-name">Natural DHT Blocker</span>
+      <span class="vy-s-price">$29.99 <span class="vy-s-guar">&#183; 365-day guarantee</span></span>
+    </div>
+    <a class="vy-btn" href="https://simplyrevival.com/products/simply%C2%AE-dht-blocker" data-product-link-position="2" data-impression-id="84df9332-0851-4753-a38c-e7fa007fd1ef" data-product-click-tracked="true">Get Yours</a>
+  </div>
+</div>
+
+
+  
+
+  
+
+  
+
+</div>
+
+
+
+</div>
+
+      </main><!-- BEGIN sections: footer-group -->
+<div id="shopify-section-sections--28074015654169__cwc_footer_eNB4yz" class="vy-shopify-section vy-shopify-section-group-footer-group" style="display: none !important;"><style>/**/</style>
+
+<link data-vy-stripped="">
+
+<footer id="cwc_footer-sections--28074015654169__cwc_footer_eNB4yz" class="vy-cwc_footer" data-section-id="sections--28074015654169__cwc_footer_eNB4yz" data-section-type="footer">
+  <div class="vy-cwc_footer__container"><div class="vy-cwc_footer__top"><div class="vy-cwc_footer__col vy-cwc_footer__col--logo">
+        
+          <a href="/" class="vy-cwc_footer__logo-link" style="max-width: 160px;">
+            <img src="https://storage.googleapis.com/vysta/lp-581-simply-revival/images/img-8.png" alt="Simply Revival" srcset="https://storage.googleapis.com/vysta/lp-581-simply-revival/images/img-8.png 352w,  https://storage.googleapis.com/vysta/lp-581-simply-revival/images/img-8.png 400w" width="400" height="70" class="vy-cwc_footer__logo" style="object-position:47.168% 51.66%;">
+          </a>
+        
+      </div><div class="vy-cwc_footer__col vy-cwc_footer__col--newsletter">
+        
+          <h4 class="vy-cwc_footer__heading">Stay In The Know</h4>
+        
+
+        
+          <div class="vy-cwc_footer__subheading vy-cwc-rte"><p>Sign up for newsletters, special offers and exclusive discounts!</p></div>
+        
+
+        <div class="vy-cwc_footer__newsletter">
+          <form method="post" action="/contact#cwc-footer-newsletter" id="cwc-footer-newsletter" accept-charset="UTF-8" class="vy-cwc_footer__newsletter vy-cwc_newsletter-form"><input type="hidden" name="form_type" value="customer" style="caret-color: transparent !important;"><input type="hidden" name="utf8" value="&#10003;" style="caret-color: transparent !important;">
+            
+            
+              <input type="hidden" name="contact[tags]" value="newsletter" style="caret-color: transparent !important;">
+              <div class="vy-cwc_footer__newsletter-field">
+                <label class="vy-visually-hidden" for="CwcFooterEmail-sections--28074015654169__cwc_footer_eNB4yz">
+                  Your Email
+                </label>
+                <input type="email" id="CwcFooterEmail-sections--28074015654169__cwc_footer_eNB4yz" name="contact[email]" class="vy-cwc_footer__newsletter-input" value="" placeholder="Your Email" autocorrect="off" autocapitalize="off" autocomplete="email" spellcheck="false" required="" style="caret-color: transparent !important;">
+                <button type="submit" class="vy-cwc_footer__newsletter-submit" name="commit">
+                  Submit
+                </button>
+              </div>
+            
+          </form>
+        </div>
+      </div><div class="vy-cwc_footer__col vy-cwc_footer__col--menu">
+        
+
+        
+          <ul class="vy-cwc_footer__menu">
+            
+              <li class="vy-cwc_footer__menu-item">
+                <a href="/pages/contact">Contact Us</a>
+              </li>
+            
+              <li class="vy-cwc_footer__menu-item">
+                <a href="/pages/contact">Track Your Order</a>
+              </li>
+            
+              <li class="vy-cwc_footer__menu-item">
+                <a href="/policies/shipping-policy">Shipping &amp; delivery</a>
+              </li>
+            
+              <li class="vy-cwc_footer__menu-item">
+                <a href="/policies/refund-policy">Refund Policy</a>
+              </li>
+            
+              <li class="vy-cwc_footer__menu-item">
+                <a href="/policies/privacy-policy">Privacy Policy</a>
+              </li>
+            
+              <li class="vy-cwc_footer__menu-item">
+                <a href="/policies/terms-of-service">Terms of Service</a>
+              </li>
+            
+              <li class="vy-cwc_footer__menu-item">
+                <a href="https://simplyrevival.com/a/loop_subscriptions/get-subscription-link">Manage Subscription</a>
+              </li>
+            
+              <li class="vy-cwc_footer__menu-item">
+                <a href="/policies/subscription-policy">Purchase options cancellation policy</a>
+              </li>
+            
+              <li class="vy-cwc_footer__menu-item">
+                <a href="#">Accessibility</a>
+              </li>
+            
+          </ul>
+        
+      </div>
+    </div>
+      <div class="vy-cwc_footer__disclaimer vy-cwc-rte">
+        <p><em>For cosmetic and nutritional support purposes only.</em></p><p>*These statements have not been evaluated by the Food and Drug Administration.</p><p>*This product is not intended to diagnose, treat, cure, or prevent any disease.</p><p>* Individual results may vary.Testimonials and reviews reflect individual experiences and are not guaranteed outcomes.</p>
+      </div>
+    
+
+      <div class="vy-cwc_footer__localization"> 
+<localization-form><form method="post" action="/localization" id="CwcFooterCountryForm" accept-charset="UTF-8" class="vy-localization-form vy-mr-3" enctype="multipart/form-data"><input type="hidden" name="form_type" value="localization" style="caret-color: transparent !important;"><input type="hidden" name="utf8" value="&#10003;" style="caret-color: transparent !important;"><input type="hidden" name="_method" value="put" style="caret-color: transparent !important;"><input type="hidden" name="return_to" value="/pages/saw-palmetto-vs-finasteride-vstd-385" style="caret-color: transparent !important;"><div class="vy-no-js-hidden">
+    <div class="vy-disclosure">
+        <button type="button" class="vy-disclosure__button vy-localization-form__select vy-localization-selector vy-d-flex vy-align-items-center" aria-expanded="false" aria-controls="FooterCountryList" aria-describedby="FooterCountryLabel"><img class="vy-mr-2 vy-lazyload" src="https://storage.googleapis.com/vysta/lp-581-simply-revival/images/img-9.svg" data-src="https://storage.googleapis.com/vysta/lp-581-simply-revival/images/img-9.svg" width="20" height="15" alt="US">United States (USD $)<svg aria-hidden="true" focusable="false" role="presentation" class="vy-icon vy-icon-caret" viewBox="0 0 10 6">
+  <path fill-rule="evenodd" clip-rule="evenodd" d="M9.354.646a.5.5 0 00-.708 0L5 4.293 1.354.646a.5.5 0 00-.708.708l4 4a.5.5 0 00.708 0l4-4a.5.5 0 000-.708z" fill="currentColor">
+</path></svg>
+
+        </button>
+        <div class="vy-disclosure__list-wrapper " hidden="">
+        <ul id="CwcFooterCountryList" role="list" class="vy-disclosure__list vy-list-unstyled "><li class="vy-disclosure__item" tabindex="-1">
+                <a class="vy-disclosure__link vy-caption-large vy-focus-inset" href="#" data-value="AU"><img class="vy-mr-2 vy-lazyload" src="https://storage.googleapis.com/vysta/lp-581-simply-revival/images/img-10.svg" data-src="https://storage.googleapis.com/vysta/lp-581-simply-revival/images/img-10.svg" width="20" alt="AU" height="15">Australia  <span class="vy-localization-form__currency"> (USD $)</span></a>
+            </li><li class="vy-disclosure__item" tabindex="-1">
+                <a class="vy-disclosure__link vy-caption-large vy-focus-inset" href="#" data-value="AT"><img class="vy-mr-2 vy-lazyload" src="https://storage.googleapis.com/vysta/lp-581-simply-revival/images/img-11.svg" data-src="https://storage.googleapis.com/vysta/lp-581-simply-revival/images/img-11.svg" width="20" alt="AT" height="15">Austria  <span class="vy-localization-form__currency"> (USD $)</span></a>
+            </li><li class="vy-disclosure__item" tabindex="-1">
+                <a class="vy-disclosure__link vy-caption-large vy-focus-inset" href="#" data-value="BE"><img class="vy-mr-2 vy-lazyload" src="https://storage.googleapis.com/vysta/lp-581-simply-revival/images/img-12.svg" data-src="https://storage.googleapis.com/vysta/lp-581-simply-revival/images/img-12.svg" width="20" alt="BE" height="15">Belgium  <span class="vy-localization-form__currency"> (USD $)</span></a>
+            </li><li class="vy-disclosure__item" tabindex="-1">
+                <a class="vy-disclosure__link vy-caption-large vy-focus-inset" href="#" data-value="CA"><img class="vy-mr-2 vy-lazyload" src="https://storage.googleapis.com/vysta/lp-581-simply-revival/images/img-13.svg" data-src="https://storage.googleapis.com/vysta/lp-581-simply-revival/images/img-13.svg" width="20" alt="CA" height="15">Canada  <span class="vy-localization-form__currency"> (USD $)</span></a>
+            </li><li class="vy-disclosure__item" tabindex="-1">
+                <a class="vy-disclosure__link vy-caption-large vy-focus-inset" href="#" data-value="CZ"><img class="vy-mr-2 vy-lazyload" src="https://storage.googleapis.com/vysta/lp-581-simply-revival/images/img-14.svg" data-src="https://storage.googleapis.com/vysta/lp-581-simply-revival/images/img-14.svg" width="20" alt="CZ" height="15">Czechia  <span class="vy-localization-form__currency"> (USD $)</span></a>
+            </li><li class="vy-disclosure__item" tabindex="-1">
+                <a class="vy-disclosure__link vy-caption-large vy-focus-inset" href="#" data-value="DK"><img class="vy-mr-2 vy-lazyload" src="https://storage.googleapis.com/vysta/lp-581-simply-revival/images/img-15.svg" data-src="https://storage.googleapis.com/vysta/lp-581-simply-revival/images/img-15.svg" width="20" alt="DK" height="15">Denmark  <span class="vy-localization-form__currency"> (USD $)</span></a>
+            </li><li class="vy-disclosure__item" tabindex="-1">
+                <a class="vy-disclosure__link vy-caption-large vy-focus-inset" href="#" data-value="FI"><img class="vy-mr-2 vy-lazyload" src="https://storage.googleapis.com/vysta/lp-581-simply-revival/images/img-16.svg" data-src="https://storage.googleapis.com/vysta/lp-581-simply-revival/images/img-16.svg" width="20" alt="FI" height="15">Finland  <span class="vy-localization-form__currency"> (USD $)</span></a>
+            </li><li class="vy-disclosure__item" tabindex="-1">
+                <a class="vy-disclosure__link vy-caption-large vy-focus-inset" href="#" data-value="FR"><img class="vy-mr-2 vy-lazyload" src="https://storage.googleapis.com/vysta/lp-581-simply-revival/images/img-17.svg" data-src="https://storage.googleapis.com/vysta/lp-581-simply-revival/images/img-17.svg" width="20" alt="FR" height="15">France  <span class="vy-localization-form__currency"> (USD $)</span></a>
+            </li><li class="vy-disclosure__item" tabindex="-1">
+                <a class="vy-disclosure__link vy-caption-large vy-focus-inset" href="#" data-value="DE"><img class="vy-mr-2 vy-lazyload" src="https://storage.googleapis.com/vysta/lp-581-simply-revival/images/img-18.svg" data-src="https://storage.googleapis.com/vysta/lp-581-simply-revival/images/img-18.svg" width="20" alt="DE" height="15">Germany  <span class="vy-localization-form__currency"> (USD $)</span></a>
+            </li><li class="vy-disclosure__item" tabindex="-1">
+                <a class="vy-disclosure__link vy-caption-large vy-focus-inset" href="#" data-value="HK"><img class="vy-mr-2 vy-lazyload" src="https://storage.googleapis.com/vysta/lp-581-simply-revival/images/img-19.svg" data-src="https://storage.googleapis.com/vysta/lp-581-simply-revival/images/img-19.svg" width="20" alt="HK" height="15">Hong Kong SAR  <span class="vy-localization-form__currency"> (USD $)</span></a>
+            </li><li class="vy-disclosure__item" tabindex="-1">
+                <a class="vy-disclosure__link vy-caption-large vy-focus-inset" href="#" data-value="IE"><img class="vy-mr-2 vy-lazyload" src="https://storage.googleapis.com/vysta/lp-581-simply-revival/images/img-20.svg" data-src="https://storage.googleapis.com/vysta/lp-581-simply-revival/images/img-20.svg" width="20" alt="IE" height="15">Ireland  <span class="vy-localization-form__currency"> (USD $)</span></a>
+            </li><li class="vy-disclosure__item" tabindex="-1">
+                <a class="vy-disclosure__link vy-caption-large vy-focus-inset" href="#" data-value="IL"><img class="vy-mr-2 vy-lazyload" src="https://storage.googleapis.com/vysta/lp-581-simply-revival/images/img-21.svg" data-src="https://storage.googleapis.com/vysta/lp-581-simply-revival/images/img-21.svg" width="20" alt="IL" height="15">Israel  <span class="vy-localization-form__currency"> (USD $)</span></a>
+            </li><li class="vy-disclosure__item" tabindex="-1">
+                <a class="vy-disclosure__link vy-caption-large vy-focus-inset" href="#" data-value="IT"><img class="vy-mr-2 vy-lazyload" src="https://storage.googleapis.com/vysta/lp-581-simply-revival/images/img-22.svg" data-src="https://storage.googleapis.com/vysta/lp-581-simply-revival/images/img-22.svg" width="20" alt="IT" height="15">Italy  <span class="vy-localization-form__currency"> (USD $)</span></a>
+            </li><li class="vy-disclosure__item" tabindex="-1">
+                <a class="vy-disclosure__link vy-caption-large vy-focus-inset" href="#" data-value="JP"><img class="vy-mr-2 vy-lazyload" src="https://storage.googleapis.com/vysta/lp-581-simply-revival/images/img-23.svg" data-src="https://storage.googleapis.com/vysta/lp-581-simply-revival/images/img-23.svg" width="20" alt="JP" height="15">Japan  <span class="vy-localization-form__currency"> (USD $)</span></a>
+            </li><li class="vy-disclosure__item" tabindex="-1">
+                <a class="vy-disclosure__link vy-caption-large vy-focus-inset" href="#" data-value="MY"><img class="vy-mr-2 vy-lazyload" src="https://storage.googleapis.com/vysta/lp-581-simply-revival/images/img-24.svg" data-src="https://storage.googleapis.com/vysta/lp-581-simply-revival/images/img-24.svg" width="20" alt="MY" height="15">Malaysia  <span class="vy-localization-form__currency"> (USD $)</span></a>
+            </li><li class="vy-disclosure__item" tabindex="-1">
+                <a class="vy-disclosure__link vy-caption-large vy-focus-inset" href="#" data-value="NL"><img class="vy-mr-2 vy-lazyload" src="https://storage.googleapis.com/vysta/lp-581-simply-revival/images/img-25.svg" data-src="https://storage.googleapis.com/vysta/lp-581-simply-revival/images/img-25.svg" width="20" alt="NL" height="15">Netherlands  <span class="vy-localization-form__currency"> (USD $)</span></a>
+            </li><li class="vy-disclosure__item" tabindex="-1">
+                <a class="vy-disclosure__link vy-caption-large vy-focus-inset" href="#" data-value="NZ"><img class="vy-mr-2 vy-lazyload" src="https://storage.googleapis.com/vysta/lp-581-simply-revival/images/img-26.svg" data-src="https://storage.googleapis.com/vysta/lp-581-simply-revival/images/img-26.svg" width="20" alt="NZ" height="15">New Zealand  <span class="vy-localization-form__currency"> (USD $)</span></a>
+            </li><li class="vy-disclosure__item" tabindex="-1">
+                <a class="vy-disclosure__link vy-caption-large vy-focus-inset" href="#" data-value="NO"><img class="vy-mr-2 vy-lazyload" src="https://storage.googleapis.com/vysta/lp-581-simply-revival/images/img-27.svg" data-src="https://storage.googleapis.com/vysta/lp-581-simply-revival/images/img-27.svg" width="20" alt="NO" height="15">Norway  <span class="vy-localization-form__currency"> (USD $)</span></a>
+            </li><li class="vy-disclosure__item" tabindex="-1">
+                <a class="vy-disclosure__link vy-caption-large vy-focus-inset" href="#" data-value="PL"><img class="vy-mr-2 vy-lazyload" src="https://storage.googleapis.com/vysta/lp-581-simply-revival/images/img-28.svg" data-src="https://storage.googleapis.com/vysta/lp-581-simply-revival/images/img-28.svg" width="20" alt="PL" height="15">Poland  <span class="vy-localization-form__currency"> (USD $)</span></a>
+            </li><li class="vy-disclosure__item" tabindex="-1">
+                <a class="vy-disclosure__link vy-caption-large vy-focus-inset" href="#" data-value="PT"><img class="vy-mr-2 vy-lazyload" src="https://storage.googleapis.com/vysta/lp-581-simply-revival/images/img-29.svg" data-src="https://storage.googleapis.com/vysta/lp-581-simply-revival/images/img-29.svg" width="20" alt="PT" height="15">Portugal  <span class="vy-localization-form__currency"> (USD $)</span></a>
+            </li><li class="vy-disclosure__item" tabindex="-1">
+                <a class="vy-disclosure__link vy-caption-large vy-focus-inset" href="#" data-value="SG"><img class="vy-mr-2 vy-lazyload" src="https://storage.googleapis.com/vysta/lp-581-simply-revival/images/img-30.svg" data-src="https://storage.googleapis.com/vysta/lp-581-simply-revival/images/img-30.svg" width="20" alt="SG" height="15">Singapore  <span class="vy-localization-form__currency"> (USD $)</span></a>
+            </li><li class="vy-disclosure__item" tabindex="-1">
+                <a class="vy-disclosure__link vy-caption-large vy-focus-inset" href="#" data-value="KR"><img class="vy-mr-2 vy-lazyload" src="https://storage.googleapis.com/vysta/lp-581-simply-revival/images/img-31.svg" data-src="https://storage.googleapis.com/vysta/lp-581-simply-revival/images/img-31.svg" width="20" alt="KR" height="15">South Korea  <span class="vy-localization-form__currency"> (USD $)</span></a>
+            </li><li class="vy-disclosure__item" tabindex="-1">
+                <a class="vy-disclosure__link vy-caption-large vy-focus-inset" href="#" data-value="ES"><img class="vy-mr-2 vy-lazyload" src="https://storage.googleapis.com/vysta/lp-581-simply-revival/images/img-32.svg" data-src="https://storage.googleapis.com/vysta/lp-581-simply-revival/images/img-32.svg" width="20" alt="ES" height="15">Spain  <span class="vy-localization-form__currency"> (USD $)</span></a>
+            </li><li class="vy-disclosure__item" tabindex="-1">
+                <a class="vy-disclosure__link vy-caption-large vy-focus-inset" href="#" data-value="SE"><img class="vy-mr-2 vy-lazyload" src="https://storage.googleapis.com/vysta/lp-581-simply-revival/images/img-33.svg" data-src="https://storage.googleapis.com/vysta/lp-581-simply-revival/images/img-33.svg" width="20" alt="SE" height="15">Sweden  <span class="vy-localization-form__currency"> (USD $)</span></a>
+            </li><li class="vy-disclosure__item" tabindex="-1">
+                <a class="vy-disclosure__link vy-caption-large vy-focus-inset" href="#" data-value="CH"><img class="vy-mr-2 vy-lazyload" src="https://storage.googleapis.com/vysta/lp-581-simply-revival/images/img-34.svg" data-src="https://storage.googleapis.com/vysta/lp-581-simply-revival/images/img-34.svg" width="20" alt="CH" height="15">Switzerland  <span class="vy-localization-form__currency"> (USD $)</span></a>
+            </li><li class="vy-disclosure__item" tabindex="-1">
+                <a class="vy-disclosure__link vy-caption-large vy-focus-inset" href="#" data-value="AE"><img class="vy-mr-2 vy-lazyload" src="https://storage.googleapis.com/vysta/lp-581-simply-revival/images/img-35.svg" data-src="https://storage.googleapis.com/vysta/lp-581-simply-revival/images/img-35.svg" width="20" alt="AE" height="15">United Arab Emirates  <span class="vy-localization-form__currency"> (USD $)</span></a>
+            </li><li class="vy-disclosure__item" tabindex="-1">
+                <a class="vy-disclosure__link vy-caption-large vy-focus-inset" href="#" data-value="GB"><img class="vy-mr-2 vy-lazyload" src="https://storage.googleapis.com/vysta/lp-581-simply-revival/images/img-36.svg" data-src="https://storage.googleapis.com/vysta/lp-581-simply-revival/images/img-36.svg" width="20" alt="GB" height="15">United Kingdom  <span class="vy-localization-form__currency"> (USD $)</span></a>
+            </li><li class="vy-disclosure__item" tabindex="-1">
+                <a class="vy-disclosure__link vy-caption-large vy-link vy-disclosure__link--active vy-focus-inset" href="#" aria-current="true" data-value="US"><img class="vy-mr-2 vy-lazyload" src="https://storage.googleapis.com/vysta/lp-581-simply-revival/images/img-9.svg" data-src="https://storage.googleapis.com/vysta/lp-581-simply-revival/images/img-9.svg" width="20" alt="US" height="15">United States  <span class="vy-localization-form__currency"> (USD $)</span></a>
+            </li></ul>
+        </div>
+    </div>
+    <input type="hidden" name="country_code" value="US" style="caret-color: transparent !important;">
+    </div></form></localization-form></div>
+    
+<div class="vy-cwc_footer__copyright">
+      
+        &#169; 2026
+        Simply Revival | All Rights Reserved
+      
+    </div>
+
+    <div class="vy-cwc_footer__payment-icons"><ul id="cwc_footer-payment-methods" class="vy-list-inline vy-payment-icons vy-text-center vy-text-lg-right"><li class="vy-list-inline-item">
+              <svg class="vy-payment-icon" xmlns="http://www.w3.org/2000/svg" role="img" viewBox="0 0 38 24" width="38" height="24" fill="none" aria-labelledby="pi-american_express"><title id="pi-american_express">American Express</title><rect x=".5" y=".5" width="37" height="23" rx="2.5" stroke="#000" stroke-opacity=".07" fill="none"></rect><path d="M35 0H3C1.3 0 0 1.3 0 3V21C0 22.7 1.4 24 3 24H35C36.7 24 38 22.7 38 21V3C38 1.3 36.6 0 35 0Z" fill="#0071CE" style="fill:#0071CE;fill:color(display-p3 0.0000 0.4431 0.8078);fill-opacity:1;"></path><path d="M3 0.5H35C36.3348 0.5 37.5 1.58692 37.5 3V21C37.5 22.4239 36.4239 23.5 35 23.5H3C1.66524 23.5 0.5 22.4131 0.5 21V3C0.5 1.57614 1.57614 0.5 3 0.5Z" stroke="black" stroke-opacity="0.07" style="stroke:black;stroke-opacity:0.07;"></path><path d="M25.8662 6.33203V3H31L31.8662 5.5332L32.7334 3H37V14.2002H36.7998L34.8672 16.2656L36.7998 18.3594H37V21.2666H33.5996L31.9336 19.3994L30.2002 21.2666H19.4668V12.666H16L20.2666 3H24.4004L25.8662 6.33203ZM20.5996 20.2656H27V18.5322H22.666V17.3994H26.8662V15.666H22.666V14.5322H27V12.7988H20.5996V20.2656ZM30.5332 16.5322L27 20.2656H29.5996L31.8662 17.8662L34.0664 20.2656H36.7324L33.1992 16.4658L36.7324 12.7988H34.1328L31.8662 15.1992L29.7324 12.7988H27L30.5332 16.5322ZM17.666 11.7324H19.9326L20.5332 10.1992H23.999L24.666 11.7324H26.999L23.666 4.19922H20.999L17.666 11.7324ZM33.5996 4.19922L31.9326 8.86621L30.1992 4.19922H27V11.666H29.0664V6.39941L31 11.666H32.7998L34.7324 6.39941V11.666H36.7324V4.13281L33.5996 4.19922ZM23.2656 8.46582H21.2656L22.2656 5.99902L23.2656 8.46582Z" fill="white" style="fill:white;fill-opacity:1;"></path></svg>
+
+            </li><li class="vy-list-inline-item">
+              <svg class="vy-payment-icon" version="1.1" xmlns="http://www.w3.org/2000/svg" role="img" x="0" y="0" width="38" height="24" viewBox="0 0 165.521 105.965" xml:space="preserve" aria-labelledby="pi-apple_pay"><title id="pi-apple_pay">Apple Pay</title><path fill="#000" d="M150.698 0H14.823c-.566 0-1.133 0-1.698.003-.477.004-.953.009-1.43.022-1.039.028-2.087.09-3.113.274a10.51 10.51 0 0 0-2.958.975 9.932 9.932 0 0 0-4.35 4.35 10.463 10.463 0 0 0-.975 2.96C.113 9.611.052 10.658.024 11.696a70.22 70.22 0 0 0-.022 1.43C0 13.69 0 14.256 0 14.823v76.318c0 .567 0 1.132.002 1.699.003.476.009.953.022 1.43.028 1.036.09 2.084.275 3.11a10.46 10.46 0 0 0 .974 2.96 9.897 9.897 0 0 0 1.83 2.52 9.874 9.874 0 0 0 2.52 1.83c.947.483 1.917.79 2.96.977 1.025.183 2.073.245 3.112.273.477.011.953.017 1.43.02.565.004 1.132.004 1.698.004h135.875c.565 0 1.132 0 1.697-.004.476-.002.952-.009 1.431-.02 1.037-.028 2.085-.09 3.113-.273a10.478 10.478 0 0 0 2.958-.977 9.955 9.955 0 0 0 4.35-4.35c.483-.947.789-1.917.974-2.96.186-1.026.246-2.074.274-3.11.013-.477.02-.954.022-1.43.004-.567.004-1.132.004-1.699V14.824c0-.567 0-1.133-.004-1.699a63.067 63.067 0 0 0-.022-1.429c-.028-1.038-.088-2.085-.274-3.112a10.4 10.4 0 0 0-.974-2.96 9.94 9.94 0 0 0-4.35-4.35A10.52 10.52 0 0 0 156.939.3c-1.028-.185-2.076-.246-3.113-.274a71.417 71.417 0 0 0-1.431-.022C151.83 0 151.263 0 150.698 0z"></path><path fill="#FFF" d="M150.698 3.532l1.672.003c.452.003.905.008 1.36.02.793.022 1.719.065 2.583.22.75.135 1.38.34 1.984.648a6.392 6.392 0 0 1 2.804 2.807c.306.6.51 1.226.645 1.983.154.854.197 1.783.218 2.58.013.45.019.9.02 1.36.005.557.005 1.113.005 1.671v76.318c0 .558 0 1.114-.004 1.682-.002.45-.008.9-.02 1.35-.022.796-.065 1.725-.221 2.589a6.855 6.855 0 0 1-.645 1.975 6.397 6.397 0 0 1-2.808 2.807c-.6.306-1.228.511-1.971.645-.881.157-1.847.2-2.574.22-.457.01-.912.017-1.379.019-.555.004-1.113.004-1.669.004H14.801c-.55 0-1.1 0-1.66-.004a74.993 74.993 0 0 1-1.35-.018c-.744-.02-1.71-.064-2.584-.22a6.938 6.938 0 0 1-1.986-.65 6.337 6.337 0 0 1-1.622-1.18 6.355 6.355 0 0 1-1.178-1.623 6.935 6.935 0 0 1-.646-1.985c-.156-.863-.2-1.788-.22-2.578a66.088 66.088 0 0 1-.02-1.355l-.003-1.327V14.474l.002-1.325a66.7 66.7 0 0 1 .02-1.357c.022-.792.065-1.717.222-2.587a6.924 6.924 0 0 1 .646-1.981c.304-.598.7-1.144 1.18-1.623a6.386 6.386 0 0 1 1.624-1.18 6.96 6.96 0 0 1 1.98-.646c.865-.155 1.792-.198 2.586-.22.452-.012.905-.017 1.354-.02l1.677-.003h135.875"></path><g><g><path fill="#000" d="M43.508 35.77c1.404-1.755 2.356-4.112 2.105-6.52-2.054.102-4.56 1.355-6.012 3.112-1.303 1.504-2.456 3.959-2.156 6.266 2.306.2 4.61-1.152 6.063-2.858"></path><path fill="#000" d="M45.587 39.079c-3.35-.2-6.196 1.9-7.795 1.9-1.6 0-4.049-1.8-6.698-1.751-3.447.05-6.645 2-8.395 5.1-3.598 6.2-.95 15.4 2.55 20.45 1.699 2.5 3.747 5.25 6.445 5.151 2.55-.1 3.549-1.65 6.647-1.65 3.097 0 3.997 1.65 6.696 1.6 2.798-.05 4.548-2.5 6.247-5 1.95-2.85 2.747-5.6 2.797-5.75-.05-.05-5.396-2.101-5.446-8.251-.05-5.15 4.198-7.6 4.398-7.751-2.399-3.548-6.147-3.948-7.447-4.048"></path></g><g><path fill="#000" d="M78.973 32.11c7.278 0 12.347 5.017 12.347 12.321 0 7.33-5.173 12.373-12.529 12.373h-8.058V69.62h-5.822V32.11h14.062zm-8.24 19.807h6.68c5.07 0 7.954-2.729 7.954-7.46 0-4.73-2.885-7.434-7.928-7.434h-6.706v14.894z"></path><path fill="#000" d="M92.764 61.847c0-4.809 3.665-7.564 10.423-7.98l7.252-.442v-2.08c0-3.04-2.001-4.704-5.562-4.704-2.938 0-5.07 1.507-5.51 3.82h-5.252c.157-4.86 4.731-8.395 10.918-8.395 6.654 0 10.995 3.483 10.995 8.89v18.663h-5.38v-4.497h-.13c-1.534 2.937-4.914 4.782-8.579 4.782-5.406 0-9.175-3.222-9.175-8.057zm17.675-2.417v-2.106l-6.472.416c-3.64.234-5.536 1.585-5.536 3.95 0 2.288 1.975 3.77 5.068 3.77 3.95 0 6.94-2.522 6.94-6.03z"></path><path fill="#000" d="M120.975 79.652v-4.496c.364.051 1.247.103 1.715.103 2.573 0 4.029-1.09 4.913-3.899l.52-1.663-9.852-27.293h6.082l6.863 22.146h.13l6.862-22.146h5.927l-10.216 28.67c-2.34 6.577-5.017 8.735-10.683 8.735-.442 0-1.872-.052-2.261-.157z"></path></g></g></svg>
+
+            </li><li class="vy-list-inline-item">
+              <svg class="vy-payment-icon" viewBox="0 0 38 24" xmlns="http://www.w3.org/2000/svg" role="img" width="38" height="24" aria-labelledby="pi-diners_club"><title id="pi-diners_club">Diners Club</title><path opacity=".07" d="M35 0H3C1.3 0 0 1.3 0 3v18c0 1.7 1.4 3 3 3h32c1.7 0 3-1.3 3-3V3c0-1.7-1.4-3-3-3z"></path><path fill="#fff" d="M35 1c1.1 0 2 .9 2 2v18c0 1.1-.9 2-2 2H3c-1.1 0-2-.9-2-2V3c0-1.1.9-2 2-2h32"></path><path d="M12 12v3.7c0 .3-.2.3-.5.2-1.9-.8-3-3.3-2.3-5.4.4-1.1 1.2-2 2.3-2.4.4-.2.5-.1.5.2V12zm2 0V8.3c0-.3 0-.3.3-.2 2.1.8 3.2 3.3 2.4 5.4-.4 1.1-1.2 2-2.3 2.4-.4.2-.4.1-.4-.2V12zm7.2-7H13c3.8 0 6.8 3.1 6.8 7s-3 7-6.8 7h8.2c3.8 0 6.8-3.1 6.8-7s-3-7-6.8-7z" fill="#3086C8"></path></svg>
+            </li><li class="vy-list-inline-item">
+              <svg class="vy-payment-icon" viewBox="0 0 38 24" width="38" height="24" role="img" aria-labelledby="pi-discover" fill="none" xmlns="http://www.w3.org/2000/svg"><title id="pi-discover">Discover</title><path fill="#000" opacity=".07" d="M35 0H3C1.3 0 0 1.3 0 3v18c0 1.7 1.4 3 3 3h32c1.7 0 3-1.3 3-3V3c0-1.7-1.4-3-3-3z"></path><path d="M35 1c1.1 0 2 .9 2 2v18c0 1.1-.9 2-2 2H3c-1.1 0-2-.9-2-2V3c0-1.1.9-2 2-2h32z" fill="#fff"></path><path d="M3.57 7.16H2v5.5h1.57c.83 0 1.43-.2 1.96-.63.63-.52 1-1.3 1-2.11-.01-1.63-1.22-2.76-2.96-2.76zm1.26 4.14c-.34.3-.77.44-1.47.44h-.29V8.1h.29c.69 0 1.11.12 1.47.44.37.33.59.84.59 1.37 0 .53-.22 1.06-.59 1.39zm2.19-4.14h1.07v5.5H7.02v-5.5zm3.69 2.11c-.64-.24-.83-.4-.83-.69 0-.35.34-.61.8-.61.32 0 .59.13.86.45l.56-.73c-.46-.4-1.01-.61-1.62-.61-.97 0-1.72.68-1.72 1.58 0 .76.35 1.15 1.35 1.51.42.15.63.25.74.31.21.14.32.34.32.57 0 .45-.35.78-.83.78-.51 0-.92-.26-1.17-.73l-.69.67c.49.73 1.09 1.05 1.9 1.05 1.11 0 1.9-.74 1.9-1.81.02-.89-.35-1.29-1.57-1.74zm1.92.65c0 1.62 1.27 2.87 2.9 2.87.46 0 .86-.09 1.34-.32v-1.26c-.43.43-.81.6-1.29.6-1.08 0-1.85-.78-1.85-1.9 0-1.06.79-1.89 1.8-1.89.51 0 .9.18 1.34.62V7.38c-.47-.24-.86-.34-1.32-.34-1.61 0-2.92 1.28-2.92 2.88zm12.76.94l-1.47-3.7h-1.17l2.33 5.64h.58l2.37-5.64h-1.16l-1.48 3.7zm3.13 1.8h3.04v-.93h-1.97v-1.48h1.9v-.93h-1.9V8.1h1.97v-.94h-3.04v5.5zm7.29-3.87c0-1.03-.71-1.62-1.95-1.62h-1.59v5.5h1.07v-2.21h.14l1.48 2.21h1.32l-1.73-2.32c.81-.17 1.26-.72 1.26-1.56zm-2.16.91h-.31V8.03h.33c.67 0 1.03.28 1.03.82 0 .55-.36.85-1.05.85z" fill="#231F20"></path><path d="M20.16 12.86a2.931 2.931 0 100-5.862 2.931 2.931 0 000 5.862z" fill="url(#pi-paint0_linear)"></path><path opacity=".65" d="M20.16 12.86a2.931 2.931 0 100-5.862 2.931 2.931 0 000 5.862z" fill="url(#pi-paint1_linear)"></path><path d="M36.57 7.506c0-.1-.07-.15-.18-.15h-.16v.48h.12v-.19l.14.19h.14l-.16-.2c.06-.01.1-.06.1-.13zm-.2.07h-.02v-.13h.02c.06 0 .09.02.09.06 0 .05-.03.07-.09.07z" fill="#231F20"></path><path d="M36.41 7.176c-.23 0-.42.19-.42.42 0 .23.19.42.42.42.23 0 .42-.19.42-.42 0-.23-.19-.42-.42-.42zm0 .77c-.18 0-.34-.15-.34-.35 0-.19.15-.35.34-.35.18 0 .33.16.33.35 0 .19-.15.35-.33.35z" fill="#231F20"></path><path d="M37 12.984S27.09 19.873 8.976 23h26.023a2 2 0 002-1.984l.024-3.02L37 12.985z" fill="#F48120"></path><defs><linearGradient id="pi-paint0_linear" x1="21.657" y1="12.275" x2="19.632" y2="9.104" gradientUnits="userSpaceOnUse"><stop stop-color="#F89F20"></stop><stop offset=".25" stop-color="#F79A20"></stop><stop offset=".533" stop-color="#F68D20"></stop><stop offset=".62" stop-color="#F58720"></stop><stop offset=".723" stop-color="#F48120"></stop><stop offset="1" stop-color="#F37521"></stop></linearGradient><linearGradient id="pi-paint1_linear" x1="21.338" y1="12.232" x2="18.378" y2="6.446" gradientUnits="userSpaceOnUse"><stop stop-color="#F58720"></stop><stop offset=".359" stop-color="#E16F27"></stop><stop offset=".703" stop-color="#D4602C"></stop><stop offset=".982" stop-color="#D05B2E"></stop></linearGradient></defs></svg>
+            </li><li class="vy-list-inline-item">
+              <svg class="vy-payment-icon" xmlns="http://www.w3.org/2000/svg" role="img" viewBox="0 0 38 24" width="38" height="24" aria-labelledby="pi-google_pay"><title id="pi-google_pay">Google Pay</title><path d="M35 0H3C1.3 0 0 1.3 0 3v18c0 1.7 1.4 3 3 3h32c1.7 0 3-1.3 3-3V3c0-1.7-1.4-3-3-3z" fill="#000" opacity=".07"></path><path d="M35 1c1.1 0 2 .9 2 2v18c0 1.1-.9 2-2 2H3c-1.1 0-2-.9-2-2V3c0-1.1.9-2 2-2h32" fill="#FFF"></path><path d="M18.093 11.976v3.2h-1.018v-7.9h2.691a2.447 2.447 0 0 1 1.747.692 2.28 2.28 0 0 1 .11 3.224l-.11.116c-.47.447-1.098.69-1.747.674l-1.673-.006zm0-3.732v2.788h1.698c.377.012.741-.135 1.005-.404a1.391 1.391 0 0 0-1.005-2.354l-1.698-.03zm6.484 1.348c.65-.03 1.286.188 1.778.613.445.43.682 1.03.65 1.649v3.334h-.969v-.766h-.049a1.93 1.93 0 0 1-1.673.931 2.17 2.17 0 0 1-1.496-.533 1.667 1.667 0 0 1-.613-1.324 1.606 1.606 0 0 1 .613-1.336 2.746 2.746 0 0 1 1.698-.515c.517-.02 1.03.093 1.49.331v-.208a1.134 1.134 0 0 0-.417-.901 1.416 1.416 0 0 0-.98-.368 1.545 1.545 0 0 0-1.319.717l-.895-.564a2.488 2.488 0 0 1 2.182-1.06zM23.29 13.52a.79.79 0 0 0 .337.662c.223.176.5.269.785.263.429-.001.84-.17 1.146-.472.305-.286.478-.685.478-1.103a2.047 2.047 0 0 0-1.324-.374 1.716 1.716 0 0 0-1.03.294.883.883 0 0 0-.392.73zm9.286-3.75l-3.39 7.79h-1.048l1.281-2.728-2.224-5.062h1.103l1.612 3.885 1.569-3.885h1.097z" fill="#5F6368"></path><path d="M13.986 11.284c0-.308-.024-.616-.073-.92h-4.29v1.747h2.451a2.096 2.096 0 0 1-.9 1.373v1.134h1.464a4.433 4.433 0 0 0 1.348-3.334z" fill="#4285F4"></path><path d="M9.629 15.721a4.352 4.352 0 0 0 3.01-1.097l-1.466-1.14a2.752 2.752 0 0 1-4.094-1.44H5.577v1.17a4.53 4.53 0 0 0 4.052 2.507z" fill="#34A853"></path><path d="M7.079 12.05a2.709 2.709 0 0 1 0-1.735v-1.17H5.577a4.505 4.505 0 0 0 0 4.075l1.502-1.17z" fill="#FBBC04"></path><path d="M9.629 8.44a2.452 2.452 0 0 1 1.74.68l1.3-1.293a4.37 4.37 0 0 0-3.065-1.183 4.53 4.53 0 0 0-4.027 2.5l1.502 1.171a2.715 2.715 0 0 1 2.55-1.875z" fill="#EA4335"></path></svg>
+
+            </li><li class="vy-list-inline-item">
+              <svg class="vy-payment-icon" xmlns="http://www.w3.org/2000/svg" role="img" viewBox="0 0 38 24" width="38" height="24" fill="none" aria-labelledby="pi-master"><title id="pi-master">Mastercard</title><rect x=".5" y=".5" width="37" height="23" rx="2.5" stroke="#000" stroke-opacity=".07" fill="none"></rect><path d="M35 0H3C1.3 0 0 1.3 0 3V21C0 22.7 1.4 24 3 24H35C36.7 24 38 22.7 38 21V3C38 1.3 36.6 0 35 0Z" fill="#1C1C1C" style="fill:#1C1C1C;fill:color(display-p3 0.1098 0.1098 0.1098);fill-opacity:1;"></path><path d="M35 1C36.1 1 37 1.9 37 3V21C37 22.1 36.1 23 35 23H3C1.9 23 1 22.1 1 21V3C1 1.9 1.9 1 3 1H35Z" fill="#232323" style="fill:#232323;fill:color(display-p3 0.1373 0.1373 0.1373);fill-opacity:1;"></path><path d="M14.6364 19.2727C18.8538 19.2727 22.2727 15.8538 22.2727 11.6364C22.2727 7.41892 18.8538 4 14.6364 4C10.4189 4 7 7.41892 7 11.6364C7 15.8538 10.4189 19.2727 14.6364 19.2727Z" fill="#EB001B" style="fill:#EB001B;fill:color(display-p3 0.9216 0.0000 0.1059);fill-opacity:1;"></path><path d="M23.3637 19.2727C27.5811 19.2727 31 15.8538 31 11.6364C31 7.41892 27.5811 4 23.3637 4C19.1462 4 15.7273 7.41892 15.7273 11.6364C15.7273 15.8538 19.1462 19.2727 23.3637 19.2727Z" fill="#F79E1B" style="fill:#F79E1B;fill:color(display-p3 0.9686 0.6196 0.1059);fill-opacity:1;"></path><path d="M22.2727 11.6362C22.2727 9.01797 20.9637 6.72706 19 5.41797C17.0364 6.83615 15.7273 9.12706 15.7273 11.6362C15.7273 14.1452 17.0364 16.5452 19 17.8543C20.9637 16.5452 22.2727 14.2543 22.2727 11.6362Z" fill="#FF5F00" style="fill:#FF5F00;fill:color(display-p3 1.0000 0.3725 0.0000);fill-opacity:1;"></path></svg>
+
+            </li><li class="vy-list-inline-item">
+              <svg class="vy-payment-icon" xmlns="http://www.w3.org/2000/svg" role="img" viewBox="0 0 38 24" width="38" height="24" aria-labelledby="pi-shopify_pay"><title id="pi-shopify_pay">Shop Pay</title><path opacity=".07" d="M35 0H3C1.3 0 0 1.3 0 3v18c0 1.7 1.4 3 3 3h32c1.7 0 3-1.3 3-3V3c0-1.7-1.4-3-3-3z" fill="#000"></path><path d="M35.889 0C37.05 0 38 .982 38 2.182v19.636c0 1.2-.95 2.182-2.111 2.182H2.11C.95 24 0 23.018 0 21.818V2.182C0 .982.95 0 2.111 0H35.89z" fill="#5A31F4"></path><path d="M9.35 11.368c-1.017-.223-1.47-.31-1.47-.705 0-.372.306-.558.92-.558.54 0 .934.238 1.225.704a.079.079 0 00.104.03l1.146-.584a.082.082 0 00.032-.114c-.475-.831-1.353-1.286-2.51-1.286-1.52 0-2.464.755-2.464 1.956 0 1.275 1.15 1.597 2.17 1.82 1.02.222 1.474.31 1.474.705 0 .396-.332.582-.993.582-.612 0-1.065-.282-1.34-.83a.08.08 0 00-.107-.035l-1.143.57a.083.083 0 00-.036.111c.454.92 1.384 1.437 2.627 1.437 1.583 0 2.539-.742 2.539-1.98s-1.155-1.598-2.173-1.82v-.003zM15.49 8.855c-.65 0-1.224.232-1.636.646a.04.04 0 01-.069-.03v-2.64a.08.08 0 00-.08-.081H12.27a.08.08 0 00-.08.082v8.194a.08.08 0 00.08.082h1.433a.08.08 0 00.081-.082v-3.594c0-.695.528-1.227 1.239-1.227.71 0 1.226.521 1.226 1.227v3.594a.08.08 0 00.081.082h1.433a.08.08 0 00.081-.082v-3.594c0-1.51-.981-2.577-2.355-2.577zM20.753 8.62c-.778 0-1.507.24-2.03.588a.082.082 0 00-.027.109l.632 1.088a.08.08 0 00.11.03 2.5 2.5 0 011.318-.366c1.25 0 2.17.891 2.17 2.068 0 1.003-.736 1.745-1.669 1.745-.76 0-1.288-.446-1.288-1.077 0-.361.152-.657.548-.866a.08.08 0 00.032-.113l-.596-1.018a.08.08 0 00-.098-.035c-.799.299-1.359 1.018-1.359 1.984 0 1.46 1.152 2.55 2.76 2.55 1.877 0 3.227-1.313 3.227-3.195 0-2.018-1.57-3.492-3.73-3.492zM28.675 8.843c-.724 0-1.373.27-1.845.746-.026.027-.069.007-.069-.029v-.572a.08.08 0 00-.08-.082h-1.397a.08.08 0 00-.08.082v8.182a.08.08 0 00.08.081h1.433a.08.08 0 00.081-.081v-2.683c0-.036.043-.054.069-.03a2.6 2.6 0 001.808.7c1.682 0 2.993-1.373 2.993-3.157s-1.313-3.157-2.993-3.157zm-.271 4.929c-.956 0-1.681-.768-1.681-1.783s.723-1.783 1.681-1.783c.958 0 1.68.755 1.68 1.783 0 1.027-.713 1.783-1.681 1.783h.001z" fill="#fff"></path></svg>
+
+            </li><li class="vy-list-inline-item">
+              <svg class="vy-payment-icon" xmlns="http://www.w3.org/2000/svg" role="img" viewBox="0 0 38 24" width="38" height="24" fill="none" aria-labelledby="pi-visa"><title id="pi-visa">Visa</title><rect x=".5" y=".5" width="37" height="23" rx="2.5" stroke="#000" stroke-opacity=".07" fill="none"></rect><path d="M35 0H3C1.3 0 0 1.3 0 3V21C0 22.7 1.4 24 3 24H35C36.7 24 38 22.7 38 21V3C38 1.3 36.6 0 35 0Z" fill="#142FBD" style="fill:#142FBD;fill:color(display-p3 0.0784 0.1843 0.7412);fill-opacity:1;"></path><path d="M35 1C36.1 1 37 1.9 37 3V21C37 22.1 36.1 23 35 23H3C1.9 23 1 22.1 1 21V3C1 1.9 1.9 1 3 1H35Z" fill="#1532CB" style="fill:#1532CB;fill:color(display-p3 0.0824 0.1961 0.7961);fill-opacity:1;"></path><path d="M29.5944 10.2167H29.2778C28.8556 11.2722 28.5389 11.8 28.2222 13.3833H30.2278C29.9111 11.8 29.9111 11.0611 29.5944 10.2167V10.2167ZM32.6556 16.4444H30.8611C30.7556 16.4444 30.7556 16.4444 30.65 16.3389L30.4389 15.3889L30.3333 15.1778H27.8C27.6944 15.1778 27.5889 15.1778 27.5889 15.3889L27.2722 16.3389C27.2722 16.4444 27.1667 16.4444 27.1667 16.4444H24.95L25.1611 15.9167L28.2222 8.73889C28.2222 8.21111 28.5389 8 29.0667 8H30.65C30.7556 8 30.8611 8 30.8611 8.21111L32.3389 15.0722C32.4444 15.4944 32.55 15.8111 32.55 16.2333C32.6556 16.3389 32.6556 16.3389 32.6556 16.4444V16.4444ZM18.5111 16.1278L18.9333 14.2278C19.0389 14.2278 19.1444 14.3333 19.1444 14.3333C19.8833 14.65 20.6222 14.8611 21.3611 14.7556C21.5722 14.7556 21.8889 14.65 22.1 14.5444C22.6278 14.3333 22.6278 13.8056 22.2056 13.3833C21.9944 13.1722 21.6778 13.0667 21.3611 12.8556C20.9389 12.6444 20.5167 12.4333 20.2 12.1167C18.9333 11.0611 19.3556 9.58333 20.0944 8.84444C20.7278 8.42222 21.0444 8 21.8889 8C23.1556 8 24.5278 8 25.1611 8.21111H25.2667C25.1611 8.84444 25.0556 9.37222 24.8444 10.0056C24.3167 9.79444 23.7889 9.58333 23.2611 9.58333C22.9444 9.58333 22.6278 9.58333 22.3111 9.68889C22.1 9.68889 21.9944 9.79444 21.8889 9.9C21.6778 10.1111 21.6778 10.4278 21.8889 10.6389L22.4167 11.0611C22.8389 11.2722 23.2611 11.4833 23.5778 11.6944C24.1056 12.0111 24.6333 12.5389 24.7389 13.1722C24.95 14.1222 24.6333 14.9667 23.7889 15.6C23.2611 16.0222 23.05 16.2333 22.3111 16.2333C20.8333 16.2333 19.6722 16.3389 18.7222 16.0222C18.6167 16.2333 18.6167 16.2333 18.5111 16.1278V16.1278ZM14.8167 16.4444C14.9222 15.7056 14.9222 15.7056 15.0278 15.3889C15.5556 13.0667 16.0833 10.6389 16.5056 8.31667C16.6111 8.10556 16.6111 8 16.8222 8H18.7222C18.5111 9.26667 18.3 10.2167 17.9833 11.3778C17.6667 12.9611 17.35 14.5444 16.9278 16.1278C16.9278 16.3389 16.8222 16.3389 16.6111 16.3389L14.8167 16.4444ZM5 8.21111C5 8.10556 5.21111 8 5.31667 8H8.90556C9.43333 8 9.85556 8.31667 9.96111 8.84444L10.9111 13.4889C10.9111 13.5944 10.9111 13.5944 11.0167 13.7C11.0167 13.5944 11.1222 13.5944 11.1222 13.5944L13.3389 8.21111C13.2333 8.10556 13.3389 8 13.4444 8H15.6611C15.6611 8.10556 15.6611 8.10556 15.5556 8.21111L12.2833 15.9167C12.1778 16.1278 12.1778 16.2333 12.0722 16.3389C11.9667 16.4444 11.7556 16.3389 11.5444 16.3389H9.96111C9.85556 16.3389 9.75 16.3389 9.75 16.1278L8.06111 9.58333C7.85 9.37222 7.53333 9.05556 7.11111 8.95C6.47778 8.63333 5.31667 8.42222 5.10556 8.42222L5 8.21111Z" fill="white" style="fill:white;fill-opacity:1;"></path></svg>
+
+            </li></ul></div>
+  </div>
+</footer>
+
+
+
+
+</div>
+<!-- END sections: footer-group --><div id="shopify-section-pnewsletter" class="vy-shopify-section" style="display: none !important;">
+<!-- pnewsletter-1.liquid  --><style>/**/</style></div><div id="shopify-section-product-suggest" class="vy-shopify-section" style="display: none !important;">
+
+<style>/**/</style></div><div id="shopify-section-cookie-policy" class="vy-shopify-section vy-section" style="display: none !important;">
+    <!-- cookie-policy.liquid --></div><div id="shopify-section-custom-color" class="vy-shopify-section vy-custom_color" style="display: none !important;"><style>/**/</style>
+
+
+</div></div><style>/**/</style>
+
+
+
+
+
+
+<style>/**/</style>
+<!-- quickview.liquid -->
+
+
+
+
+
+
+
+
+
+    
+
+
+  <style>/**/</style>
+<div id="shopify-block-AeXdFL3NiTloxRjRUY__14952540001915115444" class="vy-shopify-block vy-shopify-app-block" style="display: none !important;">
+<link data-vy-stripped="">
+
+
+
+<link data-vy-stripped="">
+
+
+
+  
+    
+   
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<div id="upCart"><div id="UpcartPopup" data-internal-properties="country=US;currency=USD;clientLocalizationCountry=US" style="--upcart-internal-global-button-background-color: #000000; --upcart-internal-global-button-text-color: #FFFFFF; --upcart-internal-global-button-text-hover-color: #e9e9e9; --upcart-internal-global-button-border-radius: 0px; --upcart-internal-desktop-cart-width: 440px; --upcart-internal-mobile-cart-width: 100%; --upcart-internal-header-border-bottom: 1px solid rgba(0, 0, 0, 0.1); --upcart-internal-desktop-header-padding-block: 30px; --upcart-internal-mobile-header-padding-block: 20px; --upcart-internal-header-background-color: #ffffff00; --upcart-internal-header-title-margin-inline: 0; --upcart-internal-header-flex-direction: row; --upcart-internal-header-title-offset-direction-sign: 1; --upcart-internal-header-close-button-size: 30px; --upcart-internal-header-close-button-background-color: #0000000c; --upcart-internal-header-close-button-background-color-hover: #00000014; --upcart-internal-header-close-button-icon-color: #637381; --upcart-internal-header-close-button-icon-size: 33%; --upcart-internal-header-close-button-border-width: 0; --upcart-internal-header-close-button-border-color: #000000; --upcart-internal-desktop-announcement-padding-block: 10px; --upcart-internal-mobile-announcement-padding-block: 10px; --upcart-internal-announcement-text-font-size: 15px; --upcart-internal-design-text-color: #000000; --upcart-internal-design-accent-color: #f6f6f7; --upcart-internal-design-savings-text-color: #2ea818; --upcart-internal-header-close-button-border-color-hover: #000000; --upcart-internal-header-close-button-icon-color-hover: #637381; --upcart-internal-header-close-button-icon-stroke-width: 0px; --upcart-internal-announcements-bg-color: #125657; --upcart-internal-announcements-border-color: #125657; --upcart-internal-rewards-message-text-size: 16px; --upcart-internal-rewards-bar-padding-top: 0px; --upcart-internal-rewards-bar-padding-bottom: 0px; --upcart-internal-component-progress-bar-track-height: 8px; --upcart-internal-component-progress-bar-icon-container-size: 30px; --upcart-internal-component-progress-bar-icon-size: 20px; --upcart-internal-component-progress-bar-icon-color-complete: #4D4949; --upcart-internal-component-progress-bar-icon-color-incomplete: #4D4949; --upcart-internal-component-progress-bar-segment-gap: 6px; --upcart-internal-component-progress-bar-border-radius: 4px; --upcart-internal-component-progress-bar-milestone-border-radius: 50%; --upcart-internal-component-progress-bar-label-size: 10px; --upcart-internal-component-progress-bar-track-color: #125657; --upcart-internal-component-progress-bar-background-color: #E2E2E2; --upcart-internal-component-progress-bar-foreground-color: #035057; --upcart-internal-upsells-tile-inner-border-radius: 4px; --upcart-internal-upsells-tile-image-size: 90px; --upcart-internal-product-row-image-size: 88px; --upcart-internal-product-row-item-component-image-size: 32px; --upcart-internal-addons-item-image-size: 60px;"><style>/**/</style><div id="CartPopup" class="vy-upcart-cart vy-styles_CartPreview__ vy-styles_CartPreview__right__ vy-styles_CartPreview__position-fixed__ vy-UpcartDesignSettings__backgroundColor vy-upcart-internal-cart-preview__container " data-scrollable="true" tabindex="-1" style="overflow-y: auto; height: 1080px;"><div class="vy-styles_CartPreview__card__ vy-styles_CartPreview__card_nonSticky__"><div><div class="vy-upcart-internal-header vy-upcart-public-header"><h3 data-upcart-chunk="header-title-content">CART</h3><div class="vy-upcart-internal-header__close-button vy-upcart-public-header__close-button" role="button" aria-label="Close cart" tabindex="0"><svg class="vy-upcart-internal-header__close-button-icon vy-upcart-public-header__close-button-icon" viewBox="0 0 20 20" xmlns="http://www.w3.org/2000/svg" aria-hidden="true"><path d="m11.414 10 6.293-6.293a1 1 0 1 0-1.414-1.414l-6.293 6.293-6.293-6.293a1 1 0 0 0-1.414 1.414l6.293 6.293-6.293 6.293a1 1 0 1 0 1.414 1.414l6.293-6.293 6.293 6.293a.998.998 0 0 0 1.707-.707.999.999 0 0 0-.293-.707l-6.293-6.293z"></path></svg></div></div></div><div class="vy-styles_CartPreview__empty__body__"><div class="vy-styles_CartPreview__empty__"><h3>Your cart is empty</h3></div></div></div></div><div class="vy-upcart-backdrop vy-styles_CartPreview__backdrop__" id="UpcartPopupBackDrop"></div></div></div>
+<div id="upCartStickyButton"><div class="vy-styles_StickyWidget__ vy-upcart-sticky-widget " style="--upcart-sticky-background: #000000; --upcart-sticky-top: initial; --upcart-sticky-bottom: 5px; --upcart-sticky-left: initial; --upcart-sticky-right: 5px; --upcart-sticky-position: fixed;"><div class="vy-styles_CartQuantityIcon__ vy-upcart-sticky-cart-quantity-icon" style="background: rgb(228, 38, 38);"><div class="vy-styles_CartQuantityIconText__ vy-upcart-sticky-cart-quantity-icon-text" style="color: rgb(255, 255, 255);">0</div></div><div class="vy-styles_CartIcon__"><svg width="45" height="45" viewBox="0 0 45 45" fill="none" xmlns="http://www.w3.org/2000/svg" aria-label="Shopping bag"><title>Shopping bag</title><path fill-rule="evenodd" clip-rule="evenodd" d="M7.4937 7.49365H37.5062C38.5422 7.49365 39.382 8.33347 39.382 9.36943V35.6304C39.382 37.7023 37.7023 39.3819 35.6304 39.3819H9.36948C7.29755 39.3819 5.61792 37.7023 5.61792 35.6304V9.36943C5.61792 8.33347 6.45774 7.49365 7.4937 7.49365Z" fill="#ffffff" stroke="#000000" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"></path><path fill-rule="evenodd" clip-rule="evenodd" d="M5.61792 14.059H39.382Z" fill="white"></path><path d="M5.61792 14.059H39.382" stroke="#000000" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"></path><path fill-rule="evenodd" clip-rule="evenodd" d="M30.0031 20.6245C30.0031 24.7684 26.6438 28.1276 22.5 28.1276C18.3561 28.1276 14.9968 24.7684 14.9968 20.6245" fill="#ffffff"></path><path d="M30.0031 20.6245C30.0031 24.7684 26.6438 28.1276 22.5 28.1276C18.3561 28.1276 14.9968 24.7684 14.9968 20.6245" stroke="#000000" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"></path></svg></div></div></div>
+
+<style>/**/</style>
+
+
+</div>
+
+
+
+<script>/**/</script>
+<script>/**/</script>
+<script>/**/</script>
+<script>/**/</script>
+<script>/**/</script>
+<script>/**/</script>
+<script>/**/</script>
+<script>/**/</script>
+<script>/**/</script>
+<script>/**/</script>
+<style>/**/</style>
+<script>/**/</script>
+  <script>
+
+  document.documentElement.className = document.documentElement.className.replace('no-js', 'js');
+
+  </script>
+
+  <script>
+{}
+  </script>
+
+  <script>
+
+    console.log('redffk');
+
+  </script>
+
+  <script>
+/**/
+  </script>
+
+  <script>
+
+
+(function(){
+  var bar = document.getElementById('stickyCta');
+  var buy = document.getElementById('buy');
+  function onScroll(){
+    var scrollable = document.documentElement.scrollHeight - window.innerHeight;
+    var progress = scrollable > 0 ? window.scrollY / scrollable : 0;
+    var past = progress >= 0.30;
+    var r = buy.getBoundingClientRect();
+    var overlapCta = r.top < window.innerHeight && r.bottom > 0;
+    if (past && !overlapCta) { bar.classList.add('vy-show'); } else { bar.classList.remove('vy-show'); }
+  }
+  window.addEventListener('scroll', onScroll, {passive:true});
+  onScroll();
+})();
+
+  
+  </script>
+
+  <script>
+
+    
+      <div class="js-qty">
+        <input type="text" value="{{ value }}" id="{{ key }}" name="{{ name }}" pattern="[0-9]*" data-line="{{ line }}" class="js-qty__input" aria-live="polite">
+        <button type="button" class="js-qty__adjust js-qty__adjust--minus" aria-label="Reduce item quantity by one">
+          <svg aria-hidden="true" focusable="false" data-prefix="fal" data-icon="minus" role="img" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 384 512" class="svg-inline--fa fa-minus fa-w-12 fa-3x"><path fill="currentColor" d="M376 232H8c-4.42 0-8 3.58-8 8v32c0 4.42 3.58 8 8 8h368c4.42 0 8-3.58 8-8v-32c0-4.42-3.58-8-8-8z" class=""></path></svg>
+          <span class="icon__fallback-text">\u2212</span>
+        </button>
+        <button type="button" class="js-qty__adjust js-qty__adjust--plus" aria-label="Increase item quantity by one">
+          <svg aria-hidden="true" focusable="false" data-prefix="fal" data-icon="plus" role="img" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 384 512" class="svg-inline--fa fa-plus fa-w-12 fa-3x"><path fill="currentColor" d="M376 232H216V72c0-4.42-3.58-8-8-8h-32c-4.42 0-8 3.58-8 8v160H8c-4.42 0-8 3.58-8 8v32c0 4.42 3.58 8 8 8h160v160c0 4.42 3.58 8 8 8h32c4.42 0 8-3.58 8-8V280h160c4.42 0 8-3.58 8-8v-32c0-4.42-3.58-8-8-8z" class=""></path></svg>
+          <span class="icon__fallback-text">+</span>
+        </button>
+      </div>
+    
+
+  </script>
+
+  <script>
+
+  (function () {
+    const OPT_OUT_KEY = 'shipping_protection_opted_out';
+    const MAX_ATTEMPTS = 8;
+    const THROTTLE_MS = 500;
+    const PER_INPUT_LOCK_MS = 800;
+    const DEBUG = false;
+
+    let lastRun = 0;
+
+    function log(...args) {
+      if (DEBUG) console.log('[ship-protect]', ...args);
+    }
+
+    function setCheckedReactSafe(input) {
+      try {
+        const setter = Object.getOwnPropertyDescriptor(HTMLInputElement.prototype, 'checked').set;
+        setter.call(input, true);
+        input.dispatchEvent(new Event('change', { bubbles: true }));
+      } catch (e) {
+        log('react setter error', e);
+      }
+    }
+
+    function tryActivate() {
+      const now = Date.now();
+      if (now - lastRun < THROTTLE_MS) return;
+      lastRun = now;
+
+      try {
+        if (window.__disableShipProtect) return;
+        if (sessionStorage.getItem(OPT_OUT_KEY) === 'true') return;
+
+        const input = document.querySelector('.upcart-public-addons input[type="checkbox"]');
+        if (!input) return;
+
+        // Use aria-checked \u2014 it reflects the true state without including 'loading'
+        if (input.getAttribute('aria-checked') === 'true') return;
+
+        const lockUntil = parseInt(input.dataset.lockUntil || '0', 10);
+        if (now < lockUntil) return;
+
+        const attempts = parseInt(input.dataset.attempts || '0', 10);
+        if (attempts >= MAX_ATTEMPTS) return;
+
+        input.dataset.attempts = String(attempts + 1);
+        input.dataset.lockUntil = String(now + PER_INPUT_LOCK_MS);
+
+        log('attempt', attempts + 1);
+
+        if (attempts === 0) {
+          const label = input.closest('label');
+          if (label) label.click();
+        } else if (attempts === 1) {
+          input.click();
+        } else {
+          setCheckedReactSafe(input);
+        }
+      } catch (e) {
+        log('tryActivate error', e);
+      }
+    }
+
+    function init() {
+      tryActivate();
+      const observer = new MutationObserver(tryActivate);
+      observer.observe(document.body, { childList: true, subtree: true });
+    }
+
+    if (document.readyState === 'loading') {
+      document.addEventListener('DOMContentLoaded', init);
+    } else {
+      init();
+    }
+  })();
+
+  </script>
+
+  <script>
+(function(){
+  function toggleGroup(uid){
+    var hidden = document.querySelectorAll('[data-clone-hidden-by="' + uid + '"]');
+    if (!hidden.length) return;
+    var nowVisible = hidden[0].style.display === 'block';
+    hidden.forEach(function(el){ el.style.display = nowVisible ? '' : 'block'; });
+    var trig = document.querySelector('[data-clone-reveal="' + uid + '"]');
+    if (trig) {
+      trig.classList.toggle('active', !nowVisible);
+      var p = trig.matches('p') ? trig : trig.querySelector('p');
+      if (p) {
+        var t = p.textContent;
+        if (!nowVisible && /\bMore\b/i.test(t)) p.textContent = t.replace(/\bMore\b/i, 'Less');
+        else if (nowVisible && /\bLess\b/i.test(t)) p.textContent = t.replace(/\bLess\b/i, 'More');
+      }
+    }
+  }
+  document.addEventListener('click', function(e){
+    var trig = e.target.closest('[data-clone-reveal]');
+    if (!trig) return;
+    e.preventDefault();
+    toggleGroup(trig.getAttribute('data-clone-reveal'));
+  });
+  document.querySelectorAll('[data-clone-reveal]').forEach(function(el){ el.style.cursor = 'pointer'; });
+})();
+  </script>
+
+  <script>
+(function(){
+  function setPad(){var n=document.querySelector('[class*="navbar"],header,[class*="header"]');var h=n&&/sticky|fixed/.test(getComputedStyle(n).position)?Math.ceil(n.getBoundingClientRect().height)+10:0;document.documentElement.style.scrollPaddingTop=h+"px";}
+  setPad();window.addEventListener("load",setPad);window.addEventListener("resize",setPad);
+})();
+  </script>
+
+  <script>
+  (function(){var el=document.getElementById("vstd-lp-581-simply-revival");if(!el)return;
+    function bleed(node,vw){node.style.setProperty("max-width","none","important");node.style.setProperty("width",vw+"px","important");node.style.setProperty("left","0","important");var l=node.getBoundingClientRect().left,cm=parseFloat(getComputedStyle(node).marginLeft)||0;node.style.setProperty("margin-left",(cm-l)+"px","important");}
+    function isWrap(n){var c=(n.className||"").toString();return /(?:^|\s)(?:vy-)*vstd-page(?:\s|$)/.test(c)||/^vstd-lp-/.test(n.id||"");}
+    function fit(){var vw=document.documentElement.clientWidth;if(!vw||vw<200)return;
+      el.style.setProperty("max-width","none","important");el.style.setProperty("width",vw+"px","important");
+      var left=el.getBoundingClientRect().left,curML=parseFloat(getComputedStyle(el).marginLeft)||0;
+      el.style.setProperty("margin-left",(curML-left)+"px","important");
+      el.style.removeProperty("margin-top");var op=el.offsetParent,rect=el.getBoundingClientRect();
+      var topGap=op?Math.round(rect.top-op.getBoundingClientRect().top):0;
+      if(topGap>0&&topGap<=80)el.style.setProperty("margin-top",(-topGap)+"px","important");
+      var nested=el.querySelectorAll('[id^="vstd-"]');for(var i=0;i<nested.length;i++){if(nested[i].getBoundingClientRect().width<vw*0.9&&!isWrap(nested[i]))continue;bleed(nested[i],vw);}}
+    if(document.readyState==="complete")fit();
+    document.addEventListener("DOMContentLoaded",fit);window.addEventListener("load",fit);
+    var lastVW=document.documentElement.clientWidth,rT;
+    window.addEventListener("resize",function(){var vw=document.documentElement.clientWidth;if(vw===lastVW)return;lastVW=vw;clearTimeout(rT);rT=setTimeout(fit,150);});
+    [100,300,800,1500].forEach(function(t){setTimeout(fit,t);});})();
+  </script>
+
+  <script>
+  (function(){var el=document.getElementById("vstd-lp-581-simply-revival");if(!el)return;
+    function hide(){var n=el;while(n&&n.parentElement&&n.parentElement!==document.documentElement){var p=n.parentElement,k=p.children;
+      for(var i=0;i<k.length;i++){var c=k[i],t=c.tagName;if(c!==n&&t!=="SCRIPT"&&t!=="LINK"&&t!=="STYLE"&&t!=="HEAD"&&!(c.id&&c.id.indexOf("vstd-sticky")===0)&&!c.hasAttribute("data-vstd-keep"))c.style.setProperty("display","none","important");}
+      n=p;}
+      document.body.style.setProperty("margin","0","important");document.body.style.setProperty("padding","0","important");}
+    hide();document.addEventListener("DOMContentLoaded",hide);window.addEventListener("load",hide);[50,200,600,1500].forEach(function(t){setTimeout(hide,t);});
+  })();
+  </script>
+
+</div>
+
+
+{% schema %}{"name":"Vstd LP 581","settings":[],"presets":[{"name":"Vstd LP 581"}]}{% endschema %}

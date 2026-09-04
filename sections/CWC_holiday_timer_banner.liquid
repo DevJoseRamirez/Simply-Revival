@@ -1,3 +1,72 @@
+{% comment %}
+  Countdown deadline is computed server-side from the shop's own clock, not from
+  the visitor's first page view. Every visitor loading at the same moment sees the
+  same remaining time, and reloading does not restart it. In "daily" mode the
+  deadline is today's cutoff in shop time, rolling to tomorrow once it passes.
+{% endcomment %}
+
+{% liquid
+  assign now_s = 'now' | date: '%s' | times: 1
+  assign cur_h = 'now' | date: '%H' | times: 1
+  assign cur_m = 'now' | date: '%M' | times: 1
+  assign cur_s = 'now' | date: '%S' | times: 1
+
+  assign secs_into_day = cur_h | times: 3600
+  assign cur_m_secs = cur_m | times: 60
+  assign secs_into_day = secs_into_day | plus: cur_m_secs | plus: cur_s
+
+  comment
+    Shop-local midnight, derived from the shop's wall clock so it stays correct
+    across daylight-saving changes without hardcoding a UTC offset.
+  endcomment
+  assign midnight_s = now_s | minus: secs_into_day
+
+  assign rollover_s = 0
+
+  if section.settings.timer_mode == 'fixed'
+    assign deadline_s = section.settings.fixed_end_date | date: '%s' | times: 1
+  else
+    assign cutoff_s = section.settings.daily_cutoff_hour | times: 3600
+    assign cutoff_m_secs = section.settings.daily_cutoff_minute | times: 60
+    assign cutoff_s = cutoff_s | plus: cutoff_m_secs
+    assign deadline_s = midnight_s | plus: cutoff_s
+    if deadline_s <= now_s
+      assign deadline_s = deadline_s | plus: 86400
+    endif
+    assign rollover_s = 86400
+  endif
+
+  assign remaining_s = deadline_s | minus: now_s
+  if remaining_s < 0
+    assign remaining_s = 0
+  endif
+
+  assign has_expired = false
+  if section.settings.timer_mode == 'fixed' and remaining_s <= 0
+    assign has_expired = true
+  endif
+
+  comment
+    Initial digits rendered server-side so crawlers never see 00:00:00.
+  endcomment
+  assign init_h = remaining_s | divided_by: 3600
+  assign hour_rem = remaining_s | modulo: 3600
+  assign init_m = hour_rem | divided_by: 60
+  assign init_sec = hour_rem | modulo: 60
+
+  assign init_h_str = init_h | prepend: '0' | slice: -2, 2
+  if init_h > 99
+    assign init_h_str = init_h | append: ''
+  endif
+  assign init_m_str = init_m | prepend: '0' | slice: -2, 2
+  assign init_s_str = init_sec | prepend: '0' | slice: -2, 2
+
+  assign hide_when_expired = false
+  if has_expired and section.settings.expired_behavior == 'hide'
+    assign hide_when_expired = true
+  endif
+%}
+
 {% style %}
   #CWC_holiday_timer_banner-{{ section.id }} {
     --gradient-start: {{ section.settings.gradient_start | default: '#D0F0E8' }};
@@ -12,115 +81,72 @@
 
 {{ 'CWC_holiday_timer_banner.css' | asset_url | stylesheet_tag }}
 
-{% if section.settings.main_title != blank or section.settings.show_timer %}
-  <section
-    id="CWC_holiday_timer_banner-{{ section.id }}"
-    class="cwc-holiday-timer-banner"
-  >
-    <a
-      class="cwc-holiday-timer-banner__container"
-      href="{{ section.settings.link }}"
+{% unless hide_when_expired %}
+  {% if section.settings.main_title != blank or section.settings.show_timer %}
+    <section
+      id="CWC_holiday_timer_banner-{{ section.id }}"
+      class="cwc-holiday-timer-banner"
     >
-      <div class="cwc-holiday-timer-banner__content">
-        {% if section.settings.main_title != blank %}
-          <div class="cwc-holiday-timer-banner__main-title rte">
-            {{ section.settings.main_title }}
-          </div>
-        {% endif %}
+      <a
+        class="cwc-holiday-timer-banner__container"
+        href="{{ section.settings.link }}"
+      >
+        <div class="cwc-holiday-timer-banner__content">
+          {% if has_expired and section.settings.expired_message != blank %}
+            <div class="cwc-holiday-timer-banner__main-title rte">
+              {{ section.settings.expired_message }}
+            </div>
+          {% else %}
+            {% if section.settings.main_title != blank %}
+              <div class="cwc-holiday-timer-banner__main-title rte">
+                {{ section.settings.main_title }}
+              </div>
+            {% endif %}
 
-        {% if section.settings.subtext != blank %}
-          <div class="cwc-holiday-timer-banner__subtext rte">
-            {{ section.settings.subtext }}
-          </div>
-        {% endif %}
+            {% if section.settings.subtext != blank %}
+              <div class="cwc-holiday-timer-banner__subtext rte">
+                {{ section.settings.subtext }}
+              </div>
+            {% endif %}
 
-        {% if section.settings.text != blank %}
-          <div class="cwc-holiday-timer-banner__text rte">
-            {{ section.settings.text }}
-          </div>
-        {% endif %}
-      </div>
-
-      {% if section.settings.show_timer %}
-        <div class="cwc-holiday-timer-banner__timer-wrapper">
-          <div id="timer-{{ section.id }}" class="cwc-holiday-timer-banner__timer">
-            <span class="cwc-holiday-timer-banner__time-unit cwc-holiday-timer-banner__time-unit--hours">00</span>
-            <span class="cwc-holiday-timer-banner__separator">:</span>
-            <span class="cwc-holiday-timer-banner__time-unit cwc-holiday-timer-banner__time-unit--minutes">00</span>
-            <span class="cwc-holiday-timer-banner__separator">:</span>
-            <span class="cwc-holiday-timer-banner__time-unit cwc-holiday-timer-banner__time-unit--seconds">00</span>
-          </div>
-          <div class="cwc-holiday-timer-banner__timer-labels">
-            <span class="cwc-holiday-timer-banner__label cwc-holiday-timer-banner__label--hours">Hrs</span>
-            <span class="cwc-holiday-timer-banner__separator">:</span>
-            <span class="cwc-holiday-timer-banner__label cwc-holiday-timer-banner__label--minutes">Mins</span>
-            <span class="cwc-holiday-timer-banner__separator">:</span>
-            <span class="cwc-holiday-timer-banner__label cwc-holiday-timer-banner__label--seconds">Secs</span>
-          </div>
+            {% if section.settings.text != blank %}
+              <div class="cwc-holiday-timer-banner__text rte">
+                {{ section.settings.text }}
+              </div>
+            {% endif %}
+          {% endif %}
         </div>
-      {% endif %}
-    </a>
-  </section>
-{% endif %}
 
-{% if section.settings.show_timer %}
-  <script>
-    'use strict';
-    (function() {
-      const sectionId = '{{ section.id }}';
-      const timerElement = document.getElementById('timer-' + sectionId);
-      if (!timerElement) return;
+        {% if section.settings.show_timer and has_expired == false %}
+          <div class="cwc-holiday-timer-banner__timer-wrapper">
+            <div
+              id="timer-{{ section.id }}"
+              class="cwc-holiday-timer-banner__timer"
+              data-deadline="{{ deadline_s }}"
+              data-rollover="{{ rollover_s }}"
+              data-expired-behavior="{{ section.settings.expired_behavior }}"
+            >
+              <span class="cwc-holiday-timer-banner__time-unit cwc-holiday-timer-banner__time-unit--hours">{{ init_h_str }}</span>
+              <span class="cwc-holiday-timer-banner__separator">:</span>
+              <span class="cwc-holiday-timer-banner__time-unit cwc-holiday-timer-banner__time-unit--minutes">{{ init_m_str }}</span>
+              <span class="cwc-holiday-timer-banner__separator">:</span>
+              <span class="cwc-holiday-timer-banner__time-unit cwc-holiday-timer-banner__time-unit--seconds">{{ init_s_str }}</span>
+            </div>
+            <div class="cwc-holiday-timer-banner__timer-labels">
+              <span class="cwc-holiday-timer-banner__label cwc-holiday-timer-banner__label--hours">Hrs</span>
+              <span class="cwc-holiday-timer-banner__separator">:</span>
+              <span class="cwc-holiday-timer-banner__label cwc-holiday-timer-banner__label--minutes">Mins</span>
+              <span class="cwc-holiday-timer-banner__separator">:</span>
+              <span class="cwc-holiday-timer-banner__label cwc-holiday-timer-banner__label--seconds">Secs</span>
+            </div>
+          </div>
+        {% endif %}
+      </a>
+    </section>
+  {% endif %}
+{% endunless %}
 
-      const minHours = {{ section.settings.min_hours | times: 3600000 }};
-      const maxHours = {{ section.settings.max_hours | times: 3600000 }};
-      const localStorageKey = 'holidayTimerTarget-' + sectionId;
-      let targetTime = localStorage.getItem(localStorageKey);
-
-      if (!targetTime || new Date().getTime() > parseInt(targetTime)) {
-        const randomOffset = Math.random() * (maxHours - minHours) + minHours;
-        targetTime = new Date().getTime() + randomOffset;
-        localStorage.setItem(localStorageKey, targetTime);
-      } else {
-        targetTime = parseInt(targetTime);
-      }
-
-      const hoursEl = timerElement.querySelector('.cwc-holiday-timer-banner__time-unit--hours');
-      const minutesEl = timerElement.querySelector('.cwc-holiday-timer-banner__time-unit--minutes');
-      const secondsEl = timerElement.querySelector('.cwc-holiday-timer-banner__time-unit--seconds');
-
-      function updateTimer() {
-        const now = new Date().getTime();
-        const distance = targetTime - now;
-
-        if (distance < 0) {
-          clearInterval(timerInterval);
-          timerElement.innerHTML = 'TIME IS UP!';
-          return;
-        }
-
-        // Roll days into hours so display stays as HH:MM:SS
-        const totalHours = Math.floor(distance / (1000 * 60 * 60));
-        const minutes = Math.floor((distance % (1000 * 60 * 60)) / (1000 * 60));
-        const seconds = Math.floor((distance % (1000 * 60)) / 1000);
-
-        hoursEl.textContent = String(totalHours).padStart(2, '0');
-        minutesEl.textContent = String(minutes).padStart(2, '0');
-        secondsEl.textContent = String(seconds).padStart(2, '0');
-      }
-
-      updateTimer();
-      const timerInterval = setInterval(updateTimer, 1000);
-
-      document.addEventListener('shopify:section:load', function(e) {
-        if (e.detail.sectionId === sectionId) {
-          clearInterval(timerInterval);
-          updateTimer();
-          setInterval(updateTimer, 1000);
-        }
-      });
-    })();
-  </script>
-{% endif %}
+<script src="{{ 'CWC_holiday_timer_banner.js' | asset_url }}" defer></script>
 
 {% schema %}
 {
@@ -163,24 +189,57 @@
       "default": true
     },
     {
-      "type": "range",
-      "id": "min_hours",
-      "min": 1,
-      "max": 12,
-      "step": 0.5,
-      "unit": "hrs",
-      "label": "Minimum Hours",
-      "default": 3
+      "type": "select",
+      "id": "timer_mode",
+      "label": "Deadline Type",
+      "options": [
+        { "value": "daily", "label": "Daily cutoff (recurring)" },
+        { "value": "fixed", "label": "Fixed end date (one-off)" }
+      ],
+      "default": "daily",
+      "info": "The deadline is the same for every visitor. It is calculated from the shop clock, never from when a visitor arrived."
     },
     {
       "type": "range",
-      "id": "max_hours",
-      "min": 1,
-      "max": 24,
-      "step": 0.5,
-      "unit": "hrs",
-      "label": "Maximum Hours",
-      "default": 8
+      "id": "daily_cutoff_hour",
+      "label": "Daily Cutoff — Hour",
+      "min": 0,
+      "max": 23,
+      "step": 1,
+      "default": 0,
+      "info": "Shop time, 24-hour. 0 = midnight. Used in Daily cutoff mode."
+    },
+    {
+      "type": "range",
+      "id": "daily_cutoff_minute",
+      "label": "Daily Cutoff — Minute",
+      "min": 0,
+      "max": 55,
+      "step": 5,
+      "default": 0
+    },
+    {
+      "type": "text",
+      "id": "fixed_end_date",
+      "label": "Fixed End Date",
+      "default": "2026-12-25 23:59",
+      "info": "Shop time, format YYYY-MM-DD HH:MM. Used in Fixed end date mode."
+    },
+    {
+      "type": "select",
+      "id": "expired_behavior",
+      "label": "When a Fixed Deadline Passes",
+      "options": [
+        { "value": "hide", "label": "Hide the banner" },
+        { "value": "message", "label": "Show expired message" }
+      ],
+      "default": "hide"
+    },
+    {
+      "type": "richtext",
+      "id": "expired_message",
+      "label": "Expired Message",
+      "default": "<p>This offer has ended.</p>"
     },
     {
       "type": "header",

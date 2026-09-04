@@ -10,10 +10,8 @@
 {
   "sections": {
     "main": {
-      "type": "clone-simply-starter-v1",
-      "settings": {
-        "product": "simply-dht-blocker"
-      }
+      "type": "vstd-lp-581-simply-revival",
+      "settings": {}
     }
   },
   "order": [

@@ -19,7 +19,7 @@
         "show_collection_image": true,
         "save_allproducts": true,
         "title_all": "All Products",
-        "des_all": "<p>Shop now, not later. Browse the best of our favorite sale styles and brands.<\/p>",
+        "des_all": "<p>Shop now, not later. Browse the best of our favorite sale styles and brands.</p>",
         "style_banner": "full",
         "heading_size": "h2",
         "img_height": "350px",
@@ -72,7 +72,7 @@
             "button": "",
             "link": "",
             "style_btn": "btn-underline btn-underline-white",
-            "image": "shopify:\/\/shop_images\/DHT_IN_HAND.png",
+            "image": "shopify://shop_images/DHT_IN_HAND.png",
             "video": "",
             "colortabimage": "#ffffff",
             "bg-overlay": "#000000",
@@ -83,7 +83,7 @@
           "type": "product",
           "settings": {
             "product_list": [
-              "simply®-dht-blocker"
+              "simply-dht-blocker"
             ],
             "column": "1",
             "limit": 4

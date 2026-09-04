@@ -149,3 +149,10 @@
         margin-top: 1px;
     }
 }
+/* ================================
+   Expired State
+   ================================ */
+
+.cwc-holiday-timer-banner__timer--expired {
+    opacity: 0.65;
+}

@@ -79,7 +79,7 @@
         "review_MDVPN9": {
           "type": "review",
           "settings": {
-            "text": "<p><strong>Rated 4.8/5</strong> | Trusted by 50,000+</p>"
+            "text": "<p><strong>Rated 4.8/5</strong> | 100,000+ bottles sold</p>"
           }
         },
         "headline_UNtTwi": {
@@ -365,7 +365,7 @@
           "type": "testimonial",
           "settings": {
             "star_rating": "4.8",
-            "title": "Genetics don't have to win",
+            "title": "Thinning doesn't have to be the end of the story",
             "text": "Dad and both grandfathers are bald, thought I was doomed. Simply Revival is helping me fight my genetics and win. At 35, my hair is in better shape than it was 5 years ago!",
             "author_name": "STEVE C.",
             "feature_one": "Fighting Genetics",
@@ -529,7 +529,7 @@
       "name": "Testimonial Images",
       "settings": {
         "testimonial_list": "",
-        "section_title": "<h2>25,000+ <strong>Hair Transformations</strong></h2>",
+        "section_title": "<h2>100,000+<strong> Bottles Sold</strong></h2>",
         "bold_color": "#125657",
         "section_subtitle": "",
         "bg_color": "#fffee3",
@@ -920,8 +920,69 @@
         "padding_bottom": 60
       }
     },
+    "cwc_key_facts_kF9xQ2": {
+      "type": "CWC_key_facts",
+      "blocks": {
+        "fact_blend": {
+          "type": "fact",
+          "settings": {
+            "number": "350mg+",
+            "title": "<p>Proprietary herbal blend per serving</p>",
+            "text": "<p>Including saw palmetto and stinging nettle</p>"
+          }
+        },
+        "fact_herbs": {
+          "type": "fact",
+          "settings": {
+            "number": "10",
+            "title": "<p>Legendary herbs in one formula</p>",
+            "text": "<p>Chosen to support a healthy hair growth cycle</p>"
+          }
+        },
+        "fact_dose": {
+          "type": "fact",
+          "settings": {
+            "number": "2",
+            "title": "<p>Capsules a day</p>",
+            "text": "<p>Tasteless, plant-based, taken with breakfast</p>"
+          }
+        },
+        "fact_free": {
+          "type": "fact",
+          "settings": {
+            "number": "0",
+            "title": "<p>Fillers, sugar, or preservatives</p>",
+            "text": "<p>No GMOs, no gluten, no parabens</p>"
+          }
+        }
+      },
+      "block_order": [
+        "fact_blend",
+        "fact_herbs",
+        "fact_dose",
+        "fact_free"
+      ],
+      "name": "Key Facts",
+      "settings": {
+        "heading": "<p>Simply Revival® — What's <strong>Inside</strong> Every Capsule</p>",
+        "subtext": "<p>Ten plant-based ingredients, full doses, nothing hidden behind a label.</p>",
+        "bg_color": "#FCFCFB",
+        "text_color": "#0B0B0B",
+        "bold_color": "#1D9E75",
+        "subtext_color": "#52514E",
+        "number_color": "#1D9E75",
+        "fact_title_color": "#0B0B0B",
+        "fact_text_color": "#52514E",
+        "content_max_width": 820,
+        "column_gap": 80,
+        "row_gap": 40,
+        "padding_top": 60,
+        "padding_bottom": 60
+      }
+    },
     "cwc_statistical_proof_madMF3": {
       "type": "CWC_statistical_proof",
+      "disabled": true,
       "blocks": {
         "heading_jn7U9V": {
           "type": "heading",
@@ -1126,7 +1187,7 @@
           "type": "rating",
           "settings": {
             "star_color": "#ffcc00",
-            "text": "<p>Rated 4.8 Excellent | <a href=\"#az_reviews\" title=\"#az_reviews\"><span style=\"text-decoration:underline\"><strong>25,593 Reviews</strong></span></a></p>"
+            "text": "<p>Rated 4.8 Excellent | <a href=\"#az_reviews\" title=\"#az_reviews\"><span style=\"text-decoration:underline\"><strong>25,000+ reviews</strong></span></a></p>"
           }
         },
         "vendor_mpneHP": {
@@ -1190,16 +1251,22 @@
             "servings_text_1": "",
             "bonus_text_1_opt1": "",
             "bonus_text_2_opt1": "",
+            "cart_addon_1_opt1": "",
+            "cart_addon_2_opt1": "",
             "image2": "shopify://shop_images/Simply_Revival___Natural_Hair_Support_Blend___Buy_2_-_Get_1_FREE-min.png",
             "badge_text_2": "Most Popular",
             "servings_text_2": "",
             "bonus_text_1_opt2": "",
             "bonus_text_2_opt2": "",
+            "cart_addon_1_opt2": "",
+            "cart_addon_2_opt2": "",
             "image3": "shopify://shop_images/Simply_Revival___Natural_Hair_Support_Blend___Buy_3_-_Get_2_FREE-min.png",
             "badge_text_3": "Free Shipping",
             "servings_text_3": "",
             "bonus_text_1_opt3": "",
-            "bonus_text_2_opt3": ""
+            "bonus_text_2_opt3": "",
+            "cart_addon_1_opt3": "",
+            "cart_addon_2_opt3": ""
           }
         },
         "subscription_toggle_WDR8rQ": {
@@ -1247,7 +1314,7 @@
             "image_1": "shopify://shop_images/trusted_by_01.png",
             "image_2": "shopify://shop_images/trusted_by_02.png",
             "image_3": "shopify://shop_images/trusted_by_03.png",
-            "title": "<p>Trusted by 100K+ customers</p>",
+            "title": "<p>100,000+ Bottles Sold</p>",
             "subtext": "<p>who choose Simply for consistent, long-term wellness support.</p>",
             "bg_color": "#efefef",
             "text_color": "#282828"
@@ -1257,7 +1324,7 @@
           "type": "warning_notice",
           "settings": {
             "title": "WARNING: Low Stock Notice",
-            "text": "<p>This product sold out 12 times last year. We encourage you to take advantage of the <strong>limited sale</strong> and buy now. Subscribing protects you against future stockouts.</p>",
+            "text": "<p>This product sold out 4 times this year. We encourage you to take advantage of the <strong>limited sale</strong> and buy now. Subscribing protects you against future stockouts.</p>",
             "bg_color": "#fef2f2",
             "border_color": "#fca5a5",
             "title_color": "#9f3f3f",
@@ -1327,7 +1394,7 @@
       ],
       "name": "Featured Product",
       "settings": {
-        "product": "simply®-dht-blocker",
+        "product": "simply-dht-blocker",
         "background_color": "#ffffff",
         "padding_top": 40,
         "padding_bottom": 40,
@@ -1420,7 +1487,7 @@
           "type": "faq",
           "settings": {
             "title": "<p>Is Simply Revival® suitable for all hair types?</p>",
-            "text": "<p>Yes, the formula is designed to to support hair heath for all types of hair. </p>"
+            "text": "<p>Yes, the formula is designed to to support hair health for all types of hair. </p>"
           }
         },
         "faq_DQz37J": {
@@ -1472,7 +1539,7 @@
     "areviews_one_product_AJxgzy": {
       "type": "areviews_one_product",
       "settings": {
-        "areviews_one_product": "simply®-dht-blocker"
+        "areviews_one_product": "simply-dht-blocker"
       }
     }
   },
@@ -1488,6 +1555,7 @@
     "cwc_reasons_yzTB3N",
     "cwc_video_testimonials_6bGNRY",
     "cwc_problem_solution_gF7ac4",
+    "cwc_key_facts_kF9xQ2",
     "cwc_statistical_proof_madMF3",
     "cwc_comparison_RdafCY",
     "cwc_featured_product_iVGaDT",
