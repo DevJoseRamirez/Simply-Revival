@@ -291,7 +291,7 @@
       "disabled": true,
       "name": "Featured Product",
       "settings": {
-        "product": "simply-dht-blocker",
+        "product": "simply-dht-blocker-offer",
         "background_color": "#ffffff",
         "padding_top": 60,
         "padding_bottom": 60
@@ -402,7 +402,7 @@
         "button_color": "#125657",
         "button_text_color": "#ffffff",
         "button_text": "BUY 1 GET 1 FREE →",
-        "button_link": "shopify://products/number-one-natural-dht-blocker",
+        "button_link": "shopify://products/number-one-natural-dht-blocker-offer",
         "subtext": "<p>Try it today with a 30-Day Money-Back Guarantee!</p>"
       }
     },
@@ -589,7 +589,7 @@
         "text": "<p>Due to high demand, Simply Revival can be hard to find in stock. But right now, a new batch is available.</p><p>If you recognized 3 or more of the signs above, this is your chance to fight back—naturally, safely, and effectively.</p>",
         "text_2": "",
         "button_text": "Check Availability Now",
-        "button_link": "shopify://products/number-one-natural-dht-blocker",
+        "button_link": "shopify://products/number-one-natural-dht-blocker-offer",
         "subtext": "<p>10 Herbs, One Formula | No Fillers or Additives | 365-Day Money-Back Guarantee</p>"
       }
     },
@@ -621,7 +621,7 @@
           "type": "button",
           "settings": {
             "text": "Try Risk-Free Today",
-            "link": "shopify://products/number-one-natural-dht-blocker",
+            "link": "shopify://products/number-one-natural-dht-blocker-offer",
             "button_bg_color": "#125657",
             "button_text_color": "#ffffff"
           }

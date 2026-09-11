@@ -18,7 +18,7 @@
         "main_title": "<p>Summer Sale</p>",
         "subtext": "<p>Up to 70% OFF</p>",
         "text": "",
-        "link": "shopify://products/simply-dht-blocker",
+        "link": "shopify://products/simply-dht-blocker-offer",
         "show_timer": true,
         "timer_mode": "daily",
         "daily_cutoff_hour": 0,
@@ -41,7 +41,7 @@
           "settings": {
             "code": "SPRING SALE!",
             "button_text": "67% OFF + 1 Month FREE",
-            "button_link": "shopify://products/simply-dht-blocker"
+            "button_link": "shopify://products/simply-dht-blocker-offer"
           }
         }
       },

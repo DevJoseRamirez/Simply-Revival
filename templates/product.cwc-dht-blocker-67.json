@@ -1396,7 +1396,6 @@
     },
     "cwc_statistical_proof_TyE7PV": {
       "type": "CWC_statistical_proof",
-      "disabled": true,
       "blocks": {
         "heading_GgbTzk": {
           "type": "heading",
@@ -1454,6 +1453,7 @@
         "stat_U84iMg",
         "stat_Gax64r"
       ],
+      "disabled": true,
       "name": "Statistical Proof",
       "settings": {
         "bg_color": "#ffffff",
@@ -1735,7 +1735,7 @@
       "type": "CWC_areviews_widget",
       "name": "Areviews Wdget",
       "settings": {
-        "product": "simply-dht-blocker",
+        "product": "simply-dht-blocker-offer",
         "padding_top": 60,
         "padding_bottom": 60
       }

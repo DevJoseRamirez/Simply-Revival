@@ -79,7 +79,7 @@
         "review_MDVPN9": {
           "type": "review",
           "settings": {
-            "text": "<p><strong>Rated 4.8/5</strong> | Trusted by 50,000+</p>"
+            "text": "<p><strong>Rated 4.8/5</strong> | 100,000+ bottles sold</p>"
           }
         },
         "headline_UNtTwi": {
@@ -529,7 +529,7 @@
       "name": "Testimonial Images",
       "settings": {
         "testimonial_list": "",
-        "section_title": "<h2>25,000+ <strong>Hair Transformations</strong></h2>",
+        "section_title": "<h2>100,000+<strong> Bottles Sold</strong></h2>",
         "bold_color": "#125657",
         "section_subtitle": "",
         "bg_color": "#fffee3",
@@ -982,7 +982,6 @@
     },
     "cwc_statistical_proof_madMF3": {
       "type": "CWC_statistical_proof",
-      "disabled": true,
       "blocks": {
         "heading_jn7U9V": {
           "type": "heading",
@@ -1040,6 +1039,7 @@
         "stat_e7cQae",
         "stat_JNd673"
       ],
+      "disabled": true,
       "name": "Statistical Proof",
       "settings": {
         "bg_color": "#ffffff",
@@ -1251,16 +1251,22 @@
             "servings_text_1": "",
             "bonus_text_1_opt1": "",
             "bonus_text_2_opt1": "",
+            "cart_addon_1_opt1": "",
+            "cart_addon_2_opt1": "",
             "image2": "shopify://shop_images/Simply_Revival___Natural_Hair_Support_Blend___Buy_2_-_Get_1_FREE-min.png",
             "badge_text_2": "Most Popular",
             "servings_text_2": "",
             "bonus_text_1_opt2": "",
             "bonus_text_2_opt2": "",
+            "cart_addon_1_opt2": "",
+            "cart_addon_2_opt2": "",
             "image3": "shopify://shop_images/Simply_Revival___Natural_Hair_Support_Blend___Buy_3_-_Get_2_FREE-min.png",
             "badge_text_3": "Free Shipping",
             "servings_text_3": "",
             "bonus_text_1_opt3": "",
-            "bonus_text_2_opt3": ""
+            "bonus_text_2_opt3": "",
+            "cart_addon_1_opt3": "",
+            "cart_addon_2_opt3": ""
           }
         },
         "subscription_toggle_WDR8rQ": {
@@ -1388,7 +1394,7 @@
       ],
       "name": "Featured Product",
       "settings": {
-        "product": "simply-dht-blocker",
+        "product": "simply-dht-blocker-offer",
         "background_color": "#ffffff",
         "padding_top": 40,
         "padding_bottom": 40,
@@ -1481,7 +1487,7 @@
           "type": "faq",
           "settings": {
             "title": "<p>Is Simply Revival® suitable for all hair types?</p>",
-            "text": "<p>Yes, the formula is designed to to support hair heath for all types of hair. </p>"
+            "text": "<p>Yes, the formula is designed to to support hair health for all types of hair. </p>"
           }
         },
         "faq_DQz37J": {
@@ -1533,7 +1539,7 @@
     "areviews_one_product_AJxgzy": {
       "type": "areviews_one_product",
       "settings": {
-        "areviews_one_product": "simply-dht-blocker"
+        "areviews_one_product": "simply-dht-blocker-offer"
       }
     }
   },

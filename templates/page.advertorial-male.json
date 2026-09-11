@@ -316,7 +316,7 @@
         "button_KwJ6q3": {
           "type": "button",
           "settings": {
-            "button_link": "shopify://products/number-one-natural-dht-blocker",
+            "button_link": "shopify://products/number-one-natural-dht-blocker-offer",
             "button_text": "CHECK CURRENT AVAILABILITY >",
             "button_bg_color": "#009370",
             "button_text_color": "#ffffff"
@@ -341,7 +341,7 @@
         "button_LJJwax": {
           "type": "button",
           "settings": {
-            "button_link": "shopify://products/number-one-natural-dht-blocker",
+            "button_link": "shopify://products/number-one-natural-dht-blocker-offer",
             "button_text": "More Information & Exclusive Offers >",
             "button_bg_color": "#009370",
             "button_text_color": "#ffffff"
@@ -399,7 +399,7 @@
         "sidebar_heading": "<p>The #1 Natural DHT Blocker for Hair Loss</p>",
         "sidebar_product_image": "shopify://shop_images/hair_support-1-min_a9e5ebe1-cc58-4013-8bc1-710f3aa1cf23.png",
         "sidebar_text": "<p><em>Reduce shedding, support regrowth, and improve hair strength naturally</em></p>",
-        "sidebar_button_link": "shopify://products/number-one-natural-dht-blocker",
+        "sidebar_button_link": "shopify://products/number-one-natural-dht-blocker-offer",
         "sidebar_button_text": "Learn More >",
         "sidebar_button_bg": "#1e6c7a",
         "sidebar_button_text_color": "#ffffff"

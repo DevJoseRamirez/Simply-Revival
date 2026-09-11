@@ -982,7 +982,6 @@
     },
     "cwc_statistical_proof_madMF3": {
       "type": "CWC_statistical_proof",
-      "disabled": true,
       "blocks": {
         "heading_jn7U9V": {
           "type": "heading",
@@ -1040,6 +1039,7 @@
         "stat_e7cQae",
         "stat_JNd673"
       ],
+      "disabled": true,
       "name": "Statistical Proof",
       "settings": {
         "bg_color": "#ffffff",
@@ -1388,7 +1388,7 @@
       ],
       "name": "Featured Product",
       "settings": {
-        "product": "simply-dht-blocker",
+        "product": "simply-dht-blocker-offer",
         "background_color": "#ffffff",
         "padding_top": 40,
         "padding_bottom": 40,
@@ -1533,7 +1533,7 @@
     "areviews_one_product_AJxgzy": {
       "type": "areviews_one_product",
       "settings": {
-        "areviews_one_product": "simply-dht-blocker"
+        "areviews_one_product": "simply-dht-blocker-offer"
       }
     }
   },
