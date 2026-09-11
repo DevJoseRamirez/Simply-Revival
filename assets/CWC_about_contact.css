@@ -1,0 +1,224 @@
+/* ==============================
+   CWC About Contact
+   Centered header + single details card (address + email)
+   ============================== */
+
+/* === Section Wrapper === */
+.cwc_about-contact {
+  background-color: var(--section-bg);
+  color: var(--subtext-color);
+  font-family: var(--body-font);
+  padding-top: var(--padding-top);
+  padding-bottom: var(--padding-bottom);
+}
+
+.cwc_about-contact__container {
+  max-width: 1300px;
+  margin: 0 auto;
+  padding: 0 2rem;
+}
+
+/* === Section Header === */
+.cwc_about-contact__content {
+  text-align: center;
+  max-width: 800px;
+  margin: 0 auto 2.5rem;
+}
+
+.cwc_about-contact__content-eyebrow {
+  display: block;
+  color: var(--eyebrow-color);
+  font-size: 1rem;
+  font-weight: 700;
+  letter-spacing: 0.12em;
+  text-transform: uppercase;
+  margin-bottom: 0.5rem;
+}
+
+.cwc_about-contact__content-heading {
+  color: var(--heading-color);
+  margin-bottom: 0.75rem;
+}
+
+.cwc_about-contact__content-heading > * {
+  font-family: var(--heading-font);
+  color: inherit;
+  margin: 0;
+  font-size: clamp(1.75rem, 3.5vw, 2.5rem);
+  line-height: 1.1;
+  font-weight: 700;
+}
+
+.cwc_about-contact__content-heading > * strong {
+  color: var(--highlight-color);
+  font-weight: 700;
+}
+
+.cwc_about-contact__content-subtext {
+  color: var(--subtext-color);
+}
+
+.cwc_about-contact__content-subtext > * {
+  font-family: var(--body-font);
+  font-size: 1.125rem;
+  line-height: 1.6;
+  margin: 0 0 0.5em;
+}
+
+.cwc_about-contact__content-subtext > *:last-child {
+  margin-bottom: 0;
+}
+
+.cwc_about-contact__content-subtext strong {
+  color: var(--highlight-color);
+}
+
+/* === Card === */
+.cwc_about-contact__card {
+  background-color: var(--card-bg);
+  border-radius: var(--card-radius);
+  padding: 2.5rem 2rem;
+  max-width: 560px;
+  margin: 0 auto;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  text-align: center;
+}
+
+.cwc_about-contact__card-icon {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  width: 44px;
+  height: 44px;
+  border-radius: 8px;
+  flex-shrink: 0;
+  background-color: var(--icon-bg);
+  color: var(--icon-color);
+  margin-bottom: 1.25rem;
+}
+
+.cwc_about-contact__card-icon svg {
+  width: 22px;
+  height: 22px;
+  display: block;
+}
+
+.cwc_about-contact__card-heading {
+  font-family: var(--heading-font);
+  color: var(--card-heading-color);
+  font-size: 1.75rem;
+  font-weight: 700;
+  line-height: 1.2;
+  margin: 0 0 0.75rem;
+}
+
+.cwc_about-contact__card-address {
+  color: var(--card-body-color);
+}
+
+.cwc_about-contact__card-address > * {
+  font-family: var(--body-font);
+  font-size: 1.0625rem;
+  line-height: 1.6;
+  margin: 0 0 0.4em;
+}
+
+.cwc_about-contact__card-address > *:last-child {
+  margin-bottom: 0;
+}
+
+/* === Email Link === */
+.cwc_about-contact__email-link {
+  display: inline-block;
+  color: var(--link-color);
+  font-family: var(--body-font);
+  font-size: 1.0625rem;
+  font-weight: 500;
+  text-decoration: underline;
+  text-underline-offset: 3px;
+  word-break: break-word;
+  margin-top: 1rem;
+  transition: opacity 0.15s ease;
+}
+
+.cwc_about-contact__email-link:hover,
+.cwc_about-contact__email-link:focus-visible {
+  color: var(--link-color);
+  opacity: 0.8;
+  text-decoration: underline;
+}
+
+/* === Button === */
+.cwc_about-contact__button {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  background-color: var(--link-color);
+  color: var(--btn-text);
+  border-radius: 6px;
+  padding: 0.9375rem 1.75rem;
+  margin-top: 1.5rem;
+  font-family: var(--body-font);
+  font-size: 1rem;
+  font-weight: 600;
+  line-height: 1;
+  text-decoration: none;
+  transition: opacity 0.18s ease;
+}
+
+.cwc_about-contact__button:hover,
+.cwc_about-contact__button:focus-visible {
+  color: var(--btn-text);
+  opacity: 0.9;
+  text-decoration: none;
+}
+
+/* ==============================
+   Tablet Responsive
+   ============================== */
+@media screen and (max-width: 991px) {
+  .cwc_about-contact__container {
+    padding: 0 1.25rem;
+  }
+}
+
+/* ==============================
+   Mobile Responsive
+   ============================== */
+@media screen and (max-width: 768px) {
+  .cwc_about-contact {
+    padding-top: var(--padding-top-mobile);
+    padding-bottom: var(--padding-bottom-mobile);
+  }
+
+  .cwc_about-contact__container {
+    padding: 0 1rem;
+  }
+
+  .cwc_about-contact__content {
+    margin-bottom: 1.75rem;
+  }
+
+  .cwc_about-contact__content-subtext > * {
+    font-size: 0.9375rem;
+  }
+
+  .cwc_about-contact__card {
+    padding: 1.75rem 1.25rem;
+  }
+
+  .cwc_about-contact__card-heading {
+    font-size: 1.375rem;
+  }
+
+  .cwc_about-contact__card-address > *,
+  .cwc_about-contact__email-link {
+    font-size: 0.9375rem;
+  }
+
+  .cwc_about-contact__button {
+    width: 100%;
+  }
+}

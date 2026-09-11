@@ -1,0 +1,304 @@
+{% style %}
+  #cwc_about-contact-{{ section.id }} {
+    --section-bg: {{ section.settings.bg_color | default: '#FFFEE3' }};
+    --eyebrow-color: {{ section.settings.eyebrow_color | default: '#3F8060' }};
+    --heading-color: {{ section.settings.heading_color | default: '#0C3B2C' }};
+    --highlight-color: {{ section.settings.bold_color | default: '#3F8060' }};
+    --subtext-color: {{ section.settings.subtext_color | default: '#0C3B2C' }};
+    --card-bg: {{ section.settings.card_bg | default: '#ffffff' }};
+    --card-radius: {{ section.settings.card_radius | default: 14 }}px;
+    --card-heading-color: {{ section.settings.card_heading_color | default: '#0C3B2C' }};
+    --card-body-color: {{ section.settings.card_body_color | default: '#0C3B2C' }};
+    --icon-bg: {{ section.settings.icon_bg | default: '#125657' }};
+    --icon-color: {{ section.settings.icon_color | default: '#ffffff' }};
+    --link-color: {{ section.settings.link_color | default: '#125657' }};
+    --btn-text: {{ section.settings.btn_text | default: '#ffffff' }};
+    --heading-font: var(--g-font-1, inherit);
+    --body-font: var(--g-font-2, inherit);
+    --padding-top: {{ section.settings.padding_top | default: 80 }}px;
+    --padding-bottom: {{ section.settings.padding_bottom | default: 80 }}px;
+    --padding-top-mobile: {{ section.settings.padding_top | default: 80 | times: 0.5 }}px;
+    --padding-bottom-mobile: {{ section.settings.padding_bottom | default: 80 | times: 0.5 }}px;
+  }
+{% endstyle %}
+
+{{ 'CWC_about_contact.css' | asset_url | stylesheet_tag }}
+
+<section id="cwc_about-contact-{{ section.id }}" class="cwc_about-contact">
+  <div class="cwc_about-contact__container">
+
+    {% comment %} Section Header {% endcomment %}
+    {% if section.settings.eyebrow != blank or section.settings.heading != blank or section.settings.subtext != blank %}
+      <div class="cwc_about-contact__content">
+        {% if section.settings.eyebrow != blank %}
+          <span class="cwc_about-contact__content-eyebrow">{{ section.settings.eyebrow }}</span>
+        {% endif %}
+
+        {% if section.settings.heading != blank %}
+          <div class="cwc_about-contact__content-heading cwc-rte">
+            {{ section.settings.heading }}
+          </div>
+        {% endif %}
+
+        {% if section.settings.subtext != blank %}
+          <div class="cwc_about-contact__content-subtext cwc-rte">
+            {{ section.settings.subtext }}
+          </div>
+        {% endif %}
+      </div>
+    {% endif %}
+
+    {% comment %} Details Card {% endcomment %}
+    <div class="cwc_about-contact__card">
+      {% if section.settings.show_icon %}
+        <span class="cwc_about-contact__card-icon">
+          <svg
+            viewBox="0 0 24 24"
+            fill="none"
+            stroke="currentColor"
+            stroke-width="1.5"
+            stroke-linecap="round"
+            stroke-linejoin="round"
+            aria-hidden="true"
+            focusable="false"
+          >
+            <path d="M12 21.5s7-5.6 7-11.2A7 7 0 0 0 5 10.3c0 5.6 7 11.2 7 11.2Z"></path>
+            <circle cx="12" cy="10" r="2.6"></circle>
+          </svg>
+        </span>
+      {% endif %}
+
+      {% if section.settings.card_heading != blank %}
+        <h3 class="cwc_about-contact__card-heading">{{ section.settings.card_heading }}</h3>
+      {% endif %}
+
+      {% if section.settings.address != blank %}
+        <div class="cwc_about-contact__card-address cwc-rte">
+          {{ section.settings.address }}
+        </div>
+      {% endif %}
+
+      {% if section.settings.email_address != blank %}
+        <a
+          href="mailto:{{ section.settings.email_address }}"
+          class="cwc_about-contact__email-link"
+        >
+          {{ section.settings.email_display | default: section.settings.email_address }}
+        </a>
+      {% endif %}
+
+      {% if section.settings.btn_label != blank %}
+        <a
+          href="{{ section.settings.btn_link | default: '#' }}"
+          class="cwc_about-contact__button"
+        >
+          {{ section.settings.btn_label }}
+        </a>
+      {% endif %}
+    </div>
+
+  </div>
+</section>
+
+{% schema %}
+{
+  "name": "CWC About Contact",
+  "tag": "section",
+  "settings": [
+    {
+      "type": "header",
+      "content": "Section Header"
+    },
+    {
+      "type": "text",
+      "id": "eyebrow",
+      "label": "Eyebrow (optional)",
+      "default": "FIND US"
+    },
+    {
+      "type": "richtext",
+      "id": "heading",
+      "label": "Section Heading",
+      "default": "<h2>Simply <strong>Revival</strong></h2>"
+    },
+    {
+      "type": "richtext",
+      "id": "subtext",
+      "label": "Section Subtext (optional)"
+    },
+    {
+      "type": "header",
+      "content": "Card"
+    },
+    {
+      "type": "checkbox",
+      "id": "show_icon",
+      "label": "Show icon",
+      "default": true
+    },
+    {
+      "type": "text",
+      "id": "card_heading",
+      "label": "Card heading (optional)",
+      "default": "Simply Revival"
+    },
+    {
+      "type": "richtext",
+      "id": "address",
+      "label": "Address",
+      "default": "<p>4301 Valley Blvd<br/>Los Angeles, CA 90032</p>"
+    },
+    {
+      "type": "text",
+      "id": "email_address",
+      "label": "Email address",
+      "info": "Used for the mailto: link.",
+      "default": "support@simplyrevival.com"
+    },
+    {
+      "type": "text",
+      "id": "email_display",
+      "label": "Email display text (optional)",
+      "info": "Falls back to the email address itself."
+    },
+    {
+      "type": "header",
+      "content": "Button"
+    },
+    {
+      "type": "text",
+      "id": "btn_label",
+      "label": "Button label (optional)"
+    },
+    {
+      "type": "url",
+      "id": "btn_link",
+      "label": "Button link"
+    },
+    {
+      "type": "header",
+      "content": "Colors"
+    },
+    {
+      "type": "color",
+      "id": "bg_color",
+      "label": "Background Color",
+      "default": "#FFFEE3"
+    },
+    {
+      "type": "color",
+      "id": "eyebrow_color",
+      "label": "Eyebrow Color",
+      "default": "#3F8060"
+    },
+    {
+      "type": "color",
+      "id": "heading_color",
+      "label": "Heading Color",
+      "default": "#0C3B2C"
+    },
+    {
+      "type": "color",
+      "id": "bold_color",
+      "label": "Heading Bold Color",
+      "default": "#3F8060"
+    },
+    {
+      "type": "color",
+      "id": "subtext_color",
+      "label": "Subtext Color",
+      "default": "#0C3B2C"
+    },
+    {
+      "type": "header",
+      "content": "Card Colors"
+    },
+    {
+      "type": "color",
+      "id": "card_bg",
+      "label": "Card Background Color",
+      "default": "#ffffff"
+    },
+    {
+      "type": "color",
+      "id": "card_heading_color",
+      "label": "Card Heading Color",
+      "default": "#0C3B2C"
+    },
+    {
+      "type": "color",
+      "id": "card_body_color",
+      "label": "Card Body Color",
+      "default": "#0C3B2C"
+    },
+    {
+      "type": "color",
+      "id": "icon_bg",
+      "label": "Icon Background Color",
+      "default": "#125657"
+    },
+    {
+      "type": "color",
+      "id": "icon_color",
+      "label": "Icon Color",
+      "default": "#ffffff"
+    },
+    {
+      "type": "color",
+      "id": "link_color",
+      "label": "Link / Button Color",
+      "default": "#125657"
+    },
+    {
+      "type": "color",
+      "id": "btn_text",
+      "label": "Button Text Color",
+      "default": "#ffffff"
+    },
+    {
+      "type": "header",
+      "content": "Layout"
+    },
+    {
+      "type": "range",
+      "id": "card_radius",
+      "label": "Card Corner Radius",
+      "min": 0,
+      "max": 32,
+      "step": 1,
+      "unit": "px",
+      "default": 14
+    },
+    {
+      "type": "header",
+      "content": "Spacing"
+    },
+    {
+      "type": "range",
+      "id": "padding_top",
+      "label": "Padding Top",
+      "min": 0,
+      "max": 200,
+      "step": 5,
+      "unit": "px",
+      "default": 80
+    },
+    {
+      "type": "range",
+      "id": "padding_bottom",
+      "label": "Padding Bottom",
+      "min": 0,
+      "max": 200,
+      "step": 5,
+      "unit": "px",
+      "default": 80
+    }
+  ],
+  "presets": [
+    {
+      "name": "About Contact",
+      "category": "CWC Custom"
+    }
+  ]
+}
+{% endschema %}

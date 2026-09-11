@@ -1,0 +1,112 @@
+/*
+ * ------------------------------------------------------------
+ * IMPORTANT: The contents of this file are auto-generated.
+ *
+ * This file may be updated by the Shopify admin theme editor
+ * or related systems. Please exercise caution as any changes
+ * made to this file may be overwritten.
+ * ------------------------------------------------------------
+ */
+{
+  "sections": {
+    "main": {
+      "type": "main-page",
+      "disabled": true,
+      "settings": {}
+    },
+    "cwc_about_story_aBoUt1": {
+      "type": "CWC_about_story",
+      "name": "About Story",
+      "blocks": {
+        "paragraph_origin": {
+          "type": "paragraph",
+          "settings": {
+            "text": "<p>Simply Revival started with a simple frustration: the options for thinning hair were either harsh, complicated, or full of ingredients nobody could pronounce.</p>"
+          }
+        },
+        "paragraph_product": {
+          "type": "paragraph",
+          "settings": {
+            "text": "<p>We built one product and focused on doing it properly — a natural DHT blocker built from ten plant-based ingredients, with no fillers and no proprietary blends hiding the doses.</p>"
+          }
+        },
+        "paragraph_today": {
+          "type": "paragraph",
+          "settings": {
+            "text": "<p>Over 100,000 bottles later, we still sell the same single formula. We'd rather be known for one thing that works than a shelf full of products that don't.</p>"
+          }
+        },
+        "callout_guarantee": {
+          "type": "callout",
+          "settings": {
+            "show_icon": true,
+            "text": "<p>Every order is backed by our <strong>365-day money-back guarantee</strong>.</p>"
+          }
+        }
+      },
+      "block_order": [
+        "paragraph_origin",
+        "paragraph_product",
+        "paragraph_today",
+        "callout_guarantee"
+      ],
+      "settings": {
+        "eyebrow": "OUR STORY",
+        "heading": "<h2>One formula. Done <strong>properly</strong>.</h2>",
+        "subtext": "",
+        "bg_color": "#ffffff",
+        "eyebrow_color": "#3f8060",
+        "heading_color": "#0c3b2c",
+        "bold_color": "#3f8060",
+        "subtext_color": "#0c3b2c",
+        "text_color": "#0c3b2c",
+        "callout_bg": "#d0f0f2",
+        "callout_text_color": "#0c3b2c",
+        "icon_bg": "#125657",
+        "icon_color": "#ffffff",
+        "content_max_width": 760,
+        "media_position": "top",
+        "card_radius": 14,
+        "image_alt": "",
+        "image_radius": 14,
+        "padding_top": 80,
+        "padding_bottom": 60
+      }
+    },
+    "cwc_about_contact_aBoUt2": {
+      "type": "CWC_about_contact",
+      "name": "About Contact",
+      "settings": {
+        "eyebrow": "FIND US",
+        "heading": "<h2>Simply <strong>Revival</strong></h2>",
+        "subtext": "",
+        "show_icon": true,
+        "card_heading": "Simply Revival",
+        "address": "<p>4301 Valley Blvd<br/>Los Angeles, CA 90032</p>",
+        "email_address": "support@simplyrevival.com",
+        "email_display": "",
+        "btn_label": "",
+        "btn_link": "",
+        "bg_color": "#fffee3",
+        "eyebrow_color": "#3f8060",
+        "heading_color": "#0c3b2c",
+        "bold_color": "#3f8060",
+        "subtext_color": "#0c3b2c",
+        "card_bg": "#ffffff",
+        "card_heading_color": "#0c3b2c",
+        "card_body_color": "#0c3b2c",
+        "icon_bg": "#125657",
+        "icon_color": "#ffffff",
+        "link_color": "#125657",
+        "card_radius": 14,
+        "padding_top": 60,
+        "padding_bottom": 80
+      }
+    }
+  },
+  "order": [
+    "main",
+    "cwc_about_story_aBoUt1",
+    "cwc_about_contact_aBoUt2"
+  ]
+}

@@ -137,6 +137,7 @@
         "low_stock_rLxPtY": {
           "type": "low_stock",
           "settings": {
+            "inventory_threshold": 1000,
             "text_primary": "Low Stock",
             "text_primary_color": "#125657",
             "text_secondary": "Selling Fast",
@@ -355,7 +356,9 @@
             "text_color": "#111111",
             "accent_color": "#125657",
             "padding_top": 4,
-            "padding_bottom": 8
+            "padding_bottom": 8,
+            "show_disclaimer": true,
+            "disclaimer_text": "<p>Individual results vary. These statements have not been evaluated by the FDA. This product is not intended to diagnose, treat, cure, or prevent any disease.</p>"
           }
         }
       },
@@ -504,7 +507,9 @@
         "bg_color": "#fffee3",
         "text_color": "#111111",
         "padding_top": 32,
-        "padding_bottom": 32
+        "padding_bottom": 32,
+        "show_disclaimer": true,
+        "disclaimer_text": "<p>Individual results vary. These statements have not been evaluated by the FDA. This product is not intended to diagnose, treat, cure, or prevent any disease.</p>"
       }
     },
     "cwc_product_highlight_rows_EUh8KV": {
@@ -789,7 +794,9 @@
         "card_bg": "#ffffff",
         "highlight_color": "#009370",
         "padding_top": 20,
-        "padding_bottom": 20
+        "padding_bottom": 20,
+        "show_disclaimer": true,
+        "disclaimer_text": "<p>Individual results vary. These statements have not been evaluated by the FDA. This product is not intended to diagnose, treat, cure, or prevent any disease.</p>"
       }
     },
     "cwc_background_features_fzEHDf": {
@@ -1086,7 +1093,9 @@
         "button_bg": "#125657",
         "button_text": "#ffffff",
         "padding_top": 32,
-        "padding_bottom": 32
+        "padding_bottom": 32,
+        "show_disclaimer": true,
+        "disclaimer_text": "<p>Individual results vary. These statements have not been evaluated by the FDA. This product is not intended to diagnose, treat, cure, or prevent any disease.</p>"
       }
     },
     "cwc_problem_solution_3rW9Gt": {
@@ -1209,18 +1218,22 @@
       ],
       "name": "Key Facts",
       "settings": {
-        "heading": "<p>Simply Revival® — What's <strong>Inside</strong> Every Capsule</p>",
+        "heading": "<p>What's <strong>Inside</strong> Every Capsule</p>",
         "subtext": "<p>Ten plant-based ingredients, full doses, nothing hidden behind a label.</p>",
-        "bg_color": "#FCFCFB",
-        "text_color": "#0B0B0B",
-        "bold_color": "#1D9E75",
-        "subtext_color": "#52514E",
-        "number_color": "#1D9E75",
-        "fact_title_color": "#0B0B0B",
-        "fact_text_color": "#52514E",
+        "heading_font": "--g-font-1",
+        "number_font": "--g-font-2",
+        "bg_color": "#faf9f6",
+        "text_color": "#111111",
+        "bold_color": "#125657",
+        "subtext_color": "#6b7280",
+        "number_color": "#125657",
+        "fact_title_color": "#111111",
+        "fact_text_color": "#6b7280",
         "content_max_width": 820,
         "column_gap": 80,
         "row_gap": 40,
+        "bg_image_desktop": "shopify://shop_images/Simply_Revival_Works_-_The_Numbers_Prove_it.png",
+        "bg_image_mobile": "shopify://shop_images/Simply_Revival_Works_-_The_Numbers_Prove_it-min.png",
         "padding_top": 60,
         "padding_bottom": 60
       }

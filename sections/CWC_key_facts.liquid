@@ -1,12 +1,15 @@
 {% style %}
   #cwc_key-facts-{{ section.id }} {
-    --section-bg: {{ section.settings.bg_color | default: '#FCFCFB' }};
-    --text-color: {{ section.settings.text_color | default: '#0B0B0B' }};
-    --highlight-color: {{ section.settings.bold_color | default: '#1D9E75' }};
-    --subtext-color: {{ section.settings.subtext_color | default: '#52514E' }};
-    --number-color: {{ section.settings.number_color | default: '#1D9E75' }};
-    --fact-title-color: {{ section.settings.fact_title_color | default: '#0B0B0B' }};
-    --fact-text-color: {{ section.settings.fact_text_color | default: '#52514E' }};
+    --section-bg: {{ section.settings.bg_color | default: '#FAF9F6' }};
+    --text-color: {{ section.settings.text_color | default: '#111111' }};
+    --highlight-color: {{ section.settings.bold_color | default: '#125657' }};
+    --subtext-color: {{ section.settings.subtext_color | default: '#6B7280' }};
+    --number-color: {{ section.settings.number_color | default: '#125657' }};
+    --fact-title-color: {{ section.settings.fact_title_color | default: '#111111' }};
+    --fact-text-color: {{ section.settings.fact_text_color | default: '#6B7280' }};
+    --heading-font: var({{ section.settings.heading_font | default: '--g-font-1' }}, inherit);
+    --number-font: var({{ section.settings.number_font | default: '--g-font-2' }}, inherit);
+    --body-font: var(--g-font-2, inherit);
     --content-width: {{ section.settings.content_max_width | default: 820 }}px;
     --column-gap: {{ section.settings.column_gap | default: 80 }}px;
     --row-gap: {{ section.settings.row_gap | default: 40 }}px;
@@ -110,7 +113,7 @@
       "type": "richtext",
       "id": "heading",
       "label": "Section Heading",
-      "default": "<p>Simply Revival® — What's <strong>Inside</strong> Every Capsule</p>"
+      "default": "<p>What's <strong>Inside</strong> Every Capsule</p>"
     },
     {
       "type": "richtext",
@@ -120,31 +123,57 @@
     },
     {
       "type": "header",
+      "content": "Typography"
+    },
+    {
+      "type": "select",
+      "id": "heading_font",
+      "label": "Heading Font",
+      "options": [
+        { "value": "--g-font-1", "label": "Theme Heading Font" },
+        { "value": "--g-font-2", "label": "Theme Body Font" }
+      ],
+      "default": "--g-font-1",
+      "info": "Theme heading font matches the surrounding CWC sections."
+    },
+    {
+      "type": "select",
+      "id": "number_font",
+      "label": "Fact Number Font",
+      "options": [
+        { "value": "--g-font-2", "label": "Theme Body Font" },
+        { "value": "--g-font-1", "label": "Theme Heading Font" }
+      ],
+      "default": "--g-font-2",
+      "info": "Body font matches the stat numbers in CWC Statistical Proof."
+    },
+    {
+      "type": "header",
       "content": "Colors"
     },
     {
       "type": "color",
       "id": "bg_color",
       "label": "Background Color",
-      "default": "#FCFCFB"
+      "default": "#FAF9F6"
     },
     {
       "type": "color",
       "id": "text_color",
       "label": "Heading Text Color",
-      "default": "#0B0B0B"
+      "default": "#111111"
     },
     {
       "type": "color",
       "id": "bold_color",
       "label": "Heading Bold Color",
-      "default": "#1D9E75"
+      "default": "#125657"
     },
     {
       "type": "color",
       "id": "subtext_color",
       "label": "Subtext Color",
-      "default": "#52514E"
+      "default": "#6B7280"
     },
     {
       "type": "header",
@@ -154,19 +183,19 @@
       "type": "color",
       "id": "number_color",
       "label": "Number Color",
-      "default": "#1D9E75"
+      "default": "#125657"
     },
     {
       "type": "color",
       "id": "fact_title_color",
       "label": "Fact Title Color",
-      "default": "#0B0B0B"
+      "default": "#111111"
     },
     {
       "type": "color",
       "id": "fact_text_color",
       "label": "Fact Text Color",
-      "default": "#52514E"
+      "default": "#6B7280"
     },
     {
       "type": "header",
