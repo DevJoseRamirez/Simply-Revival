@@ -1397,7 +1397,6 @@
     },
     "cwc_statistical_proof_TyE7PV": {
       "type": "CWC_statistical_proof",
-      "disabled": true,
       "blocks": {
         "heading_GgbTzk": {
           "type": "heading",
@@ -1455,6 +1454,7 @@
         "stat_U84iMg",
         "stat_Gax64r"
       ],
+      "disabled": true,
       "name": "Statistical Proof",
       "settings": {
         "bg_color": "#ffffff",
@@ -1710,10 +1710,7 @@
         "areviews_reviews_importer_areviews_display_reviews_DF56F8": {
           "type": "shopify://apps/areviews-reviews-importer/blocks/AreviewsDisplayReviews/ab0ec5fe-c95b-4fd6-bfb8-db2a30d0756f",
           "settings": {
-            "hide_areviews_title_rating": false,
-            "areviews_theme_font": "inherit",
-            "areviews_stars_colors": "#f3c621",
-            "areviews_write_reviews_botton_color": "#373737"
+            "hide_areviews_title_rating": false
           }
         }
       },

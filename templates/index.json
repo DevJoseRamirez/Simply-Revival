@@ -92,7 +92,7 @@
           "type": "bullets",
           "settings": {
             "text_1": "Thicker Fuller-Looking Hair",
-            "text_2": "All Natural & Made in the USA",
+            "text_2": "All Natural",
             "text_3": "Ultra-Potent herbal formula without fillers"
           }
         },
@@ -406,7 +406,9 @@
         "card_bg": "#ffffff",
         "highlight_color": "#009370",
         "padding_top": 20,
-        "padding_bottom": 20
+        "padding_bottom": 20,
+        "show_disclaimer": true,
+        "disclaimer_text": "<p>Individual results vary. These statements have not been evaluated by the FDA. This product is not intended to diagnose, treat, cure, or prevent any disease.</p>"
       }
     },
     "cwc_product_highlight_rows_9eKtpB": {
@@ -535,7 +537,9 @@
         "bg_color": "#fffee3",
         "text_color": "#111111",
         "padding_top": 32,
-        "padding_bottom": 32
+        "padding_bottom": 32,
+        "show_disclaimer": true,
+        "disclaimer_text": "<p>Individual results vary. These statements have not been evaluated by the FDA. This product is not intended to diagnose, treat, cure, or prevent any disease.</p>"
       }
     },
     "cwc_background_features_ajA4iB": {
@@ -841,7 +845,9 @@
         "button_bg": "#125657",
         "button_text": "#ffffff",
         "padding_top": 32,
-        "padding_bottom": 32
+        "padding_bottom": 32,
+        "show_disclaimer": true,
+        "disclaimer_text": "<p>Individual results vary. These statements have not been evaluated by the FDA. This product is not intended to diagnose, treat, cure, or prevent any disease.</p>"
       }
     },
     "cwc_problem_solution_gF7ac4": {
@@ -1238,6 +1244,7 @@
         "low_stock_P9ahcL": {
           "type": "low_stock",
           "settings": {
+            "inventory_threshold": 1000,
             "text_primary": "Low Stock",
             "text_primary_color": "#125657",
             "text_secondary": "Selling Fast",
