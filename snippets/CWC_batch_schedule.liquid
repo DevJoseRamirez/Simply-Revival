@@ -1,0 +1,174 @@
+{% comment %}
+  CWC Batch Schedule
+
+  Pre-order / batch milestone list. Renders a branded card with a heading and
+  up to 5 milestone rows. Each row is a date label on the left and a status
+  label on the right (e.g. "SOLD OUT", "70% SOLD"), fully editable from the
+  Theme Editor. Rows marked "sold out" render muted so the next available
+  batch reads as the active one.
+
+  Rows with a blank date AND a blank status are skipped, so merchants can use
+  fewer than 5 without leaving gaps.
+
+  Accepts:
+  - block {Object} The batch_schedule block
+{% endcomment %}
+
+{%- liquid
+  assign cwc_batch_rows = 0
+  for cwc_batch_i in (1..5)
+    assign cwc_batch_date_key = 'date_' | append: cwc_batch_i
+    assign cwc_batch_status_key = 'status_' | append: cwc_batch_i
+    if block.settings[cwc_batch_date_key] != blank or block.settings[cwc_batch_status_key] != blank
+      assign cwc_batch_rows = cwc_batch_rows | plus: 1
+    endif
+  endfor
+-%}
+
+{%- if cwc_batch_rows > 0 or block.settings.heading != blank -%}
+  {% style %}
+    .cwc-batch-schedule--{{ block.id }} {
+      --bg-color: {{ block.settings.bg_color | default: '#125657' }};
+      --heading-color: {{ block.settings.heading_color | default: '#ffffff' }};
+      --row-bg: {{ block.settings.row_bg_color | default: '#ffffff' }};
+      --row-text-color: {{ block.settings.row_text_color | default: '#282828' }};
+      --row-status-color: {{ block.settings.row_status_color | default: '#125657' }};
+      --row-soldout-bg: {{ block.settings.row_soldout_bg_color | default: '#E1E4E4' }};
+      --row-soldout-text-color: {{ block.settings.row_soldout_text_color | default: '#6B7280' }};
+      --padding-top: {{ block.settings.padding_top | default: 16 }}px;
+      --padding-bottom: {{ block.settings.padding_bottom | default: 16 }}px;
+    }
+  {% endstyle %}
+
+  {% style %}
+    .cwc-batch-schedule {
+      background-color: var(--bg-color, #125657);
+      border-radius: 10px;
+      padding: var(--padding-top, 16px) 1rem var(--padding-bottom, 16px) 1rem;
+      margin-bottom: 1rem;
+      width: 100%;
+    }
+
+    .cwc-batch-schedule__heading {
+      color: var(--heading-color, #ffffff);
+      margin-bottom: 0.75rem;
+    }
+
+    .cwc-batch-schedule__heading > * {
+      color: inherit;
+      font-size: 0.95rem;
+      font-weight: 500;
+      line-height: 1.35;
+      margin: 0;
+    }
+
+    .cwc-batch-schedule__heading > * strong {
+      font-weight: 700;
+    }
+
+    .cwc-batch-schedule__heading > * + * {
+      margin-top: 0.25rem;
+    }
+
+    .cwc-batch-schedule__list {
+      display: flex;
+      flex-direction: column;
+      gap: 0.5rem;
+    }
+
+    .cwc-batch-schedule__row {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      gap: 1rem;
+      background-color: var(--row-bg, #ffffff);
+      border-radius: 6px;
+      padding: 0.7rem 0.85rem;
+    }
+
+    .cwc-batch-schedule__row--sold-out {
+      background-color: var(--row-soldout-bg, #e1e4e4);
+    }
+
+    .cwc-batch-schedule__row-date {
+      font-size: 0.9rem;
+      font-weight: 500;
+      line-height: 1.2;
+      color: var(--row-text-color, #282828);
+    }
+
+    .cwc-batch-schedule__row-status {
+      font-size: 0.9rem;
+      font-weight: 700;
+      line-height: 1.2;
+      letter-spacing: 0.01em;
+      text-align: right;
+      white-space: nowrap;
+      color: var(--row-status-color, #125657);
+    }
+
+    .cwc-batch-schedule__row--sold-out .cwc-batch-schedule__row-date,
+    .cwc-batch-schedule__row--sold-out .cwc-batch-schedule__row-status {
+      color: var(--row-soldout-text-color, #6b7280);
+    }
+
+    /* ================================
+       Mobile Responsive (max-width: 768px)
+       ================================ */
+    @media (max-width: 768px) {
+      .cwc-batch-schedule {
+        padding-left: 0.85rem;
+        padding-right: 0.85rem;
+      }
+
+      .cwc-batch-schedule__heading > * {
+        font-size: 0.875rem;
+      }
+
+      .cwc-batch-schedule__row {
+        padding: 0.6rem 0.75rem;
+        gap: 0.75rem;
+      }
+
+      .cwc-batch-schedule__row-date,
+      .cwc-batch-schedule__row-status {
+        font-size: 0.82rem;
+      }
+    }
+  {% endstyle %}
+
+  <div class="cwc-batch-schedule cwc-batch-schedule--{{ block.id }}">
+    {% if block.settings.heading != blank %}
+      <div class="cwc-batch-schedule__heading rte">
+        {{ block.settings.heading }}
+      </div>
+    {% endif %}
+
+    {% if cwc_batch_rows > 0 %}
+      <div class="cwc-batch-schedule__list">
+        {% for cwc_batch_i in (1..5) %}
+          {%- liquid
+            assign cwc_batch_date_key = 'date_' | append: cwc_batch_i
+            assign cwc_batch_status_key = 'status_' | append: cwc_batch_i
+            assign cwc_batch_soldout_key = 'sold_out_' | append: cwc_batch_i
+            assign cwc_batch_date = block.settings[cwc_batch_date_key]
+            assign cwc_batch_status = block.settings[cwc_batch_status_key]
+            assign cwc_batch_soldout = block.settings[cwc_batch_soldout_key]
+          -%}
+
+          {% if cwc_batch_date != blank or cwc_batch_status != blank %}
+            <div class="cwc-batch-schedule__row{% if cwc_batch_soldout %} cwc-batch-schedule__row--sold-out{% endif %}">
+              {% if cwc_batch_date != blank %}
+                <span class="cwc-batch-schedule__row-date">{{ cwc_batch_date }}</span>
+              {% endif %}
+
+              {% if cwc_batch_status != blank %}
+                <span class="cwc-batch-schedule__row-status">{{ cwc_batch_status }}</span>
+              {% endif %}
+            </div>
+          {% endif %}
+        {% endfor %}
+      </div>
+    {% endif %}
+  </div>
+{%- endif -%}

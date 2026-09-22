@@ -216,6 +216,11 @@
                     {% render 'CWC_low_stock', block: block, product: current_product %}
                   </div>
 
+                {% when 'batch_schedule' %}
+                  <div class="cwc-featured-product__batch-schedule" {{ block.shopify_attributes }}>
+                    {% render 'CWC_batch_schedule', block: block %}
+                  </div>
+
                 {% when 'trusted_by' %}
                   <div class="cwc-featured-product__trusted-by" {{ block.shopify_attributes }}>
                     {% render 'CWC_trusted_by', block: block %}
@@ -2016,6 +2021,200 @@
           "type": "image_picker",
           "id": "icon",
           "label": "Icon"
+        }
+      ]
+    },
+    {
+      "type": "batch_schedule",
+      "name": "Batch Schedule",
+      "settings": [
+        {
+          "type": "header",
+          "content": "Heading"
+        },
+        {
+          "type": "richtext",
+          "id": "heading",
+          "label": "Heading",
+          "default": "<p>Pre-order to get the next available items. <strong>Next Batch Ships:</strong></p>"
+        },
+        {
+          "type": "header",
+          "content": "Row 1"
+        },
+        {
+          "type": "text",
+          "id": "date_1",
+          "label": "Date",
+          "default": "October 8th"
+        },
+        {
+          "type": "text",
+          "id": "status_1",
+          "label": "Status",
+          "default": "SOLD OUT",
+          "info": "Right-hand label, e.g. \"SOLD OUT\" or \"70% SOLD\"."
+        },
+        {
+          "type": "checkbox",
+          "id": "sold_out_1",
+          "label": "Mark as sold out",
+          "default": true,
+          "info": "Greys the row out."
+        },
+        {
+          "type": "header",
+          "content": "Row 2"
+        },
+        {
+          "type": "text",
+          "id": "date_2",
+          "label": "Date",
+          "default": "October 25th"
+        },
+        {
+          "type": "text",
+          "id": "status_2",
+          "label": "Status",
+          "default": "70% SOLD"
+        },
+        {
+          "type": "checkbox",
+          "id": "sold_out_2",
+          "label": "Mark as sold out",
+          "default": false
+        },
+        {
+          "type": "header",
+          "content": "Row 3"
+        },
+        {
+          "type": "text",
+          "id": "date_3",
+          "label": "Date",
+          "default": "November 11th"
+        },
+        {
+          "type": "text",
+          "id": "status_3",
+          "label": "Status",
+          "default": "0% SOLD"
+        },
+        {
+          "type": "checkbox",
+          "id": "sold_out_3",
+          "label": "Mark as sold out",
+          "default": false
+        },
+        {
+          "type": "header",
+          "content": "Row 4"
+        },
+        {
+          "type": "text",
+          "id": "date_4",
+          "label": "Date"
+        },
+        {
+          "type": "text",
+          "id": "status_4",
+          "label": "Status"
+        },
+        {
+          "type": "checkbox",
+          "id": "sold_out_4",
+          "label": "Mark as sold out",
+          "default": false
+        },
+        {
+          "type": "header",
+          "content": "Row 5"
+        },
+        {
+          "type": "text",
+          "id": "date_5",
+          "label": "Date"
+        },
+        {
+          "type": "text",
+          "id": "status_5",
+          "label": "Status"
+        },
+        {
+          "type": "checkbox",
+          "id": "sold_out_5",
+          "label": "Mark as sold out",
+          "default": false
+        },
+        {
+          "type": "header",
+          "content": "Colors"
+        },
+        {
+          "type": "color",
+          "id": "bg_color",
+          "label": "Card Background Color",
+          "default": "#125657"
+        },
+        {
+          "type": "color",
+          "id": "heading_color",
+          "label": "Heading Color",
+          "default": "#ffffff"
+        },
+        {
+          "type": "color",
+          "id": "row_bg_color",
+          "label": "Row Background Color",
+          "default": "#ffffff"
+        },
+        {
+          "type": "color",
+          "id": "row_text_color",
+          "label": "Row Date Color",
+          "default": "#282828"
+        },
+        {
+          "type": "color",
+          "id": "row_status_color",
+          "label": "Row Status Color",
+          "default": "#125657"
+        },
+        {
+          "type": "color",
+          "id": "row_soldout_bg_color",
+          "label": "Sold Out Row Background Color",
+          "default": "#E1E4E4"
+        },
+        {
+          "type": "color",
+          "id": "row_soldout_text_color",
+          "label": "Sold Out Row Text Color",
+          "default": "#6B7280"
+        },
+        {
+          "type": "header",
+          "content": "Spacing"
+        },
+        {
+          "type": "range",
+          "id": "padding_top",
+          "min": 0,
+          "max": 40,
+          "step": 2,
+          "unit": "px",
+          "label": "Padding Top",
+          "default": 16
+        },
+        {
+          "type": "range",
+          "id": "padding_bottom",
+          "min": 0,
+          "max": 40,
+          "step": 2,
+          "unit": "px",
+          "label": "Padding Bottom",
+          "default": 16
         }
       ]
     },
