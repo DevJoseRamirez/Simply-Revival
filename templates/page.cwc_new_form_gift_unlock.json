@@ -340,7 +340,7 @@
             "desc_2": "Lost or damaged? We replace it.",
             "price_2": "$15.00",
             "icon_3": "shopify://shop_images/Mask_group_1_0eea0e73-f9ba-45d8-94c1-2f1733eeb367.png",
-            "title_3": "Up To 2 Bottles Free",
+            "title_3": "Up To 2 Months Free",
             "desc_3": "On your First order",
             "price_3": "$79.99",
             "icon_4": "shopify://shop_images/icon_prop_02.png",
@@ -373,6 +373,36 @@
             "show_disclaimer": true,
             "disclaimer_text": "<p>Individual results vary. These statements have not been evaluated by the FDA. This product is not intended to diagnose, treat, cure, or prevent any disease.</p>"
           }
+        },
+        "batch_schedule_Phf7Ye": {
+          "type": "batch_schedule",
+          "settings": {
+            "heading": "<p>Pre-order to get the next available items. <strong>Next Batch Ships:</strong></p>",
+            "date_1": "October 8th",
+            "status_1": "SOLD OUT",
+            "sold_out_1": true,
+            "date_2": "October 25th",
+            "status_2": "70% SOLD",
+            "sold_out_2": false,
+            "date_3": "November 11th",
+            "status_3": "0% SOLD",
+            "sold_out_3": false,
+            "date_4": "",
+            "status_4": "",
+            "sold_out_4": false,
+            "date_5": "",
+            "status_5": "",
+            "sold_out_5": false,
+            "bg_color": "#125657",
+            "heading_color": "#ffffff",
+            "row_bg_color": "#ffffff",
+            "row_text_color": "#282828",
+            "row_status_color": "#125657",
+            "row_soldout_bg_color": "#e1e4e4",
+            "row_soldout_text_color": "#6b7280",
+            "padding_top": 16,
+            "padding_bottom": 16
+          }
         }
       },
       "block_order": [
@@ -385,6 +415,7 @@
         "benefits_XqmTFX",
         "price_display_8LMwX6",
         "low_stock_rLxPtY",
+        "batch_schedule_Phf7Ye",
         "product_options_K4yi8r",
         "delivery_estimate_g6E4Az",
         "add_to_cart_7gampa",
