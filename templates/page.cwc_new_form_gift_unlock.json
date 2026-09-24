@@ -74,6 +74,7 @@
       "blocks": {
         "product_image_bH7B7T": {
           "type": "product_image",
+          "disabled": true,
           "settings": {
             "image": "shopify://shop_images/hf_20260830_203626_424c257f-2060-48bc-8e47-074e9fdeabea_copy.png",
             "badge_text": "",
@@ -86,7 +87,6 @@
         },
         "image_carousel_jFp4EA": {
           "type": "image_carousel",
-          "disabled": true,
           "settings": {
             "img_limit": 8,
             "badge_text": "",
@@ -160,6 +160,36 @@
             "padding_bottom": 0
           }
         },
+        "batch_schedule_Phf7Ye": {
+          "type": "batch_schedule",
+          "settings": {
+            "heading": "<p>Pre-order to get the next available items. <strong>Next Batch Ships:</strong></p>",
+            "date_1": "October 8th",
+            "status_1": "SOLD OUT",
+            "sold_out_1": true,
+            "date_2": "October 25th",
+            "status_2": "70% SOLD",
+            "sold_out_2": false,
+            "date_3": "November 11th",
+            "status_3": "0% SOLD",
+            "sold_out_3": false,
+            "date_4": "",
+            "status_4": "",
+            "sold_out_4": false,
+            "date_5": "",
+            "status_5": "",
+            "sold_out_5": false,
+            "bg_color": "#125657",
+            "heading_color": "#ffffff",
+            "row_bg_color": "#ffffff",
+            "row_text_color": "#282828",
+            "row_status_color": "#125657",
+            "row_soldout_bg_color": "#e1e4e4",
+            "row_soldout_text_color": "#6b7280",
+            "padding_top": 16,
+            "padding_bottom": 16
+          }
+        },
         "product_options_K4yi8r": {
           "type": "product_options_tiers",
           "settings": {
@@ -190,11 +220,12 @@
             "bonus_sub_3_opt1": "",
             "unlock_image_1": "shopify://shop_images/herbal_hair_formula-05.png",
             "unlock_value_1": "$79.99",
-            "unlock_label_1": "2 FREE Bottles",
+            "unlock_label_1": "2 FREE Months",
             "unlock_at_tier_1": "2",
             "unlock_image_1_opt2": "shopify://shop_images/herbal_hair_formula-05.png",
             "unlock_value_1_opt2": "54.99",
             "unlock_label_1_opt2": "FREE 1 Month Supply",
+            "unlock_image_1_opt3": "shopify://shop_images/Mask_group_63130f2a-e982-4c4f-8e76-e2848a66e72a.png",
             "unlock_value_1_opt3": "",
             "unlock_label_1_opt3": "",
             "cart_addon_1_opt1": "",
@@ -206,7 +237,7 @@
             "save_text_2": "",
             "included_title_2": "",
             "included_sub_2": "",
-            "bonus_text_1_opt2": "1 FREE Bottle ($59.99 Value)",
+            "bonus_text_1_opt2": "1 FREE Month ($59.99 Value)",
             "bonus_sub_1_opt2": "Premium Hair Loss Formula",
             "bonus_text_2_opt2": "FREE 365 Day Money Back Guarantee ($50 Value)",
             "bonus_sub_2_opt2": "365-day money-back guarantee / Return your most recent order",
@@ -229,7 +260,7 @@
             "save_text_3": "",
             "included_title_3": "3x Simply Revival DHT Blocker",
             "included_sub_3": "Natural DHT Blocker - Less Shedding, Healthier Growth",
-            "bonus_text_1_opt3": "2 FREE Bottles ($79.99 Value)",
+            "bonus_text_1_opt3": "2 FREE Months ($79.99 Value)",
             "bonus_sub_1_opt3": "Premium Hair Loss Formula",
             "bonus_text_2_opt3": "FREE 365 Day Money Back Guarantee ($50 Value)",
             "bonus_sub_2_opt3": "365-day money-back guarantee / Return your most recent order",
@@ -266,7 +297,7 @@
             "button_hover_text_color": "#125657",
             "show_arrow": true,
             "guarantee_text": "365-Day Guarantee",
-            "note_1": "Refills Ship Every 25 Days",
+            "note_1": "Refills Ship In 60 Days",
             "note_2": "Stop or Cancel Anytime",
             "note_color": "#3d4a4a",
             "enable_sticky_atc": true,
@@ -293,7 +324,7 @@
             "image_1": "shopify://shop_images/trusted_by_01.png",
             "image_2": "shopify://shop_images/trusted_by_02.png",
             "image_3": "shopify://shop_images/trusted_by_03.png",
-            "title": "<p><strong>100,000+ Bottles Sold</strong></p>",
+            "title": "<p><strong>100,000+ Months Sold</strong></p>",
             "subtext": "<p>who choose Simply for consistent, long-term wellness support.</p>",
             "bg_color": "#efefef",
             "text_color": "#282828"
@@ -373,36 +404,6 @@
             "show_disclaimer": true,
             "disclaimer_text": "<p>Individual results vary. These statements have not been evaluated by the FDA. This product is not intended to diagnose, treat, cure, or prevent any disease.</p>"
           }
-        },
-        "batch_schedule_Phf7Ye": {
-          "type": "batch_schedule",
-          "settings": {
-            "heading": "<p>Pre-order to get the next available items. <strong>Next Batch Ships:</strong></p>",
-            "date_1": "October 8th",
-            "status_1": "SOLD OUT",
-            "sold_out_1": true,
-            "date_2": "October 25th",
-            "status_2": "70% SOLD",
-            "sold_out_2": false,
-            "date_3": "November 11th",
-            "status_3": "0% SOLD",
-            "sold_out_3": false,
-            "date_4": "",
-            "status_4": "",
-            "sold_out_4": false,
-            "date_5": "",
-            "status_5": "",
-            "sold_out_5": false,
-            "bg_color": "#125657",
-            "heading_color": "#ffffff",
-            "row_bg_color": "#ffffff",
-            "row_text_color": "#282828",
-            "row_status_color": "#125657",
-            "row_soldout_bg_color": "#e1e4e4",
-            "row_soldout_text_color": "#6b7280",
-            "padding_top": 16,
-            "padding_bottom": 16
-          }
         }
       },
       "block_order": [
@@ -429,7 +430,7 @@
       ],
       "name": "Featured Product",
       "settings": {
-        "product": "simply-dht-blocker-offer",
+        "product": "new-improved-formula-natural-dht-blocker",
         "background_color": "#ffffff",
         "padding_top": 40,
         "padding_bottom": 40,
@@ -962,7 +963,7 @@
         "reason_TKEJHx": {
           "type": "reason",
           "settings": {
-            "img": "shopify://shop_images/Simply_Revival___Reason_2_-_10_Legendary_Herbs._One_formula-min_1.png",
+            "img": "shopify://shop_images/simply-revival-pouch-warm-contrast-studio_1_1.png",
             "badge": "Reason 2",
             "badge_bg": "#60a1a2",
             "badge_color": "#ffffff",
@@ -973,7 +974,7 @@
         "reason_YLnYnw": {
           "type": "reason",
           "settings": {
-            "img": "shopify://shop_images/Simply_Revival___Reason_3_-_No_taste._No_hassle._No_Side_Effects-min.png",
+            "img": "shopify://shop_images/simply-revival-pouch-pill-lifestyle_1.png",
             "badge": "Reason 3",
             "badge_bg": "#60a1a2",
             "badge_color": "#ffffff",
@@ -1196,7 +1197,7 @@
             "bf_image": "shopify://shop_images/Simply_Revival___DHT_Blocker_-_Before_Transformatoin-min.png",
             "text": "Within",
             "hi_text": "90 Days",
-            "af_image": "shopify://shop_images/Simply_Revival___The_1_Natural_DHT_Blocker_for_Hair_Loss___Trasformatoin_-_After-min.png",
+            "af_image": "shopify://shop_images/simply-revival-character-new-pouch-larger_1_2629d4f9-3537-4ef8-b094-6a530c331cfd.png",
             "show_subtext": false,
             "text_color": "#faf9f6"
           }

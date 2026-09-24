@@ -134,6 +134,77 @@
         "padding_bottom": 0
       }
     },
+    "cwc_hero_banner_image_LMqdQP": {
+      "type": "CWC_hero_banner_image",
+      "blocks": {
+        "promo_YRd4mA": {
+          "type": "promo",
+          "disabled": true,
+          "settings": {
+            "text": "BLACK FRIDAY SALE",
+            "promo_bg_color": "#125657",
+            "promo_text_color": "#72c9ca"
+          }
+        },
+        "review_HVwrX9": {
+          "type": "review",
+          "settings": {
+            "text": "<p><strong>Rated 4.8/5</strong> | 100,000+ bottles sold</p>"
+          }
+        },
+        "headline_cBLRQx": {
+          "type": "headline",
+          "settings": {
+            "text": "<h2>The <strong>#1 Natural DHT</strong> </h2><h2>Blocker for Hair Loss</h2>"
+          }
+        },
+        "bullets_wWNx89": {
+          "type": "bullets",
+          "settings": {
+            "text_1": "Thicker Fuller-Looking Hair",
+            "text_2": "All Natural",
+            "text_3": "Ultra-Potent herbal formula without fillers"
+          }
+        },
+        "button_7Lriim": {
+          "type": "button",
+          "settings": {
+            "text": "Try Risk-Free Today",
+            "link": "#cwc-featured-product--anchor",
+            "button_bg_color": "#125657",
+            "button_text_color": "#ffffff"
+          }
+        },
+        "note_ryKYQF": {
+          "type": "note",
+          "settings": {
+            "text": "<p>365-day money back guarantee</p>",
+            "icon": "shopify://shop_images/Simply_Revival___Gurantee-min.png"
+          }
+        }
+      },
+      "block_order": [
+        "promo_YRd4mA",
+        "review_HVwrX9",
+        "headline_cBLRQx",
+        "bullets_wWNx89",
+        "button_7Lriim",
+        "note_ryKYQF"
+      ],
+      "disabled": true,
+      "name": "Hero Banner Image",
+      "settings": {
+        "background_color": "#F4EDDC",
+        "text_color": "#202020",
+        "image": "shopify://shop_images/simply-revival-pouch-warm-contrast-studio_1_1.png",
+        "image_position": "left",
+        "image_mobile": "shopify://shop_images/simply-revival-pouch-warm-contrast-studio_1_1.png",
+        "m_image_position": "top",
+        "alt_text": "",
+        "padding_top": 0,
+        "padding_bottom": 0
+      }
+    },
     "cwc_usp_columns_BmJWgA": {
       "type": "CWC_usp_columns",
       "blocks": {
@@ -1557,6 +1628,7 @@
   "order": [
     "cwc_scrolling_banner_UbtU3E",
     "cwc_hero_banner_image_yJLyAP",
+    "cwc_hero_banner_image_LMqdQP",
     "cwc_usp_columns_BmJWgA",
     "cwc_social_proof_QLBenN",
     "cwc_testimonials_WEmh8r",
