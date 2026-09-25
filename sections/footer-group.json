@@ -18,7 +18,7 @@
         "logo": "shopify://shop_images/Simply_Revival_Logo_white_text-min.png",
         "logo_width": 160,
         "logo_text": "SimplyRevival",
-        "logo_address": "<p>Simply Revival<br>4301 Valley Blvd<br>Los Angeles, CA 90032<\/p>",
+        "logo_address": "<p>Simply Revival<br/>4301 Valley Blvd<br/>Los Angeles, CA 90032</p>",
         "newsletter_heading": "Stay In The Know",
         "newsletter_subheading": "<p>Sign up for newsletters, special offers and exclusive discounts!</p>",
         "newsletter_placeholder": "Your Email",
@@ -50,7 +50,7 @@
         "btn_text": "#0c5a4d",
         "btn_radius": 4,
         "padding_top": 60,
-        "padding_bottom": 40
+        "padding_bottom": 100
       }
     },
     "newsletter-footer": {
