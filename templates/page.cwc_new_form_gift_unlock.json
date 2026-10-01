@@ -88,7 +88,7 @@
         "image_carousel_jFp4EA": {
           "type": "image_carousel",
           "settings": {
-            "img_limit": 8,
+            "img_limit": 12,
             "badge_text": "",
             "badge_text_color": "#ffffff",
             "badge_bg_color": "#60a1a2",
@@ -162,6 +162,7 @@
         },
         "batch_schedule_Phf7Ye": {
           "type": "batch_schedule",
+          "disabled": true,
           "settings": {
             "heading": "<p>Pre-order to get the next available items. <strong>Next Batch Ships:</strong></p>",
             "date_1": "October 8th",
@@ -297,7 +298,7 @@
             "button_hover_text_color": "#125657",
             "show_arrow": true,
             "guarantee_text": "365-Day Guarantee",
-            "note_1": "Refills Ship In 60 Days",
+            "note_1": "Refills Ship Every 28 Days",
             "note_2": "Stop or Cancel Anytime",
             "note_color": "#3d4a4a",
             "enable_sticky_atc": true,
