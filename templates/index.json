@@ -125,7 +125,7 @@
       "settings": {
         "background_color": "#d0f0f2",
         "text_color": "#202020",
-        "image": "shopify://shop_images/Simply_Revival___The_1_Natural_DHT_Blocker_for_Hair_Loss_-_Hero_Image-min.png",
+        "image": "shopify://shop_images/New_Improved_Natural_DHT_Blocker-1.png",
         "image_position": "left",
         "image_mobile": "shopify://shop_images/Simply_Revival___The_1_Natural_DHT_Blocker_for_Hair_Loss_-_Hero_Image_Mobile-min.png",
         "m_image_position": "top",
@@ -194,11 +194,11 @@
       "disabled": true,
       "name": "Hero Banner Image",
       "settings": {
-        "background_color": "#F4EDDC",
+        "background_color": "#f4eddc",
         "text_color": "#202020",
-        "image": "shopify://shop_images/simply-revival-pouch-warm-contrast-studio_1_1.png",
+        "image": "shopify://shop_images/New_Improved_Natural_DHT_Blocker.png",
         "image_position": "left",
-        "image_mobile": "shopify://shop_images/simply-revival-pouch-warm-contrast-studio_1_1.png",
+        "image_mobile": "shopify://shop_images/New_Improved_Natural_DHT_Blocker.png",
         "m_image_position": "top",
         "alt_text": "",
         "padding_top": 0,
@@ -739,7 +739,7 @@
         "reason_CcHDxL": {
           "type": "reason",
           "settings": {
-            "img": "shopify://shop_images/Simply_Revival___Reason_2_-_10_Legendary_Herbs._One_formula-min_1.png",
+            "img": "shopify://shop_images/simply-revival-pouch-warm-contrast-studio_1_1.png",
             "badge": "Reason 2",
             "badge_bg": "#60a1a2",
             "badge_color": "#ffffff",
@@ -750,7 +750,7 @@
         "reason_JmG9Ga": {
           "type": "reason",
           "settings": {
-            "img": "shopify://shop_images/Simply_Revival___Reason_3_-_No_taste._No_hassle._No_Side_Effects-min.png",
+            "img": "shopify://shop_images/simply-revival-pouch-pill-lifestyle_1.png",
             "badge": "Reason 3",
             "badge_bg": "#60a1a2",
             "badge_color": "#ffffff",
@@ -974,7 +974,7 @@
             "bf_image": "shopify://shop_images/Simply_Revival___DHT_Blocker_-_Before_Transformatoin-min_13a68d46-b0f7-4201-bd96-5ff627f3c840.png",
             "text": "Within",
             "hi_text": "90 days",
-            "af_image": "shopify://shop_images/Simply_Revival___The_1_Natural_DHT_Blocker_for_Hair_Loss___Trasformatoin_-_After-min.png",
+            "af_image": "shopify://shop_images/simply-revival-character-new-pouch-larger_1_2629d4f9-3537-4ef8-b094-6a530c331cfd.png",
             "show_subtext": false,
             "text_color": "#faf9f6"
           }
@@ -1137,7 +1137,7 @@
         "brand_table_YAPVJe": {
           "type": "brand_table",
           "settings": {
-            "product_image": "shopify://shop_images/Simply_Revival___Natural_DHT_Blocker-min.png",
+            "product_image": "shopify://shop_images/herbal_hair_formula-05.png",
             "title": "Simply Revival®",
             "background_color": "#60a1a2",
             "text_color": "#ffffff",
