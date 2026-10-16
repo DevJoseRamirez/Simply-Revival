@@ -64,6 +64,12 @@
   .cwc-warning-notice__text > * + * {
     margin-top: 0.25rem;
   }
+  .cwc-warning-notice__text a {
+    color: var(--title-color, #c0392b);
+    font-weight: 600;
+    text-decoration: underline;
+    white-space: nowrap;
+  }
   .cwc-warning-notice {
     border: 2px dashed var(--border-color-alpha);
     padding: 0.75rem;
@@ -72,13 +78,16 @@
 <div class="cwc-warning-notice cwc-warning-notice--{{ block.id }}">
   {% if block.settings.title != blank %}
     <div class="cwc-warning-notice__title">
-      <span class="cwc-warning-notice__icon" aria-hidden="true">
-        <svg width="16" height="16" viewBox="0 0 16 16" fill="none" xmlns="http://www.w3.org/2000/svg">
-          <circle cx="8" cy="8" r="8" fill="currentColor"/>
-          <rect x="7" y="3.5" width="2" height="5.5" rx="1" fill="white"/>
-          <rect x="7" y="10.5" width="2" height="2" rx="1" fill="white"/>
-        </svg>
-      </span>
+      {% comment %} show_icon is nil on blocks saved before the setting existed → still show {% endcomment %}
+      {% if block.settings.show_icon != false %}
+        <span class="cwc-warning-notice__icon" aria-hidden="true">
+          <svg width="16" height="16" viewBox="0 0 16 16" fill="none" xmlns="http://www.w3.org/2000/svg">
+            <circle cx="8" cy="8" r="8" fill="currentColor"/>
+            <rect x="7" y="3.5" width="2" height="5.5" rx="1" fill="white"/>
+            <rect x="7" y="10.5" width="2" height="2" rx="1" fill="white"/>
+          </svg>
+        </span>
+      {% endif %}
       {{ block.settings.title }}
     </div>
   {% endif %}

@@ -81,15 +81,40 @@
 
 {{ 'CWC_holiday_timer_banner.css' | asset_url | stylesheet_tag }}
 
+{% comment %}
+  Page override: on the template whose suffix matches
+  `override_template_suffix`, swap the title / subtext / link.
+  The timer is untouched, so it stays in sync with every other page.
+  Blank override fields fall back to the default content.
+{% endcomment %}
+{%- liquid
+  assign banner_title = section.settings.main_title
+  assign banner_subtext = section.settings.subtext
+  assign banner_link = section.settings.link
+
+  assign override_suffix = section.settings.override_template_suffix | strip
+  if override_suffix != blank and template.suffix == override_suffix
+    if section.settings.override_main_title != blank
+      assign banner_title = section.settings.override_main_title
+    endif
+    if section.settings.override_subtext != blank
+      assign banner_subtext = section.settings.override_subtext
+    endif
+    if section.settings.override_link != blank
+      assign banner_link = section.settings.override_link
+    endif
+  endif
+-%}
+
 {% unless hide_when_expired %}
-  {% if section.settings.main_title != blank or section.settings.show_timer %}
+  {% if banner_title != blank or section.settings.show_timer %}
     <section
       id="CWC_holiday_timer_banner-{{ section.id }}"
       class="cwc-holiday-timer-banner"
     >
       <a
         class="cwc-holiday-timer-banner__container"
-        href="{{ section.settings.link }}"
+        href="{{ banner_link }}"
       >
         <div class="cwc-holiday-timer-banner__content">
           {% if has_expired and section.settings.expired_message != blank %}
@@ -97,15 +122,15 @@
               {{ section.settings.expired_message }}
             </div>
           {% else %}
-            {% if section.settings.main_title != blank %}
+            {% if banner_title != blank %}
               <div class="cwc-holiday-timer-banner__main-title rte">
-                {{ section.settings.main_title }}
+                {{ banner_title }}
               </div>
             {% endif %}
 
-            {% if section.settings.subtext != blank %}
+            {% if banner_subtext != blank %}
               <div class="cwc-holiday-timer-banner__subtext rte">
-                {{ section.settings.subtext }}
+                {{ banner_subtext }}
               </div>
             {% endif %}
 
@@ -177,6 +202,41 @@
       "type": "url",
       "id": "link",
       "label": "Link"
+    },
+    {
+      "type": "header",
+      "content": "Page Override"
+    },
+    {
+      "type": "paragraph",
+      "content": "Show different text on one page template. The timer stays the same everywhere."
+    },
+    {
+      "type": "text",
+      "id": "override_template_suffix",
+      "label": "Template suffix",
+      "default": "cwc_bfcm_cashback",
+      "info": "E.g. cwc_bfcm_cashback for page.cwc_bfcm_cashback.json. Leave blank to turn the override off."
+    },
+    {
+      "type": "richtext",
+      "id": "override_main_title",
+      "label": "Main Title (override)",
+      "default": "<p>Early Black Friday Sale</p>",
+      "info": "Leave blank to use the Main Title above."
+    },
+    {
+      "type": "richtext",
+      "id": "override_subtext",
+      "label": "Subtext (override)",
+      "default": "<p>$100 Cashback Challenge</p>",
+      "info": "Leave blank to use the Subtext above."
+    },
+    {
+      "type": "url",
+      "id": "override_link",
+      "label": "Link (override)",
+      "info": "Leave blank to use the Link above."
     },
     {
       "type": "header",
