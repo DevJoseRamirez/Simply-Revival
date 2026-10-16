@@ -568,7 +568,8 @@
       "payment": {
         "title": "Secure Checkout",
         "card_information_notice": "All transactions are secure and encrypted. Your order includes our award winning 365 day guarantee and 24/7 access to customer service",
-        "card_security_notice": "All transactions are secure and encrypted. Your order includes our award winning 365 day guarantee and 24/7 access to customer service"
+        "card_security_notice": "All transactions are secure and encrypted. Your order includes our award winning 365 day guarantee and 24/7 access to customer service",
+        "purchase_options_subscription_agreement_label": "By clicking \"Secure My Order\" you agree to Simply Revival's Terms of Sale and Privacy Policy. You will be enrolled in a subscription and billed on a recurring basis at the price and frequency shown in the order summary above, excluding your first order's introductory discount. You can cancel anytime before your next bill date through our member portal or by emailing support@simplyrevival.com."
       },
       "subscriptions": {
         "recurring_totals": "‎ ‎ "

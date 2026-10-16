@@ -111,7 +111,7 @@
       class="cwc-featured-product__image-badge"
       style="background: {{ block.settings.badge_bg_color }}; color: {{ block.settings.badge_text_color }}"
     >
-      {% render 'CWC_icon-crown', fill_color: {{ block.settings.badge_text_color  }} %}
+      {% render 'CWC_icon-crown', fill_color: nil %}
       {{ block.settings.badge_text }}
     </div>
   {% endif %}
@@ -140,7 +140,7 @@
       class="cwc-featured-product__image-badge"
       style="background: {{ block.settings.badge_bg_color }}; color: {{ block.settings.badge_text_color }}"
     >
-      {% render 'CWC_icon-crown', fill_color: {{ block.settings.badge_text_color  }} %}
+      {% render 'CWC_icon-crown', fill_color: nil %}
       {{ block.settings.badge_text }}
     </div>
   {% endif %}
@@ -165,3 +165,18 @@
     </div>
   {% endif %}
 {% endif %}
+{% comment %}
+
+This file has been rewritten to preserve the original behavior.
+
+---
+Changes:
+- from: "{% render 'CWC_icon-crown', fill_color: {{ block.settings.badge_text_color
+    \ }} %}"
+  to: "{% render 'CWC_icon-crown', fill_color: nil %}"
+  position: 2414..2460
+- from: "{% render 'CWC_icon-crown', fill_color: {{ block.settings.badge_text_color
+    \ }} %}"
+  to: "{% render 'CWC_icon-crown', fill_color: nil %}"
+  position: 3317..3363
+{% endcomment %}

@@ -33,7 +33,7 @@
             when 'pnew_style-3' 
                 render 'pnew-2' , pnewletter_title: pnewletter_title, pnewletter_description: pnewletter_description, pnew_size_heading: pnew_size_heading, button: button , pnewletter_description_sub: pnewletter_description_sub, subtitle: subtitle
             when 'pnew_style-4' 
-                render 'pnew-3' , pnewletter_title: pnewletter_title, pnewletter_description: pnewletter_description, pnewletter_bgimage: pnewletter_bgimage, pnew_size_heading: pnew_size_heading, button: button, , pnewletter_description_sub: pnewletter_description_sub, subtitle: subtitle
+                render 'pnew-3', pnewletter_title: pnewletter_title, pnewletter_description: pnewletter_description, pnewletter_bgimage: pnewletter_bgimage, pnew_size_heading: pnew_size_heading, button: button, pnewletter_description_sub: pnewletter_description_sub, subtitle: subtitle
             else 
             render 'pnew-1' , pnewletter_title: pnewletter_title, pnewletter_description: pnewletter_description, pnew_size_heading: pnew_size_heading, button: button , pnewletter_description_sub: pnewletter_description_sub, subtitle: subtitle
           endcase 
@@ -286,4 +286,19 @@
     }
   ]
 }
-{% endschema %}
+{% endschema %}{%- comment -%}
+
+This file has been rewritten to preserve the original behavior.
+
+---
+Changes:
+- from: "                render 'pnew-3' , pnewletter_title: pnewletter_title, pnewletter_description:
+    pnewletter_description, pnewletter_bgimage: pnewletter_bgimage, pnew_size_heading:
+    pnew_size_heading, button: button, , pnewletter_description_sub: pnewletter_description_sub,
+    subtitle: subtitle"
+  to: "                render 'pnew-3', pnewletter_title: pnewletter_title, pnewletter_description:
+    pnewletter_description, pnewletter_bgimage: pnewletter_bgimage, pnew_size_heading:
+    pnew_size_heading, button: button, pnewletter_description_sub: pnewletter_description_sub,
+    subtitle: subtitle"
+  position: 2342..2627
+{%- endcomment -%}

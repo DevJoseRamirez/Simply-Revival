@@ -148,7 +148,7 @@
                 class="hero-button"
                 {{ block.shopify_attributes }}
               >
-                {% render 'CWC_button',  section_id; section.id, block: block %}
+                {% render 'CWC_button', block: block %}
               </div>
             {% endif %}
 
@@ -386,3 +386,13 @@
   ]
 }
 {% endschema %}
+{% comment %}
+
+This file has been rewritten to preserve the original behavior.
+
+---
+Changes:
+- from: "{% render 'CWC_button',  section_id; section.id, block: block %}"
+  to: "{% render 'CWC_button', block: block %}"
+  position: 5729..5768
+{% endcomment %}

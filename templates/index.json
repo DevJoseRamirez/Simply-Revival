@@ -1003,7 +1003,7 @@
         "fact_blend": {
           "type": "fact",
           "settings": {
-            "number": "350mg+",
+            "number": "1,000mg+",
             "title": "<p>Proprietary herbal blend per serving</p>",
             "text": "<p>Including saw palmetto and stinging nettle</p>"
           }
@@ -1267,7 +1267,7 @@
         "title_iKGYG9": {
           "type": "title",
           "settings": {
-            "title": "<h3>Natural DHT Blocker</h3><h4>Less Shedding, Healthier Growth</h4>",
+            "title": "<h3>Natural DHT Blocker 2.0</h3><h4>Less Shedding, Healthier Growth</h4>",
             "text_color": "#282828",
             "highlight_color": "#45b5b7"
           }
