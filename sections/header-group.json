@@ -22,7 +22,7 @@
         "override_template_suffix": "cwc_bfcm_cashback",
         "override_main_title": "<p>Early Black Friday Sale</p>",
         "override_subtext": "<p>$100 Cashback Challenge</p>",
-        "override_link": "",
+        "override_link": "shopify://pages/new-natural-dht-blocker-bfcm-offer",
         "show_timer": true,
         "timer_mode": "daily",
         "daily_cutoff_hour": 0,
